@@ -1,1 +1,1 @@
-# angular-generic-components
+# Angular Generic Components
