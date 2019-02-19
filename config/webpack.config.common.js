@@ -5,6 +5,8 @@ const HtmlWebpackPlugin    = require('html-webpack-plugin');
 const webpack              = require('webpack');
 const helpers              = require('./helpers');
 const isDev                = process.env.NODE_ENV !== 'production';
+const StyleLintPlugin 		 = require('stylelint-webpack-plugin');
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 module.exports = {
 	entry: {
@@ -33,11 +35,23 @@ module.exports = {
 					{ loader: 'sass-loader', options: { sourceMap: true } }
 				],
 				include: helpers.root('src', 'app')
-			},
+			}
 		]
 	},
 
 	plugins: [
+		/* Workaround for https://github.com/angular/angular/issues/21560 */
+		new FilterWarningsPlugin({
+			exclude: /System.import/
+		}),
+
+		new StyleLintPlugin({
+			configFile: '.stylelintrc',
+			context: helpers.root('./src'),
+			failOnError: false,
+			quiet: true,
+		}),
+
 		new CleanWebpackPlugin(
 			helpers.root('dist'),
 			{
@@ -49,6 +63,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'src/index.html'
 		}),
+
 		new webpack.ContextReplacementPlugin(
 			/\@angular(\\|\/)core(\\|\/)fesm5/,
 			helpers.root('./src'),

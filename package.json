@@ -1,5 +1,5 @@
 {
-  "name": "Angular Generic Components",
+  "name": "angular-generic-components",
   "version": "1.0.0",
   "description": "Anuglar Generic Library of Components",
   "scripts": {
@@ -30,7 +30,17 @@
     "@angular/router": "~7.0",
     "@angular/upgrade": "~7.0",
     "core-js": "~2.5",
+    "eslint": "^5.14.1",
+    "eslint-loader": "^2.1.2",
+    "postcss-loader": "^3.0.0",
     "rxjs": "~6.3",
+    "style-loader": "^0.23.1",
+    "stylelint": "^9.10.1",
+    "stylelint-order": "^2.0.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "typescript": "~3.1",
+    "typescript-eslint-parser": "^22.0.0",
+    "webpack-filter-warnings-plugin": "^1.2.1",
     "zone.js": "~0.8"
   },
   "devDependencies": {
@@ -51,11 +61,11 @@
     "del-cli": "~1.1",
     "html-loader": "~0.5",
     "html-webpack-plugin": "~3.2",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "~4.9",
     "optimize-css-assets-webpack-plugin": "~5.0",
     "sass-loader": "~7.1",
     "to-string-loader": "~1.1",
-    "typescript": "~3.1",
     "uglifyjs-webpack-plugin": "~2.0",
     "webpack": "~4.29",
     "webpack-cli": "~3.2",

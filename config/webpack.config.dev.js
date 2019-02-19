@@ -1,9 +1,8 @@
 'use strict';
 
-const webpackMerge = require('webpack-merge');
-
-const commonConfig = require('./webpack.config.common');
-const helpers      = require('./helpers');
+const webpackMerge 				 = require('webpack-merge');
+const commonConfig 				 = require('./webpack.config.common');
+const helpers      				 = require('./helpers');
 
 module.exports = webpackMerge(commonConfig, {
 	mode: 'development',
@@ -30,6 +29,10 @@ module.exports = webpackMerge(commonConfig, {
 						loader: 'awesome-typescript-loader',
 						options: { configFileName: helpers.root('tsconfig.json') }
 					},
+					{
+  					loader: 'eslint-loader',
+  					options: { configFileName: '.eslintrc' }
+  				},
 					'angular2-template-loader',
 					'angular-router-loader'
 				],
@@ -39,9 +42,27 @@ module.exports = webpackMerge(commonConfig, {
 	},
 
 	devServer: {
-		historyApiFallback: true,
+		contentBase: __dirname + '/src',
 		stats: {
-			warningsFilter: /System.import/ // https://github.com/angular/angular/issues/21560
+			hash: false,
+			version: false,
+			timings: true,
+			assets: false,
+			chunks: false,
+			modules: false,
+			reasons: true,
+			children: false,
+			source: false,
+			errors: true,
+			errorDetails: false,
+			warnings: true,
+			publicPath: false
 		},
+		host: '0.0.0.0',
+		inline: true,
+		port: 3000,
+		open: false,
+		disableHostCheck: true,
+		historyApiFallback: true
 	}
 });
