@@ -1,1 +1,17 @@
-<input type="text" value="test" class="form-control" />
+<div class="form-group">
+  <label class="form-label">{{ _label }}</label>
+  <input
+    [class.error]="!_isValid && _required && _isTouched"
+
+    (input)="onInputChange($event);"
+    (blur)="onInputBlur($event);"
+
+    [ngClass]="_className"
+    [disabled]="_disabled"
+    [maxLength]="_maxLength"
+    [placeholder]="_placeholder"
+    [required]="_required"
+    [type]="_type"
+    [value]="_value"
+  />
+</div>

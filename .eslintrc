@@ -204,7 +204,6 @@
     "no-nested-ternary": "warn",
     "no-new-object": "warn",
     "no-trailing-spaces": "warn",
-    "no-underscore-dangle": "warn",
     "no-whitespace-before-property": "warn",
     "one-var-declaration-per-line": [
       "warn",

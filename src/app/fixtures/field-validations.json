@@ -1,0 +1,22 @@
+{
+  "hidden": {
+    "type": "hidden",
+    "errorMsg": "",
+    "regex": "."
+  },
+  "text": {
+    "type": "text",
+    "errorMsg": "El campo solo debe contener letras.",
+    "regex": ".+$"
+  },
+  "number": {
+    "type": "number",
+    "errorMsg": "El campo solo debe contener números.",
+    "regex": "^([0-9])+$"
+  },
+  "email": {
+    "type": "email",
+    "errorMsg": "Ingresa una dirección de correo electrónico válida.",
+    "regex": "^[a-zA-Z0-9+._%-+]{1,256}@[a-zA-Z0-9][a-zA-Z0-9-]{0,64}.[a-zA-Z0-9][a-zA-Z0-9-]+$"
+  }
+}

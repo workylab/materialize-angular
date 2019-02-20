@@ -1,3 +1,22 @@
+@import '../../theme/metrics';
+@import '../../theme/colors';
+
+.form-group {
+  margin-bottom: $space-md;
+  position: relative;
+}
+
+.form-label {
+  background: $color-white;
+  color: $color-purple;
+  font-size: 10px;
+  left: $space-xs;
+  padding: 0 $space-xxxs;
+  position: absolute;
+  top: -$space-xxs;
+  z-index: 1;
+}
+
 .form-control {
   background-color: #FFFFFF;
   border: 1px solid #FF0000;
@@ -5,4 +24,14 @@
   font-size: 12px;
   outline: none;
   padding: 6px 8px;
+  width: 100%;
+}
+
+.form-control.outline {
+  border: $border-md solid $color-purple;
+  border-radius: $radius-sm;
+
+  &.error {
+    border-color: $color-red;
+  }
 }
