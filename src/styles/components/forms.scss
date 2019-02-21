@@ -1,8 +1,6 @@
-@import '../../theme/metrics';
-@import '../../theme/colors';
-
-.form-group {
+.form-control-group {
   margin-bottom: $space-md;
+  margin-top: $space-xs;
   position: relative;
 }
 

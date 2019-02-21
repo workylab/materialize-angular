@@ -4,9 +4,11 @@ const CleanWebpackPlugin   = require('clean-webpack-plugin');
 const HtmlWebpackPlugin    = require('html-webpack-plugin');
 const webpack              = require('webpack');
 const helpers              = require('./helpers');
-const isDev                = process.env.NODE_ENV !== 'production';
 const StyleLintPlugin 		 = require('stylelint-webpack-plugin');
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const isDev                = process.env.NODE_ENV !== 'production';
 
 module.exports = {
 	entry: {
@@ -28,13 +30,15 @@ module.exports = {
 				loader: 'html-loader'
 			},
 			{
-				test: /\.(scss|sass)$/,
+				test: /\.s(a|c)ss$/,
 				use: [
 					'to-string-loader',
+					isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
 					{ loader: 'css-loader', options: { sourceMap: true } },
-					{ loader: 'sass-loader', options: { sourceMap: true } }
+					{ loader: 'postcss-loader', options: { sourceMap: true } },
+					{ loader: 'sass-loader', options: { sourceMap: true } },
 				],
-				include: helpers.root('src', 'app')
+				include: helpers.root('src')
 			}
 		]
 	},
@@ -45,6 +49,15 @@ module.exports = {
 			exclude: /System.import/
 		}),
 
+		new MiniCssExtractPlugin({
+			filename: isDev
+				? '[name].css'
+				: '[name].[hash].css',
+			chunkFilename: isDev
+				? '[id].css'
+				: '[id].[hash].css',
+		}),
+		
 		new StyleLintPlugin({
 			configFile: '.stylelintrc',
 			context: helpers.root('./src'),

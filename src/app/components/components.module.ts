@@ -1,10 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { CustomInput } from './custom-input/custom-input.component';
+import { CustomInputComponent } from './custom-input/custom-input.component';
+import { CustomTextAreaComponent } from './custom-textarea/custom-textarea.component';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [CustomInput],
-  exports: [CustomInput],
+  declarations: [
+    CustomInputComponent,
+    CustomTextAreaComponent
+  ],
+  exports: [
+    CustomInputComponent,
+    CustomTextAreaComponent
+  ],
   imports: [CommonModule]
 })
 export class ComponentsModule {}

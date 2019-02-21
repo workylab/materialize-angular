@@ -1,17 +1,15 @@
 <div class="form-control-group">
   <label class="form-label">{{ _label }}</label>
-  <input
-    [class.error]="!_isValid && _required && _isTouched"
-
-    (input)="onInputChange($event);"
-    (blur)="onInputBlur($event);"
+  <textarea
+    (blur)="onTextAreaBlur()"
+    (input)="onTextAreaChange($event)"
 
     [ngClass]="_className"
     [disabled]="_disabled"
     [maxLength]="_maxLength"
+    [minLength]="_minLength"  
     [placeholder]="_placeholder"
     [required]="_required"
-    [type]="_type"
-    [value]="_value"
-  />
+    [value]="_value">
+  </textarea>
 </div>

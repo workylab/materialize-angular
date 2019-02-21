@@ -4,10 +4,9 @@ const fieldValidation = require('../../fixtures/field-validations.json');
 
 @Component({
   selector: 'custom-input',
-  styleUrls: ['./custom-input.component.scss'],
   templateUrl: './custom-input.component.html'
 })
-export class CustomInput implements OnInit {
+export class CustomInputComponent implements OnInit {
   static readonly defaultProps = {
     className: 'form-control',
     disabled: false,
@@ -32,16 +31,16 @@ export class CustomInput implements OnInit {
   @Input() type: string;
   @Input() value: string;
 
-  private _className: string;
-  private _disabled: boolean;
-  private _isTouched: boolean;
-  private _isValid: boolean;
-  private _label: string;
-  private _maxLength: number;
-  private _placeholder: string;
-  private _required: boolean;
-  private _type: string;
-  private _value: string;
+  public _className: string;
+  public _disabled: boolean;
+  public _isTouched: boolean;
+  public _isValid: boolean;
+  public _label: string;
+  public _maxLength: number;
+  public _placeholder: string;
+  public _required: boolean;
+  public _type: string;
+  public _value: string;
 
   constructor() {
     this.onInputBlur = this.onInputBlur.bind(this);
@@ -54,25 +53,16 @@ export class CustomInput implements OnInit {
 
   initValues() {
     // this.errorMessage = InputValidations[this.type].errorMsg;
-    const {
-      className,
-      disabled,
-      label,
-      maxLength,
-      placeholder,
-      required,
-      type,
-      value
-    } = CustomInput.defaultProps;
+    const { defaultProps } = CustomInputComponent;
 
-    this._className = this.className || className;
-    this._disabled = this.disable || disabled;
-    this._label = this.label || label;
-    this._maxLength = this.maxLength || maxLength;
-    this._placeholder = this.placeholder || placeholder;
-    this._required = this.required || required;
-    this._type = this.type || type;
-    this._value = this.value || value;
+    this._className = this.className || defaultProps.className;
+    this._disabled = this.disable || defaultProps.disabled;
+    this._label = this.label || defaultProps.label;
+    this._maxLength = this.maxLength || defaultProps.maxLength;
+    this._placeholder = this.placeholder || defaultProps.placeholder;
+    this._required = this.required || defaultProps.required;
+    this._type = this.type || defaultProps.type;
+    this._value = this.value || defaultProps.value;
 
     this._isValid = this.validate(this._value, this._required);
     this._isTouched = false;
