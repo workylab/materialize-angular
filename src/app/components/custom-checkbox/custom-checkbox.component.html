@@ -1,0 +1,11 @@
+<div class="form-control-group">
+  <input
+    (input)="onCheckboxChange($event);"
+    [checked]="_value"
+    [ngClass]="_className"
+    [id]="_name"
+    type="checkbox"
+    [value]="_value"
+  />
+  <label class="form-label" [for]="_name">{{ _label }}</label>
+</div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { isBoolean } from '../../utils/is-boolean.util';
 
 const fieldValidation = require('../../fixtures/field-validations.json');
 
@@ -22,13 +23,13 @@ export class CustomInputComponent implements OnInit {
   @Input() onChange: (value: string) => void;
 
   @Input() className: string;
-  @Input() disable: boolean;
+  @Input() disabled: boolean;
   @Input() errorMessage: string;
   @Input() label: string;
   @Input() maxLength: number;
   @Input() placeholder: string;
   @Input() required: boolean;
-  @Input() type: string;
+  @Input() type: 'text' | 'password';
   @Input() value: string;
 
   public _className: string;
@@ -56,11 +57,15 @@ export class CustomInputComponent implements OnInit {
     const { defaultProps } = CustomInputComponent;
 
     this._className = this.className || defaultProps.className;
-    this._disabled = this.disable || defaultProps.disabled;
+    this._disabled = isBoolean(this.disabled)
+      ? this.disabled
+      : defaultProps.disabled;
     this._label = this.label || defaultProps.label;
     this._maxLength = this.maxLength || defaultProps.maxLength;
     this._placeholder = this.placeholder || defaultProps.placeholder;
-    this._required = this.required || defaultProps.required;
+    this._required = isBoolean(this.required)
+      ? this.required
+      : defaultProps.required;
     this._type = this.type || defaultProps.type;
     this._value = this.value || defaultProps.value;
 

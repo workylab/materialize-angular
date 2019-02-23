@@ -18,5 +18,17 @@
 <custom-textarea
   label="Text area"
 >
-
 </custom-textarea>
+<custom-table
+  [data]="tableData"
+  [onTableSort]="onTableSort"
+  title="Table Example"
+>
+</custom-table>
+
+<custom-checkbox
+  label="Checkbox"
+  name="checkbox1"
+  [value]="true"
+>
+</custom-checkbox>
