@@ -59,6 +59,17 @@
     }
   }
 
+  &.disabled {
+    .input-label {
+      color: $color-gray;
+    }
+
+    .input-control {
+      border-bottom-color: $color-gray-light;
+      cursor: not-allowed;
+    }
+  }
+
   &.active {
     .input-label {
       color: $color-purple;
@@ -79,7 +90,9 @@
   color: $color-black;
   font-size: $font-size-xs;
   font-weight: $font-weight-light;
+  max-width: 100%;
   outline: none;
   padding: $space-sm $space-sm;
+  resize: vertical;
   width: 100%;
 }

@@ -7,7 +7,8 @@
   <div class="input-field-container"
     [class.float-label]="_floatLabel"
     [class.active]="_isFocused || _value.length > 0 || _placeholder"
-    [class.focused]="_isFocused">
+    [class.focused]="_isFocused"
+    [class.disabled]="_disabled">
     <label class="input-label">{{ _label }}</label>
     <input
       [class.error]="!_isValid && _required && _isTouched"
@@ -16,6 +17,7 @@
       (blur)="onInputBlur($event)"
       (focus)="onInputFocus()"
   
+      [autocomplete]="_autocomplete"
       [ngClass]="_className"
       [disabled]="_disabled"
       [maxLength]="_maxLength"

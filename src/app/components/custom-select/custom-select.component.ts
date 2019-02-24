@@ -3,6 +3,7 @@ import { CustomSelectOption } from './custom-select.model';
 
 interface defaultProps {
   className: string;
+  disabled: boolean;
   isTouched: boolean;
   label: string;
   options: Array<CustomSelectOption>;
@@ -17,6 +18,7 @@ interface defaultProps {
 export class CustomSelectComponent implements OnInit {
   static readonly defaultProps: defaultProps = {
     className: 'form-control',
+    disabled: false,
     isTouched: false,
     label: '',
     options: [],
@@ -27,19 +29,21 @@ export class CustomSelectComponent implements OnInit {
   @Input() onChange: (selectedOption: CustomSelectOption) => void;
 
   @Input() className: string;
+  @Input() disabled: boolean;
   @Input() label: string;
   @Input() options: Array<CustomSelectOption>;
   @Input() required: boolean;
   @Input() value: string;
 
-  private _className: string;
-  private _isTouched: boolean;
-  private _isValid: boolean;
-  private _label: string;
-  private _options: Array<CustomSelectOption>;
-  private _required: boolean;
-  private _selectedOption: CustomSelectOption;
-  private _value: string;
+  public _className: string;
+  public _disabled: boolean;
+  public _isTouched: boolean;
+  public _isValid: boolean;
+  public _label: string;
+  public _options: Array<CustomSelectOption>;
+  public _required: boolean;
+  public _selectedOption: CustomSelectOption;
+  public _value: string;
 
   ngOnInit() {
     this.initValues();
@@ -49,6 +53,7 @@ export class CustomSelectComponent implements OnInit {
     const { defaultProps } = CustomSelectComponent;
 
     this._className = this.className || defaultProps.className;
+    this._disabled = this.disabled || defaultProps.disabled;
     this._label = this.label || defaultProps.label;
     this._options = this.options || defaultProps.options;
     this._required = this.required || defaultProps.required;

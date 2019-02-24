@@ -1,10 +1,14 @@
 <div [ngClass]="_className">
   <div class="navbar-icon-container">
-    <custom-icon [name]="_menuIconName" size="lg"></custom-icon>
+    <custom-sidenav
+      [titleIconName]="_titleIconName"
+      [title]="_title"
+      [menuIconName]="_menuIconName">
+      <ng-content></ng-content>
+    </custom-sidenav>
   </div>
   
   <span class="navbar-title">{{ _title }}</span>
-
 
   <div class="navbar-icon-container" *ngFor="let option of _options">
     <custom-icon [name]="option.iconName" size="lg"></custom-icon>

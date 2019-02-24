@@ -1,50 +1,56 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CustomNavbarOption } from './custom-navbar.model';
 
 interface defaultProps {
-  className: string;
+  isOpen: boolean;
   menuIconName: string;
-  options: Array<CustomNavbarOption>;
   title: string;
   titleIconName: string;
 }
 
 @Component({
-  selector: 'custom-navbar',
-  templateUrl: './custom-navbar.component.html'
+  selector: 'custom-sidenav',
+  templateUrl: './custom-sidenav.component.html'
 })
-export class CustomNavbarComponent implements OnInit {
+export class CustomSideNavComponent implements OnInit {
   static readonly defaultProps: defaultProps = {
-    className: 'navbar',
+    isOpen: false,
     menuIconName: 'menu',
-    options: [],
-    title: 'Navbar',
+    title: '',
     titleIconName: ''
   };
 
-  @Input() className: string;
+  @Input() isOpen: boolean;
   @Input() menuIconName: string;
   @Input() title: string;
   @Input() titleIconName: string;
-  @Input() options: Array<CustomNavbarOption>;
 
-  public _className: string;
+  public _isOpen: boolean;
   public _menuIconName: string;
   public _title: string;
   public _titleIconName: string;
-  public _options: Array<CustomNavbarOption>
+
+  constructor() {
+    this.openSideNav = this.openSideNav.bind(this);
+  }
 
   ngOnInit() {
     this.initValues();
   }
 
   initValues() {
-    const { defaultProps } = CustomNavbarComponent;
+    const { defaultProps } = CustomSideNavComponent;
 
-    this._className = this.className || defaultProps.className;
+    this._isOpen = this.isOpen || defaultProps.isOpen;
     this._menuIconName = this.menuIconName || defaultProps.menuIconName;
-    this._options = this.options || defaultProps.options;
     this._title = this.title || defaultProps.title;
     this._titleIconName = this.titleIconName || defaultProps.titleIconName;
+  }
+
+  openSideNav() {
+    this._isOpen = true;
+  }
+
+  closeSideNav() {
+    this._isOpen = false;
   }
 }

@@ -5,7 +5,7 @@ const ngw                     = require('@ngtools/webpack');
 const UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano                 = require('cssnano');
-
+const CopyWebpackPlugin 			= require('copy-webpack-plugin');
 const commonConfig            = require('./webpack.config.common');
 const helpers                 = require('./helpers');
 
@@ -52,6 +52,11 @@ module.exports = webpackMerge(commonConfig, {
 		new ngw.AngularCompilerPlugin({
 			tsConfigPath: helpers.root('tsconfig.aot.json'),
 			entryModule: helpers.root('src', 'app', 'app.module#AppModule')
-		})
+		}),
+
+		new CopyWebpackPlugin([{
+			from: helpers.root('src', 'fonts'),
+		 	to: './fonts/'
+		}])
 	]
 });

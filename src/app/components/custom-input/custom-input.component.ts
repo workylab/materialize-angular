@@ -4,6 +4,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 const fieldValidation = require('../../fixtures/field-validations.json');
 
 interface defaultProps {
+  autocomplete: string;
   className: string;
   disabled: boolean;
   floatLabel: boolean;
@@ -24,6 +25,7 @@ interface defaultProps {
 })
 export class CustomInputComponent implements OnInit {
   static readonly defaultProps: defaultProps = {
+    autocomplete: 'none',
     className: 'input-control',
     disabled: false,
     floatLabel: true,
@@ -41,6 +43,7 @@ export class CustomInputComponent implements OnInit {
   @Input() onBlur: (value: string) => void;
   @Input() onChange: (value: string) => void;
 
+  @Input() autocomplete: string;
   @Input() className: string;
   @Input() disabled: boolean;
   @Input() errorMessage: string;
@@ -53,6 +56,7 @@ export class CustomInputComponent implements OnInit {
   @Input() type: 'text' | 'password';
   @Input() value: string;
 
+  public _autocomplete: string;
   public _className: string;
   public _disabled: boolean;
   public _floatLabel: boolean;
@@ -80,6 +84,7 @@ export class CustomInputComponent implements OnInit {
     // this.errorMessage = InputValidations[this.type].errorMsg;
     const { defaultProps } = CustomInputComponent;
 
+    this._autocomplete = this.autocomplete || defaultProps.autocomplete;
     this._className = this.className || defaultProps.className;
     this._disabled = getBooleanValue(this.disabled, defaultProps.disabled);
     this._floatLabel = getBooleanValue(this.floatLabel, defaultProps.floatLabel);

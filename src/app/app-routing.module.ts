@@ -4,8 +4,8 @@ import { HomeComponent } from './modules/home/home.component';
 import { NgModule } from '@angular/core';
 
 const appRoutes: Routes = [
-  { component: HomeComponent, path: '' },
-  { component: ContactsComponent, path: 'contact' }
+  { component: HomeComponent, path: 'home' },
+  { component: ContactsComponent, path: '' }
 ];
 
 @NgModule({

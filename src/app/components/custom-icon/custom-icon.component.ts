@@ -4,6 +4,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 interface defaultProps {
   className: string;
   isCircle: boolean;
+  isPointer: boolean;
   name: string;
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
@@ -16,6 +17,7 @@ export class CustomIconComponent implements OnInit {
   static readonly defaultProps: defaultProps = {
     className: 'icon',
     isCircle: false,
+    isPointer: false,
     name: '',
     size: 'sm'
   };
@@ -24,10 +26,12 @@ export class CustomIconComponent implements OnInit {
 
   @Input() className: string;
   @Input() isCircle: boolean;
+  @Input() isPointer: boolean;
   @Input() name: string;
   @Input() size: string;
 
   public _className: string;
+  public _isPointer: boolean;
   public _isCircle: boolean;
   public _name: string;
   public _size: string;
@@ -41,24 +45,29 @@ export class CustomIconComponent implements OnInit {
     const classNameBase = this.className || defaultProps.className;
 
     this._isCircle = getBooleanValue(this.isCircle, defaultProps.isCircle);
+    this._isPointer = this.isPointer || defaultProps.isPointer;
     this._name = this.name || defaultProps.name;
     this._size = this.size || defaultProps.size;
 
-    this._className = this.getClassName(classNameBase, this._isCircle, this._size, this._name);
+    this._className = this.getClassName(classNameBase);
   }
 
-  getClassName(classNameBase: string, isCircle: boolean, size: string, name: string) {
+  getClassName(classNameBase: string) {
     const classNames = [classNameBase];
 
-    if (name) {
+    if (this._name) {
       classNames.push(`icon-${ this._name }`);
     }
 
-    if (size) {
+    if (this._size) {
       classNames.push(`icon-${ this._size }`);
     }
 
-    if (isCircle) {
+    if (this._isPointer) {
+      classNames.push('icon-pointer');
+    }
+
+    if (this._isCircle) {
       classNames.push('icon-circle');
     }
 
