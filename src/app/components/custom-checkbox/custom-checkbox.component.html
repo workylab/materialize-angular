@@ -1,7 +1,12 @@
 <div class="form-control-group">
   <input
-    (input)="onCheckboxChange($event);"
+    [class.error]="!_isValid && _required && _isTouched"
+
+    (blur)="onCheckboxBlur()"
+    (input)="onCheckboxChange($event)"
+
     [checked]="_value"
+    [disabled]="_disabled"
     [ngClass]="_className"
     [id]="_name"
     type="checkbox"

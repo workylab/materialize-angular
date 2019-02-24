@@ -8,6 +8,7 @@ export class CustomTextAreaComponent implements OnInit {
   static readonly defaultProps = {
     className: 'form-control',
     disabled: false,
+    isTouched: false,
     label: '',
     maxLength: 500,
     minLength: 5,
@@ -56,22 +57,22 @@ export class CustomTextAreaComponent implements OnInit {
     this._placeholder = this.placeholder || defaultProps.placeholder;
     this._value = this.value || defaultProps.value;
 
-    this._isTouched = false;
+    this._isTouched = defaultProps.isTouched;
     this._isValid = this.validate(this._value);
   }
 
-  onTextAreaBlur() {
+  onTextAreaBlur(): void {
     this._isTouched = true;
   }
 
-  onTextAreaChange(event: any) {
+  onTextAreaChange(event: any): void {
     const { value } = event.target;
 
     this._isValid = this.validate(value);
     this._value = value;
   }
 
-  validate(value: string) {
+  validate(value: string): boolean {
     const size = value
       ? value.length
       : 0;

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { isBoolean } from '../../utils/is-boolean.util';
+import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 const fieldValidation = require('../../fixtures/field-validations.json');
 
@@ -11,6 +11,7 @@ export class CustomInputComponent implements OnInit {
   static readonly defaultProps = {
     className: 'form-control',
     disabled: false,
+    isTouched: false,
     label: '',
     maxLength: 500,
     placeholder: '',
@@ -52,28 +53,24 @@ export class CustomInputComponent implements OnInit {
     this.initValues();
   }
 
-  initValues() {
+  initValues(): void {
     // this.errorMessage = InputValidations[this.type].errorMsg;
     const { defaultProps } = CustomInputComponent;
 
     this._className = this.className || defaultProps.className;
-    this._disabled = isBoolean(this.disabled)
-      ? this.disabled
-      : defaultProps.disabled;
+    this._disabled = getBooleanValue(this.disabled, defaultProps.disabled);
     this._label = this.label || defaultProps.label;
     this._maxLength = this.maxLength || defaultProps.maxLength;
     this._placeholder = this.placeholder || defaultProps.placeholder;
-    this._required = isBoolean(this.required)
-      ? this.required
-      : defaultProps.required;
+    this._required = getBooleanValue(this.required, defaultProps.required);
     this._type = this.type || defaultProps.type;
     this._value = this.value || defaultProps.value;
 
     this._isValid = this.validate(this._value, this._required);
-    this._isTouched = false;
+    this._isTouched = defaultProps.isTouched;
   }
 
-  validate(value: string, required: boolean) {
+  validate(value: string, required: boolean): boolean {
     if (!required || (required && this.isValidRegex(value))) {
       return true;
     }
@@ -81,14 +78,14 @@ export class CustomInputComponent implements OnInit {
     return false;
   }
 
-  isValidRegex(value: string) {
+  isValidRegex(value: string): boolean {
     const { regex } = fieldValidation[this.type];
     const customRegex = new RegExp(regex);
 
     return customRegex.test(value);
   }
 
-  onInputBlur(event: any) {
+  onInputBlur(event: any): void {
     const { value } = event.target;
 
     this._isTouched = true;
@@ -98,7 +95,7 @@ export class CustomInputComponent implements OnInit {
     }
   }
 
-  onInputChange(event: any) {
+  onInputChange(event: any): void {
     const { value } = event.target;
 
     this._isValid = this.validate(value, this.required);

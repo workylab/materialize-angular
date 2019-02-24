@@ -3,8 +3,8 @@
   <input
     [class.error]="!_isValid && _required && _isTouched"
 
-    (input)="onInputChange($event);"
-    (blur)="onInputBlur($event);"
+    (input)="onInputChange($event)"
+    (blur)="onInputBlur($event)"
 
     [ngClass]="_className"
     [disabled]="_disabled"

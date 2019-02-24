@@ -50,6 +50,14 @@ export class HomeComponent {
     }]
   }
 
+  public selectOptions = [{
+    content: 'Option1',
+    value: '1'
+  }, {
+    content: 'Option2',
+    value: '2'
+  }];
+
   onTableSort(key: string, direction: string) {
   }
 }

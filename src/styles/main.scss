@@ -1,8 +1,14 @@
 @import './reset';
 
 @import './theme/colors';
+@import './theme/fonts';
 @import './theme/metrics';
 @import './theme/shadows';
 
+@import './partials/body';
+
+@import './components/form-radio';
+@import './components/form-checkbox';
 @import './components/forms';
+@import './components/icons';
 @import './components/tables';

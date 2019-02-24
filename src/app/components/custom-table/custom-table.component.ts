@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { CustomTable, CustomTableHeaderCell } from './custom-table.model';
 
 @Component({
@@ -26,13 +26,13 @@ export class CustomTableComponent implements OnInit {
     this.initValues();
   }
 
-  initValues() {
+  initValues(): void {
     const { defaultProps } = CustomTableComponent;
 
     this._title = this.title || defaultProps.title;
   }
 
-  sort(header: CustomTableHeaderCell) {
+  sort(header: CustomTableHeaderCell): void {
     if (this._activeSortedColumn && header.key !== this._activeSortedColumn) {
       this.data.headers.forEach(item => {
         item.direction = null;

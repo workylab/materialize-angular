@@ -24,11 +24,37 @@
   [onTableSort]="onTableSort"
   title="Table Example"
 >
+  <div>esto es un test...</div>
 </custom-table>
 
 <custom-checkbox
   label="Checkbox"
   name="checkbox1"
-  [value]="true"
+  [value]="false"
+  [required]="true"
 >
 </custom-checkbox>
+
+<custom-select
+  label="Selection"
+  [options]="selectOptions"
+  [required]="true"
+  [value]="'1'"
+>
+</custom-select>
+
+<div-tree [classNames]="['row', 'col', 'row2', 'col2']">
+  <custom-checkbox
+    label="Checkbox 2"
+    name="checkbox2"
+    [value]="true"
+    [required]="true"
+  >
+  </custom-checkbox>
+</div-tree>
+
+<custom-radio
+  [required]="true"
+  [options]="selectOptions"
+>
+</custom-radio>

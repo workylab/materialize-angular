@@ -1,0 +1,14 @@
+<label>{{ _label }}</label>
+<select
+  [ngClass]="_className"
+
+  (blur)="onSelectBlur()"
+  (change)="onSelectChange($event)"
+  [disabled]="_disabled"
+  [required]="_required"
+  [value]="_value"
+>
+  <option [value]="option.value" *ngFor="let option of _options">
+    {{ option.content }}
+  </option>
+</select>

@@ -1,0 +1,17 @@
+<div class="form-radio-container">
+  <div [ngClass]="'radio-item'" *ngFor="let option of options; let i = index">
+    <input
+      (blur)="onRadioBlur()"
+      (change)="onRadioChange(option)"
+
+      [ngClass]="_className"
+      [checked]="_value == option.value"
+      [ngClass]=""
+      [disabled]="_disabled"
+      [id]="_id + i"
+      [name]="_name"
+      type="radio"
+    />
+    <label class="form-label" [for]="_id + i">{{ option.content }}</label>
+  </div>
+</div>

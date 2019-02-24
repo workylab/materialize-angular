@@ -8,7 +8,12 @@
       <div class="table-row">
         <div class="table-cell" *ngFor="let header of data.headers">
           {{ header.content }}
-          <span *ngIf="header.canSort" (click)="sort(header)" class="table-head-sort" [class.active]="header.direction">
+          <span
+            class="table-head-sort"
+            *ngIf="header.canSort"
+            (click)="sort(header)"
+            [class.active]="header.direction"
+          >
             {{ header.direction || 'desc' }}
           </span>
         </div>
