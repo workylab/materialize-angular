@@ -42,7 +42,7 @@ module.exports = webpackMerge(commonConfig, {
 	},
 
 	devServer: {
-		contentBase: __dirname + '/src',
+		contentBase: helpers.root('src'),
 		stats: {
 			hash: false,
 			version: false,

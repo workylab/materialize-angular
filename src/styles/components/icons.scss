@@ -1,6 +1,45 @@
-@font-face {
-  font-family: $font-family-primary;
-  font-style: normal;
-  font-weight: $font-weight-thin;
-  src: url('/fonts/material-icons/material-icons.woff2');
+$icons-circle-color: $color-white;
+$icons-circle-bg-color: $color-black;
+
+.icon {
+  display: inline-block;
+  font-family: $font-family-icons;
+
+  &.icon-circle {
+    background-color: $icons-circle-bg-color;
+    border-radius: 50%;
+    color: $color-white;
+    display: inline-block;
+    padding: $space-xxxs;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      color: $icons-circle-color;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.icon-xl {
+  font-size: $icon-xl;
+}
+
+.icon-lg {
+  font-size: $icon-lg;
+}
+
+.icon-md {
+  font-size: $icon-md;
+}
+
+.icon-sm {
+  font-size: $icon-sm;
+}
+
+.icon-xs {
+  font-size: $icon-xs;
 }

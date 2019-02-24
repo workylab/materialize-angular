@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
+import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
 import { CustomRadioComponent } from './custom-radio/custom-radio.component';
 import { CustomSelectComponent } from './custom-select/custom-select.component';
 import { CustomTableComponent } from './custom-table/custom-table.component';
@@ -14,6 +15,7 @@ import { NgModule } from '@angular/core';
     CustomCheckboxComponent,
     CustomIconComponent,
     CustomInputComponent,
+    CustomNavbarComponent,
     CustomRadioComponent,
     CustomSelectComponent,
     CustomTableComponent,
@@ -24,6 +26,7 @@ import { NgModule } from '@angular/core';
     CustomCheckboxComponent,
     CustomIconComponent,
     CustomInputComponent,
+    CustomNavbarComponent,
     CustomRadioComponent,
     CustomSelectComponent,
     CustomTableComponent,
