@@ -1,17 +1,28 @@
-<div class="form-input-group">
-  <label class="form-input-label">{{ _label }}</label>
-  <input
-    [class.error]="!_isValid && _required && _isTouched"
 
-    (input)="onInputChange($event)"
-    (blur)="onInputBlur($event)"
 
-    [ngClass]="_className"
-    [disabled]="_disabled"
-    [maxLength]="_maxLength"
-    [placeholder]="_placeholder"
-    [required]="_required"
-    [type]="_type"
-    [value]="_value"
-  />
+<div class="input-container">
+  <div class="input-icon-container" *ngIf="_iconName">
+    <custom-icon [name]="_iconName" size="md"></custom-icon>
+  </div>
+  <div class="input-field-container"
+    [class.float-label]="_floatLabel"
+    [class.active]="_isFocused || _value.length > 0 || _placeholder"
+    [class.focused]="_isFocused">
+    <label class="input-label">{{ _label }}</label>
+    <input
+      [class.error]="!_isValid && _required && _isTouched"
+  
+      (input)="onInputChange($event)"
+      (blur)="onInputBlur($event)"
+      (focus)="onInputFocus()"
+  
+      [ngClass]="_className"
+      [disabled]="_disabled"
+      [maxLength]="_maxLength"
+      [placeholder]="_placeholder"
+      [required]="_required"
+      [type]="_type"
+      [value]="_value"
+    />
+  </div>  
 </div>

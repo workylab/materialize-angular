@@ -3,14 +3,32 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 const fieldValidation = require('../../fixtures/field-validations.json');
 
+interface defaultProps {
+  className: string;
+  disabled: boolean;
+  floatLabel: boolean;
+  iconName: string;
+  isFocused: boolean;
+  isTouched: boolean;
+  label: string;
+  maxLength: number;
+  placeholder: string;
+  required: boolean;
+  type: string;
+  value: string;
+}
+
 @Component({
   selector: 'custom-input',
   templateUrl: './custom-input.component.html'
 })
 export class CustomInputComponent implements OnInit {
-  static readonly defaultProps = {
-    className: 'form-control',
+  static readonly defaultProps: defaultProps = {
+    className: 'input-control',
     disabled: false,
+    floatLabel: true,
+    iconName: '',
+    isFocused: false,
     isTouched: false,
     label: '',
     maxLength: 500,
@@ -26,6 +44,8 @@ export class CustomInputComponent implements OnInit {
   @Input() className: string;
   @Input() disabled: boolean;
   @Input() errorMessage: string;
+  @Input() floatLabel: boolean;
+  @Input() iconName: string;
   @Input() label: string;
   @Input() maxLength: number;
   @Input() placeholder: string;
@@ -35,7 +55,10 @@ export class CustomInputComponent implements OnInit {
 
   public _className: string;
   public _disabled: boolean;
+  public _floatLabel: boolean;
+  public _iconName: string;
   public _isTouched: boolean;
+  public _isFocused: boolean;
   public _isValid: boolean;
   public _label: string;
   public _maxLength: number;
@@ -59,7 +82,9 @@ export class CustomInputComponent implements OnInit {
 
     this._className = this.className || defaultProps.className;
     this._disabled = getBooleanValue(this.disabled, defaultProps.disabled);
+    this._floatLabel = getBooleanValue(this.floatLabel, defaultProps.floatLabel);
     this._label = this.label || defaultProps.label;
+    this._iconName = this.iconName || defaultProps.iconName;
     this._maxLength = this.maxLength || defaultProps.maxLength;
     this._placeholder = this.placeholder || defaultProps.placeholder;
     this._required = getBooleanValue(this.required, defaultProps.required);
@@ -67,6 +92,7 @@ export class CustomInputComponent implements OnInit {
     this._value = this.value || defaultProps.value;
 
     this._isValid = this.validate(this._value, this._required);
+    this._isFocused = defaultProps.isFocused;
     this._isTouched = defaultProps.isTouched;
   }
 
@@ -89,10 +115,15 @@ export class CustomInputComponent implements OnInit {
     const { value } = event.target;
 
     this._isTouched = true;
+    this._isFocused = false;
 
     if (this.onBlur) {
       this.onBlur(value);
     }
+  }
+
+  onInputFocus() {
+    this._isFocused = true;
   }
 
   onInputChange(event: any): void {

@@ -1,35 +1,3 @@
-.form-input-group {
-  margin-bottom: $space-md;
-  margin-top: $space-xs;
-  position: relative;
-
-  .form-input-label {
-    background: $color-white;
-    color: $color-purple;
-    font-size: 10px;
-    left: $space-xs;
-    padding: 0 $space-xxxs;
-    position: absolute;
-    top: -$space-xxs;
-    z-index: 1;
-  }
-}
-
-.form-label {
-  display: block;
-  width: 100%;
-}
-
-.form-control {
-  background-color: #FFFFFF;
-  border: 1px solid #FF0000;
-  color: #000000;
-  font-size: 12px;
-  outline: none;
-  padding: 6px 8px;
-  width: 100%;
-}
-
 .form-control.outline {
   border: $border-md solid $color-purple;
   border-radius: $radius-sm;

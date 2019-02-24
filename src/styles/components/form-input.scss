@@ -1,0 +1,85 @@
+.input-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: $space-md;
+}
+
+.input-icon-container {
+  margin-right: $space-sm;
+
+  .icon {
+    color: $color-gray-dark;
+  }
+}
+
+.input-field-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+
+  &::after {
+    background-color: $color-purple;
+    bottom: 0;
+    content: '';
+    height: $border-md;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: 250ms ease width;
+    width: 0;
+    z-index: $zindex-level-1;
+  }
+
+  &.focused::after {
+    width: 100%;
+  }
+
+  .input-label {
+    color: $color-gray-dark;
+    display: block;
+    font-size: $font-size-xxxs;
+    margin-bottom: $space-xs;
+    padding-left: $space-sm;
+  }
+
+  &.float-label {
+    .input-label {
+      color: $color-gray-dark;
+      font-size: $font-size-xs;
+      position: absolute;
+      top: 18px;
+      transition: 250ms ease all;
+      z-index: $zindex-level-1;
+    }
+
+    .input-control {
+      padding: $space-lg $space-sm $space-sm $space-sm;
+    }
+  }
+
+  &.active {
+    .input-label {
+      color: $color-purple;
+    }
+
+    &.float-label .input-label {
+      font-size: $font-size-xxxs;
+      top: $space-xs;
+    }
+  }
+}
+
+.input-control {
+  background-color: $color-gray-light;
+  border: 0;
+  border-bottom: $border-sm solid $color-gray-dark;
+  border-radius: $radius-sm $radius-sm 0 0;
+  color: $color-black;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-light;
+  outline: none;
+  padding: $space-sm $space-sm;
+  width: 100%;
+}

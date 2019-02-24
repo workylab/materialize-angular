@@ -1,18 +1,14 @@
 <h1>Home Page.</h1>
 
 <custom-input
-  className="form-control outline"
   label="Text Input"
-  placeholder="Text Input"
+  placeholder="My placeholder"
   required="true"
-  type="text"
 ></custom-input>
 
 <custom-input
   label="Password Input"
-  placeholder="Password Input"
   type="password"
-  value="password input"
 ></custom-input>
 
 <custom-textarea
@@ -34,14 +30,6 @@
   [required]="true"
 >
 </custom-checkbox>
-
-<custom-select
-  label="Selection"
-  [options]="selectOptions"
-  [required]="true"
-  [value]="'1'"
->
-</custom-select>
 
 <div-tree [classNames]="['row', 'col', 'row2', 'col2']">
   <custom-checkbox
@@ -71,4 +59,10 @@
 <custom-icon name="done" size="lg" [isCircle]="true"></custom-icon>
 <custom-icon name="done" size="xl" [isCircle]="true"></custom-icon>
 
-
+<custom-select
+  label="Selection"
+  [options]="selectOptions"
+  [required]="true"
+  [value]="'1'"
+>
+</custom-select>
