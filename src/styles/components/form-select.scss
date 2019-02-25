@@ -1,0 +1,121 @@
+.select-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  width: 100%;
+}
+
+.select-field-container {
+  position: relative;
+  width: 100%;
+
+  &.float-label {
+    .select-field {
+      height: 50px;
+    }
+
+    .select-label {
+      color: $color-gray-dark;
+      font-size: $font-size-xs;
+      position: absolute;
+      top: 18px;
+      transition: 250ms ease all;
+      z-index: $zindex-level-1;
+    }
+  }
+
+  &.focused {
+    .select-field {
+      &::before {
+        transform: rotate(180deg);
+      }
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &.active {
+    .select-label {
+      color: $color-purple;
+    }
+
+    &.float-label .select-label {
+      font-size: $font-size-xxxs;
+      top: $space-xs;
+    }
+  }
+}
+
+.select-field {
+  background-color: $color-gray-light;
+  border: 0;
+  border-bottom: $border-sm solid $color-gray-dark;
+  border-radius: $radius-sm $radius-sm 0 0;
+  color: $color-black;
+  cursor: pointer;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-light;
+  max-width: 100%;
+  outline: none;
+  padding: $space-sm $space-sm;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    border-color: $color-gray-dark transparent;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    content: '';
+    position: absolute;
+    right: $space-sm;
+    top: 22px;
+    transition: transform 250ms ease;
+  }
+
+  &::after {
+    background-color: $color-purple;
+    content: '';
+    height: $border-md;
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    transition: 250ms ease width;
+    width: 0;
+    z-index: $zindex-level-1;
+  }
+
+  .select-value {
+    padding-top: $space-xs;
+  }
+}
+
+.select-menu {
+  background: $color-white;
+  box-shadow: $shadow-md;
+  display: none;
+  left: 0;
+  margin-top: 1px;
+  padding: $space-xs 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: $zindex-level-2;
+
+  &.open {
+    display: block;
+  }
+
+  .select-control-option {
+    color: $color-gray-dark;
+    cursor: pointer;
+    padding: $space-md;
+
+    &:hover {
+      background-color: $color-gray-light;
+    }
+  }
+}

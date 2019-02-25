@@ -1,7 +1,28 @@
-<label>{{ _label }}</label>
-<select
-  [ngClass]="_className"
+<div class="select-container">
+  <div class="select-field-container"
+    [class.active]="_isFocused || _selectedOption"
+    [class.focused]="_isFocused"
+    [class.float-label]="_floatLabel">
+    <div class="select-field" (click)="toggleMenu()">
+      <label class="select-label">{{ _label }}</label>
+      <div class="select-value" *ngIf="_selectedOption">
+        {{ _selectedOption.content }}
+      </div>
+    </div>
+  
+    <div class="select-menu" [class.open]="_isFocused">
+      <div class="select-control-option" (click)="selectOption(null)"></div>
+      <div
+        class="select-control-option"
+        *ngFor="let option of _options"
+        (click)="selectOption(option)">
+        {{ option.content }}
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- <select
   (blur)="onSelectBlur()"
   (change)="onSelectChange($event)"
   [disabled]="_disabled"
@@ -11,4 +32,4 @@
   <option [value]="option.value" *ngFor="let option of _options">
     {{ option.content }}
   </option>
-</select>
+</select> -->
