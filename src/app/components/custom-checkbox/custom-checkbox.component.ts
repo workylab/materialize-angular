@@ -8,7 +8,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 })
 export class CustomCheckboxComponent implements OnInit {
   static readonly defaultProps = {
-    className: 'form-control',
+    className: 'checkbox-control',
     disabled: false,
     isTouched: false,
     label: '',
@@ -77,7 +77,6 @@ export class CustomCheckboxComponent implements OnInit {
   }
 
   onCheckboxBlur(): void {
-    // TODO
     this._isTouched = true;
 
     if (this.onBlur) {

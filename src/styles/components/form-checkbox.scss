@@ -1,42 +1,50 @@
-.form-control[type='checkbox'] {
-  display: none;
+.checkbox-container {
+  .checkbox-control {
+    display: none;
 
-  &:checked + .form-label {
-    &::before {
-      background: $color-purple;
-      border-color: $color-purple;
+    &:checked + .form-label {
+      &::before {
+        background: $color-purple;
+        border-color: $color-purple;
+      }
+
+      &::after {
+        border-bottom: $border-md solid $color-white;
+        border-left: $border-md solid $color-white;
+        border-radius: 2px;
+        content: '';
+        height: 7px;
+        left: 18px;
+        margin-top: -2px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        width: 13px;
+      }
     }
 
-    &::after {
-      border-bottom: $border-md solid $color-white;
-      border-left: $border-md solid $color-white;
-      border-radius: 2px;
-      content: '';
-      height: 7px;
-      left: 2px;
-      position: absolute;
-      top: 6px;
-      transform: rotate(-45deg);
-      width: 13px;
-    }
-  }
-
-  + .form-label {
-    cursor: pointer;
-    padding: $space-xxxs $space-xxxs $space-xxxs $space-xxxl;
-    position: relative;
-
-    &::before {
-      background: $color-white;
-      border: $border-md solid $color-gray-dark;
-      border-radius: 2px;
-      content: '';
+    + .form-label {
+      color: $color-gray-dark;
       cursor: pointer;
-      height: 18px;
-      left: 0;
-      position: absolute;
-      top: 2px;
-      width: 18px;
+      display: block;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-regular;
+      padding: $space-md $space-xxxs $space-md 50px;
+      position: relative;
+
+      &::before {
+        background: $color-white;
+        border: $border-md solid $color-gray-dark;
+        border-radius: $radius-xs;
+        content: '';
+        cursor: pointer;
+        height: 18px;
+        left: $space-md;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+      }
     }
   }
 }
