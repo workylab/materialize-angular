@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormField } from '../custom-form/custom-form.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 interface defaultProps {
@@ -20,7 +21,7 @@ interface defaultProps {
   selector: 'custom-textarea',
   templateUrl: './custom-textarea.component.html'
 })
-export class CustomTextAreaComponent implements OnInit {
+export class CustomTextAreaComponent implements FormField, OnInit {
   static readonly defaultProps: defaultProps = {
     className: 'input-control',
     disabled: false,

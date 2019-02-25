@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
+import { CustomFormComponent } from './custom-form/custom-form.component';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
@@ -14,6 +15,7 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [
     CustomCheckboxComponent,
+    CustomFormComponent,
     CustomIconComponent,
     CustomInputComponent,
     CustomNavbarComponent,
@@ -26,6 +28,7 @@ import { NgModule } from '@angular/core';
   ],
   exports: [
     CustomCheckboxComponent,
+    CustomFormComponent,
     CustomIconComponent,
     CustomInputComponent,
     CustomNavbarComponent,

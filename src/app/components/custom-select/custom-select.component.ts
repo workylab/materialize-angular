@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CustomSelectOption } from './custom-select.model';
+import { FormField } from '../custom-form/custom-form.model';
 
 interface defaultProps {
   className: string;
@@ -17,7 +18,7 @@ interface defaultProps {
   selector: 'custom-select',
   templateUrl: './custom-select.component.html'
 })
-export class CustomSelectComponent implements OnInit, OnDestroy {
+export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
   static readonly defaultProps: defaultProps = {
     className: 'select-control',
     disabled: false,

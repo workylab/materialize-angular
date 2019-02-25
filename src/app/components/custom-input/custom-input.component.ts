@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormField } from '../custom-form/custom-form.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 const fieldValidation = require('../../fixtures/field-validations.json');
@@ -23,7 +24,7 @@ interface defaultProps {
   selector: 'custom-input',
   templateUrl: './custom-input.component.html'
 })
-export class CustomInputComponent implements OnInit {
+export class CustomInputComponent implements FormField, OnInit {
   static readonly defaultProps: defaultProps = {
     autocomplete: 'none',
     className: 'input-control',
@@ -110,7 +111,7 @@ export class CustomInputComponent implements OnInit {
   }
 
   isValidRegex(value: string): boolean {
-    const { regex } = fieldValidation[this.type];
+    const { regex } = fieldValidation[this._type];
     const customRegex = new RegExp(regex);
 
     return customRegex.test(value);

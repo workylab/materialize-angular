@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CustomRadioOption } from './custom.radio.model';
+import { FormField } from '../custom-form/custom-form.model';
 import { generateUid } from '../../utils/generate-uid.util';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -16,7 +17,7 @@ interface defaultProps {
   selector: 'custom-radio',
   templateUrl: './custom-radio.component.html'
 })
-export class CustomRadioComponent implements OnInit {
+export class CustomRadioComponent implements FormField, OnInit {
   static readonly defaultProps: defaultProps = {
     className: 'form-control',
     disabled: false,

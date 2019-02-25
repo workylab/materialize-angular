@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormField } from '../custom-form/custom-form.model';
 import { generateUid } from '../../utils/generate-uid.util';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -6,7 +7,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   selector: 'custom-checkbox',
   templateUrl: './custom-checkbox.component.html'
 })
-export class CustomCheckboxComponent implements OnInit {
+export class CustomCheckboxComponent implements FormField, OnInit {
   static readonly defaultProps = {
     className: 'checkbox-control',
     disabled: false,
