@@ -1,18 +1,17 @@
-<div class="input-container">
-  <div class="input-icon-container" *ngIf="_iconName">
-    <custom-icon [name]="_iconName" size="md"></custom-icon>
-  </div>
-  <div class="input-field-container"
+<custom-form-group [iconName]="_iconName" [className]="_className">
+  <div class="form-field-container"
     [class.float-label]="_floatLabel"
     [class.active]="_isFocused || _value.length > 0 || _placeholder"
-    [class.focused]="_isFocused">
-    <label class="input-label">{{ _label }}</label>
-    <textarea
+    [class.focused]="_isFocused"
+    [class.disabled]="_disabled">
+
+    <label class="form-label">{{ _label }}</label>
+
+    <textarea class="form-control"
       (blur)="onTextAreaBlur()"
       (focus)="onTextAreaFocus()"
       (input)="onTextAreaChange($event)"
 
-      [ngClass]="_className"
       [disabled]="_disabled"
       [maxLength]="_maxLength"
       [minLength]="_minLength"  
@@ -21,4 +20,4 @@
       [value]="_value">
     </textarea>
   </div>
-</div>
+</custom-form-group>

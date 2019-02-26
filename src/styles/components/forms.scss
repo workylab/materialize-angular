@@ -1,8 +1,101 @@
-.form-control.outline {
-  border: $border-md solid $color-purple;
-  border-radius: $radius-sm;
+.form-group-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+}
 
-  &.error {
-    border-color: $color-red;
+.form-icon-container {
+  margin-right: $space-sm;
+
+  .icon {
+    color: $color-gray-dark;
+  }
+}
+
+.form-label {
+  color: $color-gray-dark;
+  display: block;
+  font-size: $font-size-xxxs;
+  margin-bottom: $space-xs;
+  padding-left: $space-sm;
+}
+
+.form-control {
+  background-color: $color-gray-light;
+  border: 0;
+  border-bottom: $border-sm solid $color-gray-dark;
+  border-radius: $radius-sm $radius-sm 0 0;
+  color: $color-black;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-light;
+  max-width: 100%;
+  outline: none;
+  padding: $space-sm $space-sm;
+  resize: vertical;
+  width: 100%;
+}
+
+.form-field-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  outline: none;
+  position: relative;
+
+  &::after {
+    background-color: $color-purple;
+    bottom: 0;
+    content: '';
+    height: $border-md;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: 250ms ease width;
+    width: 0;
+    z-index: $zindex-level-1;
+  }
+}
+
+.form-field-container.float-label {
+  .form-label {
+    color: $color-gray-dark;
+    font-size: $font-size-xs;
+    position: absolute;
+    top: 18px;
+    transition: 250ms ease all;
+    z-index: $zindex-level-1;
+  }
+
+  .form-control {
+    height: 50px;
+    padding-top: $space-lg;
+  }
+}
+
+.form-field-container.focused::after {
+  width: 100%;
+}
+
+.form-field-container.focused,
+.form-field-container.active {
+  .form-label {
+    color: $color-purple;
+  }
+
+  &.float-label .form-label {
+    font-size: $font-size-xxxs;
+    top: $space-xs;
+  }
+}
+
+.form-field-container.disabled {
+  .form-label {
+    color: $color-gray;
+  }
+
+  .form-control {
+    border-bottom-color: $color-gray-light;
+    cursor: not-allowed;
   }
 }

@@ -27,7 +27,7 @@ interface defaultProps {
 export class CustomInputComponent implements FormField, OnInit {
   static readonly defaultProps: defaultProps = {
     autocomplete: 'none',
-    className: 'input-control',
+    className: '',
     disabled: false,
     floatLabel: true,
     iconName: '',

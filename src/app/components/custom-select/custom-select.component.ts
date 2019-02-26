@@ -6,7 +6,9 @@ interface defaultProps {
   className: string;
   disabled: boolean;
   floatLabel: boolean;
+  iconName: string;
   isFocused: boolean;
+  isOpen: boolean;
   isTouched: boolean;
   label: string;
   options: Array<CustomSelectOption>;
@@ -18,12 +20,14 @@ interface defaultProps {
   selector: 'custom-select',
   templateUrl: './custom-select.component.html'
 })
-export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
+export class CustomSelectComponent implements FormField, OnInit {
   static readonly defaultProps: defaultProps = {
-    className: 'select-control',
+    className: '',
     disabled: false,
     floatLabel: true,
+    iconName: '',
     isFocused: false,
+    isOpen: false,
     isTouched: false,
     label: '',
     options: [],
@@ -36,6 +40,7 @@ export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
   @Input() className: string;
   @Input() disabled: boolean;
   @Input() floatLabel: boolean;
+  @Input() iconName: string;
   @Input() label: string;
   @Input() options: Array<CustomSelectOption>;
   @Input() required: boolean;
@@ -44,7 +49,9 @@ export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
   public _className: string;
   public _disabled: boolean;
   public _floatLabel: boolean;
+  public _iconName: string;
   public _isFocused: boolean;
+  public _isOpen: boolean;
   public _isTouched: boolean;
   public _isValid: boolean;
   public _label: string;
@@ -59,12 +66,6 @@ export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
 
   ngOnInit() {
     this.initValues();
-
-    document.addEventListener('click', this.closeMenu, false);
-  }
-
-  ngOnDestroy() {
-    document.removeEventListener('click', this.closeMenu, false);
   }
 
   initValues() {
@@ -73,6 +74,7 @@ export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
     this._className = this.className || defaultProps.className;
     this._disabled = this.disabled || defaultProps.disabled;
     this._floatLabel = this.floatLabel || defaultProps.floatLabel;
+    this._iconName = this.iconName || defaultProps.iconName;
     this._label = this.label || defaultProps.label;
     this._options = this.options || defaultProps.options;
     this._required = this.required || defaultProps.required;
@@ -109,12 +111,9 @@ export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
     return null;
   }
 
-  toggleMenu() {
-    this._isFocused = !this._isFocused;
-    this._isTouched = true;
-  }
+  selectOption(event: any, selectedOption: CustomSelectOption) {
+    event.stopImmediatePropagation();
 
-  selectOption(selectedOption: CustomSelectOption) {
     this._selectedOption = selectedOption;
 
     this._value = selectedOption
@@ -123,19 +122,20 @@ export class CustomSelectComponent implements FormField, OnInit, OnDestroy {
 
     this._isValid = this.validate(this._value, this._required);
 
-    this._isTouched = true;
-    this._isFocused = false;
+    this.closeMenu();
 
     if (this.onChange) {
       this.onChange(selectedOption);
     }
   }
 
-  closeMenu(event: any) {
-    const { target } = event;
+  openMenu() {
+    this._isFocused = true;
+    this._isTouched = true;
+  }
 
-    if (!target.closest('.select-field')) {
-      this._isFocused = false;
-    }
+  closeMenu() {
+    this._isFocused = false;
+    this._isOpen = false;
   }
 }

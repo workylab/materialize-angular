@@ -8,10 +8,11 @@ navbar content
 
 <custom-form>
   <custom-input iconName="person" label="Name" [required]="true"></custom-input>
+  <custom-select iconName="map" label="State" [options]="stateOptions"></custom-select>
+  <custom-autocomplete iconName="map" label="State" [options]="stateOptions"></custom-autocomplete>
   <custom-input iconName="phone" label="Phone" placeholder="+1 412 000 0000"></custom-input>
   <custom-checkbox label="House phone"></custom-checkbox>
   <custom-checkbox label="Work phone"></custom-checkbox>
-  <custom-select label="State" [options]="stateOptions"></custom-select>
   <custom-input iconName="email" label="Email" [disabled]="true"></custom-input>
   <custom-input iconName="person" label="Name" [floatLabel]="false"></custom-input>
   <custom-textarea iconName="message" label="Message"></custom-textarea>

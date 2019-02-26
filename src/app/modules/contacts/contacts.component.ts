@@ -16,6 +16,9 @@ export class ContactsComponent {
     ];
 
     this.stateOptions = [{
+      content: null,
+      value: null
+    }, {
       content: 'Alabama',
       value: 'AL'
     }, {

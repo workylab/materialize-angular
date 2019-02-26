@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
+import { CustomAutocompleteComponent } from './custom-autocomplete/custom-autocomplete.component';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
+import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
@@ -14,8 +16,10 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
+    CustomAutocompleteComponent,
     CustomCheckboxComponent,
     CustomFormComponent,
+    CustomFormGroupComponent,
     CustomIconComponent,
     CustomInputComponent,
     CustomNavbarComponent,
@@ -27,8 +31,10 @@ import { NgModule } from '@angular/core';
     DivTreeComponent
   ],
   exports: [
+    CustomAutocompleteComponent,
     CustomCheckboxComponent,
     CustomFormComponent,
+    CustomFormGroupComponent,
     CustomIconComponent,
     CustomInputComponent,
     CustomNavbarComponent,

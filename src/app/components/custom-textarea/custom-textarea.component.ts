@@ -23,7 +23,7 @@ interface defaultProps {
 })
 export class CustomTextAreaComponent implements FormField, OnInit {
   static readonly defaultProps: defaultProps = {
-    className: 'input-control',
+    className: '',
     disabled: false,
     floatLabel: true,
     iconName: '',

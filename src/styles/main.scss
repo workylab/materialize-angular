@@ -1,5 +1,7 @@
 @import './reset';
 
+@import './mixins/color-opacity';
+
 @import './theme/colors';
 @import './theme/fonts';
 @import './theme/metrics';
@@ -8,8 +10,8 @@
 @import './partials/body';
 
 @import './components/fonts';
+@import './components/form-autocomplete';
 @import './components/form-checkbox';
-@import './components/form-input';
 @import './components/form-radio';
 @import './components/form-select';
 @import './components/forms';

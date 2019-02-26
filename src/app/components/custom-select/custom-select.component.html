@@ -1,26 +1,31 @@
-<div class="select-container">
-  <div class="select-field-container"
-    [class.active]="_isFocused || _selectedOption"
+<custom-form-group [iconName]="_iconName" [className]="_className">
+  <div class="form-field-container select-container"
+    tabindex="0"
+
+    (focus)="openMenu()"
+    (blur)="closeMenu($event)"
+    (click)="openMenu()"
+
+    [class.active]="_isFocused || (_selectedOption && _selectedOption.content)"
     [class.focused]="_isFocused"
     [class.float-label]="_floatLabel">
-    <div class="select-field" (click)="toggleMenu()">
-      <label class="select-label">{{ _label }}</label>
-      <div class="select-value" *ngIf="_selectedOption">
-        {{ _selectedOption.content }}
-      </div>
+
+    <label class="form-label">{{ _label }}</label>
+    
+    <div class="form-control">
+      {{ _selectedOption ? _selectedOption.content : '' }}
     </div>
   
     <div class="select-menu" [class.open]="_isFocused">
-      <div class="select-control-option" (click)="selectOption(null)"></div>
-      <div
-        class="select-control-option"
+      <div class="select-option"
         *ngFor="let option of _options"
-        (click)="selectOption(option)">
+        [class.active]="_value === option.value"
+        (click)="selectOption($event, option)">
         {{ option.content }}
       </div>
     </div>
   </div>
-</div>
+</custom-form-group>
 
 <!-- <select
   (blur)="onSelectBlur()"

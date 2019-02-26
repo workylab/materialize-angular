@@ -4,22 +4,31 @@
     [class.active]="_isFocused || _value.length > 0 || _placeholder"
     [class.focused]="_isFocused"
     [class.disabled]="_disabled"
-    [class.error]="!_isValid && _isTouched">
+    #formFieldContainer>
 
     <label class="form-label">{{ _label }}</label>
 
     <input class="form-control"
-      (input)="onInputChange($event)"
-      (blur)="onInputBlur($event)"
-      (focus)="onInputFocus()"
+      autocomplete="none"
+      type="text"
 
-      [autocomplete]="_autocomplete"
+      (input)="onInputChange($event)"
+      (focus)="onInputFocus($event)"
+
       [disabled]="_disabled"
       [maxLength]="_maxLength"
       [placeholder]="_placeholder"
       [required]="_required"
-      [type]="_type"
-      [value]="_value"
+      [value]="_value"      
     />
-  </div>
+
+    <div class="select-menu" [class.open]="_isFocused">
+      <div class="select-option"
+        *ngFor="let option of _options"
+        [class.active]="_value === option.content"
+        (click)="selectOption(option.content)">
+        {{ option.content }}
+      </div>
+    </div>
+  </div>  
 </custom-form-group>
