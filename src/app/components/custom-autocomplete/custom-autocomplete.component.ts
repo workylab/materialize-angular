@@ -99,6 +99,14 @@ export class CustomAutocompleteComponent implements FormField, OnInit, OnDestroy
     }
   }
 
+  onInputBlur(event: any) {
+    const { relatedTarget } = event;
+
+    if (relatedTarget) {
+      this.closeMenu();
+    }
+  }
+
   closeMenu() {
     this._isFocused = false;
     this._isOpen = false;
