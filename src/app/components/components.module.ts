@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { CustomAutocompleteComponent } from './custom-autocomplete/custom-autocomplete.component';
+import { CustomCalendarComponent } from './custom-calendar/custom-calendar.component';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
+import { CustomDatePickerComponent } from './custom-datepicker/custom-datepicker.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
 import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
@@ -17,7 +19,9 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [
     CustomAutocompleteComponent,
+    CustomCalendarComponent,
     CustomCheckboxComponent,
+    CustomDatePickerComponent,
     CustomFormComponent,
     CustomFormGroupComponent,
     CustomIconComponent,
@@ -32,7 +36,9 @@ import { NgModule } from '@angular/core';
   ],
   exports: [
     CustomAutocompleteComponent,
+    CustomCalendarComponent,
     CustomCheckboxComponent,
+    CustomDatePickerComponent,
     CustomFormComponent,
     CustomFormGroupComponent,
     CustomIconComponent,

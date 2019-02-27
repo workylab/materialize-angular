@@ -1,25 +1,164 @@
-<h1>Home Page.</h1>
+<h3>Simple Input</h3>
+<custom-input></custom-input>
 
-<custom-input
-  label="Text Input"
-  placeholder="My placeholder"
-  required="true"
-></custom-input>
+<h3>Simple Input with value</h3>
+<custom-input value="My value"></custom-input>
 
-<custom-input
-  label="Password Input"
-  type="password"
-></custom-input>
+<h3>Label Input</h3>
+<custom-input label="Label" [floatLabel]="false"></custom-input>
 
-<custom-textarea
-  label="Text area"
->
-</custom-textarea>
-<custom-table
-  [data]="tableData"
-  [onTableSort]="onTableSort"
-  title="Table Example"
->
+<h3>Float Label Input</h3>
+<custom-input label="Label"></custom-input>
+
+<h3>Password Input</h3>
+<custom-input type="password"></custom-input>
+
+<h3>Icon Input</h3>
+<custom-input iconName="email"></custom-input>
+
+<h3>Disabled Input</h3>
+<custom-input [disabled]="true"></custom-input>
+
+<h3>Disabled Input with value</h3>
+<custom-input [disabled]="true" value="My value"></custom-input>
+
+<h3>Placeholder Input</h3>
+<custom-input placeholder="Write here"></custom-input>
+
+<h3>Placeholder Input With Label</h3>
+<custom-input placeholder="Write here" label="Label" [floatLabel]="false"></custom-input>
+
+<h3>Placeholder Input With Float Label</h3>
+<custom-input placeholder="Write here" label="Label"></custom-input>
+
+<br />
+<br />
+<br />
+
+<h3>Simple Select</h3>
+<custom-select [options]="selectOptions"></custom-select>
+
+<h3>Simple Select with value</h3>
+<custom-select [options]="selectOptions" value="2"></custom-select>
+
+<h3>Label Select</h3>
+<custom-select label="Label" [options]="selectOptions" [floatLabel]="false"></custom-select>
+
+<h3>Float Label Select</h3>
+<custom-select label="Label" [options]="selectOptions"></custom-select>
+
+<h3>Icon Select</h3>
+<custom-select iconName="map" [options]="selectOptions"></custom-select>
+
+<h3>Disabled Select</h3>
+<custom-select [disabled]="true" [options]="selectOptions"></custom-select>
+
+<h3>Disabled Select with value</h3>
+<custom-select [disabled]="true" [options]="selectOptions" value="2"></custom-select>
+
+<br />
+<br />
+<br />
+
+<h3>Simple Autocomplete</h3>
+<custom-autocomplete [options]="selectOptions"></custom-autocomplete>
+
+<h3>Simple Autocomplete with value</h3>
+<custom-autocomplete [options]="selectOptions" value="Option2"></custom-autocomplete>
+
+<h3>Label Autocomplete</h3>
+<custom-autocomplete [options]="selectOptions" label="Label" [floatLabel]="false"></custom-autocomplete>
+
+<h3>Float Label Autocomplete</h3>
+<custom-autocomplete [options]="selectOptions" label="Label"></custom-autocomplete>
+
+<h3>Icon Autocomplete</h3>
+<custom-autocomplete iconName="map" [options]="selectOptions"></custom-autocomplete>
+
+<h3>Disabled Autocomplete</h3>
+<custom-autocomplete [disabled]="true" [options]="selectOptions"></custom-autocomplete>
+
+<h3>Disabled Autocomplete with value</h3>
+<custom-autocomplete [disabled]="true" [options]="selectOptions" value="Option2"></custom-autocomplete>
+
+<br />
+<br />
+<br />
+
+<h3>Simple TextArea</h3>
+<custom-textarea></custom-textarea>
+
+<h3>Simple TextArea with value</h3>
+<custom-textarea value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></custom-textarea>
+
+<h3>Label TextArea</h3>
+<custom-textarea label="Label" [floatLabel]="false"></custom-textarea>
+
+<h3>Float Label TextArea</h3>
+<custom-textarea label="Label"></custom-textarea>
+
+<h3>Icon TextArea</h3>
+<custom-textarea iconName="email"></custom-textarea>
+
+<h3>Disabled TextArea</h3>
+<custom-textarea [disabled]="true"></custom-textarea>
+
+<h3>Placeholder TextArea</h3>
+<custom-textarea placeholder="Write here"></custom-textarea>
+
+<h3>Placeholder Input With Label</h3>
+<custom-textarea placeholder="Write here" label="Label" [floatLabel]="false"></custom-textarea>
+
+<h3>Placeholder Input With Float Label</h3>
+<custom-textarea placeholder="Write here" label="Label"></custom-textarea>
+
+<br />
+<br />
+<br />
+
+<h3>Simple Datepicker</h3>
+<custom-datepicker></custom-datepicker>
+
+<br />
+<br />
+<br />
+
+<h3>Simple Icon XS</h3>
+<custom-icon name="done" size="xs"></custom-icon>
+
+<h3>Simple Icon SM</h3>
+<custom-icon name="done" size="sm"></custom-icon>
+
+<h3>Simple Icon MD</h3>
+<custom-icon name="done" size="md"></custom-icon>
+
+<h3>Simple Icon LG</h3>
+<custom-icon name="done" size="lg"></custom-icon>
+
+<h3>Simple Icon XL</h3>
+<custom-icon name="done" size="xl"></custom-icon>
+
+<h3>Circle Icon XS</h3>
+<custom-icon name="done" size="xs" [isCircle]="true"></custom-icon>
+
+<h3>Circle Icon SM</h3>
+<custom-icon name="done" size="sm" [isCircle]="true"></custom-icon>
+
+<h3>Circle Icon MD</h3>
+<custom-icon name="done" size="md" [isCircle]="true"></custom-icon>
+
+<h3>Circle Icon LG</h3>
+<custom-icon name="done" size="lg" [isCircle]="true"></custom-icon>
+
+<h3>Circle Icon XL</h3>
+<custom-icon name="done" size="xl" [isCircle]="true"></custom-icon>
+
+<br />
+<br />
+<br />
+
+<h3>Table</h3>
+<custom-table [data]="tableData" [onTableSort]="onTableSort" title="Table Example">
   <div>esto es un test...</div>
 </custom-table>
 
@@ -47,22 +186,5 @@
 >
 </custom-radio>
 
-<custom-icon name="done" size="xs"></custom-icon>
-<custom-icon name="done" size="sm"></custom-icon>
-<custom-icon name="done" size="md"></custom-icon>
-<custom-icon name="done" size="lg"></custom-icon>
-<custom-icon name="done" size="xl"></custom-icon>
 
-<custom-icon name="done" size="xs" [isCircle]="true"></custom-icon>
-<custom-icon name="done" size="sm" [isCircle]="true"></custom-icon>
-<custom-icon name="done" size="md" [isCircle]="true"></custom-icon>
-<custom-icon name="done" size="lg" [isCircle]="true"></custom-icon>
-<custom-icon name="done" size="xl" [isCircle]="true"></custom-icon>
 
-<custom-select
-  label="Selection"
-  [options]="selectOptions"
-  [required]="true"
-  [value]="'1'"
->
-</custom-select>

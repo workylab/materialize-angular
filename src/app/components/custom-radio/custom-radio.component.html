@@ -4,14 +4,14 @@
       (blur)="onRadioBlur()"
       (change)="onRadioChange(option)"
 
-      [ngClass]="_className"
-      [checked]="_value == option.value"
+      [ngClass]="className"
+      [checked]="value === option.value"
       [ngClass]=""
-      [disabled]="_disabled"
-      [id]="_id + i"
-      [name]="_name"
+      [disabled]="disabled"
+      [id]="id + i"
+      [name]="name"
       type="radio"
     />
-    <label class="form-label" [for]="_id + i">{{ option.content }}</label>
+    <label class="form-label" [for]="id + i">{{ option.content }}</label>
   </div>
 </div>

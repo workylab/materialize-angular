@@ -1,32 +1,55 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { CustomAutocomplete } from './custom-autocomplete.model';
 import { CustomSelectOption } from '../custom-select/custom-select.model';
-import { FormField } from '../custom-form/custom-form.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   selector: 'custom-autocomplete',
   templateUrl: './custom-autocomplete.component.html'
 })
-export class CustomAutocompleteComponent implements FormField, OnInit, OnDestroy {
+export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit, OnDestroy {
+  static readonly defaultProps: CustomAutocomplete = {
+    className: '',
+    disabled: false,
+    floatLabel: true,
+    iconName: '',
+    isFocused: false,
+    isTouched: false,
+    isValid: false,
+    label: '',
+    maxLength: 200,
+    name: '',
+    options: [],
+    placeholder: '',
+    required: false,
+    value: ''
+  };
+
   @ViewChild('formFieldContainer') fieldContainer: ElementRef;
 
-  @Input() floatLabel: boolean;
-  @Input() iconName: string;
-  @Input() label: string;
-  @Input() options: Array<CustomSelectOption>;
-  @Input() value: string;
+  @Input('disabled') disabledInput: boolean;
+  @Input('floatLabel') floatLabelInput: boolean;
+  @Input('iconName') iconNameInput: string;
+  @Input('label') labelInput: string;
+  @Input('maxLength') maxLengthInput: number;
+  @Input('options') optionsInput: Array<CustomSelectOption>;
+  @Input('placeholder') placeholderInput: string;
+  @Input('value') valueInput: string;
 
-  public _floatLabel: boolean;
-  public _iconName: string;
-  public _isFocused: boolean;
-  public _isOpen: boolean;
-  public _isTouched: boolean;
-  public _isValid: boolean;
-  public _label: string;
-  public _maxLength: number;
-  public _options: Array<CustomSelectOption>;
-  public _placeholder: string;
-  public _value: string;
+  public className: string;
+  public disabled: boolean;
+  public floatLabel: boolean;
+  public iconName: string;
+  public isFocused: boolean;
+  public isTouched: boolean;
+  public isValid: boolean;
+  public label: string;
+  public maxLength: number;
+  public name: string;
+  public options: Array<CustomSelectOption>;
+  public placeholder: string;
+  public required: boolean;
+  public value: string;
 
   constructor() {
     this.closeMenuListener = this.closeMenuListener.bind(this);
@@ -43,36 +66,39 @@ export class CustomAutocompleteComponent implements FormField, OnInit, OnDestroy
   }
 
   initValues() {
-    this._floatLabel = getBooleanValue(this.floatLabel, true);
-    this._iconName = this.iconName;
-    this._label = this.label;
-    this._maxLength = 100;
-    this._options = this.options;
-    this._placeholder = '';
-    this._value = '';
+    const { defaultProps } = CustomAutocompleteComponent;
+
+    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.label = this.labelInput || defaultProps.label;
+    this.maxLength = this.maxLengthInput || defaultProps.maxLength;
+    this.placeholder = this.placeholderInput || defaultProps.placeholder;
+    this.value = this.valueInput || defaultProps.value;
+
+    this.options = this.filterOptions(this.value);
   }
 
   onInputFocus(event: any) {
     event.stopPropagation();
     event.stopImmediatePropagation();
 
-    this._isFocused = true;
-    this._isOpen = true;
-    this._isTouched = true;
+    this.isFocused = true;
+    this.isTouched = true;
   }
 
   onInputChange(event: any) {
     const { value } = event.target;
 
-    this.filterOptions(value);
-    this._value = value;
+    this.options = this.filterOptions(value);
+    this.value = value;
   }
 
-  filterOptions(value: string) {
+  filterOptions(value: string): Array<CustomSelectOption> {
     const validValue = value || '';
     const valueLowerCase = validValue.toLowerCase();
 
-    this._options = this.options.filter(item => {
+    return this.optionsInput.filter(item => {
       const content = item.content || '';
       const contentLowerCase = content.toLowerCase();
 
@@ -83,9 +109,7 @@ export class CustomAutocompleteComponent implements FormField, OnInit, OnDestroy
   }
 
   selectOption(value: string) {
-    // this._isValid = this.validate(this._value, this._required);
-
-    this._value = value || '';
+    this.value = value || '';
     this.closeMenu();
   }
 
@@ -108,12 +132,11 @@ export class CustomAutocompleteComponent implements FormField, OnInit, OnDestroy
   }
 
   closeMenu() {
-    this._isFocused = false;
-    this._isOpen = false;
+    this.isFocused = false;
   }
 
   openMenu() {
-    this._isFocused = true;
-    this._isTouched = true;
+    this.isFocused = true;
+    this.isTouched = true;
   }
 }

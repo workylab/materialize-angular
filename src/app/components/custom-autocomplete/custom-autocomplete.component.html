@@ -1,12 +1,12 @@
-<custom-form-group [iconName]="_iconName" [className]="_className">
+<custom-form-group [iconName]="iconName" [className]="className">
   <div class="form-field-container"
-    [class.float-label]="_floatLabel"
-    [class.active]="_isFocused || _value.length > 0 || _placeholder"
-    [class.focused]="_isFocused"
-    [class.disabled]="_disabled"
+    [class.float-label]="floatLabel && label"
+    [class.active]="value || placeholder"
+    [class.focused]="isFocused"
+    [class.disabled]="disabled"
     #formFieldContainer>
 
-    <label class="form-label">{{ _label }}</label>
+    <label class="form-label" *ngIf="label">{{ label }}</label>
 
     <input class="form-control"
       autocomplete="none"
@@ -16,17 +16,17 @@
       (focus)="onInputFocus($event)"
       (blur)="onInputBlur($event)"
 
-      [disabled]="_disabled"
-      [maxLength]="_maxLength"
-      [placeholder]="_placeholder"
-      [required]="_required"
-      [value]="_value"      
+      [disabled]="disabled"
+      [maxLength]="maxLength"
+      [placeholder]="placeholder"
+      [required]="required"
+      [value]="value"      
     />
 
-    <div class="select-menu" [class.open]="_isFocused">
+    <div class="select-menu" [class.open]="isFocused">
       <div class="select-option"
-        *ngFor="let option of _options"
-        [class.active]="_value === option.content"
+        *ngFor="let option of options"
+        [class.active]="value === option.content"
         (click)="selectOption(option.content)">
         {{ option.content }}
       </div>

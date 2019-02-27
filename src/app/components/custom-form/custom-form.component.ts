@@ -39,10 +39,10 @@ export class CustomFormComponent implements AfterContentInit {
   }
 
   validateForm() {
-    const invalidElements = this._fields.filter((item: FormField) => !item._isValid);
+    const invalidElements = this._fields.filter((item: FormField) => !item.isValid);
 
     if (invalidElements.length > 0) {
-      this._error = invalidElements.map((item: FormField) => item._isValid.toString()).join(', ');
+      this._error = invalidElements.map((item: FormField) => item.isValid.toString()).join(', ');
     } else {
       this._error = 'success';
     }

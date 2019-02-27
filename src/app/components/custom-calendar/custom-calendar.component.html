@@ -1,0 +1,38 @@
+<div class="calendar-container">
+  <div class="calendar-controls-container">
+    <custom-icon
+      name="chevron_left"
+      size="lg"
+      [onClick]="showPrevMonth"
+      [isPointer]="true">
+    </custom-icon>
+    <custom-icon
+      name="chevron_right"
+      size="lg"
+      [onClick]="showNextMonth"
+      [isPointer]="true">
+    </custom-icon>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <td class="day-name-container" *ngFor="let day of days">
+          {{ day }}
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let week of weeks">
+        <td class="day-container"
+          *ngFor="let day of week"
+          [class.current]="day.isCurrent"
+          [class.disabled]="day.isOutOfMonth">
+          <div class="day-content" (click)="selectDay(day)">
+            {{ day.dayNumber }}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

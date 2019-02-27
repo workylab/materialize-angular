@@ -1,4 +1,4 @@
-<custom-form-group [iconName]="_iconName" [className]="_className">
+<custom-form-group [iconName]="iconName" [className]="className">
   <div class="form-field-container select-container"
     tabindex="0"
 
@@ -6,20 +6,21 @@
     (blur)="closeMenu($event)"
     (click)="openMenu()"
 
-    [class.active]="_isFocused || (_selectedOption && _selectedOption.content)"
-    [class.focused]="_isFocused"
-    [class.float-label]="_floatLabel">
+    [class.active]="isFocused || (selectedOption && selectedOption.content)"
+    [class.disabled]="disabled"
+    [class.focused]="isFocused"
+    [class.float-label]="floatLabel && label">
 
-    <label class="form-label">{{ _label }}</label>
+    <label class="form-label" *ngIf="label">{{ label }}</label>
     
     <div class="form-control">
-      {{ _selectedOption ? _selectedOption.content : '' }}
+      {{ selectedOption ? selectedOption.content : '' }}
     </div>
   
-    <div class="select-menu" [class.open]="_isFocused">
+    <div class="select-menu" [class.open]="isFocused">
       <div class="select-option"
-        *ngFor="let option of _options"
-        [class.active]="_value === option.value"
+        *ngFor="let option of options"
+        [class.active]="value === option.value"
         (click)="selectOption($event, option)">
         {{ option.content }}
       </div>
@@ -30,11 +31,11 @@
 <!-- <select
   (blur)="onSelectBlur()"
   (change)="onSelectChange($event)"
-  [disabled]="_disabled"
-  [required]="_required"
-  [value]="_value"
+  [disabled]="disabled"
+  [required]="required"
+  [value]="value"
 >
-  <option [value]="option.value" *ngFor="let option of _options">
+  <option [value]="option.value" *ngFor="let option of options">
     {{ option.content }}
   </option>
 </select> -->

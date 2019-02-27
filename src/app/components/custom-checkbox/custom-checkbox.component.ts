@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomCheckbox } from './custom-checkbox.model';
 import { generateUid } from '../../utils/generate-uid.util';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -7,12 +7,15 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   selector: 'custom-checkbox',
   templateUrl: './custom-checkbox.component.html'
 })
-export class CustomCheckboxComponent implements FormField, OnInit {
-  static readonly defaultProps = {
+export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
+  static readonly defaultProps: CustomCheckbox = {
     className: 'checkbox-control',
     disabled: false,
+    isFocused: false,
     isTouched: false,
+    isValid: false,
     label: '',
+    name: '',
     required: false,
     value: false
   };
@@ -20,21 +23,22 @@ export class CustomCheckboxComponent implements FormField, OnInit {
   @Input() onChange: (value: boolean) => void;
   @Input() onBlur: (value: boolean) => void;
 
-  @Input() className: string;
-  @Input() disabled: boolean;
-  @Input() label: string;
-  @Input() name: string;
-  @Input() required: boolean;
-  @Input() value: boolean;
+  @Input('className') classNameInput: string;
+  @Input('disabled') disabledInput: boolean;
+  @Input('label') labelInput: string;
+  @Input('name') nameInput: string;
+  @Input('required') requiredInput: boolean;
+  @Input('value') valueInput: boolean;
 
-  public _className: string;
-  public _disabled: boolean;
-  public _label: string;
-  public _name: string;
-  public _required: boolean;
-  public _value: boolean;
-  public _isTouched: boolean;
-  public _isValid: boolean;
+  public className: string;
+  public disabled: boolean;
+  public isFocused: boolean;
+  public isTouched: boolean;
+  public isValid: boolean;
+  public label: string;
+  public name: string;
+  public required: boolean;
+  public value: boolean;
 
   ngOnInit() {
     this.initValues();
@@ -43,22 +47,22 @@ export class CustomCheckboxComponent implements FormField, OnInit {
   initValues(): void {
     const { defaultProps } = CustomCheckboxComponent;
 
-    this._className = this.className || defaultProps.className;
-    this._disabled = getBooleanValue(this.disabled, defaultProps.disabled);
-    this._label = this.label || defaultProps.label;
-    this._name = this.name || generateUid();
-    this._required = getBooleanValue(this.required, defaultProps.required);
-    this._value = getBooleanValue(this.value, defaultProps.value);
+    this.className = this.classNameInput || defaultProps.className;
+    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.label = this.labelInput || defaultProps.label;
+    this.name = this.nameInput || generateUid();
+    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
+    this.value = getBooleanValue(this.valueInput, defaultProps.value);
 
-    this._isValid = this.validate(this._value, this._required);
-    this._isTouched = defaultProps.isTouched;
+    this.isValid = this.validate(this.value, this.required);
+    this.isTouched = defaultProps.isTouched;
   }
 
   onCheckboxChange(event: any): void {
     const { checked } = event.target;
 
-    this._isValid = this.validate(checked, this._required);
-    this._value = checked;
+    this.isValid = this.validate(checked, this.required);
+    this.value = checked;
 
     if (this.onChange) {
       this.onChange(checked);
@@ -78,10 +82,10 @@ export class CustomCheckboxComponent implements FormField, OnInit {
   }
 
   onCheckboxBlur(): void {
-    this._isTouched = true;
+    this.isTouched = true;
 
     if (this.onBlur) {
-      this.onBlur(this._value);
+      this.onBlur(this.value);
     }
   }
 }

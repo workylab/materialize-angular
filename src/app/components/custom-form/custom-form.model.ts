@@ -1,4 +1,11 @@
 export interface FormField {
-  _isValid: boolean;
-  value: string | boolean;
+  className: string;
+  disabled: boolean;
+  isFocused: boolean;
+  isTouched: boolean;
+  isValid: boolean;
+  label: string;
+  name: string;
+  required: boolean;
+  value: string | boolean | number;
 }

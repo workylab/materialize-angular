@@ -1,15 +1,23 @@
 .select-container {
   cursor: pointer;
 
-  .form-control::before {
-    border-color: $color-gray-dark transparent;
-    border-style: solid;
-    border-width: 5px 5px 0;
-    content: '';
-    position: absolute;
-    right: $space-sm;
+  .form-control {
+    position: relative;
+
+    &::before {
+      border-color: $color-gray-dark transparent;
+      border-style: solid;
+      border-width: 5px 5px 0;
+      content: '';
+      position: absolute;
+      right: $space-sm;
+      top: 18px;
+      transition: transform 250ms ease;
+    }
+  }
+
+  &.float-label .form-control::before {
     top: 22px;
-    transition: transform 250ms ease;
   }
 }
 

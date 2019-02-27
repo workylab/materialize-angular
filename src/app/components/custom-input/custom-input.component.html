@@ -1,25 +1,25 @@
-<custom-form-group [iconName]="_iconName" [className]="_className">
+<custom-form-group [iconName]="iconName" [className]="className">
   <div class="form-field-container"
-    [class.float-label]="_floatLabel"
-    [class.active]="_isFocused || _value.length > 0 || _placeholder"
-    [class.focused]="_isFocused"
-    [class.disabled]="_disabled"
-    [class.error]="!_isValid && _isTouched">
+    [class.float-label]="floatLabel && label"
+    [class.active]="value || placeholder"
+    [class.focused]="isFocused"
+    [class.disabled]="disabled"
+    [class.error]="!isValid && isTouched">
 
-    <label class="form-label">{{ _label }}</label>
+    <label class="form-label" *ngIf="label">{{ label }}</label>
 
     <input class="form-control"
       (input)="onInputChange($event)"
       (blur)="onInputBlur($event)"
       (focus)="onInputFocus()"
 
-      [autocomplete]="_autocomplete"
-      [disabled]="_disabled"
-      [maxLength]="_maxLength"
-      [placeholder]="_placeholder"
-      [required]="_required"
-      [type]="_type"
-      [value]="_value"
+      [autocomplete]="autocomplete"
+      [disabled]="disabled"
+      [maxLength]="maxLength"
+      [placeholder]="placeholder"
+      [required]="required"
+      [type]="type"
+      [value]="value"
     />
   </div>
 </custom-form-group>

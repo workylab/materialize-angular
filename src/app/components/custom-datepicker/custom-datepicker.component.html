@@ -1,0 +1,11 @@
+<custom-form-group [iconName]="iconName" [className]="className">
+  <div class="form-field-container">
+
+    <label class="form-label" *ngIf="label">{{ label }}</label>
+    <input class="form-control" />
+
+    <div class="datepicker-calendar" [class.open]="isFocused">
+      <custom-calendar></custom-calendar>  
+    </div>
+  </div>
+</custom-form-group>

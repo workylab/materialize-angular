@@ -1,16 +1,16 @@
 <div class="checkbox-container">
   <input
-    [class.error]="!_isValid && _required && _isTouched"
+    [class.error]="!isValid && required && isTouched"
 
     (blur)="onCheckboxBlur()"
     (input)="onCheckboxChange($event)"
 
-    [checked]="_value"
-    [disabled]="_disabled"
-    [ngClass]="_className"
-    [id]="_name"
+    [checked]="value"
+    [disabled]="disabled"
+    [ngClass]="className"
+    [id]="name"
     type="checkbox"
-    [value]="_value"
+    [value]="value"
   />
-  <label class="form-label" [for]="_name" tabindex="0">{{ _label }}</label>
+  <label class="form-label" [for]="name" tabindex="0">{{ label }}</label>
 </div>

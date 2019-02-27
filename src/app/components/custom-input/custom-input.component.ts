@@ -1,31 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomInput } from './custom-input.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
+// TODO
 const fieldValidation = require('../../fixtures/field-validations.json');
-
-interface defaultProps {
-  autocomplete: string;
-  className: string;
-  disabled: boolean;
-  floatLabel: boolean;
-  iconName: string;
-  isFocused: boolean;
-  isTouched: boolean;
-  label: string;
-  maxLength: number;
-  placeholder: string;
-  required: boolean;
-  type: string;
-  value: string;
-}
 
 @Component({
   selector: 'custom-input',
   templateUrl: './custom-input.component.html'
 })
-export class CustomInputComponent implements FormField, OnInit {
-  static readonly defaultProps: defaultProps = {
+export class CustomInputComponent implements CustomInput, OnInit {
+  static readonly defaultProps: CustomInput = {
     autocomplete: 'none',
     className: '',
     disabled: false,
@@ -33,8 +18,10 @@ export class CustomInputComponent implements FormField, OnInit {
     iconName: '',
     isFocused: false,
     isTouched: false,
+    isValid: false,
     label: '',
     maxLength: 500,
+    name: '',
     placeholder: '',
     required: false,
     type: 'text',
@@ -44,33 +31,33 @@ export class CustomInputComponent implements FormField, OnInit {
   @Input() onBlur: (value: string) => void;
   @Input() onChange: (value: string) => void;
 
-  @Input() autocomplete: string;
-  @Input() className: string;
-  @Input() disabled: boolean;
-  @Input() errorMessage: string;
-  @Input() floatLabel: boolean;
-  @Input() iconName: string;
-  @Input() label: string;
-  @Input() maxLength: number;
-  @Input() placeholder: string;
-  @Input() required: boolean;
-  @Input() type: 'text' | 'password';
-  @Input() value: string;
+  @Input('autocomplete') autocompleteInput: string;
+  @Input('className') classNameInput: string;
+  @Input('disabled') disabledInput: boolean;
+  @Input('floatLabel') floatLabelInput: boolean;
+  @Input('iconName') iconNameInput: string;
+  @Input('label') labelInput: string;
+  @Input('maxLength') maxLengthInput: number;
+  @Input('placeholder') placeholderInput: string;
+  @Input('required') requiredInput: boolean;
+  @Input('type') typeInput: 'text' | 'password';
+  @Input('value') valueInput: string;
 
-  public _autocomplete: string;
-  public _className: string;
-  public _disabled: boolean;
-  public _floatLabel: boolean;
-  public _iconName: string;
-  public _isTouched: boolean;
-  public _isFocused: boolean;
-  public _isValid: boolean;
-  public _label: string;
-  public _maxLength: number;
-  public _placeholder: string;
-  public _required: boolean;
-  public _type: string;
-  public _value: string;
+  public autocomplete: string;
+  public className: string;
+  public disabled: boolean;
+  public floatLabel: boolean;
+  public iconName: string;
+  public isTouched: boolean;
+  public isFocused: boolean;
+  public isValid: boolean;
+  public label: string;
+  public maxLength: number;
+  public name: string;
+  public placeholder: string;
+  public required: boolean;
+  public type: string;
+  public value: string;
 
   constructor() {
     this.onInputBlur = this.onInputBlur.bind(this);
@@ -82,24 +69,23 @@ export class CustomInputComponent implements FormField, OnInit {
   }
 
   initValues(): void {
-    // this.errorMessage = InputValidations[this.type].errorMsg;
     const { defaultProps } = CustomInputComponent;
 
-    this._autocomplete = this.autocomplete || defaultProps.autocomplete;
-    this._className = this.className || defaultProps.className;
-    this._disabled = getBooleanValue(this.disabled, defaultProps.disabled);
-    this._floatLabel = getBooleanValue(this.floatLabel, defaultProps.floatLabel);
-    this._label = this.label || defaultProps.label;
-    this._iconName = this.iconName || defaultProps.iconName;
-    this._maxLength = this.maxLength || defaultProps.maxLength;
-    this._placeholder = this.placeholder || defaultProps.placeholder;
-    this._required = getBooleanValue(this.required, defaultProps.required);
-    this._type = this.type || defaultProps.type;
-    this._value = this.value || defaultProps.value;
+    this.autocomplete = this.autocompleteInput || defaultProps.autocomplete;
+    this.className = this.classNameInput || defaultProps.className;
+    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.label = this.labelInput || defaultProps.label;
+    this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.maxLength = this.maxLengthInput || defaultProps.maxLength;
+    this.placeholder = this.placeholderInput || defaultProps.placeholder;
+    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
+    this.type = this.typeInput || defaultProps.type;
+    this.value = this.valueInput || defaultProps.value;
 
-    this._isValid = this.validate(this._value, this._required);
-    this._isFocused = defaultProps.isFocused;
-    this._isTouched = defaultProps.isTouched;
+    this.isFocused = defaultProps.isFocused;
+    this.isTouched = defaultProps.isTouched;
+    this.isValid = this.validate(this.value, this.required);
   }
 
   validate(value: string, required: boolean): boolean {
@@ -111,7 +97,7 @@ export class CustomInputComponent implements FormField, OnInit {
   }
 
   isValidRegex(value: string): boolean {
-    const { regex } = fieldValidation[this._type];
+    const { regex } = fieldValidation[this.type];
     const customRegex = new RegExp(regex);
 
     return customRegex.test(value);
@@ -120,8 +106,8 @@ export class CustomInputComponent implements FormField, OnInit {
   onInputBlur(event: any): void {
     const { value } = event.target;
 
-    this._isTouched = true;
-    this._isFocused = false;
+    this.isTouched = true;
+    this.isFocused = false;
 
     if (this.onBlur) {
       this.onBlur(value);
@@ -129,14 +115,14 @@ export class CustomInputComponent implements FormField, OnInit {
   }
 
   onInputFocus() {
-    this._isFocused = true;
+    this.isFocused = true;
   }
 
   onInputChange(event: any): void {
     const { value } = event.target;
 
-    this._isValid = this.validate(value, this.required);
-    this._value = value;
+    this.isValid = this.validate(value, this.required);
+    this.value = value;
 
     if (this.onChange) {
       this.onChange(value);

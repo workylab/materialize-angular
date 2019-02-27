@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  padding: 16px;
+  padding: $space-sm;
 }
 
 .form-icon-container {
@@ -22,14 +22,18 @@
 }
 
 .form-control {
+  align-items: center;
   background-color: $color-gray-light;
   border: 0;
   border-bottom: $border-sm solid $color-gray-dark;
   border-radius: $radius-sm $radius-sm 0 0;
   color: $color-black;
+  display: flex;
   font-size: $font-size-xs;
   font-weight: $font-weight-light;
+  line-height: $font-size-xs;
   max-width: 100%;
+  min-height: 42px;
   outline: none;
   padding: $space-sm $space-sm;
   resize: vertical;
@@ -68,29 +72,34 @@
   }
 
   .form-control {
-    height: 50px;
+    min-height: 50px;
     padding-top: $space-lg;
   }
 }
 
-.form-field-container.focused::after {
-  width: 100%;
-}
-
-.form-field-container.focused,
-.form-field-container.active {
-  .form-label {
-    color: $color-purple;
-  }
-
+.form-field-container.focused {
   &.float-label .form-label {
     font-size: $font-size-xxxs;
     top: $space-xs;
   }
+
+  .form-label {
+    color: $color-purple;
+  }
+
+  &::after {
+    width: 100%;
+  }
+}
+
+.form-field-container.active.float-label .form-label {
+  font-size: $font-size-xxxs;
+  top: $space-xs;
 }
 
 .form-field-container.disabled {
-  .form-label {
+  .form-label,
+  .form-control {
     color: $color-gray;
   }
 
