@@ -31,6 +31,24 @@
 <h3>Placeholder Input With Float Label</h3>
 <custom-input placeholder="Write here" label="Label"></custom-input>
 
+<h3>Required Simple Input</h3>
+<custom-input [required]="true" [floatLabel]="false"></custom-input>
+
+<h3>Required Label Input</h3>
+<custom-input [required]="true" label="Label" [floatLabel]="false"></custom-input>
+
+<h3>Float Label Required Input</h3>
+<custom-input [required]="true" label="Label"></custom-input>
+
+<h3>Required Input with name pattern (Number)</h3>
+<custom-input [required]="true" label="Label" patternName="number"></custom-input>
+
+<h3>No Required Input</h3>
+<custom-input label="Label" ></custom-input>
+
+<h3>No Required Input with name pattern (Number)</h3>
+<custom-input label="Label" patternName="number"></custom-input>
+
 <br />
 <br />
 <br />
@@ -55,6 +73,15 @@
 
 <h3>Disabled Select with value</h3>
 <custom-select [disabled]="true" [options]="selectOptions" value="2"></custom-select>
+
+<h3>Required Simple Select</h3>
+<custom-select [options]="selectOptions" [required]="true"></custom-select>
+
+<h3>Required Label Select</h3>
+<custom-select label="Label" [floatLabel]="false" [options]="selectOptions" [required]="true"></custom-select>
+
+<h3>Required Float Label Select</h3>
+<custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
 
 <br />
 <br />
@@ -81,6 +108,18 @@
 <h3>Disabled Autocomplete with value</h3>
 <custom-autocomplete [disabled]="true" [options]="selectOptions" value="Option2"></custom-autocomplete>
 
+<h3>Required Autocomplete with match value</h3>
+<custom-autocomplete label="Label" [required]="true" [options]="selectOptions" [isMatchValue]="true"></custom-autocomplete>
+
+<h3>Required Simple Autocomplete</h3>
+<custom-autocomplete [required]="true" [options]="selectOptions"></custom-autocomplete>
+
+<h3>Required Label Autocomplete</h3>
+<custom-autocomplete label="Label" [floatLabel]="false" [required]="true" [options]="selectOptions"></custom-autocomplete>
+
+<h3>Required Float Label Autocomplete</h3>
+<custom-autocomplete label="Label" [required]="true" [options]="selectOptions"></custom-autocomplete>
+
 <br />
 <br />
 <br />
@@ -106,11 +145,15 @@
 <h3>Placeholder TextArea</h3>
 <custom-textarea placeholder="Write here"></custom-textarea>
 
-<h3>Placeholder Input With Label</h3>
+<h3>Placeholder TextArea With Label</h3>
 <custom-textarea placeholder="Write here" label="Label" [floatLabel]="false"></custom-textarea>
 
-<h3>Placeholder Input With Float Label</h3>
+<h3>Placeholder TextArea With Float Label</h3>
 <custom-textarea placeholder="Write here" label="Label"></custom-textarea>
+
+<h3>Required Simple TextArea</h3>
+<custom-textarea [required]="true"></custom-textarea>
+
 
 <br />
 <br />

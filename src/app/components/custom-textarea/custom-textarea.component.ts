@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CustomTextArea } from './custom-textarea.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
+const fieldValidations = require('../../fixtures/field-validations.json');
+
 @Component({
   selector: 'custom-textarea',
   templateUrl: './custom-textarea.component.html'
@@ -10,6 +12,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   static readonly defaultProps: CustomTextArea = {
     className: '',
     disabled: false,
+    errorMessage: '',
     floatLabel: true,
     iconName: '',
     isFocused: false,
@@ -17,7 +20,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     isValid: false,
     label: '',
     maxLength: 500,
-    minLength: 5,
+    minLength: 0,
     name: '',
     placeholder: '',
     required: false,
@@ -29,6 +32,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   @Input('floatLabel') floatLabelInput: boolean;
   @Input('iconName') iconNameInput: string;
   @Input('label') labelInput: string;
+  @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
   @Input('maxLength') maxLengthInput: number;
   @Input('minLength') minLengthInput: number;
@@ -37,6 +41,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
 
   public className: string;
   public disabled: boolean;
+  public errorMessage: string;
   public floatLabel: boolean;
   public iconName: string;
   public isFocused: boolean;
@@ -50,26 +55,23 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   public required: boolean;
   public value: string;
 
-  constructor() {
-    this.onTextAreaBlur = this.onTextAreaBlur.bind(this);
-    this.onTextAreaChange = this.onTextAreaChange.bind(this);
-  }
-
   ngOnInit() {
     this.initValues();
   }
 
-  initValues() {
+  initValues(): void {
     const { defaultProps } = CustomTextAreaComponent;
 
     this.className = this.classNameInput || defaultProps.className;
-    this.disabled = this.disabledInput || defaultProps.disabled;
+    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.label = this.labelInput || defaultProps.label;
     this.maxLength = this.maxLengthInput || defaultProps.maxLength;
     this.minLength = this.minLengthInput || defaultProps.minLength;
+    this.name = this.nameInput || defaultProps.name;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
+    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = defaultProps.isFocused;
@@ -78,11 +80,13 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   }
 
   onTextAreaBlur(): void {
+    this.isValid = this.validate(this.value);
+
     this.isFocused = false;
     this.isTouched = true;
   }
 
-  onTextAreaFocus() {
+  onTextAreaFocus(): void {
     this.isFocused = true;
   }
 
@@ -94,18 +98,20 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   }
 
   validate(value: string): boolean {
-    const size = value
-      ? value.length
-      : 0;
+    this.errorMessage = '';
 
-    if (!this.required) {
-      return true;
+    if (this.required && (this.minLength > value.length || this.maxLength < value.length)) {
+      return false;
     }
 
-    if (size >= this.minLength && size <= this.maxLength) {
-      return true;
+    if (this.required && !value.length) {
+      const fieldValidation = fieldValidations['required'];
+
+      this.errorMessage = fieldValidation.errorMessage;
+
+      return false;
     }
 
-    return false;
+    return true;
   }
 }

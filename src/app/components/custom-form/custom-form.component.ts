@@ -17,8 +17,9 @@ export class CustomFormComponent implements AfterContentInit {
   @ContentChildren(CustomTextAreaComponent) textAreas: QueryList<CustomTextAreaComponent>;
   @ContentChildren(CustomRadioComponent) radios: QueryList<CustomRadioComponent>;
 
-  private _fields: Array<any>;
-  public _error: string;
+  public fields: Array<any> = [];
+  public isFormValid: boolean;
+  public formData: any;
 
   ngAfterContentInit() {
     const checkboxes = this.checkboxes.toArray();
@@ -27,24 +28,24 @@ export class CustomFormComponent implements AfterContentInit {
     const textAreas = this.textAreas.toArray();
     const radios = this.radios.toArray();
 
-    let fields: Array<FormField> = [];
-
-    fields = fields.concat(checkboxes);
-    fields = fields.concat(inputs);
-    fields = fields.concat(selects);
-    fields = fields.concat(textAreas);
-    fields = fields.concat(radios);
-
-    this._fields = fields;
+    this.fields = this.fields.concat(checkboxes);
+    this.fields = this.fields.concat(inputs);
+    this.fields = this.fields.concat(selects);
+    this.fields = this.fields.concat(textAreas);
+    this.fields = this.fields.concat(radios);
   }
 
   validateForm() {
-    const invalidElements = this._fields.filter((item: FormField) => !item.isValid);
+    this.formData = {};
+    this.isFormValid = true;
 
-    if (invalidElements.length > 0) {
-      this._error = invalidElements.map((item: FormField) => item.isValid.toString()).join(', ');
-    } else {
-      this._error = 'success';
-    }
+    this.fields.filter((item: FormField) => {
+      this.formData[item.name] = item.value;
+      item.isTouched = true;
+
+      if (!item.isValid) {
+        this.isFormValid = false;
+      }
+    });
   }
 }

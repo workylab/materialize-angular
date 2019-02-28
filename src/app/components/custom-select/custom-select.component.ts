@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CustomSelect, CustomSelectOption } from './custom-select.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
+const fieldValidations = require('../../fixtures/field-validations.json');
+
 @Component({
   selector: 'custom-select',
   templateUrl: './custom-select.component.html'
@@ -10,10 +12,10 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   static readonly defaultProps: CustomSelect = {
     className: '',
     disabled: false,
+    errorMessage: '',
     floatLabel: true,
     iconName: '',
     isFocused: false,
-    isOpen: false,
     isTouched: false,
     isValid: false,
     label: '',
@@ -38,10 +40,10 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
 
   public className: string;
   public disabled: boolean;
+  public errorMessage: string;
   public floatLabel: boolean;
   public iconName: string;
   public isFocused: boolean;
-  public isOpen: boolean;
   public isTouched: boolean;
   public isValid: boolean;
   public label: string;
@@ -50,10 +52,6 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   public required: boolean;
   public selectedOption: CustomSelectOption;
   public value: string;
-
-  constructor() {
-    this.closeMenu = this.closeMenu.bind(this);
-  }
 
   ngOnInit() {
     this.initValues();
@@ -67,6 +65,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.label = this.labelInput || defaultProps.label;
+    this.name = this.nameInput || defaultProps.name;
     this.options = this.optionsInput || defaultProps.options;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
@@ -77,16 +76,16 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     this.isValid = this.validate(this.value, this.required);
   }
 
-  validate(value: string, isRequired: boolean): boolean {
-    if (!isRequired) {
-      return true;
+  validate(value: string, required: boolean): boolean {
+    if (required && !value) {
+      const fieldValidation = fieldValidations['required'];
+
+      this.errorMessage = fieldValidation.errorMessage;
+
+      return false;
     }
 
-    if (isRequired && value) {
-      return true;
-    }
-
-    return false;
+    return true;
   }
 
   getInitIndexOption(value: string, options: Array<CustomSelectOption>): CustomSelectOption {
@@ -110,9 +109,9 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
       ? selectedOption.value
       : null;
 
-    this.isValid = this.validate(this.value, this.required);
-
     this.closeMenu();
+
+    this.isValid = this.validate(this.value, this.required);
 
     if (this.onChange) {
       this.onChange(selectedOption);
@@ -122,12 +121,11 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   openMenu() {
     if (!this.disabled) {
       this.isFocused = true;
-      this.isTouched = true;
     }
   }
 
   closeMenu() {
+    this.isTouched = true;
     this.isFocused = false;
-    this.isOpen = false;
   }
 }

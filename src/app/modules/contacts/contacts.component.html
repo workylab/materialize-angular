@@ -7,16 +7,10 @@ navbar content
 </custom-navbar>
 
 <custom-form>
-  <custom-input iconName="person" label="Name" [required]="true"></custom-input>
-  <custom-select iconName="map" label="State" [options]="stateOptions"></custom-select>
-  <custom-autocomplete iconName="map" label="State" [options]="stateOptions"></custom-autocomplete>
-  <custom-input iconName="phone" label="Phone" placeholder="+1 412 000 0000"></custom-input>
-  <custom-checkbox label="House phone"></custom-checkbox>
-  <custom-checkbox label="Work phone"></custom-checkbox>
-  <custom-input iconName="email" label="Email" [disabled]="true"></custom-input>
-  <custom-input iconName="person" label="Name" [floatLabel]="false"></custom-input>
-  <custom-textarea iconName="message" label="Message"></custom-textarea>
-  <custom-textarea iconName="message" label="Message" [floatLabel]="false"></custom-textarea>
+  <custom-input iconName="person" label="Name" [required]="true" name="name"></custom-input>
+  <custom-input iconName="email" label="Email" [required]="true" name="email"></custom-input>  
+  <custom-textarea iconName="message" label="Message" [required]="true" name="message"></custom-textarea>
+  <custom-select iconName="map" label="State" [required]="true" name="state" [options]="stateOptions"></custom-select>
 </custom-form>
 
 

@@ -1,7 +1,8 @@
 <div class="form-group-container" [ngClass]="className">
-  <div class="form-icon-container" *ngIf="iconName">
+  <div class="form-group-icon-container" *ngIf="iconName">
     <custom-icon [name]="iconName" size="md"></custom-icon>
   </div>
-
-  <ng-content></ng-content>
+  <div class="form-group-field-container">
+    <ng-content></ng-content>
+  </div>
 </div>

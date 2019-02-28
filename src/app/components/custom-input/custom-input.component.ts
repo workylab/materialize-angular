@@ -2,8 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CustomInput } from './custom-input.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
-// TODO
-const fieldValidation = require('../../fixtures/field-validations.json');
+const fieldValidations = require('../../fixtures/field-validations.json');
 
 @Component({
   selector: 'custom-input',
@@ -14,6 +13,7 @@ export class CustomInputComponent implements CustomInput, OnInit {
     autocomplete: 'none',
     className: '',
     disabled: false,
+    errorMessage: '',
     floatLabel: true,
     iconName: '',
     isFocused: false,
@@ -22,6 +22,7 @@ export class CustomInputComponent implements CustomInput, OnInit {
     label: '',
     maxLength: 500,
     name: '',
+    patternName: '',
     placeholder: '',
     required: false,
     type: 'text',
@@ -38,14 +39,17 @@ export class CustomInputComponent implements CustomInput, OnInit {
   @Input('iconName') iconNameInput: string;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
+  @Input('name') nameInput: string;
   @Input('placeholder') placeholderInput: string;
   @Input('required') requiredInput: boolean;
   @Input('type') typeInput: 'text' | 'password';
+  @Input('patternName') patternNameInput: string;
   @Input('value') valueInput: string;
 
   public autocomplete: string;
   public className: string;
   public disabled: boolean;
+  public errorMessage: string;
   public floatLabel: boolean;
   public iconName: string;
   public isTouched: boolean;
@@ -54,6 +58,7 @@ export class CustomInputComponent implements CustomInput, OnInit {
   public label: string;
   public maxLength: number;
   public name: string;
+  public patternName: string;
   public placeholder: string;
   public required: boolean;
   public type: string;
@@ -78,6 +83,8 @@ export class CustomInputComponent implements CustomInput, OnInit {
     this.label = this.labelInput || defaultProps.label;
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.maxLength = this.maxLengthInput || defaultProps.maxLength;
+    this.name = this.nameInput || defaultProps.name;
+    this.patternName = this.patternNameInput || defaultProps.patternName;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.type = this.typeInput || defaultProps.type;
@@ -89,18 +96,50 @@ export class CustomInputComponent implements CustomInput, OnInit {
   }
 
   validate(value: string, required: boolean): boolean {
-    if (!required || (required && this.isValidRegex(value))) {
+    const cleanValue = value.trim();
+
+    this.errorMessage = '';
+
+    if (!required && this.patternName && cleanValue.length) {
+      const fieldValidation = fieldValidations[this.patternName];
+
+      if (!this.validRegex(cleanValue, fieldValidation.regex)) {
+        this.errorMessage = fieldValidation.errorMessage;
+
+        return false;
+      }
+    }
+
+    if (required && !cleanValue.length && !this.patternName) {
+      const fieldValidation = fieldValidations['required'];
+
+      this.errorMessage = fieldValidation.errorMessage;
+
+      return false;
+    }
+
+    if (required && this.patternName) {
+      const fieldValidation = fieldValidations[this.patternName];
+
+      if (!this.validRegex(cleanValue, fieldValidation.regex)) {
+        this.errorMessage = fieldValidation.errorMessage;
+
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  validRegex(value: string, regex: string): boolean {
+    const customRegex = new RegExp(regex);
+    const resultRegexValidation = customRegex.test(value);
+
+    if (resultRegexValidation) {
       return true;
     }
 
     return false;
-  }
-
-  isValidRegex(value: string): boolean {
-    const { regex } = fieldValidation[this.type];
-    const customRegex = new RegExp(regex);
-
-    return customRegex.test(value);
   }
 
   onInputBlur(event: any): void {

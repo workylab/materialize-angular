@@ -25,6 +25,16 @@
   transform: rotate(180deg);
 }
 
+.select-container.form-field-container.error {
+  .form-control::before {
+    border-top-color: $color-red;
+  }
+
+  .icon-error {
+    right: $space-xxl;
+  }
+}
+
 .select-menu {
   background: $color-white;
   box-shadow: $shadow-md;
@@ -44,6 +54,7 @@
   .select-option {
     color: $color-gray-dark;
     min-height: 48px;
+    outline: none;
     padding: $space-md;
 
     &:hover {

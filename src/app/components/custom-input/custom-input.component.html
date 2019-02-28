@@ -8,18 +8,27 @@
 
     <label class="form-label" *ngIf="label">{{ label }}</label>
 
-    <input class="form-control"
-      (input)="onInputChange($event)"
-      (blur)="onInputBlur($event)"
-      (focus)="onInputFocus()"
+    <div class="form-control-wrapper">
+      <input class="form-control"
+        (input)="onInputChange($event)"
+        (blur)="onInputBlur($event)"
+        (focus)="onInputFocus()"
 
-      [autocomplete]="autocomplete"
-      [disabled]="disabled"
-      [maxLength]="maxLength"
-      [placeholder]="placeholder"
-      [required]="required"
-      [type]="type"
-      [value]="value"
-    />
+        [autocomplete]="autocomplete"
+        [disabled]="disabled"
+        [maxLength]="maxLength"
+        [placeholder]="placeholder"
+        [required]="required"
+        [type]="type"
+        [value]="value"
+      />
+
+      <custom-icon name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
+
+      <div class="form-error-message" *ngIf="!isValid && isTouched">
+        {{ errorMessage }}
+      </div>
+    </div>
   </div>
+  
 </custom-form-group>

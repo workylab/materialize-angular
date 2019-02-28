@@ -3,21 +3,30 @@
     [class.float-label]="floatLabel && label"
     [class.active]="value || placeholder"
     [class.focused]="isFocused"
-    [class.disabled]="disabled">
+    [class.disabled]="disabled"
+    [class.error]="!isValid && isTouched">
 
     <label class="form-label" *ngIf="label">{{ label }}</label>
 
-    <textarea class="form-control"
-      (blur)="onTextAreaBlur()"
-      (focus)="onTextAreaFocus()"
-      (input)="onTextAreaChange($event)"
+    <div class="form-control-wrapper">
+      <textarea class="form-control"
+        (blur)="onTextAreaBlur()"
+        (focus)="onTextAreaFocus()"
+        (input)="onTextAreaChange($event)"
 
-      [disabled]="disabled"
-      [maxLength]="maxLength"
-      [minLength]="minLength"  
-      [placeholder]="placeholder"
-      [required]="required"
-      [value]="value">
-    </textarea>
+        [disabled]="disabled"
+        [maxLength]="maxLength"
+        [minLength]="minLength"  
+        [placeholder]="placeholder"
+        [required]="required"
+        [value]="value">
+      </textarea>
+
+      <custom-icon name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
+
+      <div class="form-error-message" *ngIf="!isValid && isTouched">
+        {{ errorMessage }}
+      </div>
+    </div>
   </div>
 </custom-form-group>

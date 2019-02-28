@@ -1,5 +1,7 @@
 @import './reset';
 
+@import './animations/grow-element';
+
 @import './mixins/color-opacity';
 
 @import './theme/colors';
@@ -11,7 +13,6 @@
 
 @import './components/calendar';
 @import './components/fonts';
-@import './components/form-autocomplete';
 @import './components/form-checkbox';
 @import './components/form-radio';
 @import './components/form-select';
