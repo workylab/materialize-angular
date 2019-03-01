@@ -123,8 +123,9 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   isValidOption(value: string): boolean {
     for (let i = 0; i < this.options.length; i++) {
       const currentOption = this.options[i];
+      const validatedContent = currentOption.content || '';
 
-      if (value.toLowerCase() === currentOption.content.toLowerCase()) {
+      if (value.toLowerCase() === validatedContent.toLowerCase()) {
         return true;
       }
     }

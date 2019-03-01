@@ -1,0 +1,42 @@
+.button {
+  align-items: center;
+  background-color: $color-purple;
+  border: 0;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-sm;
+  color: $color-white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  letter-spacing: 1px;
+  padding: 10px $space-sm;
+  text-transform: uppercase;
+
+  &.rounded {
+    border-radius: 30px;
+  }
+
+  &.icon-start {
+    .icon {
+      margin-left: 0;
+      margin-right: $space-xs;
+    }
+
+    .button-text {
+      order: 1;
+    }
+  }
+
+  .icon {
+    margin-left: $space-xs;
+    margin-right: 0;
+  }
+
+  .button-text {
+    display: flex;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+    margin: 0 $space-xxxs;
+  }
+}

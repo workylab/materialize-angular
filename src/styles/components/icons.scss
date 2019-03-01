@@ -2,8 +2,9 @@ $icons-circle-color: $color-white;
 $icons-circle-bg-color: $color-black;
 
 .icon {
-  display: inline-block;
+  display: flex;
   font-family: $font-family-icons;
+  text-transform: lowercase;
 
   &.icon-circle {
     background-color: $icons-circle-bg-color;

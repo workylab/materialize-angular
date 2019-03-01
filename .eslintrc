@@ -161,7 +161,7 @@
     ],
     "max-len": [
       "warn",
-      100, {
+      120, {
         "ignoreRegExpLiterals": true
       }
     ],
