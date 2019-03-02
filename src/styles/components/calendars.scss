@@ -1,6 +1,9 @@
 .calendar-container {
+  background-color: $color-white;
   border-radius: $radius-md;
   box-shadow: $shadow-md;
+  height: 360px;
+  outline: none;
   padding: $space-lg $space-sm;
   width: max-content;
 
@@ -20,8 +23,10 @@
     }
   }
 
-  thead td {
-    border-bottom: $border-sm solid $color-gray;
+  .calendar {
+    thead td {
+      border-bottom: $border-sm solid $color-gray;
+    }
   }
 
   .day-name-container {
@@ -56,16 +61,20 @@
       }
     }
 
-    &.current .day-content {
-      background-color: $color-purple;
-      color: $color-white;
-    }
-
     &.disabled .day-content {
       background-color: $color-gray-light;
       border-radius: $radius-full;
       color: $color-gray-dark;
       cursor: not-allowed;
+    }
+
+    &.current .day-content {
+      border: $border-sm solid $color-gray;
+    }
+
+    &.selected .day-content {
+      background-color: $color-purple;
+      color: $color-white;
     }
   }
 }

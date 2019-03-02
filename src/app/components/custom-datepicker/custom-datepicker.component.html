@@ -1,11 +1,14 @@
-<custom-form-group [iconName]="iconName" [className]="className">
-  <div class="form-field-container">
 
-    <label class="form-label" *ngIf="label">{{ label }}</label>
-    <input class="form-control" />
-
-    <div class="datepicker-calendar" [class.open]="isFocused">
-      <custom-calendar></custom-calendar>  
-    </div>
-  </div>
-</custom-form-group>
+<div class="date-picker" [class.open]="isFocused">
+  <custom-input
+    (onFocus)="onInputFocus()"
+    (onBlur)="onInputBlur($event)"
+    [value]="value"
+    [required]="required">
+  </custom-input>
+  <custom-calendar
+    (onSelectDay)="onSelectDay($event)"
+    (onBlur)="onCalendarBlur()"
+  >
+  </custom-calendar>
+</div>

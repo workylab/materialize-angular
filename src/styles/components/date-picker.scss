@@ -1,0 +1,15 @@
+.date-picker {
+  position: relative;
+
+  &.open .calendar-container {
+    display: block;
+  }
+
+  .calendar-container {
+    bottom: 80px;
+    display: none;
+    position: absolute;
+    right: $space-sm;
+    z-index: $zindex-level-1;
+  }
+}

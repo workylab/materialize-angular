@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CustomCalendarDay } from '../custom-calendar/custom-calendar.model';
 import { CustomDatePicker } from './custom-datepicker.model';
 
 @Component({
@@ -22,4 +23,29 @@ export class CustomDatePickerComponent implements CustomDatePicker {
   public name: string;
   public required: boolean;
   public value: string;
+
+  constructor() {
+    this.onInputBlur = this.onInputBlur.bind(this);
+  }
+
+  onSelectDay(day: CustomCalendarDay) {
+    this.value = day.isoDate;
+    this.isFocused = false;
+  }
+
+  onInputFocus() {
+    this.isFocused = true;
+  }
+
+  onInputBlur(event: any) {
+    const { relatedTarget } = event;
+
+    if (!relatedTarget || relatedTarget.className !== 'calendar-container') {
+      this.isFocused = false;
+    }
+  }
+
+  onCalendarBlur(event: Event) {
+    this.isFocused = false;
+  }
 }

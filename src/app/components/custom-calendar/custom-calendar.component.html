@@ -1,4 +1,5 @@
-<div class="calendar-container">
+<div class="calendar-container" tabindex="1" (blur)="onBlur($event)">
+  {{ currentMonth }} - {{ currentYear }}
   <div class="calendar-controls-container">
     <custom-icon
       name="chevron_left"
@@ -14,11 +15,11 @@
     </custom-icon>
   </div>
   
-  <table>
+  <table class="calendar">
     <thead>
       <tr>
-        <td class="day-name-container" *ngFor="let day of days">
-          {{ day }}
+        <td class="day-name-container" *ngFor="let weekDay of weekDays">
+          {{ weekDay }}
         </td>
       </tr>
     </thead>
@@ -27,8 +28,9 @@
         <td class="day-container"
           *ngFor="let day of week"
           [class.current]="day.isCurrent"
+          [class.selected]="selectedDay.isoDate === day.isoDate"
           [class.disabled]="day.isOutOfMonth">
-          <div class="day-content" (click)="selectDay(day)">
+          <div class="day-content" (click)="onSelectDay(day)">
             {{ day.dayNumber }}
           </div>
         </td>

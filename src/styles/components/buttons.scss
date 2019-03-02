@@ -9,34 +9,22 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  letter-spacing: 1px;
-  padding: 10px $space-sm;
+  padding: $space-sm;
   text-transform: uppercase;
 
   &.rounded {
-    border-radius: 30px;
+    border-radius: 100px;
   }
 
-  &.icon-start {
-    .icon {
-      margin-left: 0;
-      margin-right: $space-xs;
-    }
-
-    .button-text {
-      order: 1;
-    }
-  }
-
-  .icon {
-    margin-left: $space-xs;
-    margin-right: 0;
+  &.icon-end .button-text {
+    order: 0;
   }
 
   .button-text {
     display: flex;
     font-size: $font-size-xs;
     font-weight: $font-weight-regular;
-    margin: 0 $space-xxxs;
+    margin: 0 $space-xxs;
+    order: 1;
   }
 }

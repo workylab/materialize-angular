@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CustomInput } from './custom-input.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -8,7 +8,7 @@ const fieldValidations = require('../../fixtures/field-validations.json');
   selector: 'custom-input',
   templateUrl: './custom-input.component.html'
 })
-export class CustomInputComponent implements CustomInput, OnInit {
+export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   static readonly defaultProps: CustomInput = {
     autocomplete: 'none',
     className: '',
@@ -29,8 +29,9 @@ export class CustomInputComponent implements CustomInput, OnInit {
     value: ''
   };
 
-  @Input() onBlur: (value: string) => void;
   @Input() onChange: (value: string) => void;
+  @Output('onFocus') onFocusEmmiter: EventEmitter<void>;
+  @Output('onBlur') onBlurEmmiter: EventEmitter<void>;
 
   @Input('autocomplete') autocompleteInput: string;
   @Input('className') classNameInput: string;
@@ -65,12 +66,23 @@ export class CustomInputComponent implements CustomInput, OnInit {
   public value: string;
 
   constructor() {
+    this.onFocusEmmiter = new EventEmitter();
+    this.onBlurEmmiter = new EventEmitter();
+
     this.onInputBlur = this.onInputBlur.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
   }
 
   ngOnInit() {
     this.initValues();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const { valueInput } = changes;
+
+    if (valueInput && valueInput.currentValue !== valueInput.previousValue) {
+      this.value = valueInput.currentValue;
+    }
   }
 
   initValues(): void {
@@ -143,18 +155,14 @@ export class CustomInputComponent implements CustomInput, OnInit {
   }
 
   onInputBlur(event: any): void {
-    const { value } = event.target;
-
     this.isTouched = true;
     this.isFocused = false;
-
-    if (this.onBlur) {
-      this.onBlur(value);
-    }
+    this.onBlurEmmiter.emit(event);
   }
 
-  onInputFocus() {
+  onInputFocus(): void {
     this.isFocused = true;
+    this.onFocusEmmiter.emit();
   }
 
   onInputChange(event: any): void {

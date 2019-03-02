@@ -1,10 +1,10 @@
 <button
   class="button"
   [ngClass]="className"
-  [class.icon-start]="!iconAtEnd"
+  [class.icon-end]="iconAtEnd"
   [class.disabled]="disabled"
   [class.rounded]="isRounded">
-  <span class="button-text">
+  <span class="button-text" *ngIf="text">
     {{ text }}
   </span>
   <custom-icon
