@@ -1,0 +1,23 @@
+
+
+<div class="dropdown-container">
+  <custom-icon className="dropdown-icon"
+    (onClick)="onClickIcon()"
+    (onBlur)="onBlurIcon($event)"
+    [name]="iconName"
+    [size]="iconSize"
+    [tabIndex]="'0'">
+  </custom-icon>
+
+  <div class="dropdown-items-container" [class.active]="isFocused" tabindex="1">
+    <div class="dropdown-item" *ngFor="let item of items" (click)="selectItem(item)">
+      <custom-icon
+        *ngIf="item.iconName"
+        className="dropdown-item-icon"
+        size="lg"
+        [name]="item.iconName">
+      </custom-icon>
+      {{ item.text }}
+    </div>
+  </div>
+</div>

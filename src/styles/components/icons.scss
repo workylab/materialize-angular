@@ -4,6 +4,7 @@ $icons-circle-bg-color: $color-black;
 .icon {
   display: flex;
   font-family: $font-family-icons;
+  outline: none;
   text-transform: lowercase;
 
   &.icon-circle {

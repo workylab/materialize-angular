@@ -9,8 +9,13 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  outline: none;
   padding: $space-sm;
   text-transform: uppercase;
+
+  &:focus {
+    background-color: darken($color-purple, 10%);
+  }
 
   &.rounded {
     border-radius: 100px;

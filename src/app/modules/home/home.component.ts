@@ -1,5 +1,7 @@
 import { CustomTable, SortedColumn } from '../../components/custom-table/custom-table.model';
 import { Component } from '@angular/core';
+import { CustomDropdownItem } from '../../components/custom-dropdown/custom-dropdown.model';
+import { CustomSelectOption } from '../../components/custom-select/custom-select.model';
 
 @Component({
   selector: 'home-page',
@@ -50,12 +52,23 @@ export class HomeComponent {
     }]
   }
 
-  public selectOptions = [{
+  public selectOptions: Array<CustomSelectOption> = [{
     content: 'Option1',
     value: '1'
   }, {
     content: 'Option2',
     value: '2'
+  }];
+
+  public dropDownItems: Array<CustomDropdownItem> = [{
+    iconName: 'menu',
+    text: 'Item 1'
+  }, {
+    iconName: 'menu',
+    text: 'Item 2'
+  }, {
+    iconName: 'menu',
+    text: 'Item 3'
   }];
 
   onTableSort(sortedColum: SortedColumn) {
