@@ -1,5 +1,5 @@
+import { CustomTable, SortedColumn } from '../../components/custom-table/custom-table.model';
 import { Component } from '@angular/core';
-import { CustomTable } from '../../components/custom-table/custom-table.model';
 
 @Component({
   selector: 'home-page',
@@ -58,6 +58,6 @@ export class HomeComponent {
     value: '2'
   }];
 
-  onTableSort(key: string, direction: string) {
+  onTableSort(sortedColum: SortedColumn) {
   }
 }

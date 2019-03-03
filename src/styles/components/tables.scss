@@ -18,14 +18,10 @@
 
 .table-row {
   display: table-row;
-
-  &:hover {
-    background: $color-gray-light;
-  }
 }
 
 .table-cell {
-  cursor: pointer;
+  color: $color-gray-dark;
   display: table-cell;
   padding: $space-md $space-lg;
 }
@@ -35,18 +31,32 @@
 
   .table-cell {
     font-size: 12px;
+    font-weight: $font-weight-bold;
 
     &:last-child {
       border-right: 0;
     }
   }
+}
 
-  .table-head-sort {
+.table-sort-container {
+  align-content: center;
+  color: $color-gray-dark;
+  display: flex;
+  flex-direction: row;
+
+  &.active .table-sort-icon {
+    color: $color-black;
+  }
+
+  .table-sort-icon {
     color: $color-gray;
+    margin-right: $space-xs;
+  }
 
-    &.active {
-      color: $color-black;
-    }
+  .table-sort-text {
+    align-items: center;
+    display: flex;
   }
 }
 
@@ -56,7 +66,12 @@
   .table-cell {
     border-bottom: $border-sm solid $color-gray;
     border-right: $border-sm solid $color-gray;
+    cursor: pointer;
     font-size: 13px;
+  }
+
+  .table-row:hover {
+    background: $color-gray-light;
   }
 
   .table-row:first-child .table-cell {

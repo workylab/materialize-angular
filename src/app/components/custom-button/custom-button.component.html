@@ -1,5 +1,5 @@
 <button
-  class="button"
+  class="button button-{{ size }}"
   [ngClass]="className"
   [class.icon-end]="iconAtEnd"
   [class.disabled]="disabled"
@@ -10,6 +10,6 @@
   <custom-icon
     *ngIf="iconName"
     [name]="iconName"
-    [size]="iconSize">
+    [size]="size">
   </custom-icon>
 </button>

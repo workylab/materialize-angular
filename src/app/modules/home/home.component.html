@@ -168,11 +168,6 @@
 <br />
 <br />
 
-<h3>Button with Icon Lg</h3>
-<custom-button text="button" iconName="add" iconSize="lg"></custom-button>
-<br />
-<br />
-
 <h3>Button with Icon at End</h3>
 <custom-button text="button" iconName="add" [iconAtEnd]="true"></custom-button>
 <br />
@@ -197,6 +192,29 @@
 <custom-button iconName="phone" [isRounded]="true"></custom-button>
 <br />
 <br />
+
+<h3>Button XS</h3>
+<custom-button iconName="phone" size="xs" text="button"></custom-button>
+<br />
+<br />
+
+<h3>Button SM</h3>
+<custom-button iconName="phone" size="sm" text="button"></custom-button>
+<br />
+<br />
+
+<h3>Button MD</h3>
+<custom-button iconName="phone" size="md" text="button"></custom-button>
+<br />
+<br />
+
+<h3>Button LG</h3>
+<custom-button iconName="phone" size="lg" text="button"></custom-button>
+<br />
+<br />
+
+<h3>Button XL</h3>
+<custom-button iconName="phone" size="xl" text="button"></custom-button>
 
 <br />
 <br />
@@ -237,7 +255,10 @@
 <br />
 
 <h3>Table</h3>
-<custom-table [data]="tableData" [onTableSort]="onTableSort" title="Table Example">
+<custom-table
+  [data]="tableData"
+  (onSort)="onTableSort($event)"
+  title="Table Example">
   <div>esto es un test...</div>
 </custom-table>
 

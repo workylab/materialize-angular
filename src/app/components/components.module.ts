@@ -4,6 +4,7 @@ import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { CustomCalendarComponent } from './custom-calendar/custom-calendar.component';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { CustomDatePickerComponent } from './custom-datepicker/custom-datepicker.component';
+import { CustomDropdownComponent } from './custom-dropdown/custom-dropdown.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
 import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
@@ -24,6 +25,7 @@ import { NgModule } from '@angular/core';
     CustomCalendarComponent,
     CustomCheckboxComponent,
     CustomDatePickerComponent,
+    CustomDropdownComponent,
     CustomFormComponent,
     CustomFormGroupComponent,
     CustomIconComponent,
@@ -42,6 +44,7 @@ import { NgModule } from '@angular/core';
     CustomCalendarComponent,
     CustomCheckboxComponent,
     CustomDatePickerComponent,
+    CustomDropdownComponent,
     CustomFormComponent,
     CustomFormGroupComponent,
     CustomIconComponent,

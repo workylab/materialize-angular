@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { CustomTable, CustomTableHeaderCell } from './custom-table.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CustomTable, CustomTableHeaderCell, SortedColumn } from './custom-table.model';
 
 @Component({
   selector: 'custom-table',
@@ -7,19 +7,23 @@ import { CustomTable, CustomTableHeaderCell } from './custom-table.model';
 })
 export class CustomTableComponent implements OnInit {
   static readonly defaultProps = {
+    activeSortedColumn: '',
+    data: {} as CustomTable,
     title: ''
   };
 
-  @Input() onTableSort: (key: string, direction: string) => void;
+  @Output('onSort') onSortEmitter: EventEmitter<SortedColumn>;
 
-  @Input() data: CustomTable;
-  @Input() title: string;
+  @Input('activeSortedColumn') activeSortedColumnInput: string;
+  @Input('data') dataInput: CustomTable;
+  @Input('title') titleInput: string;
 
-  public _title: string;
-  public _activeSortedColumn: string;
+  public activeSortedColumn: string;
+  public data: CustomTable;
+  public title: string;
 
   constructor() {
-    this._activeSortedColumn = null;
+    this.onSortEmitter = new EventEmitter();
   }
 
   ngOnInit() {
@@ -29,23 +33,26 @@ export class CustomTableComponent implements OnInit {
   initValues(): void {
     const { defaultProps } = CustomTableComponent;
 
-    this._title = this.title || defaultProps.title;
+    this.activeSortedColumn = this.activeSortedColumn;
+    this.data = this.dataInput || defaultProps.data;
+    this.title = this.titleInput || defaultProps.title;
   }
 
   sort(header: CustomTableHeaderCell): void {
-    if (this._activeSortedColumn && header.key !== this._activeSortedColumn) {
+    if (this.activeSortedColumn && header.key !== this.activeSortedColumn) {
       this.data.headers.forEach(item => {
         item.direction = null;
       });
     }
 
-    this._activeSortedColumn = header.key;
+    this.activeSortedColumn = header.key;
 
     header.direction = this.getNewDirection(header.direction);
 
-    if (this.onTableSort) {
-      this.onTableSort(header.key, header.direction);
-    }
+    this.onSortEmitter.emit({
+      direction: header.direction,
+      key: header.key
+    });
   }
 
   getNewDirection(currentDirection: string): 'asc' | 'desc' | null {

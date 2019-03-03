@@ -5,8 +5,7 @@
     [class.active]="value || placeholder"
     [class.focused]="isFocused"
     [class.disabled]="disabled"
-    [class.error]="!isValid && isTouched"
-    #formFieldContainer>
+    [class.error]="!isValid && isTouched">
 
     <label class="form-label" *ngIf="label">{{ label }}</label>
 
@@ -26,7 +25,7 @@
         [value]="value"      
       />
   
-      <custom-icon name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
+      <custom-icon className="form-icon-error" name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
   
       <div class="form-error-message" *ngIf="!isValid && isTouched">
         {{ errorMessage }}

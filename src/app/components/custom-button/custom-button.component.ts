@@ -12,7 +12,6 @@ export class CustomButtonComponent implements CustomButton, OnInit {
     disabled: false,
     iconAtEnd: false,
     iconName: '',
-    iconSize: 'sm',
     isRounded: false,
     size: 'md',
     text: ''
@@ -22,7 +21,6 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('iconAtEnd') iconAtEndInput: boolean;
   @Input('iconName') iconNameInput: string;
-  @Input('iconSize') iconSizeInput: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   @Input('isRounded') isRoundedInput: boolean;
   @Input('size') sizeInput: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   @Input('text') textInput: string;
@@ -31,7 +29,6 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   public disabled: boolean;
   public iconName: string;
   public iconAtEnd: boolean;
-  public iconSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   public isRounded: boolean;
   public size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   public text: string;
@@ -47,7 +44,6 @@ export class CustomButtonComponent implements CustomButton, OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.iconAtEnd = this.iconAtEndInput || defaultProps.iconAtEnd;
-    this.iconSize = this.iconSizeInput || defaultProps.iconSize;
     this.isRounded = getBooleanValue(this.isRoundedInput, defaultProps.isRounded);
     this.size = this.sizeInput || defaultProps.size;
     this.text = this.textInput || defaultProps.text;

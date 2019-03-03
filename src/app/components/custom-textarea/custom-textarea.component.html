@@ -22,7 +22,7 @@
         [value]="value">
       </textarea>
 
-      <custom-icon name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
+      <custom-icon className="form-icon-error" name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
 
       <div class="form-error-message" *ngIf="!isValid && isTouched">
         {{ errorMessage }}

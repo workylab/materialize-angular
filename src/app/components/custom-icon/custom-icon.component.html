@@ -1,3 +1,9 @@
-<span [ngClass]="_className" (click)="onIconClick()">
-  {{ _name }}
+<span
+  class="icon icon-{{ size }}"
+  [ngClass]="className"
+  [class.icon-pointer]="isPointer"
+  [class.icon-circle]="isCircle"
+  (click)="onClick()"
+>
+  {{ name }}
 </span>

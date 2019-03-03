@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 interface defaultProps {
@@ -13,70 +13,56 @@ interface defaultProps {
   selector: 'custom-icon',
   templateUrl: './custom-icon.component.html'
 })
-export class CustomIconComponent implements OnInit {
+export class CustomIconComponent implements OnChanges, OnInit {
   static readonly defaultProps: defaultProps = {
-    className: 'icon',
+    className: '',
     isCircle: false,
     isPointer: false,
     name: '',
     size: 'sm'
   };
 
-  @Input() onClick: () => void;
+  @Output('onClick') onClickEmitter: EventEmitter<void>;
 
-  @Input() className: string;
-  @Input() isCircle: boolean;
-  @Input() isPointer: boolean;
-  @Input() name: string;
-  @Input() size: string;
+  @Input('className') classNameInput: string;
+  @Input('isCircle') isCircleInput: boolean;
+  @Input('isPointer') isPointerInput: boolean;
+  @Input('name') nameInput: string;
+  @Input('size') sizeInput: string;
 
-  public _className: string;
-  public _isPointer: boolean;
-  public _isCircle: boolean;
-  public _name: string;
-  public _size: string;
+  public className: string;
+  public isPointer: boolean;
+  public isCircle: boolean;
+  public name: string;
+  public size: string;
+
+  constructor() {
+    this.onClickEmitter = new EventEmitter();
+  }
 
   ngOnInit() {
     this.initValues();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    const { nameInput } = changes;
+
+    if (nameInput && nameInput.currentValue !== nameInput.previousValue) {
+      this.name = nameInput.currentValue;
+    }
+  }
+
   initValues() {
     const { defaultProps } = CustomIconComponent;
-    const classNameBase = this.className || defaultProps.className;
 
-    this._isCircle = getBooleanValue(this.isCircle, defaultProps.isCircle);
-    this._isPointer = this.isPointer || defaultProps.isPointer;
-    this._name = this.name || defaultProps.name;
-    this._size = this.size || defaultProps.size;
-
-    this._className = this.getClassName(classNameBase);
+    this.className = this.classNameInput || defaultProps.className;
+    this.isCircle = getBooleanValue(this.isCircleInput, defaultProps.isCircle);
+    this.isPointer = this.isPointerInput || defaultProps.isPointer;
+    this.name = this.nameInput || defaultProps.name;
+    this.size = this.sizeInput || defaultProps.size;
   }
 
-  getClassName(classNameBase: string) {
-    const classNames = [classNameBase];
-
-    if (this._name) {
-      classNames.push(`icon-${ this._name }`);
-    }
-
-    if (this._size) {
-      classNames.push(`icon-${ this._size }`);
-    }
-
-    if (this._isPointer) {
-      classNames.push('icon-pointer');
-    }
-
-    if (this._isCircle) {
-      classNames.push('icon-circle');
-    }
-
-    return classNames.join(' ');
-  }
-
-  onIconClick() {
-    if (this.onClick) {
-      this.onClick();
-    }
+  onClick() {
+    this.onClickEmitter.emit();
   }
 }

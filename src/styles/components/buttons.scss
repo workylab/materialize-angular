@@ -22,9 +22,28 @@
 
   .button-text {
     display: flex;
-    font-size: $font-size-xs;
     font-weight: $font-weight-regular;
     margin: 0 $space-xxs;
     order: 1;
   }
+}
+
+.button-xl {
+  font-size: $icon-xl;
+}
+
+.button-lg {
+  font-size: $icon-lg;
+}
+
+.button-md {
+  font-size: $icon-md;
+}
+
+.button-sm {
+  font-size: $icon-sm;
+}
+
+.button-xs {
+  font-size: $icon-xs;
 }

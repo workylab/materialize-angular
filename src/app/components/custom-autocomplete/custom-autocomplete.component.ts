@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CustomAutocomplete } from './custom-autocomplete.model';
 import { CustomSelectOption } from '../custom-select/custom-select.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
@@ -28,8 +28,6 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     required: false,
     value: ''
   };
-
-  @ViewChild('formFieldContainer') fieldContainer: ElementRef;
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;

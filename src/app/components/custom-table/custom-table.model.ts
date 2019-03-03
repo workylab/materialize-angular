@@ -15,3 +15,8 @@ export interface CustomTableBodyCell {
   content: string | number | boolean;
   type: 'text' | 'icon' | 'checkbox';
 }
+
+export interface SortedColumn {
+  direction: string;
+  key: string;
+}

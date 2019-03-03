@@ -1,21 +1,23 @@
 <div class="table-container">
-  <div *ngIf="_title" class="table-title">
-    {{ _title }}
-  </div>
+  <div *ngIf="title" class="table-title">{{ title }}</div>
 
   <div class="table">
     <div class="table-head">
       <div class="table-row">
         <div class="table-cell" *ngFor="let header of data.headers">
-          {{ header.content }}
-          <span
-            class="table-head-sort"
-            *ngIf="header.canSort"
-            (click)="sort(header)"
-            [class.active]="header.direction"
-          >
-            {{ header.direction || 'desc' }}
-          </span>
+          
+          <div class="table-sort-container" [class.active]="header.direction">
+            <custom-icon
+              *ngIf="header.canSort"
+              className="table-sort-icon"
+              (onClick)="sort(header)"
+              [isPointer]="true"
+              [name]="header.direction === 'asc' ? 'arrow_upward' : 'arrow_downward'">
+            </custom-icon>
+            <div class="table-sort-text">
+              {{ header.content }}
+            </div>
+          </div>
         </div>
       </div>
     </div>
