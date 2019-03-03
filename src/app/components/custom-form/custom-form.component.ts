@@ -4,6 +4,7 @@ import { CustomCheckboxComponent } from '../custom-checkbox/custom-checkbox.comp
 import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { CustomRadioComponent } from '../custom-radio/custom-radio.component';
 import { CustomSelectComponent } from '../custom-select/custom-select.component';
+import { CustomSwitchComponent } from '../custom-switch/custom-switch.component';
 import { CustomTextAreaComponent } from '../custom-textarea/custom-textarea.component';
 import { FormField } from './custom-form.model';
 
@@ -18,6 +19,7 @@ export class CustomFormComponent implements AfterContentInit {
   @ContentChildren(CustomSelectComponent) selects: QueryList<CustomSelectComponent>;
   @ContentChildren(CustomTextAreaComponent) textAreas: QueryList<CustomTextAreaComponent>;
   @ContentChildren(CustomRadioComponent) radios: QueryList<CustomRadioComponent>;
+  @ContentChildren(CustomSwitchComponent) switches: QueryList<CustomSwitchComponent>;
 
   public fields: Array<any> = [];
   public formData: any;
@@ -30,6 +32,7 @@ export class CustomFormComponent implements AfterContentInit {
     const selects = this.selects.toArray();
     const textAreas = this.textAreas.toArray();
     const radios = this.radios.toArray();
+    const switches = this.switches.toArray();
 
     this.fields = this.fields.concat(autocompletes);
     this.fields = this.fields.concat(checkboxes);
@@ -37,6 +40,7 @@ export class CustomFormComponent implements AfterContentInit {
     this.fields = this.fields.concat(selects);
     this.fields = this.fields.concat(textAreas);
     this.fields = this.fields.concat(radios);
+    this.fields = this.fields.concat(switches);
   }
 
   validateForm() {

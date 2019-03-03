@@ -254,16 +254,24 @@
 <br />
 <br />
 
-<h3>Dropdown</h3>
-<custom-dropdown [items]="dropDownItems"></custom-dropdown>
+<div-tree [classNames]="['row', 'col', 'row2', 'col2']">
+  <h3>Div Tree</h3>
+</div-tree>
 
-<h3>Table</h3>
-<custom-table
-  [data]="tableData"
-  (onSort)="onTableSort($event)"
-  title="Table Example">
-  <div>esto es un test...</div>
-</custom-table>
+<br />
+<br />
+<br />
+
+<h3>Switch</h3>
+<custom-switch label="Wifi Required" [required]="true"></custom-switch>
+<custom-switch label="Wifi (Enable inactive)"></custom-switch>
+<custom-switch label="Wifi (Enable active)" [value]="true"></custom-switch>
+<custom-switch label="Wifi (Disabled inactive)" [disabled]="true"></custom-switch>
+<custom-switch label="Wifi (Disabled active)" [disabled]="true" [value]="true"></custom-switch>
+<br />
+<br />
+<br />
+
 
 <custom-checkbox
   label="Checkbox"
@@ -272,16 +280,6 @@
   [required]="true"
 >
 </custom-checkbox>
-
-<div-tree [classNames]="['row', 'col', 'row2', 'col2']">
-  <custom-checkbox
-    label="Checkbox 2"
-    name="checkbox2"
-    [value]="true"
-    [required]="true"
-  >
-  </custom-checkbox>
-</div-tree>
 
 <custom-radio
   [required]="true"
@@ -296,3 +294,18 @@
 
 <h3>Simple Datepicker</h3>
 <custom-datepicker></custom-datepicker>
+
+<h3>Dropdown</h3>
+<custom-dropdown [items]="dropDownItems"></custom-dropdown>
+
+<br />
+<br />
+<br />
+
+<h3>Table</h3>
+<custom-table
+  [data]="tableData"
+  (onSort)="onTableSort($event)"
+  title="Table Example">
+  <div>esto es un test...</div>
+</custom-table>

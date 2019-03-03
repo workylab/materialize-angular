@@ -13,6 +13,7 @@ import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
 import { CustomRadioComponent } from './custom-radio/custom-radio.component';
 import { CustomSelectComponent } from './custom-select/custom-select.component';
 import { CustomSideNavComponent } from './custom-sidenav/custom-sidenav.component';
+import { CustomSwitchComponent } from './custom-switch/custom-switch.component';
 import { CustomTableComponent } from './custom-table/custom-table.component';
 import { CustomTextAreaComponent } from './custom-textarea/custom-textarea.component';
 import { DivTreeComponent } from './div-tree/div-tree.component';
@@ -34,6 +35,7 @@ import { NgModule } from '@angular/core';
     CustomRadioComponent,
     CustomSelectComponent,
     CustomSideNavComponent,
+    CustomSwitchComponent,
     CustomTableComponent,
     CustomTextAreaComponent,
     DivTreeComponent
@@ -53,6 +55,7 @@ import { NgModule } from '@angular/core';
     CustomRadioComponent,
     CustomSelectComponent,
     CustomSideNavComponent,
+    CustomSwitchComponent,
     CustomTableComponent,
     CustomTextAreaComponent,
     DivTreeComponent
