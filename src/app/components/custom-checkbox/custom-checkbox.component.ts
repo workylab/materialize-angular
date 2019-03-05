@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CustomCheckbox } from './custom-checkbox.model';
-import { generateUid } from '../../utils/generate-uid.util';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
+
+const fieldValidations = require('../../fixtures/field-validations.json');
 
 @Component({
   selector: 'custom-checkbox',
@@ -11,6 +12,7 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
   static readonly defaultProps: CustomCheckbox = {
     className: 'checkbox-control',
     disabled: false,
+    iconName: '',
     isFocused: false,
     isTouched: false,
     isValid: false,
@@ -20,11 +22,9 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
     value: false
   };
 
-  @Input() onChange: (value: boolean) => void;
-  @Input() onBlur: (value: boolean) => void;
-
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
+  @Input('iconName') iconNameInput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
@@ -32,6 +32,8 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
 
   public className: string;
   public disabled: boolean;
+  public errorMessage: string;
+  public iconName: string;
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;
@@ -49,44 +51,42 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.label = this.labelInput || defaultProps.label;
-    this.name = this.nameInput || generateUid();
+    this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = getBooleanValue(this.valueInput, defaultProps.value);
 
-    this.isValid = this.validate(this.value, this.required);
+    this.isFocused = defaultProps.isFocused;
     this.isTouched = defaultProps.isTouched;
+    this.isValid = this.validate(this.value, this.required);
   }
 
-  onCheckboxChange(event: any): void {
-    const { checked } = event.target;
-
-    this.isValid = this.validate(checked, this.required);
-    this.value = checked;
-
-    if (this.onChange) {
-      this.onChange(checked);
+  toggleValue(): void {
+    if (!this.disabled) {
+      this.value = !this.value;
+      this.isValid = this.validate(this.value, this.required);
     }
   }
 
-  validate(isChecked: boolean, isRequired: boolean): boolean {
-    if (!isRequired) {
-      return true;
+  validate(value: boolean, required: boolean) {
+    if (required && !value) {
+      const fieldValidation = fieldValidations['required'];
+
+      this.errorMessage = fieldValidation.errorMessage;
+
+      return false;
     }
 
-    if (isRequired && isChecked) {
-      return true;
-    }
-
-    return false;
+    return true;
   }
 
-  onCheckboxBlur(): void {
+  onFocus(): void {
+    this.isFocused = true;
+  }
+
+  onBlur(): void {
     this.isTouched = true;
-
-    if (this.onBlur) {
-      this.onBlur(this.value);
-    }
   }
 }
 

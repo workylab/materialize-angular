@@ -1,16 +1,27 @@
-<div class="checkbox-container">
-  <input
-    [class.error]="!isValid && required && isTouched"
+<custom-form-group [iconName]="iconName" [className]="className">
+    <div class="form-checkbox-container">
+      <div class="form-checkbox-control"
+        tabindex="0"
 
-    (blur)="onCheckboxBlur()"
-    (input)="onCheckboxChange($event)"
+        (click)="toggleValue()"
+        (blur)="onBlur($event)"
+        (focus)="onFocus($event)"  
 
-    [checked]="value"
-    [disabled]="disabled"
-    [ngClass]="className"
-    [id]="name"
-    type="checkbox"
-    [value]="value"
-  />
-  <label class="form-label" [for]="name" tabindex="0">{{ label }}</label>
-</div>
+        [class.active]="value"
+        [class.disabled]="disabled"
+        [class.error]="!isValid && isTouched">
+        <input
+          type="checkbox"
+          [disabled]="disabled"
+          [name]="name"
+          [required]="required"
+          [value]="value"
+        />
+      </div>
+      <label class="form-checkbox-label">{{ label }}</label>
+      <div class="form-error-message" *ngIf="!isValid && isTouched">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </custom-form-group>
+  

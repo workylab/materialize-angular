@@ -62,7 +62,7 @@
     }
 
     &.active {
-      @include bg-opacity($color-purple, 0.1);
+      background-color: rgba($color-purple, 0.1);
     }
   }
 }

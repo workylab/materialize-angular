@@ -1,50 +1,104 @@
-.checkbox-container {
-  .checkbox-control {
+.form-checkbox-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  input[type='checkbox'] {
     display: none;
+  }
+}
 
-    &:checked + .form-label {
-      &::before {
-        background: $color-purple;
-        border-color: $color-purple;
-      }
+.form-checkbox-label {
+  color: $color-black;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  margin-left: $space-sm;
+}
 
-      &::after {
-        border-bottom: $border-md solid $color-white;
-        border-left: $border-md solid $color-white;
-        border-radius: 2px;
-        content: '';
-        height: 7px;
-        left: 18px;
-        margin-top: -2px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%) rotate(-45deg);
-        width: 13px;
-      }
+.form-checkbox-control {
+  background: $color-white;
+  border: $border-md solid $color-gray-dark;
+  border-radius: $radius-xs;
+  cursor: pointer;
+  height: 18px;
+  outline: none;
+  position: relative;
+  width: 18px;
+
+  &::after {
+    border-radius: $radius-full;
+    content: '';
+    height: 40px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 300ms ease;
+    width: 40px;
+    z-index: $zindex-level-1;
+  }
+
+  &::before {
+    border-radius: 2px;
+    content: '';
+    height: 7px;
+    left: 0;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 13px;
+  }
+
+  &:hover:not(.disabled) {
+    &.active::after {
+      background-color: rgba($color-purple, 0.1);
     }
 
-    + .form-label {
-      color: $color-gray-dark;
-      cursor: pointer;
-      display: block;
-      font-size: $font-size-xs;
-      font-weight: $font-weight-regular;
-      padding: $space-md $space-xxxs $space-md 50px;
-      position: relative;
-
-      &::before {
-        background: $color-white;
-        border: $border-md solid $color-gray-dark;
-        border-radius: $radius-xs;
-        content: '';
-        cursor: pointer;
-        height: 18px;
-        left: $space-md;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 18px;
-      }
+    &.error::after {
+      background-color: rgba($color-red, 0.1);
     }
+
+    &::after {
+      background-color: rgba($color-gray-dark, 0.1);
+    }
+  }
+
+  &:focus:not(.disabled) {
+    &.active::after {
+      background-color: rgba($color-purple, 0.3);
+    }
+
+    &.error::after {
+      background-color: rgba($color-red, 0.3);
+    }
+
+    &::after {
+      background-color: rgba($color-gray-dark, 0.3);
+    }
+  }
+
+  &.active {
+    background: $color-purple;
+    border-color: $color-purple;
+
+    &::before {
+      border-bottom: $border-md solid $color-white;
+      border-left: $border-md solid $color-white;
+    }
+  }
+
+  &.disabled {
+    border-color: lighten($color-gray-dark, 30%);
+    cursor: not-allowed;
+
+    &.active {
+      background-color: lighten($color-gray-dark, 30%);
+    }
+  }
+
+  &.error {
+    border-color: $color-red;
   }
 }

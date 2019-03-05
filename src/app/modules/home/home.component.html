@@ -272,22 +272,14 @@
 <br />
 <br />
 
+<h3>Checkbox</h3>
+<custom-checkbox label="Checkbox Required" [required]="true"></custom-checkbox>
+<custom-checkbox label="Checkbox (Enable inactive)"></custom-checkbox>
+<custom-checkbox label="Checkbox (Enable active)" [value]="true"></custom-checkbox>
+<custom-checkbox label="Checkbox (Disabled inactive)" [disabled]="true"></custom-checkbox>
+<custom-checkbox label="Checkbox (Disabled active)" [value]="true" [disabled]="true"></custom-checkbox>
 
-<custom-checkbox
-  label="Checkbox"
-  name="checkbox1"
-  [value]="false"
-  [required]="true"
->
-</custom-checkbox>
-
-<custom-radio
-  [required]="true"
-  [options]="selectOptions"
->
-</custom-radio>
-
-
+<custom-radio [required]="true" [options]="selectOptions"></custom-radio>
 <br />
 <br />
 <br />

@@ -72,7 +72,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
 
     this.isFocused = defaultProps.isFocused;
     this.isTouched = defaultProps.isTouched;
-    this.selectedOption = this.getInitIndexOption(this.value, this.options);
+    this.selectedOption = this.getInitOption(this.value, this.options);
     this.isValid = this.validate(this.value, this.required);
   }
 
@@ -88,7 +88,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     return true;
   }
 
-  getInitIndexOption(value: string, options: Array<CustomSelectOption>): CustomSelectOption {
+  getInitOption(value: string, options: Array<CustomSelectOption>): CustomSelectOption {
     for (let i = 0; i < options.length; i++) {
       const currentOption = options[i];
 
