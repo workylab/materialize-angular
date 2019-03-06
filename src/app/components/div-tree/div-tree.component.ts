@@ -11,8 +11,8 @@ export class DivTreeComponent {
   }
 
   ngOnInit() {
-    const firstChild = this.element.nativeElement.children[0];
-    const divTree = this.createdNested(this.classNames, firstChild);
+    const { children } = this.element.nativeElement;
+    const divTree = this.createdNested(this.classNames, children);
 
     this.element.nativeElement.appendChild(divTree);
   }
@@ -29,7 +29,18 @@ export class DivTreeComponent {
     const container: HTMLElement = this.renderer.createElement('div');
 
     container.className = classNames[0];
-    container.appendChild(content);
+
+    if (content instanceof HTMLCollection) {
+      const length = this.element.nativeElement.children.length;
+
+      for (let i = 0; i < length; i++) {
+        const { firstChild } = this.element.nativeElement;
+
+        container.appendChild(firstChild);
+      }
+    } else {
+      container.appendChild(content);
+    }
 
     return container;
   }
