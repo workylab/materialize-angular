@@ -1,5 +1,8 @@
 <button
   class="button button-{{ size }}"
+
+  (click)="onClick()"
+
   [ngClass]="className"
   [class.icon-end]="iconAtEnd"
   [class.disabled]="disabled"

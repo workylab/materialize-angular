@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CustomButton } from './custom-button.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -25,6 +25,8 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   @Input('size') sizeInput: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   @Input('text') textInput: string;
 
+  @Output('onClick') onClickEmitter: EventEmitter<void>;
+
   public className: string;
   public disabled: boolean;
   public iconName: string;
@@ -32,6 +34,10 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   public isRounded: boolean;
   public size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   public text: string;
+
+  constructor() {
+    this.onClickEmitter = new EventEmitter();
+  }
 
   ngOnInit() {
     this.initValues();
@@ -47,5 +53,9 @@ export class CustomButtonComponent implements CustomButton, OnInit {
     this.isRounded = getBooleanValue(this.isRoundedInput, defaultProps.isRounded);
     this.size = this.sizeInput || defaultProps.size;
     this.text = this.textInput || defaultProps.text;
+  }
+
+  onClick() {
+    this.onClickEmitter.emit();
   }
 }
