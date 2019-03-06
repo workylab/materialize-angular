@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CustomRadio, CustomRadioOption } from './custom.radio.model';
-import { generateUid } from '../../utils/generate-uid.util';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
@@ -9,8 +8,9 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 })
 export class CustomRadioComponent implements CustomRadio, OnInit {
   static readonly defaultProps: CustomRadio = {
-    className: 'form-control',
+    className: '',
     disabled: false,
+    iconName: '',
     isFocused: false,
     isTouched: false,
     isValid: false,
@@ -18,15 +18,13 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
     name: '',
     options: [],
     required: false,
+    selectedOption: {} as CustomRadioOption,
     value: null
   };
 
-  @Input() onBlur: () => void;
-  @Input() onChange: (selectedOption: CustomRadioOption) => void;
-
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('id') idInput: string;
+  @Input('iconName') iconNameIput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('options') optionsInput: Array<CustomRadioOption>;
@@ -35,7 +33,7 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
 
   public className: string;
   public disabled: boolean;
-  public id: string;
+  public iconName: string;
   public label: string;
   public name: string;
   public isFocused: boolean;
@@ -43,6 +41,7 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
   public isValid: boolean;
   public options: Array<CustomRadioOption>;
   public required: boolean;
+  public selectedOption: CustomRadioOption;
   public value: string;
 
   ngOnInit() {
@@ -54,9 +53,8 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = this.disabledInput || defaultProps.disabled;
-    this.id = this.idInput || generateUid();
     this.label = this.labelInput || defaultProps.className;
-    this.name = this.nameInput || generateUid();
+    this.name = this.nameInput || defaultProps.name;
     this.options = this.optionsInput || defaultProps.options;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
@@ -67,27 +65,20 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
   }
 
   validate(value: string, required: boolean) {
-    if (!required) {
-      return true;
+    if (required && !value) {
+      return false;
     }
 
-    if (required && value) {
-      return true;
-    }
-
-    return false;
+    return true;
   }
 
-  onRadioBlur() {
+  onBlur() {
     this.isTouched = true;
   }
 
-  onRadioChange(selectedOption: CustomRadioOption) {
+  onChange(selectedOption: CustomRadioOption) {
+    this.selectedOption = selectedOption;
     this.value = selectedOption.value;
     this.isValid = this.validate(this.value, this.required);
-
-    if (this.onChange) {
-      this.onChange(selectedOption);
-    }
   }
 }

@@ -1,17 +1,20 @@
-<div class="form-radio-container">
-  <div [ngClass]="'radio-item'" *ngFor="let option of options; let i = index">
-    <input
-      (blur)="onRadioBlur()"
-      (change)="onRadioChange(option)"
+<custom-form-group [iconName]="iconName" [className]="className">
 
-      [ngClass]="className"
-      [checked]="value === option.value"
-      [ngClass]=""
-      [disabled]="disabled"
-      [id]="id + i"
-      [name]="name"
-      type="radio"
-    />
-    <label class="form-label" [for]="id + i">{{ option.content }}</label>
+  <div class="form-radio-container">
+    <div class="form-radio-control" *ngFor="let option of options"
+      
+      [class.active]="value === option.value"
+      [class.disabled]="disabled"
+      [class.focused]="isFocused"
+      [class.error]="!isValid && isTouched">
+
+      <div class="form-radio-indicator"
+        (click)="onChange(option)"
+        (blur)="onlur()">
+      </div>
+
+      <label class="form-radio-label">{{ option.content }}</label>
+      <input [disabled]="disabled" [name]="name" type="radio" />
+    </div>
   </div>
-</div>
+</custom-form-group>

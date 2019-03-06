@@ -1,47 +1,55 @@
 .form-radio-container {
   width: 100;
+
+  input[type='radio'] {
+    display: none;
+  }
 }
 
-.form-control[type='radio'] {
-  display: none;
+.form-radio-control {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: $space-xxs 0;
+  position: relative;
 
-  + label {
-    cursor: pointer;
-    display: block;
-    margin-bottom: $space-sm;
-    padding: $space-xxxs $space-xxxs $space-xxxs $space-xxxl;
-    position: relative;
-    width: 100%;
+  &.active .form-radio-indicator {
+    border-color: $color-purple;
 
     &::before {
-      border: $border-md solid $color-gray-dark;
-      border-radius: $radius-full;
-      content: '';
-      display: block;
-      height: 22px;
-      left: $space-xxxs;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 22px;
-    }
-  }
-
-  &:checked + label {
-    &::before {
-      border-color: $color-purple;
-    }
-
-    &::after {
       background-color: $color-purple;
       border-radius: $radius-full;
       content: '';
-      height: 12px;
-      left: 9px;
+      height: 10px;
+      left: 50%;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
+      transform: translate(-50%, -50%);
+      width: 10px;
     }
+  }
+
+  &.disabled .form-radio-indicator {
+    border-color: lighten($color-gray-dark, 30%);
+
+    &::before {
+      background-color: lighten($color-gray-dark, 30%);
+    }
+  }
+
+  .form-radio-indicator {
+    border: $border-md solid $color-gray-dark;
+    border-radius: $radius-full;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    width: 20px;
+  }
+
+  .form-radio-label {
+    color: $color-black;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-regular;
+    margin-left: $space-sm;
   }
 }
