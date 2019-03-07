@@ -81,11 +81,11 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
     return true;
   }
 
-  onFocus(): void {
+  onFocus(event: Event): void {
     this.isFocused = true;
   }
 
-  onBlur(): void {
+  onBlur(event: Event): void {
     this.isTouched = true;
   }
 }
