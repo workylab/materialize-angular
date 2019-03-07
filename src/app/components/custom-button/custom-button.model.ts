@@ -6,4 +6,5 @@ export interface CustomButton {
   isRounded: boolean;
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   text: string;
+  type: 'button' | 'submit'
 }

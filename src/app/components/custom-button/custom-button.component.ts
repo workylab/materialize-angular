@@ -14,7 +14,8 @@ export class CustomButtonComponent implements CustomButton, OnInit {
     iconName: '',
     isRounded: false,
     size: 'md',
-    text: ''
+    text: '',
+    type: 'button'
   };
 
   @Input('className') classNameInput: string;
@@ -24,6 +25,7 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   @Input('isRounded') isRoundedInput: boolean;
   @Input('size') sizeInput: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   @Input('text') textInput: string;
+  @Input('type') typeInput: 'button' | 'submit';
 
   @Output('onClick') onClickEmitter: EventEmitter<void>;
 
@@ -34,6 +36,7 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   public isRounded: boolean;
   public size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   public text: string;
+  public type: 'button' | 'submit';
 
   constructor() {
     this.onClickEmitter = new EventEmitter();
@@ -53,6 +56,7 @@ export class CustomButtonComponent implements CustomButton, OnInit {
     this.isRounded = getBooleanValue(this.isRoundedInput, defaultProps.isRounded);
     this.size = this.sizeInput || defaultProps.size;
     this.text = this.textInput || defaultProps.text;
+    this.type = this.typeInput || defaultProps.type;
   }
 
   onClick() {

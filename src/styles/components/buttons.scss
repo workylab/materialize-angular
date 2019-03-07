@@ -28,8 +28,12 @@
   .button-text {
     display: flex;
     font-weight: $font-weight-regular;
-    margin: 0 $space-xxs;
+    margin: 0 $space-xxxs;
     order: 1;
+  }
+
+  .icon {
+    margin: 0 $space-xxxs;
   }
 }
 
