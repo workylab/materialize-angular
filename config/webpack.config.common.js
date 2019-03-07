@@ -62,6 +62,7 @@ module.exports = {
 			configFile: '.stylelintrc',
 			context: helpers.root('./src'),
 			failOnError: false,
+			files: ['/styles/**/*.s?(a|c)ss'],
 			quiet: true,
 		}),
 
