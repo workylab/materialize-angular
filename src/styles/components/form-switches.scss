@@ -22,7 +22,7 @@
 }
 
 .form-switch-control-container {
-  padding: $space-xxs;
+  padding: $space-xxs $space-sm;
 
   .form-switch-control {
     background-color: lighten($color-gray-dark, 30%);
