@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CustomCalendarDay } from './custom-calendar.model';
-
-const weekDaysJSON = require('../../fixtures/calendar-week-days.json');
-const monthsJSON = require('../../fixtures/calendar-months.json');
+import monthsJSON from '../../fixtures/calendar-months';
+import weekDaysJSON from '../../fixtures/calendar-week-days';
 
 @Component({
   selector: 'custom-calendar',

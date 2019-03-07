@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CustomInput } from './custom-input.model';
+import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
-
-const fieldValidations = require('../../fixtures/field-validations.json');
 
 @Component({
   selector: 'custom-input',

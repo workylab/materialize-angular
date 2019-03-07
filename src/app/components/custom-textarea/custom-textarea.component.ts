@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CustomTextArea } from './custom-textarea.model';
+import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
-
-const fieldValidations = require('../../fixtures/field-validations.json');
 
 @Component({
   selector: 'custom-textarea',
