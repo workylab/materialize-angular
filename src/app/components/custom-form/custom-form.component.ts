@@ -25,6 +25,10 @@ export class CustomFormComponent implements AfterContentInit {
   public formData: any;
   public isValidForm: boolean;
 
+  constructor() {
+    this.validateForm = this.validateForm.bind(this);
+  }
+
   ngAfterContentInit() {
     const autocompletes = this.autocompletes.toArray();
     const checkboxes = this.checkboxes.toArray();
@@ -43,7 +47,9 @@ export class CustomFormComponent implements AfterContentInit {
     this.fields = this.fields.concat(switches);
   }
 
-  validateForm() {
+  validateForm(event: Event) {
+    event.preventDefault();
+
     this.isValidForm = this.validateFields(this.fields);
 
     if (this.isValidForm) {

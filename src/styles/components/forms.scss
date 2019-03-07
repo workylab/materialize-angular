@@ -2,10 +2,13 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  padding: $space-sm $space-sm $space-xxxl $space-sm;
+  padding-bottom: $space-xxxl;
+  padding-top: $space-sm;
 
   .form-group-icon-container {
-    margin-right: $space-sm;
+    display: flex;
+    justify-content: center;
+    width: 40px;
 
     .icon {
       color: $color-gray-dark;

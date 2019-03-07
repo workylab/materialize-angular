@@ -8,14 +8,22 @@ navbar content
 
 <custom-form>
   <custom-input iconName="person" label="Name" [required]="true" name="name"></custom-input>
-  <custom-input iconName="email" label="Email" [required]="true" name="email"></custom-input>  
-  <custom-input iconName="phone" label="Phone" [required]="true" name="phone" patternName="number"></custom-input>  
-  <custom-switch iconName="house" label="House Phone" [required]="true" name="is-house-phone"></custom-switch>
-  <custom-switch iconName="work" label="Work Phone" [required]="true" name="is-work-phone"></custom-switch>
+  <custom-input iconName=" " label="Last Name" [required]="true" name="last_name"></custom-input>
+  <custom-input iconName="email" label="Email" [required]="true" name="email"></custom-input>
+  <custom-input iconName="phone" label="Phone" [required]="true" name="phone" patternName="number"></custom-input>
+  <custom-switch iconName="house" label="House Phone" [required]="true" name="is_house_phone"></custom-switch>
+  <custom-switch iconName="work" label="Work Phone" [required]="true" name="is_work_phone"></custom-switch>
   <custom-checkbox iconName="location_on" label="Location" [required]="true" name="location"></custom-checkbox>
   <custom-textarea iconName="message" label="Message" [required]="true" name="message"></custom-textarea>
   <custom-select iconName="map" label="State" [required]="true" name="state" [options]="stateOptions"></custom-select>
-  <custom-autocomplete iconName="map" label="State" [required]="true" name="state-auto" [options]="stateOptions" [isMatchValue]="true"></custom-autocomplete>
+  <custom-autocomplete iconName="map" label="State" [required]="true" name="state_auto" [options]="stateOptions" [isMatchValue]="true"></custom-autocomplete>
+  <custom-button
+    iconName="send"
+    text="Submit"
+    type="submit"
+    [iconAtEnd]="true"
+  >
+  </custom-button>
 </custom-form>
 
 

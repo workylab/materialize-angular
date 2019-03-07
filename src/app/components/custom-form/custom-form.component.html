@@ -1,3 +1,4 @@
-<ng-content></ng-content>
-<button (click)="validateForm()">Send...</button>
+<form (submit)="validateForm($event)" novalidate>
+  <ng-content></ng-content>
+</form>
 {{ formData | json }}
