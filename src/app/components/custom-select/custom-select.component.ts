@@ -22,7 +22,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     options: [],
     required: false,
     selectedOption: {} as CustomSelectOption,
-    value: null
+    value: ''
   };
 
   @Input() onChange: (selectedOption: CustomSelectOption) => void;
@@ -96,7 +96,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
       }
     }
 
-    return null;
+    return {} as CustomSelectOption;
   }
 
   selectOption(event: any, selectedOption: CustomSelectOption) {
@@ -106,7 +106,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
 
     this.value = selectedOption
       ? selectedOption.value
-      : null;
+      : '';
 
     this.closeMenu();
 

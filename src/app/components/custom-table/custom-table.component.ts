@@ -47,7 +47,7 @@ export class CustomTableComponent implements OnInit {
 
     this.activeSortedColumn = header.key;
 
-    header.direction = this.getNewDirection(header.direction);
+    header.direction = this.getNewDirection(header.direction || null);
 
     this.onSortEmitter.emit({
       direction: header.direction,
@@ -55,7 +55,7 @@ export class CustomTableComponent implements OnInit {
     });
   }
 
-  getNewDirection(currentDirection: string): 'asc' | 'desc' | null {
+  getNewDirection(currentDirection: 'asc' | 'desc' | null): 'asc' | 'desc' | null {
     if (!currentDirection) {
       return 'desc';
     }

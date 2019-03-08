@@ -19,7 +19,7 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
     options: [],
     required: false,
     selectedOption: {} as CustomRadioOption,
-    value: null
+    value: ''
   };
 
   @Input('className') classNameInput: string;

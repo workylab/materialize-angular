@@ -17,6 +17,6 @@ export interface CustomTableBodyCell {
 }
 
 export interface SortedColumn {
-  direction: string;
+  direction: 'asc' | 'desc' | null;
   key: string;
 }
