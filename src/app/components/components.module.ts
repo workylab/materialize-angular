@@ -16,6 +16,7 @@ import { CustomSideNavComponent } from './custom-sidenav/custom-sidenav.componen
 import { CustomSwitchComponent } from './custom-switch/custom-switch.component';
 import { CustomTableComponent } from './custom-table/custom-table.component';
 import { CustomTextAreaComponent } from './custom-textarea/custom-textarea.component';
+import { CustomTooltipComponent } from './custom-tooltip/custom-tooltip.component';
 import { DivTreeComponent } from './div-tree/div-tree.component';
 import { NgModule } from '@angular/core';
 
@@ -38,6 +39,7 @@ import { NgModule } from '@angular/core';
     CustomSwitchComponent,
     CustomTableComponent,
     CustomTextAreaComponent,
+    CustomTooltipComponent,
     DivTreeComponent
   ],
   exports: [
@@ -58,6 +60,7 @@ import { NgModule } from '@angular/core';
     CustomSwitchComponent,
     CustomTableComponent,
     CustomTextAreaComponent,
+    CustomTooltipComponent,
     DivTreeComponent
   ],
   imports: [CommonModule]
