@@ -1,9 +1,12 @@
 <div class="tooltip"
   [ngClass]="className"
+  (focus)="onFocus($event)"
+  (blur)="onBlur($event)"
   (mouseenter)="onMouseEnter($event)"
-  (mouseleave)="onMouseLeave($event)">
+  (mouseleave)="onMouseLeave($event)"
+  tabindex="0">
   <div class="tooltip-container tooltip-position-{{ position }}"
-    [class.active]="isFocused">
+    [class.active]="isFocused || isHovered">
     {{ text }}
   </div>
   <ng-content></ng-content>

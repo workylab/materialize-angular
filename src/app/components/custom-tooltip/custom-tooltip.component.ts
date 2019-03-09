@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CustomTooltip } from './custom-tooltip.model';
 
 @Component({
@@ -9,6 +9,7 @@ export class CustomTooltipComponent implements OnInit {
   static readonly defaultProps: CustomTooltip = {
     className: '',
     isFocused: false,
+    isHovered: false,
     position: 'top',
     text: ''
   };
@@ -19,18 +20,12 @@ export class CustomTooltipComponent implements OnInit {
 
   public className: string;
   public isFocused: boolean;
+  public isHovered: boolean;
   public position: 'top' | 'bottom' | 'left' | 'right';
   public text: string;
 
-  constructor(private element: ElementRef) {
-  }
-
   ngOnInit() {
     this.initValues();
-  }
-
-  ngAfterViewInit() {
-    const { children } = this.element.nativeElement;
   }
 
   initValues() {
@@ -39,14 +34,24 @@ export class CustomTooltipComponent implements OnInit {
     this.text = this.textInput || defaultProps.text;
     this.position = this.positionInput || defaultProps.position;
     this.className = this.classNameInput || defaultProps.className;
+
     this.isFocused = defaultProps.isFocused;
+    this.isHovered = defaultProps.isHovered;
   }
 
   onMouseEnter() {
-    this.isFocused = true;
+    this.isHovered = true;
   }
 
   onMouseLeave() {
+    this.isHovered = false;
+  }
+
+  onFocus() {
+    this.isFocused = true;
+  }
+
+  onBlur() {
     this.isFocused = false;
   }
 }
