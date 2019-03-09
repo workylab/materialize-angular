@@ -1,0 +1,10 @@
+<div class="tooltip"
+  [ngClass]="className"
+  (mouseenter)="onMouseEnter($event)"
+  (mouseleave)="onMouseLeave($event)">
+  <div class="tooltip-container tooltip-position-{{ position }}"
+    [class.active]="isFocused">
+    {{ text }}
+  </div>
+  <ng-content></ng-content>
+</div>
