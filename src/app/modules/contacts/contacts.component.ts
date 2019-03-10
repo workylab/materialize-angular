@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomCheckboxListItem } from 'src/app/components/custom-checkbox-list/custom-checkbox-list.model';
 import { CustomNavbarOption } from '../../components/custom-navbar/custom-navbar.model';
 import { CustomSelectOption } from '../../components/custom-select/custom-select.model';
 
@@ -6,6 +7,7 @@ import { CustomSelectOption } from '../../components/custom-select/custom-select
   templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {
+  public checkboxListItems: Array<CustomCheckboxListItem>;
   public navbarOptions: Array<CustomNavbarOption>;
   public stateOptions: Array<CustomSelectOption>;
 
@@ -27,6 +29,25 @@ export class ContactsComponent {
     }, {
       content: 'Pennsylvania',
       value: 'PA'
+    }];
+
+    this.checkboxListItems = [{
+      label: 'Option 1',
+      name: 'opt1',
+      value: false
+    }, {
+      label: 'Option 2',
+      name: 'opt2',
+      value: false
+    }, {
+      disabled: true,
+      label: 'Option 3',
+      name: 'opt3',
+      value: true
+    }, {
+      label: 'Option 4',
+      name: 'opt4',
+      value: false
     }];
   }
 }

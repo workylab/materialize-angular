@@ -279,6 +279,22 @@
 <custom-checkbox label="Checkbox (Disabled inactive)" [disabled]="true"></custom-checkbox>
 <custom-checkbox label="Checkbox (Disabled active)" [value]="true" [disabled]="true"></custom-checkbox>
 
+<h3>Checkbox List</h3>
+<custom-checkbox-list
+  checkAllLabel="Check all"
+  [items]="[
+    { value: false, label: 'Opt1', name: 'opt_1'},
+    { value: false, label: 'Opt2', name: 'opt_2'},
+    { value: false, label: 'Opt3', name: 'opt_3'},
+    { value: false, label: 'Opt4', name: 'opt_4'}
+  ]">
+</custom-checkbox-list>
+
+<br />
+<br />
+<br />
+
+<h3>Radio</h3>
 <custom-radio [required]="true" [options]="selectOptions"></custom-radio>
 <br />
 <br />

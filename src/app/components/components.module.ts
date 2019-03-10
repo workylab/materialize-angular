@@ -3,6 +3,7 @@ import { CustomAutocompleteComponent } from './custom-autocomplete/custom-autoco
 import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { CustomCalendarComponent } from './custom-calendar/custom-calendar.component';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
+import { CustomCheckboxListComponent } from './custom-checkbox-list/custom-checkbox-list.component';
 import { CustomDatePickerComponent } from './custom-datepicker/custom-datepicker.component';
 import { CustomDropdownComponent } from './custom-dropdown/custom-dropdown.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
@@ -26,6 +27,7 @@ import { NgModule } from '@angular/core';
     CustomButtonComponent,
     CustomCalendarComponent,
     CustomCheckboxComponent,
+    CustomCheckboxListComponent,
     CustomDatePickerComponent,
     CustomDropdownComponent,
     CustomFormComponent,
@@ -47,6 +49,7 @@ import { NgModule } from '@angular/core';
     CustomButtonComponent,
     CustomCalendarComponent,
     CustomCheckboxComponent,
+    CustomCheckboxListComponent,
     CustomDatePickerComponent,
     CustomDropdownComponent,
     CustomFormComponent,
