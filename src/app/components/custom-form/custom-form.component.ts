@@ -1,6 +1,7 @@
 import { AfterContentInit, Component, ContentChildren, QueryList } from '@angular/core';
 import { CustomAutocompleteComponent } from '../custom-autocomplete/custom-autocomplete.component';
 import { CustomCheckboxComponent } from '../custom-checkbox/custom-checkbox.component';
+import { CustomCheckboxListComponent } from '../custom-checkbox-list/custom-checkbox-list.component';
 import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { CustomRadioComponent } from '../custom-radio/custom-radio.component';
 import { CustomSelectComponent } from '../custom-select/custom-select.component';
@@ -15,6 +16,7 @@ import { FormField } from './custom-form.model';
 export class CustomFormComponent implements AfterContentInit {
   @ContentChildren(CustomAutocompleteComponent) autocompletes: QueryList<CustomAutocompleteComponent>;
   @ContentChildren(CustomCheckboxComponent) checkboxes: QueryList<CustomCheckboxComponent>;
+  @ContentChildren(CustomCheckboxListComponent) checkboxLists: QueryList<CustomCheckboxListComponent>;
   @ContentChildren(CustomInputComponent) inputs: QueryList<CustomInputComponent>;
   @ContentChildren(CustomSelectComponent) selects: QueryList<CustomSelectComponent>;
   @ContentChildren(CustomTextAreaComponent) textAreas: QueryList<CustomTextAreaComponent>;
@@ -32,6 +34,7 @@ export class CustomFormComponent implements AfterContentInit {
   ngAfterContentInit() {
     const autocompletes = this.autocompletes.toArray();
     const checkboxes = this.checkboxes.toArray();
+    const checkboxLists = this.checkboxLists.toArray();
     const inputs = this.inputs.toArray();
     const selects = this.selects.toArray();
     const textAreas = this.textAreas.toArray();
@@ -40,6 +43,7 @@ export class CustomFormComponent implements AfterContentInit {
 
     this.fields = this.fields.concat(autocompletes);
     this.fields = this.fields.concat(checkboxes);
+    this.fields = this.fields.concat(checkboxLists);
     this.fields = this.fields.concat(inputs);
     this.fields = this.fields.concat(selects);
     this.fields = this.fields.concat(textAreas);
@@ -76,7 +80,7 @@ export class CustomFormComponent implements AfterContentInit {
   getFormData(fields: Array<FormField>): any {
     const formData = {};
 
-    fields.map((item: FormField) => {
+    fields.forEach((item: FormField) => {
       formData[item.name] = item.value;
     });
 
