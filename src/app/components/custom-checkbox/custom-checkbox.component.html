@@ -8,6 +8,7 @@
         (focus)="onFocus($event)"  
 
         [class.active]="value"
+        [class.indeterminate]="indeterminate"
         [class.disabled]="disabled"
         [class.error]="!isValid && isTouched">
         <input
@@ -16,6 +17,7 @@
           [name]="name"
           [required]="required"
           [value]="value"
+          [indeterminate]="indeterminate"
         />
       </div>
       <label class="form-checkbox-label">{{ label }}</label>

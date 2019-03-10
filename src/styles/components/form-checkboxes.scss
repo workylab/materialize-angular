@@ -40,14 +40,9 @@
   }
 
   &::before {
-    border-radius: 2px;
     content: '';
-    height: 7px;
     left: 0;
-    margin-top: -2px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
     width: 13px;
   }
 
@@ -86,6 +81,21 @@
     &::before {
       border-bottom: $border-md solid $color-white;
       border-left: $border-md solid $color-white;
+      height: 7px;
+      margin-top: -2px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  &.indeterminate {
+    background: $color-purple;
+    border-color: $color-purple;
+
+    &::before {
+      border-bottom: $border-md solid $color-white;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
