@@ -39,19 +39,19 @@ export class CustomTooltipComponent implements OnInit {
     this.isHovered = defaultProps.isHovered;
   }
 
-  onMouseEnter() {
+  onMouseEnter(event: Event) {
     this.isHovered = true;
   }
 
-  onMouseLeave() {
+  onMouseLeave(event: Event) {
     this.isHovered = false;
   }
 
-  onFocus() {
+  onFocus(event: Event) {
     this.isFocused = true;
   }
 
-  onBlur() {
+  onBlur(event: Event) {
     this.isFocused = false;
   }
 }
