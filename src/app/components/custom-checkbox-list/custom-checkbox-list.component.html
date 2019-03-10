@@ -1,0 +1,24 @@
+<custom-form-group [iconName]="iconName" [className]="className">
+  <div class="form-checkboxes-list-container"
+    [class.error]="!isValid && isTouched">
+    <custom-checkbox
+      (onChange)="onChangeAll($event)"
+      [label]="checkAllLabel"
+      [indeterminate]="!checkAllValue"
+      [value]="checkAllValue">
+    </custom-checkbox>
+
+    <div class="form-checkboxes-list-item" *ngFor="let item of items">
+      <custom-checkbox
+        (onChange)="onChangeCheckbox($event, item)"
+        [disabled]="item.disabled"
+        [label]="item.label"
+        [value]="item.value"
+      >
+      </custom-checkbox> 
+    </div>
+    <div class="form-error-message" *ngIf="!isValid && isTouched">
+      {{ errorMessage }}
+    </div>
+  </div>
+</custom-form-group>
