@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { CustomCollapsible } from './custom-collapsible.model';
 
 @Component({
@@ -25,7 +25,7 @@ export class CustomCollapsibleComponent implements CustomCollapsible, OnInit {
   public isOpen: boolean;
   public title: string;
 
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef, private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -47,11 +47,11 @@ export class CustomCollapsibleComponent implements CustomCollapsible, OnInit {
     const contentContainer: HTMLElement = children[children.length - 1];
 
     if (contentContainer.style.maxHeight) {
-      contentContainer.style.maxHeight = null;
+      this.renderer.setStyle(contentContainer, 'maxHeight', null);
       this.isOpen = false;
     } else {
       this.isOpen = true;
-      contentContainer.style.maxHeight = `${ contentContainer.scrollHeight }px`;
+      this.renderer.setStyle(contentContainer, 'maxHeight', `${ contentContainer.scrollHeight }px`);
     }
   }
 }
