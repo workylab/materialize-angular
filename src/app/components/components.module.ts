@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { CustomAccordionComponent } from './custom-accordion/custom-accordion.component';
 import { CustomAutocompleteComponent } from './custom-autocomplete/custom-autocomplete.component';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { CustomButtonToggleComponent } from './custom-button-toggle/custom-button-toggle.component';
@@ -25,6 +26,7 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
+    CustomAccordionComponent,
     CustomAutocompleteComponent,
     CustomButtonComponent,
     CustomButtonToggleComponent,
@@ -49,6 +51,7 @@ import { NgModule } from '@angular/core';
     DivTreeComponent
   ],
   exports: [
+    CustomAccordionComponent,
     CustomAutocompleteComponent,
     CustomButtonComponent,
     CustomButtonToggleComponent,
