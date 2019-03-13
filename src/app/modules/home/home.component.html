@@ -394,3 +394,29 @@
 <custom-tooltip text="Description..." position="right">
   <custom-button iconName="send" size="xs" [isRounded]="true"></custom-button>
 </custom-tooltip>
+
+<br />
+<br />
+<br />
+
+<h3>Button Toggle</h3>
+<custom-button-toggle
+[items]="[
+  { value: '1', content: 'Option 1', iconName: 'person', name: 'op1' },
+  { value: '2', content: 'Option 1', iconName: 'person', name: 'op2'},
+  { value: '3', content: 'Option 1', iconName: 'person', name: 'op3'}
+]">
+</custom-button-toggle>
+
+<h3>Button Toggle Disabled</h3>
+<custom-button-toggle
+[items]="[
+  { value: '1', content: 'Option 1', iconName: 'person', name: 'op1'},
+  { value: '2', content: 'Option 1', iconName: 'person', name: 'op2'}
+]"
+[disabled]="true">
+</custom-button-toggle>
+
+<br />
+<br />
+<br />

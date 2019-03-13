@@ -2,7 +2,7 @@
   [class.disabled]="disabled">
   <div class="button-toggle-item"
     (click)="onClick(item)"
-    [class.active]="value.indexOf(item.value) >= 0"
+    [class.active]="value[item.name]"
     *ngFor="let item of items">
     <custom-icon className="icon-button-toggle"
       size="md"

@@ -8,12 +8,15 @@ export interface ButtonToggle extends FormField {
   isTouched: boolean;
   isMultiple: boolean;
   name: string;
-  value: Array<string>;
+  value: {
+    [key: string]: string;
+  };
 }
 export interface ButtonToggleItem {
   content: string;
   disabled: boolean;
   iconName: string;
+  name: string;
   value: string;
 }
 

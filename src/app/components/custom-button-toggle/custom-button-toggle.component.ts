@@ -19,7 +19,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
     label: '',
     name: '',
     required: false,
-    value: []
+    value: {}
   };
 
   @Output('onClick') onClickEmitter: EventEmitter<string>;
@@ -31,7 +31,6 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
-  @Input('value') valueInput: Array<string>;
 
   public className: string;
   public disabled: boolean;
@@ -43,7 +42,9 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
   public label: string;
   public name: string;
   public required: boolean;
-  public value: Array<string>;
+  public value: {
+    [key: string]: string;
+  };;
 
   constructor() {
     this.onClickEmitter = new EventEmitter();
@@ -63,7 +64,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
     this.label = this.label || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.required, defaultProps.required);
-    this.value = this.valueInput || defaultProps.value;
+    this.value = {};
 
     this.isFocused = defaultProps.isFocused;
     this.isTouched = defaultProps.isTouched;
@@ -72,12 +73,10 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
 
   onClick(item: ButtonToggleItem) {
     if (!this.disabled) {
-      const valueIndex = this.value.indexOf(item.value);
-
-      if (valueIndex >= 0) {
-        this.value.splice(valueIndex, 1);
+      if (this.value[item.name]) {
+        delete this.value[item.name];
       } else {
-        this.value.push(item.value);
+        this.value[item.name] = item.value;
       }
 
       this.onClickEmitter.emit(item.value);
