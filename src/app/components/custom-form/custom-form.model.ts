@@ -7,5 +7,5 @@ export interface FormField {
   label: string;
   name: string;
   required: boolean;
-  value: string | boolean | number | { [key: string]: boolean; };
+  value: string | boolean | number | Array<string> | { [key: string]: boolean; };
 }
