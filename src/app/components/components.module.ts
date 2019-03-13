@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CustomAutocompleteComponent } from './custom-autocomplete/custom-autocomplete.component';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
+import { CustomButtonToggleComponent } from './custom-button-toggle/custom-button-toggle.component';
 import { CustomCalendarComponent } from './custom-calendar/custom-calendar.component';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { CustomCheckboxListComponent } from './custom-checkbox-list/custom-checkbox-list.component';
@@ -26,6 +27,7 @@ import { NgModule } from '@angular/core';
   declarations: [
     CustomAutocompleteComponent,
     CustomButtonComponent,
+    CustomButtonToggleComponent,
     CustomCalendarComponent,
     CustomCheckboxComponent,
     CustomCheckboxListComponent,
@@ -49,6 +51,7 @@ import { NgModule } from '@angular/core';
   exports: [
     CustomAutocompleteComponent,
     CustomButtonComponent,
+    CustomButtonToggleComponent,
     CustomCalendarComponent,
     CustomCheckboxComponent,
     CustomCheckboxListComponent,
