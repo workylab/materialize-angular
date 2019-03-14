@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CustomAccordion } from './custom-accordion.model';
 import { CustomCollapsible } from '../custom-collapsible/custom-collapsible.model';
 
@@ -31,10 +31,10 @@ export class CustomAccordionComponent implements CustomAccordion, OnInit {
 
   onClick(isOpen: boolean, index: number) {
     for (let i = 0; i < this.items.length; i++) {
-      if (i !== index) {
-        this.items[i].isOpen = false;
-      } else {
+      if (i === index) {
         this.items[i].isOpen = isOpen;
+      } else {
+        this.items[i].isOpen = false;
       }
     }
   }
