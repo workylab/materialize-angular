@@ -10,13 +10,14 @@
 
     <div class="form-control-wrapper">
       <input class="form-control"
-        (input)="onInputChange($event)"
-        (blur)="onInputBlur($event)"
-        (focus)="onInputFocus()"
+        (input)="onChange($event)"
+        (blur)="onBlur($event)"
+        (focus)="onFocus()"
 
         [autocomplete]="autocomplete"
         [disabled]="disabled"
         [maxLength]="maxLength"
+        [name]="name"
         [placeholder]="placeholder"
         [required]="required"
         [type]="type"
