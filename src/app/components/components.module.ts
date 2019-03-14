@@ -13,6 +13,7 @@ import { CustomFormComponent } from './custom-form/custom-form.component';
 import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
+import { CustomInputFileComponent } from './custom-input-file/custom-input-file.component';
 import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
 import { CustomRadioComponent } from './custom-radio/custom-radio.component';
 import { CustomSelectComponent } from './custom-select/custom-select.component';
@@ -40,6 +41,7 @@ import { NgModule } from '@angular/core';
     CustomFormGroupComponent,
     CustomIconComponent,
     CustomInputComponent,
+    CustomInputFileComponent,
     CustomNavbarComponent,
     CustomRadioComponent,
     CustomSelectComponent,
@@ -65,6 +67,7 @@ import { NgModule } from '@angular/core';
     CustomFormGroupComponent,
     CustomIconComponent,
     CustomInputComponent,
+    CustomInputFileComponent,
     CustomNavbarComponent,
     CustomRadioComponent,
     CustomSelectComponent,
