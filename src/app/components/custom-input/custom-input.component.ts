@@ -28,7 +28,6 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     value: ''
   };
 
-  @Input() onChange: (value: string) => void;
   @Output('onFocus') onFocusEmmiter: EventEmitter<void>;
   @Output('onBlur') onBlurEmmiter: EventEmitter<void>;
 
@@ -68,8 +67,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     this.onFocusEmmiter = new EventEmitter();
     this.onBlurEmmiter = new EventEmitter();
 
-    this.onInputBlur = this.onInputBlur.bind(this);
-    this.onInputChange = this.onInputChange.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   ngOnInit() {
@@ -153,25 +152,21 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     return false;
   }
 
-  onInputBlur(event: any): void {
+  onBlur(event: any): void {
     this.isTouched = true;
     this.isFocused = false;
     this.onBlurEmmiter.emit(event);
   }
 
-  onInputFocus(): void {
+  onFocus(): void {
     this.isFocused = true;
     this.onFocusEmmiter.emit();
   }
 
-  onInputChange(event: any): void {
+  onChange(event: any): void {
     const { value } = event.target;
 
     this.isValid = this.validate(value, this.required);
     this.value = value;
-
-    if (this.onChange) {
-      this.onChange(value);
-    }
   }
 }

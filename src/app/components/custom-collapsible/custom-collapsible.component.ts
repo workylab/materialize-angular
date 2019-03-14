@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, Renderer2, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, SimpleChanges } from '@angular/core';
 import { CustomCollapsible } from './custom-collapsible.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 

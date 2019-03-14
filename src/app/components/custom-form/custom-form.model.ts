@@ -1,3 +1,5 @@
+import { File } from '../custom-input-file/custom-input-file.model';
+
 export interface FormField {
   className: string;
   disabled: boolean;
@@ -7,5 +9,5 @@ export interface FormField {
   label: string;
   name: string;
   required: boolean;
-  value: string | boolean | number | { [key: string]: boolean | string; };
+  value: string | boolean | number | Array<File> | { [key: string]: boolean | string; };
 }
