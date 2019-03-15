@@ -18,6 +18,8 @@ import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
 import { CustomRadioComponent } from './custom-radio/custom-radio.component';
 import { CustomSelectComponent } from './custom-select/custom-select.component';
 import { CustomSideNavComponent } from './custom-sidenav/custom-sidenav.component';
+import { CustomSwiperComponent } from './custom-swiper/custom-swiper.component';
+import { CustomSwiperItemComponent } from './custom-swiper/custom-swiper-item/custom-swiper-item.component';
 import { CustomSwitchComponent } from './custom-switch/custom-switch.component';
 import { CustomTableComponent } from './custom-table/custom-table.component';
 import { CustomTextAreaComponent } from './custom-textarea/custom-textarea.component';
@@ -46,6 +48,8 @@ import { NgModule } from '@angular/core';
     CustomRadioComponent,
     CustomSelectComponent,
     CustomSideNavComponent,
+    CustomSwiperComponent,
+    CustomSwiperItemComponent,
     CustomSwitchComponent,
     CustomTableComponent,
     CustomTextAreaComponent,
@@ -69,6 +73,8 @@ import { NgModule } from '@angular/core';
     CustomInputComponent,
     CustomInputFileComponent,
     CustomNavbarComponent,
+    CustomSwiperComponent,
+    CustomSwiperItemComponent,
     CustomRadioComponent,
     CustomSelectComponent,
     CustomSideNavComponent,
