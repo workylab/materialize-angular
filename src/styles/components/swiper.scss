@@ -1,0 +1,19 @@
+.swiper-section {
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-container {
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.swiper-item {
+  border: $border-sm solid $color-purple;
+  display: inline-block;
+  float: none;
+  font-size: $font-size-xs;
+  height: 200px;
+  white-space: normal;
+  width: 400px;
+}
