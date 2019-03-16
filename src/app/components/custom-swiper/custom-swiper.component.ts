@@ -56,10 +56,10 @@ export class CustomSwiperComponent implements AfterContentInit {
   private traveledDistance: number;
   private options: CustomSwiperOptions = {
     animationMs: 300,
-    autoplayMs: 0,
+    autoplayMs: 1000,
     changePerPage: false,
-    loop: true,
-    reverse: true,
+    loop: false,
+    reverse: false,
     showDots: false
   };
 
@@ -356,6 +356,8 @@ export class CustomSwiperComponent implements AfterContentInit {
   createClones() {
     this.deleteClones();
 
+    this.items = Array.from(this.container.querySelectorAll('.swiper-item'));
+
     this.nextClonedItems = this.cloneDisplayedItemsInFirstPage();
     this.prevClonedItems = this.cloneDisplayedItemsInLastPage();
 
@@ -363,7 +365,6 @@ export class CustomSwiperComponent implements AfterContentInit {
     this.lastIndexToDisplay = this.getLastIndexToDisplay();
 
     // this.pages = this.getItemsPerPage();
-
     this.goToItem(this.prevClonedItems, false);
   }
 
@@ -384,37 +385,45 @@ export class CustomSwiperComponent implements AfterContentInit {
       ? this.options.animationMs
       : 0;
 
-    if (index >= this.lastIndexToDisplay && this.options.loop) {
-      this.updateIndex(this.prevClonedItems);
-      this.animate(this.items[this.prevClonedItems].offsetLeft, 0);
-      this.goToItem(this.prevClonedItems + 1, true);
-
-      return;
-    }
-
-    if (index <= 0 && this.options.loop) {
-      const lastIndex = this.items.length - this.nextClonedItems - this.prevClonedItems;
-
-      this.updateIndex(lastIndex);
-      this.animate(this.items[lastIndex + 1].offsetLeft, 0);
-      this.goToItem(lastIndex, true);
-
-      return;
-    }
-
     if (index >= 0 && index < this.lastIndexToDisplay) {
       this.updateIndex(index);
       this.animate(this.items[index].offsetLeft, animationMs);
 
-      return;
+      const realLastIndex = this.items.length - this.nextClonedItems;
+
+      if (this.options.loop && index >= realLastIndex) {
+        this.moveToRealInit(index);
+      } else if (this.options.loop && index < this.prevClonedItems) {
+        this.moveToRealEnd(index);
+      }
     }
 
     if (index >= this.lastIndexToDisplay && !this.options.loop) {
       this.updateIndex(this.lastIndexToDisplay);
       this.animate(this.containerFullWidth(), animationMs);
-
-      return;
     }
+  }
+
+  moveToRealInit(index: number) {
+    setTimeout(() => {
+      const realLastIndex = this.items.length - this.nextClonedItems;
+      const realCurrentIndex = index + this.prevClonedItems;
+      const initIndex = realCurrentIndex - realLastIndex;
+
+      this.updateIndex(initIndex);
+      this.animate(this.items[initIndex].offsetLeft, 0);
+    }, this.options.animationMs);
+  }
+
+  moveToRealEnd(index: number) {
+    setTimeout(() => {
+      const realLastIndex = this.items.length - this.nextClonedItems;
+      const realCurrentIndex = this.prevClonedItems - index;
+      const endIndex = realLastIndex - realCurrentIndex;
+
+      this.updateIndex(endIndex);
+      this.animate(this.items[endIndex].offsetLeft, 0);
+    }, this.options.animationMs);
   }
 
   cloneDisplayedItemsInFirstPage(): number {
