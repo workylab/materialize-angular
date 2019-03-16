@@ -8,9 +8,9 @@ export interface CustomSwiperEvents {
 
 export interface CustomSwiperOptions {
   animationMs: number;
-  autoplay: boolean;
   autoplayMs: number;
   changePerPage: boolean;
   loop: boolean;
+  reverse: boolean;
   showDots: boolean;
 }
