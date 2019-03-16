@@ -38,9 +38,12 @@ export class CustomSwiperComponent implements AfterContentInit {
   @ContentChildren(CustomSwiperItemComponent) itemsQuery: QueryList<CustomSwiperItemComponent>;
   @Output('onChange') onChangeEmitter: EventEmitter<number>;
   @ViewChild('swiperContainer') swiperContainerRef: ElementRef;
+  @ViewChild('swiper') swiperRef: ElementRef;
+
+  // private dots: Array<number> = [];
+  // private pages: number[];
 
   private container: HTMLElement;
-  private dots: Array<number> = [];
   private firstPointX: number;
   private firstPointY: number;
   private index: number;
@@ -48,22 +51,22 @@ export class CustomSwiperComponent implements AfterContentInit {
   private interval: number;
   private items: Array<HTMLElement>;
   private lastIndexToDisplay: number;
-  private pages: number[];
   private supportedEvents: CustomSwiperEvents;
   private swiper: HTMLElement;
   private traveledDistance: number;
-
   private options: CustomSwiperOptions = {
     animationMs: 300,
-    autoplay: false,
-    autoplayMs: 1000,
-    changePerPage: true,
-    loop: false,
-    showDots: true
+    autoplayMs: 0,
+    changePerPage: false,
+    loop: true,
+    reverse: true,
+    showDots: false
   };
 
-  constructor(private swiperElementRef: ElementRef) {
-    this.swiper = this.swiperElementRef.nativeElement;
+  public prevClonedItems: number;
+  public nextClonedItems: number;
+
+  constructor() {
     this.actionDown = this.actionDown.bind(this);
     this.actionUp = this.actionUp.bind(this);
     this.activateSwipe = this.activateSwipe.bind(this);
@@ -89,6 +92,7 @@ export class CustomSwiperComponent implements AfterContentInit {
   }
 
   init() {
+    this.swiper = this.swiperRef.nativeElement;
     this.container = this.swiperContainerRef.nativeElement as HTMLElement;
     this.items = this.itemsQuery.toArray().map(item => item.swiperItemContainer);
 
@@ -100,7 +104,8 @@ export class CustomSwiperComponent implements AfterContentInit {
     this.initDistance = 0;
     this.traveledDistance = 0;
     this.lastIndexToDisplay = this.getLastIndexToDisplay();
-    this.pages = this.getItemsPerPage();
+
+    // this.pages = this.getItemsPerPage();
 
     this.swiper.addEventListener(this.supportedEvents.down, this.actionDown);
     this.swiper.addEventListener(this.supportedEvents.click, this.cancelRedirect);
@@ -120,7 +125,7 @@ export class CustomSwiperComponent implements AfterContentInit {
     if (this.options.loop) {
       this.createClones();
 
-      if (this.options.autoplay) {
+      if (this.options.autoplayMs) {
         this.startAutoplay();
       }
     }
@@ -128,16 +133,10 @@ export class CustomSwiperComponent implements AfterContentInit {
 
   update() {
     this.lastIndexToDisplay = this.getLastIndexToDisplay();
-    this.pages = this.getItemsPerPage();
 
-    if (this.index < this.lastIndexToDisplay) {
-      const currentItem = this.items[this.index] as HTMLElement;
+    // this.pages = this.getItemsPerPage();
 
-      this.animate(currentItem.offsetLeft, 0);
-    } else {
-      this.updateIndex(this.lastIndexToDisplay);
-      this.animate(this.containerFullWidth(), 0);
-    }
+    this.goToItem(this.index, false);
 
     if (this.options.showDots) {
       this.createDots();
@@ -159,44 +158,15 @@ export class CustomSwiperComponent implements AfterContentInit {
     return this.container.scrollWidth - this.container.offsetWidth;
   }
 
-  goToPage(pageNumber: number): void {
-    let firstItemPage = 0;
-
-    for (let i = 0; i < pageNumber; i++) {
-      firstItemPage = firstItemPage + this.pages[i];
-    }
-
-    if (firstItemPage < this.lastIndexToDisplay) {
-      const firstItemPageDistance = this.items[firstItemPage].offsetLeft;
-
-      this.animate(firstItemPageDistance, this.options.animationMs);
-      this.updateIndex(firstItemPage);
-    } else {
-      this.animate(this.containerFullWidth(), this.options.animationMs);
-      this.updateIndex(this.lastIndexToDisplay);
-    }
-  }
-
-  getCurrentPage(index: number): number {
-    let itemsInCurrentPage = 0;
-    const nextIndex = index + 1;
-
-    for (let i = 0; i < this.items.length; i++) {
-      itemsInCurrentPage = itemsInCurrentPage + this.pages[i];
-
-      if (itemsInCurrentPage >= nextIndex) {
-        return i;
-      }
-    }
-
-    return 0;
-  }
-
   autoplay() {
     this.swiper.removeEventListener(this.supportedEvents.out, this.autoplay);
 
     this.interval = window.setInterval(() => {
-      this.showNext();
+      if (this.options.reverse) {
+        this.showPrev();
+      } else {
+        this.showNext();
+      }
     }, this.options.autoplayMs);
   }
 
@@ -210,36 +180,6 @@ export class CustomSwiperComponent implements AfterContentInit {
     clearInterval(this.interval);
 
     this.swiper.addEventListener(this.supportedEvents.out, this.autoplay);
-  }
-
-  getItemsPerPage(): Array<number> {
-    const pageItems = [];
-    let distance = 0;
-    let itemsCounter = 1;
-
-    for (let i = 0; i < this.items.length; i++) {
-      distance = distance + this.items[i].offsetWidth;
-
-      if (distance > this.container.offsetWidth) {
-        if (distance < this.container.offsetWidth + this.items.length) {
-          pageItems.push(itemsCounter);
-          distance = 0;
-          itemsCounter = 0;
-        } else {
-          pageItems.push(itemsCounter - 1);
-          distance = this.items[i].offsetWidth;
-          itemsCounter = 1;
-        }
-      }
-
-      if (i === this.items.length - 1 && itemsCounter > 0) {
-        pageItems.push(itemsCounter);
-      }
-
-      itemsCounter++;
-    }
-
-    return pageItems;
   }
 
   actionDown(downEvent: any) {
@@ -300,20 +240,15 @@ export class CustomSwiperComponent implements AfterContentInit {
     const distance = this.traveledDistance + this.initDistance;
 
     for (let i = 0; i <= this.lastIndexToDisplay; i++) {
-      const item = this.items[i] as HTMLElement;
-      const ajustDistance = (item.offsetWidth * CustomSwiperComponent.SWIPE_PERCENT_ADJUST) / 100;
+      const ajustDistance = (this.items[i].offsetWidth * CustomSwiperComponent.SWIPE_PERCENT_ADJUST) / 100;
       const minDistance = this.traveledDistance > 0
-        ? item.offsetLeft + ajustDistance
-        : item.offsetLeft + item.offsetWidth - ajustDistance;
+        ? this.items[i].offsetLeft + ajustDistance
+        : this.items[i].offsetLeft + this.items[i].offsetWidth - ajustDistance;
 
-      if (i < this.lastIndexToDisplay && minDistance > distance) {
-        this.animate(item.offsetLeft, this.options.animationMs);
-        this.updateIndex(i);
+      if (minDistance > distance || this.lastIndexToDisplay === i) {
+        this.goToItem(i, true);
 
         break;
-      } else if (i === this.lastIndexToDisplay) {
-        this.animate(this.containerFullWidth(), this.options.animationMs);
-        this.updateIndex(this.lastIndexToDisplay);
       }
     }
 
@@ -349,35 +284,14 @@ export class CustomSwiperComponent implements AfterContentInit {
     const totalItems = this.items.length - 1;
 
     for (let i = totalItems; i >= 0; i--) {
-      const item = this.items[i] as HTMLElement;
+      distance = distance + this.items[i].offsetWidth;
 
-      distance = distance + item.offsetWidth;
-
-      if (distance > this.container.offsetWidth) {
-        if (distance < this.container.offsetWidth + totalItems) {
-          return i;
-        }
-
+      if (distance >= this.container.offsetWidth) {
         return i + 1;
       }
     }
 
     return totalItems;
-  }
-
-  createDots(): void {
-    this.dots = [];
-
-    const firstPage = this.options.loop
-      ? 1
-      : 0;
-    const lastPage = this.options.loop
-      ? this.pages.length - 1
-      : this.pages.length;
-
-    for (let i = firstPage; i < lastPage; i++) {
-      this.dots.push(i);
-    }
   }
 
   cancelRedirect(event: any) {
@@ -399,82 +313,61 @@ export class CustomSwiperComponent implements AfterContentInit {
     this.onChangeEmitter.emit(this.index);
   }
 
-  showPrev(event?: Event): void {
+  preventAutoplay(event: any) {
     if (event && this.options.loop && this.supportTouchEvents()) {
       clearInterval(this.interval);
 
       this.autoplay();
     }
+  }
 
-    if (this.index > 0 && this.options.changePerPage) {
-      const currentPage = this.getCurrentPage(this.index);
-      const previousPage = currentPage - 1;
+  showPrev(event?: Event) {
+    this.preventAutoplay(event);
 
-      this.goToPage(previousPage);
+    if (this.options.changePerPage) {
+      // const currentPage = this.getPageByIndex(this.index);
 
-      return;
-    }
-
-    // if (this.index > 0 && !this.options.changePerPage) {
-    //   const previuosIndex = this.index - 1;
-    //   const currentItem = this.items[previuosIndex];
-
-    //   this.updateIndex(previuosIndex);
-    //   this.animate(currentItem.offsetLeft, this.options.animationMs);
-
-    //   return;
-    // }
-
-    const amountFirstPage = this.pages[0];
-
-    if (this.options.loop && this.index === amountFirstPage) {
-      this.animate(this.containerFullWidth(), 0);
-      this.updateIndex(this.lastIndexToDisplay);
-      this.showPrev();
+      // this.goToPage(currentPage - 1);
+    } else {
+      this.goToItem(this.index - 1, true);
     }
   }
 
-  showNext(event?: Event): void {
-    if (event && this.options.loop && this.supportTouchEvents()) {
-      clearInterval(this.interval);
+  showNext(event?: Event) {
+    this.preventAutoplay(event);
 
-      this.autoplay();
-    }
+    if (this.options.changePerPage) {
+      // const page = this.getPageByIndex(this.index);
 
-    const amountLastPage = this.pages[this.pages.length - 1];
-    const something = amountLastPage * 2;
-    const somethingElse = this.items.length - something;
-
-    // if (this.options.loop && this.index >= somethingElse) {
-    //   this.animate(0, 0);
-    //   this.updateIndex(0);
-    //   this.showNext();
-
-    //   return;
-    // }
-
-    const newIndex = this.index + 1;
-
-    if (newIndex <= this.lastIndexToDisplay) {
-      if (this.options.changePerPage) {
-        const page = this.getCurrentPage(this.index);
-
-        this.goToPage(page + 1);
-      } else {
-        this.updateIndex(newIndex);
-
-        if (newIndex < this.lastIndexToDisplay) {
-          const currentItem = this.items[newIndex] as HTMLElement;
-
-          this.animate(currentItem.offsetLeft, this.options.animationMs);
-        } else {
-          this.animate(this.containerFullWidth(), this.options.animationMs);
-        }
-      }
+      // this.goToPage(page + 1);
+    } else {
+      this.goToItem(this.index + 1, true);
     }
   }
 
-  createClones(): void {
+  cloneItem(index: number): HTMLElement {
+    const clonedItem = this.items[index].cloneNode(true) as HTMLElement;
+
+    clonedItem.classList.add('cloned');
+
+    return clonedItem;
+  }
+
+  createClones() {
+    this.deleteClones();
+
+    this.nextClonedItems = this.cloneDisplayedItemsInFirstPage();
+    this.prevClonedItems = this.cloneDisplayedItemsInLastPage();
+
+    this.items = Array.from(this.container.querySelectorAll('.swiper-item'));
+    this.lastIndexToDisplay = this.getLastIndexToDisplay();
+
+    // this.pages = this.getItemsPerPage();
+
+    this.goToItem(this.prevClonedItems, false);
+  }
+
+  deleteClones() {
     const clons = this.container.querySelectorAll('.cloned');
 
     for (let i = 0; i < clons.length; i++) {
@@ -484,39 +377,149 @@ export class CustomSwiperComponent implements AfterContentInit {
         currentItem.parentNode.removeChild(currentItem);
       }
     }
-
-    const amountFirstPage = this.pages[0];
-    const amountLastPage = this.pages[this.pages.length - 1];
-    const lastItem = this.items.length - 1;
-    const lastItemToClone = lastItem - amountLastPage;
-
-    for (let i = 0; i <= amountFirstPage; i++) {
-      const clonedItem = this.items[i].cloneNode(true) as HTMLElement;
-
-      clonedItem.classList.add('cloned');
-
-      this.container.appendChild(clonedItem);
-    }
-
-    for (let i = lastItem; i > lastItemToClone; i--) {
-      const clonedItem = this.items[i].cloneNode(true) as HTMLElement;
-
-      clonedItem.classList.add('cloned');
-
-      this.container.insertBefore(clonedItem, this.container.firstChild);
-    }
-
-    const items = this.container.querySelectorAll('.swiper-item');
-    const newItems = [] as Array<HTMLElement>;
-
-    for (let i = 0; i < items.length; i++) {
-      newItems.push(items[i] as HTMLElement);
-    }
-
-    this.items = newItems;
-    this.lastIndexToDisplay = this.getLastIndexToDisplay();
-    this.pages = this.getItemsPerPage();
-
-    // this.goToPage(1, 0);
   }
+
+  goToItem(index: number, hasAnimation: boolean) {
+    const animationMs = hasAnimation
+      ? this.options.animationMs
+      : 0;
+
+    if (index >= this.lastIndexToDisplay && this.options.loop) {
+      this.updateIndex(this.prevClonedItems);
+      this.animate(this.items[this.prevClonedItems].offsetLeft, 0);
+      this.goToItem(this.prevClonedItems + 1, true);
+
+      return;
+    }
+
+    if (index <= 0 && this.options.loop) {
+      const lastIndex = this.items.length - this.nextClonedItems - this.prevClonedItems;
+
+      this.updateIndex(lastIndex);
+      this.animate(this.items[lastIndex + 1].offsetLeft, 0);
+      this.goToItem(lastIndex, true);
+
+      return;
+    }
+
+    if (index >= 0 && index < this.lastIndexToDisplay) {
+      this.updateIndex(index);
+      this.animate(this.items[index].offsetLeft, animationMs);
+
+      return;
+    }
+
+    if (index >= this.lastIndexToDisplay && !this.options.loop) {
+      this.updateIndex(this.lastIndexToDisplay);
+      this.animate(this.containerFullWidth(), animationMs);
+
+      return;
+    }
+  }
+
+  cloneDisplayedItemsInFirstPage(): number {
+    let distance = 0;
+
+    for (let i = 0; i < this.items.length; i++) {
+      distance = distance + this.items[i].offsetWidth;
+
+      this.container.appendChild(this.cloneItem(i));
+
+      if (distance >= this.container.offsetWidth) {
+        return i + 1;
+      }
+    }
+
+    return this.items.length;
+  }
+
+  cloneDisplayedItemsInLastPage(): number {
+    const totalItems = this.items.length - 1;
+    let itemsCounter = 1;
+    let distance = 0;
+
+    for (let i = totalItems; i >= 0; i--) {
+      distance = distance + this.items[i].offsetWidth;
+
+      this.container.insertBefore(this.cloneItem(i), this.container.firstChild);
+
+      if (distance >= this.container.offsetWidth) {
+        return itemsCounter;
+      }
+
+      itemsCounter = itemsCounter + 1;
+    }
+
+    return totalItems;
+  }
+
+  createDots() {
+    // this.dots = [];
+
+    // const firstPage = this.options.loop
+    //   ? 1
+    //   : 0;
+    // const lastPage = this.options.loop
+    //   ? this.pages.length - 1
+    //   : this.pages.length;
+
+    // for (let i = firstPage; i < lastPage; i++) {
+    //   this.dots.push(i);
+    // }
+  }
+
+  // getItemsPerPage(): Array<number> {
+  //   const pageItems = [];
+  //   let distance = 0;
+  //   let itemsCounter = 1;
+
+  //   for (let i = 0; i < this.items.length; i++) {
+  //     distance = distance + this.items[i].offsetWidth;
+
+  //     if (distance > this.container.offsetWidth) {
+  //       if (distance < this.container.offsetWidth + this.items.length) {
+  //         pageItems.push(itemsCounter);
+  //         distance = 0;
+  //         itemsCounter = 0;
+  //       } else {
+  //         pageItems.push(itemsCounter - 1);
+  //         distance = this.items[i].offsetWidth;
+  //         itemsCounter = 1;
+  //       }
+  //     }
+
+  //     if (i === this.items.length - 1 && itemsCounter > 0) {
+  //       pageItems.push(itemsCounter);
+  //     }
+
+  //     itemsCounter++;
+  //   }
+
+  //   return pageItems;
+  // }
+
+  // goToPage(pageNumber: number) {
+  //   let firstItemPage = 0;
+
+  //   for (let i = 0; i < pageNumber; i++) {
+  //     firstItemPage = firstItemPage + this.pages[i];
+  //   }
+
+  //   this.goToItem(firstItemPage, true);
+  // }
+
+  // getPageByIndex(index: number): number {
+  //   let itemsInCurrentPage = 0;
+  //   const nextIndex = index + 1;
+
+  //   for (let i = 0; i < this.items.length; i++) {
+  //     itemsInCurrentPage = itemsInCurrentPage + this.pages[i];
+
+  //     if (itemsInCurrentPage >= nextIndex) {
+  //       return i;
+  //     }
+  //   }
+
+  //   return 0;
+  // }
 }

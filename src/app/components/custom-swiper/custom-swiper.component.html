@@ -1,5 +1,5 @@
 
-<div class="swiper-section">
+<div class="swiper-section" #swiper>
   <div class="swiper-container" #swiperContainer>
     <ng-content></ng-content>
   </div>
@@ -8,7 +8,7 @@
 <div (click)="showPrev()">prev</div>
 <div (click)="showNext()">next</div>
 
-<div class="swiper-dots-container" *ngIf="options.showDots">
+<div class="swiper-dots-container" *ngIf="options.showDots && options.changePerPage">
   <div class="swiper-dots"
     [class.active]="currentPageIndex === item"
     (click)="goToPage(dot)"
