@@ -1,6 +1,19 @@
 {
-  "name": "angular-generic-components",
-  "version": "0.0.0",
+  "name": "materialize-angular",
+  "description": "Material UI Angular library",
+  "version": "0.0.1",
+  "author": "Alejandro Villanueva",
+  "homepage": "https://github.com/materialize-js/materialize-angular.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/materialize-js/materialize-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/materialize-js/materialize-angular/issues"
+  },
+  "keywords": [
+    "angular", "material-ui", "material-design", "angulario", "scss-library", "typescript-library", "typescript", "library"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
