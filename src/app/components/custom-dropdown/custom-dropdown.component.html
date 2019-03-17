@@ -1,13 +1,13 @@
 
 
 <div class="dropdown-container">
-  <custom-icon className="dropdown-icon"
+  <custom-button className="dropdown-button-icon"
     (onClick)="onClickIcon()"
     (onBlur)="onBlurIcon($event)"
-    [name]="iconName"
-    [size]="iconSize"
-    [tabIndex]="'0'">
-  </custom-icon>
+    [iconName]="iconName"
+    [isRounded]="true"
+  >
+  </custom-button>
 
   <div class="dropdown-items-container" [class.active]="isFocused" tabindex="1">
     <div class="dropdown-item" *ngFor="let item of items" (click)="selectItem(item)">

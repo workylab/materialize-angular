@@ -2,14 +2,12 @@
   position: relative;
 }
 
-.dropdown-icon {
-  border-radius: 50%;
+.dropdown-button-icon {
+  background-color: $color-white;
   color: $color-gray-dark;
   cursor: pointer;
   display: inline-block;
   outline: none;
-  padding: $space-xxs;
-  width: max-content;
 
   &:hover,
   &:focus {
@@ -22,6 +20,7 @@
   border-radius: $radius-sm;
   box-shadow: $shadow-md;
   display: none;
+  margin-top: $space-xs;
   outline: none;
   padding: $space-xs 0;
   position: absolute;
