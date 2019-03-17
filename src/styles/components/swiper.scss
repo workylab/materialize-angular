@@ -1,19 +1,68 @@
+.swiper-container {
+  padding: 0 64px;
+  position: relative;
+}
+
 .swiper-section {
+  cursor: pointer;
   overflow: hidden;
   position: relative;
 }
 
-.swiper-container {
-  font-size: 0;
+.swiper-items-container {
   white-space: nowrap;
 }
 
-.swiper-item {
-  border: $border-sm solid $color-purple;
+.swiper-item-wrapper {
   display: inline-block;
   float: none;
-  font-size: $font-size-xs;
-  height: 200px;
+  font-size: 0;
+  padding: $space-xxxs;
   white-space: normal;
-  width: 400px;
+
+  .swiper-item {
+    border-radius: $radius-sm;
+    display: flex;
+    font-size: $font-size-sm;
+  }
+}
+
+.button-swiper-control-next,
+.button-swiper-control-prev {
+  background-color: $color-white;
+  color: $color-purple;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:focus {
+    background-color: darken($color-white, 10%);
+  }
+}
+
+.button-swiper-control-next {
+  right: $space-xs;
+}
+
+.button-swiper-control-prev {
+  left: $space-xs;
+}
+
+.swiper-dots-container {
+  display: flex;
+  justify-content: center;
+  padding: $space-md;
+
+  .swiper-dot {
+    background-color: lighten($color-purple, 40%);
+    border-radius: $radius-full;
+    cursor: pointer;
+    height: 8px;
+    margin: 0 $space-xxxs;
+    width: 8px;
+
+    &.active {
+      background: $color-purple;
+    }
+  }
 }
