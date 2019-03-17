@@ -9,13 +9,15 @@
     iconName="arrow_back"
     size="lg"
     (onClick)="showPrev()"
-    [isRounded]="true">
+    [isRounded]="true"
+    *ngIf="displayControls">
   </custom-button>
   <custom-button className="button-swiper-control-next"
     iconName="arrow_forward"
     size="lg"
     (onClick)="showNext()"
-    [isRounded]="true">
+    [isRounded]="true"
+    *ngIf="displayControls">
   </custom-button>  
 </div>
 

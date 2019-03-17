@@ -28,7 +28,7 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
     isCarousel: false,
     isChangePerPage: false,
     isReverse: false,
-    itemSwipePercentAdjust: 10,
+    itemSwipePercentAdjust: 5,
     maxSwipeOutPercent: 5
   };
 
@@ -81,21 +81,21 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
   public maxSwipeOutPercent: number;
 
   // private pages: number[];
-
-  private container: HTMLElement;
+  
   private firstPointX: number;
   private firstPointY: number;
-  private index: number;
   private initDistance: number;
   private interval: number;
-  private items: Array<HTMLElement>;
   private lastIndexToDisplay: number;
-  private supportedEvents: CustomSwiperEvents;
-  private swiper: HTMLElement;
   private traveledDistance: number;
 
-  public prevClonedItems: number;
+  public container: HTMLElement;
+  public index: number;
+  public items: Array<HTMLElement>;
   public nextClonedItems: number;
+  public prevClonedItems: number;
+  public supportedEvents: CustomSwiperEvents;
+  public swiper: HTMLElement;
 
   constructor() {
     this.onChangeEmitter = new EventEmitter();
@@ -263,12 +263,11 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
       ? moveEvent.touches[0].clientY
       : moveEvent.screenY;
 
-    if (Math.abs(this.firstPointY - distanceY) < 5) {
+    if (Math.abs(this.firstPointY - distanceY) < 10) {
       this.swiper.addEventListener(this.supportedEvents.move, this.swipe);
       this.swiper.addEventListener(this.supportedEvents.up, this.actionUp);
+      this.swiper.removeEventListener(this.supportedEvents.move, this.activateSwipe);
     }
-
-    this.swiper.removeEventListener(this.supportedEvents.move, this.activateSwipe);
   }
 
   actionUp(upEvent: any) {
@@ -286,7 +285,7 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
         ? this.items[i].offsetLeft + ajustDistance
         : this.items[i].offsetLeft + this.items[i].offsetWidth - ajustDistance;
 
-      if (minDistance > distance || this.lastIndexToDisplay === i) {
+      if (minDistance > distance) {
         this.goToItem(i, true);
 
         break;
@@ -298,8 +297,9 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
   }
 
   swipe(moveEvent: any) {
-    moveEvent.stopPropagation();
-    moveEvent.preventDefault();
+    if (moveEvent.cancelable) {
+      moveEvent.preventDefault();
+    }
 
     const distanceEvent = this.supportTouchEvents()
       ? moveEvent.touches[0].clientX
@@ -327,12 +327,16 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
     for (let i = totalItems; i >= 0; i--) {
       distance = distance + items[i].offsetWidth;
 
-      if (i === totalItems && items[i].offsetWidth > this.container.offsetWidth) {
+      if (i === totalItems && distance > this.container.offsetWidth) {
         return i;
       }
 
-      if (distance >= this.container.offsetWidth) {
+      if (distance > this.container.offsetWidth) {
         return i + 1;
+      }
+
+      if (distance === this.container.offsetWidth) {
+        return i;
       }
     }
 
@@ -431,7 +435,7 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
       ? this.animationMs
       : 0;
 
-    if (index >= 0 && index < this.lastIndexToDisplay) {
+    if (index >= 0 && index <= this.lastIndexToDisplay) {
       this.updateIndex(index);
       this.animate(this.items[index].offsetLeft, animationMs);
 
