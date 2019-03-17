@@ -225,7 +225,7 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
 
   actionDown(downEvent: any) {
     if (!this.supportTouchEvents()) {
-      downEvent.preventDefault();
+      // downEvent.preventDefault();
     }
 
     this.firstPointY = this.supportTouchEvents()
@@ -326,6 +326,10 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
 
     for (let i = totalItems; i >= 0; i--) {
       distance = distance + items[i].offsetWidth;
+
+      if (i === totalItems && items[i].offsetWidth > this.container.offsetWidth) {
+        return i;
+      }
 
       if (distance >= this.container.offsetWidth) {
         return i + 1;
