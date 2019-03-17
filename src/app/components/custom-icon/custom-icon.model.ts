@@ -4,5 +4,4 @@ export interface CustomIcon {
   isPointer: boolean;
   name: string;
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  tabIndex: string;
 }

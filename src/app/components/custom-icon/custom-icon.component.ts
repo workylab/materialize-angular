@@ -12,12 +12,11 @@ export class CustomIconComponent implements OnChanges, OnInit {
     isCircle: false,
     isPointer: false,
     name: '',
-    size: 'sm',
-    tabIndex: '-1'
+    size: 'sm'
   };
 
   @Output('onClick') onClickEmitter: EventEmitter<void>;
-  @Output('onBlur') onBlurEmitter: EventEmitter<void>;
+  @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
 
   @Input('className') classNameInput: string;
   @Input('isCircle') isCircleInput: boolean;
@@ -31,7 +30,6 @@ export class CustomIconComponent implements OnChanges, OnInit {
   public isCircle: boolean;
   public name: string;
   public size: string;
-  public tabIndex: string;
 
   constructor() {
     this.onClickEmitter = new EventEmitter();
@@ -58,14 +56,13 @@ export class CustomIconComponent implements OnChanges, OnInit {
     this.isPointer = this.isPointerInput || defaultProps.isPointer;
     this.name = this.nameInput || defaultProps.name;
     this.size = this.sizeInput || defaultProps.size;
-    this.tabIndex = this.tabIndexInput || defaultProps.tabIndex;
   }
 
   onClick() {
     this.onClickEmitter.emit();
   }
 
-  onBlur(event: any) {
+  onBlur(event: Event) {
     this.onBlurEmitter.emit(event);
   }
 }
