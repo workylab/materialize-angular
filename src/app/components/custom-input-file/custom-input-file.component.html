@@ -1,7 +1,7 @@
 <custom-form-group [iconName]="iconName" [className]="className">
   <div class="form-field-container form-file-container"
     [class.float-label]="floatLabel && label"
-    [class.active]="value.length || placeholder"
+    [class.active]="value.length"
     [class.focused]="isFocused"
     [class.disabled]="disabled"
     [class.error]="!isValid && isTouched">
