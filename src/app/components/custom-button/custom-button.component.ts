@@ -27,6 +27,7 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   @Input('text') textInput: string;
   @Input('type') typeInput: 'button' | 'submit';
 
+  @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
   @Output('onClick') onClickEmitter: EventEmitter<void>;
 
   public className: string;
@@ -39,6 +40,7 @@ export class CustomButtonComponent implements CustomButton, OnInit {
   public type: 'button' | 'submit';
 
   constructor() {
+    this.onBlurEmitter = new EventEmitter();
     this.onClickEmitter = new EventEmitter();
   }
 
@@ -61,5 +63,9 @@ export class CustomButtonComponent implements CustomButton, OnInit {
 
   onClick() {
     this.onClickEmitter.emit();
+  }
+
+  onBlur(event: Event) {
+    this.onBlurEmitter.emit(event);
   }
 }

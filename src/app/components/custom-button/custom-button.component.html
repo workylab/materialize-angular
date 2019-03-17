@@ -1,6 +1,7 @@
 <button
   class="button button-{{ size }}"
 
+  (blur)="onBlur($event)"
   (click)="onClick()"
 
   [ngClass]="className"
