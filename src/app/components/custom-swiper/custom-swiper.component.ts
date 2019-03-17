@@ -4,20 +4,33 @@ import {
   ContentChildren,
   ElementRef,
   EventEmitter,
+  Input,
   Output,
   QueryList,
   ViewChild
 } from '@angular/core';
-import { CustomSwiperEvents, CustomSwiperOptions } from './custom-swiper.model';
+import { CustomSwiper, CustomSwiperEvents } from './custom-swiper.model';
 import { CustomSwiperItemComponent } from './custom-swiper-item/custom-swiper-item.component';
+import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   selector: 'custom-swiper',
   templateUrl: './custom-swiper.component.html'
 })
-export class CustomSwiperComponent implements AfterContentInit {
-  static readonly SWIPE_OUT_PERCENT: number = 10;
-  static readonly SWIPE_PERCENT_ADJUST: number = 10;
+export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
+  static readonly defaultProps: CustomSwiper = {
+    animationMs: 300,
+    autoplayMs: 1000,
+    className: '',
+    displayControls: true,
+    displayDots: true,
+    isAutoplay: false,
+    isCarousel: false,
+    isChangePerPage: false,
+    isReverse: false,
+    itemSwipePercentAdjust: 10,
+    maxSwipeOutPercent: 5
+  };
 
   static readonly TOUCH_EVENTS: CustomSwiperEvents = {
     click: 'touchend',
@@ -35,12 +48,38 @@ export class CustomSwiperComponent implements AfterContentInit {
     up: 'mouseup'
   };
 
-  @ContentChildren(CustomSwiperItemComponent) itemsQuery: QueryList<CustomSwiperItemComponent>;
-  @Output('onChange') onChangeEmitter: EventEmitter<number>;
   @ViewChild('swiperContainer') swiperContainerRef: ElementRef;
   @ViewChild('swiper') swiperRef: ElementRef;
 
-  // private dots: Array<number> = [];
+  @ContentChildren(CustomSwiperItemComponent) itemsQuery: QueryList<CustomSwiperItemComponent>;
+
+  @Output('onChange') onChangeEmitter: EventEmitter<number>;
+
+  @Input('animationMs') animationMsInput: number;
+  @Input('autoplayMs') autoplayMsInput: number;
+  @Input('className') classNameInput: string;
+  @Input('displayControls') displayControlsInput: boolean;
+  @Input('displayDots') displayDotsInput: boolean;
+  @Input('isAutoplay') isAutoplayInput: boolean;
+  @Input('isCarousel') isCarouselInput: boolean;
+  @Input('isChangePerPage') isChangePerPageInput: boolean;
+  @Input('isReverse') isReverseInput: boolean;
+  @Input('itemSwipePercentAdjust') itemSwipePercentAdjustInput: number;
+  @Input('maxSwipeOutPercent') maxSwipeOutPercentInput: number;
+
+  public animationMs: number;
+  public autoplayMs: number;
+  public className: string;
+  public displayControls: boolean;
+  public dots: Array<number> = [];
+  public isAutoplay: boolean;
+  public isCarousel: boolean;
+  public isChangePerPage: boolean;
+  public isReverse: boolean;
+  public displayDots: boolean;
+  public itemSwipePercentAdjust: number;
+  public maxSwipeOutPercent: number;
+
   // private pages: number[];
 
   private container: HTMLElement;
@@ -54,31 +93,24 @@ export class CustomSwiperComponent implements AfterContentInit {
   private supportedEvents: CustomSwiperEvents;
   private swiper: HTMLElement;
   private traveledDistance: number;
-  private options: CustomSwiperOptions = {
-    animationMs: 300,
-    autoplayMs: 1000,
-    changePerPage: false,
-    loop: false,
-    reverse: false,
-    showDots: false
-  };
 
   public prevClonedItems: number;
   public nextClonedItems: number;
 
   constructor() {
+    this.onChangeEmitter = new EventEmitter();
+
     this.actionDown = this.actionDown.bind(this);
     this.actionUp = this.actionUp.bind(this);
     this.activateSwipe = this.activateSwipe.bind(this);
     this.animate = this.animate.bind(this);
-    this.showPrev = this.showPrev.bind(this);
+    this.autoplay = this.autoplay.bind(this);
+    this.cancelRedirect = this.cancelRedirect.bind(this);
     this.showNext = this.showNext.bind(this);
+    this.showPrev = this.showPrev.bind(this);
+    this.stopAutoplay = this.stopAutoplay.bind(this);
     this.swipe = this.swipe.bind(this);
     this.update = this.update.bind(this);
-    this.cancelRedirect = this.cancelRedirect.bind(this);
-    this.stopAutoplay = this.stopAutoplay.bind(this);
-    this.autoplay = this.autoplay.bind(this);
-    this.onChangeEmitter = new EventEmitter();
   }
 
   supportTouchEvents() {
@@ -87,23 +119,36 @@ export class CustomSwiperComponent implements AfterContentInit {
 
   ngAfterContentInit() {
     setTimeout(() => {
-      this.init();
-    }, 3000);
+      this.initValues();
+    }, 300);
   }
 
-  init() {
-    this.swiper = this.swiperRef.nativeElement;
-    this.container = this.swiperContainerRef.nativeElement as HTMLElement;
-    this.items = this.itemsQuery.toArray().map(item => item.swiperItemContainer);
+  initValues() {
+    const { defaultProps } = CustomSwiperComponent;
+
+    this.index = 0;
+    this.initDistance = 0;
+    this.traveledDistance = 0;
 
     this.supportedEvents = this.supportTouchEvents()
       ? CustomSwiperComponent.TOUCH_EVENTS
       : CustomSwiperComponent.MOUSE_EVENTS;
 
-    this.index = 0;
-    this.initDistance = 0;
-    this.traveledDistance = 0;
-    this.lastIndexToDisplay = this.getLastIndexToDisplay();
+    this.animationMs = this.animationMsInput || defaultProps.animationMs;
+    this.className = this.classNameInput || defaultProps.className;
+    this.displayControls = getBooleanValue(this.displayControlsInput, defaultProps.displayControls);
+    this.displayDots = getBooleanValue(this.displayDotsInput, defaultProps.displayDots);
+    this.isAutoplay = getBooleanValue(this.isAutoplayInput, defaultProps.isAutoplay);
+    this.isCarousel = getBooleanValue(this.isCarouselInput, defaultProps.isCarousel);
+    this.isChangePerPage = getBooleanValue(this.isChangePerPageInput, defaultProps.isChangePerPage);
+    this.isReverse = getBooleanValue(this.isReverseInput, defaultProps.isReverse);
+    this.itemSwipePercentAdjust = this.itemSwipePercentAdjustInput || defaultProps.itemSwipePercentAdjust;
+    this.maxSwipeOutPercent = this.maxSwipeOutPercentInput || defaultProps.maxSwipeOutPercent;
+
+    this.swiper = this.swiperRef.nativeElement;
+    this.container = this.swiperContainerRef.nativeElement;
+    this.items = this.itemsQuery.toArray().map(item => item.swiperItemContainer);
+    this.lastIndexToDisplay = this.getLastIndexToDisplay(this.items);
 
     // this.pages = this.getItemsPerPage();
 
@@ -114,35 +159,31 @@ export class CustomSwiperComponent implements AfterContentInit {
       setTimeout(this.update, 100);
     });
 
-    this.initFeatures();
-  }
-
-  initFeatures() {
-    if (this.options.showDots) {
+    if (this.displayDots) {
       this.createDots();
     }
 
-    if (this.options.loop) {
+    if (this.isCarousel) {
       this.createClones();
 
-      if (this.options.autoplayMs) {
+      if (this.isAutoplay) {
         this.startAutoplay();
       }
     }
   }
 
   update() {
-    this.lastIndexToDisplay = this.getLastIndexToDisplay();
+    this.lastIndexToDisplay = this.getLastIndexToDisplay(this.items);
 
     // this.pages = this.getItemsPerPage();
 
     this.goToItem(this.index, false);
 
-    if (this.options.showDots) {
+    if (this.displayDots) {
       this.createDots();
     }
 
-    if (this.options.loop) {
+    if (this.isCarousel) {
       this.createClones();
     }
   }
@@ -162,12 +203,12 @@ export class CustomSwiperComponent implements AfterContentInit {
     this.swiper.removeEventListener(this.supportedEvents.out, this.autoplay);
 
     this.interval = window.setInterval(() => {
-      if (this.options.reverse) {
+      if (this.isReverse) {
         this.showPrev();
       } else {
         this.showNext();
       }
-    }, this.options.autoplayMs);
+    }, this.autoplayMs);
   }
 
   startAutoplay() {
@@ -240,7 +281,7 @@ export class CustomSwiperComponent implements AfterContentInit {
     const distance = this.traveledDistance + this.initDistance;
 
     for (let i = 0; i <= this.lastIndexToDisplay; i++) {
-      const ajustDistance = (this.items[i].offsetWidth * CustomSwiperComponent.SWIPE_PERCENT_ADJUST) / 100;
+      const ajustDistance = (this.items[i].offsetWidth * this.itemSwipePercentAdjust) / 100;
       const minDistance = this.traveledDistance > 0
         ? this.items[i].offsetLeft + ajustDistance
         : this.items[i].offsetLeft + this.items[i].offsetWidth - ajustDistance;
@@ -266,7 +307,7 @@ export class CustomSwiperComponent implements AfterContentInit {
 
     let distance = this.firstPointX - distanceEvent + this.initDistance;
     const containerWidth = this.container.offsetWidth;
-    const outRange = containerWidth / 100 * CustomSwiperComponent.SWIPE_OUT_PERCENT;
+    const outRange = containerWidth / 100 * this.maxSwipeOutPercent;
     const minDistance = outRange * -1;
     const maxDistance = outRange + this.containerFullWidth();
 
@@ -279,12 +320,12 @@ export class CustomSwiperComponent implements AfterContentInit {
     this.animate(distance, 0);
   }
 
-  getLastIndexToDisplay(): number {
+  getLastIndexToDisplay(items: Array<HTMLElement>): number {
     let distance = 0;
-    const totalItems = this.items.length - 1;
+    const totalItems = items.length - 1;
 
     for (let i = totalItems; i >= 0; i--) {
-      distance = distance + this.items[i].offsetWidth;
+      distance = distance + items[i].offsetWidth;
 
       if (distance >= this.container.offsetWidth) {
         return i + 1;
@@ -314,7 +355,7 @@ export class CustomSwiperComponent implements AfterContentInit {
   }
 
   preventAutoplay(event: any) {
-    if (event && this.options.loop && this.supportTouchEvents()) {
+    if (event && this.isCarousel && this.supportTouchEvents()) {
       clearInterval(this.interval);
 
       this.autoplay();
@@ -324,7 +365,7 @@ export class CustomSwiperComponent implements AfterContentInit {
   showPrev(event?: Event) {
     this.preventAutoplay(event);
 
-    if (this.options.changePerPage) {
+    if (this.isChangePerPage) {
       // const currentPage = this.getPageByIndex(this.index);
 
       // this.goToPage(currentPage - 1);
@@ -336,7 +377,7 @@ export class CustomSwiperComponent implements AfterContentInit {
   showNext(event?: Event) {
     this.preventAutoplay(event);
 
-    if (this.options.changePerPage) {
+    if (this.isChangePerPage) {
       // const page = this.getPageByIndex(this.index);
 
       // this.goToPage(page + 1);
@@ -356,16 +397,17 @@ export class CustomSwiperComponent implements AfterContentInit {
   createClones() {
     this.deleteClones();
 
-    this.items = Array.from(this.container.querySelectorAll('.swiper-item'));
+    this.items = Array.from(this.container.querySelectorAll('.swiper-item-wrapper'));
 
     this.nextClonedItems = this.cloneDisplayedItemsInFirstPage();
     this.prevClonedItems = this.cloneDisplayedItemsInLastPage();
 
-    this.items = Array.from(this.container.querySelectorAll('.swiper-item'));
-    this.lastIndexToDisplay = this.getLastIndexToDisplay();
+    this.items = Array.from(this.container.querySelectorAll('.swiper-item-wrapper'));
+    this.lastIndexToDisplay = this.getLastIndexToDisplay(this.items);
 
     // this.pages = this.getItemsPerPage();
     this.goToItem(this.prevClonedItems, false);
+    this.createDots();
   }
 
   deleteClones() {
@@ -382,7 +424,7 @@ export class CustomSwiperComponent implements AfterContentInit {
 
   goToItem(index: number, hasAnimation: boolean) {
     const animationMs = hasAnimation
-      ? this.options.animationMs
+      ? this.animationMs
       : 0;
 
     if (index >= 0 && index < this.lastIndexToDisplay) {
@@ -391,14 +433,14 @@ export class CustomSwiperComponent implements AfterContentInit {
 
       const realLastIndex = this.items.length - this.nextClonedItems;
 
-      if (this.options.loop && index >= realLastIndex) {
+      if (this.isCarousel && index >= realLastIndex) {
         this.moveToRealInit(index);
-      } else if (this.options.loop && index < this.prevClonedItems) {
+      } else if (this.isCarousel && index < this.prevClonedItems) {
         this.moveToRealEnd(index);
       }
     }
 
-    if (index >= this.lastIndexToDisplay && !this.options.loop) {
+    if (index >= this.lastIndexToDisplay && !this.isCarousel) {
       this.updateIndex(this.lastIndexToDisplay);
       this.animate(this.containerFullWidth(), animationMs);
     }
@@ -412,7 +454,7 @@ export class CustomSwiperComponent implements AfterContentInit {
 
       this.updateIndex(initIndex);
       this.animate(this.items[initIndex].offsetLeft, 0);
-    }, this.options.animationMs);
+    }, this.animationMs);
   }
 
   moveToRealEnd(index: number) {
@@ -423,7 +465,7 @@ export class CustomSwiperComponent implements AfterContentInit {
 
       this.updateIndex(endIndex);
       this.animate(this.items[endIndex].offsetLeft, 0);
-    }, this.options.animationMs);
+    }, this.animationMs);
   }
 
   cloneDisplayedItemsInFirstPage(): number {
@@ -462,19 +504,30 @@ export class CustomSwiperComponent implements AfterContentInit {
     return totalItems;
   }
 
+  onClickDot(index: number) {
+    this.goToItem(index, true);
+  }
+
   createDots() {
-    // this.dots = [];
+    this.dots = [];
 
-    // const firstPage = this.options.loop
-    //   ? 1
-    //   : 0;
-    // const lastPage = this.options.loop
-    //   ? this.pages.length - 1
-    //   : this.pages.length;
+    let firstDot = 0;
+    let lastDot = 0;
 
-    // for (let i = firstPage; i < lastPage; i++) {
-    //   this.dots.push(i);
-    // }
+    if (this.isChangePerPage) {
+      //
+    } else {
+      firstDot = this.isCarousel
+        ? this.prevClonedItems
+        : 0;
+      lastDot = this.isCarousel
+        ? this.items.length - this.nextClonedItems
+        : this.items.length;
+    }
+
+    for (let i = firstDot; i < lastDot; i++) {
+      this.dots.push(i);
+    }
   }
 
   // getItemsPerPage(): Array<number> {

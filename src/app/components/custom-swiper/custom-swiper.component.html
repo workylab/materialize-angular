@@ -1,18 +1,28 @@
-
-<div class="swiper-section" #swiper>
-  <div class="swiper-container" #swiperContainer>
-    <ng-content></ng-content>
+<div class="swiper-container" [ngClass]="className">
+  <div class="swiper-section" #swiper>
+    <div class="swiper-items-container" #swiperContainer>
+      <ng-content></ng-content>
+    </div>
   </div>
+  
+  <custom-button className="button-swiper-control-prev"
+    iconName="arrow_back"
+    size="lg"
+    (onClick)="showPrev()"
+    [isRounded]="true">
+  </custom-button>
+  <custom-button className="button-swiper-control-next"
+    iconName="arrow_forward"
+    size="lg"
+    (onClick)="showNext()"
+    [isRounded]="true">
+  </custom-button>  
 </div>
 
-<div (click)="showPrev()">prev</div>
-<div (click)="showNext()">next</div>
-
-<div class="swiper-dots-container" *ngIf="options.showDots && options.changePerPage">
-  <div class="swiper-dots"
-    [class.active]="currentPageIndex === item"
-    (click)="goToPage(dot)"
+<div class="swiper-dots-container" *ngIf="displayDots">
+  <div class="swiper-dot"
+    [class.active]="index === dot"
+    (click)="onClickDot(dot)"
     *ngFor="let dot of dots">
-    go to page: {{ dot }}
   </div>
 </div>
