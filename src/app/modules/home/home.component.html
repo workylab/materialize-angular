@@ -49,9 +49,9 @@
 <h3>No Required Input with name pattern (Number)</h3>
 <custom-input label="Label" patternName="number"></custom-input>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Simple Select</h3>
 <custom-select [options]="selectOptions"></custom-select>
@@ -83,9 +83,9 @@
 <h3>Required Float Label Select</h3>
 <custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Simple Autocomplete</h3>
 <custom-autocomplete [options]="selectOptions"></custom-autocomplete>
@@ -120,9 +120,9 @@
 <h3>Required Float Label Autocomplete</h3>
 <custom-autocomplete label="Label" [required]="true" [options]="selectOptions"></custom-autocomplete>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Simple TextArea</h3>
 <custom-textarea></custom-textarea>
@@ -154,9 +154,9 @@
 <h3>Required Simple TextArea</h3>
 <custom-textarea [required]="true"></custom-textarea>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Simple Input File</h3>
 <custom-input-file></custom-input-file>
@@ -176,71 +176,71 @@
 <h3>Required Input File</h3>
 <custom-input-file label="Input File" [required]="true"></custom-input-file>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Simple Button</h3>
 <custom-button text="button"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Button with icon</h3>
 <custom-button text="button" iconName="add"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Button with Icon at End</h3>
 <custom-button text="button" iconName="add" [iconAtEnd]="true"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Rounded Button</h3>
 <custom-button text="button" [isRounded]="true"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Rounded Button with Icon</h3>
 <custom-button text="button" iconName="phone" [isRounded]="true"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Rounded Button with icon at the end</h3>
 <custom-button text="button" iconName="phone" [isRounded]="true" [iconAtEnd]="true"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Rounded Button with icon</h3>
 <custom-button iconName="phone" [isRounded]="true"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Button XS</h3>
 <custom-button iconName="phone" size="xs" text="button"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Button SM</h3>
 <custom-button iconName="phone" size="sm" text="button"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Button MD</h3>
 <custom-button iconName="phone" size="md" text="button"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Button LG</h3>
 <custom-button iconName="phone" size="lg" text="button"></custom-button>
-<br />
-<br />
+<br>
+<br>
 
 <h3>Button XL</h3>
 <custom-button iconName="phone" size="xl" text="button"></custom-button>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Simple Icon XS</h3>
 <custom-icon name="done" size="xs"></custom-icon>
@@ -272,17 +272,14 @@
 <h3>Circle Icon XL</h3>
 <custom-icon name="done" size="xl" [isCircle]="true"></custom-icon>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
-<div-tree [classNames]="['row', 'col', 'row2', 'col2']">
-  <h3>Div Tree</h3>
-</div-tree>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Switch</h3>
 <custom-switch label="Wifi Required" [required]="true"></custom-switch>
@@ -290,9 +287,9 @@
 <custom-switch label="Wifi (Enable active)" [value]="true"></custom-switch>
 <custom-switch label="Wifi (Disabled inactive)" [disabled]="true"></custom-switch>
 <custom-switch label="Wifi (Disabled active)" [disabled]="true" [value]="true"></custom-switch>
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Checkbox</h3>
 <custom-checkbox label="Checkbox Required" [required]="true"></custom-checkbox>
@@ -312,15 +309,15 @@
   ]">
 </custom-checkbox-list>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Radio</h3>
 <custom-radio [required]="true" [options]="selectOptions"></custom-radio>
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Simple Datepicker</h3>
 <custom-datepicker></custom-datepicker>
@@ -328,9 +325,9 @@
 <h3>Dropdown</h3>
 <custom-dropdown [items]="dropDownItems"></custom-dropdown>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Collapsible</h3>
 <custom-collapsible
@@ -340,9 +337,9 @@
 >
 </custom-collapsible>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Accordion</h3>
 
@@ -352,9 +349,9 @@
   { iconName: 'people', title: 'Title', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa' }
 ]">
 </custom-accordion>
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Table</h3>
 <custom-table
@@ -364,9 +361,9 @@
   <div>esto es un test...</div>
 </custom-table>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Tooltip Top</h3>
 <p>
@@ -378,9 +375,9 @@
   Dolores magni voluptatibus possimus.
 </p>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Tooltip Bottom</h3>
 <p>
@@ -392,9 +389,9 @@
   Dolores magni voluptatibus possimus.
 </p>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Tooltip Left</h3>
 <p>
@@ -406,9 +403,9 @@
   Dolores magni voluptatibus possimus.
 </p>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Tooltip Right</h3>
 <p>
@@ -420,18 +417,18 @@
   Dolores magni voluptatibus possimus.
 </p>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Tooltip Right</h3>
 <custom-tooltip text="Description..." position="right">
   <custom-button iconName="send" size="xs" [isRounded]="true"></custom-button>
 </custom-tooltip>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Button Toggle</h3>
 <custom-button-toggle
@@ -451,22 +448,30 @@
 [disabled]="true">
 </custom-button-toggle>
 
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
 
 <h3>Swiper</h3>
-<custom-swiper>
+<custom-swiper [isCarousel]="true" [displayControls]="false">
   <custom-swiper-item>
-    <img src="https://via.placeholder.com/800x250" />
+    1
   </custom-swiper-item>
   <custom-swiper-item>
-    <img src="https://via.placeholder.com/800x250" />
+    2
   </custom-swiper-item>
   <custom-swiper-item>
-    <img src="https://via.placeholder.com/800x250" />
+    3
   </custom-swiper-item>
   <custom-swiper-item>
-    <img src="https://via.placeholder.com/800x250" />
+    4
+  </custom-swiper-item>
+  <custom-swiper-item>
+    5
   </custom-swiper-item>
 </custom-swiper>
+
+
+<!-- <div-tree [classNames]="['row', 'col', 'row2', 'col2']">
+  <h3>Div Tree</h3>
+</div-tree> -->

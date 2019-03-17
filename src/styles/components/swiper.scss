@@ -1,5 +1,4 @@
 .swiper-container {
-  padding: 0 64px;
   position: relative;
 }
 
@@ -10,20 +9,21 @@
 }
 
 .swiper-items-container {
+  font-size: 0;
   white-space: nowrap;
 }
 
 .swiper-item-wrapper {
   display: inline-block;
   float: none;
-  font-size: 0;
-  padding: $space-xxxs;
+  font-size: $font-size-sm;
+  overflow: hidden;
   white-space: normal;
+  width: 100%;
 
   .swiper-item {
-    border-radius: $radius-sm;
-    display: flex;
-    font-size: $font-size-sm;
+    border: $border-sm solid $color-purple;
+    height: 200px;
   }
 }
 
