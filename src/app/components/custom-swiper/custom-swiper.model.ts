@@ -6,11 +6,16 @@ export interface CustomSwiperEvents {
   up: string;
 }
 
-export interface CustomSwiperOptions {
+export interface CustomSwiper {
   animationMs: number;
   autoplayMs: number;
-  changePerPage: boolean;
-  loop: boolean;
-  reverse: boolean;
-  showDots: boolean;
+  className: string;
+  displayControls: boolean;
+  displayDots: boolean;
+  isAutoplay: boolean;
+  isCarousel: boolean;
+  isChangePerPage: boolean;
+  isReverse: boolean;
+  itemSwipePercentAdjust: number;
+  maxSwipeOutPercent: number;
 }
