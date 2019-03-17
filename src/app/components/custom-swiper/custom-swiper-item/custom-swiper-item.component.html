@@ -1,3 +1,5 @@
-<div class="swiper-item" #swiperItemContainer>
-  <ng-content></ng-content>
+<div class="swiper-item-wrapper" #swiperItemContainer>
+  <div class="swiper-item" [ngClass]="className" >
+    <ng-content></ng-content>
+  </div>
 </div>
