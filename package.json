@@ -1,7 +1,7 @@
 {
   "name": "materialize-angular",
   "description": "Material UI Angular library",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Alejandro Villanueva",
   "homepage": "https://github.com/materialize-js/materialize-angular.git",
   "repository": {
@@ -72,10 +72,11 @@
     "@angular/cli": "~7.3.5",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "file-loader": "^3.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",

@@ -81,7 +81,7 @@ export class CustomSwiperComponent implements AfterContentInit, CustomSwiper {
   public maxSwipeOutPercent: number;
 
   // private pages: number[];
-  
+
   private firstPointX: number;
   private firstPointY: number;
   private initDistance: number;
