@@ -9,6 +9,7 @@ import { CustomDatePicker } from './custom-datepicker.model';
 export class CustomDatePickerComponent implements CustomDatePicker {
   @Input('className') classNameInput: string;
   @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('value') valueInput: string;
@@ -16,6 +17,7 @@ export class CustomDatePickerComponent implements CustomDatePicker {
   public className: string;
   public disabled: boolean;
   public iconName: string;
+  public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;
