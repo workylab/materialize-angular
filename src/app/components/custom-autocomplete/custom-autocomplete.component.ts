@@ -15,7 +15,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     errorMessage: 'The value does not match with any option',
     floatLabel: true,
     iconName: '',
-    id: ''.
+    id: '',
     isFocused: false,
     isMatchValue: false,
     isTouched: false,
