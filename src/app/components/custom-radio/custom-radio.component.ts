@@ -11,6 +11,7 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
     className: '',
     disabled: false,
     iconName: '',
+    id: '',
     isFocused: false,
     isTouched: false,
     isValid: false,
@@ -24,7 +25,8 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('iconName') iconNameIput: string;
+  @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('options') optionsInput: Array<CustomRadioOption>;
@@ -34,11 +36,12 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
   public className: string;
   public disabled: boolean;
   public iconName: string;
-  public label: string;
-  public name: string;
+  public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;
+  public label: string;
+  public name: string;
   public options: Array<CustomRadioOption>;
   public required: boolean;
   public selectedOption: CustomRadioOption;
@@ -53,6 +56,8 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = this.disabledInput || defaultProps.disabled;
+    this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.className;
     this.name = this.nameInput || defaultProps.name;
     this.options = this.optionsInput || defaultProps.options;

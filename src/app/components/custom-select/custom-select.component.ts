@@ -14,6 +14,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     errorMessage: '',
     floatLabel: true,
     iconName: '',
+    id: '',
     isFocused: false,
     isTouched: false,
     isValid: false,
@@ -31,6 +32,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: boolean;
   @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('options') optionsInput: Array<CustomSelectOption>;
@@ -42,6 +44,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   public errorMessage: string;
   public floatLabel: boolean;
   public iconName: string;
+  public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;
@@ -63,6 +66,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
     this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.options = this.optionsInput || defaultProps.options;

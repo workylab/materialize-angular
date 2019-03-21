@@ -17,6 +17,7 @@ export class CustomInputFileComponent implements OnInit, CustomInputFile {
     errorMessage: '',
     floatLabel: true,
     iconName: '',
+    id: '',
     isFocused: false,
     isMultiple: false,
     isTouched: false,
@@ -37,6 +38,7 @@ export class CustomInputFileComponent implements OnInit, CustomInputFile {
   @Input('files') filesInput: Array<File>;
   @Input('floatLabel') floatLabelInput: boolean;
   @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('isMultiple') isMultipleInput: boolean;
   @Input('isTouched') isTouchedInput: boolean;
   @Input('label') labelInput: string;
@@ -52,6 +54,7 @@ export class CustomInputFileComponent implements OnInit, CustomInputFile {
   public errorMessage: string;
   public floatLabel: boolean;
   public iconName: string;
+  public id: string;
   public isMultiple: boolean;
   public isFocused: boolean;
   public isTouched: boolean;
@@ -82,6 +85,7 @@ export class CustomInputFileComponent implements OnInit, CustomInputFile {
     this.errorMessage = this.errorMessageInput || defaultProps.errorMessage;
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
     this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.id = this.idInput || defaultProps.id;
     this.isMultiple = getBooleanValue(this.isMultipleInput, this.isMultiple);
     this.label = this.labelInput || defaultProps.label;
     this.maxSize = this.maxSizeInput || defaultProps.maxSize;

@@ -15,6 +15,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     errorMessage: 'The value does not match with any option',
     floatLabel: true,
     iconName: '',
+    id: '',
     isFocused: false,
     isMatchValue: false,
     isTouched: false,
@@ -32,6 +33,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: boolean;
   @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('isMatchValue') isMatchValueInput: boolean;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
@@ -46,6 +48,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   public errorMessage: string;
   public floatLabel: boolean;
   public iconName: string;
+  public id: string;
   public isFocused: boolean;
   public isMatchValue: boolean;
   public isTouched: boolean;
@@ -69,6 +72,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
     this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.id = this.idInput || defaultProps.id;
     this.isMatchValue = getBooleanValue(this.isMatchValueInput, defaultProps.isMatchValue);
     this.label = this.labelInput || defaultProps.label;
     this.maxLength = this.maxLengthInput || defaultProps.maxLength;

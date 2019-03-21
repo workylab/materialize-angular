@@ -19,6 +19,7 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
     className: '',
     disabled: false,
     iconName: '',
+    id: '',
     indeterminate: false,
     isFocused: false,
     isTouched: false,
@@ -32,6 +33,7 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('indeterminate') indeterminateInput: boolean;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
@@ -44,6 +46,7 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
   public disabled: boolean;
   public errorMessage: string;
   public iconName: string;
+  public id: string;
   public indeterminate: boolean;
   public isFocused: boolean;
   public isTouched: boolean;
@@ -83,6 +86,7 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.id = this.idInput || defaultProps.id;
     this.indeterminate = getBooleanValue(this.indeterminateInput, defaultProps.indeterminate);
     this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;

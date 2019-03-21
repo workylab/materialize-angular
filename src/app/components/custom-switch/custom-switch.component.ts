@@ -12,6 +12,7 @@ export class CustomSwitchComponent implements CustomSwitch, OnInit {
     className: '',
     disabled: false,
     iconName: '',
+    id: '',
     isFocused: false,
     isTouched: false,
     isValid: false,
@@ -24,6 +25,7 @@ export class CustomSwitchComponent implements CustomSwitch, OnInit {
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('isFocused') isFocusedInput: boolean;
   @Input('isTouched') isTouchedInput: boolean;
   @Input('isValid') isValidInput: boolean;
@@ -36,6 +38,7 @@ export class CustomSwitchComponent implements CustomSwitch, OnInit {
   public disabled: boolean;
   public errorMessage: string;
   public iconName: string;
+  public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;
@@ -54,6 +57,7 @@ export class CustomSwitchComponent implements CustomSwitch, OnInit {
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
