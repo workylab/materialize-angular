@@ -1,8 +1,10 @@
 <custom-form-group [iconName]="iconName" [className]="className">
 
   <div class="form-radio-container">
-    <div class="form-radio-control" *ngFor="let option of options"
-      
+    <label class="form-label" *ngIf="label">{{ label }}</label>
+
+    <div class="form-radio-control"
+      *ngFor="let option of options; index as i"      
       [class.active]="value === option.value"
       [class.disabled]="disabled"
       [class.focused]="isFocused"
@@ -14,7 +16,10 @@
       </div>
 
       <label class="form-radio-label">{{ option.content }}</label>
-      <input [disabled]="disabled" [name]="name" type="radio" />
+      <input type="radio"
+        [disabled]="disabled"
+        [id]="id + '-' + i"
+        [name]="name" />
     </div>
   </div>
 </custom-form-group>
