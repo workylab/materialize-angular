@@ -3,7 +3,11 @@
     (onFocus)="onInputFocus()"
     (onBlur)="onInputBlur($event)"
 
+    [disabled]="disabled"
+    [floatLabel]="floatLabel"
     [id]="id"
+    [iconName]="iconName"
+    [label]="label"
     [value]="value"
     [required]="required">
   </custom-input>
