@@ -26,7 +26,9 @@
       </div>
     </div>
 
-    <div class="select-menu" [class.open]="isFocused">
+    <div class="select-menu"
+      [class.open]="isFocused"
+      [id]="id">
       <div class="select-option"
         *ngFor="let option of options"
         [class.active]="value === option.value"
