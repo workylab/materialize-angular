@@ -15,6 +15,7 @@ export class CustomCheckboxListComponent implements CustomCheckboxList, OnInit {
     disabled: false,
     errorMessage: '',
     iconName: '',
+    id: '',
     isFocused: false,
     isTouched: false,
     isValid: false,
@@ -29,6 +30,7 @@ export class CustomCheckboxListComponent implements CustomCheckboxList, OnInit {
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('iconName') iconNameInput: string;
+  @Input('id') idInput: string;
   @Input('items') itemsInput: Array<CustomCheckboxListItem>;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
@@ -40,6 +42,7 @@ export class CustomCheckboxListComponent implements CustomCheckboxList, OnInit {
   public disabled: boolean;
   public errorMessage: string;
   public iconName: string;
+  public id: string;
   public items: Array<CustomCheckboxListItem>;
   public isFocused: boolean;
   public isTouched: boolean;

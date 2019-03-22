@@ -11,6 +11,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
   static defaultProps: ButtonToggle = {
     className: '',
     disabled: false,
+    id: '',
     isFocused: false,
     isMultiple: false,
     isTouched: false,
@@ -26,6 +27,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
+  @Input('id') idInput: string;
   @Input('items') itemsInput: Array<ButtonToggleItem>;
   @Input('isMultiple') isMultipleInput: boolean;
   @Input('label') labelInput: string;
@@ -34,6 +36,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
 
   public className: string;
   public disabled: boolean;
+  public id: string;
   public isFocused: boolean;
   public isMultiple: boolean;
   public isTouched: boolean;
@@ -59,11 +62,12 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.id = this.idInput || defaultProps.id;
     this.isMultiple = getBooleanValue(this.isMultipleInput, defaultProps.isMultiple);
     this.items = this.itemsInput || defaultProps.items;
-    this.label = this.label || defaultProps.label;
+    this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
-    this.required = getBooleanValue(this.required, defaultProps.required);
+    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = {};
 
     this.isFocused = defaultProps.isFocused;

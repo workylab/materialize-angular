@@ -1,6 +1,9 @@
 <h3>Simple Input</h3>
 <custom-input></custom-input>
 
+<h3>Input with Id</h3>
+<custom-input id="input-id"></custom-input>
+
 <h3>Simple Input with value</h3>
 <custom-input value="My value"></custom-input>
 
@@ -56,6 +59,9 @@
 <h3>Simple Select</h3>
 <custom-select [options]="selectOptions"></custom-select>
 
+<h3>Select with Id</h3>
+<custom-select [options]="selectOptions" id="select-id"></custom-select>
+
 <h3>Simple Select with value</h3>
 <custom-select [options]="selectOptions" value="2"></custom-select>
 
@@ -89,6 +95,9 @@
 
 <h3>Simple Autocomplete</h3>
 <custom-autocomplete [options]="selectOptions"></custom-autocomplete>
+
+<h3>Autocomplete with Id</h3>
+<custom-autocomplete [options]="selectOptions" id="autocomplete-id"></custom-autocomplete>
 
 <h3>Simple Autocomplete with value</h3>
 <custom-autocomplete [options]="selectOptions" value="Option2"></custom-autocomplete>
@@ -127,6 +136,9 @@
 <h3>Simple TextArea</h3>
 <custom-textarea></custom-textarea>
 
+<h3>TextArea with Id</h3>
+<custom-textarea id="textarea-id"></custom-textarea>
+
 <h3>Simple TextArea with value</h3>
 <custom-textarea value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></custom-textarea>
 
@@ -160,6 +172,9 @@
 
 <h3>Simple Input File</h3>
 <custom-input-file></custom-input-file>
+
+<h3>Input File with id</h3>
+<custom-input-file id="input-file-id"></custom-input-file>
 
 <h3>Input File with label</h3>
 <custom-input-file label="Input File" [floatLabel]="false"></custom-input-file>
@@ -282,16 +297,20 @@
 <br>
 
 <h3>Switch</h3>
-<custom-switch label="Wifi Required" [required]="true"></custom-switch>
-<custom-switch label="Wifi (Enable inactive)"></custom-switch>
-<custom-switch label="Wifi (Enable active)" [value]="true"></custom-switch>
-<custom-switch label="Wifi (Disabled inactive)" [disabled]="true"></custom-switch>
-<custom-switch label="Wifi (Disabled active)" [disabled]="true" [value]="true"></custom-switch>
+<custom-switch label="Switch with Id" id="switch-id"></custom-switch>
+<custom-switch label="Switch with Icon" iconName="phone"></custom-switch>
+<custom-switch label="Switch Required" [required]="true"></custom-switch>
+<custom-switch label="Switch (Enable inactive)"></custom-switch>
+<custom-switch label="Switch (Enable active)" [value]="true"></custom-switch>
+<custom-switch label="Switch (Disabled inactive)" [disabled]="true"></custom-switch>
+<custom-switch label="Switch (Disabled active)" [disabled]="true" [value]="true"></custom-switch>
 <br>
 <br>
 <br>
 
 <h3>Checkbox</h3>
+<custom-checkbox label="Checkbox with Id" id="checkbox-id"></custom-checkbox>
+<custom-checkbox label="Checkbox with Icon" iconName="phone"></custom-checkbox>
 <custom-checkbox label="Checkbox Required" [required]="true"></custom-checkbox>
 <custom-checkbox label="Checkbox (Enable inactive)"></custom-checkbox>
 <custom-checkbox label="Checkbox (Enable active)" [value]="true"></custom-checkbox>
@@ -300,6 +319,7 @@
 
 <h3>Checkbox List</h3>
 <custom-checkbox-list
+  iconName="phone"
   checkAllLabel="Check all"
   [items]="[
     { value: false, label: 'Opt1', name: 'opt_1'},
@@ -314,6 +334,10 @@
 <br>
 
 <h3>Radio</h3>
+<custom-radio label="Radio with Id" id="radio-id" [options]="selectOptions"></custom-radio>
+
+<custom-radio label="Radio with icon" iconName="done" id="radio-id" [options]="selectOptions"></custom-radio>
+
 <custom-radio [required]="true" [options]="selectOptions"></custom-radio>
 <br>
 <br>
@@ -321,6 +345,28 @@
 
 <h3>Simple Datepicker</h3>
 <custom-datepicker></custom-datepicker>
+
+<h3>Datepicker with Id</h3>
+<custom-datepicker id="datepicker-id"></custom-datepicker>
+
+<h3>Datepicker with Float Label</h3>
+<custom-datepicker label="Datepicker"></custom-datepicker>
+
+<h3>Datepicker with Label</h3>
+<custom-datepicker label="Datepicker" [floatLabel]="false"></custom-datepicker>
+
+<h3>Datepicker with Icon</h3>
+<custom-datepicker iconName="person" label="Datepicker"></custom-datepicker>
+
+<h3>Datepicker disabled</h3>
+<custom-datepicker [disabled]="true" label="Datepicker"></custom-datepicker>
+
+<h3>Datepicker required</h3>
+<custom-datepicker [required]="true"></custom-datepicker>
+
+<br>
+<br>
+<br>
 
 <h3>Dropdown</h3>
 <custom-dropdown [items]="dropDownItems"></custom-dropdown>

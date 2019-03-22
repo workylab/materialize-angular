@@ -3,6 +3,7 @@ import { File } from '../custom-input-file/custom-input-file.model';
 export interface FormField {
   className: string;
   disabled: boolean;
+  id: string;
   isFocused: boolean;
   isTouched: boolean;
   isValid: boolean;
