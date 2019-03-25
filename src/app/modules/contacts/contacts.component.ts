@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CustomCheckboxListItem } from 'src/app/components/custom-checkbox-list/custom-checkbox-list.model';
 import { CustomNavbarOption } from '../../components/custom-navbar/custom-navbar.model';
+import { CustomRadioOption } from '../../components/custom-radio/custom.radio.model';
 import { CustomSelectOption } from '../../components/custom-select/custom-select.model';
 
 @Component({
@@ -9,6 +10,7 @@ import { CustomSelectOption } from '../../components/custom-select/custom-select
 export class ContactsComponent {
   public checkboxListItems: Array<CustomCheckboxListItem>;
   public navbarOptions: Array<CustomNavbarOption>;
+  public radioOptions: Array<CustomRadioOption>;
   public stateOptions: Array<CustomSelectOption>;
 
   constructor() {
@@ -48,6 +50,14 @@ export class ContactsComponent {
       label: 'Option 4',
       name: 'opt4',
       value: false
+    }];
+
+    this.radioOptions = [{
+      content: 'Save',
+      value: '1'
+    }, {
+      content: 'Not Save',
+      value: '2'
     }];
   }
 }

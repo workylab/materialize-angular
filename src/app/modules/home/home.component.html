@@ -336,12 +336,33 @@
 <br>
 <br>
 
-<h3>Radio</h3>
-<custom-radio label="Radio with Id" id="radio-id" [options]="selectOptions"></custom-radio>
+<h3>Simple Radio</h3>
+<custom-radio [options]="radioOptions"></custom-radio>
 
-<custom-radio label="Radio with icon" iconName="done" id="radio-id" [options]="selectOptions"></custom-radio>
+<h3>Radio with Id</h3>
+<custom-radio id="radio-id" [options]="radioOptions"></custom-radio>
 
-<custom-radio [required]="true" [options]="selectOptions"></custom-radio>
+<h3>Radio with Label</h3>
+<custom-radio label="Label" [options]="radioOptions"></custom-radio>
+
+<h3>Radio with Icon</h3>
+<custom-radio iconName="cloud" [options]="radioOptions"></custom-radio>
+
+<h3>Radio with value</h3>
+<custom-radio value="2" [options]="radioOptions"></custom-radio>
+
+<h3>Required Radio</h3>
+<custom-radio [required]="true" [options]="radioOptions"></custom-radio>
+
+<h3>Required Radio with can uncheck</h3>
+<custom-radio [required]="true" [canUncheck]="true" [options]="radioOptions"></custom-radio>
+
+<h3>Disabled Radio</h3>
+<custom-radio [disabled]="true" [options]="radioOptions"></custom-radio>
+
+<h3>Disabled Radio with value</h3>
+<custom-radio [disabled]="true" value="2" [options]="radioOptions"></custom-radio>
+
 <br>
 <br>
 <br>
