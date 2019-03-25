@@ -26,8 +26,6 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     value: ''
   };
 
-  @Input() onChange: (selectedOption: CustomSelectOption) => void;
-
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: boolean;
@@ -115,10 +113,6 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     this.closeMenu();
 
     this.isValid = this.validate(this.value, this.required);
-
-    if (this.onChange) {
-      this.onChange(selectedOption);
-    }
   }
 
   openMenu() {

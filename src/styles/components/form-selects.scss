@@ -1,4 +1,4 @@
-.select-container {
+.form-field-container.select-container {
   cursor: pointer;
 
   .form-control {
@@ -16,8 +16,14 @@
     }
   }
 
-  &.float-label .form-control::before {
-    top: 22px;
+  &.float-label {
+    .form-label {
+      cursor: pointer;
+    }
+
+    .form-control::before {
+      top: 22px;
+    }
   }
 }
 
