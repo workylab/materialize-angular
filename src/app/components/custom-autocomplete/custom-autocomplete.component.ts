@@ -10,6 +10,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 })
 export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   static readonly defaultProps: CustomAutocomplete = {
+    autocomplete: '',
     className: '',
     disabled: false,
     errorMessage: 'The value does not match with any option',
@@ -24,11 +25,14 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     maxLength: 200,
     name: '',
     options: [],
+    patternName: '',
     placeholder: '',
     required: false,
+    type: 'text',
     value: ''
   };
 
+  @Input('autocomplete') autocompleteInput: string;
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: boolean;
@@ -43,6 +47,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
 
+  public autocomplete: string;
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
@@ -57,8 +62,10 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   public maxLength: number;
   public name: string;
   public options: Array<CustomSelectOption>;
+  public patternName: string;
   public placeholder: string;
   public required: boolean;
+  public type: string;
   public value: string;
 
   ngOnInit() {
@@ -68,6 +75,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   initValues() {
     const { defaultProps } = CustomAutocompleteComponent;
 
+    this.autocomplete = this.autocompleteInput || defaultProps.autocomplete;
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
@@ -85,6 +93,9 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
 
     this.isFocused = defaultProps.isFocused;
     this.isTouched = defaultProps.isTouched;
+    this.patternName = defaultProps.patternName;
+    this.type = defaultProps.type;
+
     this.isValid = this.validate(this.value, this.required);
   }
 
@@ -101,6 +112,15 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.options = this.filterOptions(value);
     this.value = value;
     this.isValid = this.validate(this.value, this.required);
+  }
+
+  onInputBlur(event: any) {
+    const { relatedTarget } = event;
+
+    if (!relatedTarget || relatedTarget.className !== 'select-option') {
+      this.closeMenu();
+      this.validate(this.value, this.required);
+    }
   }
 
   validate(value: string, required: boolean) {
@@ -153,15 +173,6 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.isValid = this.validate(this.value, this.required);
 
     this.closeMenu();
-  }
-
-  onInputBlur(event: any) {
-    const { relatedTarget } = event;
-
-    if (!relatedTarget || relatedTarget.className !== 'select-option') {
-      this.closeMenu();
-      this.validate(this.value, this.required);
-    }
   }
 
   closeMenu() {

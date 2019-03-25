@@ -1,47 +1,33 @@
-<custom-form-group [iconName]="iconName" [className]="className">
-  <div class="form-field-container"
-    [class.float-label]="floatLabel && label"
-    [class.no-label]="floatLabel && label"
-    [class.active]="value || placeholder"
-    [class.focused]="isFocused"
-    [class.disabled]="disabled"
-    [class.error]="!isValid && isTouched">
+<div class="form-field-container autocomplete-container" [ngClass]="className">
 
-    <label class="form-label" *ngIf="label">{{ label }}</label>
+  <custom-input 
+    (onChange)="onInputChange($event)"
+    (onFocus)="onInputFocus($event)"
+    (onBlur)="onInputBlur($event)"
 
-    <div class="form-control-wrapper">
-      <input class="form-control"
-        autocomplete="none"
-        type="text"
+    [autocomplete]="autocomplete"
+    [disabled]="disabled"
+    [floatLabel]="floatLabel"
+    [iconName]="iconName"
+    [id]="id"
+    [label]="label"
+    [maxLength]="maxLength"
+    [name]="name"
+    [patternName]="patternName"
+    [placeholder]="placeholder"
+    [required]="required"
+    [type]="text"
+    [value]="value" 
+  >
+  </custom-input>
 
-        (input)="onInputChange($event)"
-        (focus)="onInputFocus($event)"
-        (blur)="onInputBlur($event)"
-
-        [id]="id"
-        [disabled]="disabled"
-        [maxLength]="maxLength"
-        [name]="name"
-        [placeholder]="placeholder"
-        [required]="required"
-        [value]="value"      
-      />
-  
-      <custom-icon className="form-icon-error" name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
-  
-      <div class="form-error-message" *ngIf="!isValid && isTouched">
-        {{ errorMessage }}
-      </div>
+  <div class="select-menu" [class.open]="isFocused">
+    <div class="select-option"
+      *ngFor="let option of options"
+      [class.active]="value === option.content"
+      (click)="selectOption(option.content)"
+      tabindex="1">
+      {{ option.content }}
     </div>
-
-    <div class="select-menu" [class.open]="isFocused">
-      <div class="select-option"
-        *ngFor="let option of options"
-        [class.active]="value === option.content"
-        (click)="selectOption(option.content)"
-        tabindex="1">
-        {{ option.content }}
-      </div>
-    </div>
-  </div>  
-</custom-form-group>
+  </div>
+</div>

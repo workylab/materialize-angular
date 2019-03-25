@@ -1,15 +1,7 @@
 import { CustomSelectOption } from '../custom-select/custom-select.model';
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomInput } from '../custom-input/custom-input.model';
 
-export interface CustomAutocomplete extends FormField {
-  className: string;
-  errorMessage: string;
-  floatLabel: boolean;
-  iconName: string;
+export interface CustomAutocomplete extends CustomInput {
   isMatchValue: boolean;
-  maxLength: number;
   options: Array<CustomSelectOption>;
-  placeholder: string;
-  required: boolean;
-  value: string;
 }
