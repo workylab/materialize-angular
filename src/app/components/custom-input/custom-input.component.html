@@ -6,13 +6,20 @@
     [class.disabled]="disabled"
     [class.error]="!isValid && isTouched">
 
-    <label class="form-label" *ngIf="label">{{ label }}</label>
+    <label class="form-label"
+      tabindex="1"
+      (blur)="onBlur($event)"
+      (focus)="onFocus($event)"
+      *ngIf="label"
+      #labelViewChild>
+      {{ label }}
+    </label>
 
     <div class="form-control-wrapper">
       <input class="form-control"
         (input)="onChange($event)"
         (blur)="onBlur($event)"
-        (focus)="onFocus()"
+        (focus)="onFocus($event)"
 
         [autocomplete]="autocomplete"
         [disabled]="disabled"
@@ -23,6 +30,8 @@
         [required]="required"
         [type]="type"
         [value]="value"
+
+        #inputViewChild
       />
 
       <custom-icon className="form-icon-error" name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>

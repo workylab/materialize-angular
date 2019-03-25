@@ -1,4 +1,14 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import { CustomInput } from './custom-input.model';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
@@ -29,8 +39,12 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     value: ''
   };
 
-  @Output('onFocus') onFocusEmmiter: EventEmitter<void>;
-  @Output('onBlur') onBlurEmmiter: EventEmitter<void>;
+  @ViewChild('inputViewChild') inputElementRef: ElementRef;
+  @ViewChild('labelViewChild') labelElementRef: ElementRef;
+
+  @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
+  @Output('onChange') onChangeEmitter: EventEmitter<Event>;
+  @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
 
   @Input('autocomplete') autocompleteInput: string;
   @Input('className') classNameInput: string;
@@ -67,11 +81,9 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public value: string;
 
   constructor() {
-    this.onFocusEmmiter = new EventEmitter();
-    this.onBlurEmmiter = new EventEmitter();
-
-    this.onBlur = this.onBlur.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.onBlurEmitter = new EventEmitter();
+    this.onChangeEmitter = new EventEmitter();
+    this.onFocusEmitter = new EventEmitter();
   }
 
   ngOnInit() {
@@ -157,20 +169,26 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   }
 
   onBlur(event: any): void {
-    this.isTouched = true;
-    this.isFocused = false;
-    this.onBlurEmmiter.emit(event);
+    if (!this.label || event.relatedTarget !== this.labelElementRef.nativeElement) {
+      this.isTouched = true;
+      this.isFocused = false;
+
+      this.isValid = this.validate(this.value, this.required);
+      this.onBlurEmitter.emit(event);
+    }
   }
 
-  onFocus(): void {
+  onFocus(event: Event): void {
     this.isFocused = true;
-    this.onFocusEmmiter.emit();
+    this.onFocusEmitter.emit(event);
+    this.inputElementRef.nativeElement.focus();
   }
 
   onChange(event: any): void {
     const { value } = event.target;
 
-    this.isValid = this.validate(value, this.required);
     this.value = value;
+    this.isValid = this.validate(this.value, this.required);
+    this.onChangeEmitter.emit(event);
   }
 }
