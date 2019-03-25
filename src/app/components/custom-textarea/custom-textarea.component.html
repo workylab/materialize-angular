@@ -6,13 +6,20 @@
     [class.disabled]="disabled"
     [class.error]="!isValid && isTouched">
 
-    <label class="form-label" *ngIf="label">{{ label }}</label>
+    <label class="form-label"
+      tabindex="1"
+      (blur)="onBlur($event)"
+      (focus)="onFocus($event)"
+      *ngIf="label"
+      #labelViewChild>
+      {{ label }}
+    </label>
 
     <div class="form-control-wrapper">
       <textarea class="form-control"
-        (blur)="onTextAreaBlur()"
-        (focus)="onTextAreaFocus()"
-        (input)="onTextAreaChange($event)"
+        (input)="onChange($event)"
+        (blur)="onBlur($event)"
+        (focus)="onFocus($event)"
 
         [disabled]="disabled"
         [id]="id"
@@ -21,7 +28,9 @@
         [name]="name"
         [placeholder]="placeholder"
         [required]="required"
-        [value]="value">
+        [value]="value"
+
+        #textAreaViewChild>
       </textarea>
 
       <custom-icon className="form-icon-error" name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>

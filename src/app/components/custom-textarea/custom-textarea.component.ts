@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { CustomTextArea } from './custom-textarea.model';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
@@ -26,6 +26,13 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     required: false,
     value: ''
   };
+
+  @ViewChild('textAreaViewChild') textAreaElementRef: ElementRef;
+  @ViewChild('labelViewChild') labelElementRef: ElementRef;
+
+  @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
+  @Output('onChange') onChangeEmitter: EventEmitter<Event>;
+  @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
@@ -57,6 +64,12 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   public required: boolean;
   public value: string;
 
+  constructor() {
+    this.onBlurEmitter = new EventEmitter();
+    this.onChangeEmitter = new EventEmitter();
+    this.onFocusEmitter = new EventEmitter();
+  }
+
   ngOnInit() {
     this.initValues();
   }
@@ -79,35 +92,42 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
 
     this.isFocused = defaultProps.isFocused;
     this.isTouched = defaultProps.isTouched;
-    this.isValid = this.validate(this.value);
+    this.isValid = this.validate(this.value, this.required);
   }
 
-  onTextAreaBlur(): void {
-    this.isValid = this.validate(this.value);
+  onBlur(event: any): void {
+    if (!this.label || event.relatedTarget !== this.labelElementRef.nativeElement) {
+      this.isTouched = true;
+      this.isFocused = false;
 
-    this.isFocused = false;
-    this.isTouched = true;
+      this.isValid = this.validate(this.value, this.required);
+
+      this.onBlurEmitter.emit(event);
+    }
   }
 
-  onTextAreaFocus(): void {
+  onFocus(event: Event): void {
     this.isFocused = true;
+    this.onFocusEmitter.emit(event);
+    this.textAreaElementRef.nativeElement.focus();
   }
 
-  onTextAreaChange(event: any): void {
+  onChange(event: any): void {
     const { value } = event.target;
 
-    this.isValid = this.validate(value);
     this.value = value;
+    this.isValid = this.validate(this.value, this.required);
+    this.onChangeEmitter.emit(event);
   }
 
-  validate(value: string): boolean {
+  validate(value: string, required: boolean): boolean {
     this.errorMessage = '';
 
-    if (this.required && (this.minLength > value.length || this.maxLength < value.length)) {
+    if (required && (this.minLength > value.length || this.maxLength < value.length)) {
       return false;
     }
 
-    if (this.required && !value.length) {
+    if (required && !value.length) {
       const fieldValidation = fieldValidations['required'];
 
       this.errorMessage = fieldValidation.errorMessage;
