@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  padding-bottom: $space-xxxl;
+  margin-bottom: $space-xxxl;
   padding-top: $space-sm;
 
   .form-group-icon-container {
@@ -31,6 +31,7 @@
   display: block;
   font-size: $font-size-xxxs;
   margin-bottom: $space-xs;
+  outline: none;
   padding-left: $space-sm;
 }
 
@@ -85,6 +86,7 @@
 .form-field-container.float-label {
   .form-label {
     color: $color-gray-dark;
+    cursor: text;
     font-size: $font-size-xs;
     position: absolute;
     top: 18px;

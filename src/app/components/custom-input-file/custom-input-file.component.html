@@ -6,7 +6,13 @@
     [class.disabled]="disabled"
     [class.error]="!isValid && isTouched">
     
-    <label class="form-label" *ngIf="label">{{ label }}</label>
+    <label class="form-label"
+      tabindex="1"
+      *ngIf="label"
+      (blur)="onBlur($event)"
+      (focus)="onFocus($event)">
+      {{ label }}
+    </label>
 
     <div class="form-control-wrapper">
       <div class="form-control">

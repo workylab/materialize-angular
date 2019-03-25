@@ -1,4 +1,4 @@
-.form-file-container {
+.form-field-container.form-file-container {
   position: relative;
 
   input[type='file'] {
@@ -11,6 +11,11 @@
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: $zindex-level-1;
+  }
+
+  .form-label.float-label {
+    cursor: pointer;
   }
 
   &.disabled input[type='file'] {
