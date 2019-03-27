@@ -7,6 +7,12 @@
 <h3>Simple Input with value</h3>
 <custom-input value="My value"></custom-input>
 
+<h3>Simple Input with counter</h3>
+<custom-input [hasCounter]="true"></custom-input>
+
+<h3>Simple Input with counter and Max Length</h3>
+<custom-input [hasCounter]="true" [maxLength]="5"></custom-input>
+
 <h3>Label Input</h3>
 <custom-input label="Label" [floatLabel]="false"></custom-input>
 
@@ -102,6 +108,12 @@
 <h3>Simple Autocomplete with value</h3>
 <custom-autocomplete [options]="selectOptions" value="Option2"></custom-autocomplete>
 
+<h3>Simple Autocomplete with counter</h3>
+<custom-autocomplete [options]="selectOptions" [hasCounter]="true"></custom-autocomplete>
+
+<h3>Simple Autocomplete with counter and Max Length</h3>
+<custom-autocomplete [options]="selectOptions" [hasCounter]="true" [maxLength]="5"></custom-autocomplete>
+
 <h3>Simple Autocomplete with Placeholder</h3>
 <custom-autocomplete [options]="selectOptions" placeholder="Placeholder"></custom-autocomplete>
 
@@ -144,6 +156,12 @@
 
 <h3>Simple TextArea with value</h3>
 <custom-textarea value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></custom-textarea>
+
+<h3>Simple TextArea with counter</h3>
+<custom-textarea [hasCounter]="true"></custom-textarea>
+
+<h3>Simple TextArea with counter and Max Length</h3>
+<custom-textarea [hasCounter]="true" [maxLength]="5"></custom-textarea>
 
 <h3>Label TextArea</h3>
 <custom-textarea label="Label" [floatLabel]="false"></custom-textarea>
