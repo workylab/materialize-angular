@@ -13,6 +13,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     disabled: false,
     errorMessage: '',
     floatLabel: true,
+    hasCounter: false,
     iconName: '',
     id: '',
     isFocused: false,
@@ -37,6 +38,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: boolean;
+  @Input('hasCounter') hasCounterInput: boolean;
   @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
@@ -51,6 +53,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   public disabled: boolean;
   public errorMessage: string;
   public floatLabel: boolean;
+  public hasCounter: boolean;
   public iconName: string;
   public id: string;
   public isFocused: boolean;
@@ -80,6 +83,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
