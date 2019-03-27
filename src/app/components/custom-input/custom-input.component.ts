@@ -24,6 +24,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     disabled: false,
     errorMessage: '',
     floatLabel: true,
+    hasCounter: false,
     iconName: '',
     id: '',
     isFocused: false,
@@ -50,6 +51,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: boolean;
+  @Input('hasCounter') hasCounterInput: boolean;
   @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
@@ -66,6 +68,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public disabled: boolean;
   public errorMessage: string;
   public floatLabel: boolean;
+  public hasCounter: boolean;
   public iconName: string;
   public id: string;
   public isTouched: boolean;
@@ -106,6 +109,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
     this.label = this.labelInput || defaultProps.label;
+    this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.maxLength = this.maxLengthInput || defaultProps.maxLength;
