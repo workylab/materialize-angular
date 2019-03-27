@@ -15,6 +15,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     disabled: false,
     errorMessage: 'The value does not match with any option',
     floatLabel: true,
+    hasCounter: false,
     iconName: '',
     id: '',
     isFocused: false,
@@ -22,7 +23,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     isTouched: false,
     isValid: false,
     label: '',
-    maxLength: 200,
+    maxLength: 500,
     name: '',
     options: [],
     patternName: '',
@@ -37,6 +38,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: boolean;
   @Input('iconName') iconNameInput: string;
+  @Input('hasCounter') hasCounterInput: boolean;
   @Input('id') idInput: string;
   @Input('isMatchValue') isMatchValueInput: boolean;
   @Input('label') labelInput: string;
@@ -52,6 +54,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   public disabled: boolean;
   public errorMessage: string;
   public floatLabel: boolean;
+  public hasCounter: boolean;
   public iconName: string;
   public id: string;
   public isFocused: boolean;
@@ -79,6 +82,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.isMatchValue = getBooleanValue(this.isMatchValueInput, defaultProps.isMatchValue);
