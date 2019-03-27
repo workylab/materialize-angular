@@ -1,8 +1,7 @@
 import { FormField } from '../custom-form/custom-form.model';
 
 export interface CustomCheckboxList extends FormField {
-  checkAllLabel: string;
-  errorMessage: string;
+  checkAllLabel: string;  
   iconName: string;
   items: Array<CustomCheckboxListItem>;
   name: string;

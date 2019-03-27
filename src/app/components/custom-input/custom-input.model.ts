@@ -1,8 +1,7 @@
 import { FormField } from "../custom-form/custom-form.model";
 
 export interface CustomInput extends FormField {
-  autocomplete: string;
-  errorMessage: string;
+  autocomplete: string; 
   floatLabel: boolean;
   hasCounter: boolean;
   iconName: string;

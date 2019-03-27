@@ -11,6 +11,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
   static defaultProps: ButtonToggle = {
     className: '',
     disabled: false,
+    errorMessage: '',
     id: '',
     isFocused: false,
     isMultiple: false,
@@ -36,6 +37,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
 
   public className: string;
   public disabled: boolean;
+  public errorMessage: string;
   public id: string;
   public isFocused: boolean;
   public isMultiple: boolean;

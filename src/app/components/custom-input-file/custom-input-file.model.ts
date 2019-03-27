@@ -3,7 +3,6 @@ import { FormField } from '../custom-form/custom-form.model';
 export interface CustomInputFile extends FormField {
   accept: Array<string>;
   dataType: 'blob' | 'base64';
-  errorMessage: string;
   floatLabel: boolean;
   iconName: string;
   isMultiple: boolean;

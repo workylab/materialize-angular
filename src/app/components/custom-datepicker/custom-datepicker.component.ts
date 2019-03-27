@@ -11,6 +11,7 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
   static readonly defaultProps: CustomDatePicker = {
     className: '',
     disabled: false,
+    errorMessage: '',
     floatLabel: true,
     iconName: '',
     id: '',
@@ -35,6 +36,7 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
 
   public className: string;
   public disabled: boolean;
+  public errorMessage: string;
   public floatLabel: boolean;
   public iconName: string;
   public id: string;

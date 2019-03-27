@@ -11,6 +11,7 @@ export class CustomSwitchComponent implements CustomSwitch, OnInit {
   static readonly defaultProps: CustomSwitch = {
     className: '',
     disabled: false,
+    errorMessage: '',
     iconName: '',
     id: '',
     isFocused: false,

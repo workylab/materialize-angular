@@ -18,6 +18,7 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
   static readonly defaultProps: CustomCheckbox = {
     className: '',
     disabled: false,
+    errorMessage: '',
     iconName: '',
     id: '',
     indeterminate: false,
