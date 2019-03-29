@@ -1,15 +1,18 @@
 import {
   Component,
+  ContentChildren,
   ElementRef,
   EventEmitter,
   Input,
   OnChanges,
   OnInit,
   Output,
+  QueryList,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
 import { CustomInput } from './custom-input.model';
+import { CustomPrefixDirective } from '../../directives/prefix.directive';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -42,6 +45,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
 
   @ViewChild('inputViewChild') inputElementRef: ElementRef;
   @ViewChild('labelViewChild') labelElementRef: ElementRef;
+
+  @ContentChildren(CustomPrefixDirective) customPrefixQueryList: QueryList<CustomPrefixDirective>;
 
   @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
   @Output('onChange') onChangeEmitter: EventEmitter<Event>;
@@ -91,6 +96,10 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
 
   ngOnInit() {
     this.initValues();
+  }
+
+  ngAfterContentInit() {
+
   }
 
   ngOnChanges(changes: SimpleChanges) {
