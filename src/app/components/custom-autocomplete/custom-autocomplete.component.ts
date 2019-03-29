@@ -29,6 +29,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     patternName: '',
     placeholder: '',
     required: false,
+    textAlign: 'left',
     type: 'text',
     value: ''
   };
@@ -47,6 +48,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   @Input('options') optionsInput: Array<CustomSelectOption>;
   @Input('placeholder') placeholderInput: string;
   @Input('required') requiredInput: boolean;
+  @Input('textAlign') textAlignInput: 'left' | 'right';
   @Input('value') valueInput: string;
 
   public autocomplete: string;
@@ -68,6 +70,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   public patternName: string;
   public placeholder: string;
   public required: boolean;
+  public textAlign: 'left' | 'right';
   public type: string;
   public value: string;
 
@@ -91,6 +94,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.name = this.nameInput || defaultProps.name;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
+    this.textAlign = this.textAlignInput || defaultProps.textAlign;
     this.value = this.valueInput || defaultProps.value;
 
     this.options = this.filterOptions(this.value);
