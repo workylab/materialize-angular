@@ -16,6 +16,10 @@
     </label>
 
     <div class="form-control-wrapper">
+      <div class="form-control-prefix-container" *ngIf="customPrefixQueryList.length">
+        <ng-content select="[customPrefix]"></ng-content>
+      </div>
+
       <input class="form-control"
         (input)="onChange($event)"
         (blur)="onBlur($event)"
