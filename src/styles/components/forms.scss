@@ -23,7 +23,25 @@
 }
 
 .form-control-wrapper {
+  background-color: $color-gray-light;
+  border-bottom: $border-sm solid $color-gray-dark;
+  border-radius: $radius-sm $radius-sm 0 0;
+  display: flex;
+  flex-direction: row;
+  min-height: 42px;
+  padding: $space-sm;
   position: relative;
+}
+
+.form-control-prefix-container {
+  align-items: center;
+  color: $color-black;
+  display: flex;
+  font-family: $font-family-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-light;
+  line-height: $font-size-xs;
+  margin-right: $space-xs;
 }
 
 .form-label {
@@ -36,21 +54,16 @@
 }
 
 .form-control {
-  align-items: center;
-  background-color: $color-gray-light;
+  background-color: transparent;
   border: 0;
-  border-bottom: $border-sm solid $color-gray-dark;
-  border-radius: $radius-sm $radius-sm 0 0;
   color: $color-black;
-  display: flex;
   font-family: $font-family-primary;
   font-size: $font-size-xs;
   font-weight: $font-weight-light;
   line-height: $font-size-xs;
   max-width: 100%;
-  min-height: 42px;
   outline: none;
-  padding: $space-sm $space-sm;
+  padding: 0;
   resize: vertical;
   width: 100%;
 }
