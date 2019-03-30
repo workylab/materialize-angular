@@ -13,6 +13,7 @@ import {
 } from '@angular/core';
 import { CustomInput } from './custom-input.model';
 import { CustomPrefixDirective } from '../../directives/prefix.directive';
+import { CustomSuffixDirective } from '../../directives/suffix.directive';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -39,6 +40,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     patternName: '',
     placeholder: '',
     required: false,
+    textAlign: 'left',
     type: 'text',
     value: ''
   };
@@ -47,6 +49,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   @ViewChild('labelViewChild') labelElementRef: ElementRef;
 
   @ContentChildren(CustomPrefixDirective) customPrefixQueryList: QueryList<CustomPrefixDirective>;
+  @ContentChildren(CustomSuffixDirective) customSuffixQueryList: QueryList<CustomSuffixDirective>;
 
   @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
   @Output('onChange') onChangeEmitter: EventEmitter<Event>;
@@ -64,6 +67,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   @Input('name') nameInput: string;
   @Input('placeholder') placeholderInput: string;
   @Input('required') requiredInput: boolean;
+  @Input('textAlign') textAlignInput: 'left' | 'right';
   @Input('type') typeInput: 'text' | 'password';
   @Input('patternName') patternNameInput: string;
   @Input('value') valueInput: string;
@@ -85,6 +89,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public patternName: string;
   public placeholder: string;
   public required: boolean;
+  public textAlign: 'left' | 'right';
   public type: string;
   public value: string;
 
@@ -126,6 +131,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     this.patternName = this.patternNameInput || defaultProps.patternName;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
+    this.textAlign = this.textAlignInput || defaultProps.textAlign;
     this.type = this.typeInput || defaultProps.type;
     this.value = this.valueInput || defaultProps.value;
 
