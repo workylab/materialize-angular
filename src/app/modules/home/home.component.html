@@ -13,11 +13,61 @@
 <h3>Simple Input with counter and Max Length</h3>
 <custom-input [hasCounter]="true" [maxLength]="5"></custom-input>
 
+<h3>Simple Input with prefix</h3>
+<custom-input>
+  <span customPrefix>+1</span>
+</custom-input>
+
+<h3>Simple Input with icon prefix</h3>
+<custom-input>
+  <custom-icon customPrefix name="phone"></custom-icon>
+</custom-input>
+
+<h3>Simple Input with suffix</h3>
+<custom-input textAlign="right">
+  <span customSuffix>.00</span>
+</custom-input>
+
+<h3>Simple Input with icon suffix</h3>
+<custom-input textAlign="right">
+  <custom-icon customSuffix name="phone"></custom-icon>
+</custom-input>
+
 <h3>Label Input</h3>
 <custom-input label="Label" [floatLabel]="false"></custom-input>
 
+<h3>Label Input with prefix</h3>
+<custom-input label="Label" [floatLabel]="false">
+  <span customPrefix>+1</span>
+</custom-input>
+
+<h3>Label Input with icon prefix</h3>
+<custom-input label="Label" [floatLabel]="false">
+  <custom-icon customPrefix name="phone"></custom-icon>
+</custom-input>
+
 <h3>Float Label Input</h3>
 <custom-input label="Label"></custom-input>
+
+<h3>Float Label Input with prefix</h3>
+<custom-input label="Label">
+  <span customPrefix>+1</span>
+</custom-input>
+
+<h3>Float Label Input with icon prefix</h3>
+<custom-input label="Label">
+  <custom-icon customPrefix name="phone"></custom-icon>
+</custom-input>
+
+<h3>Float Label Input with suffix</h3>
+<custom-input label="Label" textAlign="right">
+  <span customSuffix>.00</span>
+</custom-input>
+
+<h3>Float Label Input with icon suffix</h3>
+<custom-input label="Label" textAlign="right">
+  <custom-icon customSuffix name="phone"></custom-icon>
+</custom-input>
 
 <h3>Password Input</h3>
 <custom-input type="password"></custom-input>
