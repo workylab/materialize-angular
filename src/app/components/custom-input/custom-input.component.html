@@ -52,11 +52,7 @@
       </div>
     </div>
 
-    <div class="form-message-counter" *ngIf="hasCounter">
-      {{ value.length }} / {{ maxLength }}
-    </div>
-    <div class="form-error-message" *ngIf="!isValid && isTouched">
-      {{ errorMessage }}
-    </div>
+    <div class="form-message-counter" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</div>
+    <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
   </div>
 </custom-form-group>

@@ -45,7 +45,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     value: ''
   };
 
-  @ViewChild('input') inputElementRef: ElementRef;
+  @ViewChild('input') inputRef: ElementRef;
   @ViewChild('formControlWrapper') formControlWrapperRef: ElementRef;
 
   @ContentChildren(CustomPrefixDirective) customPrefixQueryList: QueryList<CustomPrefixDirective>;
@@ -101,10 +101,6 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
 
   ngOnInit() {
     this.initValues();
-  }
-
-  ngAfterContentInit() {
-
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -188,7 +184,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   }
 
   onBlur(event: any): void {
-    if (!this.label || event.relatedTarget !== this.formControlWrapperRef.nativeElement) {
+    if (!this.floatLabel || event.relatedTarget !== this.formControlWrapperRef.nativeElement) {
       this.isTouched = true;
       this.isFocused = false;
 
@@ -201,7 +197,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     if (!this.disabled) {
       this.isFocused = true;
       this.onFocusEmitter.emit(event);
-      this.inputElementRef.nativeElement.focus();
+      this.inputRef.nativeElement.focus();
     }
   }
 
