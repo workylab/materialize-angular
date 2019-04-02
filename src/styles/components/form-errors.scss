@@ -12,7 +12,7 @@
   animation: grow-element 100ms;
   color: $color-red;
   position: absolute;
-  right: 0;
+  right: $space-sm;
   top: 10px;
   z-index: $zindex-level-1;
 }
