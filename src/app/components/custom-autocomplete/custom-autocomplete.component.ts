@@ -14,7 +14,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     className: '',
     disabled: false,
     errorMessage: 'The value does not match with any option',
-    floatLabel: true,
+    floatLabel: '',
     hasCounter: false,
     iconName: '',
     id: '',
@@ -29,6 +29,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     patternName: '',
     placeholder: '',
     required: false,
+    textAlign: 'left',
     type: 'text',
     value: ''
   };
@@ -36,7 +37,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   @Input('autocomplete') autocompleteInput: string;
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('floatLabel') floatLabelInput: boolean;
+  @Input('floatLabel') floatLabelInput: string;
   @Input('iconName') iconNameInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
   @Input('id') idInput: string;
@@ -47,13 +48,14 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   @Input('options') optionsInput: Array<CustomSelectOption>;
   @Input('placeholder') placeholderInput: string;
   @Input('required') requiredInput: boolean;
+  @Input('textAlign') textAlignInput: 'left' | 'right';
   @Input('value') valueInput: string;
 
   public autocomplete: string;
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public floatLabel: boolean;
+  public floatLabel: string;
   public hasCounter: boolean;
   public iconName: string;
   public id: string;
@@ -68,6 +70,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   public patternName: string;
   public placeholder: string;
   public required: boolean;
+  public textAlign: 'left' | 'right';
   public type: string;
   public value: string;
 
@@ -81,7 +84,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.autocomplete = this.autocompleteInput || defaultProps.autocomplete;
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
@@ -91,6 +94,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.name = this.nameInput || defaultProps.name;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
+    this.textAlign = this.textAlignInput || defaultProps.textAlign;
     this.value = this.valueInput || defaultProps.value;
 
     this.options = this.filterOptions(this.value);

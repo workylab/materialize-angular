@@ -1,0 +1,19 @@
+.form-label {
+  color: $color-gray-dark;
+  display: block;
+  font-size: $font-size-xs;
+  margin-bottom: $space-xs;
+  margin-left: $space-sm;
+  outline: none;
+}
+
+.form-float-label {
+  color: $color-gray-dark;
+  cursor: text;
+  font-size: $font-size-xs;
+  left: 0;
+  position: absolute;
+  top: 18px;
+  transition: 250ms ease all;
+  z-index: $zindex-level-1;
+}

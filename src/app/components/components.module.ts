@@ -15,9 +15,11 @@ import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { CustomInputFileComponent } from './custom-input-file/custom-input-file.component';
 import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
+import { CustomPrefixDirective } from '../directives/prefix.directive';
 import { CustomRadioComponent } from './custom-radio/custom-radio.component';
 import { CustomSelectComponent } from './custom-select/custom-select.component';
 import { CustomSideNavComponent } from './custom-sidenav/custom-sidenav.component';
+import { CustomSuffixDirective } from '../directives/suffix.directive';
 import { CustomSwiperComponent } from './custom-swiper/custom-swiper.component';
 import { CustomSwiperItemComponent } from './custom-swiper/custom-swiper-item/custom-swiper-item.component';
 import { CustomSwitchComponent } from './custom-switch/custom-switch.component';
@@ -45,6 +47,8 @@ import { NgModule } from '@angular/core';
     CustomInputComponent,
     CustomInputFileComponent,
     CustomNavbarComponent,
+    CustomPrefixDirective,
+    CustomSuffixDirective,
     CustomRadioComponent,
     CustomSelectComponent,
     CustomSideNavComponent,
@@ -73,6 +77,8 @@ import { NgModule } from '@angular/core';
     CustomInputComponent,
     CustomInputFileComponent,
     CustomNavbarComponent,
+    CustomPrefixDirective,
+    CustomSuffixDirective,
     CustomSwiperComponent,
     CustomSwiperItemComponent,
     CustomRadioComponent,
