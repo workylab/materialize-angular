@@ -34,40 +34,46 @@
 </custom-input>
 
 <h3>Label Input</h3>
-<custom-input label="Label" [floatLabel]="false"></custom-input>
+<custom-input label="Label"></custom-input>
 
 <h3>Label Input with prefix</h3>
-<custom-input label="Label" [floatLabel]="false">
+<custom-input label="Label">
   <span customPrefix>+1</span>
 </custom-input>
 
 <h3>Label Input with icon prefix</h3>
-<custom-input label="Label" [floatLabel]="false">
+<custom-input label="Label">
   <custom-icon customPrefix name="phone"></custom-icon>
 </custom-input>
 
 <h3>Float Label Input</h3>
-<custom-input label="Label"></custom-input>
+<custom-input floatLabel="Label"></custom-input>
 
 <h3>Float Label Input with prefix</h3>
-<custom-input label="Label">
+<custom-input floatLabel="Label">
   <span customPrefix>+1</span>
 </custom-input>
 
 <h3>Float Label Input with icon prefix</h3>
-<custom-input label="Label">
+<custom-input floatLabel="Label">
   <custom-icon customPrefix name="phone"></custom-icon>
 </custom-input>
 
 <h3>Float Label Input with suffix</h3>
-<custom-input label="Label" textAlign="right">
+<custom-input floatLabel="Label" textAlign="right">
   <span customSuffix>.00</span>
 </custom-input>
 
 <h3>Float Label Input with icon suffix</h3>
-<custom-input label="Label" textAlign="right">
+<custom-input floatLabel="Label" textAlign="right">
   <custom-icon customSuffix name="phone"></custom-icon>
 </custom-input>
+
+<h3>Float Label Input with placeholder</h3>
+<custom-input placeholder="Write here" floatLabel="Label"></custom-input>
+
+<h3>Float Label Required Input</h3>
+<custom-input [required]="true" floatLabel="Label"></custom-input>
 
 <h3>Password Input</h3>
 <custom-input type="password"></custom-input>
@@ -85,25 +91,16 @@
 <custom-input placeholder="Write here"></custom-input>
 
 <h3>Placeholder Input With Label</h3>
-<custom-input placeholder="Write here" label="Label" [floatLabel]="false"></custom-input>
-
-<h3>Placeholder Input With Float Label</h3>
 <custom-input placeholder="Write here" label="Label"></custom-input>
 
 <h3>Required Simple Input</h3>
-<custom-input [required]="true" [floatLabel]="false"></custom-input>
+<custom-input [required]="true" ></custom-input>
 
 <h3>Required Label Input</h3>
-<custom-input [required]="true" label="Label" [floatLabel]="false"></custom-input>
-
-<h3>Float Label Required Input</h3>
-<custom-input [required]="true" label="Label"></custom-input>
+<custom-input [required]="true" label="Label" ></custom-input>
 
 <h3>Required Input with name pattern (Number)</h3>
 <custom-input [required]="true" label="Label" patternName="number"></custom-input>
-
-<h3>No Required Input</h3>
-<custom-input label="Label" ></custom-input>
 
 <h3>No Required Input with name pattern (Number)</h3>
 <custom-input label="Label" patternName="number"></custom-input>
