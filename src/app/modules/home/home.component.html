@@ -72,6 +72,12 @@
 <h3>Float Label Input with placeholder</h3>
 <custom-input placeholder="Write here" floatLabel="Label"></custom-input>
 
+<h3>Float Label Input with label</h3>
+<custom-input label="Label" floatLabel="Label"></custom-input>
+
+<h3>Float Label Input with label and placeholder</h3>
+<custom-input label="Label" floatLabel="Float Label" placeholder="Write here"></custom-input>
+
 <h3>Float Label Required Input</h3>
 <custom-input [required]="true" floatLabel="Label"></custom-input>
 
@@ -97,7 +103,7 @@
 <custom-input [required]="true" ></custom-input>
 
 <h3>Required Label Input</h3>
-<custom-input [required]="true" label="Label" ></custom-input>
+<custom-input [required]="true" label="Label"></custom-input>
 
 <h3>Required Input with name pattern (Number)</h3>
 <custom-input [required]="true" label="Label" patternName="number"></custom-input>
@@ -109,38 +115,50 @@
 <br>
 <br>
 
-<h3>Simple Select</h3>
-<custom-select [options]="selectOptions"></custom-select>
+<h3>Simple TextArea</h3>
+<custom-textarea></custom-textarea>
 
-<h3>Select with Id</h3>
-<custom-select [options]="selectOptions" id="select-id"></custom-select>
+<h3>TextArea with Id</h3>
+<custom-textarea id="textarea-id"></custom-textarea>
 
-<h3>Simple Select with value</h3>
-<custom-select [options]="selectOptions" value="2"></custom-select>
+<h3>Simple TextArea with value</h3>
+<custom-textarea value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></custom-textarea>
 
-<h3>Label Select</h3>
-<custom-select label="Label" [options]="selectOptions" [floatLabel]="false"></custom-select>
+<h3>Simple TextArea with value and rows</h3>
+<custom-textarea [rows]="3" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></custom-textarea>
 
-<h3>Float Label Select</h3>
-<custom-select label="Label" [options]="selectOptions"></custom-select>
+<h3>Simple TextArea with counter</h3>
+<custom-textarea [hasCounter]="true"></custom-textarea>
 
-<h3>Icon Select</h3>
-<custom-select iconName="map" [options]="selectOptions"></custom-select>
+<h3>Simple TextArea with counter and max Length</h3>
+<custom-textarea [hasCounter]="true" [maxLength]="5"></custom-textarea>
 
-<h3>Disabled Select</h3>
-<custom-select [disabled]="true" [options]="selectOptions"></custom-select>
+<h3>Label TextArea</h3>
+<custom-textarea label="Label"></custom-textarea>
 
-<h3>Disabled Select with value</h3>
-<custom-select [disabled]="true" [options]="selectOptions" value="2"></custom-select>
+<h3>Float Label TextArea</h3>
+<custom-textarea floatLabel="Label"></custom-textarea>
 
-<h3>Required Simple Select</h3>
-<custom-select [options]="selectOptions" [required]="true"></custom-select>
+<h3>Icon TextArea</h3>
+<custom-textarea iconName="email"></custom-textarea>
 
-<h3>Required Label Select</h3>
-<custom-select label="Label" [floatLabel]="false" [options]="selectOptions" [required]="true"></custom-select>
+<h3>Disabled TextArea</h3>
+<custom-textarea [disabled]="true"></custom-textarea>
 
-<h3>Required Float Label Select</h3>
-<custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
+<h3>Placeholder TextArea</h3>
+<custom-textarea placeholder="Write here"></custom-textarea>
+
+<h3>Placeholder TextArea With Label</h3>
+<custom-textarea placeholder="Write here" label="Label"></custom-textarea>
+
+<h3>Placeholder TextArea With Float Label</h3>
+<custom-textarea placeholder="Write here" floatLabel="Label"></custom-textarea>
+
+<h3>Required Simple TextArea</h3>
+<custom-textarea [required]="true"></custom-textarea>
+
+<h3>Required TextArea with Float label</h3>
+<custom-textarea floatLabel="Label" [required]="true"></custom-textarea>
 
 <br>
 <br>
@@ -195,44 +213,38 @@
 <br>
 <br>
 
-<h3>Simple TextArea</h3>
-<custom-textarea></custom-textarea>
+<h3>Simple Select</h3>
+<custom-select [options]="selectOptions"></custom-select>
 
-<h3>TextArea with Id</h3>
-<custom-textarea id="textarea-id"></custom-textarea>
+<h3>Select with Id</h3>
+<custom-select [options]="selectOptions" id="select-id"></custom-select>
 
-<h3>Simple TextArea with value</h3>
-<custom-textarea value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></custom-textarea>
+<h3>Simple Select with value</h3>
+<custom-select [options]="selectOptions" value="2"></custom-select>
 
-<h3>Simple TextArea with counter</h3>
-<custom-textarea [hasCounter]="true"></custom-textarea>
+<h3>Label Select</h3>
+<custom-select label="Label" [options]="selectOptions" [floatLabel]="false"></custom-select>
 
-<h3>Simple TextArea with counter and Max Length</h3>
-<custom-textarea [hasCounter]="true" [maxLength]="5"></custom-textarea>
+<h3>Float Label Select</h3>
+<custom-select label="Label" [options]="selectOptions"></custom-select>
 
-<h3>Label TextArea</h3>
-<custom-textarea label="Label" [floatLabel]="false"></custom-textarea>
+<h3>Icon Select</h3>
+<custom-select iconName="map" [options]="selectOptions"></custom-select>
 
-<h3>Float Label TextArea</h3>
-<custom-textarea label="Label"></custom-textarea>
+<h3>Disabled Select</h3>
+<custom-select [disabled]="true" [options]="selectOptions"></custom-select>
 
-<h3>Icon TextArea</h3>
-<custom-textarea iconName="email"></custom-textarea>
+<h3>Disabled Select with value</h3>
+<custom-select [disabled]="true" [options]="selectOptions" value="2"></custom-select>
 
-<h3>Disabled TextArea</h3>
-<custom-textarea [disabled]="true"></custom-textarea>
+<h3>Required Simple Select</h3>
+<custom-select [options]="selectOptions" [required]="true"></custom-select>
 
-<h3>Placeholder TextArea</h3>
-<custom-textarea placeholder="Write here"></custom-textarea>
+<h3>Required Label Select</h3>
+<custom-select label="Label" [floatLabel]="false" [options]="selectOptions" [required]="true"></custom-select>
 
-<h3>Placeholder TextArea With Label</h3>
-<custom-textarea placeholder="Write here" label="Label" [floatLabel]="false"></custom-textarea>
-
-<h3>Placeholder TextArea With Float Label</h3>
-<custom-textarea placeholder="Write here" label="Label"></custom-textarea>
-
-<h3>Required Simple TextArea</h3>
-<custom-textarea [required]="true"></custom-textarea>
+<h3>Required Float Label Select</h3>
+<custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
 
 <br>
 <br>
