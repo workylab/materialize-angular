@@ -27,7 +27,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     className: '',
     disabled: false,
     errorMessage: '',
-    floatLabel: true,
+    floatLabel: '',
     hasCounter: false,
     iconName: '',
     id: '',
@@ -45,8 +45,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     value: ''
   };
 
-  @ViewChild('inputViewChild') inputElementRef: ElementRef;
-  @ViewChild('labelViewChild') labelElementRef: ElementRef;
+  @ViewChild('input') inputElementRef: ElementRef;
+  @ViewChild('formControlWrapper') formControlWrapperRef: ElementRef;
 
   @ContentChildren(CustomPrefixDirective) customPrefixQueryList: QueryList<CustomPrefixDirective>;
   @ContentChildren(CustomSuffixDirective) customSuffixQueryList: QueryList<CustomSuffixDirective>;
@@ -58,7 +58,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   @Input('autocomplete') autocompleteInput: string;
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('floatLabel') floatLabelInput: boolean;
+  @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
   @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
@@ -76,7 +76,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public floatLabel: boolean;
+  public floatLabel: string;
   public hasCounter: boolean;
   public iconName: string;
   public id: string;
@@ -121,7 +121,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     this.autocomplete = this.autocompleteInput || defaultProps.autocomplete;
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.label = this.labelInput || defaultProps.label;
     this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
     this.iconName = this.iconNameInput || defaultProps.iconName;
@@ -188,7 +188,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   }
 
   onBlur(event: any): void {
-    if (!this.label || event.relatedTarget !== this.labelElementRef.nativeElement) {
+    if (!this.label || event.relatedTarget !== this.formControlWrapperRef.nativeElement) {
       this.isTouched = true;
       this.isFocused = false;
 
@@ -198,9 +198,11 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   }
 
   onFocus(event: Event): void {
-    this.isFocused = true;
-    this.onFocusEmitter.emit(event);
-    this.inputElementRef.nativeElement.focus();
+    if (!this.disabled) {
+      this.isFocused = true;
+      this.onFocusEmitter.emit(event);
+      this.inputElementRef.nativeElement.focus();
+    }
   }
 
   onChange(event: any): void {
