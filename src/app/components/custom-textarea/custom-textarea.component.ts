@@ -12,7 +12,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     className: '',
     disabled: false,
     errorMessage: '',
-    floatLabel: true,
+    floatLabel: '',
     hasCounter: false,
     iconName: '',
     id: '',
@@ -25,11 +25,12 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     name: '',
     placeholder: '',
     required: false,
+    rows: 1,
     value: ''
   };
 
-  @ViewChild('textAreaViewChild') textAreaElementRef: ElementRef;
-  @ViewChild('labelViewChild') labelElementRef: ElementRef;
+  @ViewChild('formControlWrapper') formControlWrapperRef: ElementRef;
+  @ViewChild('textArea') textAreaRef: ElementRef;
 
   @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
   @Output('onChange') onChangeEmitter: EventEmitter<Event>;
@@ -37,22 +38,23 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('floatLabel') floatLabelInput: boolean;
+  @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
   @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
-  @Input('name') nameInput: string;
-  @Input('required') requiredInput: boolean;
   @Input('maxLength') maxLengthInput: number;
   @Input('minLength') minLengthInput: number;
+  @Input('name') nameInput: string;
   @Input('placeholder') placeholderInput: string;
+  @Input('required') requiredInput: boolean;
+  @Input('rows') rowsInput: number;
   @Input('value') valueInput: string;
 
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public floatLabel: boolean;
+  public floatLabel: string;
   public hasCounter: boolean;
   public iconName: string;
   public id: string;
@@ -63,6 +65,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   public minLength: number;
   public maxLength: number;
   public name: string;
+  public rows: number;
   public placeholder: string;
   public required: boolean;
   public value: string;
@@ -82,7 +85,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
@@ -92,6 +95,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     this.name = this.nameInput || defaultProps.name;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
+    this.rows = this.rowsInput || defaultProps.rows;
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = defaultProps.isFocused;
@@ -100,7 +104,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   }
 
   onBlur(event: any): void {
-    if (!this.label || event.relatedTarget !== this.labelElementRef.nativeElement) {
+    if (!this.floatLabel || event.relatedTarget !== this.formControlWrapperRef.nativeElement) {
       this.isTouched = true;
       this.isFocused = false;
 
@@ -111,9 +115,11 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   }
 
   onFocus(event: Event): void {
-    this.isFocused = true;
-    this.onFocusEmitter.emit(event);
-    this.textAreaElementRef.nativeElement.focus();
+    if (!this.disabled) {
+      this.isFocused = true;
+      this.onFocusEmitter.emit(event);
+      this.textAreaRef.nativeElement.focus();
+    }
   }
 
   onChange(event: any): void {
