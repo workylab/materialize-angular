@@ -12,7 +12,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     className: '',
     disabled: false,
     errorMessage: '',
-    floatLabel: true,
+    floatLabel: '',
     iconName: '',
     id: '',
     isFocused: false,
@@ -28,7 +28,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('floatLabel') floatLabelInput: boolean;
+  @Input('floatLabel') floatLabelInput: string;
   @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
@@ -40,7 +40,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public floatLabel: boolean;
+  public floatLabel: string;
   public iconName: string;
   public id: string;
   public isFocused: boolean;
@@ -62,7 +62,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
