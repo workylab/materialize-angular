@@ -164,6 +164,43 @@
 <br>
 <br>
 
+<h3>Simple Select</h3>
+<custom-select [options]="selectOptions"></custom-select>
+
+<h3>Select with Id</h3>
+<custom-select [options]="selectOptions" id="select-id"></custom-select>
+
+<h3>Simple Select with value</h3>
+<custom-select [options]="selectOptions" value="2"></custom-select>
+
+<h3>Label Select</h3>
+<custom-select label="Label" [options]="selectOptions"></custom-select>
+
+<h3>Float Label Select</h3>
+<custom-select floatLabel="Label" [options]="selectOptions"></custom-select>
+
+<h3>Icon Select</h3>
+<custom-select iconName="map" [options]="selectOptions"></custom-select>
+
+<h3>Disabled Select</h3>
+<custom-select [disabled]="true" [options]="selectOptions"></custom-select>
+
+<h3>Disabled Select with value</h3>
+<custom-select [disabled]="true" [options]="selectOptions" value="2"></custom-select>
+
+<h3>Required Simple Select</h3>
+<custom-select [options]="selectOptions" [required]="true"></custom-select>
+
+<h3>Required Float Label Select</h3>
+<custom-select floatLabel="Label" [options]="selectOptions" [required]="true"></custom-select>
+
+<h3>Required Float Label Select</h3>
+<custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
+
+<br>
+<br>
+<br>
+
 <h3>Simple Autocomplete</h3>
 <custom-autocomplete [options]="selectOptions"></custom-autocomplete>
 
@@ -209,42 +246,7 @@
 <h3>Required Float Label Autocomplete</h3>
 <custom-autocomplete label="Label" [required]="true" [options]="selectOptions"></custom-autocomplete>
 
-<br>
-<br>
-<br>
 
-<h3>Simple Select</h3>
-<custom-select [options]="selectOptions"></custom-select>
-
-<h3>Select with Id</h3>
-<custom-select [options]="selectOptions" id="select-id"></custom-select>
-
-<h3>Simple Select with value</h3>
-<custom-select [options]="selectOptions" value="2"></custom-select>
-
-<h3>Label Select</h3>
-<custom-select label="Label" [options]="selectOptions" [floatLabel]="false"></custom-select>
-
-<h3>Float Label Select</h3>
-<custom-select label="Label" [options]="selectOptions"></custom-select>
-
-<h3>Icon Select</h3>
-<custom-select iconName="map" [options]="selectOptions"></custom-select>
-
-<h3>Disabled Select</h3>
-<custom-select [disabled]="true" [options]="selectOptions"></custom-select>
-
-<h3>Disabled Select with value</h3>
-<custom-select [disabled]="true" [options]="selectOptions" value="2"></custom-select>
-
-<h3>Required Simple Select</h3>
-<custom-select [options]="selectOptions" [required]="true"></custom-select>
-
-<h3>Required Label Select</h3>
-<custom-select label="Label" [floatLabel]="false" [options]="selectOptions" [required]="true"></custom-select>
-
-<h3>Required Float Label Select</h3>
-<custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
 
 <br>
 <br>
