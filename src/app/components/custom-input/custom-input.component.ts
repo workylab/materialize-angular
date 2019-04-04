@@ -42,6 +42,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     required: false,
     textAlign: 'left',
     type: 'text',
+    validateOnBlur: true,
+    validateOnChange: true,
     value: ''
   };
 
@@ -70,6 +72,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   @Input('textAlign') textAlignInput: 'left' | 'right';
   @Input('type') typeInput: 'text' | 'password';
   @Input('patternName') patternNameInput: string;
+  @Input('validateOnBlur') validateOnBlurInput: boolean;
+  @Input('validateOnChange') validateOnChangeInput: boolean;
   @Input('value') valueInput: string;
 
   public autocomplete: string;
@@ -91,6 +95,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public required: boolean;
   public textAlign: 'left' | 'right';
   public type: string;
+  public validateOnBlur: boolean;
+  public validateOnChange: boolean;
   public value: string;
 
   constructor() {
@@ -129,6 +135,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.textAlign = this.textAlignInput || defaultProps.textAlign;
     this.type = this.typeInput || defaultProps.type;
+    this.validateOnBlur = getBooleanValue(this.validateOnBlurInput, defaultProps.validateOnBlur);
+    this.validateOnChange = getBooleanValue(this.validateOnChangeInput, defaultProps.validateOnChange);
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = defaultProps.isFocused;
@@ -184,12 +192,15 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   }
 
   onBlur(event: any): void {
-    if (!this.floatLabel || event.relatedTarget !== this.formControlWrapperRef.nativeElement) {
+    const { nativeElement } = this.formControlWrapperRef;
+    const { relatedTarget } = event;
+
+    this.onBlurEmitter.emit(event);
+
+    if (this.validateOnBlur && (!this.floatLabel || relatedTarget !== nativeElement)) {
       this.isTouched = true;
       this.isFocused = false;
-
       this.isValid = this.validate(this.value, this.required);
-      this.onBlurEmitter.emit(event);
     }
   }
 
@@ -205,7 +216,10 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     const { value } = event.target;
 
     this.value = value;
-    this.isValid = this.validate(this.value, this.required);
     this.onChangeEmitter.emit(event);
+
+    if (this.validateOnChange) {
+      this.isValid = this.validate(this.value, this.required);
+    }
   }
 }

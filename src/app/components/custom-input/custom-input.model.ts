@@ -10,5 +10,7 @@ export interface CustomInput extends FormField {
   placeholder: string;
   textAlign: 'left' | 'right';
   type: string;
+  validateOnBlur: boolean;
+  validateOnChange: boolean;
   value: string;
 }
