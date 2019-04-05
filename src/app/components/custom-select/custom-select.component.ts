@@ -1,13 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CustomSelect, CustomSelectOption } from './custom-select.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomSelectComponent)
+  }],
   selector: 'custom-select',
   templateUrl: './custom-select.component.html'
 })
-export class CustomSelectComponent implements CustomSelect, OnInit {
+export class CustomSelectComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomSelect = {
     className: '',
     disabled: false,
@@ -23,6 +28,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     options: [],
     required: false,
     selectedOption: {} as CustomSelectOption,
+    updateAndValidity: () => {},
     value: ''
   };
 
@@ -124,5 +130,10 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   closeMenu() {
     this.isTouched = true;
     this.isFocused = false;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }
