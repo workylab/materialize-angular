@@ -1,6 +1,6 @@
-import { FormField } from "../custom-form/custom-form.model";
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface CustomInput extends FormField {
+export interface CustomInput extends CustomFormFieldAbstract {
   autocomplete: string;
   floatLabel: string;
   hasCounter: boolean;

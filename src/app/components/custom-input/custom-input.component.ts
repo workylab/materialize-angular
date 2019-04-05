@@ -3,6 +3,7 @@ import {
   ContentChildren,
   ElementRef,
   EventEmitter,
+  forwardRef,
   Input,
   OnChanges,
   OnInit,
@@ -11,6 +12,7 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import { CustomInput } from './custom-input.model';
 import { CustomPrefixDirective } from '../../directives/prefix.directive';
 import { CustomSuffixDirective } from '../../directives/suffix.directive';
@@ -18,10 +20,14 @@ import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomInputComponent)
+  }],
   selector: 'custom-input',
   templateUrl: './custom-input.component.html'
 })
-export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
+export class CustomInputComponent extends CustomFormFieldAbstract implements OnInit, OnChanges {
   static readonly defaultProps: CustomInput = {
     autocomplete: 'none',
     className: '',
@@ -42,6 +48,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     required: false,
     textAlign: 'left',
     type: 'text',
+    updateAndValidity: () => {},
     validateOnBlur: true,
     validateOnChange: true,
     value: ''
@@ -100,6 +107,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public value: string;
 
   constructor() {
+    super();
+
     this.onBlurEmitter = new EventEmitter();
     this.onChangeEmitter = new EventEmitter();
     this.onFocusEmitter = new EventEmitter();
@@ -221,5 +230,10 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     if (this.validateOnChange) {
       this.isValid = this.validate(this.value, this.required);
     }
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }
