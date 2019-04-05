@@ -1,14 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CustomInputFile, File } from './custom-input-file.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 // TODO: preview - multifile - filesize (mb, kb, b)
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomInputFileComponent)
+  }],
   selector: 'custom-input-file',
   templateUrl: './custom-input-file.component.html'
 })
-export class CustomInputFileComponent implements OnInit, CustomInputFile {
+export class CustomInputFileComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomInputFile = {
     accept: ['application/pdf', 'image/*'],
     className: '',
@@ -27,6 +32,7 @@ export class CustomInputFileComponent implements OnInit, CustomInputFile {
     minSize: 0,
     name: '',
     required: false,
+    updateAndValidity: () => {},
     value: []
   };
 
@@ -67,6 +73,8 @@ export class CustomInputFileComponent implements OnInit, CustomInputFile {
   public value: Array<File>;
 
   constructor() {
+    super();
+
     this.onBlur = this.onBlur.bind(this);
     this.onChange = this.onChange.bind(this);
   }
@@ -198,5 +206,10 @@ export class CustomInputFileComponent implements OnInit, CustomInputFile {
     /* TODO: alert('The file is bigger or smaller'); */
 
     return false;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value);
   }
 }
