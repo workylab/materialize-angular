@@ -1,13 +1,18 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, forwardRef, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import { CustomTextArea } from './custom-textarea.model';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomTextAreaComponent)
+  }],
   selector: 'custom-textarea',
   templateUrl: './custom-textarea.component.html'
 })
-export class CustomTextAreaComponent implements CustomTextArea, OnInit {
+export class CustomTextAreaComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomTextArea = {
     className: '',
     disabled: false,
@@ -26,6 +31,7 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     placeholder: '',
     required: false,
     rows: 1,
+    updateAndValidity: () => {},
     value: ''
   };
 
@@ -71,6 +77,8 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
   public value: string;
 
   constructor() {
+    super();
+
     this.onBlurEmitter = new EventEmitter();
     this.onChangeEmitter = new EventEmitter();
     this.onFocusEmitter = new EventEmitter();
@@ -146,5 +154,10 @@ export class CustomTextAreaComponent implements CustomTextArea, OnInit {
     }
 
     return true;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }

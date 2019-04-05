@@ -1,6 +1,6 @@
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface CustomTextArea extends FormField {
+export interface CustomTextArea extends CustomFormFieldAbstract {
   floatLabel: string;
   hasCounter: boolean;
   iconName: string;
