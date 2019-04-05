@@ -1,6 +1,6 @@
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface CustomCheckbox extends FormField {
+export interface CustomCheckbox extends CustomFormFieldAbstract {
   iconName: string;
   indeterminate: boolean;
   value: boolean;
