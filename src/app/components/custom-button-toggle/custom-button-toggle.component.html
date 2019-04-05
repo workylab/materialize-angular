@@ -1,5 +1,4 @@
-<div class="button-toggle-container"
-  [class.disabled]="disabled">
+<div class="button-toggle-container" [class.disabled]="disabled">
   <div class="button-toggle-item"
     (click)="onClick(item)"
     [class.active]="value[item.name]"
@@ -9,9 +8,7 @@
       *ngIf="item.iconName"
       [name]="item.iconName">
     </custom-icon>
-    <div class="button-toggle-content">
-      {{ item.content }}
-    </div>
+    <div class="button-toggle-content">{{ item.content }}</div>
   </div>
 </div>
   
