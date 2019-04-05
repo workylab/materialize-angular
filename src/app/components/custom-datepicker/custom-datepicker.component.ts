@@ -1,13 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CustomCalendarDay } from '../custom-calendar/custom-calendar.model';
 import { CustomDatePicker } from './custom-datepicker.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomDatePickerComponent)
+  }],
   selector: 'custom-datepicker',
   templateUrl: './custom-datepicker.component.html'
 })
-export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
+export class CustomDatePickerComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomDatePicker = {
     className: '',
     disabled: false,
@@ -21,6 +26,7 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
     label: '',
     name: '',
     required: false,
+    updateAndValidity: () => {},
     value: ''
   };
 
@@ -49,6 +55,8 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
   public value: string;
 
   constructor() {
+    super();
+
     this.onInputBlur = this.onInputBlur.bind(this);
   }
 
@@ -93,5 +101,11 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
 
   onCalendarBlur(event: Event) {
     this.isFocused = false;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+
+    // TODO: this.isValid = this.validate(this.value, this.required);
   }
 }
