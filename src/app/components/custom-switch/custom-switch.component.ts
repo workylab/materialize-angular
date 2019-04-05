@@ -1,13 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import { CustomSwitch } from './custom-switch.model';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomSwitchComponent)
+  }],
   selector: 'custom-switch',
   templateUrl: './custom-switch.component.html'
 })
-export class CustomSwitchComponent implements CustomSwitch, OnInit {
+export class CustomSwitchComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomSwitch = {
     className: '',
     disabled: false,
@@ -20,6 +25,7 @@ export class CustomSwitchComponent implements CustomSwitch, OnInit {
     label: '',
     name: '',
     required: false,
+    updateAndValidity: () => {},
     value: false
   };
 
@@ -95,5 +101,10 @@ export class CustomSwitchComponent implements CustomSwitch, OnInit {
 
   onFocus(event: any) {
     this.isFocused = true;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }
