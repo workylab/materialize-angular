@@ -1,12 +1,16 @@
-import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
-
-export interface CustomTextArea extends CustomFormFieldAbstract {
+export interface CustomTextArea {
+  className: string;
+  disabled: boolean;
+  errorMessage: string;
   floatLabel: string;
   hasCounter: boolean;
-  iconName: string;
+  id: string;
+  label: string;
   maxLength: number;
   minLength: number;
+  name: string;
   placeholder: string;
+  required: boolean;
   rows: number;
   value: string;
 }
