@@ -28,6 +28,11 @@
         [multiple]="isMultiple"
         [name]="name"
         [required]="required" />
+      <custom-icon className="form-icon-error"
+        name="error"
+        size="lg"
+        *ngIf="!isValid && isTouched">
+      </custom-icon>
     </div>
 
     <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>

@@ -99,7 +99,13 @@ export class CustomInputFileComponent extends CustomFormFieldAbstract implements
   }
 
   validate(files: Array<File>) {
+    this.errorMessage = '';
+
     if (this.required && !files.length) {
+      const fieldValidation = fieldValidations['required'];
+
+      this.errorMessage = fieldValidation.errorMessage;
+
       return false;
     }
 
@@ -109,14 +115,6 @@ export class CustomInputFileComponent extends CustomFormFieldAbstract implements
   onBlur() {
     this.isTouched = true;
     this.isFocused = false;
-
-    if (this.isValid) {
-      this.errorMessage = '';
-    } else {
-      const fieldValidation = fieldValidations['required'];
-
-      this.errorMessage = fieldValidation.errorMessage;
-    }
   }
 
   onFocus() {

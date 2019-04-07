@@ -40,7 +40,10 @@ navbar content
   <custom-form-group iconName="map">
     <custom-select label="State" [required]="true" name="state" [options]="stateOptions" customFormField></custom-select>
   </custom-form-group>
-  
+  <custom-form-group iconName="attach_file">
+    <custom-input-file label="Add File" [required]="true" name="file" customFormField></custom-input-file>
+  </custom-form-group>
+
   <custom-autocomplete iconName="map" label="State" [required]="true" name="state_auto" [options]="stateOptions" [isMatchValue]="true" customFormField></custom-autocomplete>
   <custom-button
     iconName="send"
