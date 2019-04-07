@@ -1,5 +1,4 @@
 <div class="form-field-container autocomplete-container" [ngClass]="className">
-
   <custom-input 
     (onChange)="onInputChange($event)"
     (onFocus)="onInputFocus($event)"
@@ -9,7 +8,6 @@
     [disabled]="disabled"
     [floatLabel]="floatLabel"
     [hasCounter]="hasCounter"
-    [iconName]="iconName"
     [id]="id"
     [label]="label"
     [maxLength]="maxLength"
@@ -18,7 +16,11 @@
     [placeholder]="placeholder"
     [required]="required"
     [type]="text"
-    [value]="value" 
+    [validateOnBlur]="validateOnBlur"
+    [validateOnChange]="validateOnChange"
+    [value]="value"
+
+    #customInput
   >
   </custom-input>
 

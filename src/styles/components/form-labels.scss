@@ -11,7 +11,7 @@
   color: $color-gray-dark;
   cursor: text;
   font-size: $font-size-xs;
-  left: 0;
+  left: $space-sm;
   position: absolute;
   top: 18px;
   transition: 250ms ease all;

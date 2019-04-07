@@ -1,14 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CustomCheckboxList, CustomCheckboxListItem } from './custom-checkbox-list.model';
 import { cloneObject } from '../../utils/clone-object.util';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomCheckboxListComponent)
+  }],
   selector: 'custom-checkbox-list',
   templateUrl: './custom-checkbox-list.component.html'
 })
-export class CustomCheckboxListComponent implements CustomCheckboxList, OnInit {
+export class CustomCheckboxListComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomCheckboxList = {
     checkAllLabel: '',
     className: '',
@@ -23,6 +28,7 @@ export class CustomCheckboxListComponent implements CustomCheckboxList, OnInit {
     label: '',
     name: '',
     required: false,
+    updateAndValidity: () => {},
     value: {}
   };
 
@@ -53,6 +59,10 @@ export class CustomCheckboxListComponent implements CustomCheckboxList, OnInit {
   public value: {
     [key: string]: boolean;
   };
+
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
     this.initValues();
@@ -158,5 +168,10 @@ export class CustomCheckboxListComponent implements CustomCheckboxList, OnInit {
     }
 
     return true;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.items, this.required);
   }
 }

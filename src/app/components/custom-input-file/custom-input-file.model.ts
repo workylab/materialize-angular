@@ -1,6 +1,6 @@
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface CustomInputFile extends FormField {
+export interface CustomInputFile extends CustomFormFieldAbstract {
   accept: Array<string>;
   dataType: 'blob' | 'base64';
   floatLabel: boolean;

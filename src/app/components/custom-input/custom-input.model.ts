@@ -1,14 +1,20 @@
-import { FormField } from "../custom-form/custom-form.model";
-
-export interface CustomInput extends FormField {
+export interface CustomInput {
   autocomplete: string;
+  className: string;
+  disabled: boolean;
+  errorMessage: string;
   floatLabel: string;
+  id: string;
   hasCounter: boolean;
-  iconName: string;
+  label: string;
+  name: string;
   maxLength: number;
   patternName: string;
   placeholder: string;
+  required: boolean;
   textAlign: 'left' | 'right';
   type: string;
+  validateOnBlur: boolean;
+  validateOnChange: boolean;
   value: string;
 }

@@ -1,7 +1,7 @@
-import { FormField } from "../custom-form/custom-form.model";
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface CustomSelect extends FormField {
-  floatLabel: boolean;
+export interface CustomSelect extends CustomFormFieldAbstract {
+  floatLabel: string;
   iconName: string;
   options: Array<CustomSelectOption>;
   selectedOption: CustomSelectOption;

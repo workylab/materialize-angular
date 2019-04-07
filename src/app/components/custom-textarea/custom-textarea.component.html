@@ -1,45 +1,50 @@
 <custom-form-group [iconName]="iconName" [className]="className">
   <div class="form-field-container"
-    [class.float-label]="floatLabel && label"
+    [class.float-label]="floatLabel"
     [class.active]="value || placeholder"
     [class.focused]="isFocused"
     [class.disabled]="disabled"
     [class.error]="!isValid && isTouched">
 
-    <label class="form-label"
+    <label class="form-label" *ngIf="label">{{ label }}</label>
+
+    <div class="form-control-wrapper"
       tabindex="1"
+
       (blur)="onBlur($event)"
       (focus)="onFocus($event)"
-      *ngIf="label"
-      #labelViewChild>
-      {{ label }}
-    </label>
+      
+      #formControlWrapper>
+      <div class="form-control-container">
+        <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
 
-    <div class="form-control-wrapper">
-      <textarea class="form-control"
-        (input)="onChange($event)"
-        (blur)="onBlur($event)"
-        (focus)="onFocus($event)"
+        <textarea class="form-control-input"
+          (input)="onChange($event)"
+          (blur)="onBlur($event)"
+          (focus)="onFocus($event)"
 
-        [disabled]="disabled"
-        [id]="id"
-        [maxLength]="maxLength"
-        [minLength]="minLength"
-        [name]="name"
-        [placeholder]="placeholder"
-        [required]="required"
-        [value]="value"
+          [disabled]="disabled"
+          [id]="id"
+          [maxLength]="maxLength"
+          [minLength]="minLength"
+          [name]="name"
+          [placeholder]="placeholder"
+          [required]="required"
+          [rows]="rows"
+          [value]="value"
 
-        #textAreaViewChild>
-      </textarea>
+          #textArea>
+        </textarea>
 
-      <custom-icon className="form-icon-error" name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
-      <div class="form-counter-message" *ngIf="hasCounter">
-        {{ value.length }} / {{ maxLength }}
-      </div>
-      <div class="form-error-message" *ngIf="!isValid && isTouched">
-        {{ errorMessage }}
+        <custom-icon className="form-icon-error"
+          name="error"
+          size="lg"
+          *ngIf="!isValid && isTouched">
+        </custom-icon>
       </div>
     </div>
+      
+    <div class="form-message-counter" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</div>
+    <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
   </div>
 </custom-form-group>

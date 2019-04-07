@@ -1,13 +1,17 @@
 import { ButtonToggle, ButtonToggleItem } from './custom-button-toggle.model';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormField } from '../custom-form/custom-form.model';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomButtonToggleComponent)
+  }],
   selector: 'custom-button-toggle',
   templateUrl: './custom-button-toggle.component.html'
 })
-export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnInit {
+export class CustomButtonToggleComponent extends CustomFormFieldAbstract implements OnInit {
   static defaultProps: ButtonToggle = {
     className: '',
     disabled: false,
@@ -21,6 +25,7 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
     label: '',
     name: '',
     required: false,
+    updateAndValidity: () => {},
     value: {}
   };
 
@@ -49,9 +54,11 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
   public required: boolean;
   public value: {
     [key: string]: string;
-  };;
+  };
 
   constructor() {
+    super();
+
     this.onClickEmitter = new EventEmitter();
   }
 
@@ -87,5 +94,11 @@ export class CustomButtonToggleComponent implements ButtonToggle, FormField, OnI
 
       this.onClickEmitter.emit(item.value);
     }
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+
+    // TODO: this.isValid = this.validate(this.value, this.required);
   }
 }

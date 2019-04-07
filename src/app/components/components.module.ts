@@ -10,6 +10,7 @@ import { CustomCollapsibleComponent } from './custom-collapsible/custom-collapsi
 import { CustomDatePickerComponent } from './custom-datepicker/custom-datepicker.component';
 import { CustomDropdownComponent } from './custom-dropdown/custom-dropdown.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
+import { CustomFormFieldDirective } from '../directives/form-field.directive';
 import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
@@ -42,6 +43,7 @@ import { NgModule } from '@angular/core';
     CustomDatePickerComponent,
     CustomDropdownComponent,
     CustomFormComponent,
+    CustomFormFieldDirective,
     CustomFormGroupComponent,
     CustomIconComponent,
     CustomInputComponent,
@@ -72,6 +74,7 @@ import { NgModule } from '@angular/core';
     CustomDatePickerComponent,
     CustomDropdownComponent,
     CustomFormComponent,
+    CustomFormFieldDirective,
     CustomFormGroupComponent,
     CustomIconComponent,
     CustomInputComponent,

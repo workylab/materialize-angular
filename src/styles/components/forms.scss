@@ -6,7 +6,6 @@
   flex-direction: row;
   min-height: 42px;
   outline: none;
-  padding: 0 $space-sm;
   position: relative;
 
   .form-control-prefix-container,
@@ -20,12 +19,12 @@
     line-height: $font-size-xs;
   }
 
-  .form-control-prefix-container .icon {
-    margin-right: $space-xs;
+  .form-control-prefix-container {
+    padding-left: $space-xs;
   }
 
-  .form-control-suffix-container .icon {
-    margin-left: $space-xs;
+  .form-control-suffix-container {
+    padding-right: $space-xs;
   }
 
   .form-control-container {
@@ -44,7 +43,7 @@
     line-height: $font-size-xs;
     max-width: 100%;
     outline: none;
-    padding: $space-sm 0;
+    padding: $space-sm;
     resize: vertical;
     width: 100%;
 
@@ -88,7 +87,7 @@
 
     &.error {
       .form-icon-error {
-        top: 14px;
+        top: 15px;
       }
 
       .form-float-label {

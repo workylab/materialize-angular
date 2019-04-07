@@ -3,6 +3,7 @@ import {
   ContentChildren,
   ElementRef,
   EventEmitter,
+  forwardRef,
   Input,
   OnChanges,
   OnInit,
@@ -11,6 +12,7 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import { CustomInput } from './custom-input.model';
 import { CustomPrefixDirective } from '../../directives/prefix.directive';
 import { CustomSuffixDirective } from '../../directives/suffix.directive';
@@ -18,10 +20,14 @@ import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomInputComponent)
+  }],
   selector: 'custom-input',
   templateUrl: './custom-input.component.html'
 })
-export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
+export class CustomInputComponent extends CustomFormFieldAbstract implements OnInit, OnChanges {
   static readonly defaultProps: CustomInput = {
     autocomplete: 'none',
     className: '',
@@ -29,11 +35,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     errorMessage: '',
     floatLabel: '',
     hasCounter: false,
-    iconName: '',
     id: '',
-    isFocused: false,
-    isTouched: false,
-    isValid: false,
     label: '',
     maxLength: 500,
     name: '',
@@ -42,10 +44,12 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     required: false,
     textAlign: 'left',
     type: 'text',
+    validateOnBlur: true,
+    validateOnChange: true,
     value: ''
   };
 
-  @ViewChild('input') inputElementRef: ElementRef;
+  @ViewChild('input') inputRef: ElementRef;
   @ViewChild('formControlWrapper') formControlWrapperRef: ElementRef;
 
   @ContentChildren(CustomPrefixDirective) customPrefixQueryList: QueryList<CustomPrefixDirective>;
@@ -60,7 +64,6 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
-  @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
@@ -70,6 +73,8 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   @Input('textAlign') textAlignInput: 'left' | 'right';
   @Input('type') typeInput: 'text' | 'password';
   @Input('patternName') patternNameInput: string;
+  @Input('validateOnBlur') validateOnBlurInput: boolean;
+  @Input('validateOnChange') validateOnChangeInput: boolean;
   @Input('value') valueInput: string;
 
   public autocomplete: string;
@@ -78,7 +83,6 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public errorMessage: string;
   public floatLabel: string;
   public hasCounter: boolean;
-  public iconName: string;
   public id: string;
   public isTouched: boolean;
   public isFocused: boolean;
@@ -91,9 +95,13 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   public required: boolean;
   public textAlign: 'left' | 'right';
   public type: string;
+  public validateOnBlur: boolean;
+  public validateOnChange: boolean;
   public value: string;
 
   constructor() {
+    super();
+
     this.onBlurEmitter = new EventEmitter();
     this.onChangeEmitter = new EventEmitter();
     this.onFocusEmitter = new EventEmitter();
@@ -101,10 +109,6 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
 
   ngOnInit() {
     this.initValues();
-  }
-
-  ngAfterContentInit() {
-
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -124,7 +128,6 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.label = this.labelInput || defaultProps.label;
     this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
-    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.maxLength = this.maxLengthInput || defaultProps.maxLength;
     this.name = this.nameInput || defaultProps.name;
@@ -133,10 +136,12 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.textAlign = this.textAlignInput || defaultProps.textAlign;
     this.type = this.typeInput || defaultProps.type;
+    this.validateOnBlur = getBooleanValue(this.validateOnBlurInput, defaultProps.validateOnBlur);
+    this.validateOnChange = getBooleanValue(this.validateOnChangeInput, defaultProps.validateOnChange);
     this.value = this.valueInput || defaultProps.value;
 
-    this.isFocused = defaultProps.isFocused;
-    this.isTouched = defaultProps.isTouched;
+    this.isFocused = false;
+    this.isTouched = false;
     this.isValid = this.validate(this.value, this.required);
   }
 
@@ -188,12 +193,15 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
   }
 
   onBlur(event: any): void {
-    if (!this.label || event.relatedTarget !== this.formControlWrapperRef.nativeElement) {
+    const { nativeElement } = this.formControlWrapperRef;
+    const { relatedTarget } = event;
+
+    this.onBlurEmitter.emit(event);
+
+    if (this.validateOnBlur && (!this.floatLabel || relatedTarget !== nativeElement)) {
       this.isTouched = true;
       this.isFocused = false;
-
       this.isValid = this.validate(this.value, this.required);
-      this.onBlurEmitter.emit(event);
     }
   }
 
@@ -201,7 +209,7 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     if (!this.disabled) {
       this.isFocused = true;
       this.onFocusEmitter.emit(event);
-      this.inputElementRef.nativeElement.focus();
+      this.inputRef.nativeElement.focus();
     }
   }
 
@@ -209,7 +217,15 @@ export class CustomInputComponent implements CustomInput, OnInit, OnChanges {
     const { value } = event.target;
 
     this.value = value;
-    this.isValid = this.validate(this.value, this.required);
     this.onChangeEmitter.emit(event);
+
+    if (this.validateOnChange) {
+      this.isValid = this.validate(this.value, this.required);
+    }
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }

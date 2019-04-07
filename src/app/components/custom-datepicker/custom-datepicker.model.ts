@@ -1,7 +1,5 @@
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomInput } from '../custom-input/custom-input.model';
 
-export interface CustomDatePicker extends FormField {
-  floatLabel: boolean;
-  iconName: string;
+export interface CustomDatePicker extends CustomInput {
   value: string;
 }

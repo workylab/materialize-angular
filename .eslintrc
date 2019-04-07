@@ -69,7 +69,11 @@
     "vars-on-top": "error",
     "no-shadow": "warn",
     "no-undef-init": "warn",
-    "no-use-before-define": "warn",
+    "no-use-before-define": [
+      "warn", {
+        "classes": false
+      }
+    ],
     "array-bracket-spacing": [
       "warn",
       "never"

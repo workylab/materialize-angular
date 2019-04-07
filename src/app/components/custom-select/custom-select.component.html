@@ -9,45 +9,43 @@
     [class.active]="isFocused || (selectedOption && selectedOption.content)"
     [class.disabled]="disabled"
     [class.focused]="isFocused"
-    [class.float-label]="floatLabel && label"
+    [class.float-label]="floatLabel"
     [class.error]="!isValid && isTouched">
 
     <label class="form-label" *ngIf="label">{{ label }}</label>
 
     <div class="form-control-wrapper">
-      <div class="form-control">
-        {{ selectedOption ? selectedOption.content : '' }}
-      </div>
+      <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
 
-      <custom-icon className="form-icon-error" name="error" *ngIf="!isValid && isTouched" size="lg"></custom-icon>
+      <div class="form-control-container">
+        <div class="form-control-input" [id]="id">{{ selectedOption ? selectedOption.content : '' }}</div>
 
-      <div class="form-error-message" *ngIf="!isValid && isTouched">
-        {{ errorMessage }}
+        <custom-icon className="form-icon-error"
+          name="error"
+          size="lg"
+          *ngIf="!isValid && isTouched">
+        </custom-icon>
       </div>
     </div>
 
-    <div class="select-menu"
-      [class.open]="isFocused"
-      [id]="id">
-      <div class="select-option"
-        *ngFor="let option of options"
-        [class.active]="value === option.value"
-        (click)="selectOption($event, option)">
+    <div class="select-menu" [class.open]="isFocused">
+      <div class="select-option" *ngFor="let option of options" [class.active]="value === option.value" (click)="selectOption($event, option)">
         {{ option.content }}
       </div>
     </div>
-  </div>
-</custom-form-group>
 
-<!-- <select
-  (blur)="onSelectBlur()"
-  (change)="onSelectChange($event)"
-  [disabled]="disabled"
-  [name]="name"
-  [required]="required"
-  [value]="value"
->
-  <option [value]="option.value" *ngFor="let option of options">
-    {{ option.content }}
-  </option>
-</select> -->
+    <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+  </div>
+
+  <!-- <select
+    (blur)="onSelectBlur()"
+    (change)="onSelectChange($event)"
+    [disabled]="disabled"
+    [name]="name"
+    [required]="required"
+    [value]="value">
+    <option [value]="option.value" *ngFor="let option of options">
+      {{ option.content }}
+    </option>
+  </select> -->
+</custom-form-group>

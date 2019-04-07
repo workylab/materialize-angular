@@ -1,6 +1,6 @@
-import { FormField } from '../custom-form/custom-form.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface ButtonToggle extends FormField {
+export interface ButtonToggle extends CustomFormFieldAbstract {
   className: string;
   disabled: boolean;
   items: Array<ButtonToggleItem>;
@@ -12,6 +12,7 @@ export interface ButtonToggle extends FormField {
     [key: string]: string;
   };
 }
+
 export interface ButtonToggleItem {
   content: string;
   disabled: boolean;
@@ -19,7 +20,3 @@ export interface ButtonToggleItem {
   name: string;
   value: string;
 }
-
-
-
-

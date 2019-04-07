@@ -1,18 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CustomSelect, CustomSelectOption } from './custom-select.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomSelectComponent)
+  }],
   selector: 'custom-select',
   templateUrl: './custom-select.component.html'
 })
-export class CustomSelectComponent implements CustomSelect, OnInit {
+export class CustomSelectComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomSelect = {
     className: '',
     disabled: false,
     errorMessage: '',
-    floatLabel: true,
+    floatLabel: '',
     iconName: '',
     id: '',
     isFocused: false,
@@ -23,12 +28,13 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
     options: [],
     required: false,
     selectedOption: {} as CustomSelectOption,
+    updateAndValidity: () => {},
     value: ''
   };
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('floatLabel') floatLabelInput: boolean;
+  @Input('floatLabel') floatLabelInput: string;
   @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
@@ -40,7 +46,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public floatLabel: boolean;
+  public floatLabel: string;
   public iconName: string;
   public id: string;
   public isFocused: boolean;
@@ -62,7 +68,7 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
+    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
@@ -124,5 +130,10 @@ export class CustomSelectComponent implements CustomSelect, OnInit {
   closeMenu() {
     this.isTouched = true;
     this.isFocused = false;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }

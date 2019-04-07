@@ -1,20 +1,18 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  SimpleChanges
-} from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CustomCheckbox } from './custom-checkbox.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomCheckboxComponent)
+  }],
   selector: 'custom-checkbox',
   templateUrl: './custom-checkbox.component.html'
 })
-export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
+export class CustomCheckboxComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomCheckbox = {
     className: '',
     disabled: false,
@@ -28,6 +26,7 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
     label: '',
     name: '',
     required: false,
+    updateAndValidity: () => {},
     value: false
   };
 
@@ -58,6 +57,8 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
   public value: boolean;
 
   constructor() {
+    super();
+
     this.onChangeEmitter = new EventEmitter();
   }
 
@@ -126,6 +127,11 @@ export class CustomCheckboxComponent implements CustomCheckbox, OnInit {
 
   onBlur(event: Event): void {
     this.isTouched = true;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }
 

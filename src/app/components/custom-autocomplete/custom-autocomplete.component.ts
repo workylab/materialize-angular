@@ -1,14 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
 import { CustomAutocomplete } from './custom-autocomplete.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
+import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { CustomSelectOption } from '../custom-select/custom-select.model';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomAutocompleteComponent)
+  }],
   selector: 'custom-autocomplete',
   templateUrl: './custom-autocomplete.component.html'
 })
-export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
+export class CustomAutocompleteComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomAutocomplete = {
     autocomplete: '',
     className: '',
@@ -16,12 +22,8 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     errorMessage: 'The value does not match with any option',
     floatLabel: '',
     hasCounter: false,
-    iconName: '',
     id: '',
-    isFocused: false,
     isMatchValue: false,
-    isTouched: false,
-    isValid: false,
     label: '',
     maxLength: 500,
     name: '',
@@ -31,14 +33,17 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     required: false,
     textAlign: 'left',
     type: 'text',
+    validateOnBlur: false,
+    validateOnChange: false,
     value: ''
   };
+
+  @ViewChild('customInput') customInputComponent: CustomInputComponent;
 
   @Input('autocomplete') autocompleteInput: string;
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
-  @Input('iconName') iconNameInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
   @Input('id') idInput: string;
   @Input('isMatchValue') isMatchValueInput: boolean;
@@ -57,12 +62,10 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   public errorMessage: string;
   public floatLabel: string;
   public hasCounter: boolean;
-  public iconName: string;
   public id: string;
   public isFocused: boolean;
   public isMatchValue: boolean;
   public isTouched: boolean;
-  public isValid: boolean;
   public label: string;
   public maxLength: number;
   public name: string;
@@ -72,6 +75,8 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   public required: boolean;
   public textAlign: 'left' | 'right';
   public type: string;
+  public validateOnBlur: boolean;
+  public validateOnChange: boolean;
   public value: string;
 
   ngOnInit() {
@@ -86,7 +91,6 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
-    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.isMatchValue = getBooleanValue(this.isMatchValueInput, defaultProps.isMatchValue);
     this.label = this.labelInput || defaultProps.label;
@@ -99,10 +103,12 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
 
     this.options = this.filterOptions(this.value);
 
-    this.isFocused = defaultProps.isFocused;
-    this.isTouched = defaultProps.isTouched;
+    this.isFocused = false;
+    this.isTouched = false;
     this.patternName = defaultProps.patternName;
     this.type = defaultProps.type;
+    this.validateOnBlur = defaultProps.validateOnBlur;
+    this.validateOnChange = defaultProps.validateOnChange;
 
     this.isValid = this.validate(this.value, this.required);
   }
@@ -120,6 +126,8 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
     this.options = this.filterOptions(value);
     this.value = value;
     this.isValid = this.validate(this.value, this.required);
+
+    this.customInputComponent.isValid = this.isValid;
   }
 
   onInputBlur(event: any) {
@@ -127,13 +135,19 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
 
     if (!relatedTarget || relatedTarget.className !== 'select-option') {
       this.closeMenu();
-      this.validate(this.value, this.required);
+
+      this.isValid = this.validate(this.value, this.required);
+
+      this.customInputComponent.isValid = this.isValid;
+      this.customInputComponent.isFocused = false;
+      this.customInputComponent.isTouched = true;
     }
   }
 
   validate(value: string, required: boolean) {
     if (required && !value.length) {
       this.errorMessage = fieldValidations['required'].errorMessage;
+      this.customInputComponent.errorMessage = this.errorMessage;
 
       return false;
     }
@@ -142,6 +156,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
       const { errorMessage } = CustomAutocompleteComponent.defaultProps;
 
       this.errorMessage = errorMessage;
+      this.customInputComponent.errorMessage = this.errorMessage;
 
       return false;
     }
@@ -179,6 +194,7 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   selectOption(value: string) {
     this.value = value || '';
     this.isValid = this.validate(this.value, this.required);
+    this.customInputComponent.isValid = this.isValid;
 
     this.closeMenu();
   }
@@ -186,9 +202,17 @@ export class CustomAutocompleteComponent implements CustomAutocomplete, OnInit {
   closeMenu() {
     this.isFocused = false;
     this.isTouched = true;
+
+    this.customInputComponent.isFocused = false;
   }
 
   openMenu() {
     this.isFocused = true;
+  }
+
+  updateAndValidity() {
+    this.customInputComponent.updateAndValidity();
+    this.isValid = this.validate(this.value, this.required);
+    this.isTouched = true;
   }
 }

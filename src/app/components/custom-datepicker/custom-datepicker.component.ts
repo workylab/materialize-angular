@@ -1,33 +1,42 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CustomCalendarDay } from '../custom-calendar/custom-calendar.model';
 import { CustomDatePicker } from './custom-datepicker.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomDatePickerComponent)
+  }],
   selector: 'custom-datepicker',
   templateUrl: './custom-datepicker.component.html'
 })
-export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
+export class CustomDatePickerComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomDatePicker = {
+    autocomplete: 'none',
     className: '',
     disabled: false,
     errorMessage: '',
-    floatLabel: true,
-    iconName: '',
+    floatLabel: '',
+    hasCounter: false,
     id: '',
-    isFocused: false,
-    isTouched: false,
-    isValid: false,
     label: '',
+    maxLength: 500,
     name: '',
+    patternName: '',
+    placeholder: '',
     required: false,
+    textAlign: 'left',
+    type: 'text',
+    validateOnBlur: false,
+    validateOnChange: false,
     value: ''
   };
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('floatLabel') floatLabelInput: boolean;
-  @Input('iconName') iconNameInput: string;
+  @Input('floatLabel') floatLabelInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
@@ -37,8 +46,7 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public floatLabel: boolean;
-  public iconName: string;
+  public floatLabel: string;
   public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
@@ -49,6 +57,8 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
   public value: string;
 
   constructor() {
+    super();
+
     this.onInputBlur = this.onInputBlur.bind(this);
   }
 
@@ -61,17 +71,16 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
-    this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
-    this.isFocused = defaultProps.isFocused;
-    this.isTouched = defaultProps.isTouched;
-    this.isValid = defaultProps.isValid;
+    this.isFocused = false;
+    this.isTouched = false;
+    this.isValid = false;
   }
 
   onSelectDay(day: CustomCalendarDay) {
@@ -93,5 +102,11 @@ export class CustomDatePickerComponent implements CustomDatePicker, OnInit {
 
   onCalendarBlur(event: Event) {
     this.isFocused = false;
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+
+    // TODO: this.isValid = this.validate(this.value, this.required);
   }
 }

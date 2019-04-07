@@ -1,13 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CustomRadio, CustomRadioOption } from './custom.radio.model';
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 import fieldValidations from '../../fixtures/field-validations';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
+  providers: [{
+    provide: CustomFormFieldAbstract,
+    useExisting: forwardRef(() => CustomRadioComponent)
+  }],
   selector: 'custom-radio',
   templateUrl: './custom-radio.component.html'
 })
-export class CustomRadioComponent implements CustomRadio, OnInit {
+export class CustomRadioComponent extends CustomFormFieldAbstract implements OnInit {
   static readonly defaultProps: CustomRadio = {
     canUncheck: false,
     className: '',
@@ -22,6 +27,7 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
     name: '',
     options: [],
     required: false,
+    updateAndValidity: () => {},
     value: ''
   };
 
@@ -103,5 +109,10 @@ export class CustomRadioComponent implements CustomRadio, OnInit {
       this.isTouched = true;
       this.isValid = this.validate(this.value, this.required);
     }
+  }
+
+  updateAndValidity() {
+    this.isTouched = true;
+    this.isValid = this.validate(this.value, this.required);
   }
 }

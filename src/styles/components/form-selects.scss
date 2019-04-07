@@ -1,7 +1,7 @@
 .form-field-container.select-container {
   cursor: pointer;
 
-  .form-control {
+  .form-control-input {
     position: relative;
 
     &::before {
@@ -17,36 +17,36 @@
   }
 
   &.float-label {
-    .form-label {
+    .form-float-label {
       cursor: pointer;
     }
 
-    .form-control::before {
+    .form-control-input::before {
       top: 22px;
     }
   }
-}
 
-.select-container.focused .form-control::before {
-  transform: rotate(180deg);
-}
-
-.select-container.form-field-container.error {
-  .form-control::before {
-    border-top-color: $color-red;
+  &.focused .form-control-input::before {
+    transform: rotate(180deg);
   }
 
-  .form-icon-error {
-    right: $space-xxl;
+  &.error {
+    .form-control-input::before {
+      border-top-color: $color-red;
+    }
+
+    .form-icon-error {
+      right: $space-xxl;
+    }
   }
 }
 
 .select-menu {
   background: $color-white;
   box-shadow: $shadow-md;
+  cursor: pointer;
   display: none;
   left: 0;
-  margin-top: 1px;
   padding: $space-xs 0;
   position: absolute;
   top: 100%;
@@ -59,9 +59,10 @@
 
   .select-option {
     color: $color-gray-dark;
-    min-height: 48px;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-light;
     outline: none;
-    padding: $space-md;
+    padding: $space-md $space-sm;
 
     &:hover {
       background-color: $color-gray-light;

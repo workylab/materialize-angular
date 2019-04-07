@@ -1,6 +1,6 @@
-import { FormField } from "../custom-form/custom-form.model";
+import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface CustomSwitch extends FormField {
+export interface CustomSwitch extends CustomFormFieldAbstract {
   iconName: string;
   value: boolean;
 }
