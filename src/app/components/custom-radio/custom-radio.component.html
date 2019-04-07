@@ -1,4 +1,4 @@
-<div class="form-radio-container">
+<div class="form-radio-container" [ngClass]="className">
   <label class="form-label" *ngIf="label">{{ label }}</label>
 
   <div class="form-radio-control" *ngFor="let option of options; index as i">
