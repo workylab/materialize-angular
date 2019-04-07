@@ -60,6 +60,18 @@
 <br>
 <br>
 
+<custom-checkbox></custom-checkbox>
+<custom-checkbox label="Label" id="checkbox-id"></custom-checkbox>
+<custom-checkbox label="With Id" id="checkbox-id"></custom-checkbox>
+<custom-checkbox label="With Value" [value]="true"></custom-checkbox>
+<custom-checkbox label="Disabled" [disabled]="true"></custom-checkbox>
+<custom-checkbox label="Disabled with value" [disabled]="true" [value]="true"></custom-checkbox>
+<custom-checkbox label="Required" [required]="true"></custom-checkbox>
+
+<br>
+<br>
+<br>
+
 <h3>Form Group</h3>
 <custom-form-group iconName="email" className="my-class-name">
   <custom-input></custom-input>
@@ -276,11 +288,6 @@
 <br>
 <br>
 
-
-<br>
-<br>
-<br>
-
 <h3>Switch</h3>
 <custom-switch label="Switch with Id" id="switch-id"></custom-switch>
 <custom-switch label="Switch with Icon" iconName="phone"></custom-switch>
@@ -292,15 +299,6 @@
 <br>
 <br>
 <br>
-
-<h3>Checkbox</h3>
-<custom-checkbox label="Checkbox with Id" id="checkbox-id"></custom-checkbox>
-<custom-checkbox label="Checkbox with Icon" iconName="phone"></custom-checkbox>
-<custom-checkbox label="Checkbox Required" [required]="true"></custom-checkbox>
-<custom-checkbox label="Checkbox (Enable inactive)"></custom-checkbox>
-<custom-checkbox label="Checkbox (Enable active)" [value]="true"></custom-checkbox>
-<custom-checkbox label="Checkbox (Disabled inactive)" [disabled]="true"></custom-checkbox>
-<custom-checkbox label="Checkbox (Disabled active)" [value]="true" [disabled]="true"></custom-checkbox>
 
 <h3>Checkbox List</h3>
 <custom-checkbox-list
