@@ -123,47 +123,24 @@
 <br>
 <br>
 
+<custom-select [options]="selectOptions"></custom-select>
+<custom-select [options]="selectOptions" label="Label"></custom-select>
+<custom-select [options]="selectOptions" label="With Id" id="select-id"></custom-select>
+<custom-select [options]="selectOptions" label="With Value" value="2"></custom-select>
+<custom-select [options]="selectOptions" label="Disabled" [disabled]="true"></custom-select>
+<custom-select [options]="selectOptions" label="Disabled with value" [disabled]="true" value="2"></custom-select>
+<custom-select [options]="selectOptions" label="Required" [required]="true"></custom-select>
+<custom-select [options]="selectOptions" floatLabel="Float label"></custom-select>
+<custom-select [options]="selectOptions" floatLabel="Float label and required" [required]="true"></custom-select>
+
+<br>
+<br>
+<br>
+
 <h3>Form Group</h3>
 <custom-form-group iconName="email" className="my-class-name">
   <custom-input></custom-input>
 </custom-form-group>
-
-<br>
-<br>
-<br>
-
-<h3>Simple Select</h3>
-<custom-select [options]="selectOptions"></custom-select>
-
-<h3>Select with Id</h3>
-<custom-select [options]="selectOptions" id="select-id"></custom-select>
-
-<h3>Simple Select with value</h3>
-<custom-select [options]="selectOptions" value="2"></custom-select>
-
-<h3>Label Select</h3>
-<custom-select label="Label" [options]="selectOptions"></custom-select>
-
-<h3>Float Label Select</h3>
-<custom-select floatLabel="Label" [options]="selectOptions"></custom-select>
-
-<h3>Icon Select</h3>
-<custom-select iconName="map" [options]="selectOptions"></custom-select>
-
-<h3>Disabled Select</h3>
-<custom-select [disabled]="true" [options]="selectOptions"></custom-select>
-
-<h3>Disabled Select with value</h3>
-<custom-select [disabled]="true" [options]="selectOptions" value="2"></custom-select>
-
-<h3>Required Simple Select</h3>
-<custom-select [options]="selectOptions" [required]="true"></custom-select>
-
-<h3>Required Float Label Select</h3>
-<custom-select floatLabel="Label" [options]="selectOptions" [required]="true"></custom-select>
-
-<h3>Required Float Label Select</h3>
-<custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
 
 <br>
 <br>

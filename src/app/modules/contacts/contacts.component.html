@@ -37,8 +37,9 @@ navbar content
   <custom-form-group iconName="cloud">
     <custom-radio label="Store data" [required]="true" [canUncheck]="true" [options]="radioOptions" name="is_save" customFormField></custom-radio>
   </custom-form-group>
-
-  <custom-select iconName="map" label="State" [required]="true" name="state" [options]="stateOptions" customFormField></custom-select>
+  <custom-form-group iconName="map">
+    <custom-select label="State" [required]="true" name="state" [options]="stateOptions" customFormField></custom-select>
+  </custom-form-group>
   
   <custom-autocomplete iconName="map" label="State" [required]="true" name="state_auto" [options]="stateOptions" [isMatchValue]="true" customFormField></custom-autocomplete>
   <custom-button
