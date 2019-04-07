@@ -18,23 +18,17 @@ export class CustomRadioComponent extends CustomFormFieldAbstract implements OnI
     className: '',
     disabled: false,
     errorMessage: '',
-    iconName: '',
     id: '',
-    isFocused: false,
-    isTouched: false,
-    isValid: false,
     label: '',
     name: '',
     options: [],
     required: false,
-    updateAndValidity: () => {},
     value: ''
   };
 
   @Input('canUncheck') canUncheckInput: boolean;
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
@@ -46,7 +40,6 @@ export class CustomRadioComponent extends CustomFormFieldAbstract implements OnI
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public iconName: string;
   public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
@@ -66,7 +59,6 @@ export class CustomRadioComponent extends CustomFormFieldAbstract implements OnI
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = this.disabledInput || defaultProps.disabled;
-    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.canUncheck = getBooleanValue(this.canUncheckInput, defaultProps.canUncheck);
     this.label = this.labelInput || defaultProps.className;
