@@ -68,6 +68,11 @@
 <custom-checkbox label="Disabled with value" [disabled]="true" [value]="true"></custom-checkbox>
 <custom-checkbox label="Required" [required]="true"></custom-checkbox>
 
+<custom-checkbox-list></custom-checkbox-list>
+<custom-checkbox-list [items]="checkboxListItems" label="Label"></custom-checkbox-list>
+<custom-checkbox-list [items]="checkboxListItems" label="Required"></custom-checkbox-list>
+<custom-checkbox-list [items]="checkboxListItems" checkAllLabel="Select all checkboxes"></custom-checkbox-list>
+
 <br>
 <br>
 <br>
@@ -296,21 +301,6 @@
 <custom-switch label="Switch (Enable active)" [value]="true"></custom-switch>
 <custom-switch label="Switch (Disabled inactive)" [disabled]="true"></custom-switch>
 <custom-switch label="Switch (Disabled active)" [disabled]="true" [value]="true"></custom-switch>
-<br>
-<br>
-<br>
-
-<h3>Checkbox List</h3>
-<custom-checkbox-list
-  iconName="phone"
-  checkAllLabel="Check all"
-  [items]="[
-    { value: false, label: 'Opt1', name: 'opt_1'},
-    { value: false, label: 'Opt2', name: 'opt_2'},
-    { value: false, label: 'Opt3', name: 'opt_3'},
-    { value: false, label: 'Opt4', name: 'opt_4'}
-  ]">
-</custom-checkbox-list>
 
 <br>
 <br>
