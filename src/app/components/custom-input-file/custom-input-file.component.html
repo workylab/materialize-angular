@@ -1,41 +1,38 @@
-<custom-form-group [iconName]="iconName" [className]="className">
-  <div class="form-field-container form-file-container"
-    [class.float-label]="floatLabel && label"
-    [class.active]="value.length"
-    [class.focused]="isFocused"
-    [class.disabled]="disabled"
-    [class.error]="!isValid && isTouched">
-    
-    <label class="form-label"
-      tabindex="1"
-      *ngIf="label"
-      (blur)="onBlur($event)"
-      (focus)="onFocus($event)">
-      {{ label }}
-    </label>
+<div class="form-field-container form-file-container"
+  [ngClass]="className"
+  [class.float-label]="floatLabel"
+  [class.active]="value.length"
+  [class.focused]="isFocused"
+  [class.disabled]="disabled"
+  [class.error]="!isValid && isTouched">
+  
+  <label class="form-label" *ngIf="label">{{ label }}</label>
 
-    <div class="form-control-wrapper">
-      <div class="form-control">
-        <span *ngFor="let item of value">{{ item.name }}</span>
-        <input type="file"
-          (change)="onChange($event)"
-          (blur)="onBlur()"
-          (focus)="onFocus()"
-          
-          [accept]="accept"
-          [disabled]="disabled"
-          [id]="id"
-          [multiple]="isMultiple"
-          [name]="name"
-          [required]="required" />
-      </div>
+  <div class="form-control-wrapper"
+    tabindex="1"
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)">
 
-      <div class="form-error-message" *ngIf="!isValid && isTouched">
-        {{ errorMessage }}
-      </div>
+    <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+
+    <div class="form-control-input">
+      <span *ngFor="let item of value">{{ item.name }}</span>
+      <input type="file"
+        (change)="onChange($event)"
+        (blur)="onBlur()"
+        (focus)="onFocus()"
+        
+        [accept]="accept"
+        [disabled]="disabled"
+        [id]="id"
+        [multiple]="isMultiple"
+        [name]="name"
+        [required]="required" />
     </div>
+
+    <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
   </div>
-</custom-form-group>
+</div>
 
 <!-- <div class="form-file-files-container">
   <div class="form-file-files-item" *ngFor="let item of value">

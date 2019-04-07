@@ -20,19 +20,14 @@ export class CustomInputFileComponent extends CustomFormFieldAbstract implements
     dataType: 'base64',
     disabled: false,
     errorMessage: '',
-    floatLabel: true,
-    iconName: '',
+    floatLabel: '',
     id: '',
-    isFocused: false,
     isMultiple: false,
-    isTouched: false,
-    isValid: false,
     label: '',
     maxSize: 2000,
     minSize: 0,
     name: '',
     required: false,
-    updateAndValidity: () => {},
     value: []
   };
 
@@ -42,11 +37,9 @@ export class CustomInputFileComponent extends CustomFormFieldAbstract implements
   @Input('disabled') disabledInput: boolean;
   @Input('errorMessage') errorMessageInput: string;
   @Input('files') filesInput: Array<File>;
-  @Input('floatLabel') floatLabelInput: boolean;
-  @Input('iconName') iconNameInput: string;
+  @Input('floatLabel') floatLabelInput: string;
   @Input('id') idInput: string;
   @Input('isMultiple') isMultipleInput: boolean;
-  @Input('isTouched') isTouchedInput: boolean;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('maxSize') maxSizeInput: number;
@@ -58,8 +51,7 @@ export class CustomInputFileComponent extends CustomFormFieldAbstract implements
   public dataType: 'blob' | 'base64';
   public disabled: boolean;
   public errorMessage: string;
-  public floatLabel: boolean;
-  public iconName: string;
+  public floatLabel: string;
   public id: string;
   public isMultiple: boolean;
   public isFocused: boolean;
@@ -91,8 +83,7 @@ export class CustomInputFileComponent extends CustomFormFieldAbstract implements
     this.dataType = this.dataTypeInput || defaultProps.dataType;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.errorMessage = this.errorMessageInput || defaultProps.errorMessage;
-    this.floatLabel = getBooleanValue(this.floatLabelInput, defaultProps.floatLabel);
-    this.iconName = this.iconNameInput || defaultProps.iconName;
+    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.id = this.idInput || defaultProps.id;
     this.isMultiple = getBooleanValue(this.isMultipleInput, this.isMultiple);
     this.label = this.labelInput || defaultProps.label;
@@ -102,8 +93,8 @@ export class CustomInputFileComponent extends CustomFormFieldAbstract implements
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.filesInput || defaultProps.value;
 
-    this.isTouched = defaultProps.isTouched;
-    this.isFocused = defaultProps.isFocused;
+    this.isTouched = false;
+    this.isFocused = false;
     this.isValid = this.validate(this.value);
   }
 
