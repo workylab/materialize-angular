@@ -31,8 +31,10 @@ navbar content
   <custom-form-group iconName="location_on">
     <custom-checkbox label="Location" [required]="true" name="location" customFormField></custom-checkbox>
   </custom-form-group>
+  <custom-form-group iconName="message">
+    <custom-textarea label="Message" [required]="true" name="message" customFormField></custom-textarea>
+  </custom-form-group>
 
-  <custom-textarea iconName="message" label="Message" [required]="true" name="message" customFormField></custom-textarea>
   <custom-select iconName="map" label="State" [required]="true" name="state" [options]="stateOptions" customFormField></custom-select>
   <custom-radio iconName="cloud" [required]="true" [canUncheck]="true" [options]="radioOptions" name="is_save" customFormField></custom-radio>
   <custom-autocomplete iconName="map" label="State" [required]="true" name="state_auto" [options]="stateOptions" [isMatchValue]="true" customFormField></custom-autocomplete>
