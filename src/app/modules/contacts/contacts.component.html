@@ -22,10 +22,16 @@ navbar content
   <custom-form-group iconName="list">
     <custom-checkbox-list [required]="true" name="checkboxesList" [items]="checkboxListItems" customFormField></custom-checkbox-list>
   </custom-form-group>
+  <custom-form-group iconName="house">
+    <custom-switch label="House Phone" [required]="true" name="is_house_phone" customFormField></custom-switch>
+  </custom-form-group>
+  <custom-form-group iconName="work">
+    <custom-switch label="Work Phone" [required]="true" name="is_work_phone" customFormField></custom-switch>
+  </custom-form-group>
+  <custom-form-group iconName="location_on">
+    <custom-checkbox label="Location" [required]="true" name="location" customFormField></custom-checkbox>
+  </custom-form-group>
 
-  <custom-switch iconName="house" label="House Phone" [required]="true" name="is_house_phone" customFormField></custom-switch>
-  <custom-switch iconName="work" label="Work Phone" [required]="true" name="is_work_phone" customFormField></custom-switch>
-  <custom-checkbox iconName="location_on" label="Location" [required]="true" name="location" customFormField></custom-checkbox>
   <custom-textarea iconName="message" label="Message" [required]="true" name="message" customFormField></custom-textarea>
   <custom-select iconName="map" label="State" [required]="true" name="state" [options]="stateOptions" customFormField></custom-select>
   <custom-radio iconName="cloud" [required]="true" [canUncheck]="true" [options]="radioOptions" name="is_save" customFormField></custom-radio>

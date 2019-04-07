@@ -61,7 +61,7 @@
 <br>
 
 <custom-checkbox></custom-checkbox>
-<custom-checkbox label="Label" id="checkbox-id"></custom-checkbox>
+<custom-checkbox label="Label"></custom-checkbox>
 <custom-checkbox label="With Id" id="checkbox-id"></custom-checkbox>
 <custom-checkbox label="With Value" [value]="true"></custom-checkbox>
 <custom-checkbox label="Disabled" [disabled]="true"></custom-checkbox>
@@ -72,6 +72,18 @@
 <custom-checkbox-list [items]="checkboxListItems" label="Label"></custom-checkbox-list>
 <custom-checkbox-list [items]="checkboxListItems" label="Required"></custom-checkbox-list>
 <custom-checkbox-list [items]="checkboxListItems" checkAllLabel="Select all checkboxes"></custom-checkbox-list>
+
+<br>
+<br>
+<br>
+
+<custom-switch></custom-switch>
+<custom-switch label="Label"></custom-switch>
+<custom-switch label="With Id" id="switch-id"></custom-switch>
+<custom-switch label="With Value" [value]="true"></custom-switch>
+<custom-switch label="Disabled" [disabled]="true"></custom-switch>
+<custom-switch label="Disabled with value" [disabled]="true" [value]="true"></custom-switch>
+<custom-switch label="Required" [required]="true"></custom-switch>
 
 <br>
 <br>
@@ -288,19 +300,6 @@
 
 <h3>Circle Icon XL</h3>
 <custom-icon name="done" size="xl" [isCircle]="true"></custom-icon>
-
-<br>
-<br>
-<br>
-
-<h3>Switch</h3>
-<custom-switch label="Switch with Id" id="switch-id"></custom-switch>
-<custom-switch label="Switch with Icon" iconName="phone"></custom-switch>
-<custom-switch label="Switch Required" [required]="true"></custom-switch>
-<custom-switch label="Switch (Enable inactive)"></custom-switch>
-<custom-switch label="Switch (Enable active)" [value]="true"></custom-switch>
-<custom-switch label="Switch (Disabled inactive)" [disabled]="true"></custom-switch>
-<custom-switch label="Switch (Disabled active)" [disabled]="true" [value]="true"></custom-switch>
 
 <br>
 <br>
