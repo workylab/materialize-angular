@@ -1,31 +1,27 @@
-<custom-form-group [iconName]="iconName" [className]="className">
-    <div class="form-checkbox-container">
-      <div class="form-checkbox-control"
-        tabindex="0"
+<div class="form-checkbox-container" [ngClass]="className">
+  <div class="form-checkbox-control"
+    tabindex="0"
 
-        (click)="toggleValue()"
-        (blur)="onBlur($event)"
-        (focus)="onFocus($event)"  
+    (click)="toggleValue()"
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)"  
 
-        [class.active]="value"
-        [class.indeterminate]="indeterminate"
-        [class.disabled]="disabled"
-        [class.error]="!isValid && isTouched">
-        <input
-          type="checkbox"
-          [disabled]="disabled"
-          [id]="id"
-          [name]="name"
-          [required]="required"
-          [checked]="value"
-          [indeterminate]="indeterminate"
-          [value]="value"
-        />
-      </div>
-      <label class="form-checkbox-label">{{ label }}</label>
-      <div class="form-error-message" *ngIf="!isValid && isTouched">
-        {{ errorMessage }}
-      </div>
-    </div>
-  </custom-form-group>
+    [class.active]="value"
+    [class.indeterminate]="indeterminate"
+    [class.disabled]="disabled"
+    [class.error]="!isValid && isTouched">
+    <input
+      type="checkbox"
+      [disabled]="disabled"
+      [id]="id"
+      [name]="name"
+      [required]="required"
+      [checked]="value"
+      [indeterminate]="indeterminate"
+      [value]="value"
+    />
+  </div>
+  <label class="form-checkbox-label" *ngIf="label">{{ label }}</label>
+  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+</div>
   
