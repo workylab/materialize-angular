@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CustomDropdown, CustomDropdownItem } from './custom-dropdown.model';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   selector: 'custom-dropdown',
@@ -10,13 +9,11 @@ export class CustomDropdownComponent implements OnInit {
   static readonly defaultProps: CustomDropdown = {
     iconName: 'more_vert',
     iconSize: 'lg',
-    isFocused: false,
     items: []
   };
 
   @Input('iconName') iconNameInput: string;
   @Input('iconSize') iconSizeInput: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  @Input('isFocused') isFocusedInput: boolean;
   @Input('items') itemsInput: Array<CustomDropdownItem>;
 
   public iconName: string;
@@ -33,8 +30,9 @@ export class CustomDropdownComponent implements OnInit {
 
     this.iconName = this.iconNameInput || defaultProps.iconName;
     this.iconSize = this.iconSizeInput || defaultProps.iconSize;
-    this.isFocused = getBooleanValue(this.isFocusedInput, defaultProps.isFocused);
     this.items = this.itemsInput || defaultProps.items;
+
+    this.isFocused = false;
   }
 
   selectItem(selectedItem: CustomDropdownItem) {
