@@ -1,6 +1,10 @@
-import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
-
-export interface CustomSwitch extends CustomFormFieldAbstract {
-  iconName: string;
+export interface CustomSwitch {
+  className: string;
+  disabled: boolean;
+  errorMessage: string;
+  id: string;
+  label: string;
+  name: string;
+  required: boolean;
   value: boolean;
 }
