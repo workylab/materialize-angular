@@ -1,115 +1,69 @@
-<h3>Simple Input</h3>
 <custom-input></custom-input>
-
-<h3>Input with Id</h3>
-<custom-input id="input-id"></custom-input>
-
-<h3>Simple Input with value</h3>
-<custom-input value="My value"></custom-input>
-
-<h3>Simple Input with counter</h3>
-<custom-input [hasCounter]="true"></custom-input>
-
-<h3>Simple Input with counter and Max Length</h3>
-<custom-input [hasCounter]="true" [maxLength]="5"></custom-input>
-
-<h3>Simple Input with prefix</h3>
-<custom-input>
-  <span customPrefix>+1</span>
-</custom-input>
-
-<h3>Simple Input with icon prefix</h3>
-<custom-input>
-  <custom-icon customPrefix name="phone"></custom-icon>
-</custom-input>
-
-<h3>Simple Input with suffix</h3>
-<custom-input textAlign="right">
-  <span customSuffix>.00</span>
-</custom-input>
-
-<h3>Simple Input with icon suffix</h3>
-<custom-input textAlign="right">
-  <custom-icon customSuffix name="phone"></custom-icon>
-</custom-input>
-
-<h3>Label Input</h3>
 <custom-input label="Label"></custom-input>
+<custom-input label="Type password" type="password"></custom-input>
+<custom-input label="With Id" id="input-id"></custom-input>
+<custom-input label="With value" value="My value"></custom-input>
+<custom-input label="With counter" [hasCounter]="true"></custom-input>
+<custom-input label="With counter and maxlength" [hasCounter]="true" [maxLength]="5"></custom-input>
+<custom-input label="Placeholder" placeholder="Write here"></custom-input>
+<custom-input label="Disabled" [disabled]="true"></custom-input>
+<custom-input label="Disabled and value" [disabled]="true" value="My value"></custom-input>
+<custom-input label="Required" [required]="true" ></custom-input>
+<custom-input label="Required with pattern name (Number)" [required]="true" patternName="number"></custom-input>
+<custom-input label="No Required with pattern name (Number)" patternName="number"></custom-input>
+<custom-input floatLabel="Float label"></custom-input>
+<custom-input floatLabel="Float Label Input with placeholder" placeholder="Write here"></custom-input>
+<custom-input floatLabel="Float Label and placeholder" placeholder="Write here"></custom-input>
+<custom-input floatLabel="Float Label and required" [required]="true" ></custom-input>
 
-<h3>Label Input with prefix</h3>
-<custom-input label="Label">
+<custom-input label="With prefix">
   <span customPrefix>+1</span>
 </custom-input>
-
-<h3>Label Input with icon prefix</h3>
-<custom-input label="Label">
-  <custom-icon customPrefix name="phone"></custom-icon>
-</custom-input>
-
-<h3>Float Label Input</h3>
-<custom-input floatLabel="Label"></custom-input>
-
-<h3>Float Label Input with prefix</h3>
-<custom-input floatLabel="Label">
+<custom-input floatLabel="With prefix and float label">
   <span customPrefix>+1</span>
 </custom-input>
-
-<h3>Float Label Input with icon prefix</h3>
-<custom-input floatLabel="Label">
+<custom-input label="With custom icon prefix">
   <custom-icon customPrefix name="phone"></custom-icon>
 </custom-input>
-
-<h3>Float Label Input with suffix</h3>
-<custom-input floatLabel="Label" textAlign="right">
+<custom-input floatLabel="With custom icon prefix and float label">
+  <custom-icon customPrefix name="phone"></custom-icon>
+</custom-input>
+<custom-input label="Custom Input with suffix" textAlign="right">
   <span customSuffix>.00</span>
 </custom-input>
-
-<h3>Float Label Input with icon suffix</h3>
-<custom-input floatLabel="Label" textAlign="right">
+<custom-input label="Custom Input with icon suffix" textAlign="right">
+  <custom-icon customSuffix name="phone"></custom-icon>
+</custom-input>
+<custom-input floatLabel="Custom Input with custom icon suffix and float label">
   <custom-icon customSuffix name="phone"></custom-icon>
 </custom-input>
 
-<h3>Float Label Input with placeholder</h3>
-<custom-input placeholder="Write here" floatLabel="Label"></custom-input>
+<br>
+<br>
+<br>
 
-<h3>Float Label Input with label</h3>
-<custom-input label="Label" floatLabel="Label"></custom-input>
+<custom-autocomplete [options]="selectOptions"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="Label"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="With Id" id="autocomplete-id"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="With value" value="Option2"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="With counter" [hasCounter]="true"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="With counter and maxlength" [hasCounter]="true" [maxLength]="8"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="With placeholder" placeholder="Placeholder"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="Disabled" [disabled]="true"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="Disabled and value" [disabled]="true" value="Option2"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="Required" [required]="true"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" label="Required and match value" [required]="true" [isMatchValue]="true"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" floatLabel="Float Label"></custom-autocomplete>
+<custom-autocomplete [options]="selectOptions" floatLabel="Required Float Label" [required]="true"></custom-autocomplete>
 
-<h3>Float Label Input with label and placeholder</h3>
-<custom-input label="Label" floatLabel="Float Label" placeholder="Write here"></custom-input>
+<br>
+<br>
+<br>
 
-<h3>Float Label Required Input</h3>
-<custom-input [required]="true" floatLabel="Label"></custom-input>
-
-<h3>Password Input</h3>
-<custom-input type="password"></custom-input>
-
-<h3>Icon Input</h3>
-<custom-input iconName="email"></custom-input>
-
-<h3>Disabled Input</h3>
-<custom-input [disabled]="true"></custom-input>
-
-<h3>Disabled Input with value</h3>
-<custom-input [disabled]="true" value="My value"></custom-input>
-
-<h3>Placeholder Input</h3>
-<custom-input placeholder="Write here"></custom-input>
-
-<h3>Placeholder Input With Label</h3>
-<custom-input placeholder="Write here" label="Label"></custom-input>
-
-<h3>Required Simple Input</h3>
-<custom-input [required]="true" ></custom-input>
-
-<h3>Required Label Input</h3>
-<custom-input [required]="true" label="Label"></custom-input>
-
-<h3>Required Input with name pattern (Number)</h3>
-<custom-input [required]="true" label="Label" patternName="number"></custom-input>
-
-<h3>No Required Input with name pattern (Number)</h3>
-<custom-input label="Label" patternName="number"></custom-input>
+<h3>Form Group</h3>
+<custom-form-group iconName="email" className="my-class-name">
+  <custom-input></custom-input>
+</custom-form-group>
 
 <br>
 <br>
@@ -196,57 +150,6 @@
 
 <h3>Required Float Label Select</h3>
 <custom-select label="Label" [options]="selectOptions" [required]="true"></custom-select>
-
-<br>
-<br>
-<br>
-
-<h3>Simple Autocomplete</h3>
-<custom-autocomplete [options]="selectOptions"></custom-autocomplete>
-
-<h3>Autocomplete with Id</h3>
-<custom-autocomplete [options]="selectOptions" id="autocomplete-id"></custom-autocomplete>
-
-<h3>Simple Autocomplete with value</h3>
-<custom-autocomplete [options]="selectOptions" value="Option2"></custom-autocomplete>
-
-<h3>Simple Autocomplete with counter</h3>
-<custom-autocomplete [options]="selectOptions" [hasCounter]="true"></custom-autocomplete>
-
-<h3>Simple Autocomplete with counter and Max Length</h3>
-<custom-autocomplete [options]="selectOptions" [hasCounter]="true" [maxLength]="5"></custom-autocomplete>
-
-<h3>Simple Autocomplete with Placeholder</h3>
-<custom-autocomplete [options]="selectOptions" placeholder="Placeholder"></custom-autocomplete>
-
-<h3>Label Autocomplete</h3>
-<custom-autocomplete [options]="selectOptions" label="Label" [floatLabel]="false"></custom-autocomplete>
-
-<h3>Float Label Autocomplete</h3>
-<custom-autocomplete [options]="selectOptions" label="Label"></custom-autocomplete>
-
-<h3>Icon Autocomplete</h3>
-<custom-autocomplete iconName="map" [options]="selectOptions"></custom-autocomplete>
-
-<h3>Disabled Autocomplete</h3>
-<custom-autocomplete [disabled]="true" [options]="selectOptions"></custom-autocomplete>
-
-<h3>Disabled Autocomplete with value</h3>
-<custom-autocomplete [disabled]="true" [options]="selectOptions" value="Option2"></custom-autocomplete>
-
-<h3>Required Autocomplete with match value</h3>
-<custom-autocomplete label="Label" [required]="true" [options]="selectOptions" [isMatchValue]="true"></custom-autocomplete>
-
-<h3>Required Simple Autocomplete</h3>
-<custom-autocomplete [required]="true" [options]="selectOptions"></custom-autocomplete>
-
-<h3>Required Label Autocomplete</h3>
-<custom-autocomplete label="Label" [floatLabel]="false" [required]="true" [options]="selectOptions"></custom-autocomplete>
-
-<h3>Required Float Label Autocomplete</h3>
-<custom-autocomplete label="Label" [required]="true" [options]="selectOptions"></custom-autocomplete>
-
-
 
 <br>
 <br>
