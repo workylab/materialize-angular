@@ -1,31 +1,26 @@
-<custom-form-group [iconName]="iconName" [className]="className">
-  <div class="form-switch-container">
-    <div class="form-switch-label-container">
-      {{ label }}
-    </div>
-    <div class="form-switch-control-container">
-      <div class="form-switch-control"
-        (click)="toggleValue()"
-        (focus)="onFocus($event)"
-        (blur)="onBlur($event)"
 
-        [class.active]="value"
-        [class.disabled]="disabled"
-        [class.error]="!isValid && isTouched"
-        tabindex="0">
-        <div class="form-switch-indicator"></div>
-      </div>
-      <input
-        type="checkbox"
-        [disabled]="disabled"
-        [id]="id"
-        [name]="name"
-        [required]="required"
-        [value]="value"
-      />
+<div class="form-switch-container" [ngClass]="className">
+  <div class="form-switch-label-container">{{ label }}</div>
+  <div class="form-switch-control-container">
+    <div class="form-switch-control"
+      (click)="toggleValue()"
+      (focus)="onFocus($event)"
+      (blur)="onBlur($event)"
+
+      [class.active]="value"
+      [class.disabled]="disabled"
+      [class.error]="!isValid && isTouched"
+      tabindex="0">
+      <div class="form-switch-indicator"></div>
     </div>
-    <div class="form-error-message" *ngIf="!isValid && isTouched">
-      {{ errorMessage }}
-    </div>
+    <input
+      type="checkbox"
+      [disabled]="disabled"
+      [id]="id"
+      [name]="name"
+      [required]="required"
+      [value]="value"
+    />
   </div>
-</custom-form-group>
+  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+</div>

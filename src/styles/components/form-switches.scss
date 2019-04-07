@@ -1,6 +1,7 @@
 .form-switch-container {
   display: flex;
   flex-direction: row;
+  padding: $space-sm 0;
   position: relative;
 
   input[type='checkbox'] {
@@ -12,7 +13,7 @@
     color: $color-black;
     display: flex;
     flex: 1;
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     font-weight: $font-weight-regular;
   }
 
@@ -22,7 +23,7 @@
 }
 
 .form-switch-control-container {
-  padding: $space-xxs $space-sm;
+  padding: 0 $space-sm;
 
   .form-switch-control {
     background-color: lighten($color-gray-dark, 30%);

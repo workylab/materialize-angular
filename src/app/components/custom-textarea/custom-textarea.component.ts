@@ -19,11 +19,7 @@ export class CustomTextAreaComponent extends CustomFormFieldAbstract implements 
     errorMessage: '',
     floatLabel: '',
     hasCounter: false,
-    iconName: '',
     id: '',
-    isFocused: false,
-    isTouched: false,
-    isValid: false,
     label: '',
     maxLength: 500,
     minLength: 0,
@@ -31,7 +27,6 @@ export class CustomTextAreaComponent extends CustomFormFieldAbstract implements 
     placeholder: '',
     required: false,
     rows: 1,
-    updateAndValidity: () => {},
     value: ''
   };
 
@@ -46,7 +41,6 @@ export class CustomTextAreaComponent extends CustomFormFieldAbstract implements 
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
-  @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
@@ -62,7 +56,6 @@ export class CustomTextAreaComponent extends CustomFormFieldAbstract implements 
   public errorMessage: string;
   public floatLabel: string;
   public hasCounter: boolean;
-  public iconName: string;
   public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
@@ -95,7 +88,6 @@ export class CustomTextAreaComponent extends CustomFormFieldAbstract implements 
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
-    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
     this.maxLength = this.maxLengthInput || defaultProps.maxLength;
@@ -106,8 +98,8 @@ export class CustomTextAreaComponent extends CustomFormFieldAbstract implements 
     this.rows = this.rowsInput || defaultProps.rows;
     this.value = this.valueInput || defaultProps.value;
 
-    this.isFocused = defaultProps.isFocused;
-    this.isTouched = defaultProps.isTouched;
+    this.isFocused = false;
+    this.isTouched = false;
     this.isValid = this.validate(this.value, this.required);
   }
 

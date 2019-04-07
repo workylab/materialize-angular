@@ -53,10 +53,10 @@ export class ContactsComponent {
     }];
 
     this.radioOptions = [{
-      content: 'Save',
+      content: 'Yes',
       value: '1'
     }, {
-      content: 'Not Save',
+      content: 'No',
       value: '2'
     }];
   }

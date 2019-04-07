@@ -17,22 +17,16 @@ export class CustomCheckboxComponent extends CustomFormFieldAbstract implements 
     className: '',
     disabled: false,
     errorMessage: '',
-    iconName: '',
     id: '',
     indeterminate: false,
-    isFocused: false,
-    isTouched: false,
-    isValid: false,
     label: '',
     name: '',
     required: false,
-    updateAndValidity: () => {},
     value: false
   };
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('indeterminate') indeterminateInput: boolean;
   @Input('label') labelInput: string;
@@ -45,7 +39,6 @@ export class CustomCheckboxComponent extends CustomFormFieldAbstract implements 
   public className: string;
   public disabled: boolean;
   public errorMessage: string;
-  public iconName: string;
   public id: string;
   public indeterminate: boolean;
   public isFocused: boolean;
@@ -87,7 +80,6 @@ export class CustomCheckboxComponent extends CustomFormFieldAbstract implements 
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.indeterminate = getBooleanValue(this.indeterminateInput, defaultProps.indeterminate);
     this.label = this.labelInput || defaultProps.label;
@@ -95,8 +87,8 @@ export class CustomCheckboxComponent extends CustomFormFieldAbstract implements 
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = getBooleanValue(this.valueInput, defaultProps.value);
 
-    this.isFocused = defaultProps.isFocused;
-    this.isTouched = defaultProps.isTouched;
+    this.isFocused = false;
+    this.isTouched = false;
     this.isValid = this.validate(this.value, this.required);
   }
 

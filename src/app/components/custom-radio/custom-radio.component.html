@@ -1,34 +1,29 @@
-<custom-form-group [iconName]="iconName" [className]="className">
+<div class="form-radio-container" [ngClass]="className">
+  <label class="form-label" *ngIf="label">{{ label }}</label>
 
-  <div class="form-radio-container">
-    <label class="form-label" *ngIf="label">{{ label }}</label>
+  <div class="form-radio-control" *ngFor="let option of options; index as i">
+    <div class="form-radio-indicator"
+      tabindex="0"
 
-    <div class="form-radio-control" *ngFor="let option of options; index as i">
-      <div class="form-radio-indicator"
-        tabindex="0"
+      (click)="onChange(option.value)"
+      (blur)="onBlur($event)"
 
-        (click)="onChange(option.value)"
-        (blur)="onBlur($event)"
-
-        [class.active]="value === option.value"
-        [class.disabled]="disabled"
-        [class.focused]="isFocused"
-        [class.error]="!isValid && isTouched">
-      </div>
-
-      <label class="form-radio-label">{{ option.content }}</label>
-
-      <input type="radio"
-        [checked]="value === option.value"
-        [disabled]="disabled"
-        [id]="id + '-' + i"
-        [name]="name"
-        [required]="required"
-        [value]= "option.value" />
+      [class.active]="value === option.value"
+      [class.disabled]="disabled"
+      [class.focused]="isFocused"
+      [class.error]="!isValid && isTouched">
     </div>
 
-    <div class="form-error-message" *ngIf="!isValid && isTouched">
-      {{ errorMessage }}
-    </div>
+    <label class="form-radio-label">{{ option.content }}</label>
+
+    <input type="radio"
+      [checked]="value === option.value"
+      [disabled]="disabled"
+      [id]="id + '-' + i"
+      [name]="name"
+      [required]="required"
+      [value]= "option.value" />
   </div>
-</custom-form-group>
+
+  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+</div>

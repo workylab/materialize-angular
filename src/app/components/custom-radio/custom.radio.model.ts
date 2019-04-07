@@ -1,9 +1,15 @@
 import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
 
-export interface CustomRadio extends CustomFormFieldAbstract {
+export interface CustomRadio {
   canUncheck: boolean;
-  iconName: string;
+  className: string;
+  disabled: boolean;
+  errorMessage: string;
+  id: string;
+  label: string;
+  name: string;
   options: Array<CustomRadioOption>;
+  required: boolean;
   value: string;
 }
 

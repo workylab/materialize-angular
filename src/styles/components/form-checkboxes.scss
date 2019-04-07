@@ -2,6 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: row;
+  padding: $space-xs 0;
   position: relative;
 
   input[type='checkbox'] {
@@ -11,7 +12,7 @@
 
 .form-checkbox-label {
   color: $color-black;
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   font-weight: $font-weight-regular;
   margin-left: $space-sm;
 }

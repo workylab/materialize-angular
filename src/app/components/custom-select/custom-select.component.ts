@@ -18,24 +18,18 @@ export class CustomSelectComponent extends CustomFormFieldAbstract implements On
     disabled: false,
     errorMessage: '',
     floatLabel: '',
-    iconName: '',
     id: '',
-    isFocused: false,
-    isTouched: false,
-    isValid: false,
     label: '',
     name: '',
     options: [],
     required: false,
     selectedOption: {} as CustomSelectOption,
-    updateAndValidity: () => {},
     value: ''
   };
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
-  @Input('iconName') iconNameInput: string;
   @Input('id') idInput: string;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
@@ -47,7 +41,6 @@ export class CustomSelectComponent extends CustomFormFieldAbstract implements On
   public disabled: boolean;
   public errorMessage: string;
   public floatLabel: string;
-  public iconName: string;
   public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
@@ -69,7 +62,6 @@ export class CustomSelectComponent extends CustomFormFieldAbstract implements On
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
-    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.id = this.idInput || defaultProps.id;
     this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
@@ -77,8 +69,8 @@ export class CustomSelectComponent extends CustomFormFieldAbstract implements On
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
-    this.isFocused = defaultProps.isFocused;
-    this.isTouched = defaultProps.isTouched;
+    this.isFocused = false;
+    this.isTouched = false;
     this.selectedOption = this.getInitOption(this.value, this.options);
     this.isValid = this.validate(this.value, this.required);
   }

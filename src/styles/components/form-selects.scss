@@ -39,6 +39,11 @@
       right: $space-xxl;
     }
   }
+
+  &.disabled .form-control-input::before {
+    border-bottom-color: $color-gray;
+    border-top-color: $color-gray;
+  }
 }
 
 .select-menu {
@@ -61,6 +66,7 @@
     color: $color-gray-dark;
     font-size: $font-size-xs;
     font-weight: $font-weight-light;
+    min-height: 46px;
     outline: none;
     padding: $space-md $space-sm;
 

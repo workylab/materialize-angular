@@ -1,13 +1,17 @@
-import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
-
-export interface CustomInputFile extends CustomFormFieldAbstract {
+export interface CustomInputFile {
   accept: Array<string>;
+  className: string;
   dataType: 'blob' | 'base64';
-  floatLabel: boolean;
-  iconName: string;
+  disabled: boolean;
+  errorMessage: string;
+  floatLabel: string;
+  id: string;
   isMultiple: boolean;
+  label: string;
   maxSize: number;
   minSize: number;
+  name: string;
+  required: boolean;
   value: Array<File>;
 };
 

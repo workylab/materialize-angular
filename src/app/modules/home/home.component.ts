@@ -1,5 +1,6 @@
 import { CustomTable, SortedColumn } from '../../components/custom-table/custom-table.model';
 import { Component } from '@angular/core';
+import { CustomCheckboxListItem } from 'src/app/components/custom-checkbox-list/custom-checkbox-list.model';
 import { CustomDropdownItem } from '../../components/custom-dropdown/custom-dropdown.model';
 import { CustomRadioOption } from 'src/app/components/custom-radio/custom.radio.model';
 import { CustomSelectOption } from '../../components/custom-select/custom-select.model';
@@ -9,6 +10,22 @@ import { CustomSelectOption } from '../../components/custom-select/custom-select
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
+  public checkboxListItems: Array<CustomCheckboxListItem> = [{
+    label: 'Option 1',
+    name: 'opt1',
+    value: false
+  }, {
+    disabled: true,
+    label: 'Option 3',
+    name: 'opt3',
+    value: true
+  }, {
+    disabled: true,
+    label: 'Option 3',
+    name: 'opt3',
+    value: false
+  }];
+
   public tableData: CustomTable = {
     body: [
       [

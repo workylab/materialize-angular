@@ -7,7 +7,7 @@ import { CustomFormFieldDirective } from '../../directives/form-field.directive'
   templateUrl: './custom-form.component.html'
 })
 export class CustomFormComponent implements AfterContentInit {
-  @ContentChildren(CustomFormFieldDirective) customFormFieldList: QueryList<CustomFormFieldDirective>;
+  @ContentChildren(CustomFormFieldDirective, { descendants: true }) formFields: QueryList<CustomFormFieldDirective>;
 
   public fields: Array<CustomFormFieldAbstract> = [];
   public formData: any;
@@ -18,7 +18,7 @@ export class CustomFormComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.fields = this.customFormFieldList.toArray().map(item => item.FormField);
+    this.fields = this.formFields.toArray().map(item => item.FormField);
   }
 
   validateForm(event: Event) {
