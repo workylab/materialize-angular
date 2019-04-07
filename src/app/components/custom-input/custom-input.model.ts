@@ -1,13 +1,17 @@
-import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
-
-export interface CustomInput extends CustomFormFieldAbstract {
+export interface CustomInput {
   autocomplete: string;
+  className: string;
+  disabled: boolean;
+  errorMessage: string;
   floatLabel: string;
+  id: string;
   hasCounter: boolean;
-  iconName: string;
+  label: string;
+  name: string;
   maxLength: number;
   patternName: string;
   placeholder: string;
+  required: boolean;
   textAlign: 'left' | 'right';
   type: string;
   validateOnBlur: boolean;

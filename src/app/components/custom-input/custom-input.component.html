@@ -1,58 +1,57 @@
-<custom-form-group [iconName]="iconName" [className]="className">
-  <div class="form-field-container"
-    [class.float-label]="floatLabel"
-    [class.active]="value || placeholder"
-    [class.focused]="isFocused"
-    [class.disabled]="disabled"
-    [class.error]="!isValid && isTouched">
+<div class="form-field-container"
+  [ngClass]="className"
+  [class.float-label]="floatLabel"
+  [class.active]="value || placeholder"
+  [class.focused]="isFocused"
+  [class.disabled]="disabled"
+  [class.error]="!isValid && isTouched">
 
-    <label class="form-label" *ngIf="label">{{ label }}</label>
+  <label class="form-label" *ngIf="label">{{ label }}</label>
 
-    <div class="form-control-wrapper"
-      tabindex="1"
+  <div class="form-control-wrapper"
+    tabindex="1"
 
-      (blur)="onBlur($event)"
-      (focus)="onFocus($event)"
-      
-      #formControlWrapper>
-      <div class="form-control-prefix-container" *ngIf="customPrefixQueryList.length">
-        <ng-content select="[customPrefix]"></ng-content>
-      </div>
-
-      <div class="form-control-container">
-        <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
-
-        <input class="form-control-input form-control-text-{{ textAlign }}"
-          (input)="onChange($event)"
-          (blur)="onBlur($event)"
-          (focus)="onFocus($event)"
-  
-          [autocomplete]="autocomplete"
-          [disabled]="disabled"
-          [id]="id"
-          [maxLength]="maxLength"
-          [name]="name"
-          [placeholder]="placeholder"
-          [required]="required"
-          [type]="type"
-          [value]="value"
-  
-          #input
-        />
-
-        <custom-icon className="form-icon-error"
-          name="error"
-          size="lg"
-          *ngIf="!isValid && isTouched">
-        </custom-icon>
-      </div>
-
-      <div class="form-control-suffix-container" *ngIf="customSuffixQueryList.length">
-        <ng-content select="[customSuffix]"></ng-content>
-      </div>
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)"
+    
+    #formControlWrapper>
+    <div class="form-control-prefix-container" *ngIf="customPrefixQueryList.length">
+      <ng-content select="[customPrefix]"></ng-content>
     </div>
 
-    <div class="form-message-counter" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</div>
-    <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+    <div class="form-control-container">
+      <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+
+      <input class="form-control-input form-control-text-{{ textAlign }}"
+        (input)="onChange($event)"
+        (blur)="onBlur($event)"
+        (focus)="onFocus($event)"
+
+        [autocomplete]="autocomplete"
+        [disabled]="disabled"
+        [id]="id"
+        [maxLength]="maxLength"
+        [name]="name"
+        [placeholder]="placeholder"
+        [required]="required"
+        [type]="type"
+        [value]="value"
+
+        #input
+      />
+
+      <custom-icon className="form-icon-error"
+        name="error"
+        size="lg"
+        *ngIf="!isValid && isTouched">
+      </custom-icon>
+    </div>
+
+    <div class="form-control-suffix-container" *ngIf="customSuffixQueryList.length">
+      <ng-content select="[customSuffix]"></ng-content>
+    </div>
   </div>
-</custom-form-group>
+
+  <div class="form-message-counter" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</div>
+  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+</div>
