@@ -13,8 +13,8 @@
   padding: $space-sm $space-xs;
   text-transform: uppercase;
 
-  &:focus {
-    background-color: darken($color-purple, 10%);
+  .ripple {
+    background-color: rgba($color-white, 0.15);
   }
 
   &.rounded {

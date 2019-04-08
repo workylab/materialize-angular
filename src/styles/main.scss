@@ -1,7 +1,6 @@
 @import './reset';
 
 @import './animations/grow-element';
-@import './animations/ripple';
 
 @import './theme/colors';
 @import './theme/fonts';
@@ -31,6 +30,7 @@
 @import './components/forms';
 @import './components/icons';
 @import './components/navbars';
+@import './components/ripple';
 @import './components/sidenavs';
 @import './components/swiper';
 @import './components/tables';
