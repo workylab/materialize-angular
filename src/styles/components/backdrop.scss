@@ -1,0 +1,19 @@
+.backdrop {
+  background-color: rgba($color-black, 0.4);
+  bottom: 0;
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity cubic-bezier(0.17, 0.84, 0.44, 1);
+  width: 100%;
+  z-index: $zindex-level-3;
+
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+}
