@@ -1,0 +1,14 @@
+<ng-content select="[modalHandler]"></ng-content>
+
+<div class="modal" #modal>
+  <div class="backdrop" #backdrop></div>
+  <div class="modal-content" #modalContent>
+    <custom-icon className="modal-icon-close"
+      name="close"
+      size="xl"
+      [isPointer]="true"
+      (onClick)="close()">
+    </custom-icon>
+    <ng-content select="[modalContent]"></ng-content>
+  </div>
+</div>
