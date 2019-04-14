@@ -1,0 +1,48 @@
+.modal {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  &.active {
+    z-index: $zindex-level-4;
+
+    .backdrop {
+      opacity: 1;
+    }
+
+    .modal-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .backdrop {
+    transition-duration: inherit;
+    z-index: $zindex-level-0;
+  }
+
+  .modal-content {
+    background-color: $color-white;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-lg;
+    opacity: 0;
+    padding: $space-xxl;
+    position: relative;
+    transform: scale(0.9);
+    transition: opacity, transform cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
+    transition-duration: inherit;
+    z-index: $zindex-level-1;
+
+    .modal-icon-close {
+      position: absolute;
+      right: $space-xxs;
+      top: $space-xxs;
+    }
+  }
+}

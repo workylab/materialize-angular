@@ -15,6 +15,10 @@ import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { CustomInputFileComponent } from './custom-input-file/custom-input-file.component';
+import { CustomModalCloseDirective } from '../directives/modal-close.directive';
+import { CustomModalComponent } from './custom-modal/custom-modal.component';
+import { CustomModalContentDirective } from '../directives/modal-content.directive';
+import { CustomModalHandlerDirective } from '../directives/modal-handler.directive';
 import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
 import { CustomPrefixDirective } from '../directives/prefix.directive';
 import { CustomRadioComponent } from './custom-radio/custom-radio.component';
@@ -49,6 +53,10 @@ import { NgModule } from '@angular/core';
     CustomIconComponent,
     CustomInputComponent,
     CustomInputFileComponent,
+    CustomModalCloseDirective,
+    CustomModalComponent,
+    CustomModalContentDirective,
+    CustomModalHandlerDirective,
     CustomNavbarComponent,
     CustomPrefixDirective,
     CustomSuffixDirective,
@@ -81,6 +89,10 @@ import { NgModule } from '@angular/core';
     CustomIconComponent,
     CustomInputComponent,
     CustomInputFileComponent,
+    CustomModalCloseDirective,
+    CustomModalComponent,
+    CustomModalContentDirective,
+    CustomModalHandlerDirective,
     CustomNavbarComponent,
     CustomPrefixDirective,
     CustomSuffixDirective,
