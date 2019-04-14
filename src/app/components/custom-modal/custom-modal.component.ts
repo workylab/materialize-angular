@@ -1,40 +1,66 @@
 import {
   AfterContentChecked,
+  AfterViewInit,
   Component,
   ContentChild,
-  ContentChildren,
   ElementRef,
+  Input,
   OnDestroy,
-  QueryList,
   ViewChild
 } from '@angular/core';
+import { CustomModal } from './custom-modal.model';
 import { CustomModalCloseDirective } from '../../directives/modal-close.directive';
 import { CustomModalContentDirective } from '../../directives/modal-content.directive';
 import { CustomModalHandlerDirective } from '../../directives/modal-handler.directive';
+import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   selector: 'custom-modal',
   templateUrl: './custom-modal.component.html'
 })
-export class CustomModalComponent implements AfterContentChecked, OnDestroy {
+export class CustomModalComponent implements AfterContentChecked, AfterViewInit, CustomModal, OnDestroy {
+  static readonly defaultProps: CustomModal = {
+    className: '',
+    dismissOnBackdrop: true,
+    hasBackdrop: true,
+    hasCloseButton: true,
+    transitionDuration: 400
+  };
+
   @ContentChild(CustomModalContentDirective) modalContentChild: CustomModalContentDirective;
   @ContentChild(CustomModalHandlerDirective) modalHandlerChild: CustomModalHandlerDirective;
 
   @ViewChild('modal') modalRef: ElementRef;
-  @ViewChild('modalContent') modalContentRef: ElementRef;
   @ViewChild('backdrop') backdropRef: ElementRef;
 
+  @Input('className') classNameInput: string;
+  @Input('dismissOnBackdrop') dismissOnBackdropInput: boolean;
+  @Input('hasBackdrop') hasBackdropInput: boolean;
+  @Input('hasCloseButton') hasCloseButtonInput: boolean;
+  @Input('transitionDuration') transitionDurationInput: number;
+
   public closeElements: Array<CustomModalCloseDirective>;
-  public transitionDuration = 400;
+
+  public className: string;
+  public dismissOnBackdrop: boolean;
+  public hasBackdrop: boolean;
+  public hasCloseButton: boolean;
+  public transitionDuration: number;
 
   constructor() {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
-    this.closeByEvent = this.closeByEvent.bind(this);
+    this.closeByBackdrop = this.closeByBackdrop.bind(this);
   }
 
   ngOnInit() {
-    this.backdropRef.nativeElement.addEventListener('click', this.closeByEvent);
+    this.initValues();
+  }
+
+  ngAfterViewInit() {
+    if (this.hasBackdrop && this.dismissOnBackdrop) {
+      this.backdropRef.nativeElement.addEventListener('click', this.closeByBackdrop);
+    }
   }
 
   ngAfterContentChecked() {
@@ -48,28 +74,28 @@ export class CustomModalComponent implements AfterContentChecked, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.backdropRef.nativeElement.removeEventListener('click', this.closeByEvent);
-
     this.modalHandlerChild.elementRef.nativeElement.removeEventListener('click', this.close);
+
+    if (this.hasBackdrop && this.dismissOnBackdrop) {
+      this.backdropRef.nativeElement.removeEventListener('click', this.closeByBackdrop);
+    }
 
     for (const item of this.closeElements) {
       item.elementRef.nativeElement.removeEventListener('click', this.close);
     }
   }
 
-  open() {
-    this.backdropRef.nativeElement.style.transitionDuration = `${ this.transitionDuration }ms`;
-    this.modalContentRef.nativeElement.style.transitionDuration = `${ this.transitionDuration }ms`;
+  initValues() {
+    const { defaultProps } = CustomModalComponent;
 
-    this.modalRef.nativeElement.classList.add('active');
-
-    setTimeout(() => {
-      this.backdropRef.nativeElement.classList.add('active');
-      this.modalContentRef.nativeElement.classList.add('active');
-    }, 0);
+    this.className = this.classNameInput || defaultProps.className;
+    this.dismissOnBackdrop = getBooleanValue(this.dismissOnBackdropInput, defaultProps.dismissOnBackdrop);
+    this.hasBackdrop = getBooleanValue(this.hasBackdropInput, defaultProps.hasBackdrop);
+    this.hasCloseButton = getBooleanValue(this.hasCloseButtonInput, defaultProps.hasCloseButton);
+    this.transitionDuration = this.transitionDurationInput || defaultProps.transitionDuration;
   }
 
-  closeByEvent(event: Event) {
+  closeByBackdrop(event: Event) {
     const { target } = event;
     const { nativeElement } = this.backdropRef;
 
@@ -78,12 +104,13 @@ export class CustomModalComponent implements AfterContentChecked, OnDestroy {
     }
   }
 
-  close() {
-    this.backdropRef.nativeElement.classList.remove('active');
-    this.modalContentRef.nativeElement.classList.remove('active');
+  open() {
+    this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration }ms`;
+    this.modalRef.nativeElement.classList.add('active');
+  }
 
-    setTimeout(() => {
-      this.modalRef.nativeElement.classList.remove('active');
-    }, this.transitionDuration);
+  close() {
+    this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration / 2 }ms`;
+    this.modalRef.nativeElement.classList.remove('active');
   }
 }

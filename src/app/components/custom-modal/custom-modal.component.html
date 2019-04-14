@@ -1,11 +1,12 @@
 <ng-content select="[modalHandler]"></ng-content>
 
-<div class="modal" #modal>
-  <div class="backdrop" #backdrop></div>
-  <div class="modal-content" #modalContent>
+<div class="modal" [ngClass]="className" #modal>
+  <div class="backdrop" #backdrop *ngIf="hasBackdrop"></div>
+  <div class="modal-content">
     <custom-icon className="modal-icon-close"
       name="close"
       size="xl"
+      *ngIf="hasCloseButton"
       [isPointer]="true"
       (onClick)="close()">
     </custom-icon>
