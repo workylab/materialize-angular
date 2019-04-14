@@ -161,8 +161,32 @@
 <h3>Ripple</h3>
 <div customRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
 
-<h3>Modal</h3>
+<h3>Modal Default</h3>
 <custom-modal>
+  <custom-icon name="loupe" size="xl" modalHandler></custom-icon>
+  <div modalContent>
+    <custom-button modalClose text="close modal"></custom-button>
+  </div>
+</custom-modal>
+
+<h3>Modal not close on backdrop</h3>
+<custom-modal [dismissOnBackdrop]="false">
+  <custom-icon name="loupe" size="xl" modalHandler></custom-icon>
+  <div modalContent>
+    <custom-button modalClose text="close modal"></custom-button>
+  </div>
+</custom-modal>
+
+<h3>Modal without backdrop</h3>
+<custom-modal [hasBackdrop]="false">
+  <custom-icon name="loupe" size="xl" modalHandler></custom-icon>
+  <div modalContent>
+    <custom-button modalClose text="close modal"></custom-button>
+  </div>
+</custom-modal>
+
+<h3>Modal without close button</h3>
+<custom-modal [hasCloseButton]="false">
   <custom-icon name="loupe" size="xl" modalHandler></custom-icon>
   <div modalContent>
     <custom-button modalClose text="close modal"></custom-button>
