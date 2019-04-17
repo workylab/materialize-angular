@@ -29,6 +29,8 @@ import { CustomSuffixDirective } from '../directives/suffix.directive';
 import { CustomSwiperComponent } from './custom-swiper/custom-swiper.component';
 import { CustomSwiperItemComponent } from './custom-swiper/custom-swiper-item/custom-swiper-item.component';
 import { CustomSwitchComponent } from './custom-switch/custom-switch.component';
+import { CustomTabComponent } from './custom-tab/custom-tab.component';
+import { CustomTabGroupComponent } from './custom-tab-group/custom-tab-group.component';
 import { CustomTableComponent } from './custom-table/custom-table.component';
 import { CustomTextAreaComponent } from './custom-textarea/custom-textarea.component';
 import { CustomTooltipComponent } from './custom-tooltip/custom-tooltip.component';
@@ -67,6 +69,8 @@ import { NgModule } from '@angular/core';
     CustomSwiperComponent,
     CustomSwiperItemComponent,
     CustomSwitchComponent,
+    CustomTabComponent,
+    CustomTabGroupComponent,
     CustomTableComponent,
     CustomTextAreaComponent,
     CustomTooltipComponent,
@@ -103,6 +107,8 @@ import { NgModule } from '@angular/core';
     CustomSelectComponent,
     CustomSideNavComponent,
     CustomSwitchComponent,
+    CustomTabComponent,
+    CustomTabGroupComponent,
     CustomTableComponent,
     CustomTextAreaComponent,
     CustomTooltipComponent,
