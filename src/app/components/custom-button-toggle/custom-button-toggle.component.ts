@@ -15,17 +15,12 @@ export class CustomButtonToggleComponent extends CustomFormFieldAbstract impleme
   static defaultProps: ButtonToggle = {
     className: '',
     disabled: false,
-    errorMessage: '',
     id: '',
-    isFocused: false,
     isMultiple: false,
-    isTouched: false,
-    isValid: false,
     items: [],
     label: '',
     name: '',
     required: false,
-    updateAndValidity: () => {},
     value: {}
   };
 
@@ -79,9 +74,9 @@ export class CustomButtonToggleComponent extends CustomFormFieldAbstract impleme
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = {};
 
-    this.isFocused = defaultProps.isFocused;
-    this.isTouched = defaultProps.isTouched;
-    this.isValid = defaultProps.isValid;
+    this.isFocused = false;
+    this.isTouched = false;
+    this.isValid = false;
   }
 
   onClick(item: ButtonToggleItem) {

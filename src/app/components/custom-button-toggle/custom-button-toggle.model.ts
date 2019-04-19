@@ -1,13 +1,12 @@
-import { CustomFormFieldAbstract } from '../custom-form/custom-form-field.abstract';
-
-export interface ButtonToggle extends CustomFormFieldAbstract {
+export interface ButtonToggle {
   className: string;
   disabled: boolean;
+  id: string;
   items: Array<ButtonToggleItem>;
-  isFocused: boolean;
-  isTouched: boolean;
   isMultiple: boolean;
+  label: string;
   name: string;
+  required: boolean;
   value: {
     [key: string]: string;
   };
