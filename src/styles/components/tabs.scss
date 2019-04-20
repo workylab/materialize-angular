@@ -1,7 +1,25 @@
 .tabs-group-container {
   .tabs-header {
+    border-bottom: $border-sm solid $color-gray;
     display: flex;
     flex-direction: row;
     list-style: none;
+    margin-bottom: $space-lg;
+    position: relative;
+
+    .tabs-header-indicator {
+      background-color: $color-purple;
+      bottom: 0;
+      content: '';
+      height: $border-md;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    li {
+      cursor: pointer;
+      padding: $space-md $space-xl;
+    }
   }
 }
