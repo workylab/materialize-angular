@@ -1,0 +1,10 @@
+<div class="tabs-group-container" [ngClass]="className">
+  <ul class="tabs-header"  #tabsHeader>
+    <li *ngFor="let tab of tabComponentList; index as i" (click)="selectTab(i)" [class.active]="i === selectedIndex" customRipple>
+      {{ tab.title }}
+    </li>
+    <div class="tabs-header-indicator" #tabsIndicator></div>
+  </ul>
+  
+  <ng-content></ng-content>      
+</div>

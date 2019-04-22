@@ -20,3 +20,5 @@ export interface SortedColumn {
   direction: 'asc' | 'desc' | null;
   key: string;
 }
+
+// TODO: CustomTable { content: string; canSort: string; ... cells: Array<Array<CustomTableBodyCell>>}

@@ -24,6 +24,10 @@
   color: $color-gray-dark;
   display: table-cell;
   padding: $space-md $space-lg;
+
+  &:last-child {
+    border-right: 0;
+  }
 }
 
 .table-head {
