@@ -1,16 +1,16 @@
-import { CustomTable, SortedColumn } from '../../components/custom-table/custom-table.model';
+import { SortedColumnModel, TableModel } from '../../components/table/table.model';
+import { CheckboxListItemModel } from 'src/app/components/checkbox-list/checkbox-list.model';
 import { Component } from '@angular/core';
-import { CustomCheckboxListItem } from 'src/app/components/custom-checkbox-list/custom-checkbox-list.model';
-import { CustomDropdownItem } from '../../components/custom-dropdown/custom-dropdown.model';
-import { CustomRadioOption } from 'src/app/components/custom-radio/custom.radio.model';
-import { CustomSelectOption } from '../../components/custom-select/custom-select.model';
+import { DropdownItemModel } from '../../components/dropdown/dropdown.model';
+import { RadioOptionModel } from '../../components/radio/radio.model';
+import { SelectOptionModel } from '../../components/select/select.model';
 
 @Component({
   selector: 'home-page',
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  public checkboxListItems: Array<CustomCheckboxListItem> = [{
+  public checkboxListItems: Array<CheckboxListItemModel> = [{
     label: 'Option 1',
     name: 'opt1',
     value: false
@@ -26,7 +26,7 @@ export class HomeComponent {
     value: false
   }];
 
-  public tableData: CustomTable = {
+  public tableData: TableModel = {
     body: [
       [
         {
@@ -70,7 +70,7 @@ export class HomeComponent {
     }]
   }
 
-  public selectOptions: Array<CustomSelectOption> = [{
+  public selectOptions: Array<SelectOptionModel> = [{
     content: 'Option1',
     value: '1'
   }, {
@@ -78,7 +78,7 @@ export class HomeComponent {
     value: '2'
   }];
 
-  public radioOptions: Array<CustomRadioOption> = [{
+  public radioOptions: Array<RadioOptionModel> = [{
     content: 'Option1',
     value: '1'
   }, {
@@ -89,7 +89,7 @@ export class HomeComponent {
     value: '3'
   }];
 
-  public dropDownItems: Array<CustomDropdownItem> = [{
+  public dropDownItems: Array<DropdownItemModel> = [{
     iconName: 'menu',
     text: 'Item 1'
   }, {
@@ -100,6 +100,6 @@ export class HomeComponent {
     text: 'Item 3'
   }];
 
-  onTableSort(sortedColum: SortedColumn) {
+  onTableSort(sortedColum: SortedColumnModel) {
   }
 }

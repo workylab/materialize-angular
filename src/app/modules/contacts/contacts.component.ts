@@ -1,17 +1,17 @@
+import { CheckboxListItemModel } from '../../components/checkbox-list/checkbox-list.model';
 import { Component } from '@angular/core';
-import { CustomCheckboxListItem } from 'src/app/components/custom-checkbox-list/custom-checkbox-list.model';
-import { CustomNavbarOption } from '../../components/custom-navbar/custom-navbar.model';
-import { CustomRadioOption } from '../../components/custom-radio/custom.radio.model';
-import { CustomSelectOption } from '../../components/custom-select/custom-select.model';
+import { NavbarOptionModel } from '../../components/navbar/navbar.model';
+import { RadioOptionModel } from '../../components/radio/radio.model';
+import { SelectOptionModel } from '../../components/select/select.model';
 
 @Component({
   templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {
-  public checkboxListItems: Array<CustomCheckboxListItem>;
-  public navbarOptions: Array<CustomNavbarOption>;
-  public radioOptions: Array<CustomRadioOption>;
-  public stateOptions: Array<CustomSelectOption>;
+  public checkboxListItems: Array<CheckboxListItemModel>;
+  public navbarOptions: Array<NavbarOptionModel>;
+  public radioOptions: Array<RadioOptionModel>;
+  public stateOptions: Array<SelectOptionModel>;
 
   constructor() {
     this.navbarOptions = [
