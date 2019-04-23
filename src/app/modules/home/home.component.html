@@ -1,3 +1,5 @@
+<materialize-range-slider></materialize-range-slider>
+
 <materialize-input></materialize-input>
 <materialize-input label="Label"></materialize-input>
 <materialize-input label="Type password" type="password"></materialize-input>
@@ -161,35 +163,45 @@
 <h3>Ripple</h3>
 <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
 
+<h3>Modal</h3>
+<materialize-modal>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
+  </div>
+</materialize-modal>
+
+<h3>Modal</h3>
+<materialize-modal [isOpen]="true">
+</materialize-modal>
+
 <h3>Modal Default</h3>
 <materialize-modal>
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
-  </div>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>Modal</div>
 </materialize-modal>
 
 <h3>Modal not close on backdrop</h3>
 <materialize-modal [dismissOnBackdrop]="false">
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
   </div>
 </materialize-modal>
 
 <h3>Modal without backdrop</h3>
 <materialize-modal [hasBackdrop]="false">
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
   </div>
 </materialize-modal>
 
 <h3>Modal without close button</h3>
 <materialize-modal [hasCloseButton]="false">
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
   </div>
 </materialize-modal>
 
@@ -481,7 +493,6 @@
     5
   </materialize-swiper-item>
 </materialize-swiper>
-
 
 <!-- <div-tree [classNames]="['row', 'col', 'row2', 'col2']">
   <h3>Div Tree</h3>

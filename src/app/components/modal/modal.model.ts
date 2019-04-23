@@ -1,7 +1,8 @@
 export interface ModalModel {
   className: string;
+  dismissOnBackdrop: boolean;
   hasBackdrop: boolean;
   hasCloseButton: boolean;
-  dismissOnBackdrop: boolean;
+  isOpen: boolean;
   transitionDuration: number;
 }

@@ -1,7 +1,7 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[modalClose]'
+  selector: '[materializeModalClose]'
 })
 export class ModalCloseDirective {
   constructor(public elementRef: ElementRef) {
