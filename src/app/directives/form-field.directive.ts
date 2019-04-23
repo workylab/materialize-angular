@@ -1,11 +1,11 @@
-import { CustomFormFieldAbstract } from '../components/custom-form/custom-form-field.abstract';
 import { Directive } from '@angular/core';
+import { FormFieldAbstract } from '../components/form/form-field.abstract';
 
 @Directive({
-  selector: '[customFormField]'
+  selector: '[materializeFormField]'
 })
-export class CustomFormFieldDirective {
-  constructor(private formField: CustomFormFieldAbstract) {
+export class FormFieldDirective {
+  constructor(private formField: FormFieldAbstract) {
   }
 
   get FormField() {

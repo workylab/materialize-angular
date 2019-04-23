@@ -3,7 +3,7 @@ import { Directive, ElementRef } from '@angular/core';
 @Directive({
   selector: '[modalHandler]'
 })
-export class CustomModalHandlerDirective {
+export class ModalHandlerDirective {
   constructor(public elementRef: ElementRef) {
   }
 }

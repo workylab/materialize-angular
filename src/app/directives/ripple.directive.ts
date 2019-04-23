@@ -6,9 +6,9 @@ interface Coordinate {
 }
 
 @Directive({
-  selector: '[customRipple]'
+  selector: '[materializeRipple]'
 })
-export class CustomRippleDirective {
+export class RippleDirective {
   private element: HTMLElement;
   private duration = 500;
 

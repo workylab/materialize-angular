@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[customSuffix]'
+  selector: '[materializeSuffix]'
 })
-export class CustomSuffixDirective {
+export class SuffixDirective {
 }

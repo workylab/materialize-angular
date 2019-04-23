@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[customPrefix]'
+  selector: '[materializePrefix]'
 })
-export class CustomPrefixDirective {
+export class PrefixDirective {
 }
