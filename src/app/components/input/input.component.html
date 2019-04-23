@@ -15,8 +15,8 @@
     (focus)="onFocus($event)"
     
     #formControlWrapper>
-    <div class="form-control-prefix-container" *ngIf="customPrefixQueryList.length">
-      <ng-content select="[customPrefix]"></ng-content>
+    <div class="form-control-prefix-container" *ngIf="materializePrefixQueryList.length">
+      <ng-content select="[materializePrefix]"></ng-content>
     </div>
 
     <div class="form-control-container">
@@ -47,8 +47,8 @@
       </materialize-icon>
     </div>
 
-    <div class="form-control-suffix-container" *ngIf="customSuffixQueryList.length">
-      <ng-content select="[customSuffix]"></ng-content>
+    <div class="form-control-suffix-container" *ngIf="materializeSuffixQueryList.length">
+      <ng-content select="[materializeSuffix]"></ng-content>
     </div>
   </div>
 

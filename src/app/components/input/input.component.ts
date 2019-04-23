@@ -52,8 +52,8 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
   @ViewChild('input') inputRef: ElementRef;
   @ViewChild('formControlWrapper') formControlWrapperRef: ElementRef;
 
-  @ContentChildren(PrefixDirective) customPrefixQueryList: QueryList<PrefixDirective>;
-  @ContentChildren(SuffixDirective) customSuffixQueryList: QueryList<SuffixDirective>;
+  @ContentChildren(PrefixDirective) materializePrefixQueryList: QueryList<PrefixDirective>;
+  @ContentChildren(SuffixDirective) materializeSuffixQueryList: QueryList<SuffixDirective>;
 
   @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
   @Output('onChange') onChangeEmitter: EventEmitter<Event>;
@@ -182,8 +182,8 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
   }
 
   validRegex(value: string, regex: string): boolean {
-    const customRegex = new RegExp(regex);
-    const resultRegexValidation = customRegex.test(value);
+    const materializeRegex = new RegExp(regex);
+    const resultRegexValidation = materializeRegex.test(value);
 
     if (resultRegexValidation) {
       return true;
