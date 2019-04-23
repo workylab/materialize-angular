@@ -1,0 +1,18 @@
+<div class="date-picker" [class.open]="isFocused">
+  <materialize-input
+    (onFocus)="onInputFocus()"
+    (onBlur)="onInputBlur($event)"
+
+    [disabled]="disabled"
+    [floatLabel]="floatLabel"
+    [id]="id"
+    [label]="label"
+    [value]="value"
+    [required]="required">
+  </materialize-input>
+  <materialize-calendar
+    (onSelectDay)="onSelectDay($event)"
+    (onBlur)="onCalendarBlur($event)"
+  >
+  </materialize-calendar>
+</div>

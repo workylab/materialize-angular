@@ -1,0 +1,55 @@
+<div class="form-field-container form-file-container"
+  [ngClass]="className"
+  [class.float-label]="floatLabel"
+  [class.active]="value.length"
+  [class.focused]="isFocused"
+  [class.disabled]="disabled"
+  [class.error]="!isValid && isTouched">
+  
+  <label class="form-label" *ngIf="label">{{ label }}</label>
+
+  <div class="form-control-wrapper"
+    tabindex="1"
+    (blur)="onBlur()"
+    (focus)="onFocus()">
+
+    <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+
+    <div class="form-control-input">
+      <span *ngFor="let item of value">{{ item.name }}</span>
+      <input type="file"
+        (change)="onChange($event)"
+        (blur)="onBlur()"
+        (focus)="onFocus()"
+        
+        [accept]="accept"
+        [disabled]="disabled"
+        [id]="id"
+        [multiple]="isMultiple"
+        [name]="name"
+        [required]="required" />
+      <materialize-icon className="form-icon-error"
+        name="error"
+        size="lg"
+        *ngIf="!isValid && isTouched">
+      </materialize-icon>
+    </div>
+
+    <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+  </div>
+</div>
+
+<!-- <div class="form-file-files-container">
+  <div class="form-file-files-item" *ngFor="let item of value">
+    <span class="file-name">{{ item.name }} {{ item.size }}KB</span>
+
+    <div class="form-file-files-item-image">
+      <img [src]="item.file" *ngIf="item.type.includes('image')" />
+      <video controls *ngIf="!item.type.includes('image')">
+        <source [src]="item.file" />
+      </video>
+    </div>
+
+    <icon name="delete" (onClick)="removeFile(key)"></icon>
+  </div>
+</div> -->

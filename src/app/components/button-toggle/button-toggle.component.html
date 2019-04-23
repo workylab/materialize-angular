@@ -1,0 +1,14 @@
+<div class="button-toggle-container" [class.disabled]="disabled">
+  <div class="button-toggle-item"
+    (click)="onClick(item)"
+    [class.active]="value[item.name]"
+    *ngFor="let item of items">
+    <materialize-icon className="icon-button-toggle"
+      size="md"
+      *ngIf="item.iconName"
+      [name]="item.iconName">
+    </materialize-icon>
+    <div class="button-toggle-content">{{ item.content }}</div>
+  </div>
+</div>
+  

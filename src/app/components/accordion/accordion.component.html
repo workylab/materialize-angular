@@ -1,0 +1,11 @@
+<div [ngClass]="className">
+  <materialize-collapsible
+    *ngFor="let item of items; index as i"
+    (onClick)="onClick($event, i)"
+    [isOpen]="item.isOpen"
+    [content]="item.content"
+    [iconName]="item.iconName"
+    [title]="item.title"
+  >
+  </materialize-collapsible>
+</div>

@@ -1,0 +1,22 @@
+<button
+  customRipple
+
+  class="button button-{{ size }}"
+
+  (blur)="onBlur($event)"
+  (click)="onClick()"
+
+  [ngClass]="className"
+  [class.icon-end]="iconAtEnd"
+  [class.disabled]="disabled"
+  [class.rounded]="isRounded"
+  [type]="type">
+  <span class="button-text" *ngIf="text">
+    {{ text }}
+  </span>
+  <materialize-icon
+    *ngIf="iconName"
+    [name]="iconName"
+    [size]="size">
+  </materialize-icon>
+</button>

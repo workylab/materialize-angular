@@ -1,0 +1,21 @@
+<materialize-icon
+  [isPointer]="true"
+  [name]="_menuIconName"
+  (onClick)="openSideNav()"
+  size="lg">
+</materialize-icon>
+
+<div class="sidenav" [class.active]="_isOpen">
+  <div class="sidenav-content">
+    <div class="sidenav-title-container">
+      <div class="sidenav-icon">
+        <materialize-icon [name]="_titleIconName" size="xl"></materialize-icon>
+      </div>
+      <div class="sidenav-title">{{ _title }}</div>
+    </div>
+    <div class="sidenav-body-container">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <div class="sidenav-backdrop" (click)="closeSideNav()"></div>
+</div>

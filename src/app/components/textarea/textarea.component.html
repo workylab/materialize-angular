@@ -1,0 +1,50 @@
+
+<div class="form-field-container"
+  [ngClass]="className"
+  [class.float-label]="floatLabel"
+  [class.active]="value || placeholder"
+  [class.focused]="isFocused"
+  [class.disabled]="disabled"
+  [class.error]="!isValid && isTouched">
+
+  <label class="form-label" *ngIf="label">{{ label }}</label>
+
+  <div class="form-control-wrapper"
+    tabindex="1"
+
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)"
+    
+    #formControlWrapper>
+    <div class="form-control-container">
+      <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+
+      <textarea class="form-control-input"
+        (input)="onChange($event)"
+        (blur)="onBlur($event)"
+        (focus)="onFocus($event)"
+
+        [disabled]="disabled"
+        [id]="id"
+        [maxLength]="maxLength"
+        [minLength]="minLength"
+        [name]="name"
+        [placeholder]="placeholder"
+        [required]="required"
+        [rows]="rows"
+        [value]="value"
+
+        #textArea>
+      </textarea>
+
+      <materialize-icon className="form-icon-error"
+        name="error"
+        size="lg"
+        *ngIf="!isValid && isTouched">
+      </materialize-icon>
+    </div>
+  </div>
+
+  <div class="form-message-counter" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</div>
+  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+</div>

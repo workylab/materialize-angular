@@ -1,118 +1,118 @@
+import { AccordionComponent } from './accordion/accordion.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { ButtonComponent } from './button/button.component';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CheckboxListComponent } from './checkbox-list/checkbox-list.component';
+import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CommonModule } from '@angular/common';
-import { CustomAccordionComponent } from './custom-accordion/custom-accordion.component';
-import { CustomAutocompleteComponent } from './custom-autocomplete/custom-autocomplete.component';
-import { CustomButtonComponent } from './custom-button/custom-button.component';
-import { CustomButtonToggleComponent } from './custom-button-toggle/custom-button-toggle.component';
-import { CustomCalendarComponent } from './custom-calendar/custom-calendar.component';
-import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
-import { CustomCheckboxListComponent } from './custom-checkbox-list/custom-checkbox-list.component';
-import { CustomCollapsibleComponent } from './custom-collapsible/custom-collapsible.component';
-import { CustomDatePickerComponent } from './custom-datepicker/custom-datepicker.component';
-import { CustomDropdownComponent } from './custom-dropdown/custom-dropdown.component';
-import { CustomFormComponent } from './custom-form/custom-form.component';
-import { CustomFormFieldDirective } from '../directives/form-field.directive';
-import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
-import { CustomIconComponent } from './custom-icon/custom-icon.component';
-import { CustomInputComponent } from './custom-input/custom-input.component';
-import { CustomInputFileComponent } from './custom-input-file/custom-input-file.component';
-import { CustomModalCloseDirective } from '../directives/modal-close.directive';
-import { CustomModalComponent } from './custom-modal/custom-modal.component';
-import { CustomModalContentDirective } from '../directives/modal-content.directive';
-import { CustomModalHandlerDirective } from '../directives/modal-handler.directive';
-import { CustomNavbarComponent } from './custom-navbar/custom-navbar.component';
-import { CustomPrefixDirective } from '../directives/prefix.directive';
-import { CustomRadioComponent } from './custom-radio/custom-radio.component';
-import { CustomRippleDirective } from '../directives/ripple.directive';
-import { CustomSelectComponent } from './custom-select/custom-select.component';
-import { CustomSideNavComponent } from './custom-sidenav/custom-sidenav.component';
-import { CustomSuffixDirective } from '../directives/suffix.directive';
-import { CustomSwiperComponent } from './custom-swiper/custom-swiper.component';
-import { CustomSwiperItemComponent } from './custom-swiper/custom-swiper-item/custom-swiper-item.component';
-import { CustomSwitchComponent } from './custom-switch/custom-switch.component';
-import { CustomTabComponent } from './custom-tab/custom-tab.component';
-import { CustomTabGroupComponent } from './custom-tab-group/custom-tab-group.component';
-import { CustomTableComponent } from './custom-table/custom-table.component';
-import { CustomTextAreaComponent } from './custom-textarea/custom-textarea.component';
-import { CustomTooltipComponent } from './custom-tooltip/custom-tooltip.component';
+import { DatePickerComponent } from './datepicker/datepicker.component';
 import { DivTreeComponent } from './div-tree/div-tree.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { FormComponent } from './form/form.component';
+import { FormFieldDirective } from '../directives/form-field.directive';
+import { FormGroupComponent } from './form-group/form-group.component';
+import { IconComponent } from './icon/icon.component';
+import { InputComponent } from './input/input.component';
+import { InputFileComponent } from './input-file/input-file.component';
+import { ModalCloseDirective } from '../directives/modal-close.directive';
+import { ModalComponent } from './modal/modal.component';
+import { ModalContentDirective } from '../directives/modal-content.directive';
+import { ModalHandlerDirective } from '../directives/modal-handler.directive';
+import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
+import { PrefixDirective } from '../directives/prefix.directive';
+import { RadioComponent } from './radio/radio.component';
+import { RippleDirective } from '../directives/ripple.directive';
+import { SelectComponent } from './select/select.component';
+import { SideNavComponent } from './sidenav/sidenav.component';
+import { SuffixDirective } from '../directives/suffix.directive';
+import { SwiperComponent } from './swiper/swiper.component';
+import { SwiperItemComponent } from './swiper-item/swiper-item.component';
+import { SwitchComponent } from './switch/switch.component';
+import { TabComponent } from './tab/tab.component';
+import { TabGroupComponent } from './tab-group/tab-group.component';
+import { TableComponent } from './table/table.component';
+import { TextAreaComponent } from './textarea/textarea.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
-    CustomAccordionComponent,
-    CustomAutocompleteComponent,
-    CustomButtonComponent,
-    CustomButtonToggleComponent,
-    CustomCalendarComponent,
-    CustomCheckboxComponent,
-    CustomCheckboxListComponent,
-    CustomCollapsibleComponent,
-    CustomDatePickerComponent,
-    CustomDropdownComponent,
-    CustomFormComponent,
-    CustomFormFieldDirective,
-    CustomFormGroupComponent,
-    CustomIconComponent,
-    CustomInputComponent,
-    CustomInputFileComponent,
-    CustomModalCloseDirective,
-    CustomModalComponent,
-    CustomModalContentDirective,
-    CustomModalHandlerDirective,
-    CustomNavbarComponent,
-    CustomPrefixDirective,
-    CustomSuffixDirective,
-    CustomRadioComponent,
-    CustomRippleDirective,
-    CustomSelectComponent,
-    CustomSideNavComponent,
-    CustomSwiperComponent,
-    CustomSwiperItemComponent,
-    CustomSwitchComponent,
-    CustomTabComponent,
-    CustomTabGroupComponent,
-    CustomTableComponent,
-    CustomTextAreaComponent,
-    CustomTooltipComponent,
-    DivTreeComponent
+    AccordionComponent,
+    AutocompleteComponent,
+    ButtonComponent,
+    ButtonToggleComponent,
+    CalendarComponent,
+    CheckboxComponent,
+    CheckboxListComponent,
+    CollapsibleComponent,
+    DatePickerComponent,
+    DivTreeComponent,
+    DropdownComponent,
+    FormComponent,
+    FormFieldDirective,
+    FormGroupComponent,
+    IconComponent,
+    InputComponent,
+    InputFileComponent,
+    ModalCloseDirective,
+    ModalComponent,
+    ModalContentDirective,
+    ModalHandlerDirective,
+    NavbarComponent,
+    PrefixDirective,
+    SuffixDirective,
+    RadioComponent,
+    RippleDirective,
+    SelectComponent,
+    SideNavComponent,
+    SwiperComponent,
+    SwiperItemComponent,
+    SwitchComponent,
+    TabComponent,
+    TabGroupComponent,
+    TableComponent,
+    TextAreaComponent,
+    TooltipComponent
   ],
   exports: [
-    CustomAccordionComponent,
-    CustomAutocompleteComponent,
-    CustomButtonComponent,
-    CustomButtonToggleComponent,
-    CustomCalendarComponent,
-    CustomCheckboxComponent,
-    CustomCheckboxListComponent,
-    CustomCollapsibleComponent,
-    CustomDatePickerComponent,
-    CustomDropdownComponent,
-    CustomFormComponent,
-    CustomFormFieldDirective,
-    CustomFormGroupComponent,
-    CustomIconComponent,
-    CustomInputComponent,
-    CustomInputFileComponent,
-    CustomModalCloseDirective,
-    CustomModalComponent,
-    CustomModalContentDirective,
-    CustomModalHandlerDirective,
-    CustomNavbarComponent,
-    CustomPrefixDirective,
-    CustomSuffixDirective,
-    CustomSwiperComponent,
-    CustomSwiperItemComponent,
-    CustomRadioComponent,
-    CustomRippleDirective,
-    CustomSelectComponent,
-    CustomSideNavComponent,
-    CustomSwitchComponent,
-    CustomTabComponent,
-    CustomTabGroupComponent,
-    CustomTableComponent,
-    CustomTextAreaComponent,
-    CustomTooltipComponent,
-    DivTreeComponent
+    AccordionComponent,
+    AutocompleteComponent,
+    ButtonComponent,
+    ButtonToggleComponent,
+    CalendarComponent,
+    CheckboxComponent,
+    CheckboxListComponent,
+    CollapsibleComponent,
+    DatePickerComponent,
+    DivTreeComponent,
+    DropdownComponent,
+    FormComponent,
+    FormFieldDirective,
+    FormGroupComponent,
+    IconComponent,
+    InputComponent,
+    InputFileComponent,
+    ModalCloseDirective,
+    ModalComponent,
+    ModalContentDirective,
+    ModalHandlerDirective,
+    NavbarComponent,
+    PrefixDirective,
+    SuffixDirective,
+    SwiperComponent,
+    SwiperItemComponent,
+    RadioComponent,
+    RippleDirective,
+    SelectComponent,
+    SideNavComponent,
+    SwitchComponent,
+    TabComponent,
+    TabGroupComponent,
+    TableComponent,
+    TextAreaComponent,
+    TooltipComponent
   ],
   imports: [CommonModule]
 })
