@@ -8,43 +8,43 @@ navbar content
 
 <materialize-form>
   <materialize-form-group iconName="person">
-    <materialize-input label="Name" [required]="true" name="name" customFormField></materialize-input>
+    <materialize-input label="Name" [required]="true" name="name" materializeFormField></materialize-input>
   </materialize-form-group>
   <materialize-form-group iconName=" ">
-    <materialize-input label="Last Name" [required]="true" name="last_name" customFormField></materialize-input>
+    <materialize-input label="Last Name" [required]="true" name="last_name" materializeFormField></materialize-input>
   </materialize-form-group>
   <materialize-form-group iconName="email">
-    <materialize-input label="Email" [required]="true" name="email" customFormField></materialize-input>
+    <materialize-input label="Email" [required]="true" name="email" materializeFormField></materialize-input>
   </materialize-form-group>
   <materialize-form-group iconName="phone">
-    <materialize-input label="Phone" [required]="true" name="phone" patternName="number" customFormField></materialize-input>
+    <materialize-input label="Phone" [required]="true" name="phone" patternName="number" materializeFormField></materialize-input>
   </materialize-form-group>
   <materialize-form-group iconName="list">
-    <materialize-checkbox-list [required]="true" name="checkboxesList" [items]="checkboxListItems" customFormField></materialize-checkbox-list>
+    <materialize-checkbox-list [required]="true" name="checkboxesList" [items]="checkboxListItems" materializeFormField></materialize-checkbox-list>
   </materialize-form-group>
   <materialize-form-group iconName="house">
-    <materialize-switch label="House Phone" [required]="true" name="is_house_phone" customFormField></materialize-switch>
+    <materialize-switch label="House Phone" [required]="true" name="is_house_phone" materializeFormField></materialize-switch>
   </materialize-form-group>
   <materialize-form-group iconName="work">
-    <materialize-switch label="Work Phone" [required]="true" name="is_work_phone" customFormField></materialize-switch>
+    <materialize-switch label="Work Phone" [required]="true" name="is_work_phone" materializeFormField></materialize-switch>
   </materialize-form-group>
   <materialize-form-group iconName="location_on">
-    <materialize-checkbox label="Location" [required]="true" name="location" customFormField></materialize-checkbox>
+    <materialize-checkbox label="Location" [required]="true" name="location" materializeFormField></materialize-checkbox>
   </materialize-form-group>
   <materialize-form-group iconName="message">
-    <materialize-textarea label="Message" [required]="true" name="message" customFormField></materialize-textarea>
+    <materialize-textarea label="Message" [required]="true" name="message" materializeFormField></materialize-textarea>
   </materialize-form-group>
   <materialize-form-group iconName="cloud">
-    <materialize-radio label="Store data" [required]="true" [canUncheck]="true" [options]="radioOptions" name="is_save" customFormField></materialize-radio>
+    <materialize-radio label="Store data" [required]="true" [canUncheck]="true" [options]="radioOptions" name="is_save" materializeFormField></materialize-radio>
   </materialize-form-group>
   <materialize-form-group iconName="map">
-    <materialize-select label="State" [required]="true" name="state" [options]="stateOptions" customFormField></materialize-select>
+    <materialize-select label="State" [required]="true" name="state" [options]="stateOptions" materializeFormField></materialize-select>
   </materialize-form-group>
   <materialize-form-group iconName="attach_file">
-    <materialize-input-file label="Add File" [required]="true" name="file" customFormField></materialize-input-file>
+    <materialize-input-file label="Add File" [required]="true" name="file" materializeFormField></materialize-input-file>
   </materialize-form-group>
   <materialize-form-group iconName="map">
-    <materialize-autocomplete iconName="map" label="State" [required]="true" name="state_auto" [options]="stateOptions" [isMatchValue]="true" customFormField></materialize-autocomplete>
+    <materialize-autocomplete iconName="map" label="State" [required]="true" name="state_auto" [options]="stateOptions" [isMatchValue]="true" materializeFormField></materialize-autocomplete>
   </materialize-form-group>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>
