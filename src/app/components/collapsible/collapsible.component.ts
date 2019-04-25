@@ -4,6 +4,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   selector: 'materialize-collapsible',
+  styleUrls: ['./collapsible.component.scss'],
   templateUrl: './collapsible.component.html'
 })
 export class CollapsibleComponent implements CollapsibleModel, OnInit {

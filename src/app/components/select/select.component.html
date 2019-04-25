@@ -12,10 +12,10 @@
   [class.float-label]="floatLabel"
   [class.error]="!isValid && isTouched">
 
-  <label class="form-label" *ngIf="label">{{ label }}</label>
+  <materialize-label>{{ label }}</materialize-label>
 
   <div class="form-control-wrapper">
-    <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+    <materialize-label [isFloat]="true">{{ floatLabel }}</materialize-label>
 
     <div class="form-control-container">
       <div class="form-control-input" [id]="id">{{ selectedOption ? selectedOption.content : '' }}</div>
@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+  <materialize-error *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-error>
 </div>
 
   <!-- <select

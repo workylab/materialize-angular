@@ -10,6 +10,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => DatePickerComponent)
   }],
   selector: 'materialize-datepicker',
+  styleUrls: ['./datepicker.component.scss'],
   templateUrl: './datepicker.component.html'
 })
 export class DatePickerComponent extends FormFieldAbstract implements OnInit {

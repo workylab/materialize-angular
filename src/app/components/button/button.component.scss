@@ -1,3 +1,8 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+@import '../../../styles/theme/shadows.scss';
+
 .button {
   align-items: center;
   background-color: $color-purple;

@@ -5,6 +5,7 @@ import weekDaysJSON from '../../fixtures/calendar-week-days';
 
 @Component({
   selector: 'materialize-calendar',
+  styleUrls: ['./calendar.component.scss'],
   templateUrl: './calendar.component.html'
 })
 export class CalendarComponent {

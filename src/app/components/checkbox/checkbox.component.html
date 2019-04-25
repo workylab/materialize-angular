@@ -21,7 +21,8 @@
       [value]="value"
     />
   </div>
-  <label class="form-checkbox-label" *ngIf="label">{{ label }}</label>
-  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+  <materialize-label className="form-checkbox-label">{{ label }}</materialize-label>
+
+  <materialize-error *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-error>
 </div>
   

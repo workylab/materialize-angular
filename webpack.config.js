@@ -93,7 +93,7 @@ module.exports = {
 			configFile: '.stylelintrc',
 			context: helpers.root('./src'),
 			failOnError: false,
-			files: ['/styles/**/*.s?(a|c)ss'],
+			files: ['/styles/**/*.s?(a|c)ss', '/app/components/**/*.s?(a|c)ss'],
 			quiet: true,
 		}),
 

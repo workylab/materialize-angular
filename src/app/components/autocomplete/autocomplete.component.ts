@@ -12,6 +12,7 @@ import { SelectOptionModel } from '../select/select.model';
     useExisting: forwardRef(() => AutocompleteComponent)
   }],
   selector: 'materialize-autocomplete',
+  styleUrls: ['./autocomplete.component.scss'],
   templateUrl: './autocomplete.component.html'
 })
 export class AutocompleteComponent extends FormFieldAbstract implements OnInit {

@@ -7,7 +7,7 @@
   [class.disabled]="disabled"
   [class.error]="!isValid && isTouched">
 
-  <label class="form-label" *ngIf="label">{{ label }}</label>
+  <materialize-label>{{ label }}</materialize-label>
 
   <div class="form-control-wrapper"
     tabindex="1"
@@ -17,7 +17,7 @@
     
     #formControlWrapper>
     <div class="form-control-container">
-      <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+      <materialize-label [isFloat]="true">{{ floatLabel }}</materialize-label>
 
       <textarea class="form-control-input"
         (input)="onChange($event)"
@@ -46,5 +46,6 @@
   </div>
 
   <div class="form-message-counter" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</div>
-  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+
+  <materialize-error *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-error>
 </div>

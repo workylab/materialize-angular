@@ -1,0 +1,85 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+@import '../../../styles/theme/shadows.scss';
+
+.calendar-container {
+  background-color: $color-white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+  height: 360px;
+  outline: none;
+  padding: $space-lg $space-sm;
+  width: max-content;
+}
+
+.calendar-controls-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: $space-xs;
+
+  .icon {
+    padding: $space-xxxs;
+
+    &:hover {
+      background-color: $color-gray-light;
+      border-radius: $radius-full;
+    }
+  }
+}
+
+.calendar {
+  thead td {
+    border-bottom: $border-sm solid $color-gray;
+  }
+}
+
+.day-name-container {
+  font-size: $font-size-xxxs;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+}
+
+.day-container {
+  color: $color-gray-dark;
+  cursor: pointer;
+  height: 40px;
+  padding: 2px;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+
+  &.disabled .day-content {
+    background-color: $color-gray-light;
+    border-radius: $radius-full;
+    color: $color-gray-dark;
+    cursor: not-allowed;
+  }
+
+  &.current .day-content {
+    border: $border-sm solid $color-gray;
+  }
+
+  &.selected .day-content {
+    background-color: $color-purple;
+    color: $color-white;
+  }
+}
+
+.day-content {
+  align-items: center;
+  border-radius: $radius-full;
+  display: flex;
+  font-size: $font-size-xxs;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+
+  &:hover {
+    background-color: $color-gray-light;
+    border-radius: $radius-full;
+  }
+}

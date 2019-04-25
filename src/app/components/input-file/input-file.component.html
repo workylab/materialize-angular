@@ -5,15 +5,15 @@
   [class.focused]="isFocused"
   [class.disabled]="disabled"
   [class.error]="!isValid && isTouched">
-  
-  <label class="form-label" *ngIf="label">{{ label }}</label>
+
+  <materialize-label>{{ label }}</materialize-label>
 
   <div class="form-control-wrapper"
     tabindex="1"
     (blur)="onBlur()"
     (focus)="onFocus()">
 
-    <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+    <materialize-label [isFloat]="true">{{ floatLabel }}</materialize-label>
 
     <div class="form-control-input">
       <span *ngFor="let item of value">{{ item.name }}</span>
@@ -35,7 +35,7 @@
       </materialize-icon>
     </div>
 
-    <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+    <materialize-error *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-error>
   </div>
 </div>
 

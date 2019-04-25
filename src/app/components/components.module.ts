@@ -10,12 +10,14 @@ import { CommonModule } from '@angular/common';
 import { DatePickerComponent } from './datepicker/datepicker.component';
 import { DivTreeComponent } from './div-tree/div-tree.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ErrorComponent } from './error/error.component';
 import { FormComponent } from './form/form.component';
 import { FormFieldDirective } from '../directives/form-field.directive';
 import { FormGroupComponent } from './form-group/form-group.component';
 import { IconComponent } from './icon/icon.component';
 import { InputComponent } from './input/input.component';
 import { InputFileComponent } from './input-file/input-file.component';
+import { LabelComponent } from './label/label.component';
 import { ModalCloseDirective } from '../directives/modal-close.directive';
 import { ModalComponent } from './modal/modal.component';
 import { ModalContentDirective } from '../directives/modal-content.directive';
@@ -51,12 +53,14 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DatePickerComponent,
     DivTreeComponent,
     DropdownComponent,
+    ErrorComponent,
     FormComponent,
     FormFieldDirective,
     FormGroupComponent,
     IconComponent,
     InputComponent,
     InputFileComponent,
+    LabelComponent,
     ModalCloseDirective,
     ModalComponent,
     ModalContentDirective,
@@ -90,12 +94,14 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DatePickerComponent,
     DivTreeComponent,
     DropdownComponent,
+    ErrorComponent,
     FormComponent,
     FormFieldDirective,
     FormGroupComponent,
     IconComponent,
     InputComponent,
     InputFileComponent,
+    LabelComponent,
     ModalCloseDirective,
     ModalComponent,
     ModalContentDirective,

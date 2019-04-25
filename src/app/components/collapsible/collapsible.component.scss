@@ -1,0 +1,50 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/metrics.scss';
+
+.collapsible-container {
+  &.open .collapsible-title-container::after {
+    top: $space-lg;
+    transform: rotate(225deg);
+  }
+}
+
+.collapsible-title-container {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  padding: $space-md;
+  position: relative;
+
+  &::after {
+    border-bottom: $border-md solid $color-gray-dark;
+    border-right: $border-md solid $color-gray-dark;
+    content: '';
+    height: 10px;
+    position: absolute;
+    right: $space-md;
+    top: $space-md;
+    transform: rotate(45deg);
+    transition: transform 250ms ease;
+    width: 10px;
+  }
+
+  &:hover {
+    background-color: $color-gray-light;
+  }
+}
+
+.collapsible-icon {
+  margin-right: $space-sm;
+}
+
+.collapsible-content-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 250ms ease;
+}
+
+.collapsible-content {
+  overflow: visible;
+  padding: $space-sm;
+}
