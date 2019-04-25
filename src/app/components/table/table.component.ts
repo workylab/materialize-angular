@@ -3,6 +3,7 @@ import { SortedColumnModel, TableHeaderCellModel, TableModel } from './table.mod
 
 @Component({
   selector: 'materialize-table',
+  styleUrls: ['./table.component.scss'],
   templateUrl: './table.component.html'
 })
 export class TableComponent implements OnInit {

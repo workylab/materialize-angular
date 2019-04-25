@@ -1,0 +1,87 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+@import '../../../styles/theme/shadows.scss';
+
+.table-container {
+  border-radius: $radius-sm;
+  box-shadow: $shadow-sm;
+  font-size: 20px;
+  padding-top: $space-lg;
+}
+
+.table-title {
+  margin-bottom: $space-md;
+  margin-left: $space-lg;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  border-bottom: $border-sm solid $color-gray;
+  border-right: $border-sm solid $color-gray;
+  color: $color-gray-dark;
+  cursor: pointer;
+  display: table-cell;
+  font-size: 13px;
+  padding: $space-md $space-lg;
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+.table-head {
+  display: table-header-group;
+
+  .table-cell {
+    border-bottom: 0;
+    border-right: 0;
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.table-body {
+  display: table-row-group;
+
+  .table-row:hover {
+    background: $color-gray-light;
+  }
+
+  .table-row:first-child .table-cell {
+    border-top: $border-sm solid $color-gray;
+  }
+}
+
+.table-footer {
+  display: table-footer-group;
+}
+
+.table-sort-container {
+  align-content: center;
+  color: $color-gray-dark;
+  display: flex;
+  flex-direction: row;
+
+  &.active .table-sort-icon {
+    color: $color-black;
+  }
+}
+
+.table-sort-icon {
+  color: $color-gray;
+  margin-right: $space-xs;
+}
+
+.table-sort-text {
+  align-items: center;
+  display: flex;
+}
