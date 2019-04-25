@@ -28,7 +28,6 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
     patternName: '',
     placeholder: '',
     required: false,
-    textAlign: 'left',
     type: 'text',
     validateOnBlur: false,
     validateOnChange: false,

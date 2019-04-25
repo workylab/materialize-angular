@@ -12,7 +12,6 @@ export interface InputModel {
   patternName: string;
   placeholder: string;
   required: boolean;
-  textAlign: 'left' | 'right';
   type: string;
   validateOnBlur: boolean;
   validateOnChange: boolean;

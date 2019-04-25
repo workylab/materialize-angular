@@ -10,10 +10,10 @@ import { CommonModule } from '@angular/common';
 import { DatePickerComponent } from './datepicker/datepicker.component';
 import { DivTreeComponent } from './div-tree/div-tree.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
-import { ErrorComponent } from './error/error.component';
 import { FormComponent } from './form/form.component';
 import { FormFieldDirective } from '../directives/form-field.directive';
 import { FormGroupComponent } from './form-group/form-group.component';
+import { FormMessageComponent } from './form-message/form-message.component';
 import { IconComponent } from './icon/icon.component';
 import { InputComponent } from './input/input.component';
 import { InputFileComponent } from './input-file/input-file.component';
@@ -53,10 +53,10 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DatePickerComponent,
     DivTreeComponent,
     DropdownComponent,
-    ErrorComponent,
     FormComponent,
     FormFieldDirective,
     FormGroupComponent,
+    FormMessageComponent,
     IconComponent,
     InputComponent,
     InputFileComponent,
@@ -94,10 +94,10 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DatePickerComponent,
     DivTreeComponent,
     DropdownComponent,
-    ErrorComponent,
     FormComponent,
     FormFieldDirective,
     FormGroupComponent,
+    FormMessageComponent,
     IconComponent,
     InputComponent,
     InputFileComponent,

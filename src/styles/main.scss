@@ -1,15 +1,5 @@
 @import './reset';
 
-@import './theme/colors';
-@import './theme/fonts';
-@import './theme/metrics';
-@import './theme/shadows';
-
-@import './animations/grow-element';
-@import './animations/ripple';
-
-@import './components/fonts';
-@import './components/form-file';
-@import './components/form-messages';
-@import './components/form-selects';
-@import './components/forms';
+@import '../app/components/common/styles/colors';
+@import '../app/components/common/styles/metrics';
+@import '../app/components/common/styles/ripple';

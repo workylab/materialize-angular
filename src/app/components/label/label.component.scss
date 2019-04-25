@@ -1,19 +1,26 @@
-@import '../../../styles/theme/colors.scss';
-@import '../../../styles/theme/fonts.scss';
-@import '../../../styles/theme/metrics.scss';
+@import '../common/styles/colors.scss';
+@import '../common/styles/fonts.scss';
+@import '../common/styles/metrics.scss';
 
 .form-label {
   color: $color-gray-dark;
   display: block;
+  font-family: $font-family-primary;
   font-size: $font-size-xs;
-  margin-bottom: $space-xs;
+  font-weight: $font-weight-regular;
   outline: none;
+
+  &:not(:empty):not(.form-float-label) {
+    padding: $space-xs $space-sm;
+  }
 }
 
 .form-float-label {
   color: $color-gray-dark;
   cursor: text;
+  font-family: $font-family-primary;
   font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
   left: $space-sm;
   position: absolute;
   top: 18px;

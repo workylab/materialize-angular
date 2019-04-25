@@ -1,7 +1,6 @@
-@import '../../../styles/theme/colors.scss';
-@import '../../../styles/theme/fonts.scss';
-@import '../../../styles/theme/metrics.scss';
-@import '../../../styles/theme/shadows.scss';
+@import '../common/styles/colors.scss';
+@import '../common/styles/fonts.scss';
+@import '../common/styles/metrics.scss';
 
 .table-container {
   border-radius: $radius-sm;

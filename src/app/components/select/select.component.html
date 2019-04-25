@@ -20,7 +20,7 @@
     <div class="form-control-container">
       <div class="form-control-input" [id]="id">{{ selectedOption ? selectedOption.content : '' }}</div>
 
-      <materialize-icon className="form-icon-error"
+      <materialize-icon className="icon-error"
         name="error"
         size="lg"
         *ngIf="!isValid && isTouched">
@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <materialize-error *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-error>
+  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>
 
   <!-- <select

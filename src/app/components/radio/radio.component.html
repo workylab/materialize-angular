@@ -25,5 +25,5 @@
       [value]= "option.value" />
   </div>
 
-  <materialize-error *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-error>
+  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>

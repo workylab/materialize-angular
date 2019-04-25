@@ -1,11 +1,10 @@
-@import '../../../styles/theme/colors.scss';
-@import '../../../styles/theme/metrics.scss';
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
 
 .form-group-container {
   align-items: center;
   display: flex;
   flex-direction: row;
-  margin-bottom: $space-xxl;
 }
 
 .form-group-icon-container {
