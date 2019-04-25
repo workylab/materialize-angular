@@ -1,0 +1,26 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+@import '../../../styles/theme/shadows.scss';
+
+.navbar {
+  align-items: center;
+  background-color: $color-purple;
+  box-shadow: $shadow-sm;
+  color: $color-white;
+  display: flex;
+  flex-direction: row;
+  height: 72px;
+  padding: $space-lg $space-xs;
+}
+
+.navbar-title {
+  display: inline-block;
+  flex: 1;
+  font-size: $font-size-lg;
+  margin-left: $space-xl;
+}
+
+.navbar-icon-container {
+  padding: 0 $space-xs;
+}
