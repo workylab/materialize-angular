@@ -1,4 +1,4 @@
-<div class="tabs-group-container" [ngClass]="className">
+<div [ngClass]="className">
   <ul class="tabs-header"  #tabsHeader>
     <li *ngFor="let tab of tabComponentList; index as i" (click)="selectTab(i)" [class.active]="i === selectedIndex" materializeRipple>
       {{ tab.title }}
