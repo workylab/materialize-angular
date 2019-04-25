@@ -1,0 +1,13 @@
+.ripple-element {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.ripple {
+  background-color: rgba($color-black, 0.1);
+  border-radius: $radius-full;
+  position: absolute;
+  transform: scale(0);
+  transition: opacity, transform 0ms cubic-bezier(0, 0, 0.2, 1);
+}
