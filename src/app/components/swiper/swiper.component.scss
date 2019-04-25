@@ -1,0 +1,57 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/metrics.scss';
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-section {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-items-container {
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.button-swiper-control-next,
+.button-swiper-control-prev {
+  background-color: $color-white;
+  color: $color-purple;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:focus {
+    background-color: darken($color-white, 10%);
+  }
+}
+
+.button-swiper-control-next {
+  right: $space-xs;
+}
+
+.button-swiper-control-prev {
+  left: $space-xs;
+}
+
+.swiper-dots-container {
+  display: flex;
+  justify-content: center;
+  padding: $space-md;
+}
+
+.swiper-dot {
+  background-color: lighten($color-purple, 40%);
+  border-radius: $radius-full;
+  cursor: pointer;
+  height: 8px;
+  margin: 0 $space-xxxs;
+  width: 8px;
+
+  &.active {
+    background: $color-purple;
+  }
+}
