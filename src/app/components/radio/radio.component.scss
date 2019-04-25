@@ -1,0 +1,108 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+
+.form-radio-container {
+  position: relative;
+  width: 100%;
+
+  input[type='radio'] {
+    display: none;
+  }
+}
+
+.form-radio-label {
+  color: $color-black;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  margin-left: $space-sm;
+}
+
+.form-radio-control {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  outline: none;
+  padding: $space-xxs 0;
+  position: relative;
+}
+
+.form-radio-indicator {
+  border: $border-md solid $color-gray-dark;
+  border-radius: $radius-full;
+  cursor: pointer;
+  height: 20px;
+  outline: none;
+  position: relative;
+  width: 20px;
+
+  &::before,
+  &::after {
+    border-radius: $radius-full;
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    height: 10px;
+    width: 10px;
+  }
+
+  &::after {
+    height: 40px;
+    transition: background-color 300ms ease;
+    width: 40px;
+  }
+
+  &:hover:not(.disabled) {
+    &.active::after {
+      background-color: rgba($color-purple, 0.1);
+    }
+
+    &.error::after {
+      background-color: rgba($color-red, 0.1);
+    }
+
+    &::after {
+      background-color: rgba($color-gray-dark, 0.1);
+    }
+  }
+
+  &:focus:not(.disabled) {
+    &.active::after {
+      background-color: rgba($color-purple, 0.3);
+    }
+
+    &.error::after {
+      background-color: rgba($color-red, 0.3);
+    }
+
+    &::after {
+      background-color: rgba($color-gray-dark, 0.3);
+    }
+  }
+
+  &.active {
+    border-color: $color-purple;
+
+    &::before {
+      background-color: $color-purple;
+    }
+  }
+
+  &.error {
+    border-color: $color-red;
+  }
+
+  &.disabled {
+    border-color: lighten($color-gray-dark, 30%);
+    cursor: not-allowed;
+
+    &.active::before {
+      background-color: lighten($color-gray-dark, 30%);
+    }
+  }
+}
