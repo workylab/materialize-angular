@@ -22,5 +22,6 @@
       [value]="value"
     />
   </div>
-  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+
+  <materialize-error *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-error>
 </div>

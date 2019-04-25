@@ -10,6 +10,7 @@ import { SwitchModel } from './switch.model';
     useExisting: forwardRef(() => SwitchComponent)
   }],
   selector: 'materialize-switch',
+  styleUrls: ['./switch.component.scss'],
   templateUrl: './switch.component.html'
 })
 export class SwitchComponent extends FormFieldAbstract implements OnInit {
