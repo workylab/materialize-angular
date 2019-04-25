@@ -1,0 +1,67 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+@import '../../../styles/theme/shadows.scss';
+
+.modal {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  &.active {
+    z-index: $zindex-level-4;
+
+    .modal-backdrop {
+      opacity: 1;
+    }
+
+    .modal-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.modal-content {
+  background-color: $color-white;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-lg;
+  opacity: 0;
+  padding: $space-xxl;
+  position: relative;
+  transform: scale(0.9);
+  transition: opacity, transform cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
+  transition-duration: inherit;
+  z-index: $zindex-level-1;
+}
+
+.modal-icon-close {
+  position: absolute;
+  right: $space-xxs;
+  top: $space-xxs;
+}
+
+.modal-backdrop {
+  background-color: rgba($color-black, 0.4);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: inherit;
+  width: 100%;
+  z-index: $zindex-level-0;
+
+  &.active {
+    opacity: 1;
+  }
+}

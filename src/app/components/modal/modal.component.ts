@@ -16,6 +16,7 @@ import { ModalModel } from './modal.model';
 
 @Component({
   selector: 'materialize-modal',
+  styleUrls: ['./modal.component.scss'],
   templateUrl: './modal.component.html'
 })
 export class ModalComponent implements AfterContentChecked, AfterViewInit, ModalModel, OnDestroy {

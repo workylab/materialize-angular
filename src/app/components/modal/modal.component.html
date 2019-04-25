@@ -1,7 +1,7 @@
 <ng-content select="[materializeModalHandler]"></ng-content>
 
 <div class="modal" [ngClass]="className" [class.active]="isOpen" #modal>
-  <div class="backdrop" #backdrop *ngIf="hasBackdrop"></div>
+  <div class="modal-backdrop" #backdrop *ngIf="hasBackdrop"></div>
   <div class="modal-content">
     <materialize-icon className="modal-icon-close"
       name="close"
