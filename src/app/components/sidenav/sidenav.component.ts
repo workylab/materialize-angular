@@ -9,6 +9,7 @@ interface defaultProps {
 
 @Component({
   selector: 'sidenav',
+  styleUrls: ['./sidenav.component.scss'],
   templateUrl: './sidenav.component.html'
 })
 export class SideNavComponent implements OnInit {
