@@ -1,0 +1,22 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+
+.form-label {
+  color: $color-gray-dark;
+  display: block;
+  font-size: $font-size-xs;
+  margin-bottom: $space-xs;
+  outline: none;
+}
+
+.form-float-label {
+  color: $color-gray-dark;
+  cursor: text;
+  font-size: $font-size-xs;
+  left: $space-sm;
+  position: absolute;
+  top: 18px;
+  transition: 250ms ease all;
+  z-index: $zindex-level-1;
+}
