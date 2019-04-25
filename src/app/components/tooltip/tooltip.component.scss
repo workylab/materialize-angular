@@ -1,0 +1,99 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/fonts.scss';
+@import '../../../styles/theme/metrics.scss';
+
+$tooltip-distance: $space-xs;
+
+.tooltip {
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tooltip-container {
+  background-color: $color-gray-darkest;
+  border-radius: 100px;
+  color: $color-white;
+  font-size: 12px;
+  font-weight: $font-weight-light;
+  opacity: 0;
+  padding: $space-xxs $space-sm;
+  position: absolute;
+  transition-duration: 250ms;
+  transition-property: opacity, visibility;
+  transition-timing-function: ease;
+  visibility: hidden;
+  z-index: -1;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: $zindex-level-1;
+  }
+
+  &.tooltip-position-bottom,
+  &.tooltip-position-top {
+    left: 50%;
+    transform: translateX(-50%);
+
+    &::before {
+      content: '';
+      height: $tooltip-distance;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &.tooltip-position-left,
+  &.tooltip-position-right {
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before {
+      bottom: 0;
+      content: '';
+      position: absolute;
+      top: 0;
+      width: $tooltip-distance;
+    }
+  }
+
+  &.tooltip-position-left {
+    margin-right: $tooltip-distance;
+    right: 100%;
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &.tooltip-position-right {
+    left: 100%;
+    margin-left: $tooltip-distance;
+
+    &::before {
+      right: 100%;
+    }
+  }
+
+  &.tooltip-position-bottom {
+    margin-top: $tooltip-distance;
+    top: 100%;
+
+    &::before {
+      bottom: 100%;
+    }
+  }
+
+  &.tooltip-position-top {
+    bottom: 100%;
+    margin-bottom: $tooltip-distance;
+
+    &::before {
+      top: 100%;
+    }
+  }
+}
