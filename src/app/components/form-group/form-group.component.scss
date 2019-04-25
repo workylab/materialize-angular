@@ -1,0 +1,25 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/metrics.scss';
+
+.form-group-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $space-xxl;
+}
+
+.form-group-icon-container {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+}
+
+.form-group-icon {
+  color: $color-gray-dark;
+}
+
+.form-group-field-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}

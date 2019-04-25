@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'materialize-form-group',
+  styleUrls: ['./form-group.component.scss'],
   templateUrl: './form-group.component.html'
 })
 export class FormGroupComponent implements OnInit {
