@@ -1,0 +1,37 @@
+@import '../../../styles/theme/colors.scss';
+@import '../../../styles/theme/metrics.scss';
+
+$range-slider-track-size: 6px;
+$range-slider-indicator-size: 20px;
+
+.range-slider-container {
+  padding: $space-sm;
+  width: 100%;
+
+  .range-slider-track {
+    background-color: $color-gray;
+    border-radius: $range-slider-track-size / 2;
+    height: $range-slider-track-size;
+    position: relative;
+    width: 100%;
+  }
+
+  .range-slider-fill {
+    background-color: $color-purple;
+    border-radius: $range-slider-track-size / 2;
+    height: $range-slider-track-size;
+    left: 0;
+    position: absolute;
+    width: 100px;
+  }
+
+  .range-slider-indicator {
+    background-color: $color-purple;
+    border: $border-md solid $color-white;
+    border-radius: $radius-full;
+    height: $range-slider-indicator-size;
+    position: absolute;
+    top: ($range-slider-track-size * 2) - $range-slider-indicator-size;
+    width: $range-slider-indicator-size;
+  }
+}
