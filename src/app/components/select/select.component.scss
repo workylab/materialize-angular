@@ -1,7 +1,11 @@
-.form-field-container.select-container {
+@import '../common/styles/colors.scss';
+@import '../common/styles/fonts.scss';
+@import '../common/styles/metrics.scss';
+
+.select-container {
   cursor: pointer;
 
-  .form-control-input {
+  .form-control {
     position: relative;
 
     &::before {
@@ -16,22 +20,16 @@
     }
   }
 
-  &.float-label {
-    .form-float-label {
-      cursor: pointer;
-    }
-
-    .form-control-input::before {
-      top: 22px;
-    }
+  &.float-label .form-float-label {
+    cursor: pointer;
   }
 
-  &.focused .form-control-input::before {
+  &.focused .form-control::before {
     transform: rotate(180deg);
   }
 
   &.error {
-    .form-control-input::before {
+    .form-control::before {
       border-top-color: $color-red;
     }
 
@@ -40,7 +38,7 @@
     }
   }
 
-  &.disabled .form-control-input::before {
+  &.disabled .form-control::before {
     border-bottom-color: $color-gray;
     border-top-color: $color-gray;
   }
@@ -61,21 +59,21 @@
   &.open {
     display: block;
   }
+}
 
-  .select-option {
-    color: $color-gray-dark;
-    font-size: $font-size-xs;
-    font-weight: $font-weight-light;
-    min-height: 46px;
-    outline: none;
-    padding: $space-md $space-sm;
+.select-muenu-option {
+  color: $color-gray-dark;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-light;
+  min-height: 46px;
+  outline: none;
+  padding: $space-md $space-sm;
 
-    &:hover {
-      background-color: $color-gray-light;
-    }
+  &:hover {
+    background-color: $color-gray-light;
+  }
 
-    &.active {
-      background-color: rgba($color-purple, 0.1);
-    }
+  &.active {
+    background-color: rgba($color-purple, 0.1);
   }
 }
