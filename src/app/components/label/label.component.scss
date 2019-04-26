@@ -9,21 +9,5 @@
   font-size: $font-size-xs;
   font-weight: $font-weight-regular;
   outline: none;
-
-  &:not(:empty):not(.form-float-label) {
-    padding: $space-xs $space-sm;
-  }
-}
-
-.form-float-label {
-  color: $color-gray-dark;
-  cursor: text;
-  font-family: $font-family-primary;
-  font-size: $font-size-xs;
-  font-weight: $font-weight-regular;
-  left: $space-sm;
-  position: absolute;
-  top: 18px;
-  transition: 250ms ease all;
-  z-index: $zindex-level-1;
+  padding: $space-xs $space-sm;
 }
