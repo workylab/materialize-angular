@@ -13,7 +13,7 @@
     (blur)="onBlur()"
     (focus)="onFocus()">
 
-    <materialize-label [isFloat]="true">{{ floatLabel }}</materialize-label>
+    <div class="form-control-float-label">{{ floatLabel }}</div>
 
     <div class="form-control-input">
       <span *ngFor="let item of value">{{ item.name }}</span>
