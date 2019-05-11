@@ -36,7 +36,7 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
     errorMessage: '',
     floatLabel: '',
     hasCounter: false,
-    id: '',
+    id: null,
     label: '',
     maxLength: 500,
     name: '',
@@ -64,7 +64,7 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
-  @Input('id') idInput: string;
+  @Input('id') idInput: string | null;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
   @Input('name') nameInput: string;
@@ -82,7 +82,7 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
   public errorMessage: string;
   public floatLabel: string;
   public hasCounter: boolean;
-  public id: string;
+  public id: string | null;
   public isTouched: boolean;
   public isFocused: boolean;
   public isValid: boolean;

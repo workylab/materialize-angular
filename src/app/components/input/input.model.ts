@@ -4,7 +4,7 @@ export interface InputModel {
   disabled: boolean;
   errorMessage: string;
   floatLabel: string;
-  id: string;
+  id: string | null;
   hasCounter: boolean;
   label: string;
   name: string;
