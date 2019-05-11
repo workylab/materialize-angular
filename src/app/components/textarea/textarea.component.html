@@ -1,51 +1,44 @@
+<materialize-label>{{ label }}</materialize-label>
 
-<div class="form-field-container"
+<div class="form-control-container"
+  tabindex="1"
+
+  (blur)="onBlur($event)"
+  (focus)="onFocus($event)"
+  
   [ngClass]="className"
   [class.float-label]="floatLabel"
   [class.active]="value || placeholder"
   [class.focused]="isFocused"
   [class.disabled]="disabled"
-  [class.error]="!isValid && isTouched">
+  [class.error]="!isValid && isTouched"
 
-  <materialize-label>{{ label }}</materialize-label>
+  #formControlWrapper>
 
-  <div class="form-control-wrapper"
-    tabindex="1"
+  <div class="form-control-wrapper">
+    <div class="form-control-float-label">{{ floatLabel }}</div>
 
-    (blur)="onBlur($event)"
-    (focus)="onFocus($event)"
-    
-    #formControlWrapper>
-    <div class="form-control-container">
-      <div class="form-control-float-label">{{ floatLabel }}</div>
+    <textarea class="form-control"
+      (input)="onChange($event)"
+      (blur)="onBlur($event)"
+      (focus)="onFocus($event)"
 
-      <textarea class="form-control-input"
-        (input)="onChange($event)"
-        (blur)="onBlur($event)"
-        (focus)="onFocus($event)"
+      [disabled]="disabled"
+      [id]="id"
+      [maxLength]="maxLength"
+      [minLength]="minLength"
+      [name]="name"
+      [placeholder]="placeholder"
+      [required]="required"
+      [rows]="rows"
+      [value]="value"
 
-        [disabled]="disabled"
-        [id]="id"
-        [maxLength]="maxLength"
-        [minLength]="minLength"
-        [name]="name"
-        [placeholder]="placeholder"
-        [required]="required"
-        [rows]="rows"
-        [value]="value"
+      #textArea>
+    </textarea>
 
-        #textArea>
-      </textarea>
-
-      <materialize-icon className="icon-error"
-        name="error"
-        size="lg"
-        *ngIf="!isValid && isTouched">
-      </materialize-icon>
-    </div>
+    <materialize-icon className="icon-error" name="error" size="lg" *ngIf="!isValid && isTouched"></materialize-icon>
   </div>
-
-  <div class="form-message-counter" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</div>
-
-  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>
+
+<materialize-form-message type="info" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</materialize-form-message>
+<materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
