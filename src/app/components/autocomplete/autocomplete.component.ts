@@ -23,7 +23,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     errorMessage: 'The value does not match with any option',
     floatLabel: '',
     hasCounter: false,
-    id: '',
+    id: null,
     isMatchValue: false,
     label: '',
     maxLength: 500,
@@ -45,7 +45,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
-  @Input('id') idInput: string;
+  @Input('id') idInput: string | null;
   @Input('isMatchValue') isMatchValueInput: boolean;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
@@ -61,7 +61,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   public errorMessage: string;
   public floatLabel: string;
   public hasCounter: boolean;
-  public id: string;
+  public id: string | null;
   public isFocused: boolean;
   public isMatchValue: boolean;
   public isTouched: boolean;

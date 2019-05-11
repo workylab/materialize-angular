@@ -1,6 +1,16 @@
-@import '../common/styles/colors.scss';
-@import '../common/styles/fonts.scss';
-@import '../common/styles/metrics.scss';
+@import '../common/styles/forms.scss';
+
+.form-control {
+  @extend %form-control-base;
+}
+
+.form-control-wrapper {
+  @extend %form-control-wrapper-base;
+}
+
+.form-control-container {
+  @extend %form-control-container-base;
+}
 
 .select-container {
   cursor: pointer;
