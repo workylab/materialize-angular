@@ -1,24 +1,45 @@
-# MaterializeAngular
+# Materialize Angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+## Install
+npm install materialize-angular
 
-## Code scaffolding
+## Add to angular project
+angular.json -> 
+  {
+    ...
+    "projects": {
+      [your-project-name]: {
+        ...
+        "architect": {
+          ...
+          "build": {
+            ...
+            "options": {
+              ...
+              "assets": [
+                ...
+                {
+                  "glob": "**/*",
+                  "input": "./node_modules/materialize-angular/fonts/assets",
+                  "output": "src/assets/fonts/"
+                }
+                ...
+              ]
+              ...
+            }
+            ...
+          }
+          ...
+        }
+        ...
+      }
+    }
+    ...
+  }
 
-Run `ng generate component component-name --project materialize-angular` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project materialize-angular`.
-> Note: Don't forget to add `--project materialize-angular` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+## Add Styles
+styles.scss -> 
 
-Run `ng build materialize-angular` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build materialize-angular`, go to the dist folder `cd dist/materialize-angular` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test materialize-angular` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+$materialize-fonts-path: '../node_modules/materialize-angular/fonts/assets';
+@import 'materialize-angular/styles/materialize-angular.scss';
