@@ -1,9 +1,9 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { ComponentsModule } from './components/components.module';
 import { ContactsComponent } from './modules/contacts/contacts.component';
 import { HomeComponent } from './modules/home/home.component';
+import { MaterializeComponentsModule } from './components/components.module';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { NgModule } from '@angular/core';
     HomeComponent
   ],
   imports: [
-	  BrowserModule,
     AppRoutingModule,
-    ComponentsModule
+	  BrowserModule,
+    MaterializeComponentsModule
   ]
 })
 
