@@ -1,4 +1,7 @@
+$materialize-fonts-path: './../fonts' !default;
+
 @import './reset';
+@import './fonts';
 
 @import '../app/components/common/styles/colors';
 @import '../app/components/common/styles/metrics';
