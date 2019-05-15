@@ -33,6 +33,7 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
   @ContentChild(ModalHandlerDirective) modalHandler: ModalHandlerDirective;
 
   @ViewChild('modal') modalRef: ElementRef;
+  @ViewChild('modalContent') modalContentRef: ElementRef;
   @ViewChild('backdrop') backdropRef: ElementRef;
 
   @Input('className') classNameInput: string;

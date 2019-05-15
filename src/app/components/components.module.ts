@@ -125,4 +125,4 @@ import { TooltipComponent } from './tooltip/tooltip.component';
   ],
   imports: [CommonModule]
 })
-export class ComponentsModule {}
+export class MaterializeComponentsModule {}

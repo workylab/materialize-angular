@@ -1,5 +1,4 @@
 @import '../common/styles/colors.scss';
-@import '../common/styles/fonts.scss';
 @import '../common/styles/metrics.scss';
 
 .modal {
@@ -31,7 +30,10 @@
   background-color: $color-white;
   border-radius: $radius-sm;
   box-shadow: $shadow-lg;
+  max-height: calc(100% - #{ $space-xxxl });
+  max-width: calc(100% - #{ $space-xxxl });
   opacity: 0;
+  overflow: scroll;
   padding: $space-xxl;
   position: relative;
   transform: scale(0.9);
@@ -40,7 +42,7 @@
   z-index: $zindex-level-1;
 }
 
-.modal-icon-close {
+::ng-deep .modal-icon-close {
   position: absolute;
   right: $space-xxs;
   top: $space-xxs;

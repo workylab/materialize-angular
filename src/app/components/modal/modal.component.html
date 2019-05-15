@@ -2,7 +2,7 @@
 
 <div class="modal" [ngClass]="className" [class.active]="isOpen" #modal>
   <div class="modal-backdrop" #backdrop *ngIf="hasBackdrop"></div>
-  <div class="modal-content">
+  <div class="modal-content" #modalContent>
     <materialize-icon className="modal-icon-close"
       name="close"
       size="xl"
