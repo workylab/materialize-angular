@@ -1,21 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, OnInit, QueryList } from '@angular/core';
 import { AccordionModel } from './accordion.model';
-import { CollapsibleModel } from '../collapsible/collapsible.model';
+import { CollapsibleComponent } from '../collapsible/collapsible.component';
 
 @Component({
   selector: 'materialize-accordion',
   templateUrl: './accordion.component.html'
 })
-export class AccordionComponent implements AccordionModel, OnInit {
-  static readonly defaultProps: AccordionModel = {
-    className: '',
-    items: []
-  };
+export class AccordionComponent implements AccordionModel, AfterContentInit, OnInit {
+  static readonly defaultProps: AccordionModel = { className: '' };
 
-  @Input('items') itemsInput: Array<CollapsibleModel>;
+  @ContentChildren(CollapsibleComponent) collapsibles: QueryList<CollapsibleComponent>;
 
   public className: string;
-  public items: Array<CollapsibleModel>;
   public activeIndex: number;
 
   ngOnInit() {
@@ -25,16 +21,29 @@ export class AccordionComponent implements AccordionModel, OnInit {
   initValues() {
     const { defaultProps } = AccordionComponent;
 
-    this.items = this.itemsInput || defaultProps.items;
     this.className = this.className || defaultProps.className;
   }
 
-  onClick(isOpen: boolean, index: number) {
-    for (let i = 0; i < this.items.length; i++) {
+  ngAfterContentInit() {
+    const collapsibles: Array<CollapsibleComponent> = this.collapsibles.toArray();
+
+    for (let i = 0; i < collapsibles.length; i++) {
+      const currentCollapsible = collapsibles[i];
+
+      currentCollapsible.onClickEventEmitter.subscribe((isOpen: boolean) => {
+        this.toggleCollapsibles(i, isOpen);
+      });
+    }
+  }
+
+  toggleCollapsibles(index: number, isOpen: boolean) {
+    const collapsibles = this.collapsibles.toArray();
+
+    for (let i = 0; i < collapsibles.length; i++) {
       if (i === index) {
-        this.items[i].isOpen = isOpen;
+        collapsibles[i].toggleCollapsible(isOpen);
       } else {
-        this.items[i].isOpen = false;
+        collapsibles[i].toggleCollapsible(false);
       }
     }
   }
