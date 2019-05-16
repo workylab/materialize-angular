@@ -12,6 +12,8 @@ export * from './app/components/calendar/calendar.component';
 export * from './app/components/checkbox/checkbox.component';
 export * from './app/components/checkbox-list/checkbox-list.component';
 export * from './app/components/collapsible/collapsible.component';
+export * from './app/components/collapsible-content/collapsible-content.component';
+export * from './app/components/collapsible-title/collapsible-title.component';
 export * from './app/components/datepicker/datepicker.component';
 export * from './app/components/dropdown/dropdown.component';
 export * from './app/components/form/form.component';
