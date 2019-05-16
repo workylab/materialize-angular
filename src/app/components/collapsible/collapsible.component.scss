@@ -1,11 +1,9 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
 
-.collapsible-container {
-  &.open .collapsible-title-container::after {
-    top: $space-lg;
-    transform: rotate(225deg);
-  }
+.open .collapsible-title-container::after {
+  top: $space-lg;
+  transform: rotate(225deg);
 }
 
 .collapsible-title-container {
@@ -32,10 +30,6 @@
   &:hover {
     background-color: $color-gray-light;
   }
-}
-
-.collapsible-icon {
-  margin-right: $space-sm;
 }
 
 .collapsible-content-container {

@@ -10,8 +10,6 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 export class CollapsibleComponent implements CollapsibleModel, OnInit {
   static readonly defaultProps: CollapsibleModel = {
     className: '',
-    content: '',
-    iconName: '',
     isOpen: false,
     title: ''
   };
@@ -19,14 +17,10 @@ export class CollapsibleComponent implements CollapsibleModel, OnInit {
   @Output('onClick') onClickEventEmitter: EventEmitter<boolean>;
 
   @Input('className') classNameInput: string;
-  @Input('content') contentInput: string;
-  @Input('iconName') iconNameInput: string;
   @Input('title') titleInput: string;
   @Input('isOpen') isOpenInput: boolean;
 
   public className: string;
-  public content: string;
-  public iconName: string;
   public isOpen: boolean;
   public title: string;
 
@@ -45,8 +39,7 @@ export class CollapsibleComponent implements CollapsibleModel, OnInit {
     const { isOpenInput } = changes;
 
     if (isOpenInput && isOpenInput.currentValue !== isOpenInput.previousValue) {
-      this.isOpen = isOpenInput.currentValue;
-      this.toggleCollapsible(this.isOpen);
+      this.toggleCollapsible(isOpenInput.currentValue);
     }
   }
 
@@ -54,26 +47,24 @@ export class CollapsibleComponent implements CollapsibleModel, OnInit {
     const { defaultProps } = CollapsibleComponent;
 
     this.className = this.classNameInput || defaultProps.className;
-    this.content = this.contentInput || defaultProps.content;
-    this.iconName = this.iconNameInput || defaultProps.iconName;
     this.isOpen = getBooleanValue(this.isOpenInput, defaultProps.isOpen);
     this.title = this.titleInput || defaultProps.title;
   }
 
   onResizeWindow() {
     if (this.isOpen) {
-      this.toggleCollapsible(this.isOpen);
+      this.toggleCollapsible(true);
     }
   }
 
   onToggle() {
-    this.isOpen = !this.isOpen;
-
-    this.toggleCollapsible(this.isOpen);
+    this.toggleCollapsible(!this.isOpen);
     this.onClickEventEmitter.emit(this.isOpen);
   }
 
   toggleCollapsible(isOpen: boolean) {
+    this.isOpen = isOpen;
+
     const { children } = this.element.nativeElement.firstChild;
     const contentContainer: HTMLElement = children[children.length - 1];
 

@@ -1,16 +1,11 @@
-<div class="collapsible-container"
-  [ngClass]="className"
-  [class.open]="isOpen">
+<div class="collapsible-container" [ngClass]="className" [class.open]="isOpen">
   <div class="collapsible-title-container" (click)="onToggle()">
-    <materialize-icon
-      className="collapsible-icon"
-      size="sm"
-      *ngIf="iconName"
-      [name]="iconName">
-    </materialize-icon>
-    <span>{{ title }}</span>
+    <ng-content select="materialize-collapsible-title"></ng-content>
   </div>
+
   <div class="collapsible-content-container">
-    <div class="collapsible-content">{{ content }}</div>
+    <div class="collapsible-content">
+      <ng-content select="materialize-collapsible-content"></ng-content>
+    </div>
   </div>
 </div>
