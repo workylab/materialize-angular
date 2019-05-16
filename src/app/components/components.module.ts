@@ -6,6 +6,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CheckboxListComponent } from './checkbox-list/checkbox-list.component';
 import { CollapsibleComponent } from './collapsible/collapsible.component';
+import { CollapsibleContentComponent } from './collapsible-content/collapsible-content.component';
+import { CollapsibleTitleComponent } from './collapsible-title/collapsible-title.component';
 import { CommonModule } from '@angular/common';
 import { DatePickerComponent } from './datepicker/datepicker.component';
 import { DivTreeComponent } from './div-tree/div-tree.component';
@@ -50,6 +52,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     CheckboxComponent,
     CheckboxListComponent,
     CollapsibleComponent,
+    CollapsibleContentComponent,
+    CollapsibleTitleComponent,
     DatePickerComponent,
     DivTreeComponent,
     DropdownComponent,
@@ -91,6 +95,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     CheckboxComponent,
     CheckboxListComponent,
     CollapsibleComponent,
+    CollapsibleContentComponent,
+    CollapsibleTitleComponent,
     DatePickerComponent,
     DivTreeComponent,
     DropdownComponent,

@@ -5,6 +5,7 @@ $range-slider-track-size: 6px;
 $range-slider-indicator-size: 20px;
 
 .range-slider-container {
+  box-sizing: border-box;
   padding: $space-sm;
   width: 100%;
 

@@ -24,8 +24,8 @@
   >
   </materialize-input>
 
-  <div class="select-menu" [class.open]="isFocused">
-    <div class="select-option"
+  <div class="autocomplete-options-container" [class.open]="isFocused">
+    <div class="autocomplete-option"
       *ngFor="let option of options"
       [class.active]="value === option.content"
       (click)="selectOption(option.content)"

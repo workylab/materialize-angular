@@ -130,7 +130,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   onInputBlur(event: any) {
     const { relatedTarget } = event;
 
-    if (!relatedTarget || relatedTarget.className !== 'select-option') {
+    if (!relatedTarget || relatedTarget.className !== 'autocomplete-option') {
       this.closeMenu();
 
       this.isValid = this.validate(this.value, this.required);

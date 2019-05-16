@@ -86,7 +86,7 @@
   position: relative;
   width: 100%;
 
-  .icon-error {
+  ::ng-deep .icon-error {
     color: $color-red;
     position: absolute;
     right: $space-sm;
@@ -99,6 +99,7 @@
 %form-control-base {
   background-color: transparent;
   border: 0;
+  box-sizing: border-box;
   color: $color-black;
   font-family: $font-family-primary;
   font-size: $font-size-xs;
