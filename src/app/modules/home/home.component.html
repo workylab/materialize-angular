@@ -353,11 +353,14 @@
 <br />
 
 <h3>Collapsible</h3>
-<materialize-collapsible
-  iconName="people"
-  title="Title"
-  content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa"
->
+<materialize-collapsible>
+  <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+  <materialize-collapsible-content>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Aliquam minima soluta enim porro atque placeat quis commodi
+    deserunt veniam libero molestiae doloremque eveniet incidunt,
+    odit expedita cupiditate est tenetur reprehenderit.
+  </materialize-collapsible-content>
 </materialize-collapsible>
 
 <br />
@@ -365,13 +368,27 @@
 <br />
 
 <h3>Accordion</h3>
-
-<materialize-accordion [items]="[
-  { iconName: 'people', title: 'Title', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa' },
-  { iconName: 'people', title: 'Title', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa' },
-  { iconName: 'people', title: 'Title', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa' }
-]">
+<materialize-accordion>
+  <materialize-collapsible>
+    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+    <materialize-collapsible-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Aliquam minima soluta enim porro atque placeat quis commodi
+      deserunt veniam libero molestiae doloremque eveniet incidunt,
+      odit expedita cupiditate est tenetur reprehenderit.
+    </materialize-collapsible-content>
+  </materialize-collapsible>
+  <materialize-collapsible>
+    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+    <materialize-collapsible-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Aliquam minima soluta enim porro atque placeat quis commodi
+      deserunt veniam libero molestiae doloremque eveniet incidunt,
+      odit expedita cupiditate est tenetur reprehenderit.
+    </materialize-collapsible-content>
+  </materialize-collapsible>
 </materialize-accordion>
+
 <br />
 <br />
 <br />
