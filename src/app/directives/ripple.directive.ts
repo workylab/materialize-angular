@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 interface Coordinate {
   x: number;
@@ -8,16 +8,23 @@ interface Coordinate {
 @Directive({
   selector: '[materializeRipple]'
 })
-export class RippleDirective {
+export class RippleDirective implements OnInit {
+  @Input() rippleDuration = 500;
+  @Input() isRippleActive = true;
+
   private element: HTMLElement;
-  private duration = 500;
 
   constructor(private elementRef: ElementRef) {
     this.createRipple = this.createRipple.bind(this);
 
     this.element = this.elementRef.nativeElement;
     this.element.classList.add('ripple-element');
-    this.element.addEventListener('mousedown', this.createRipple);
+  }
+
+  ngOnInit() {
+    if (this.isRippleActive) {
+      this.element.addEventListener('mousedown', this.createRipple);
+    }
   }
 
   createRipple(event: any): void {
@@ -57,7 +64,7 @@ export class RippleDirective {
 
   scaleRipple(ripple: HTMLElement): void {
     setTimeout(() => {
-      ripple.style.transitionDuration = `${ this.duration }ms`;
+      ripple.style.transitionDuration = `${ this.rippleDuration }ms`;
       ripple.style.transform = 'scale(1)';
 
       this.hideRipple(ripple);
@@ -72,7 +79,7 @@ export class RippleDirective {
       ripple.style.opacity = '0';
 
       this.removeRipple(ripple, timeToHide);
-    }, this.duration);
+    }, this.rippleDuration);
   }
 
   removeRipple(ripple: HTMLElement, time: number): void {
