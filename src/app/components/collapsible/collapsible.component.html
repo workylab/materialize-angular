@@ -1,5 +1,5 @@
 <div class="collapsible-container" [ngClass]="className" [class.open]="isOpen">
-  <div class="collapsible-title-container" (click)="onToggle()">
+  <div class="collapsible-title-container" (click)="onToggle()" materializeRipple>
     <ng-content select="materialize-collapsible-title"></ng-content>
   </div>
 

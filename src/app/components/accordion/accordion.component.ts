@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChildren, OnInit, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, Input, OnInit, QueryList } from '@angular/core';
 import { AccordionModel } from './accordion.model';
 import { CollapsibleComponent } from '../collapsible/collapsible.component';
 
@@ -11,6 +11,8 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
 
   @ContentChildren(CollapsibleComponent) collapsibles: QueryList<CollapsibleComponent>;
 
+  @Input('className') classNameInput: string;
+
   public className: string;
   public activeIndex: number;
 
@@ -21,7 +23,7 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
   initValues() {
     const { defaultProps } = AccordionComponent;
 
-    this.className = this.className || defaultProps.className;
+    this.className = this.classNameInput || defaultProps.className;
   }
 
   ngAfterContentInit() {

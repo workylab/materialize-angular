@@ -8,6 +8,7 @@
 
 .collapsible-title-container {
   align-items: center;
+  background-color: $color-white;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -26,13 +27,10 @@
     transition: transform 250ms ease;
     width: 10px;
   }
-
-  &:hover {
-    background-color: $color-gray-light;
-  }
 }
 
 .collapsible-content-container {
+  background-color: $color-white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 250ms ease;
@@ -40,5 +38,5 @@
 
 .collapsible-content {
   overflow: visible;
-  padding: $space-sm;
+  padding: $space-md;
 }
