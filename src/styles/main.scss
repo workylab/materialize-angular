@@ -1,40 +1,8 @@
+$materialize-fonts-path: './../fonts' !default;
+
 @import './reset';
+@import './fonts';
 
-@import './animations/grow-element';
-
-@import './theme/colors';
-@import './theme/fonts';
-@import './theme/metrics';
-@import './theme/shadows';
-
-@import './partials/body';
-
-@import './components/backdrop';
-@import './components/buttons';
-@import './components/button-toggles';
-@import './components/calendars';
-@import './components/collapsibles';
-@import './components/date-picker';
-@import './components/dropdowns';
-@import './components/fonts';
-@import './components/form-autocompletes';
-@import './components/form-checkboxes';
-@import './components/form-checkboxes-lists';
-@import './components/form-errors';
-@import './components/form-file';
-@import './components/form-groups';
-@import './components/form-labels';
-@import './components/form-messages';
-@import './components/form-radios';
-@import './components/form-selects';
-@import './components/form-switches';
-@import './components/forms';
-@import './components/icons';
-@import './components/modal';
-@import './components/navbars';
-@import './components/ripple';
-@import './components/sidenavs';
-@import './components/swiper';
-@import './components/tabs';
-@import './components/tables';
-@import './components/tooltips';
+@import '../app/components/common/styles/colors';
+@import '../app/components/common/styles/metrics';
+@import '../app/components/common/styles/ripple';

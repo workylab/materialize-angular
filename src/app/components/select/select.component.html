@@ -1,4 +1,6 @@
-<div class="form-field-container select-container"
+<materialize-label>{{ label }}</materialize-label>
+
+<div class="form-control-container"
   tabindex="0"
 
   (focus)="openMenu()"
@@ -12,20 +14,12 @@
   [class.float-label]="floatLabel"
   [class.error]="!isValid && isTouched">
 
-  <label class="form-label" *ngIf="label">{{ label }}</label>
-
   <div class="form-control-wrapper">
-    <span class="form-float-label" *ngIf="floatLabel">{{ floatLabel }}</span>
+    <div class="form-control-float-label">{{ floatLabel }}</div>
 
-    <div class="form-control-container">
-      <div class="form-control-input" [id]="id">{{ selectedOption ? selectedOption.content : '' }}</div>
+    <div class="form-control" [id]="id">{{ selectedOption ? selectedOption.content : '' }}</div>
 
-      <materialize-icon className="form-icon-error"
-        name="error"
-        size="lg"
-        *ngIf="!isValid && isTouched">
-      </materialize-icon>
-    </div>
+    <materialize-icon className="icon-error" name="error" size="lg" *ngIf="!isValid && isTouched"></materialize-icon>
   </div>
 
   <div class="select-menu" [class.open]="isFocused">
@@ -34,7 +28,7 @@
     </div>
   </div>
 
-  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>
 
   <!-- <select

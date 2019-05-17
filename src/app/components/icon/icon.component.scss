@@ -1,0 +1,54 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
+
+$icons-circle-color: $color-white;
+$icons-circle-bg-color: $color-black;
+
+.icon {
+  display: flex;
+  font-family: $font-family-icons;
+  outline: none;
+  text-transform: lowercase;
+}
+
+.icon-circle {
+  background-color: $icons-circle-bg-color;
+  border-radius: 50%;
+  color: $color-white;
+  display: inline-block;
+  padding: $space-xxxs;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    color: $icons-circle-color;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.icon-pointer {
+  cursor: pointer;
+}
+
+.icon-xl {
+  font-size: $icon-xl;
+}
+
+.icon-lg {
+  font-size: $icon-lg;
+}
+
+.icon-md {
+  font-size: $icon-md;
+}
+
+.icon-sm {
+  font-size: $icon-sm;
+}
+
+.icon-xs {
+  font-size: $icon-xs;
+}

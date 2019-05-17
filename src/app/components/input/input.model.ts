@@ -4,7 +4,7 @@ export interface InputModel {
   disabled: boolean;
   errorMessage: string;
   floatLabel: string;
-  id: string;
+  id: string | null;
   hasCounter: boolean;
   label: string;
   name: string;
@@ -12,7 +12,6 @@ export interface InputModel {
   patternName: string;
   placeholder: string;
   required: boolean;
-  textAlign: 'left' | 'right';
   type: string;
   validateOnBlur: boolean;
   validateOnChange: boolean;

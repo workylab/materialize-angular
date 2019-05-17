@@ -41,5 +41,5 @@ angular.json ->
 ## Add Styles
 styles.scss -> 
 
-  $fonts-path: '../node_modules/materialize-angular/fonts/assets';
-  @import 'materialize-angular/styles/materialize-angular.scss';
+$materialize-fonts-path: '../node_modules/materialize-angular/fonts/assets';
+@import 'materialize-angular/styles/materialize-angular.scss';

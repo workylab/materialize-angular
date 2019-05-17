@@ -1,0 +1,129 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
+
+.form-switch-container {
+  display: flex;
+  flex-direction: row;
+  padding: $space-sm 0;
+  position: relative;
+
+  input[type='checkbox'] {
+    display: none;
+  }
+}
+
+.form-switch-label-container {
+  align-items: center;
+  color: $color-black;
+  display: flex;
+  flex: 1;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+}
+
+.form-switch-control-container {
+  padding: 0 $space-sm;
+}
+
+.form-switch-indicator {
+  background: $color-white;
+  border-radius: $radius-full;
+  box-shadow: $shadow-sm;
+  height: 20px;
+  left: 0;
+  margin-top: -3px;
+  outline: none;
+  position: absolute;
+  top: 0;
+  transition: left 150ms ease-in;
+  width: 20px;
+}
+
+.form-switch-indicator-ripple {
+  border-radius: $radius-full;
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 300ms ease;
+  width: 40px;
+  z-index: $zindex-level-1;
+}
+
+.form-switch-control {
+  background-color: lighten($color-gray-dark, 30%);
+  border-radius: 100px;
+  cursor: pointer;
+  height: 14px;
+  outline: none;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  width: 34px;
+}
+
+.form-switch-control:hover:not(.disabled) {
+  &.active .form-switch-indicator-ripple {
+    background-color: rgba($color-purple, 0.1);
+  }
+
+  .form-switch-indicator-ripple {
+    background-color: rgba($color-gray-dark, 0.1);
+  }
+}
+
+.form-switch-control.active {
+  background-color: lighten($color-purple, 30%);
+
+  .form-switch-indicator {
+    background-color: $color-purple;
+    left: 14px;
+  }
+
+  .form-switch-indicator-ripple ::ng-deep .ripple {
+    background-color: rgba($color-purple, 0.3);
+  }
+}
+
+.form-switch-control.focused:not(.disabled) {
+  &.active .form-switch-indicator-ripple {
+    background-color: rgba($color-purple, 0.3);
+  }
+
+  .form-switch-indicator-ripple {
+    background-color: rgba($color-gray-dark, 0.3);
+  }
+}
+
+.form-switch-control.disabled {
+  background-color: $color-gray-light;
+  cursor: not-allowed;
+
+  &.active {
+    background-color: lighten($color-purple, 40%);
+
+    .form-switch-indicator {
+      background-color: lighten($color-purple, 40%);
+    }
+  }
+
+  .form-switch-indicator {
+    background-color: $color-gray-light;
+  }
+}
+
+:host.ng-touched.ng-dirty.ng-invalid .form-switch-control {
+  background-color: lighten($color-red, 40%);
+
+  &:hover .form-switch-indicator-ripple {
+    background-color: rgba($color-red, 0.1);
+  }
+
+  .form-switch-indicator {
+    background-color: $color-red;
+  }
+
+  .form-switch-indicator-ripple ::ng-deep .ripple {
+    background-color: rgba($color-red, 0.3);
+  }
+}

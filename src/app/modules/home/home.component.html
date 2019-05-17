@@ -1,3 +1,5 @@
+<materialize-range-slider></materialize-range-slider>
+
 <materialize-input></materialize-input>
 <materialize-input label="Label"></materialize-input>
 <materialize-input label="Type password" type="password"></materialize-input>
@@ -77,13 +79,12 @@
 <br />
 <br />
 
-<materialize-switch></materialize-switch>
-<materialize-switch label="Label"></materialize-switch>
-<materialize-switch label="With Id" id="switch-id"></materialize-switch>
-<materialize-switch label="With Value" [value]="true"></materialize-switch>
-<materialize-switch label="Disabled" [disabled]="true"></materialize-switch>
-<materialize-switch label="Disabled with value" [disabled]="true" [value]="true"></materialize-switch>
-<materialize-switch label="Required" [required]="true"></materialize-switch>
+<materialize-switch>Switch</materialize-switch>
+<materialize-switch id="switch-id">With Id</materialize-switch>
+<materialize-switch [value]="true">With Value</materialize-switch>
+<materialize-switch [disabled]="true">Disabled</materialize-switch>
+<materialize-switch [disabled]="true" [value]="true">Disabled with value</materialize-switch>
+<materialize-switch [required]="true">Required</materialize-switch>
 
 <br />
 <br />
@@ -161,35 +162,45 @@
 <h3>Ripple</h3>
 <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
 
+<h3>Modal</h3>
+<materialize-modal>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
+  </div>
+</materialize-modal>
+
+<h3>Modal</h3>
+<materialize-modal [isOpen]="true">
+</materialize-modal>
+
 <h3>Modal Default</h3>
 <materialize-modal>
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
-  </div>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>Modal</div>
 </materialize-modal>
 
 <h3>Modal not close on backdrop</h3>
 <materialize-modal [dismissOnBackdrop]="false">
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
   </div>
 </materialize-modal>
 
 <h3>Modal without backdrop</h3>
 <materialize-modal [hasBackdrop]="false">
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
   </div>
 </materialize-modal>
 
 <h3>Modal without close button</h3>
 <materialize-modal [hasCloseButton]="false">
-  <materialize-icon name="loupe" size="xl" modalHandler></materialize-icon>
-  <div modalContent>
-    <materialize-button modalClose text="close modal"></materialize-button>
+  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
+  <div materializeModalContent>
+    <materialize-button materializeModalClose text="close modal"></materialize-button>
   </div>
 </materialize-modal>
 
@@ -341,11 +352,14 @@
 <br />
 
 <h3>Collapsible</h3>
-<materialize-collapsible
-  iconName="people"
-  title="Title"
-  content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa"
->
+<materialize-collapsible>
+  <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+  <materialize-collapsible-content>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Aliquam minima soluta enim porro atque placeat quis commodi
+    deserunt veniam libero molestiae doloremque eveniet incidunt,
+    odit expedita cupiditate est tenetur reprehenderit.
+  </materialize-collapsible-content>
 </materialize-collapsible>
 
 <br />
@@ -353,13 +367,27 @@
 <br />
 
 <h3>Accordion</h3>
-
-<materialize-accordion [items]="[
-  { iconName: 'people', title: 'Title', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa' },
-  { iconName: 'people', title: 'Title', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa' },
-  { iconName: 'people', title: 'Title', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto sapiente ea fuga tempore dolor odio recusandae sit, beatae culpa debitis, voluptas reprehenderit ex. Nulla iusto magnam ipsum, obcaecati delectus ipsa' }
-]">
+<materialize-accordion>
+  <materialize-collapsible>
+    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+    <materialize-collapsible-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Aliquam minima soluta enim porro atque placeat quis commodi
+      deserunt veniam libero molestiae doloremque eveniet incidunt,
+      odit expedita cupiditate est tenetur reprehenderit.
+    </materialize-collapsible-content>
+  </materialize-collapsible>
+  <materialize-collapsible>
+    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+    <materialize-collapsible-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Aliquam minima soluta enim porro atque placeat quis commodi
+      deserunt veniam libero molestiae doloremque eveniet incidunt,
+      odit expedita cupiditate est tenetur reprehenderit.
+    </materialize-collapsible-content>
+  </materialize-collapsible>
 </materialize-accordion>
+
 <br />
 <br />
 <br />
@@ -481,7 +509,6 @@
     5
   </materialize-swiper-item>
 </materialize-swiper>
-
 
 <!-- <div-tree [classNames]="['row', 'col', 'row2', 'col2']">
   <h3>Div Tree</h3>

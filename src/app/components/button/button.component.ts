@@ -4,6 +4,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   selector: 'materialize-button',
+  styleUrls: ['./button.component.scss'],
   templateUrl: './button.component.html'
 })
 export class ButtonComponent implements ButtonModel, OnInit {

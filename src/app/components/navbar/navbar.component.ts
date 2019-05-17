@@ -11,6 +11,7 @@ interface defaultProps {
 
 @Component({
   selector: 'materialize-navbar',
+  styleUrls: ['./navbar.component.scss'],
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {

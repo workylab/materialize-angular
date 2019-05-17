@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'materialize-swiper-item',
+  styleUrls: ['./swiper-item.component.scss'],
   templateUrl: './swiper-item.component.html'
 })
 export class SwiperItemComponent implements OnInit {

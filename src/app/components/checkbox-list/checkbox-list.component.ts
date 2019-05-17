@@ -11,6 +11,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => CheckboxListComponent)
   }],
   selector: 'materialize-checkbox-list',
+  styleUrls: ['./checkbox-list.component.scss'],
   templateUrl: './checkbox-list.component.html'
 })
 export class CheckboxListComponent extends FormFieldAbstract implements OnInit {

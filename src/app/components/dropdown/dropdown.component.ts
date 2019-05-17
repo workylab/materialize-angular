@@ -3,6 +3,7 @@ import { DropdownItemModel, DropdownModel } from './dropdown.model';
 
 @Component({
   selector: 'materialize-dropdown',
+  styleUrls: ['./dropdown.component.scss'],
   templateUrl: './dropdown.component.html'
 })
 export class DropdownComponent implements OnInit {

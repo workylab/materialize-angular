@@ -10,6 +10,7 @@ import { TextAreaModel } from './textarea.model';
     useExisting: forwardRef(() => TextAreaComponent)
   }],
   selector: 'materialize-textarea',
+  styleUrls: ['./textarea.component.scss'],
   templateUrl: './textarea.component.html'
 })
 export class TextAreaComponent extends FormFieldAbstract implements OnInit {

@@ -16,6 +16,7 @@ import { ModalModel } from './modal.model';
 
 @Component({
   selector: 'materialize-modal',
+  styleUrls: ['./modal.component.scss'],
   templateUrl: './modal.component.html'
 })
 export class ModalComponent implements AfterContentChecked, AfterViewInit, ModalModel, OnDestroy {
@@ -24,19 +25,22 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
     dismissOnBackdrop: true,
     hasBackdrop: true,
     hasCloseButton: true,
+    isOpen: false,
     transitionDuration: 400
   };
 
-  @ContentChild(ModalContentDirective) modalContentChild: ModalContentDirective;
-  @ContentChild(ModalHandlerDirective) modalHandlerChild: ModalHandlerDirective;
+  @ContentChild(ModalContentDirective) modalContent: ModalContentDirective;
+  @ContentChild(ModalHandlerDirective) modalHandler: ModalHandlerDirective;
 
   @ViewChild('modal') modalRef: ElementRef;
+  @ViewChild('modalContent') modalContentRef: ElementRef;
   @ViewChild('backdrop') backdropRef: ElementRef;
 
   @Input('className') classNameInput: string;
   @Input('dismissOnBackdrop') dismissOnBackdropInput: boolean;
   @Input('hasBackdrop') hasBackdropInput: boolean;
   @Input('hasCloseButton') hasCloseButtonInput: boolean;
+  @Input('isOpen') isOpenInput: boolean;
   @Input('transitionDuration') transitionDurationInput: number;
 
   public closeElements: Array<ModalCloseDirective>;
@@ -45,12 +49,15 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
   public dismissOnBackdrop: boolean;
   public hasBackdrop: boolean;
   public hasCloseButton: boolean;
+  public isOpen: boolean;
   public transitionDuration: number;
 
   constructor() {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.closeByBackdrop = this.closeByBackdrop.bind(this);
+
+    this.closeElements = [];
   }
 
   ngOnInit() {
@@ -64,9 +71,13 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
   }
 
   ngAfterContentChecked() {
-    this.closeElements = this.modalContentChild.closeItems.toArray();
+    if (this.modalHandler) {
+      this.modalHandler.elementRef.nativeElement.addEventListener('click', this.open);
+    }
 
-    this.modalHandlerChild.elementRef.nativeElement.addEventListener('click', this.open);
+    if (this.modalContent) {
+      this.closeElements = this.modalContent.closeItems.toArray();
+    }
 
     for (const item of this.closeElements) {
       item.elementRef.nativeElement.addEventListener('click', this.close);
@@ -74,7 +85,9 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
   }
 
   ngOnDestroy() {
-    this.modalHandlerChild.elementRef.nativeElement.removeEventListener('click', this.close);
+    if (this.modalHandler) {
+      this.modalHandler.elementRef.nativeElement.removeEventListener('click', this.close);
+    }
 
     if (this.hasBackdrop && this.dismissOnBackdrop) {
       this.backdropRef.nativeElement.removeEventListener('click', this.closeByBackdrop);
@@ -92,6 +105,7 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
     this.dismissOnBackdrop = getBooleanValue(this.dismissOnBackdropInput, defaultProps.dismissOnBackdrop);
     this.hasBackdrop = getBooleanValue(this.hasBackdropInput, defaultProps.hasBackdrop);
     this.hasCloseButton = getBooleanValue(this.hasCloseButtonInput, defaultProps.hasCloseButton);
+    this.isOpen = getBooleanValue(this.isOpenInput, defaultProps.isOpen);
     this.transitionDuration = this.transitionDurationInput || defaultProps.transitionDuration;
   }
 
@@ -106,11 +120,13 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
 
   open() {
     this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration }ms`;
-    this.modalRef.nativeElement.classList.add('active');
+
+    this.isOpen = true;
   }
 
   close() {
     this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration / 2 }ms`;
-    this.modalRef.nativeElement.classList.remove('active');
+
+    this.isOpen = false;
   }
 }

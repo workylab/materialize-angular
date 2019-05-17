@@ -12,6 +12,7 @@ import { SelectOptionModel } from '../select/select.model';
     useExisting: forwardRef(() => AutocompleteComponent)
   }],
   selector: 'materialize-autocomplete',
+  styleUrls: ['./autocomplete.component.scss'],
   templateUrl: './autocomplete.component.html'
 })
 export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
@@ -22,7 +23,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     errorMessage: 'The value does not match with any option',
     floatLabel: '',
     hasCounter: false,
-    id: '',
+    id: null,
     isMatchValue: false,
     label: '',
     maxLength: 500,
@@ -31,7 +32,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     patternName: '',
     placeholder: '',
     required: false,
-    textAlign: 'left',
     type: 'text',
     validateOnBlur: false,
     validateOnChange: false,
@@ -45,7 +45,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
-  @Input('id') idInput: string;
+  @Input('id') idInput: string | null;
   @Input('isMatchValue') isMatchValueInput: boolean;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
@@ -53,7 +53,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   @Input('options') optionsInput: Array<SelectOptionModel>;
   @Input('placeholder') placeholderInput: string;
   @Input('required') requiredInput: boolean;
-  @Input('textAlign') textAlignInput: 'left' | 'right';
   @Input('value') valueInput: string;
 
   public autocomplete: string;
@@ -62,7 +61,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   public errorMessage: string;
   public floatLabel: string;
   public hasCounter: boolean;
-  public id: string;
+  public id: string | null;
   public isFocused: boolean;
   public isMatchValue: boolean;
   public isTouched: boolean;
@@ -73,7 +72,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   public patternName: string;
   public placeholder: string;
   public required: boolean;
-  public textAlign: 'left' | 'right';
   public type: string;
   public validateOnBlur: boolean;
   public validateOnChange: boolean;
@@ -98,7 +96,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     this.name = this.nameInput || defaultProps.name;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
-    this.textAlign = this.textAlignInput || defaultProps.textAlign;
     this.value = this.valueInput || defaultProps.value;
 
     this.options = this.filterOptions(this.value);
@@ -133,7 +130,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   onInputBlur(event: any) {
     const { relatedTarget } = event;
 
-    if (!relatedTarget || relatedTarget.className !== 'select-option') {
+    if (!relatedTarget || relatedTarget.className !== 'autocomplete-option') {
       this.closeMenu();
 
       this.isValid = this.validate(this.value, this.required);

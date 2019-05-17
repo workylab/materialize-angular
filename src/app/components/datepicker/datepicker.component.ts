@@ -10,6 +10,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => DatePickerComponent)
   }],
   selector: 'materialize-datepicker',
+  styleUrls: ['./datepicker.component.scss'],
   templateUrl: './datepicker.component.html'
 })
 export class DatePickerComponent extends FormFieldAbstract implements OnInit {
@@ -20,14 +21,13 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
     errorMessage: '',
     floatLabel: '',
     hasCounter: false,
-    id: '',
+    id: null,
     label: '',
     maxLength: 500,
     name: '',
     patternName: '',
     placeholder: '',
     required: false,
-    textAlign: 'left',
     type: 'text',
     validateOnBlur: false,
     validateOnChange: false,
@@ -37,7 +37,7 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
-  @Input('id') idInput: string;
+  @Input('id') idInput: string | null;
   @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
@@ -47,7 +47,7 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
   public disabled: boolean;
   public errorMessage: string;
   public floatLabel: string;
-  public id: string;
+  public id: string | null;
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;

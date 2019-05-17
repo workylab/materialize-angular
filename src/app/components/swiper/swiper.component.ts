@@ -15,6 +15,7 @@ import { SwiperItemComponent } from '../swiper-item/swiper-item.component';
 
 @Component({
   selector: 'materialize-swiper',
+  styleUrls: ['./swiper.component.scss'],
   templateUrl: './swiper.component.html'
 })
 export class SwiperComponent implements AfterContentInit, SwiperModel {

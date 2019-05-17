@@ -3,7 +3,7 @@
     (click)="onClick(item)"
     [class.active]="value[item.name]"
     *ngFor="let item of items">
-    <materialize-icon className="icon-button-toggle"
+    <materialize-icon className="button-toggle-icon"
       size="md"
       *ngIf="item.iconName"
       [name]="item.iconName">

@@ -1,0 +1,118 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
+
+.form-checkbox-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: $space-xs 0;
+  position: relative;
+
+  input[type='checkbox'] {
+    display: none;
+  }
+}
+
+.form-checkbox-label {
+  color: $color-black;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  margin-left: $space-sm;
+}
+
+.form-checkbox-control {
+  background: $color-white;
+  border: $border-md solid $color-gray-dark;
+  border-radius: $radius-xs;
+  cursor: pointer;
+  height: 18px;
+  outline: none;
+  position: relative;
+  width: 18px;
+
+  &::after {
+    border-radius: $radius-full;
+    content: '';
+    height: 40px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 300ms ease;
+    width: 40px;
+    z-index: $zindex-level-1;
+  }
+
+  &::before {
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 13px;
+  }
+
+  &:hover:not(.disabled) {
+    &.active::after {
+      background-color: rgba($color-purple, 0.1);
+    }
+
+    &.error::after {
+      background-color: rgba($color-red, 0.1);
+    }
+
+    &::after {
+      background-color: rgba($color-gray-dark, 0.1);
+    }
+  }
+
+  &:focus:not(.disabled) {
+    &.active::after {
+      background-color: rgba($color-purple, 0.3);
+    }
+
+    &.error::after {
+      background-color: rgba($color-red, 0.3);
+    }
+
+    &::after {
+      background-color: rgba($color-gray-dark, 0.3);
+    }
+  }
+
+  &.active {
+    background: $color-purple;
+    border-color: $color-purple;
+
+    &::before {
+      border-bottom: $border-md solid $color-white;
+      border-left: $border-md solid $color-white;
+      height: 7px;
+      margin-top: -2px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  &.indeterminate {
+    background: $color-purple;
+    border-color: $color-purple;
+
+    &::before {
+      border-bottom: $border-md solid $color-white;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.disabled {
+    border-color: lighten($color-gray-dark, 30%);
+    cursor: not-allowed;
+
+    &.active {
+      background-color: lighten($color-gray-dark, 30%);
+    }
+  }
+
+  &.error {
+    border-color: $color-red;
+  }
+}

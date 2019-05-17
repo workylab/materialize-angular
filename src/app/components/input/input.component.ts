@@ -25,6 +25,7 @@ import { SuffixDirective } from '../../directives/suffix.directive';
     useExisting: forwardRef(() => InputComponent)
   }],
   selector: 'materialize-input',
+  styleUrls: ['./input.component.scss'],
   templateUrl: './input.component.html'
 })
 export class InputComponent extends FormFieldAbstract implements OnInit, OnChanges {
@@ -35,14 +36,13 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
     errorMessage: '',
     floatLabel: '',
     hasCounter: false,
-    id: '',
+    id: null,
     label: '',
     maxLength: 500,
     name: '',
     patternName: '',
     placeholder: '',
     required: false,
-    textAlign: 'left',
     type: 'text',
     validateOnBlur: true,
     validateOnChange: true,
@@ -64,13 +64,12 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('hasCounter') hasCounterInput: boolean;
-  @Input('id') idInput: string;
+  @Input('id') idInput: string | null;
   @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
   @Input('name') nameInput: string;
   @Input('placeholder') placeholderInput: string;
   @Input('required') requiredInput: boolean;
-  @Input('textAlign') textAlignInput: 'left' | 'right';
   @Input('type') typeInput: 'text' | 'password';
   @Input('patternName') patternNameInput: string;
   @Input('validateOnBlur') validateOnBlurInput: boolean;
@@ -83,7 +82,7 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
   public errorMessage: string;
   public floatLabel: string;
   public hasCounter: boolean;
-  public id: string;
+  public id: string | null;
   public isTouched: boolean;
   public isFocused: boolean;
   public isValid: boolean;
@@ -93,7 +92,6 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
   public patternName: string;
   public placeholder: string;
   public required: boolean;
-  public textAlign: 'left' | 'right';
   public type: string;
   public validateOnBlur: boolean;
   public validateOnChange: boolean;
@@ -134,7 +132,6 @@ export class InputComponent extends FormFieldAbstract implements OnInit, OnChang
     this.patternName = this.patternNameInput || defaultProps.patternName;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
-    this.textAlign = this.textAlignInput || defaultProps.textAlign;
     this.type = this.typeInput || defaultProps.type;
     this.validateOnBlur = getBooleanValue(this.validateOnBlurInput, defaultProps.validateOnBlur);
     this.validateOnChange = getBooleanValue(this.validateOnChangeInput, defaultProps.validateOnChange);

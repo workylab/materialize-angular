@@ -10,6 +10,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => RadioComponent)
   }],
   selector: 'materialize-radio',
+  styleUrls: ['./radio.component.scss'],
   templateUrl: './radio.component.html'
 })
 export class RadioComponent extends FormFieldAbstract implements OnInit {

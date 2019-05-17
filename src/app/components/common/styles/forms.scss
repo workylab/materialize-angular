@@ -1,0 +1,126 @@
+@import './colors.scss';
+@import './metrics.scss';
+
+%form-control-container-base {
+  background-color: $color-gray-light;
+  border-bottom: $border-sm solid $color-gray-dark;
+  border-radius: $radius-sm $radius-sm 0 0;
+  display: flex;
+  flex-direction: row;
+  font-family: $font-family-primary;
+  margin-bottom: $space-xxxs;
+  outline: none;
+  position: relative;
+
+  &::after {
+    background-color: $color-purple;
+    bottom: -1px;
+    content: '';
+    height: $border-md;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: 250ms ease width;
+    width: 0;
+    z-index: $zindex-level-1;
+  }
+
+  &.float-label .form-control {
+    padding-top: $space-lg;
+  }
+
+  &.active .form-control-float-label,
+  &.focused .form-control-float-label {
+    font-size: $font-size-xxxs;
+    top: $space-sm;
+  }
+
+  &.focused .form-control-float-label {
+    color: $color-purple;
+  }
+
+  &.focused::after,
+  &.error::after {
+    width: 100%;
+  }
+
+  &.focused .form-label {
+    color: $color-purple;
+  }
+
+  &.focused .form-control {
+    caret-color: $color-purple;
+  }
+
+  &.error::after {
+    background-color: $color-red;
+  }
+
+  &.error .form-label,
+  &.error .form-control-float-label {
+    color: $color-red;
+  }
+
+  &.error .form-control {
+    caret-color: $color-red;
+    padding-right: 48px;
+  }
+
+  &.disabled .form-control-wrapper {
+    border-bottom-color: $color-gray-light;
+    cursor: not-allowed;
+  }
+
+  &.disabled .form-control {
+    cursor: not-allowed;
+  }
+
+  &.disabled .form-label,
+  &.disabled .form-control-float-label,
+  &.disabled .form-control {
+    color: $color-gray;
+  }
+}
+
+%form-control-wrapper-base {
+  position: relative;
+  width: 100%;
+
+  ::ng-deep .icon-error {
+    color: $color-red;
+    position: absolute;
+    right: $space-sm;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: $zindex-level-1;
+  }
+}
+
+%form-control-base {
+  background-color: transparent;
+  border: 0;
+  box-sizing: border-box;
+  color: $color-black;
+  font-family: $font-family-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-light;
+  height: 100%;
+  max-width: 100%;
+  outline: none;
+  padding: $space-sm;
+  resize: vertical;
+  width: 100%;
+}
+
+.form-control-float-label {
+  color: $color-gray-dark;
+  cursor: text;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-light;
+  left: $space-sm;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 250ms ease;
+  z-index: $zindex-level-1;
+}

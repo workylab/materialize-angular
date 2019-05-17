@@ -10,6 +10,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => SelectComponent)
   }],
   selector: 'materialize-select',
+  styleUrls: ['./select.component.scss'],
   templateUrl: './select.component.html'
 })
 export class SelectComponent extends FormFieldAbstract implements OnInit {

@@ -3,6 +3,7 @@ import { TooltipModel } from './tooltip.model';
 
 @Component({
   selector: 'materialize-tooltip',
+  styleUrls: ['./tooltip.component.scss'],
   templateUrl: './tooltip.component.html'
 })
 export class TooltipComponent implements OnInit {

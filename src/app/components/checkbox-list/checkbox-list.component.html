@@ -1,7 +1,7 @@
 <div class="form-checkboxes-list-container"
   [ngClass]="className"
   [class.error]="!isValid && isTouched">
-  <label class="form-label" *ngIf="label">{{ label }}</label>
+  <materialize-label>{{ label }}</materialize-label>
 
   <materialize-checkbox
     (onChange)="onChangeAll($event)"
@@ -19,5 +19,5 @@
     >
     </materialize-checkbox> 
   </div>
-  <div class="form-error-message" *ngIf="!isValid && isTouched">{{ errorMessage }}</div>
+  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>

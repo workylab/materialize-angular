@@ -1,0 +1,17 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
+
+.form-message {
+  display: block;
+  font-family: $font-family-primary;
+  font-size: $font-size-xxs;
+}
+
+.error {
+  color: $color-red;
+}
+
+.info {
+  font-weight: $font-weight-light;
+  text-align: right;
+}

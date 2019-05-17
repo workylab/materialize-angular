@@ -1,3 +1,4 @@
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CheckboxListItemModel } from '../../components/checkbox-list/checkbox-list.model';
 import { Component } from '@angular/core';
 import { NavbarOptionModel } from '../../components/navbar/navbar.model';
@@ -12,6 +13,8 @@ export class ContactsComponent {
   public navbarOptions: Array<NavbarOptionModel>;
   public radioOptions: Array<RadioOptionModel>;
   public stateOptions: Array<SelectOptionModel>;
+
+  public form: FormGroup;
 
   constructor() {
     this.navbarOptions = [
@@ -59,5 +62,9 @@ export class ContactsComponent {
       content: 'No',
       value: '2'
     }];
+
+    this.form = new FormGroup({
+      isWorkPhone: new FormControl({ disabled: false, value: false }, Validators.requiredTrue)
+    });
   }
 }

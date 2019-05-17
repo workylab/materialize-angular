@@ -4,6 +4,7 @@ import { IconModel } from './icon.model';
 
 @Component({
   selector: 'materialize-icon',
+  styleUrls: ['./icon.component.scss'],
   templateUrl: './icon.component.html'
 })
 export class IconComponent implements OnChanges, OnInit {

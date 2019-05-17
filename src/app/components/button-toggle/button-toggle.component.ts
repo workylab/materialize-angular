@@ -9,6 +9,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => ButtonToggleComponent)
   }],
   selector: 'materialize-button-toggle',
+  styleUrls: ['./button-toggle.component.scss'],
   templateUrl: './button-toggle.component.html'
 })
 export class ButtonToggleComponent extends FormFieldAbstract implements OnInit {

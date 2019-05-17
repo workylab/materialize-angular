@@ -4,6 +4,7 @@ import { TabGroupModel } from './tab-group.model';
 
 @Component({
   selector: 'materialize-tab-group',
+  styleUrls: ['./tab-group.component.scss'],
   templateUrl: './tab-group.component.html'
 })
 export class TabGroupComponent implements AfterContentInit {

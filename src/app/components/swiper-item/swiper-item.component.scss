@@ -1,0 +1,16 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
+
+.swiper-item-wrapper {
+  display: inline-block;
+  float: none;
+  font-size: $font-size-sm;
+  overflow: hidden;
+  white-space: normal;
+  width: 100%;
+}
+
+.swiper-item {
+  border: $border-sm solid $color-purple;
+  height: 200px;
+}
