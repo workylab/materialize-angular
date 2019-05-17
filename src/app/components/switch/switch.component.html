@@ -1,6 +1,8 @@
 
 <div class="form-switch-container" [ngClass]="className">
-  <div class="form-switch-label-container">{{ label }}</div>
+  <div class="form-switch-label-container">
+    <ng-content></ng-content>
+  </div>
   <div class="form-switch-control-container">
     <div class="form-switch-control"
       (click)="toggleValue()"
@@ -9,9 +11,12 @@
 
       [class.active]="value"
       [class.disabled]="disabled"
-      [class.error]="!isValid && isTouched"
+      [class.focused]="isFocused"
+
       tabindex="0">
-      <div class="form-switch-indicator"></div>
+      <div class="form-switch-indicator">
+        <div class="form-switch-indicator-ripple" materializeRipple [isRippleActive]="disabled ? false : true" [rippleDuration]="200"></div>
+      </div>
     </div>
     <input
       type="checkbox"
@@ -22,6 +27,4 @@
       [value]="value"
     />
   </div>
-
-  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>

@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import fieldValidations from '../../fixtures/field-validations';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SwitchModel } from './switch.model';
@@ -8,18 +8,20 @@ import { SwitchModel } from './switch.model';
   providers: [{
     provide: FormFieldAbstract,
     useExisting: forwardRef(() => SwitchComponent)
+  }, {
+    multi: true,
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => SwitchComponent)
   }],
   selector: 'materialize-switch',
   styleUrls: ['./switch.component.scss'],
   templateUrl: './switch.component.html'
 })
-export class SwitchComponent extends FormFieldAbstract implements OnInit {
+export class SwitchComponent extends FormFieldAbstract implements OnInit, ControlValueAccessor {
   static readonly defaultProps: SwitchModel = {
     className: '',
     disabled: false,
-    errorMessage: '',
     id: '',
-    label: '',
     name: '',
     required: false,
     value: false
@@ -28,34 +30,30 @@ export class SwitchComponent extends FormFieldAbstract implements OnInit {
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('id') idInput: string;
-  @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: boolean;
 
   public className: string;
   public disabled: boolean;
-  public errorMessage: string;
   public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;
-  public label: string;
   public name: string;
   public required: boolean;
   public value: boolean;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.initValues();
   }
 
-  initValues() {
+  initValues(): void {
     const { defaultProps } = SwitchComponent;
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.id = this.idInput || defaultProps.id;
-    this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = getBooleanValue(this.valueInput, defaultProps.value);
@@ -65,36 +63,53 @@ export class SwitchComponent extends FormFieldAbstract implements OnInit {
     this.isValid = this.validate(this.value, this.required);
   }
 
-  validate(value: boolean, required: boolean) {
+  validate(value: boolean, required: boolean): boolean {
     if (required && !value) {
-      const fieldValidation = fieldValidations['required'];
-
-      this.errorMessage = fieldValidation.errorMessage;
-
       return false;
     }
 
     return true;
   }
 
-  toggleValue() {
+  toggleValue(): void {
     if (!this.disabled) {
+      this.isFocused = false;
       this.value = !this.value;
       this.isValid = this.validate(this.value, this.required);
+
+      this.onChange(this.value);
     }
   }
 
-  onBlur(event: any) {
+  onBlur(event: any): void {
     this.isFocused = false;
     this.isTouched = true;
   }
 
-  onFocus(event: any) {
+  onFocus(event: any): void {
     this.isFocused = true;
+
+    this.onTouched();
   }
 
-  updateAndValidity() {
-    this.isTouched = true;
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  writeValue(value: boolean): void {
+    this.value = value;
     this.isValid = this.validate(this.value, this.required);
   }
+
+  registerOnChange(fn: (value: boolean) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  onChange(value: boolean): void {}
+
+  onTouched(): void {}
 }
