@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,8 +16,10 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     AppRoutingModule,
-	  BrowserModule,
-    MaterializeComponentsModule
+    BrowserModule,
+    FormsModule,
+    MaterializeComponentsModule,
+    ReactiveFormsModule
   ]
 })
 
