@@ -57,13 +57,20 @@ module.exports = {
 			{
 				test: /\.s(a|c)ss$/,
 				use: [
-					'to-string-loader',
 					'style-loader',
 					{ loader: 'css-loader', options: { sourceMap: true } },
-					{ loader: 'postcss-loader', options: { sourceMap: true } },
 					{ loader: 'sass-loader', options: { sourceMap: true } },
 				],
-				include: helpers.root('src')
+				include: helpers.root('src/styles')
+			},
+			{
+				test: /\.s(a|c)ss$/,
+				use: [
+					'to-string-loader',
+					{ loader: 'css-loader', options: { sourceMap: true } },
+					{ loader: 'sass-loader', options: { sourceMap: true } },
+				],
+				include: helpers.root('src/app')
 			},
 			{
 				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
