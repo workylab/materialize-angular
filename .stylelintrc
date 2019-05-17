@@ -65,7 +65,7 @@
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-descendant-combinator-no-non-space": true,
-    "selector-max-compound-selectors": 4,
+    "selector-max-compound-selectors": 5,
     "selector-max-universal": 3,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-class-case": "lower",
