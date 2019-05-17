@@ -7,7 +7,7 @@ navbar content
 </materialize-navbar>
 
 <materialize-form>
-  <materialize-form-group iconName="person">
+  <!-- <materialize-form-group iconName="person">
     <materialize-input label="Name" [required]="true" name="name" materializeFormField></materialize-input>
   </materialize-form-group>
   <materialize-form-group iconName=" ">
@@ -45,7 +45,12 @@ navbar content
   </materialize-form-group>
   <materialize-form-group iconName="map">
     <materialize-autocomplete iconName="map" label="State" [required]="true" name="state_auto" [options]="stateOptions" [isMatchValue]="true" materializeFormField></materialize-autocomplete>
-  </materialize-form-group>
+  </materialize-form-group> -->
+
+  <div [formGroup]="form">
+    <materialize-switch formControlName="isWorkPhone">Work Phone</materialize-switch>
+    {{ form.controls.isWorkPhone.errors | json }}
+  </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>
 </materialize-form>

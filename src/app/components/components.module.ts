@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccordionComponent } from './accordion/accordion.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { ButtonComponent } from './button/button.component';
@@ -129,6 +130,10 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     TextAreaComponent,
     TooltipComponent
   ],
-  imports: [CommonModule]
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ]
 })
 export class MaterializeComponentsModule {}
