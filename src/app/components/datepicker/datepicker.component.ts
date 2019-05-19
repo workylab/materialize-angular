@@ -18,14 +18,11 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
     autocomplete: 'none',
     className: '',
     disabled: false,
-    errorMessage: '',
     floatLabel: '',
     hasCounter: false,
     id: null,
-    label: '',
     maxLength: 500,
     name: '',
-    patternName: '',
     placeholder: '',
     required: false,
     type: 'text',
@@ -38,7 +35,6 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('id') idInput: string | null;
-  @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
@@ -51,7 +47,6 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
   public isFocused: boolean;
   public isTouched: boolean;
   public isValid: boolean;
-  public label: string;
   public name: string;
   public required: boolean;
   public value: string;
@@ -73,7 +68,6 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.id = this.idInput || defaultProps.id;
-    this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;

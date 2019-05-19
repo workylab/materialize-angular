@@ -1,6 +1,5 @@
 import { Component, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
 import { AutocompleteModel } from './autocomplete.model';
-import fieldValidations from '../../fixtures/field-validations';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { InputComponent } from '../input/input.component';
@@ -20,16 +19,13 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     autocomplete: '',
     className: '',
     disabled: false,
-    errorMessage: 'The value does not match with any option',
     floatLabel: '',
     hasCounter: false,
     id: null,
     isMatchValue: false,
-    label: '',
     maxLength: 500,
     name: '',
     options: [],
-    patternName: '',
     placeholder: '',
     required: false,
     type: 'text',
@@ -47,7 +43,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   @Input('hasCounter') hasCounterInput: boolean;
   @Input('id') idInput: string | null;
   @Input('isMatchValue') isMatchValueInput: boolean;
-  @Input('label') labelInput: string;
   @Input('maxLength') maxLengthInput: number;
   @Input('name') nameInput: string;
   @Input('options') optionsInput: Array<SelectOptionModel>;
@@ -65,7 +60,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   public isFocused: boolean;
   public isMatchValue: boolean;
   public isTouched: boolean;
-  public label: string;
   public maxLength: number;
   public name: string;
   public options: Array<SelectOptionModel>;
@@ -91,7 +85,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     this.hasCounter = getBooleanValue(this.hasCounterInput, defaultProps.hasCounter);
     this.id = this.idInput || defaultProps.id;
     this.isMatchValue = getBooleanValue(this.isMatchValueInput, defaultProps.isMatchValue);
-    this.label = this.labelInput || defaultProps.label;
     this.maxLength = this.maxLengthInput || defaultProps.maxLength;
     this.name = this.nameInput || defaultProps.name;
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
@@ -102,7 +95,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
     this.isFocused = false;
     this.isTouched = false;
-    this.patternName = defaultProps.patternName;
     this.type = defaultProps.type;
     this.validateOnBlur = defaultProps.validateOnBlur;
     this.validateOnChange = defaultProps.validateOnChange;
@@ -143,18 +135,10 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
   validate(value: string, required: boolean) {
     if (required && !value.length) {
-      this.errorMessage = fieldValidations['required'].errorMessage;
-      this.materializeInput.errorMessage = this.errorMessage;
-
       return false;
     }
 
     if (required && value.length && this.isMatchValue && !this.isValidOption(value)) {
-      const { errorMessage } = AutocompleteComponent.defaultProps;
-
-      this.errorMessage = errorMessage;
-      this.materializeInput.errorMessage = this.errorMessage;
-
       return false;
     }
 

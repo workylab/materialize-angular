@@ -17,7 +17,7 @@ import { SwitchModel } from './switch.model';
   styleUrls: ['./switch.component.scss'],
   templateUrl: './switch.component.html'
 })
-export class SwitchComponent extends FormFieldAbstract implements OnInit, ControlValueAccessor {
+export class SwitchComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit {
   static readonly defaultProps: SwitchModel = {
     className: '',
     disabled: false,
@@ -39,10 +39,13 @@ export class SwitchComponent extends FormFieldAbstract implements OnInit, Contro
   public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
-  public isValid: boolean;
   public name: string;
   public required: boolean;
   public value: boolean;
+
+  constructor() {
+    super();
+  }
 
   ngOnInit(): void {
     this.initValues();
@@ -60,22 +63,12 @@ export class SwitchComponent extends FormFieldAbstract implements OnInit, Contro
 
     this.isFocused = false;
     this.isTouched = false;
-    this.isValid = this.validate(this.value, this.required);
-  }
-
-  validate(value: boolean, required: boolean): boolean {
-    if (required && !value) {
-      return false;
-    }
-
-    return true;
   }
 
   toggleValue(): void {
     if (!this.disabled) {
       this.isFocused = false;
       this.value = !this.value;
-      this.isValid = this.validate(this.value, this.required);
 
       this.onChange(this.value);
     }
@@ -98,7 +91,6 @@ export class SwitchComponent extends FormFieldAbstract implements OnInit, Contro
 
   writeValue(value: boolean): void {
     this.value = value;
-    this.isValid = this.validate(this.value, this.required);
   }
 
   registerOnChange(fn: (value: boolean) => void): void {
