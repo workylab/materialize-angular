@@ -7,19 +7,7 @@ navbar content
 </materialize-navbar>
 
 <materialize-form>
-  <!-- <materialize-form-group iconName="person">
-    <materialize-input label="Name" [required]="true" name="name" materializeFormField></materialize-input>
-  </materialize-form-group>
-  <materialize-form-group iconName=" ">
-    <materialize-input label="Last Name" [required]="true" name="last_name" materializeFormField></materialize-input>
-  </materialize-form-group>
-  <materialize-form-group iconName="email">
-    <materialize-input label="Email" [required]="true" name="email" materializeFormField></materialize-input>
-  </materialize-form-group>
-  <materialize-form-group iconName="phone">
-    <materialize-input label="Phone" [required]="true" name="phone" patternName="number" materializeFormField></materialize-input>
-  </materialize-form-group>
-  <materialize-form-group iconName="list">
+  <!-- <materialize-form-group iconName="list">
     <materialize-checkbox-list [required]="true" name="checkboxesList" [items]="checkboxListItems" materializeFormField></materialize-checkbox-list>
   </materialize-form-group>
   <materialize-form-group iconName="house">
@@ -50,6 +38,9 @@ navbar content
   <div [formGroup]="form">
     <materialize-switch formControlName="isWorkPhone">Work Phone</materialize-switch>
     {{ form.controls.isWorkPhone.errors | json }}
+
+    <materialize-input formControlName="name" floatLabel="Name" placeholder="Write your name"></materialize-input>
+    {{ form.controls.name.errors | json }}
   </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>
