@@ -80,9 +80,11 @@ export class SwitchComponent extends FormFieldAbstract implements ControlValueAc
   }
 
   onFocus(event: any): void {
-    this.isFocused = true;
+    if (!this.disabled) {
+      this.isFocused = true;
 
-    this.onTouched();
+      this.onTouched();
+    }
   }
 
   setDisabledState(isDisabled: boolean): void {

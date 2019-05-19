@@ -13,7 +13,7 @@
       [class.disabled]="disabled"
       [class.focused]="isFocused"
 
-      tabindex="0">
+      [tabindex]="disabled ? '-1': '0'">
       <div class="form-switch-indicator">
         <div class="form-switch-indicator-ripple" materializeRipple [isRippleActive]="!disabled" [rippleDuration]="200"></div>
       </div>

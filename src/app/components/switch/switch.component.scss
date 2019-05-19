@@ -112,6 +112,10 @@
   .form-switch-indicator {
     background-color: $color-gray-light;
   }
+
+  .ripple-element {
+    cursor: not-allowed;
+  }
 }
 
 :host.ng-touched.ng-dirty.ng-invalid .form-switch-control {
