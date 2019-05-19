@@ -6,7 +6,7 @@
 
     [class.active]="value"
     [class.focused]="isFocused"
-    [class.indeterminate]="indeterminate"
+    [class.indeterminate]="indeterminate && !value"
     [class.disabled]="disabled"
 
     tabindex="0">
