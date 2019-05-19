@@ -100,9 +100,11 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit, OnCh
   }
 
   onFocus(event: Event): void {
-    this.isFocused = true;
+    if (!this.disabled) {
+      this.isFocused = true;
 
-    this.onTouched();
+      this.onTouched();
+    }
   }
 
   onBlur(event: Event): void {

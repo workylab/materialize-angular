@@ -105,8 +105,13 @@
   border-color: lighten($color-gray-dark, 30%);
   cursor: not-allowed;
 
-  &.active {
+  &.active,
+  &.indeterminate {
     background-color: lighten($color-gray-dark, 30%);
+  }
+
+  .ripple-element {
+    cursor: not-allowed;
   }
 }
 

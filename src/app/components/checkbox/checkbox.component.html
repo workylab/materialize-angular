@@ -9,7 +9,7 @@
     [class.indeterminate]="indeterminate && !value"
     [class.disabled]="disabled"
 
-    tabindex="0">
+    [tabindex]="disabled ? '-1': '0'">
     <div class="form-checkbox-control-ripple" materializeRipple [isRippleActive]="!disabled" [rippleDuration]="200"></div>
     <input
       type="checkbox"
