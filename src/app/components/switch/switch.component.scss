@@ -1,5 +1,6 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
+@import '../../../styles/variables.scss';
 
 .form-switch-container {
   display: flex;
@@ -17,6 +18,7 @@
   color: $color-black;
   display: flex;
   flex: 1;
+  font-family: $materialize-font-family;
   font-size: 16px;
   font-weight: $font-weight-regular;
 }
