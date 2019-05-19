@@ -64,7 +64,8 @@ export class ContactsComponent {
     }];
 
     this.form = new FormGroup({
-      isWorkPhone: new FormControl({ disabled: false, value: false }, Validators.requiredTrue),
+      hasLocation: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
+      isWorkPhone: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
       name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+'))
     });
   }
