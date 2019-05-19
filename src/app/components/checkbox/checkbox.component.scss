@@ -1,11 +1,12 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
+@import '../../../styles/variables.scss';
 
 .form-checkbox-container {
   align-items: center;
   display: flex;
   flex-direction: row;
-  padding: $space-xs 0;
+  padding: $space-sm 0;
   position: relative;
 
   input[type='checkbox'] {
@@ -13,11 +14,23 @@
   }
 }
 
-.form-checkbox-label {
+.form-checkbox-label-container {
   color: $color-black;
-  font-size: $font-size-xs;
+  font-family: $materialize-font-family;
+  font-size: 16px;
   font-weight: $font-weight-regular;
-  margin-left: $space-sm;
+}
+
+.form-checkbox-control-ripple {
+  border-radius: $radius-full;
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 300ms ease;
+  width: 40px;
+  z-index: $zindex-level-1;
 }
 
 .form-checkbox-control {
@@ -26,22 +39,10 @@
   border-radius: $radius-xs;
   cursor: pointer;
   height: 18px;
+  margin: 0 $space-sm;
   outline: none;
   position: relative;
   width: 18px;
-
-  &::after {
-    border-radius: $radius-full;
-    content: '';
-    height: 40px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: background-color 300ms ease;
-    width: 40px;
-    z-index: $zindex-level-1;
-  }
 
   &::before {
     content: '';
@@ -49,70 +50,74 @@
     position: absolute;
     width: 13px;
   }
+}
 
-  &:hover:not(.disabled) {
-    &.active::after {
-      background-color: rgba($color-purple, 0.1);
-    }
+.form-checkbox-control.active {
+  background: $color-purple;
+  border-color: $color-purple;
 
-    &.error::after {
-      background-color: rgba($color-red, 0.1);
-    }
-
-    &::after {
-      background-color: rgba($color-gray-dark, 0.1);
-    }
+  &::before {
+    border-bottom: $border-md solid $color-white;
+    border-left: $border-md solid $color-white;
+    height: 7px;
+    margin-top: -2px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
   }
 
-  &:focus:not(.disabled) {
-    &.active::after {
-      background-color: rgba($color-purple, 0.3);
-    }
-
-    &.error::after {
-      background-color: rgba($color-red, 0.3);
-    }
-
-    &::after {
-      background-color: rgba($color-gray-dark, 0.3);
-    }
+  .form-checkbox-control-ripple ::ng-deep .ripple {
+    background-color: rgba($color-purple, 0.3);
   }
+}
+
+.form-checkbox-control.indeterminate {
+  background: $color-purple;
+  border-color: $color-purple;
+
+  &::before {
+    border-bottom: $border-md solid $color-white;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.form-checkbox-control:hover:not(.disabled) {
+  &.active .form-checkbox-control-ripple {
+    background-color: rgba($color-purple, 0.1);
+  }
+
+  .form-checkbox-control-ripple {
+    background-color: rgba($color-gray-dark, 0.1);
+  }
+}
+
+.form-checkbox-control.focused:not(.disabled) {
+  &.active .form-checkbox-control-ripple {
+    background-color: rgba($color-purple, 0.3);
+  }
+
+  .form-checkbox-control-ripple {
+    background-color: rgba($color-gray-dark, 0.3);
+  }
+}
+
+.form-checkbox-control.disabled {
+  border-color: lighten($color-gray-dark, 30%);
+  cursor: not-allowed;
 
   &.active {
-    background: $color-purple;
-    border-color: $color-purple;
+    background-color: lighten($color-gray-dark, 30%);
+  }
+}
 
-    &::before {
-      border-bottom: $border-md solid $color-white;
-      border-left: $border-md solid $color-white;
-      height: 7px;
-      margin-top: -2px;
-      top: 50%;
-      transform: translateY(-50%) rotate(-45deg);
-    }
+:host.ng-touched.ng-dirty.ng-invalid .form-checkbox-control {
+  border-color: $color-red;
+
+  &:hover .form-checkbox-control-ripple {
+    background-color: rgba($color-red, 0.1);
   }
 
-  &.indeterminate {
-    background: $color-purple;
-    border-color: $color-purple;
-
-    &::before {
-      border-bottom: $border-md solid $color-white;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
-  &.disabled {
-    border-color: lighten($color-gray-dark, 30%);
-    cursor: not-allowed;
-
-    &.active {
-      background-color: lighten($color-gray-dark, 30%);
-    }
-  }
-
-  &.error {
-    border-color: $color-red;
+  .form-checkbox-control-ripple ::ng-deep .ripple {
+    background-color: rgba($color-red, 0.3);
   }
 }

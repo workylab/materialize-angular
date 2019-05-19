@@ -1,6 +1,6 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CheckboxModel } from './checkbox.model';
-import fieldValidations from '../../fixtures/field-validations';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -8,19 +8,21 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   providers: [{
     provide: FormFieldAbstract,
     useExisting: forwardRef(() => CheckboxComponent)
+  }, {
+    multi: true,
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => CheckboxComponent)
   }],
   selector: 'materialize-checkbox',
   styleUrls: ['./checkbox.component.scss'],
   templateUrl: './checkbox.component.html'
 })
-export class CheckboxComponent extends FormFieldAbstract implements OnInit {
+export class CheckboxComponent extends FormFieldAbstract implements OnInit, OnChanges, ControlValueAccessor {
   static readonly defaultProps: CheckboxModel = {
     className: '',
     disabled: false,
-    errorMessage: '',
     id: '',
     indeterminate: false,
-    label: '',
     name: '',
     required: false,
     value: false
@@ -30,7 +32,6 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit {
   @Input('disabled') disabledInput: boolean;
   @Input('id') idInput: string;
   @Input('indeterminate') indeterminateInput: boolean;
-  @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: boolean;
@@ -39,13 +40,10 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit {
 
   public className: string;
   public disabled: boolean;
-  public errorMessage: string;
   public id: string;
   public indeterminate: boolean;
   public isFocused: boolean;
   public isTouched: boolean;
-  public isValid: boolean;
-  public label: string;
   public name: string;
   public required: boolean;
   public value: boolean;
@@ -83,48 +81,53 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.id = this.idInput || defaultProps.id;
     this.indeterminate = getBooleanValue(this.indeterminateInput, defaultProps.indeterminate);
-    this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = getBooleanValue(this.valueInput, defaultProps.value);
 
     this.isFocused = false;
     this.isTouched = false;
-    this.isValid = this.validate(this.value, this.required);
   }
 
   toggleValue(): void {
     if (!this.disabled) {
       this.value = !this.value;
-      this.isValid = this.validate(this.value, this.required);
+      this.isFocused = false;
 
+      this.onChange(this.value);
       this.onChangeEmitter.emit(this.value);
     }
   }
 
-  validate(value: boolean, required: boolean) {
-    if (required && !value) {
-      const fieldValidation = fieldValidations['required'];
-
-      this.errorMessage = fieldValidation.errorMessage;
-
-      return false;
-    }
-
-    return true;
-  }
-
   onFocus(event: Event): void {
     this.isFocused = true;
+
+    this.onTouched();
   }
 
   onBlur(event: Event): void {
+    this.isFocused = false;
     this.isTouched = true;
   }
 
-  updateAndValidity() {
-    this.isTouched = true;
-    this.isValid = this.validate(this.value, this.required);
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
   }
+
+  writeValue(value: boolean): void {
+    this.value = value;
+  }
+
+  registerOnChange(fn: (value: boolean) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  onChange(value: boolean): void {}
+
+  onTouched(): void {}
 }
 
