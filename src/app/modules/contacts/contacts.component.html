@@ -10,15 +10,6 @@ navbar content
   <!-- <materialize-form-group iconName="list">
     <materialize-checkbox-list [required]="true" name="checkboxesList" [items]="checkboxListItems" materializeFormField></materialize-checkbox-list>
   </materialize-form-group>
-  <materialize-form-group iconName="house">
-    <materialize-switch label="House Phone" [required]="true" name="is_house_phone" materializeFormField></materialize-switch>
-  </materialize-form-group>
-  <materialize-form-group iconName="work">
-    <materialize-switch label="Work Phone" [required]="true" name="is_work_phone" materializeFormField></materialize-switch>
-  </materialize-form-group>
-  <materialize-form-group iconName="location_on">
-    <materialize-checkbox label="Location" [required]="true" name="location" materializeFormField></materialize-checkbox>
-  </materialize-form-group>
   <materialize-form-group iconName="message">
     <materialize-textarea label="Message" [required]="true" name="message" materializeFormField></materialize-textarea>
   </materialize-form-group>
@@ -41,6 +32,17 @@ navbar content
 
     <materialize-input formControlName="name" floatLabel="Name" placeholder="Write your name"></materialize-input>
     {{ form.controls.name.errors | json }}
+
+    <materialize-checkbox formControlName="hasLocation">Location</materialize-checkbox>
+    {{ form.controls.hasLocation.errors | json }}
+
+    <materialize-checkbox-list checkAllLabel="Has all phones" formControlName="hasPhones">
+      <materialize-checkbox name="hasHousePhone">Has house phone</materialize-checkbox>
+      <materialize-checkbox name="hasPersonalPhone">Has personal phone</materialize-checkbox>
+      <materialize-checkbox name="hasWorkPhone">Has work phone</materialize-checkbox>
+    </materialize-checkbox-list>
+
+    {{ form.controls.hasPhones.errors | json }}
   </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>

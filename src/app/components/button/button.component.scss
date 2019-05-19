@@ -16,10 +16,6 @@
   padding: $space-sm $space-xs;
   text-transform: uppercase;
 
-  .ripple {
-    background-color: rgba($color-white, 0.15);
-  }
-
   &.rounded {
     border-radius: 100px;
   }
@@ -38,6 +34,10 @@
   .icon {
     margin: 0 $space-xxxs;
   }
+}
+
+::ng-deep .ripple {
+  background-color: rgba($color-white, 0.15);
 }
 
 .button-xl {

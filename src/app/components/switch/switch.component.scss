@@ -5,7 +5,7 @@
 .form-switch-container {
   display: flex;
   flex-direction: row;
-  padding: $space-sm 0;
+  padding: $space-md 0;
   position: relative;
 
   input[type='checkbox'] {
@@ -111,6 +111,10 @@
 
   .form-switch-indicator {
     background-color: $color-gray-light;
+  }
+
+  .ripple-element {
+    cursor: not-allowed;
   }
 }
 

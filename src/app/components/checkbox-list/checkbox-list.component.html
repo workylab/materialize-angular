@@ -1,23 +1,13 @@
-<div class="form-checkboxes-list-container"
-  [ngClass]="className"
-  [class.error]="!isValid && isTouched">
-  <materialize-label>{{ label }}</materialize-label>
-
+<div class="form-checkboxes-list-container" [ngClass]="className">
   <materialize-checkbox
     (onChange)="onChangeAll($event)"
-    [label]="checkAllLabel"
+    [disabled]="disabled"
     [indeterminate]="!checkAllValue"
     [value]="checkAllValue">
+    {{ checkAllLabel }}
   </materialize-checkbox>
 
-  <div class="form-checkboxes-list-item" *ngFor="let item of items">
-    <materialize-checkbox
-      (onChange)="onChangeCheckbox($event, item)"
-      [disabled]="item.disabled"
-      [label]="item.label"
-      [value]="item.value"
-    >
-    </materialize-checkbox> 
+  <div class="form-checkboxes-list-item">
+    <ng-content></ng-content>
   </div>
-  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>
