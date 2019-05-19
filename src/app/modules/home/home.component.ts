@@ -1,5 +1,4 @@
 import { SortedColumnModel, TableModel } from '../../components/table/table.model';
-import { CheckboxListItemModel } from 'src/app/components/checkbox-list/checkbox-list.model';
 import { Component } from '@angular/core';
 import { DropdownItemModel } from '../../components/dropdown/dropdown.model';
 import { RadioOptionModel } from '../../components/radio/radio.model';
@@ -10,22 +9,6 @@ import { SelectOptionModel } from '../../components/select/select.model';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  public checkboxListItems: Array<CheckboxListItemModel> = [{
-    label: 'Option 1',
-    name: 'opt1',
-    value: false
-  }, {
-    disabled: true,
-    label: 'Option 3',
-    name: 'opt3',
-    value: true
-  }, {
-    disabled: true,
-    label: 'Option 3',
-    name: 'opt3',
-    value: false
-  }];
-
   public tableData: TableModel = {
     body: [
       [

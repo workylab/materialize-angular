@@ -82,6 +82,16 @@ Input with Suffix Icon and FloatLabel
 <br />
 <br />
 
+<materialize-checkbox-list checkAllLabel="Select all">
+  <materialize-checkbox [value]="true">Checkbox 1</materialize-checkbox>
+  <materialize-checkbox [value]="true">Checkbox 2</materialize-checkbox>
+  <materialize-checkbox [value]="true">Checkbox 3</materialize-checkbox>
+</materialize-checkbox-list>
+
+<br />
+<br />
+<br />
+
 <materialize-autocomplete [options]="selectOptions"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="Label"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="With Id" id="autocomplete-id"></materialize-autocomplete>
@@ -95,15 +105,6 @@ Input with Suffix Icon and FloatLabel
 <materialize-autocomplete [options]="selectOptions" label="Required and match value" [required]="true" [isMatchValue]="true"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" floatLabel="Float Label"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" floatLabel="Required Float Label" [required]="true"></materialize-autocomplete>
-
-<br />
-<br />
-<br />
-
-<materialize-checkbox-list></materialize-checkbox-list>
-<materialize-checkbox-list [items]="checkboxListItems" label="Label"></materialize-checkbox-list>
-<materialize-checkbox-list [items]="checkboxListItems" label="Required"></materialize-checkbox-list>
-<materialize-checkbox-list [items]="checkboxListItems" checkAllLabel="Select all checkboxes"></materialize-checkbox-list>
 
 <br />
 <br />

@@ -35,6 +35,14 @@ navbar content
 
     <materialize-checkbox formControlName="hasLocation">Location</materialize-checkbox>
     {{ form.controls.hasLocation.errors | json }}
+
+    <materialize-checkbox-list checkAllLabel="Has all phones" formControlName="hasPhones">
+      <materialize-checkbox name="hasHousePhone">Has house phone</materialize-checkbox>
+      <materialize-checkbox name="hasPersonalPhone">Has personal phone</materialize-checkbox>
+      <materialize-checkbox name="hasWorkPhone">Has work phone</materialize-checkbox>
+    </materialize-checkbox-list>
+
+    {{ form.controls.hasPhones.errors | json }}
   </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>

@@ -135,8 +135,10 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
   isCheckedAll() {
     const valueKeys = Object.keys(this.value);
     const checkedValues = valueKeys.filter(item => this.value[item] === true);
+    const checkedCheckboxes = this.checkboxes.filter(item => item.value === true);
 
-    return checkedValues.length > 1 && checkedValues.length === this.checkboxes.length
+    return (checkedValues.length > 1 && checkedValues.length === this.checkboxes.length)
+      || (checkedCheckboxes.length > 1 && checkedCheckboxes.length === this.checkboxes.length)
       ? true
       : false;
   }
