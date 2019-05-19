@@ -1,7 +1,7 @@
-import { CheckboxListItemModel, CheckboxListModel, CheckboxListValueModel } from './checkbox-list.model';
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { cloneObject } from '../../utils/clone-object.util';
-import fieldValidations from '../../fixtures/field-validations';
+import { AfterContentInit, Component, ContentChildren, forwardRef, Input, OnInit, QueryList } from '@angular/core';
+import { CheckboxListModel, CheckboxListValueModel } from './checkbox-list.model';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -9,119 +9,139 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   providers: [{
     provide: FormFieldAbstract,
     useExisting: forwardRef(() => CheckboxListComponent)
+  }, {
+    multi: true,
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => CheckboxListComponent)
   }],
   selector: 'materialize-checkbox-list',
   styleUrls: ['./checkbox-list.component.scss'],
   templateUrl: './checkbox-list.component.html'
 })
-export class CheckboxListComponent extends FormFieldAbstract implements OnInit {
+export class CheckboxListComponent extends FormFieldAbstract implements AfterContentInit, OnInit, ControlValueAccessor {
   static readonly defaultProps: CheckboxListModel = {
     checkAllLabel: 'Check all',
     className: '',
     disabled: false,
-    errorMessage: '',
     id: '',
-    items: [],
-    label: '',
     name: '',
     required: false,
     value: {}
   };
 
+  @ContentChildren(CheckboxComponent) checkboxesQueryList: QueryList<CheckboxComponent>;
+
   @Input('checkAllLabel') checkAllLabelInput: string;
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('id') idInput: string;
-  @Input('items') itemsInput: Array<CheckboxListItemModel>;
-  @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
+  @Input('value') valueInput: CheckboxListValueModel;
 
   public checkAllLabel: string;
   public checkAllValue: boolean;
   public className: string;
+  public checkboxes: Array<CheckboxComponent>;
   public disabled: boolean;
-  public errorMessage: string;
   public id: string;
-  public items: Array<CheckboxListItemModel>;
   public isFocused: boolean;
   public isTouched: boolean;
-  public isValid: boolean;
-  public label: string;
   public name: string;
   public required: boolean;
   public value: CheckboxListValueModel;
 
   constructor() {
     super();
+
+    this.disableAllCheckboxes = this.disableAllCheckboxes.bind(this);
+    this.setCheckboxesValue = this.setCheckboxesValue.bind(this);
   }
 
   ngOnInit() {
     this.initValues();
   }
 
+  ngAfterContentInit() {
+    this.checkboxes = this.checkboxesQueryList.toArray();
+
+    for (const checkbox of this.checkboxes) {
+      checkbox.onChangeEmitter.subscribe((value: boolean) => {
+        this.onChangeCheckbox(value, checkbox);
+      });
+    }
+
+    if (this.disabled) {
+      this.disableAllCheckboxes();
+    }
+
+    this.checkAllValue = this.isCheckedAll();
+  }
+
   initValues() {
     const { defaultProps } = CheckboxListComponent;
-    const items = this.itemsInput || defaultProps.items;
 
     this.className = this.className || defaultProps.className;
     this.checkAllLabel = this.checkAllLabelInput || defaultProps.checkAllLabel;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.items = cloneObject(items);
-    this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
+    this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
     this.isTouched = false;
-    this.isValid = this.validate(this.items, this.required);
-    this.value = {};
-
-    const checkedCheckboxesLength = this.getCheckedCheckboxesLength(this.items);
-
-    this.checkAllValue = checkedCheckboxesLength === this.items.length
-      ? true
-      : false;
   }
 
-  getCheckedCheckboxesLength(items: Array<CheckboxListItemModel>): number {
-    const checkedCheckboxes = items.filter(item => item.value);
+  disableAllCheckboxes() {
+    for (const checkbox of this.checkboxes) {
+      checkbox.disabled = true;
+    }
+  }
 
-    return checkedCheckboxes.length;
+  setCheckboxesValue() {
+    for (const checkbox of this.checkboxes) {
+      const checkboxValue = this.value[checkbox.name];
+
+      checkbox.value = Boolean(checkboxValue);
+    }
   }
 
   onChangeAll(value: boolean) {
-    this.changeAllCheckboxesValue(this.items, value);
-
-    this.checkAllValue = value;
-    this.isTouched = true;
-    this.isValid = this.validate(this.items, this.required);
-    this.value = this.generateValue(this.items);
-  }
-
-  changeAllCheckboxesValue(items: Array<CheckboxListItemModel>, value: boolean): void {
-    items.map(item => {
+    this.checkboxes.map(item => {
       if (!item.disabled) {
         item.value = value;
       }
     });
+
+    this.checkAllValue = value;
+    this.isTouched = true;
+    this.value = this.generateValue(this.checkboxes);
+
+    this.onTouched();
+    this.onChange(this.value);
   }
 
   onChangeCheckbox(value: boolean, currentCheckbox: any) {
     currentCheckbox.value = value;
 
-    const checkedCheckboxesLength = this.getCheckedCheckboxesLength(this.items);
-
-    this.checkAllValue = checkedCheckboxesLength > 1 && checkedCheckboxesLength === this.items.length
-      ? true
-      : false;
-
+    this.value = this.generateValue(this.checkboxes);
     this.isTouched = true;
-    this.isValid = this.validate(this.items, this.required);
-    this.value = this.generateValue(this.items);
+    this.checkAllValue = this.isCheckedAll();
+
+    this.onTouched();
+    this.onChange(this.value);
   }
 
-  generateValue(items: Array<CheckboxListItemModel>): { [key: string]: boolean; } {
+  isCheckedAll() {
+    const valueKeys = Object.keys(this.value);
+    const checkedValues = valueKeys.filter(item => this.value[item] === true);
+
+    return checkedValues.length > 1 && checkedValues.length === this.checkboxes.length
+      ? true
+      : false;
+  }
+
+  generateValue(items: Array<CheckboxComponent>): { [key: string]: boolean; } {
     const values = {};
 
     items.forEach(item => {
@@ -131,22 +151,29 @@ export class CheckboxListComponent extends FormFieldAbstract implements OnInit {
     return values;
   }
 
-  validate(items: Array<CheckboxListItemModel>, required: boolean): boolean {
-    const checkedCheckboxesLength = this.getCheckedCheckboxesLength(items);
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
 
-    if (required && !checkedCheckboxesLength) {
-      const fieldValidation = fieldValidations['required'];
-
-      this.errorMessage = fieldValidation.errorMessage;
-
-      return false;
+    if (isDisabled) {
+      setTimeout(this.disableAllCheckboxes, 0);
     }
-
-    return true;
   }
 
-  updateAndValidity() {
-    this.isTouched = true;
-    this.isValid = this.validate(this.items, this.required);
+  writeValue(value: CheckboxListValueModel): void {
+    this.value = value;
+
+    setTimeout(this.setCheckboxesValue, 0);
   }
+
+  registerOnChange(fn: (value: CheckboxListValueModel) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  onChange(value: CheckboxListValueModel): void {}
+
+  onTouched(): void {}
 }
