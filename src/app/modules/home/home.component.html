@@ -22,28 +22,61 @@ Input Float Label
 <materialize-input floatLabel="Float label"></materialize-input>
 Input Float Label with Placeholder
 <materialize-input floatLabel="Float Label and placeholder" placeholder="Write here"></materialize-input>
-
-<materialize-input label="With prefix">
+Input with Prefix
+<materialize-input>
   <span materializePrefix>+1</span>
 </materialize-input>
-<materialize-input floatLabel="With prefix and float label">
+Input with Prefix Icon
+<materialize-input>
+  <materialize-icon materializePrefix name="phone"></materialize-icon>
+</materialize-input>
+Input with Prefix and Float Label
+<materialize-input floatLabel="Float Label">
   <span materializePrefix>+1</span>
 </materialize-input>
-<materialize-input label="With materialize icon prefix">
+Input with Prefix Icon and Float Label
+<materialize-input floatLabel="Float Label">
   <materialize-icon materializePrefix name="phone"></materialize-icon>
 </materialize-input>
-<materialize-input floatLabel="With materialize icon prefix and float label">
-  <materialize-icon materializePrefix name="phone"></materialize-icon>
-</materialize-input>
-<materialize-input label="materialize Input with suffix" textAlign="right">
+Input with Suffix
+<materialize-input>
   <span materializeSuffix>.00</span>
 </materialize-input>
-<materialize-input label="materialize Input with icon suffix" textAlign="right">
+Input with Suffix Icon
+<materialize-input>
   <materialize-icon materializeSuffix name="phone"></materialize-icon>
 </materialize-input>
-<materialize-input floatLabel="materialize Input with materialize icon suffix and float label">
+Input with Suffix and Float Label
+<materialize-input floatLabel="Float Label">
+  <span materializeSuffix>.00</span>
+</materialize-input>
+Input with Suffix Icon and FloatLabel
+<materialize-input floatLabel="Float Label">
   <materialize-icon materializeSuffix name="phone"></materialize-icon>
 </materialize-input>
+
+<br />
+<br />
+<br />
+
+<materialize-switch>Switch</materialize-switch>
+<materialize-switch id="switch-id">With Id</materialize-switch>
+<materialize-switch [value]="true">With Value</materialize-switch>
+<materialize-switch [disabled]="true">Disabled</materialize-switch>
+<materialize-switch [disabled]="true" [value]="true">Disabled with value</materialize-switch>
+<materialize-switch [required]="true">Required</materialize-switch>
+
+<br />
+<br />
+<br />
+
+<materialize-checkbox>Checkbox</materialize-checkbox>
+<materialize-checkbox id="checkbox-id">With Id</materialize-checkbox>
+<materialize-checkbox [value]="true">With Value</materialize-checkbox>
+<materialize-checkbox [disabled]="true">Disabled</materialize-checkbox>
+<materialize-checkbox [disabled]="true" [value]="true">Disabled with value</materialize-checkbox>
+<materialize-checkbox [required]="true">Required</materialize-checkbox>
+<materialize-checkbox [required]="true" [indeterminate]="true">Indeterminate</materialize-checkbox>
 
 <br />
 <br />
@@ -67,29 +100,10 @@ Input Float Label with Placeholder
 <br />
 <br />
 
-<materialize-checkbox></materialize-checkbox>
-<materialize-checkbox label="Label"></materialize-checkbox>
-<materialize-checkbox label="With Id" id="checkbox-id"></materialize-checkbox>
-<materialize-checkbox label="With Value" [value]="true"></materialize-checkbox>
-<materialize-checkbox label="Disabled" [disabled]="true"></materialize-checkbox>
-<materialize-checkbox label="Disabled with value" [disabled]="true" [value]="true"></materialize-checkbox>
-<materialize-checkbox label="Required" [required]="true"></materialize-checkbox>
-
 <materialize-checkbox-list></materialize-checkbox-list>
 <materialize-checkbox-list [items]="checkboxListItems" label="Label"></materialize-checkbox-list>
 <materialize-checkbox-list [items]="checkboxListItems" label="Required"></materialize-checkbox-list>
 <materialize-checkbox-list [items]="checkboxListItems" checkAllLabel="Select all checkboxes"></materialize-checkbox-list>
-
-<br />
-<br />
-<br />
-
-<materialize-switch>Switch</materialize-switch>
-<materialize-switch id="switch-id">With Id</materialize-switch>
-<materialize-switch [value]="true">With Value</materialize-switch>
-<materialize-switch [disabled]="true">Disabled</materialize-switch>
-<materialize-switch [disabled]="true" [value]="true">Disabled with value</materialize-switch>
-<materialize-switch [required]="true">Required</materialize-switch>
 
 <br />
 <br />
