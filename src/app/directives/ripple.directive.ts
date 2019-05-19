@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 interface Coordinate {
   x: number;
@@ -8,26 +8,25 @@ interface Coordinate {
 @Directive({
   selector: '[materializeRipple]'
 })
-export class RippleDirective implements OnInit {
+export class RippleDirective {
   @Input() rippleDuration = 500;
   @Input() isRippleActive = true;
 
   private element: HTMLElement;
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
     this.createRipple = this.createRipple.bind(this);
 
     this.element = this.elementRef.nativeElement;
     this.element.classList.add('ripple-element');
   }
 
-  ngOnInit() {
-    if (this.isRippleActive) {
-      this.element.addEventListener('mousedown', this.createRipple);
-    }
-  }
-
+  @HostListener('mousedown', ['$event'])
   createRipple(event: any): void {
+    if (!this.isRippleActive) {
+      return;
+    }
+
     const ripple = document.createElement('div');
     const coordinates = this.getCoordinates(event);
     const radio = this.getRippleRadio(coordinates);
@@ -72,20 +71,18 @@ export class RippleDirective implements OnInit {
   }
 
   hideRipple(ripple: HTMLElement): void {
-    const timeToHide = 450;
-
     setTimeout(() => {
-      ripple.style.transitionDuration = `${ timeToHide }ms`;
+      ripple.style.transitionDuration = `${ this.rippleDuration }ms`;
       ripple.style.opacity = '0';
 
-      this.removeRipple(ripple, timeToHide);
+      this.removeRipple(ripple);
     }, this.rippleDuration);
   }
 
-  removeRipple(ripple: HTMLElement, time: number): void {
+  removeRipple(ripple: HTMLElement): void {
     setTimeout(() => {
-      this.element.removeChild(ripple);
-    }, time);
+      this.renderer.removeChild(this.element, ripple);
+    }, this.rippleDuration);
   }
 
   getOffset(element: HTMLElement) {
