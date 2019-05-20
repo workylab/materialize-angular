@@ -1,5 +1,3 @@
-<materialize-label>{{ label }}</materialize-label>
-
 <div class="form-control-container"
   tabindex="1"
 
@@ -11,7 +9,6 @@
   [class.active]="value || placeholder"
   [class.focused]="isFocused"
   [class.disabled]="disabled"
-  [class.error]="!isValid && isTouched"
 
   #formControlWrapper>
 
@@ -36,9 +33,8 @@
       #textArea>
     </textarea>
 
-    <materialize-icon className="icon-error" name="error" size="lg" *ngIf="!isValid && isTouched"></materialize-icon>
+    <materialize-icon className="form-icon-error" name="error" size="lg"></materialize-icon>
   </div>
 </div>
 
 <materialize-form-message type="info" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</materialize-form-message>
-<materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>

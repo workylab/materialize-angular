@@ -11,3 +11,7 @@
 .form-control-container {
   @extend %form-control-container-base;
 }
+
+:host.ng-touched.ng-dirty.ng-invalid {
+  @extend %form-control-error;
+}
