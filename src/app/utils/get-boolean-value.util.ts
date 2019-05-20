@@ -1,7 +1,5 @@
-import { isBoolean } from './is-boolean.util';
-
 export const getBooleanValue = (value: boolean, defaultValue: boolean): boolean => {
-  if (isBoolean(value)) {
+  if (typeof value === 'boolean') {
     return value;
   }
 
