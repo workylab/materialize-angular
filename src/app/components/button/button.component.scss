@@ -34,10 +34,10 @@
   .icon {
     margin: 0 $space-xxxs;
   }
-}
 
-::ng-deep .ripple {
-  background-color: rgba($color-white, 0.15);
+  ::ng-deep .ripple {
+    background-color: rgba($color-white, 0.15);
+  }
 }
 
 .button-xl {
