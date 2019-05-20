@@ -1,4 +1,13 @@
-import { AfterContentInit, Component, ContentChildren, Input, OnInit, QueryList } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  QueryList
+} from '@angular/core';
 import { AccordionModel } from './accordion.model';
 import { CollapsibleComponent } from '../collapsible/collapsible.component';
 
@@ -9,12 +18,19 @@ import { CollapsibleComponent } from '../collapsible/collapsible.component';
 export class AccordionComponent implements AccordionModel, AfterContentInit, OnInit {
   static readonly defaultProps: AccordionModel = { className: '' };
 
-  @ContentChildren(CollapsibleComponent) collapsibles: QueryList<CollapsibleComponent>;
+  @ContentChildren(CollapsibleComponent) collapsiblesQueryList: QueryList<CollapsibleComponent>;
+
+  @Output('onToggle') onToggleEmmiter: EventEmitter<number | null>;
 
   @Input('className') classNameInput: string;
 
+  public activeIndex: number | null;
   public className: string;
-  public activeIndex: number;
+  public collapsibles: Array<CollapsibleComponent>;
+
+  constructor() {
+    this.onToggleEmmiter = new EventEmitter();
+  }
 
   ngOnInit() {
     this.initValues();
@@ -27,10 +43,10 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
   }
 
   ngAfterContentInit() {
-    const collapsibles: Array<CollapsibleComponent> = this.collapsibles.toArray();
+    this.collapsibles = this.collapsiblesQueryList.toArray();
 
-    for (let i = 0; i < collapsibles.length; i++) {
-      const currentCollapsible = collapsibles[i];
+    for (let i = 0; i < this.collapsibles.length; i++) {
+      const currentCollapsible = this.collapsibles[i];
 
       currentCollapsible.onClickEventEmitter.subscribe((isOpen: boolean) => {
         this.toggleCollapsibles(i, isOpen);
@@ -38,15 +54,25 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
     }
   }
 
-  toggleCollapsibles(index: number, isOpen: boolean) {
-    const collapsibles = this.collapsibles.toArray();
+  toggleCollapsibles(index: number | null, isOpen: boolean) {
+    this.activeIndex = isOpen
+      ? index
+      : null;
 
-    for (let i = 0; i < collapsibles.length; i++) {
-      if (i === index) {
-        collapsibles[i].toggleCollapsible(isOpen);
+    this.onToggleEmmiter.emit(this.activeIndex);
+
+    for (let i = 0; i < this.collapsibles.length; i++) {
+      if (i === this.activeIndex) {
+        this.collapsibles[i].toggleCollapsible(isOpen);
       } else {
-        collapsibles[i].toggleCollapsible(false);
+        this.collapsibles[i].toggleCollapsible(false);
       }
     }
+  }
+
+  closeAll() {
+    this.collapsibles.forEach(item => {
+      item.toggleCollapsible(false);
+    });
   }
 }

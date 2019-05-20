@@ -92,6 +92,80 @@ Input with Suffix Icon and FloatLabel
 <br />
 <br />
 
+TextArea
+<materialize-textarea></materialize-textarea>
+TextArea with Id
+<materialize-textarea id="textarea-id"></materialize-textarea>
+TextArea with Value
+<materialize-textarea value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
+TextArea with 3 Rows
+<materialize-textarea [rows]="3"></materialize-textarea>
+TextArea with Counter
+<materialize-textarea [hasCounter]="true"></materialize-textarea>
+TextArea with Counter and Maxlength
+<materialize-textarea [hasCounter]="true" [maxLength]="5"></materialize-textarea>
+TextArea with Placeholder
+<materialize-textarea placeholder="Write here"></materialize-textarea>
+TextArea Disabled
+<materialize-textarea [disabled]="true"></materialize-textarea>
+TextArea Disabled with Value
+<materialize-textarea [disabled]="true" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
+TextArea Disabled with Value and Float Label
+<materialize-textarea [disabled]="true" floatLabel="Float Label" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
+TextArea Required
+<materialize-textarea [required]="true"></materialize-textarea>
+TextArea with Float Label
+<materialize-textarea floatLabel="Float Label"></materialize-textarea>
+TextArea with Float Label and Value
+<materialize-textarea floatLabel="Float Label" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
+TextArea with Float Label and Placeholder
+<materialize-textarea floatLabel="Float Label and placeholder" placeholder="Placeholder"></materialize-textarea>
+
+<br />
+<br />
+<br />
+
+<h3>Collapsible</h3>
+<materialize-collapsible>
+  <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+  <materialize-collapsible-content>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Aliquam minima soluta enim porro atque placeat quis commodi
+    deserunt veniam libero molestiae doloremque eveniet incidunt,
+    odit expedita cupiditate est tenetur reprehenderit.
+  </materialize-collapsible-content>
+</materialize-collapsible>
+
+<br />
+<br />
+<br />
+
+<h3>Accordion</h3>
+<materialize-accordion>
+  <materialize-collapsible>
+    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+    <materialize-collapsible-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Aliquam minima soluta enim porro atque placeat quis commodi
+      deserunt veniam libero molestiae doloremque eveniet incidunt,
+      odit expedita cupiditate est tenetur reprehenderit.
+    </materialize-collapsible-content>
+  </materialize-collapsible>
+  <materialize-collapsible>
+    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
+    <materialize-collapsible-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Aliquam minima soluta enim porro atque placeat quis commodi
+      deserunt veniam libero molestiae doloremque eveniet incidunt,
+      odit expedita cupiditate est tenetur reprehenderit.
+    </materialize-collapsible-content>
+  </materialize-collapsible>
+</materialize-accordion>
+
+<br />
+<br />
+<br />
+
 <materialize-autocomplete [options]="selectOptions"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="Label"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="With Id" id="autocomplete-id"></materialize-autocomplete>
@@ -105,25 +179,6 @@ Input with Suffix Icon and FloatLabel
 <materialize-autocomplete [options]="selectOptions" label="Required and match value" [required]="true" [isMatchValue]="true"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" floatLabel="Float Label"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" floatLabel="Required Float Label" [required]="true"></materialize-autocomplete>
-
-<br />
-<br />
-<br />
-
-<materialize-textarea></materialize-textarea>
-<materialize-textarea label="Label"></materialize-textarea>
-<materialize-textarea label="With Id" id="textarea-id"></materialize-textarea>
-<materialize-textarea label="With Value" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
-<materialize-textarea label="With 3 Rows" [rows]="3"></materialize-textarea>
-<materialize-textarea label="With counter" [hasCounter]="true"></materialize-textarea>
-<materialize-textarea label="With counter and maxlength" [hasCounter]="true" [maxLength]="5"></materialize-textarea>
-<materialize-textarea label="Placeholder" placeholder="Write here"></materialize-textarea>
-<materialize-textarea label="Disabled" [disabled]="true"></materialize-textarea>
-<materialize-textarea label="Disabled with value" [disabled]="true" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
-<materialize-textarea label="Required" [required]="true"></materialize-textarea>
-<materialize-textarea floatLabel="Float Label"></materialize-textarea>
-<materialize-textarea floatLabel="Float Label and placeholder" placeholder="Placeholder"></materialize-textarea>
-<materialize-textarea floatLabel="Float Label and required" [required]="true"></materialize-textarea>
 
 <br />
 <br />
@@ -366,47 +421,6 @@ Input with Suffix Icon and FloatLabel
 
 <h3>Dropdown</h3>
 <materialize-dropdown [items]="dropDownItems"></materialize-dropdown>
-
-<br />
-<br />
-<br />
-
-<h3>Collapsible</h3>
-<materialize-collapsible>
-  <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
-  <materialize-collapsible-content>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Aliquam minima soluta enim porro atque placeat quis commodi
-    deserunt veniam libero molestiae doloremque eveniet incidunt,
-    odit expedita cupiditate est tenetur reprehenderit.
-  </materialize-collapsible-content>
-</materialize-collapsible>
-
-<br />
-<br />
-<br />
-
-<h3>Accordion</h3>
-<materialize-accordion>
-  <materialize-collapsible>
-    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
-    <materialize-collapsible-content>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Aliquam minima soluta enim porro atque placeat quis commodi
-      deserunt veniam libero molestiae doloremque eveniet incidunt,
-      odit expedita cupiditate est tenetur reprehenderit.
-    </materialize-collapsible-content>
-  </materialize-collapsible>
-  <materialize-collapsible>
-    <materialize-collapsible-title iconName="phone" iconSize="lg">Title</materialize-collapsible-title>
-    <materialize-collapsible-content>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Aliquam minima soluta enim porro atque placeat quis commodi
-      deserunt veniam libero molestiae doloremque eveniet incidunt,
-      odit expedita cupiditate est tenetur reprehenderit.
-    </materialize-collapsible-content>
-  </materialize-collapsible>
-</materialize-accordion>
 
 <br />
 <br />

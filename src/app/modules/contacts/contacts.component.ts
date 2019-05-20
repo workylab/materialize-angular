@@ -50,6 +50,7 @@ export class ContactsComponent {
         hasWorkPhone: false
       } }),
       isWorkPhone: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
+      message: new FormControl({ disabled: false, value: 'My Message' }, Validators.required),
       name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+'))
     });
   }

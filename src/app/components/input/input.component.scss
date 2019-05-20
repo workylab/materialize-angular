@@ -13,6 +13,10 @@
   @extend %form-control-container-base;
 }
 
+:host.ng-touched.ng-dirty.ng-invalid {
+  @extend %form-control-error;
+}
+
 .form-control-prefix-container,
 .form-control-suffix-container {
   align-items: center;
@@ -30,24 +34,4 @@
 
 .form-control-suffix-container {
   padding-right: $space-xs;
-}
-
-:host.ng-touched.ng-dirty.ng-invalid {
-  .form-control-container::after {
-    background-color: $color-red;
-    width: 100%;
-  }
-
-  .form-control-float-label {
-    color: $color-red;
-  }
-
-  .form-control {
-    caret-color: $color-red;
-    padding-right: 48px;
-  }
-
-  .form-control-wrapper ::ng-deep .form-icon-error {
-    display: block;
-  }
 }
