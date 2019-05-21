@@ -26,7 +26,7 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
     id: '',
     name: '',
     required: false,
-    value: {}
+    value: null
   };
 
   @ContentChildren(CheckboxComponent) checkboxesQueryList: QueryList<CheckboxComponent>;
@@ -37,7 +37,7 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
   @Input('id') idInput: string;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
-  @Input('value') valueInput: CheckboxListValueModel;
+  @Input('value') valueInput: CheckboxListValueModel | null;
 
   public checkAllLabel: string;
   public checkAllValue: boolean;
@@ -49,7 +49,7 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
   public isTouched: boolean;
   public name: string;
   public required: boolean;
-  public value: CheckboxListValueModel;
+  public value: CheckboxListValueModel | null;
 
   constructor() {
     super();
@@ -100,9 +100,11 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
 
   setCheckboxesValue() {
     for (const checkbox of this.checkboxes) {
-      const checkboxValue = this.value[checkbox.name];
+      const value = this.value
+        ? this.value[checkbox.name]
+        : null;
 
-      checkbox.value = Boolean(checkboxValue);
+      checkbox.value = Boolean(value);
     }
   }
 
@@ -133,8 +135,10 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
   }
 
   isCheckedAll() {
-    const valueKeys = Object.keys(this.value);
-    const checkedValues = valueKeys.filter(item => this.value[item] === true);
+    const valueKeys = this.value
+      ? Object.keys(this.value)
+      : [];
+    const checkedValues = valueKeys.filter(item => this.value && this.value[item] === true);
     const checkedCheckboxes = this.checkboxes.filter(item => item.value === true);
 
     return (checkedValues.length > 1 && checkedValues.length === this.checkboxes.length)
@@ -143,10 +147,15 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
       : false;
   }
 
-  generateValue(items: Array<CheckboxComponent>): { [key: string]: boolean; } {
+  generateValue(checkboxes: Array<CheckboxComponent>): { [key: string]: boolean; } | null {
+    const activeCheckboxes = checkboxes.filter(item => item.value);
     const values = {};
 
-    items.forEach(item => {
+    if (!activeCheckboxes.length) {
+      return null;
+    }
+
+    checkboxes.forEach(item => {
       values[item.name] = item.value;
     });
 
@@ -175,7 +184,7 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
     this.onTouched = fn;
   }
 
-  onChange(value: CheckboxListValueModel): void {}
+  onChange(value: any): void {}
 
   onTouched(): void {}
 }
