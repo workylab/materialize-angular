@@ -9,7 +9,7 @@ export abstract class FormFieldAbstract {
   public isValid: boolean;
   public name: string;
   public required: boolean;
-  public value: string | boolean | number | Array<FileModel> | { [key: string]: boolean | string; };
+  public value: string | boolean | number | null | Array<FileModel> | { [key: string]: boolean | string; };
 
   public updateAndValidity(): void {}
 }

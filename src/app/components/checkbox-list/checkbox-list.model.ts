@@ -5,7 +5,7 @@ export interface CheckboxListModel {
   id: string;
   name: string;
   required: boolean;
-  value: CheckboxListValueModel;
+  value: CheckboxListValueModel | null;
 }
 
 export interface CheckboxListValueModel {
