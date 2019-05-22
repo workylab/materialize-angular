@@ -1,5 +1,6 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
+@import '../../../styles/variables.scss';
 
 .form-radio-container {
   position: relative;
@@ -10,11 +11,11 @@
   }
 }
 
-.form-radio-label {
+.form-radio-label-container {
   color: $color-black;
-  font-size: $font-size-xs;
+  font-family: $materialize-font-family;
+  font-size: 16px;
   font-weight: $font-weight-regular;
-  margin-left: $space-sm;
 }
 
 .form-radio-control {
@@ -22,7 +23,7 @@
   display: flex;
   flex-direction: row;
   outline: none;
-  padding: $space-xxs 0;
+  padding: $space-xs 0;
   position: relative;
 }
 
@@ -31,77 +32,72 @@
   border-radius: $radius-full;
   cursor: pointer;
   height: 20px;
+  margin: 0 $space-sm;
   outline: none;
   position: relative;
   width: 20px;
 
-  &::before,
-  &::after {
+  &::before {
     border-radius: $radius-full;
     content: '';
+    height: 10px;
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  &::before {
-    height: 10px;
     width: 10px;
   }
+}
 
-  &::after {
-    height: 40px;
-    transition: background-color 300ms ease;
-    width: 40px;
+.form-radio-indicator-ripple {
+  border-radius: $radius-full;
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 300ms ease;
+  width: 40px;
+  z-index: $zindex-level-1;
+}
+
+.form-radio-indicator:hover:not(.disabled) {
+  &.active .form-radio-indicator-ripple {
+    background-color: rgba($color-purple, 0.1);
   }
 
-  &:hover:not(.disabled) {
-    &.active::after {
-      background-color: rgba($color-purple, 0.1);
-    }
+  .form-radio-indicator-ripple {
+    background-color: rgba($color-gray-dark, 0.1);
+  }
+}
 
-    &.error::after {
-      background-color: rgba($color-red, 0.1);
-    }
-
-    &::after {
-      background-color: rgba($color-gray-dark, 0.1);
-    }
+.form-radio-indicator.focused:not(.disabled) {
+  &.active .form-radio-indicator-ripple {
+    background-color: rgba($color-purple, 0.3);
   }
 
-  &:focus:not(.disabled) {
-    &.active::after {
-      background-color: rgba($color-purple, 0.3);
-    }
+  .form-radio-indicator-ripple {
+    background-color: rgba($color-gray-dark, 0.3);
+  }
+}
 
-    &.error::after {
-      background-color: rgba($color-red, 0.3);
-    }
+.form-radio-indicator.active {
+  border-color: $color-purple;
 
-    &::after {
-      background-color: rgba($color-gray-dark, 0.3);
-    }
+  &::before {
+    background-color: $color-purple;
   }
 
-  &.active {
-    border-color: $color-purple;
-
-    &::before {
-      background-color: $color-purple;
-    }
+  .form-radio-indicator-ripple ::ng-deep .ripple {
+    background-color: rgba($color-purple, 0.3);
   }
+}
 
-  &.error {
-    border-color: $color-red;
-  }
+.form-radio-indicator.disabled {
+  border-color: lighten($color-gray-dark, 30%);
+  cursor: not-allowed;
 
-  &.disabled {
-    border-color: lighten($color-gray-dark, 30%);
-    cursor: not-allowed;
-
-    &.active::before {
-      background-color: lighten($color-gray-dark, 30%);
-    }
+  &.active::before {
+    background-color: lighten($color-gray-dark, 30%);
   }
 }
