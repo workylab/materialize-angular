@@ -1,29 +1,26 @@
-<div class="form-radio-container" [ngClass]="className">
-  <materialize-label>{{ label }}</materialize-label>
+<div class="form-radio-control">
+  <div class="form-radio-indicator"
+    (click)="onClick()"
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)"
 
-  <div class="form-radio-control" *ngFor="let option of options; index as i">
-    <div class="form-radio-indicator"
-      tabindex="0"
-
-      (click)="onChange(option.value)"
-      (blur)="onBlur($event)"
-
-      [class.active]="value === option.value"
-      [class.disabled]="disabled"
-      [class.focused]="isFocused"
-      [class.error]="!isValid && isTouched">
-    </div>
-
-    <materialize-label className="form-radio-label">{{ label }}</materialize-label>
-
-    <input type="radio"
-      [checked]="value === option.value"
-      [disabled]="disabled"
-      [id]="id + '-' + i"
-      [name]="name"
-      [required]="required"
-      [value]= "option.value" />
+    [class.active]="isActive"
+    [class.disabled]="disabled"
+    [class.focused]="isFocused"
+    
+    [tabindex]="disabled ? '-1': '0'">
+    <div class="form-radio-indicator-ripple" materializeRipple [isRippleActive]="!disabled" [rippleDuration]="200"></div>
   </div>
 
-  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
+  <div class="form-radio-label-container">
+    <ng-content></ng-content>
+  <div>
+
+  <!-- <input type="radio"
+    [attr.id]="id + '-' + i"
+    [checked]="value === option.value"
+    [disabled]="disabled"
+    [name]="name"
+    [required]="required"
+    [value]= "option.value" /> -->
 </div>

@@ -26,6 +26,7 @@ export * from './app/components/label/label.component';
 export * from './app/components/modal/modal.component';
 export * from './app/components/navbar/navbar.component';
 export * from './app/components/radio/radio.component';
+export * from './app/components/radio-group/radio-group.component';
 export * from './app/components/range-slider/range-slider.component';
 export * from './app/components/select/select.component';
 export * from './app/components/sidenav/sidenav.component';

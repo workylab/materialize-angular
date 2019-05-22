@@ -166,6 +166,46 @@ TextArea with Float Label and Placeholder
 <br />
 <br />
 
+<materialize-radio>Radio</materialize-radio>
+<materialize-radio id="radio-id">With Id</materialize-radio>
+<materialize-radio value="2">With Value</materialize-radio>
+<materialize-radio [disabled]="true">Disabled</materialize-radio>
+
+Radio Group
+<materialize-radio-group>
+  <materialize-radio value="a">Value A</materialize-radio>
+  <materialize-radio value="b">Value B</materialize-radio>
+</materialize-radio-group>
+Radio Group with Value
+<materialize-radio-group value="b">
+  <materialize-radio value="a">Value A</materialize-radio>
+  <materialize-radio value="b">Value B</materialize-radio>
+</materialize-radio-group>
+Radio Group Can Uncheck
+<materialize-radio-group [canUncheck]="true">
+  <materialize-radio value="a">Value A</materialize-radio>
+  <materialize-radio value="b">Value B</materialize-radio>
+</materialize-radio-group>
+Radio Group Disabled
+<materialize-radio-group [disabled]="true">
+  <materialize-radio value="a">Value A</materialize-radio>
+  <materialize-radio value="b">Value B</materialize-radio>
+</materialize-radio-group>
+Radio Group Disabled With Value
+<materialize-radio-group [disabled]="true" value="b">
+  <materialize-radio value="a">Value A</materialize-radio>
+  <materialize-radio value="b">Value B</materialize-radio>
+</materialize-radio-group>
+Radio Group Required
+<materialize-radio-group [required]="true">
+  <materialize-radio value="a">Value A</materialize-radio>
+  <materialize-radio value="b">Value B</materialize-radio>
+</materialize-radio-group>
+
+<br />
+<br />
+<br />
+
 <materialize-autocomplete [options]="selectOptions"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="Label"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="With Id" id="autocomplete-id"></materialize-autocomplete>
@@ -179,21 +219,6 @@ TextArea with Float Label and Placeholder
 <materialize-autocomplete [options]="selectOptions" label="Required and match value" [required]="true" [isMatchValue]="true"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" floatLabel="Float Label"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" floatLabel="Required Float Label" [required]="true"></materialize-autocomplete>
-
-<br />
-<br />
-<br />
-
-<materialize-radio [options]="radioOptions"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="Label"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="With Id" id="radio-id"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="With Value" value="2"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="Can uncheck" [canUncheck]="true"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="Disabled" [disabled]="true"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="Disabled with value" [disabled]="true" value="2"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="Required" [required]="true"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="Required with value" [required]="true" value="2"></materialize-radio>
-<materialize-radio [options]="radioOptions" label="Required with value and uncheck" [canUncheck]="true" [required]="true" value="2"></materialize-radio>
 
 <br />
 <br />

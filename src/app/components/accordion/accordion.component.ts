@@ -71,6 +71,10 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
   }
 
   closeAll() {
+    this.activeIndex = null;
+
+    this.onToggleEmmiter.emit(this.activeIndex);
+
     this.collapsibles.forEach(item => {
       item.toggleCollapsible(false);
     });

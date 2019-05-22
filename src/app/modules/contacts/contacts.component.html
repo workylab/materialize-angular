@@ -11,9 +11,6 @@ navbar content
   <materialize-form-group iconName="message">
     
   </materialize-form-group>
-  <materialize-form-group iconName="cloud">
-    <materialize-radio label="Store data" [required]="true" [canUncheck]="true" [options]="radioOptions" name="is_save" materializeFormField></materialize-radio>
-  </materialize-form-group>
   <materialize-form-group iconName="map">
     <materialize-select label="State" [required]="true" name="state" [options]="stateOptions" materializeFormField></materialize-select>
   </materialize-form-group>
@@ -43,6 +40,13 @@ navbar content
       <materialize-checkbox name="hasWorkPhone">Has work phone</materialize-checkbox>
     </materialize-checkbox-list>
     {{ form.controls.hasPhones.errors | json }}
+
+    <materialize-radio-group [canUncheck]="true" formControlName="favorite">
+      <materialize-radio value="a">Value 1</materialize-radio>
+      <materialize-radio value="b">Value 2</materialize-radio>
+      <materialize-radio value="c">Value 3</materialize-radio>
+    </materialize-radio-group>
+    {{ form.controls.favorite.errors | json }}
   </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>
