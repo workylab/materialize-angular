@@ -1,7 +1,6 @@
 import { SortedColumnModel, TableModel } from '../../components/table/table.model';
 import { Component } from '@angular/core';
 import { DropdownItemModel } from '../../components/dropdown/dropdown.model';
-import { RadioOptionModel } from '../../components/radio/radio.model';
 import { SelectOptionModel } from '../../components/select/select.model';
 
 @Component({
@@ -59,17 +58,6 @@ export class HomeComponent {
   }, {
     content: 'Option2',
     value: '2'
-  }];
-
-  public radioOptions: Array<RadioOptionModel> = [{
-    content: 'Option1',
-    value: '1'
-  }, {
-    content: 'Option2',
-    value: '2'
-  }, {
-    content: 'Option3',
-    value: '3'
   }];
 
   public dropDownItems: Array<DropdownItemModel> = [{

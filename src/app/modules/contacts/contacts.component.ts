@@ -1,7 +1,6 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { NavbarOptionModel } from '../../components/navbar/navbar.model';
-import { RadioOptionModel } from '../../components/radio/radio.model';
 import { SelectOptionModel } from '../../components/select/select.model';
 
 @Component({
@@ -9,7 +8,6 @@ import { SelectOptionModel } from '../../components/select/select.model';
 })
 export class ContactsComponent {
   public navbarOptions: Array<NavbarOptionModel>;
-  public radioOptions: Array<RadioOptionModel>;
   public stateOptions: Array<SelectOptionModel>;
 
   public form: FormGroup;
@@ -34,21 +32,14 @@ export class ContactsComponent {
       value: 'PA'
     }];
 
-    this.radioOptions = [{
-      content: 'Yes',
-      value: '1'
-    }, {
-      content: 'No',
-      value: '2'
-    }];
-
     this.form = new FormGroup({
+      favorite: new FormControl({ disabled: false, value: 'b' }, Validators.required),
       hasLocation: new FormControl({ disabled: true, value: true }, Validators.requiredTrue),
       hasPhones: new FormControl({ disabled: false, value: {
         hasHousePhone: false,
         hasPersonalPhone: false,
         hasWorkPhone: false
-      } }),
+      } }, Validators.required),
       isWorkPhone: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
       message: new FormControl({ disabled: false, value: 'My Message' }, Validators.required),
       name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+'))
