@@ -29,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { PrefixDirective } from '../directives/prefix.directive';
 import { RadioComponent } from './radio/radio.component';
+import { RadioGroupComponent } from './radio-group/radio-group.component';
 import { RangeSliderComponent } from './range-slider/range-slider.component';
 import { RippleDirective } from '../directives/ripple.directive';
 import { SelectComponent } from './select/select.component';
@@ -74,6 +75,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     PrefixDirective,
     SuffixDirective,
     RadioComponent,
+    RadioGroupComponent,
     RangeSliderComponent,
     RippleDirective,
     SelectComponent,
@@ -119,6 +121,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SwiperComponent,
     SwiperItemComponent,
     RadioComponent,
+    RadioGroupComponent,
     RangeSliderComponent,
     RippleDirective,
     SelectComponent,
