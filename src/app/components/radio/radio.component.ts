@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
+import { RadioModel } from './radio.model';
 
 @Component({
   selector: 'materialize-radio',
@@ -7,19 +8,31 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   templateUrl: './radio.component.html'
 })
 export class RadioComponent implements OnInit {
-  static readonly defaultProps = {
+  static readonly defaultProps: RadioModel = {
+    className: '',
     disabled: false,
+    id: '',
+    name: '',
+    required: false,
     value: ''
   };
 
   @Output('onClick') onClickEmitter: EventEmitter<string>;
 
+  @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
+  @Input('id') idInput: string;
+  @Input('name') nameInput: string;
+  @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
 
-  public isActive: boolean;
+  public className: string;
   public disabled: boolean;
+  public id: string;
+  public isActive: boolean;
   public isFocused: boolean;
+  public name: string;
+  public required: boolean;
   public value: string;
 
   constructor() {
@@ -33,9 +46,14 @@ export class RadioComponent implements OnInit {
   initValues() {
     const { defaultProps } = RadioComponent;
 
+    this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.id = this.idInput || defaultProps.id;
+    this.name = this.nameInput || defaultProps.name;
+    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
+    this.isActive = false;
     this.isFocused = false;
   }
 

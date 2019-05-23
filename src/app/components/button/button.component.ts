@@ -15,7 +15,6 @@ export class ButtonComponent implements ButtonModel, OnInit {
     iconName: '',
     isRounded: false,
     size: 'md',
-    text: '',
     type: 'button'
   };
 
@@ -25,7 +24,6 @@ export class ButtonComponent implements ButtonModel, OnInit {
   @Input('iconName') iconNameInput: string;
   @Input('isRounded') isRoundedInput: boolean;
   @Input('size') sizeInput: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  @Input('text') textInput: string;
   @Input('type') typeInput: 'button' | 'submit';
 
   @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
@@ -35,9 +33,9 @@ export class ButtonComponent implements ButtonModel, OnInit {
   public disabled: boolean;
   public iconName: string;
   public iconAtEnd: boolean;
+  public isFocused: boolean;
   public isRounded: boolean;
   public size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  public text: string;
   public type: 'button' | 'submit';
 
   constructor() {
@@ -58,15 +56,28 @@ export class ButtonComponent implements ButtonModel, OnInit {
     this.iconAtEnd = this.iconAtEndInput || defaultProps.iconAtEnd;
     this.isRounded = getBooleanValue(this.isRoundedInput, defaultProps.isRounded);
     this.size = this.sizeInput || defaultProps.size;
-    this.text = this.textInput || defaultProps.text;
     this.type = this.typeInput || defaultProps.type;
+
+    this.isFocused = false;
+  }
+
+  onFocus() {
+    if (!this.disabled) {
+      this.isFocused = true;
+    }
   }
 
   onClick() {
-    this.onClickEmitter.emit();
+    if (!this.disabled) {
+      this.onClickEmitter.emit();
+
+      this.isFocused = false;
+    }
   }
 
   onBlur(event: Event) {
     this.onBlurEmitter.emit(event);
+
+    this.isFocused = false;
   }
 }

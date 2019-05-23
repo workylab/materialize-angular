@@ -1,5 +1,6 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
+@import '../../../styles/variables.scss';
 
 .button {
   align-items: center;
@@ -15,6 +16,22 @@
   outline: none;
   padding: $space-sm $space-xs;
   text-transform: uppercase;
+  transition: background-color 300ms ease;
+
+  &:hover {
+    background-color: lighten($color-purple, 5%);
+  }
+
+  &.focused {
+    background-color: lighten($color-purple, 10%);
+  }
+
+  &[disabled] {
+    background-color: $color-gray;
+    box-shadow: none;
+    color: $color-gray-dark;
+    cursor: not-allowed;
+  }
 
   &.rounded {
     border-radius: 100px;
@@ -26,17 +43,21 @@
 
   .button-text {
     display: flex;
+    font-family: $materialize-font-family;
     font-weight: $font-weight-regular;
-    margin: 0 $space-xxxs;
     order: 1;
+
+    &:not(:empty) {
+      margin: 0 $space-xs;
+    }
   }
 
-  .icon {
+  ::ng-deep .button-icon {
     margin: 0 $space-xxxs;
   }
 
   ::ng-deep .ripple {
-    background-color: rgba($color-white, 0.15);
+    background-color: rgba(lighten($color-purple, 50%), 0.1);
   }
 }
 

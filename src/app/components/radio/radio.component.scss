@@ -2,15 +2,6 @@
 @import '../common/styles/metrics.scss';
 @import '../../../styles/variables.scss';
 
-.form-radio-container {
-  position: relative;
-  width: 100%;
-
-  input[type='radio'] {
-    display: none;
-  }
-}
-
 .form-radio-label-container {
   color: $color-black;
   font-family: $materialize-font-family;
@@ -25,6 +16,10 @@
   outline: none;
   padding: $space-xs 0;
   position: relative;
+
+  input[type='radio'] {
+    display: none;
+  }
 }
 
 .form-radio-indicator {
