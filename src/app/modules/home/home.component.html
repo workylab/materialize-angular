@@ -206,6 +206,63 @@ Radio Group Required
 <br />
 <br />
 
+<h3>Simple Button</h3>
+<materialize-button>Button</materialize-button>
+<materialize-button [disabled]="true">Disabled</materialize-button>
+<materialize-button [isRounded]="true">Rounded</materialize-button>
+<materialize-button iconName="add">With Icon</materialize-button>
+<materialize-button iconName="add" [iconAtEnd]="true">With Icon at End</materialize-button>
+<materialize-button iconName="phone" [isRounded]="true" [iconAtEnd]="true">Rounded with icon at the end</materialize-button>
+<materialize-button iconName="phone" size="xs" [isRounded]="true"></materialize-button>
+<materialize-button iconName="phone" size="sm" [isRounded]="true"></materialize-button>
+<materialize-button iconName="phone" size="md" [isRounded]="true"></materialize-button>
+<materialize-button iconName="phone" size="lg" [isRounded]="true"></materialize-button>
+<materialize-button iconName="phone" size="xl" [isRounded]="true"></materialize-button>
+<materialize-button iconName="phone" size="xs">Size XS</materialize-button>
+<materialize-button iconName="phone" size="sm">Size SM</materialize-button>
+<materialize-button iconName="phone" size="md">Size MD</materialize-button>
+<materialize-button iconName="phone" size="lg">Size LG</materialize-button>
+<materialize-button iconName="phone" size="xl">Size XL</materialize-button>
+
+<br />
+<br />
+<br />
+
+<h3>Simple Icon XS</h3>
+<materialize-icon name="done" size="xs"></materialize-icon>
+
+<h3>Simple Icon SM</h3>
+<materialize-icon name="done" size="sm"></materialize-icon>
+
+<h3>Simple Icon MD</h3>
+<materialize-icon name="done" size="md"></materialize-icon>
+
+<h3>Simple Icon LG</h3>
+<materialize-icon name="done" size="lg"></materialize-icon>
+
+<h3>Simple Icon XL</h3>
+<materialize-icon name="done" size="xl"></materialize-icon>
+
+<h3>Circle Icon XS</h3>
+<materialize-icon name="done" size="xs" [isCircle]="true"></materialize-icon>
+
+<h3>Circle Icon SM</h3>
+<materialize-icon name="done" size="sm" [isCircle]="true"></materialize-icon>
+
+<h3>Circle Icon MD</h3>
+<materialize-icon name="done" size="md" [isCircle]="true"></materialize-icon>
+
+<h3>Circle Icon LG</h3>
+<materialize-icon name="done" size="lg" [isCircle]="true"></materialize-icon>
+
+<h3>Circle Icon XL</h3>
+<materialize-icon name="done" size="xl" [isCircle]="true"></materialize-icon>
+
+
+<br />
+<br />
+<br />
+
 <materialize-autocomplete [options]="selectOptions"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="Label"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="With Id" id="autocomplete-id"></materialize-autocomplete>
@@ -319,101 +376,6 @@ Radio Group Required
     content 3
   </materialize-tab>
 </materialize-tab-group>
-
-<br />
-<br />
-
-<h3>Simple Button</h3>
-<materialize-button text="button"></materialize-button>
-<br />
-<br />
-
-<h3>Button with icon</h3>
-<materialize-button text="button" iconName="add"></materialize-button>
-<br />
-<br />
-
-<h3>Button with Icon at End</h3>
-<materialize-button text="button" iconName="add" [iconAtEnd]="true"></materialize-button>
-<br />
-<br />
-
-<h3>Rounded Button</h3>
-<materialize-button text="button" [isRounded]="true"></materialize-button>
-<br />
-<br />
-
-<h3>Rounded Button with Icon</h3>
-<materialize-button text="button" iconName="phone" [isRounded]="true"></materialize-button>
-<br />
-<br />
-
-<h3>Rounded Button with icon at the end</h3>
-<materialize-button text="button" iconName="phone" [isRounded]="true" [iconAtEnd]="true"></materialize-button>
-<br />
-<br />
-
-<h3>Rounded Button with icon</h3>
-<materialize-button iconName="phone" [isRounded]="true"></materialize-button>
-<br />
-<br />
-
-<h3>Button XS</h3>
-<materialize-button iconName="phone" size="xs" text="button"></materialize-button>
-<br />
-<br />
-
-<h3>Button SM</h3>
-<materialize-button iconName="phone" size="sm" text="button"></materialize-button>
-<br />
-<br />
-
-<h3>Button MD</h3>
-<materialize-button iconName="phone" size="md" text="button"></materialize-button>
-<br />
-<br />
-
-<h3>Button LG</h3>
-<materialize-button iconName="phone" size="lg" text="button"></materialize-button>
-<br />
-<br />
-
-<h3>Button XL</h3>
-<materialize-button iconName="phone" size="xl" text="button"></materialize-button>
-
-<br />
-<br />
-<br />
-
-<h3>Simple Icon XS</h3>
-<materialize-icon name="done" size="xs"></materialize-icon>
-
-<h3>Simple Icon SM</h3>
-<materialize-icon name="done" size="sm"></materialize-icon>
-
-<h3>Simple Icon MD</h3>
-<materialize-icon name="done" size="md"></materialize-icon>
-
-<h3>Simple Icon LG</h3>
-<materialize-icon name="done" size="lg"></materialize-icon>
-
-<h3>Simple Icon XL</h3>
-<materialize-icon name="done" size="xl"></materialize-icon>
-
-<h3>Circle Icon XS</h3>
-<materialize-icon name="done" size="xs" [isCircle]="true"></materialize-icon>
-
-<h3>Circle Icon SM</h3>
-<materialize-icon name="done" size="sm" [isCircle]="true"></materialize-icon>
-
-<h3>Circle Icon MD</h3>
-<materialize-icon name="done" size="md" [isCircle]="true"></materialize-icon>
-
-<h3>Circle Icon LG</h3>
-<materialize-icon name="done" size="lg" [isCircle]="true"></materialize-icon>
-
-<h3>Circle Icon XL</h3>
-<materialize-icon name="done" size="xl" [isCircle]="true"></materialize-icon>
 
 <br />
 <br />
