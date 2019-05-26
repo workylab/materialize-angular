@@ -10,7 +10,6 @@ import { IconModel } from './icon.model';
 export class IconComponent implements OnChanges, OnInit {
   static readonly defaultProps: IconModel = {
     className: '',
-    isCircle: false,
     isPointer: false,
     name: '',
     size: 'sm'
@@ -53,7 +52,6 @@ export class IconComponent implements OnChanges, OnInit {
     const { defaultProps } = IconComponent;
 
     this.className = this.classNameInput || defaultProps.className;
-    this.isCircle = getBooleanValue(this.isCircleInput, defaultProps.isCircle);
     this.isPointer = this.isPointerInput || defaultProps.isPointer;
     this.name = this.nameInput || defaultProps.name;
     this.size = this.sizeInput || defaultProps.size;
