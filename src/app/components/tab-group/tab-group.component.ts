@@ -11,7 +11,7 @@ import { TabGroupModel } from './tab-group.model';
 export class TabGroupComponent implements AfterContentInit {
   static readonly defaultProps: TabGroupModel = {
     className: '',
-    selectedIndexInput: 0
+    selectedIndex: 0
   };
 
   @ContentChildren(TabComponent) tabComponentList: QueryList<TabComponent>;
@@ -30,14 +30,14 @@ export class TabGroupComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    setTimeout(this.initValues, 500);
+    setTimeout(this.initValues, 0);
   }
 
   initValues() {
     const { defaultProps } = TabGroupComponent;
 
     this.className = this.classNameInput || defaultProps.className;
-    this.selectedIndex = this.selectedIndexInput || defaultProps.selectedIndexInput;
+    this.selectedIndex = this.selectedIndexInput || defaultProps.selectedIndex;
 
     this.activateIndex(this.selectedIndex);
   }
