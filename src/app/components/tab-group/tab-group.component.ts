@@ -1,4 +1,5 @@
 import { AfterContentInit, Component, ContentChildren, ElementRef, Input, QueryList, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { TabComponent } from '../tab/tab.component';
 import { TabGroupModel } from './tab-group.model';
 
@@ -24,7 +25,7 @@ export class TabGroupComponent implements AfterContentInit {
   public className: string;
   public selectedIndex: number;
 
-  constructor() {
+  constructor(private router: Router) {
     this.initValues = this.initValues.bind(this);
   }
 
@@ -38,19 +39,17 @@ export class TabGroupComponent implements AfterContentInit {
     this.className = this.classNameInput || defaultProps.className;
     this.selectedIndex = this.selectedIndexInput || defaultProps.selectedIndexInput;
 
-    this.selectTab(this.selectedIndex);
+    this.activateIndex(this.selectedIndex);
   }
 
-  selectTab(newIndex: number) {
+  selectTab(newIndex: number, tab: TabComponent) {
     this.selectedIndex = newIndex;
 
     this.activateIndex(this.selectedIndex);
 
-    const child = this.tabsHeader.nativeElement.children[this.selectedIndex];
-    const { style } = this.tabsIndicatorRef.nativeElement;
-
-    style.width = `${ child.offsetWidth }px`;
-    style.transform = `translateX(${ child.offsetLeft }px)`;
+    if (tab.link) {
+      this.router.navigate([tab.link]);
+    }
   }
 
   activateIndex(index: number) {
@@ -61,5 +60,15 @@ export class TabGroupComponent implements AfterContentInit {
     }
 
     tabList[index].isActive = true;
+
+    this.moveIndicator(index);
+  }
+
+  moveIndicator(index: number) {
+    const child = this.tabsHeader.nativeElement.children[index];
+    const { style } = this.tabsIndicatorRef.nativeElement;
+
+    style.width = `${ child.offsetWidth }px`;
+    style.transform = `translateX(${ child.offsetLeft }px)`;
   }
 }

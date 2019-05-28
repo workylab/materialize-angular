@@ -10,15 +10,18 @@ export class TabComponent implements OnInit {
   static readonly defaultProps: TabModel = {
     className: '',
     isActive: false,
+    link: '',
     title: ''
   };
 
   @Input('className') classNameInput: string;
-  @Input('title') titleInput: string;
   @Input('isActive') isActiveInput: boolean;
+  @Input('link') linkInput: string;
+  @Input('title') titleInput: string;
 
   public className: string;
   public isActive: boolean;
+  public link: string;
   public title: string;
 
   ngOnInit() {
@@ -30,6 +33,7 @@ export class TabComponent implements OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.isActive = getBooleanValue(this.isActiveInput, defaultProps.isActive);
+    this.link = this.linkInput || defaultProps.link;
     this.title = this.titleInput || defaultProps.title;
   }
 }

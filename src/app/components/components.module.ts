@@ -32,6 +32,7 @@ import { RadioComponent } from './radio/radio.component';
 import { RadioGroupComponent } from './radio-group/radio-group.component';
 import { RangeSliderComponent } from './range-slider/range-slider.component';
 import { RippleDirective } from '../directives/ripple.directive';
+import { RouterModule } from '@angular/router';
 import { SelectComponent } from './select/select.component';
 import { SideNavComponent } from './sidenav/sidenav.component';
 import { SuffixDirective } from '../directives/suffix.directive';
@@ -136,7 +137,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class MaterializeComponentsModule {}
