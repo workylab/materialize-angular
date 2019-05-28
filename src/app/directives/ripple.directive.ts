@@ -11,6 +11,7 @@ interface Coordinate {
 export class RippleDirective {
   @Input() rippleDuration = 500;
   @Input() isRippleActive = true;
+  @Input() isRippleCenter = false;
 
   private element: HTMLElement;
 
@@ -27,23 +28,41 @@ export class RippleDirective {
       return;
     }
 
-    const ripple = document.createElement('div');
-    const coordinates = this.getCoordinates(event);
+    const coordinates = this.isRippleCenter
+      ? this.getCoordinatesByCenter()
+      : this.getCoordinatesByEvent(event);
+
     const radio = this.getRippleRadio(coordinates);
+
+    this.renderRipple(radio, coordinates);
+  }
+
+  renderRipple(radio: number, coordinate: Coordinate) {
+    const ripple = document.createElement('div');
+    const centerY = coordinate.y - radio;
+    const centerX = coordinate.x - radio;
 
     ripple.classList.add('ripple');
 
     ripple.style.height = `${ radio * 2 }px`;
     ripple.style.width = `${ radio * 2 }px`;
-    ripple.style.top = `${ coordinates.y - radio }px`;
-    ripple.style.left = `${ coordinates.x - radio }px`;
+    ripple.style.top = `${ centerY }px`;
+    ripple.style.left = `${ centerX }px`;
 
     this.element.insertBefore(ripple, this.element.firstChild);
 
     this.scaleRipple(ripple);
   }
 
-  getCoordinates(event: any): Coordinate {
+  getCoordinatesByCenter() {
+    const { offsetHeight, offsetWidth } = this.element;
+    const y = offsetHeight / 2;
+    const x = offsetWidth / 2;
+
+    return { x, y };
+  }
+
+  getCoordinatesByEvent(event: any): Coordinate {
     const offset = this.getOffset(this.element);
 
     const y = event.pageY - offset.top;
