@@ -1,6 +1,6 @@
 <div [ngClass]="className">
   <ul class="tabs-header"  #tabsHeader>
-    <li *ngFor="let tab of tabComponentList; index as i" (click)="selectTab(i)" [class.active]="i === selectedIndex" materializeRipple>
+    <li *ngFor="let tab of tabComponentList; index as i" (click)="selectTab(i, tab)" [class.active]="i === selectedIndex" materializeRipple>
       {{ tab.title }}
     </li>
     <div class="tabs-header-indicator" #tabsIndicator></div>
