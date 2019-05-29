@@ -1,4 +1,14 @@
-import { AfterContentInit, Component, ContentChildren, forwardRef, Input, OnInit, QueryList } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  EventEmitter,
+  forwardRef,
+  Input,
+  OnInit,
+  Output,
+  QueryList
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
@@ -31,6 +41,8 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
   @ContentChildren(RadioComponent) radiosQueryList: QueryList<RadioComponent>;
 
+  @Output('onChange') onChangeEmitter: EventEmitter<string>;
+
   @Input('canUncheck') canUncheckInput: boolean;
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
@@ -54,6 +66,8 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     super();
 
     this.disableAllRadios = this.disableAllRadios.bind(this);
+
+    this.onChangeEmitter = new EventEmitter();
   }
 
   ngOnInit() {
@@ -110,6 +124,8 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
     this.onTouched();
     this.onChange(this.value);
+
+    this.onChangeEmitter.emit(this.value);
   }
 
   setValueAllRadios(index: number) {
@@ -152,7 +168,8 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.onTouched = fn;
   }
 
-  onChange(value: string): void {}
+  onChange(value: string): void {
+  }
 
   onTouched(): void {}
 }
