@@ -26,12 +26,13 @@
   font-size: 16px;
   font-weight: $font-weight-regular;
   line-height: 16px;
+  white-space: nowrap;
 }
 
 .form-control-prefix-container {
-  padding-left: $space-xs;
+  padding-left: $space-sm;
 }
 
 .form-control-suffix-container {
-  padding-right: $space-xs;
+  padding-right: $space-sm;
 }
