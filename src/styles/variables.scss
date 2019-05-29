@@ -1,3 +1,10 @@
 $materialize-fonts-path: './../fonts' !default;
 
 $materialize-font-family: 'Roboto' !default;
+
+// Colors
+$materialize-color-primary: #5707EB !default;
+
+// Tabs
+$materialize-tab-headers-indicator-color: $materialize-color-primary;
+$materialize-tab-headers-equal-size: true;
