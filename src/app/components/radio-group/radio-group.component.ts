@@ -66,6 +66,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     super();
 
     this.disableAllRadios = this.disableAllRadios.bind(this);
+    this.registerRadios = this.registerRadios.bind(this);
 
     this.onChangeEmitter = new EventEmitter();
   }
@@ -77,7 +78,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   ngAfterContentChecked() {
     this.radios = this.radiosQueryList.toArray();
 
-    this.registerRadios();
+    setTimeout(this.registerRadios, 0);
 
     if (this.disabled) {
       this.disableAllRadios();
