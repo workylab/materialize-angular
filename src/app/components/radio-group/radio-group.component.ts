@@ -34,6 +34,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     className: '',
     disabled: false,
     id: '',
+    indicatorAtEnd: false,
     name: '',
     required: false,
     value: ''
@@ -47,6 +48,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('id') idInput: string;
+  @Input('indicatorAtEnd') indicatorAtEndInput: boolean;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
@@ -55,6 +57,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   public className: string;
   public disabled: boolean;
   public id: string;
+  public indicatorAtEnd: boolean;
   public isFocused: boolean;
   public isTouched: boolean;
   public name: string;
@@ -77,14 +80,10 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   }
 
   ngAfterContentInit() {
+    this.initRadios();
+
     this.radiosQueryList.changes.subscribe(changes => {
-      this.radios = this.radiosQueryList.toArray();
-
-      setTimeout(this.registerRadios, 0);
-
-      if (this.disabled) {
-        this.disableAllRadios();
-      }
+      this.initRadios();
     });
   }
 
@@ -94,6 +93,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = this.disabledInput || defaultProps.disabled;
     this.id = this.idInput || defaultProps.id;
+    this.indicatorAtEnd = getBooleanValue(this.indicatorAtEndInput, defaultProps.indicatorAtEnd);
     this.canUncheck = getBooleanValue(this.canUncheckInput, defaultProps.canUncheck);
     this.name = this.nameInput || defaultProps.name;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
@@ -101,6 +101,16 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
     this.isFocused = false;
     this.isTouched = false;
+  }
+
+  initRadios() {
+    this.radios = this.radiosQueryList.toArray();
+
+    setTimeout(this.registerRadios, 0);
+
+    if (this.disabled) {
+      this.disableAllRadios();
+    }
   }
 
   registerRadios() {
