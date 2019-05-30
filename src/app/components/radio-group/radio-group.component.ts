@@ -96,6 +96,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.indicatorAtEnd = getBooleanValue(this.indicatorAtEndInput, defaultProps.indicatorAtEnd);
     this.canUncheck = getBooleanValue(this.canUncheckInput, defaultProps.canUncheck);
     this.name = this.nameInput || defaultProps.name;
+    this.radios = [];
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
@@ -170,6 +171,8 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
   writeValue(value: string): void {
     this.value = value;
+
+    this.setValueAllRadios(this.value);
   }
 
   registerOnChange(fn: (value: string) => void): void {

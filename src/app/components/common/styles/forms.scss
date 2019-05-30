@@ -121,6 +121,7 @@
 
 .form-control-float-label {
   background-color: $color-gray-light;
+  border-radius: $radius-sm $radius-sm 0 0;
   color: $color-gray-dark;
   cursor: text;
   font-family: $materialize-font-family;
