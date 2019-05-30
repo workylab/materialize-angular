@@ -30,6 +30,7 @@
   margin: 0 $space-sm;
   outline: none;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
   width: 20px;
 
   &::before {
