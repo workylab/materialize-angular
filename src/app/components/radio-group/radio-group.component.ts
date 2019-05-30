@@ -28,7 +28,9 @@ import { RadioGroupModel } from './radio-group.model';
   styleUrls: ['./radio-group.component.scss'],
   templateUrl: './radio-group.component.html'
 })
-export class RadioGroupComponent extends FormFieldAbstract implements OnInit, AfterContentChecked, ControlValueAccessor {
+export class RadioGroupComponent
+  extends FormFieldAbstract
+  implements OnInit, AfterContentChecked, ControlValueAccessor {
   static readonly defaultProps: RadioGroupModel = {
     canUncheck: false,
     className: '',
@@ -67,6 +69,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
     this.disableAllRadios = this.disableAllRadios.bind(this);
     this.registerRadios = this.registerRadios.bind(this);
+    this.toggleRadios = this.toggleRadios.bind(this);
 
     this.onChangeEmitter = new EventEmitter();
   }
@@ -106,20 +109,18 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
       currentRadio.isActive = (currentRadio.value === this.value);
 
-      currentRadio.onClickEmitter.subscribe((value: string) => {
-        this.toggleRadios(i);
-      });
+      currentRadio.onClickEmitter.subscribe(this.toggleRadios);
     }
   }
 
-  toggleRadios(index: number) {
+  toggleRadios(value: string) {
     this.isTouched = true;
 
-    this.setValueAllRadios(index);
+    this.setValueAllRadios(value);
 
-    const currentRadio = this.radios[index];
+    const currentRadio = this.radios.find(item => item.value === value);
 
-    this.value = currentRadio.isActive
+    this.value = currentRadio && currentRadio.isActive
       ? currentRadio.value
       : '';
 
@@ -129,15 +130,15 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.onChangeEmitter.emit(this.value);
   }
 
-  setValueAllRadios(index: number) {
+  setValueAllRadios(value: string) {
     for (let i = 0; i < this.radios.length; i++) {
       const currentRadio = this.radios[i];
 
-      if (i !== index) {
+      if (currentRadio.value !== value) {
         currentRadio.isActive = false;
       }
 
-      if (i === index && !this.canUncheck) {
+      if (currentRadio.value === value && !this.canUncheck) {
         currentRadio.isActive = true;
       }
     }
