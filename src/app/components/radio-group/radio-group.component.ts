@@ -1,5 +1,5 @@
 import {
-  AfterContentChecked,
+  AfterContentInit,
   Component,
   ContentChildren,
   EventEmitter,
@@ -28,9 +28,7 @@ import { RadioGroupModel } from './radio-group.model';
   styleUrls: ['./radio-group.component.scss'],
   templateUrl: './radio-group.component.html'
 })
-export class RadioGroupComponent
-  extends FormFieldAbstract
-  implements OnInit, AfterContentChecked, ControlValueAccessor {
+export class RadioGroupComponent extends FormFieldAbstract implements OnInit, AfterContentInit, ControlValueAccessor {
   static readonly defaultProps: RadioGroupModel = {
     canUncheck: false,
     className: '',
@@ -78,14 +76,16 @@ export class RadioGroupComponent
     this.initValues();
   }
 
-  ngAfterContentChecked() {
-    this.radios = this.radiosQueryList.toArray();
+  ngAfterContentInit() {
+    this.radiosQueryList.changes.subscribe(changes => {
+      this.radios = this.radiosQueryList.toArray();
 
-    setTimeout(this.registerRadios, 0);
+      setTimeout(this.registerRadios, 0);
 
-    if (this.disabled) {
-      this.disableAllRadios();
-    }
+      if (this.disabled) {
+        this.disableAllRadios();
+      }
+    });
   }
 
   initValues() {
