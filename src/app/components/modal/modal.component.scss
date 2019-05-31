@@ -33,7 +33,7 @@
   max-height: calc(100% - #{ $space-xxxl });
   max-width: calc(100% - #{ $space-xxxl });
   opacity: 0;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: $space-xxl;
   position: relative;
   transform: scale(0.9);
