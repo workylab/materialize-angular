@@ -133,7 +133,6 @@
   transform: translateY(-50%);
   transition: all 250ms ease;
   width: 100%;
-  z-index: $zindex-level-1;
 
   &:not(:empty) {
     padding: $space-xs $space-sm $space-xxs;
