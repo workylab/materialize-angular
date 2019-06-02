@@ -1,3 +1,3 @@
-<div class="form-radio-container" [ngClass]="className">
-  <ng-content></ng-content>
+<div class="form-radio-group-container" [class.indicator-end]="indicatorAtEnd" [ngClass]="className">
+  <ng-content select="materialize-radio"></ng-content>
 </div>

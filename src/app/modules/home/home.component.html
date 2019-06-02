@@ -201,6 +201,11 @@ Radio Group Required
   <materialize-radio value="a">Value A</materialize-radio>
   <materialize-radio value="b">Value B</materialize-radio>
 </materialize-radio-group>
+Radio Group with Indicator at the End
+<materialize-radio-group [indicatorAtEnd]="true">
+  <materialize-radio value="a">Value A</materialize-radio>
+  <materialize-radio value="b">Value B</materialize-radio>
+</materialize-radio-group>
 
 <br />
 <br />
@@ -246,10 +251,41 @@ Simple Icon XL
 Tabs
 <materialize-tab-group>
   <materialize-tab title="header 0" link="contacts"></materialize-tab>
-  <materialize-tab title="header1">content 1</materialize-tab>
+  <materialize-tab title="header1" [disabled]="true">content 1</materialize-tab>
   <materialize-tab title="header2 Longer">content 2</materialize-tab>
   <materialize-tab title="header3 the longest">content 3</materialize-tab>
 </materialize-tab-group>
+
+<br />
+<br />
+<br />
+
+Ripple
+<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
+Ripple Center
+<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleCenter]="true"></div>
+Ripple duration 2 seg
+<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [rippleDuration]="2000"></div>
+Ripple disabled
+<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleActive]="false"></div>
+
+<br />
+<br />
+<br />
+
+<!-- <materialize-select></materialize-select>
+With Id
+<materialize-select id="select-id"></materialize-select>
+With Value
+<materialize-select value="2"></materialize-select>
+Disabled
+<materialize-select [disabled]="true"></materialize-select>
+Disabled with value
+<materialize-select [disabled]="true" value="2"></materialize-select>
+Required
+<materialize-select [required]="true"></materialize-select>
+Float label
+<materialize-select floatLabel="Float label"></materialize-select>
 
 <br />
 <br />
@@ -267,21 +303,7 @@ Tabs
 <materialize-autocomplete [options]="selectOptions" label="Required" [required]="true"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="Required and match value" [required]="true" [isMatchValue]="true"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" floatLabel="Float Label"></materialize-autocomplete>
-<materialize-autocomplete [options]="selectOptions" floatLabel="Required Float Label" [required]="true"></materialize-autocomplete>
-
-<br />
-<br />
-<br />
-
-<materialize-select [options]="selectOptions"></materialize-select>
-<materialize-select [options]="selectOptions" label="Label"></materialize-select>
-<materialize-select [options]="selectOptions" label="With Id" id="select-id"></materialize-select>
-<materialize-select [options]="selectOptions" label="With Value" value="2"></materialize-select>
-<materialize-select [options]="selectOptions" label="Disabled" [disabled]="true"></materialize-select>
-<materialize-select [options]="selectOptions" label="Disabled with value" [disabled]="true" value="2"></materialize-select>
-<materialize-select [options]="selectOptions" label="Required" [required]="true"></materialize-select>
-<materialize-select [options]="selectOptions" floatLabel="Float label"></materialize-select>
-<materialize-select [options]="selectOptions" floatLabel="Float label and required" [required]="true"></materialize-select>
+<materialize-autocomplete [options]="selectOptions" floatLabel="Required Float Label" [required]="true"></materialize-autocomplete> -->
 
 <br />
 <br />

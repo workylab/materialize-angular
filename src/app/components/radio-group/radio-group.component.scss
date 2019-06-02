@@ -17,3 +17,17 @@
     }
   }
 }
+
+.form-radio-group-container.indicator-end {
+  ::ng-deep .form-radio-control {
+    .form-radio-indicator {
+      order: 1;
+    }
+
+    .form-radio-label-container {
+      flex: 1;
+      order: 0;
+      text-align: right;
+    }
+  }
+}

@@ -19,7 +19,13 @@ export class RippleDirective {
     this.createRipple = this.createRipple.bind(this);
 
     this.element = this.elementRef.nativeElement;
-    this.element.classList.add('ripple-element');
+    this.renderer.addClass(this.element, 'ripple-element');
+  }
+
+  ngOnInit() {
+    if (!this.isRippleActive) {
+      this.renderer.addClass(this.element, 'ripple-disabled');
+    }
   }
 
   @HostListener('mousedown', ['$event'])
@@ -38,18 +44,17 @@ export class RippleDirective {
   }
 
   renderRipple(radio: number, coordinate: Coordinate) {
-    const ripple = document.createElement('div');
+    const ripple = this.renderer.createElement('div');
     const centerY = coordinate.y - radio;
     const centerX = coordinate.x - radio;
 
-    ripple.classList.add('ripple');
+    this.renderer.addClass(ripple, 'ripple');
 
-    ripple.style.height = `${ radio * 2 }px`;
-    ripple.style.width = `${ radio * 2 }px`;
-    ripple.style.top = `${ centerY }px`;
-    ripple.style.left = `${ centerX }px`;
-
-    this.element.insertBefore(ripple, this.element.firstChild);
+    this.renderer.setStyle(ripple, 'height', `${ radio * 2 }px`);
+    this.renderer.setStyle(ripple, 'width', `${ radio * 2 }px`);
+    this.renderer.setStyle(ripple, 'top', `${ centerY }px`);
+    this.renderer.setStyle(ripple, 'left', `${ centerX }px`);
+    this.renderer.insertBefore(this.element, ripple, this.element.firstChild);
 
     this.scaleRipple(ripple);
   }
@@ -91,8 +96,8 @@ export class RippleDirective {
 
   hideRipple(ripple: HTMLElement): void {
     setTimeout(() => {
-      ripple.style.transitionDuration = `${ this.rippleDuration }ms`;
-      ripple.style.opacity = '0';
+      this.renderer.setStyle(ripple, 'transitionDuration', `${ this.rippleDuration }ms`);
+      this.renderer.setStyle(ripple, 'opacity', '0');
 
       this.removeRipple(ripple);
     }, this.rippleDuration);

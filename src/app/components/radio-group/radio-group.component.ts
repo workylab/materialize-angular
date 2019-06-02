@@ -34,6 +34,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     className: '',
     disabled: false,
     id: '',
+    indicatorAtEnd: false,
     name: '',
     required: false,
     value: ''
@@ -47,6 +48,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('id') idInput: string;
+  @Input('indicatorAtEnd') indicatorAtEndInput: boolean;
   @Input('name') nameInput: string;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
@@ -55,6 +57,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   public className: string;
   public disabled: boolean;
   public id: string;
+  public indicatorAtEnd: boolean;
   public isFocused: boolean;
   public isTouched: boolean;
   public name: string;
@@ -66,6 +69,8 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     super();
 
     this.disableAllRadios = this.disableAllRadios.bind(this);
+    this.registerRadios = this.registerRadios.bind(this);
+    this.toggleRadios = this.toggleRadios.bind(this);
 
     this.onChangeEmitter = new EventEmitter();
   }
@@ -75,13 +80,11 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   }
 
   ngAfterContentInit() {
-    this.radios = this.radiosQueryList.toArray();
+    this.initRadios();
 
-    this.registerRadios();
-
-    if (this.disabled) {
-      this.disableAllRadios();
-    }
+    this.radiosQueryList.changes.subscribe(changes => {
+      this.initRadios();
+    });
   }
 
   initValues() {
@@ -90,13 +93,25 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = this.disabledInput || defaultProps.disabled;
     this.id = this.idInput || defaultProps.id;
+    this.indicatorAtEnd = getBooleanValue(this.indicatorAtEndInput, defaultProps.indicatorAtEnd);
     this.canUncheck = getBooleanValue(this.canUncheckInput, defaultProps.canUncheck);
     this.name = this.nameInput || defaultProps.name;
+    this.radios = [];
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
     this.isTouched = false;
+  }
+
+  initRadios() {
+    this.radios = this.radiosQueryList.toArray();
+
+    setTimeout(this.registerRadios, 0);
+
+    if (this.disabled) {
+      this.disableAllRadios();
+    }
   }
 
   registerRadios() {
@@ -105,20 +120,18 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
       currentRadio.isActive = (currentRadio.value === this.value);
 
-      currentRadio.onClickEmitter.subscribe((value: string) => {
-        this.toggleRadios(i);
-      });
+      currentRadio.onClickEmitter.subscribe(this.toggleRadios);
     }
   }
 
-  toggleRadios(index: number) {
+  toggleRadios(value: string) {
     this.isTouched = true;
 
-    this.setValueAllRadios(index);
+    this.setValueAllRadios(value);
 
-    const currentRadio = this.radios[index];
+    const currentRadio = this.radios.find(item => item.value === value);
 
-    this.value = currentRadio.isActive
+    this.value = currentRadio && currentRadio.isActive
       ? currentRadio.value
       : '';
 
@@ -128,15 +141,15 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.onChangeEmitter.emit(this.value);
   }
 
-  setValueAllRadios(index: number) {
+  setValueAllRadios(value: string) {
     for (let i = 0; i < this.radios.length; i++) {
       const currentRadio = this.radios[i];
 
-      if (i !== index) {
+      if (currentRadio.value !== value) {
         currentRadio.isActive = false;
       }
 
-      if (i === index && !this.canUncheck) {
+      if (currentRadio.value === value && !this.canUncheck) {
         currentRadio.isActive = true;
       }
     }
@@ -158,6 +171,8 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
   writeValue(value: string): void {
     this.value = value;
+
+    this.setValueAllRadios(this.value);
   }
 
   registerOnChange(fn: (value: string) => void): void {
