@@ -2,6 +2,10 @@
   cursor: pointer;
   overflow: hidden;
   position: relative;
+
+  &.ripple-disabled {
+    cursor: unset;
+  }
 }
 
 .ripple {
