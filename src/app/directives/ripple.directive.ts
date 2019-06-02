@@ -23,7 +23,7 @@ export class RippleDirective {
   }
 
   ngOnInit() {
-    if(!this.isRippleActive) {
+    if (!this.isRippleActive) {
       this.renderer.addClass(this.element, 'ripple-disabled');
     }
   }
