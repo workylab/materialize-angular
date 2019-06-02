@@ -70,20 +70,3 @@
     display: block;
   }
 }
-
-.select-muenu-option {
-  color: $color-gray-dark;
-  font-size: $font-size-xs;
-  font-weight: $font-weight-light;
-  min-height: 46px;
-  outline: none;
-  padding: $space-md $space-sm;
-
-  &:hover {
-    background-color: $color-gray-light;
-  }
-
-  &.active {
-    background-color: rgba($color-purple, 0.1);
-  }
-}

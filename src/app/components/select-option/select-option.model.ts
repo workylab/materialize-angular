@@ -1,7 +1,6 @@
-export interface SelectModel {
+export interface SelectOptionModel {
   className: string;
   disabled: boolean;
-  floatLabel: string;
   id: string;
   name: string;
   required: boolean;

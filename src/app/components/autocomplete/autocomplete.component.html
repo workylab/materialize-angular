@@ -23,12 +23,12 @@
   </materialize-input>
 
   <div class="autocomplete-options-container" [class.open]="isFocused">
-    <div class="autocomplete-option"
+    <!-- <div class="autocomplete-option"
       *ngFor="let option of options"
       [class.active]="value === option.content"
       (click)="selectOption(option.content)"
       tabindex="1">
       {{ option.content }}
-    </div>
+    </div> -->
   </div>
 </div>

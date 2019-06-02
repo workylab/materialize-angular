@@ -1,5 +1,3 @@
-<materialize-label>{{ label }}</materialize-label>
-
 <div class="form-control-container"
   tabindex="0"
 
@@ -11,24 +9,20 @@
   [class.active]="isFocused || (selectedOption && selectedOption.content)"
   [class.disabled]="disabled"
   [class.focused]="isFocused"
-  [class.float-label]="floatLabel"
-  [class.error]="!isValid && isTouched">
+  [class.float-label]="floatLabel">
 
   <div class="form-control-wrapper">
-    <div class="form-control-float-label">{{ floatLabel }}</div>
+    <!-- <div class="form-control-float-label">{{ floatLabel }}</div> -->
 
-    <div class="form-control" [id]="id">{{ selectedOption ? selectedOption.content : '' }}</div>
+    <div class="form-control" #labelContainer></div>
 
-    <materialize-icon className="icon-error" name="error" size="lg" *ngIf="!isValid && isTouched"></materialize-icon>
+    <materialize-icon className="form-icon-error" name="error" size="lg"></materialize-icon>
   </div>
 
   <div class="select-menu" [class.open]="isFocused">
-    <div class="select-option" *ngFor="let option of options" [class.active]="value === option.value" (click)="selectOption($event, option)">
-      {{ option.content }}
-    </div>
+    <!-- <ng-template *ngTemplateOutlet="transcludeTemplate"></ng-template> -->
+    <ng-content select="materialize-select-option"></ng-content>
   </div>
-
-  <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
 </div>
 
   <!-- <select

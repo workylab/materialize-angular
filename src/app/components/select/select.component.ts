@@ -1,8 +1,18 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { SelectModel, SelectOptionModel } from './select.model';
-import fieldValidations from '../../fixtures/field-validations';
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  forwardRef,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
+import { SelectModel } from './select.model';
+import { SelectOptionComponent } from '../select-option/select-option.component';
 
 @Component({
   providers: [{
@@ -13,45 +23,46 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   styleUrls: ['./select.component.scss'],
   templateUrl: './select.component.html'
 })
-export class SelectComponent extends FormFieldAbstract implements OnInit {
+export class SelectComponent extends FormFieldAbstract implements OnInit, AfterContentInit {
   static readonly defaultProps: SelectModel = {
     className: '',
     disabled: false,
-    errorMessage: '',
     floatLabel: '',
     id: '',
-    label: '',
     name: '',
-    options: [],
     required: false,
-    selectedOption: {} as SelectOptionModel,
     value: ''
   };
+
+  @ViewChild('labelContainer', { read: ViewContainerRef }) labelContainerRef: ViewContainerRef;
+
+  @ContentChildren(SelectOptionComponent) optionsQueryList: QueryList<SelectOptionComponent>;
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('id') idInput: string;
-  @Input('label') labelInput: string;
   @Input('name') nameInput: string;
-  @Input('options') optionsInput: Array<SelectOptionModel>;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
 
   public className: string;
   public disabled: boolean;
-  public errorMessage: string;
   public floatLabel: string;
   public id: string;
   public isFocused: boolean;
   public isTouched: boolean;
-  public isValid: boolean;
-  public label: string;
   public name: string;
-  public options: Array<SelectOptionModel>;
+  public options: Array<SelectOptionComponent>;
   public required: boolean;
-  public selectedOption: SelectOptionModel;
+  public valueLabel: string;
   public value: string;
+
+  constructor() {
+    super();
+
+    this.selectOption = this.selectOption.bind(this);
+  }
 
   ngOnInit() {
     this.initValues();
@@ -64,54 +75,58 @@ export class SelectComponent extends FormFieldAbstract implements OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.id = this.idInput || defaultProps.id;
-    this.label = this.labelInput || defaultProps.label;
     this.name = this.nameInput || defaultProps.name;
-    this.options = this.optionsInput || defaultProps.options;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
     this.isTouched = false;
-    this.selectedOption = this.getInitOption(this.value, this.options);
-    this.isValid = this.validate(this.value, this.required);
   }
 
-  validate(value: string, required: boolean): boolean {
-    if (required && !value) {
-      const fieldValidation = fieldValidations['required'];
+  ngAfterContentInit() {
+    this.options = this.optionsQueryList.toArray();
 
-      this.errorMessage = fieldValidation.errorMessage;
+    this.registerOptions();
 
-      return false;
+    if (this.disabled) {
+      //
     }
-
-    return true;
   }
 
-  getInitOption(value: string, options: Array<SelectOptionModel>): SelectOptionModel {
+  registerOptions() {
+    for (let i = 0; i < this.options.length; i++) {
+      const currentOption = this.options[i];
+
+      currentOption.isActive = (currentOption.value === this.value);
+
+      currentOption.onClickEmitter.subscribe(this.selectOption);
+    }
+  }
+
+  getIndexOption(value: string, options: Array<SelectOptionComponent>): number | null {
     for (let i = 0; i < options.length; i++) {
       const currentOption = options[i];
 
       if (value === currentOption.value) {
-        return currentOption;
+        return i;
       }
     }
 
-    return {} as SelectOptionModel;
+    return null;
   }
 
-  selectOption(event: any, selectedOption: SelectOptionModel) {
-    event.stopImmediatePropagation();
+  selectOption(value: string) {
+    const selectOption = this.options.find(item => item.value === value);
 
-    this.selectedOption = selectedOption;
+    if (selectOption) {
+      this.labelContainerRef.clear();
 
-    this.value = selectedOption
-      ? selectedOption.value
-      : '';
+      const view = selectOption.template.createEmbeddedView(null);
 
-    this.closeMenu();
-
-    this.isValid = this.validate(this.value, this.required);
+      this.labelContainerRef.insert(view);
+      this.value = value;
+      this.closeMenu();
+    }
   }
 
   openMenu() {
@@ -123,10 +138,5 @@ export class SelectComponent extends FormFieldAbstract implements OnInit {
   closeMenu() {
     this.isTouched = true;
     this.isFocused = false;
-  }
-
-  updateAndValidity() {
-    this.isTouched = true;
-    this.isValid = this.validate(this.value, this.required);
   }
 }

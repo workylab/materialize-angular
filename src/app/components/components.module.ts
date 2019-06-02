@@ -34,6 +34,7 @@ import { RangeSliderComponent } from './range-slider/range-slider.component';
 import { RippleDirective } from '../directives/ripple.directive';
 import { RouterModule } from '@angular/router';
 import { SelectComponent } from './select/select.component';
+import { SelectOptionComponent } from './select-option/select-option.component';
 import { SideNavComponent } from './sidenav/sidenav.component';
 import { SuffixDirective } from '../directives/suffix.directive';
 import { SwiperComponent } from './swiper/swiper.component';
@@ -80,6 +81,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     RangeSliderComponent,
     RippleDirective,
     SelectComponent,
+    SelectOptionComponent,
     SideNavComponent,
     SwiperComponent,
     SwiperItemComponent,
@@ -118,15 +120,16 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     ModalHandlerDirective,
     NavbarComponent,
     PrefixDirective,
-    SuffixDirective,
-    SwiperComponent,
-    SwiperItemComponent,
     RadioComponent,
     RadioGroupComponent,
     RangeSliderComponent,
     RippleDirective,
     SelectComponent,
+    SelectOptionComponent,
     SideNavComponent,
+    SuffixDirective,
+    SwiperComponent,
+    SwiperItemComponent,
     SwitchComponent,
     TabComponent,
     TabGroupComponent,
