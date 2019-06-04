@@ -1,6 +1,6 @@
-import { Month } from '../components/calendar/calendar.model';
+import { MonthModel } from '../components/calendar/calendar.model';
 
-export const months: Array<Month> = [{
+export const months: Array<MonthModel> = [{
   name: 'January',
   shortName: 'Jan'
 }, {
