@@ -1,167 +1,145 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { CalendarDayModel } from './calendar.model';
-import monthsJSON from '../../fixtures/calendar-months';
-import weekDaysJSON from '../../fixtures/calendar-week-days';
+import { CalendarDayModel, CalendarModel, DayModel, MonthModel } from './calendar.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { days } from '../../fixtures/calendar-week-days';
+import { months } from '../../fixtures/calendar-months';
 
 @Component({
   selector: 'materialize-calendar',
   styleUrls: ['./calendar.component.scss'],
   templateUrl: './calendar.component.html'
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
+  static readonly defaultProps: CalendarModel = {
+    displayOtherMonthDays: true
+  };
+
   @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<CalendarDayModel>;
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
 
-  public currentMonth: string;
-  public currentYear: number;
-  public weekDays: Array<string>;
-  public selectedDay: CalendarDayModel;
-  public weeks: Array<Array<CalendarDayModel>>
+  @Input('displayOtherMonthDays') displayOtherMonthDaysInput: boolean;
+
+  public currentMonthLabel: MonthModel;
+  public currentYearLabel: number;
   public date: Date;
-  public months: Array<string>;
+  public dayLabels: Array<DayModel>;
+  public displayOtherMonthDays: boolean;
+  public monthLabels: Array<MonthModel>;
+  public selectedISODate: string;
+  public weeks: Array<Array<CalendarDayModel>>
 
   constructor() {
-    this.showNextMonth = this.showNextMonth.bind(this);
-    this.showPrevMonth = this.showPrevMonth.bind(this);
-
     this.onSelectDayEmmiter = new EventEmitter();
     this.onBlurEmitter = new EventEmitter();
 
     this.date = new Date();
-    this.weekDays = this.getWeekDays();
-    this.months = this.getMonths();
+
+    this.dayLabels = days;
+    this.monthLabels = months;
+  }
+
+  ngOnInit() {
+    this.initValues();
+  }
+
+  initValues() {
+    const { defaultProps } = CalendarComponent;
 
     const month = this.date.getMonth();
     const year = this.date.getFullYear();
 
-    this.weeks = this.generateWeeks(month, year);
+    this.currentMonthLabel = this.monthLabels[month];
+    this.currentYearLabel = year;
+    this.weeks = this.fillWeeks(month, year);
+
+    this.displayOtherMonthDays = this.displayOtherMonthDaysInput || defaultProps.displayOtherMonthDays;
   }
 
-  getWeekDays(): Array<string> {
-    const weekDays: Array<string> = [
-      weekDaysJSON.sunday,
-      weekDaysJSON.monday,
-      weekDaysJSON.tuesday,
-      weekDaysJSON.wednesday,
-      weekDaysJSON.thursday,
-      weekDaysJSON.friday,
-      weekDaysJSON.saturday
-    ];
-
-    return weekDays;
-  }
-
-  getMonths(): Array<string> {
-    const months: Array<string> = [
-      monthsJSON.january,
-      monthsJSON.february,
-      monthsJSON.march,
-      monthsJSON.april,
-      monthsJSON.may,
-      monthsJSON.june,
-      monthsJSON.july,
-      monthsJSON.august,
-      monthsJSON.september,
-      monthsJSON.october,
-      monthsJSON.november,
-      monthsJSON.december
-    ];
-
-    return months;
-  }
-
-  generateWeeks(month: number, year: number) {
-    this.currentMonth = this.months[month];
-    this.currentYear = year;
+  fillWeeks(month: number, year: number) {
+    this.currentMonthLabel = this.monthLabels[month];
+    this.currentYearLabel = year;
 
     this.date = new Date(year, month + 1, 0);
 
-    let currentDate = new Date(year, month, 1);
-    let currentDayNumber = (0 - currentDate.getDay());
-    let currentWeek = [];
+    let initDate = new Date(year, month, 1);
+    let day = (0 - initDate.getDay());
+    let daysInWeek = [];
 
     const weeks = [];
 
-    while (!(currentDate.getDay() === 0 && Number(this.date) < Number(currentDate))) {
-      currentDayNumber = currentDayNumber + 1;
+    while (initDate.getDay() !== 0 || Number(this.date) >= Number(initDate)) {
+      ++day;
 
-      if (currentDate.getDay() === 6) {
-        if (currentWeek.length > 0) {
-          weeks.push(currentWeek);
-        }
+      initDate = new Date(year, month, day);
+      daysInWeek.push(this.createDay(initDate, day));
 
-        currentWeek = [];
+      if (daysInWeek.length === 7) {
+        weeks.push(daysInWeek);
+        daysInWeek = [];
       }
-
-      currentDate = new Date(year, month, currentDayNumber);
-      currentWeek.push(this.createDay(currentDate, currentDayNumber));
     }
 
     return weeks;
   }
 
-  createDay(date: Date, currentDayNumber: number): CalendarDayModel {
-    const isOutOfMonth = (currentDayNumber <= 0 || Number(date) > Number(this.date));
-    const isoDate = this.generateIsoDate(date);
-    const isoCurrentDate = this.generateIsoDate(new Date());
+  createDay(date: Date, dayNumber: number): CalendarDayModel {
+    const isOutOfMonth = (dayNumber <= 0 || Number(date) > Number(this.date));
+    const ISODate = this.generateISODate(date);
+    const ISOCurrentDate = this.generateISODate(new Date());
 
     const day: CalendarDayModel = {
-      dayNumber: date.getDate(),
-      isCurrent: isoDate === isoCurrentDate,
+      ISODate: ISODate,
+      isCurrent: ISODate === ISOCurrentDate,
       isOutOfMonth: isOutOfMonth,
-      isoDate: isoDate
+      numberInMonth: date.getDate()
     };
-
-    if (isoDate === isoCurrentDate) {
-      this.selectedDay = day;
-    }
 
     return day;
   }
 
   showPrevMonth() {
     const month = this.date.getMonth();
+    const year = this.date.getFullYear();
 
-    if (month === 0) {
-      const prevMonth = 11;
-      const previuosYear = this.date.getFullYear() - 1;
+    const prevMonth = month >= 1
+      ? month - 1
+      : 11;
 
-      this.weeks = this.generateWeeks(prevMonth, previuosYear);
-    } else {
-      const prevMonth = month - 1;
-      const year = this.date.getFullYear();
+    const prevYear = month < 1
+      ? year - 1
+      : year;
 
-      this.weeks = this.generateWeeks(prevMonth, year);
-    }
+    this.weeks = this.fillWeeks(prevMonth, prevYear);
   }
 
   showNextMonth() {
     const month = this.date.getMonth();
+    const year = this.date.getFullYear();
 
-    if (month === 11) {
-      const nextYear = this.date.getFullYear() + 1;
-      const nextMonth = 0;
+    const nextMonth = month < 11
+      ? month + 1
+      : 0;
 
-      this.weeks = this.generateWeeks(nextMonth, nextYear);
-    } else {
-      const year = this.date.getFullYear();
-      const nextMonth = month + 1;
+    const nextYear = month >= 11
+      ? year + 1
+      : year;
 
-      this.weeks = this.generateWeeks(nextMonth, year);
-    }
+    this.weeks = this.fillWeeks(nextMonth, nextYear);
   }
 
-  generateIsoDate(date: Date) {
-    const day = date.getDate() > 9
-      ? date.getDate()
-      : `0${ date.getDate() }`;
-    const month = date.getMonth() + 1 > 9
-      ? date.getMonth() + 1
-      : `0${ date.getMonth() + 1 }`;
+  generateISODate(date: Date) {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
-    const isoDate = `${ year }-${ month }-${ day }`;
 
-    return isoDate;
+    const dayString = day > 9
+      ? day
+      : `0${ day }`;
+
+    const monthString = month > 9
+      ? month
+      : `0${ month }`;
+
+    return `${ year }-${ monthString }-${ dayString }`;
   }
 
   onSelectDay(day: CalendarDayModel) {
@@ -169,7 +147,7 @@ export class CalendarComponent {
       return;
     }
 
-    this.selectedDay = day;
+    this.selectedISODate = day.ISODate;
     this.onSelectDayEmmiter.emit(day);
   }
 
