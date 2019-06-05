@@ -3,81 +3,138 @@
 
 .calendar-container {
   background-color: $color-white;
-  border-radius: $radius-md;
+  border-radius: $radius-sm;
   box-shadow: $shadow-md;
-  height: 360px;
   outline: none;
-  padding: $space-lg $space-sm;
+  overflow: hidden;
   width: max-content;
 }
 
-.calendar-controls-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: $space-xs;
+.calendar-header-container {
+  background-color: $color-purple;
+  color: $color-white;
+  font-family: $font-family-primary;
+  padding: $space-sm;
+}
 
-  .icon {
-    padding: $space-xxxs;
+.calendar-header-selected-year {
+  display: block;
 
-    &:hover {
-      background-color: $color-gray-light;
-      border-radius: $radius-full;
+  ::ng-deep .button {
+    box-shadow: unset;
+    margin: 0;
+    padding: $space-xxs;
+
+    .button-text {
+      font-size: 15px;
     }
   }
 }
 
-.calendar {
-  thead td {
-    border-bottom: $border-sm solid $color-gray;
+.calendar-header-selected-date {
+  ::ng-deep .button {
+    box-shadow: unset;
+    padding: $space-xxs;
+    text-transform: unset;
+
+    .button-text {
+      font-size: 28px;
+      font-weight: $font-weight-light;
+      margin: 0 $space-xxxs;
+    }
   }
 }
 
-.day-name-container {
-  font-size: $font-size-xxxs;
-  height: 32px;
-  text-align: center;
-  vertical-align: middle;
-  width: 40px;
+.calendar-body-container {
+  padding: $space-sm $space-xs;
 }
 
-.day-container {
-  color: $color-gray-dark;
-  cursor: pointer;
+.calendar-controls-container {
+  align-items: center;
+  display: flex;
+  margin-bottom: $space-xs;
+}
+
+.calendar-month-label {
+  flex-grow: 1;
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  text-align: center;
+}
+
+.calendar-month-control {
+  flex-grow: 0;
+
+  ::ng-deep .button {
+    background-color: $color-white;
+    box-shadow: unset;
+    color: $color-gray-dark;
+    padding: $space-xs $space-xxxs;
+
+    .button-icon {
+      font-size: 22px;
+    }
+
+    .ripple {
+      background-color: rgba($color-black, 0.1);
+    }
+  }
+}
+
+.calendar-day-label-container {
+  color: $color-gray;
+  font-family: $font-family-primary;
+  font-size: 12px;
+  font-weight: $font-weight-light;
+  padding: $space-xxxs;
+  text-align: center;
+}
+
+.calendar-day-number-container {
   height: 40px;
-  padding: 2px;
   text-align: center;
   vertical-align: middle;
   width: 40px;
 
-  &.disabled .day-content {
+  &.disabled .calendar-day-number {
     background-color: $color-gray-light;
     border-radius: $radius-full;
     color: $color-gray-dark;
     cursor: not-allowed;
   }
 
-  &.current .day-content {
+  &.current .calendar-day-number {
     border: $border-sm solid $color-gray;
   }
 
-  &.selected .day-content {
+  &.selected .calendar-day-number {
     background-color: $color-purple;
     color: $color-white;
   }
 }
 
-.day-content {
+.calendar-day-number {
   align-items: center;
   border-radius: $radius-full;
+  color: $color-gray-dark;
+  cursor: pointer;
   display: flex;
-  font-size: $font-size-xxs;
-  height: 36px;
+  font-family: $font-family-primary;
+  font-size: 14px;
+  font-weight: $font-weight-regular;
+  height: 38px;
   justify-content: center;
-  width: 36px;
+  text-align: center;
+  transition: background-color 300ms ease;
+  width: 38px;
 
   &:hover {
     background-color: $color-gray-light;
     border-radius: $radius-full;
+  }
+
+  ::ng-deep .ripple {
+    background-color: rgba(lighten($color-purple, 50%), 0.3);
   }
 }
