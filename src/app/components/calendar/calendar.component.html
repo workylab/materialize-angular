@@ -1,32 +1,56 @@
 <div class="calendar-container" tabindex="1" (blur)="onBlur($event)">
-  <div class="calendar-controls-container">
-    <materialize-button iconName="chevron_left" iconSize="lg" [isRounded]="true" (onClick)="showPrevMonth()"></materialize-button>
-
-    <div class="calendar-current-date">
-      {{ currentMonthLabel.shortName }}, {{ currentYearLabel }}
+  <div class="calendar-header-container">
+    <div class="calendar-header-selected-year">
+      <materialize-button>{{ selectedDate.date.getFullYear() }}</materialize-button>
     </div>
-
-    <materialize-button iconName="chevron_right" iconSize="lg" [isRounded]="true" (onClick)="showNextMonth()"></materialize-button>
+    <div class="calendar-header-selected-date">
+      <materialize-button>
+        {{ selectedDate.dayLabel.shortName }}, {{ selectedDate.monthLabel.shortName }} {{ selectedDate.date.getDate() }}
+      </materialize-button>
+    </div>
   </div>
-  
-  <table class="calendar">
-    <thead>
-      <tr>
-        <td class="day-name-container" *ngFor="let day of dayLabels">{{ day.shortestName }}</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let week of weeks">
-        <td class="day-container"
-          *ngFor="let day of week"
-          [class.current]="day.isCurrent"
-          [class.selected]="selectedISODate === day.ISODate"
-          [class.disabled]="day.isOutOfMonth">
-          <div class="day-content" (click)="onSelectDay(day)" *ngIf="!day.isOutOfMonth || displayOtherMonthDays">
-            {{ day.numberInMonth }}
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="calendar-body-container">
+    <div class="calendar-controls-container">
+      <div class="calendar-month-control">
+        <materialize-button iconName="chevron_left" iconSize="xl" [isRounded]="true" (onClick)="showPrevMonth()"></materialize-button>
+      </div>
+      <div class="calendar-month-label">
+        {{ selectedMonth.label.shortName }} {{ selectedMonth.year }}
+      </div>
+      <div class="calendar-month-control">
+        <materialize-button iconName="chevron_right" iconSize="xl" [isRounded]="true" (onClick)="showNextMonth()"></materialize-button>
+      </div>
+    </div>
+    
+    <table class="calendar">
+      <thead>
+        <tr>
+          <td class="calendar-day-label-container" *ngFor="let day of dayLabels">{{ day.shortestName }}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of weeks">
+          <td class="calendar-day-number-container"
+            *ngFor="let day of week"
+
+            [class.current]="day.isToday"
+            [class.selected]="selectedDate.ISODate === day.ISODate"
+            [class.disabled]="day.isOutOfMonth"
+          >
+            <div class="calendar-day-number"
+              (click)="onSelectDay(day)"
+              *ngIf="!day.isOutOfMonth || displayOtherMonthDays"
+
+              [rippleDuration]="800"
+              [isRippleCenter]="false"
+              materializeRipple
+            >
+              {{ day.date.getDate() }}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
