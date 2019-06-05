@@ -2,26 +2,47 @@ export interface CalendarModel {
   displayOtherMonthDays: boolean;
 }
 
-export interface CalendarDayModel {
-  numberInMonth: number;
-  isCurrent: boolean;
-  isOutOfMonth: boolean;
+export interface DateModel {
+  date: Date;
+  dayLabel: DateLabel;
   ISODate: string;
+  isToday: boolean;
+  isOutOfMonth: boolean;
+  monthLabel: DateLabel;
 }
 
-export interface DayModel {
+export interface MonthModel {
+  label: DateLabel;
+  year: number;
+}
+
+export interface DateLabel {
   name: string;
   shortName: string;
   shortestName: string;
 }
 
-export interface MonthModel {
-  name: string;
-  shortName: string;
+export interface DayLabels {
+  sunday: DateLabel;
+  monday: DateLabel;
+  tuesday: DateLabel;
+  wednesday: DateLabel;
+  thursday: DateLabel;
+  friday: DateLabel;
+  saturday: DateLabel;
 }
 
-export interface DateModel {
-  day: number;
-  month: number;
-  year: number;
+export interface MonthLabels {
+  january: DateLabel;
+  february: DateLabel;
+  march: DateLabel;
+  april: DateLabel;
+  may: DateLabel;
+  june: DateLabel;
+  july: DateLabel;
+  august: DateLabel;
+  september: DateLabel;
+  october: DateLabel;
+  november: DateLabel;
+  december: DateLabel;
 }
