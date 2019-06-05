@@ -1,6 +1,7 @@
-import { CalendarDayModel, CalendarModel, DayModel, MonthModel } from './calendar.model';
+import { CalendarModel, DateLabel, DateModel, DayLabels, MonthLabels, MonthModel } from './calendar.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { days } from '../../fixtures/calendar-week-days';
+import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { months } from '../../fixtures/calendar-months';
 
 @Component({
@@ -13,50 +14,96 @@ export class CalendarComponent implements OnInit {
     displayOtherMonthDays: true
   };
 
-  @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<CalendarDayModel>;
+  @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<DateModel>;
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
 
   @Input('displayOtherMonthDays') displayOtherMonthDaysInput: boolean;
 
-  public currentMonthLabel: MonthModel;
-  public currentYearLabel: number;
-  public date: Date;
-  public dayLabels: Array<DayModel>;
   public displayOtherMonthDays: boolean;
-  public monthLabels: Array<MonthModel>;
-  public selectedISODate: string;
-  public weeks: Array<Array<CalendarDayModel>>
+
+  public date: Date;
+  public dayLabels: Array<DateLabel>;
+  public monthLabels: Array<DateLabel>;
+  public selectedDate: DateModel;
+  public selectedMonth: MonthModel;
+  public weeks: Array<Array<DateModel>>
 
   constructor() {
     this.onSelectDayEmmiter = new EventEmitter();
     this.onBlurEmitter = new EventEmitter();
 
-    this.date = new Date();
-
-    this.dayLabels = days;
-    this.monthLabels = months;
+    this.dayLabels = this.getDayLabels(days);
+    this.monthLabels = this.getMonthLabels(months);
   }
 
   ngOnInit() {
     this.initValues();
   }
 
+  getDayLabels(dayLabels: DayLabels): Array<DateLabel> {
+    return [
+      dayLabels.sunday,
+      dayLabels.monday,
+      dayLabels.tuesday,
+      dayLabels.wednesday,
+      dayLabels.thursday,
+      dayLabels.friday,
+      dayLabels.saturday
+    ];
+  }
+
+  getMonthLabels(monthLabels: MonthLabels): Array<DateLabel> {
+    return [
+      monthLabels.january,
+      monthLabels.february,
+      monthLabels.march,
+      monthLabels.april,
+      monthLabels.may,
+      monthLabels.june,
+      monthLabels.july,
+      monthLabels.august,
+      monthLabels.september,
+      monthLabels.october,
+      monthLabels.november,
+      monthLabels.december
+    ];
+  }
+
   initValues() {
     const { defaultProps } = CalendarComponent;
 
-    const month = this.date.getMonth();
-    const year = this.date.getFullYear();
+    const date = new Date();
+    const month = date.getMonth();
+    const year = date.getFullYear();
 
-    this.currentMonthLabel = this.monthLabels[month];
-    this.currentYearLabel = year;
+    this.date = date;
+    this.displayOtherMonthDays = getBooleanValue(this.displayOtherMonthDaysInput, defaultProps.displayOtherMonthDays);
+
+    this.selectedDate = this.createDateModel(this.date, false, true);
     this.weeks = this.fillWeeks(month, year);
+  }
 
-    this.displayOtherMonthDays = this.displayOtherMonthDaysInput || defaultProps.displayOtherMonthDays;
+  createDateModel(date: Date, isOutOfMonth: boolean, isToday: boolean): DateModel {
+    const weekDay = date.getDay();
+    const month = date.getMonth();
+
+    const dateModel: DateModel = {
+      ISODate: this.generateISODate(date),
+      date: date,
+      dayLabel: this.dayLabels[weekDay],
+      isOutOfMonth: isOutOfMonth,
+      isToday: isToday,
+      monthLabel: this.monthLabels[month]
+    };
+
+    return dateModel;
   }
 
   fillWeeks(month: number, year: number) {
-    this.currentMonthLabel = this.monthLabels[month];
-    this.currentYearLabel = year;
+    this.selectedMonth = {
+      label: this.monthLabels[month],
+      year: year
+    };
 
     this.date = new Date(year, month + 1, 0);
 
@@ -70,7 +117,8 @@ export class CalendarComponent implements OnInit {
       ++day;
 
       initDate = new Date(year, month, day);
-      daysInWeek.push(this.createDay(initDate, day));
+
+      daysInWeek.push(this.createDayDate(initDate, day));
 
       if (daysInWeek.length === 7) {
         weeks.push(daysInWeek);
@@ -81,19 +129,14 @@ export class CalendarComponent implements OnInit {
     return weeks;
   }
 
-  createDay(date: Date, dayNumber: number): CalendarDayModel {
-    const isOutOfMonth = (dayNumber <= 0 || Number(date) > Number(this.date));
+  createDayDate(date: Date, dayNumber: number): DateModel {
     const ISODate = this.generateISODate(date);
     const ISOCurrentDate = this.generateISODate(new Date());
 
-    const day: CalendarDayModel = {
-      ISODate: ISODate,
-      isCurrent: ISODate === ISOCurrentDate,
-      isOutOfMonth: isOutOfMonth,
-      numberInMonth: date.getDate()
-    };
+    const isOutOfMonth = (dayNumber <= 0 || date > this.date);
+    const isToday = (ISODate === ISOCurrentDate);
 
-    return day;
+    return this.createDateModel(date, isOutOfMonth, isToday);
   }
 
   showPrevMonth() {
@@ -142,13 +185,13 @@ export class CalendarComponent implements OnInit {
     return `${ year }-${ monthString }-${ dayString }`;
   }
 
-  onSelectDay(day: CalendarDayModel) {
-    if (day.isOutOfMonth) {
+  onSelectDay(date: DateModel) {
+    if (date.isOutOfMonth) {
       return;
     }
 
-    this.selectedISODate = day.ISODate;
-    this.onSelectDayEmmiter.emit(day);
+    this.selectedDate = date;
+    this.onSelectDayEmmiter.emit(this.selectedDate);
   }
 
   onBlur(event: any) {
