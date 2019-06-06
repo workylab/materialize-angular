@@ -1,5 +1,5 @@
 import { CalendarModel, DateLabel, DateModel, DayLabels, MonthLabels, MonthModel } from './calendar.model';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { days } from '../../fixtures/calendar-week-days';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { months } from '../../fixtures/calendar-months';
@@ -14,21 +14,28 @@ export class CalendarComponent implements OnInit {
     displayOtherMonthDays: true
   };
 
+  @ViewChild('yearsContainer') yearsContainerRef: ElementRef;
+
   @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<DateModel>;
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
 
   @Input('displayOtherMonthDays') displayOtherMonthDaysInput: boolean;
 
   public displayOtherMonthDays: boolean;
-
   public date: Date;
   public dayLabels: Array<DateLabel>;
   public monthLabels: Array<DateLabel>;
   public selectedDate: DateModel;
   public selectedMonth: MonthModel;
+  public showYears: boolean;
   public weeks: Array<Array<DateModel>>
+  public years: Array<number>;
+
+  public selectYearAnimationDuration = 200;
 
   constructor() {
+    this.scrollToActiveYear = this.scrollToActiveYear.bind(this);
+
     this.onSelectDayEmmiter = new EventEmitter();
     this.onBlurEmitter = new EventEmitter();
 
@@ -81,6 +88,7 @@ export class CalendarComponent implements OnInit {
 
     this.selectedDate = this.createDateModel(this.date, false, true);
     this.weeks = this.fillWeeks(month, year);
+    this.years = this.fillYears(year);
   }
 
   createDateModel(date: Date, isOutOfMonth: boolean, isToday: boolean): DateModel {
@@ -97,6 +105,18 @@ export class CalendarComponent implements OnInit {
     };
 
     return dateModel;
+  }
+
+  fillYears(currentYear: number): Array<number> {
+    const firstYear = currentYear - 100;
+    const lastYear = currentYear + 100;
+    const years = [];
+
+    for (let i = firstYear; i <= lastYear; i++) {
+      years.push(i);
+    }
+
+    return years;
   }
 
   fillWeeks(month: number, year: number) {
@@ -194,7 +214,54 @@ export class CalendarComponent implements OnInit {
     this.onSelectDayEmmiter.emit(this.selectedDate);
   }
 
+  onSelectYear(year: number) {
+    setTimeout(() => {
+      const day = this.selectedDate.date.getDate();
+      const month = this.selectedDate.date.getMonth();
+
+      this.date = new Date(year, month, day);
+
+      this.showYears = false;
+      this.selectedDate = this.createDateModel(this.date, false, true);
+
+      this.weeks = this.fillWeeks(month, year);
+    }, this.selectYearAnimationDuration);
+  }
+
   onBlur(event: any) {
     this.onBlurEmitter.emit(event);
+  }
+
+  displayYears() {
+    this.showYears = true;
+
+    setTimeout(this.scrollToActiveYear, 0);
+  }
+
+  scrollToActiveYear() {
+    const { nativeElement } = this.yearsContainerRef;
+    const activeYear: HTMLElement = nativeElement.querySelector('.current');
+
+    if (activeYear) {
+      const top = this.getScrollCenter(nativeElement, activeYear);
+
+      nativeElement.scrollTop = top;
+    }
+  }
+
+  getScrollCenter(container: HTMLElement, internalElement: HTMLElement): number {
+    const yearTop = internalElement.offsetTop;
+    const yearMiddleHeight = internalElement.offsetHeight / 2;
+
+    const containerTop = container.offsetTop;
+    const containerMiddleHeight = container.offsetHeight / 2;
+
+    const elementRelativeTop = (yearTop - containerTop) - (containerMiddleHeight + yearMiddleHeight);
+
+    if (elementRelativeTop < 0) {
+      return 0;
+    }
+
+    return elementRelativeTop;
   }
 }
