@@ -1,56 +1,73 @@
 <div class="calendar-container" tabindex="1" (blur)="onBlur($event)">
   <div class="calendar-header-container">
     <div class="calendar-header-selected-year">
-      <materialize-button>{{ selectedDate.date.getFullYear() }}</materialize-button>
+      <materialize-button (onClick)="displayYears()">{{ selectedDate.date.getFullYear() }}</materialize-button>
     </div>
     <div class="calendar-header-selected-date">
-      <materialize-button>
+      <materialize-button (onClick)="showYears = false">
         {{ selectedDate.dayLabel.shortName }}, {{ selectedDate.monthLabel.shortName }} {{ selectedDate.date.getDate() }}
       </materialize-button>
     </div>
   </div>
 
   <div class="calendar-body-container">
-    <div class="calendar-controls-container">
-      <div class="calendar-month-control">
-        <materialize-button iconName="chevron_left" iconSize="xl" [isRounded]="true" (onClick)="showPrevMonth()"></materialize-button>
+    <div *ngIf="!showYears">
+      <div class="calendar-controls-container">
+        <div class="calendar-month-control">
+          <materialize-button iconName="chevron_left" iconSize="xl" [isRounded]="true" (onClick)="showPrevMonth()"></materialize-button>
+        </div>
+        <div class="calendar-month-label">
+          {{ selectedMonth.label.shortName }} {{ selectedMonth.year }}
+        </div>
+        <div class="calendar-month-control">
+          <materialize-button iconName="chevron_right" iconSize="xl" [isRounded]="true" (onClick)="showNextMonth()"></materialize-button>
+        </div>
       </div>
-      <div class="calendar-month-label">
-        {{ selectedMonth.label.shortName }} {{ selectedMonth.year }}
-      </div>
-      <div class="calendar-month-control">
-        <materialize-button iconName="chevron_right" iconSize="xl" [isRounded]="true" (onClick)="showNextMonth()"></materialize-button>
-      </div>
+      
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <td class="calendar-day-label-container" *ngFor="let day of dayLabels">{{ day.shortestName }}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let week of weeks">
+            <td class="calendar-day-number-container" *ngFor="let day of week">
+              <div class="calendar-day-number"
+                (click)="onSelectDay(day)"
+                *ngIf="!day.isOutOfMonth || displayOtherMonthDays"
+  
+                [class.current]="day.isToday"
+                [class.selected]="selectedDate.ISODate === day.ISODate"
+                [class.disabled]="day.isOutOfMonth"
+  
+                materializeRipple
+                [rippleDuration]="800"
+              >
+                {{ day.date.getDate() }}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     
-    <table class="calendar">
-      <thead>
-        <tr>
-          <td class="calendar-day-label-container" *ngFor="let day of dayLabels">{{ day.shortestName }}</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let week of weeks">
-          <td class="calendar-day-number-container"
-            *ngFor="let day of week"
+    <div class="calendar-years-container"  #yearsContainer>
+      <ng-container *ngIf="showYears">
+        <div class="calendar-year-number"
+          *ngFor="let year of years"
 
-            [class.current]="day.isToday"
-            [class.selected]="selectedDate.ISODate === day.ISODate"
-            [class.disabled]="day.isOutOfMonth"
-          >
-            <div class="calendar-day-number"
-              (click)="onSelectDay(day)"
-              *ngIf="!day.isOutOfMonth || displayOtherMonthDays"
+          (click)="onSelectYear(year)"
+          [class.current]="year === selectedDate.date.getFullYear()"
 
-              [rippleDuration]="800"
-              [isRippleCenter]="false"
-              materializeRipple
-            >
-              {{ day.date.getDate() }}
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          materializeRipple
+          [rippleDuration]="selectYearAnimationDuration"
+
+          
+        >
+          {{ year }}
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>
