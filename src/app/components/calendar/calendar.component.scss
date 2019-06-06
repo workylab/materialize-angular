@@ -7,7 +7,7 @@
   box-shadow: $shadow-md;
   outline: none;
   overflow: hidden;
-  width: max-content;
+  width: 300px;
 }
 
 .calendar-header-container {
@@ -46,6 +46,7 @@
 }
 
 .calendar-body-container {
+  height: 330px;
   padding: $space-sm $space-xs;
 }
 
@@ -82,6 +83,10 @@
   }
 }
 
+.calendar-table {
+  width: 100%;
+}
+
 .calendar-day-label-container {
   color: $color-gray;
   font-family: $font-family-primary;
@@ -96,22 +101,6 @@
   text-align: center;
   vertical-align: middle;
   width: 40px;
-
-  &.disabled .calendar-day-number {
-    background-color: $color-gray-light;
-    border-radius: $radius-full;
-    color: $color-gray-dark;
-    cursor: not-allowed;
-  }
-
-  &.current .calendar-day-number {
-    border: $border-sm solid $color-gray;
-  }
-
-  &.selected .calendar-day-number {
-    background-color: $color-purple;
-    color: $color-white;
-  }
 }
 
 .calendar-day-number {
@@ -136,5 +125,43 @@
 
   ::ng-deep .ripple {
     background-color: rgba(lighten($color-purple, 50%), 0.3);
+  }
+
+  &.disabled {
+    background-color: $color-gray-light;
+    border-radius: $radius-full;
+    color: $color-gray-dark;
+    cursor: not-allowed;
+  }
+
+  &.current {
+    border: $border-sm solid $color-gray;
+  }
+
+  &.selected {
+    background-color: $color-purple;
+    color: $color-white;
+  }
+}
+
+.calendar-years-container {
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.calendar-year-number {
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  margin: $space-xxxs 0;
+  padding: $space-sm;
+  text-align: center;
+  width: 100%;
+
+  &.current {
+    color: $color-purple;
+    font-size: 24px;
   }
 }
