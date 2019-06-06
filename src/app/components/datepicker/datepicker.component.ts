@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { CalendarDayModel } from '../calendar/calendar.model';
+import { DateModel } from '../calendar/calendar.model';
 import { DatePickerModel } from './datepicker.model';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
@@ -77,8 +77,8 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
     this.isValid = false;
   }
 
-  onSelectDay(day: CalendarDayModel) {
-    this.value = day.isoDate;
+  onSelectDay(day: DateModel) {
+    this.value = day.ISODate;
     this.isFocused = false;
   }
 

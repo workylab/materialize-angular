@@ -273,6 +273,9 @@ Ripple disabled
 <br />
 <br />
 
+Calendar
+<materialize-calendar [displayOtherMonthDays]="false"></materialize-calendar>
+
 <!-- <materialize-select></materialize-select>
 With Id
 <materialize-select id="select-id"></materialize-select>
@@ -330,9 +333,6 @@ Float label
 <br />
 <br />
 
-<h3>Ripple</h3>
-<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
-
 <h3>Modal</h3>
 <materialize-modal>
   <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
@@ -342,7 +342,7 @@ Float label
 </materialize-modal>
 
 <h3>Modal</h3>
-<materialize-modal [isOpen]="true">
+<materialize-modal [isOpen]="false">
 </materialize-modal>
 
 <h3>Modal Default</h3>

@@ -1,179 +1,267 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { CalendarDayModel } from './calendar.model';
-import monthsJSON from '../../fixtures/calendar-months';
-import weekDaysJSON from '../../fixtures/calendar-week-days';
+import { CalendarModel, DateLabel, DateModel, DayLabels, MonthLabels, MonthModel } from './calendar.model';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { days } from '../../fixtures/calendar-week-days';
+import { getBooleanValue } from '../../utils/get-boolean-value.util';
+import { months } from '../../fixtures/calendar-months';
 
 @Component({
   selector: 'materialize-calendar',
   styleUrls: ['./calendar.component.scss'],
   templateUrl: './calendar.component.html'
 })
-export class CalendarComponent {
-  @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<CalendarDayModel>;
+export class CalendarComponent implements OnInit {
+  static readonly defaultProps: CalendarModel = {
+    displayOtherMonthDays: true
+  };
+
+  @ViewChild('yearsContainer') yearsContainerRef: ElementRef;
+
+  @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<DateModel>;
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
 
-  public currentMonth: string;
-  public currentYear: number;
-  public weekDays: Array<string>;
-  public selectedDay: CalendarDayModel;
-  public weeks: Array<Array<CalendarDayModel>>
+  @Input('displayOtherMonthDays') displayOtherMonthDaysInput: boolean;
+
+  public displayOtherMonthDays: boolean;
   public date: Date;
-  public months: Array<string>;
+  public dayLabels: Array<DateLabel>;
+  public monthLabels: Array<DateLabel>;
+  public selectedDate: DateModel;
+  public selectedMonth: MonthModel;
+  public showYears: boolean;
+  public weeks: Array<Array<DateModel>>
+  public years: Array<number>;
+
+  public selectYearAnimationDuration = 200;
 
   constructor() {
-    this.showNextMonth = this.showNextMonth.bind(this);
-    this.showPrevMonth = this.showPrevMonth.bind(this);
+    this.scrollToActiveYear = this.scrollToActiveYear.bind(this);
 
     this.onSelectDayEmmiter = new EventEmitter();
     this.onBlurEmitter = new EventEmitter();
 
-    this.date = new Date();
-    this.weekDays = this.getWeekDays();
-    this.months = this.getMonths();
-
-    const month = this.date.getMonth();
-    const year = this.date.getFullYear();
-
-    this.weeks = this.generateWeeks(month, year);
+    this.dayLabels = this.getDayLabels(days);
+    this.monthLabels = this.getMonthLabels(months);
   }
 
-  getWeekDays(): Array<string> {
-    const weekDays: Array<string> = [
-      weekDaysJSON.sunday,
-      weekDaysJSON.monday,
-      weekDaysJSON.tuesday,
-      weekDaysJSON.wednesday,
-      weekDaysJSON.thursday,
-      weekDaysJSON.friday,
-      weekDaysJSON.saturday
+  ngOnInit() {
+    this.initValues();
+  }
+
+  getDayLabels(dayLabels: DayLabels): Array<DateLabel> {
+    return [
+      dayLabels.sunday,
+      dayLabels.monday,
+      dayLabels.tuesday,
+      dayLabels.wednesday,
+      dayLabels.thursday,
+      dayLabels.friday,
+      dayLabels.saturday
     ];
-
-    return weekDays;
   }
 
-  getMonths(): Array<string> {
-    const months: Array<string> = [
-      monthsJSON.january,
-      monthsJSON.february,
-      monthsJSON.march,
-      monthsJSON.april,
-      monthsJSON.may,
-      monthsJSON.june,
-      monthsJSON.july,
-      monthsJSON.august,
-      monthsJSON.september,
-      monthsJSON.october,
-      monthsJSON.november,
-      monthsJSON.december
+  getMonthLabels(monthLabels: MonthLabels): Array<DateLabel> {
+    return [
+      monthLabels.january,
+      monthLabels.february,
+      monthLabels.march,
+      monthLabels.april,
+      monthLabels.may,
+      monthLabels.june,
+      monthLabels.july,
+      monthLabels.august,
+      monthLabels.september,
+      monthLabels.october,
+      monthLabels.november,
+      monthLabels.december
     ];
-
-    return months;
   }
 
-  generateWeeks(month: number, year: number) {
-    this.currentMonth = this.months[month];
-    this.currentYear = year;
+  initValues() {
+    const { defaultProps } = CalendarComponent;
+
+    const date = new Date();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    this.date = date;
+    this.displayOtherMonthDays = getBooleanValue(this.displayOtherMonthDaysInput, defaultProps.displayOtherMonthDays);
+
+    this.selectedDate = this.createDateModel(this.date, false, true);
+    this.weeks = this.fillWeeks(month, year);
+    this.years = this.fillYears(year);
+  }
+
+  createDateModel(date: Date, isOutOfMonth: boolean, isToday: boolean): DateModel {
+    const weekDay = date.getDay();
+    const month = date.getMonth();
+
+    const dateModel: DateModel = {
+      ISODate: this.generateISODate(date),
+      date: date,
+      dayLabel: this.dayLabels[weekDay],
+      isOutOfMonth: isOutOfMonth,
+      isToday: isToday,
+      monthLabel: this.monthLabels[month]
+    };
+
+    return dateModel;
+  }
+
+  fillYears(currentYear: number): Array<number> {
+    const firstYear = currentYear - 100;
+    const lastYear = currentYear + 100;
+    const years = [];
+
+    for (let i = firstYear; i <= lastYear; i++) {
+      years.push(i);
+    }
+
+    return years;
+  }
+
+  fillWeeks(month: number, year: number) {
+    this.selectedMonth = {
+      label: this.monthLabels[month],
+      year: year
+    };
 
     this.date = new Date(year, month + 1, 0);
 
-    let currentDate = new Date(year, month, 1);
-    let currentDayNumber = (0 - currentDate.getDay());
-    let currentWeek = [];
+    let initDate = new Date(year, month, 1);
+    let day = (0 - initDate.getDay());
+    let daysInWeek = [];
 
     const weeks = [];
 
-    while (!(currentDate.getDay() === 0 && Number(this.date) < Number(currentDate))) {
-      currentDayNumber = currentDayNumber + 1;
+    while (initDate.getDay() !== 0 || Number(this.date) >= Number(initDate)) {
+      ++day;
 
-      if (currentDate.getDay() === 6) {
-        if (currentWeek.length > 0) {
-          weeks.push(currentWeek);
-        }
+      initDate = new Date(year, month, day);
 
-        currentWeek = [];
+      daysInWeek.push(this.createDayDate(initDate, day));
+
+      if (daysInWeek.length === 7) {
+        weeks.push(daysInWeek);
+        daysInWeek = [];
       }
-
-      currentDate = new Date(year, month, currentDayNumber);
-      currentWeek.push(this.createDay(currentDate, currentDayNumber));
     }
 
     return weeks;
   }
 
-  createDay(date: Date, currentDayNumber: number): CalendarDayModel {
-    const isOutOfMonth = (currentDayNumber <= 0 || Number(date) > Number(this.date));
-    const isoDate = this.generateIsoDate(date);
-    const isoCurrentDate = this.generateIsoDate(new Date());
+  createDayDate(date: Date, dayNumber: number): DateModel {
+    const ISODate = this.generateISODate(date);
+    const ISOCurrentDate = this.generateISODate(new Date());
 
-    const day: CalendarDayModel = {
-      dayNumber: date.getDate(),
-      isCurrent: isoDate === isoCurrentDate,
-      isOutOfMonth: isOutOfMonth,
-      isoDate: isoDate
-    };
+    const isOutOfMonth = (dayNumber <= 0 || date > this.date);
+    const isToday = (ISODate === ISOCurrentDate);
 
-    if (isoDate === isoCurrentDate) {
-      this.selectedDay = day;
-    }
-
-    return day;
+    return this.createDateModel(date, isOutOfMonth, isToday);
   }
 
   showPrevMonth() {
     const month = this.date.getMonth();
+    const year = this.date.getFullYear();
 
-    if (month === 0) {
-      const prevMonth = 11;
-      const previuosYear = this.date.getFullYear() - 1;
+    const prevMonth = month >= 1
+      ? month - 1
+      : 11;
 
-      this.weeks = this.generateWeeks(prevMonth, previuosYear);
-    } else {
-      const prevMonth = month - 1;
-      const year = this.date.getFullYear();
+    const prevYear = month < 1
+      ? year - 1
+      : year;
 
-      this.weeks = this.generateWeeks(prevMonth, year);
-    }
+    this.weeks = this.fillWeeks(prevMonth, prevYear);
   }
 
   showNextMonth() {
     const month = this.date.getMonth();
+    const year = this.date.getFullYear();
 
-    if (month === 11) {
-      const nextYear = this.date.getFullYear() + 1;
-      const nextMonth = 0;
+    const nextMonth = month < 11
+      ? month + 1
+      : 0;
 
-      this.weeks = this.generateWeeks(nextMonth, nextYear);
-    } else {
-      const year = this.date.getFullYear();
-      const nextMonth = month + 1;
+    const nextYear = month >= 11
+      ? year + 1
+      : year;
 
-      this.weeks = this.generateWeeks(nextMonth, year);
-    }
+    this.weeks = this.fillWeeks(nextMonth, nextYear);
   }
 
-  generateIsoDate(date: Date) {
-    const day = date.getDate() > 9
-      ? date.getDate()
-      : `0${ date.getDate() }`;
-    const month = date.getMonth() + 1 > 9
-      ? date.getMonth() + 1
-      : `0${ date.getMonth() + 1 }`;
+  generateISODate(date: Date) {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
-    const isoDate = `${ year }-${ month }-${ day }`;
 
-    return isoDate;
+    const dayString = day > 9
+      ? day
+      : `0${ day }`;
+
+    const monthString = month > 9
+      ? month
+      : `0${ month }`;
+
+    return `${ year }-${ monthString }-${ dayString }`;
   }
 
-  onSelectDay(day: CalendarDayModel) {
-    if (day.isOutOfMonth) {
+  onSelectDay(date: DateModel) {
+    if (date.isOutOfMonth) {
       return;
     }
 
-    this.selectedDay = day;
-    this.onSelectDayEmmiter.emit(day);
+    this.selectedDate = date;
+    this.onSelectDayEmmiter.emit(this.selectedDate);
+  }
+
+  onSelectYear(year: number) {
+    setTimeout(() => {
+      const day = this.selectedDate.date.getDate();
+      const month = this.selectedDate.date.getMonth();
+
+      this.date = new Date(year, month, day);
+
+      this.showYears = false;
+      this.selectedDate = this.createDateModel(this.date, false, true);
+
+      this.weeks = this.fillWeeks(month, year);
+    }, this.selectYearAnimationDuration);
   }
 
   onBlur(event: any) {
     this.onBlurEmitter.emit(event);
+  }
+
+  displayYears() {
+    this.showYears = true;
+
+    setTimeout(this.scrollToActiveYear, 0);
+  }
+
+  scrollToActiveYear() {
+    const { nativeElement } = this.yearsContainerRef;
+    const activeYear: HTMLElement = nativeElement.querySelector('.current');
+
+    if (activeYear) {
+      const top = this.getScrollCenter(nativeElement, activeYear);
+
+      nativeElement.scrollTop = top;
+    }
+  }
+
+  getScrollCenter(container: HTMLElement, internalElement: HTMLElement): number {
+    const yearTop = internalElement.offsetTop;
+    const yearMiddleHeight = internalElement.offsetHeight / 2;
+
+    const containerTop = container.offsetTop;
+    const containerMiddleHeight = container.offsetHeight / 2;
+
+    const elementRelativeTop = (yearTop - containerTop) - (containerMiddleHeight + yearMiddleHeight);
+
+    if (elementRelativeTop < 0) {
+      return 0;
+    }
+
+    return elementRelativeTop;
   }
 }
