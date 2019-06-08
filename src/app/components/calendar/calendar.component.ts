@@ -256,7 +256,7 @@ export class CalendarComponent implements OnInit {
     const containerTop = container.offsetTop;
     const containerMiddleHeight = container.offsetHeight / 2;
 
-    const elementRelativeTop = (yearTop - containerTop) - (containerMiddleHeight + yearMiddleHeight);
+    const elementRelativeTop = (yearTop - containerTop) - (containerMiddleHeight - yearMiddleHeight);
 
     if (elementRelativeTop < 0) {
       return 0;
