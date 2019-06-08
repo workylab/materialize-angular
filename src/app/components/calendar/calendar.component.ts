@@ -11,19 +11,20 @@ import { months } from '../../fixtures/calendar-months';
 })
 export class CalendarComponent implements OnInit {
   static readonly defaultProps: CalendarModel = {
+    date: new Date(),
     displayOtherMonthDays: true
   };
 
   @ViewChild('yearsContainer') yearsContainerRef: ElementRef;
 
   @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<DateModel>;
-  @Output('onBlur') onBlurEmitter: EventEmitter<void>;
 
+  @Input('date') dateInput: Date;
   @Input('displayOtherMonthDays') displayOtherMonthDaysInput: boolean;
 
-  public displayOtherMonthDays: boolean;
   public date: Date;
   public dayLabels: Array<DateLabel>;
+  public displayOtherMonthDays: boolean;
   public monthLabels: Array<DateLabel>;
   public selectedDate: DateModel;
   public selectedMonth: MonthModel;
@@ -37,7 +38,6 @@ export class CalendarComponent implements OnInit {
     this.scrollToActiveYear = this.scrollToActiveYear.bind(this);
 
     this.onSelectDayEmmiter = new EventEmitter();
-    this.onBlurEmitter = new EventEmitter();
 
     this.dayLabels = this.getDayLabels(days);
     this.monthLabels = this.getMonthLabels(months);
@@ -79,14 +79,13 @@ export class CalendarComponent implements OnInit {
   initValues() {
     const { defaultProps } = CalendarComponent;
 
-    const date = new Date();
-    const month = date.getMonth();
-    const year = date.getFullYear();
-
-    this.date = date;
+    this.date = this.dateInput || defaultProps.date;
     this.displayOtherMonthDays = getBooleanValue(this.displayOtherMonthDaysInput, defaultProps.displayOtherMonthDays);
-
     this.selectedDate = this.createDateModel(this.date, false, true);
+
+    const month = this.date.getMonth();
+    const year = this.date.getFullYear();
+
     this.weeks = this.fillWeeks(month, year);
     this.years = this.fillYears(year);
   }
@@ -107,6 +106,16 @@ export class CalendarComponent implements OnInit {
     return dateModel;
   }
 
+  createDateObject(day: number, month: number, year: number): Date {
+    const date = new Date();
+
+    date.setDate(day);
+    date.setMonth(month);
+    date.setFullYear(year);
+
+    return date;
+  }
+
   fillYears(currentYear: number): Array<number> {
     const firstYear = currentYear - 100;
     const lastYear = currentYear + 100;
@@ -122,23 +131,23 @@ export class CalendarComponent implements OnInit {
   fillWeeks(month: number, year: number) {
     this.selectedMonth = {
       label: this.monthLabels[month],
+      number: month,
       year: year
     };
 
-    this.date = new Date(year, month + 1, 0);
-
-    let initDate = new Date(year, month, 1);
-    let day = (0 - initDate.getDay());
-    let daysInWeek = [];
-
+    const finalMonthDay = this.createDateObject(0, month, year);
     const weeks = [];
 
-    while (initDate.getDay() !== 0 || Number(this.date) >= Number(initDate)) {
+    let initMonthDate = new Date(year, month, 1);
+    let day = 0 - initMonthDate.getDay();
+    let daysInWeek = [];
+
+    while (initMonthDate.getDay() !== 0 || finalMonthDay >= initMonthDate) {
       ++day;
 
-      initDate = new Date(year, month, day);
+      initMonthDate = new Date(year, month, day);
 
-      daysInWeek.push(this.createDayDate(initDate, day));
+      daysInWeek.push(this.createDayDate(initMonthDate, day, finalMonthDay));
 
       if (daysInWeek.length === 7) {
         weeks.push(daysInWeek);
@@ -149,19 +158,19 @@ export class CalendarComponent implements OnInit {
     return weeks;
   }
 
-  createDayDate(date: Date, dayNumber: number): DateModel {
+  createDayDate(date: Date, dayNumber: number, finalMonthDay: Date): DateModel {
     const ISODate = this.generateISODate(date);
     const ISOCurrentDate = this.generateISODate(new Date());
 
-    const isOutOfMonth = (dayNumber <= 0 || date > this.date);
+    const isOutOfMonth = (dayNumber <= 0 || date > finalMonthDay);
     const isToday = (ISODate === ISOCurrentDate);
 
     return this.createDateModel(date, isOutOfMonth, isToday);
   }
 
   showPrevMonth() {
-    const month = this.date.getMonth();
-    const year = this.date.getFullYear();
+    const month = this.selectedMonth.number;
+    const year = this.selectedMonth.year;
 
     const prevMonth = month >= 1
       ? month - 1
@@ -175,8 +184,8 @@ export class CalendarComponent implements OnInit {
   }
 
   showNextMonth() {
-    const month = this.date.getMonth();
-    const year = this.date.getFullYear();
+    const month = this.selectedMonth.number;
+    const year = this.selectedMonth.year;
 
     const nextMonth = month < 11
       ? month + 1
@@ -219,17 +228,12 @@ export class CalendarComponent implements OnInit {
       const day = this.selectedDate.date.getDate();
       const month = this.selectedDate.date.getMonth();
 
-      this.date = new Date(year, month, day);
-
+      this.date = this.createDateObject(day, month, year);
       this.showYears = false;
       this.selectedDate = this.createDateModel(this.date, false, true);
 
       this.weeks = this.fillWeeks(month, year);
     }, this.selectYearAnimationDuration);
-  }
-
-  onBlur(event: any) {
-    this.onBlurEmitter.emit(event);
   }
 
   displayYears() {
