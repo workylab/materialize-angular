@@ -1,17 +1,22 @@
-<div class="date-picker" [class.open]="isFocused">
-  <materialize-input
-    (onFocus)="onInputFocus()"
-    (onBlur)="onInputBlur($event)"
+<div class="date-picker" [class.full-size]="fullSize">
+  <div #backdrop *ngIf="isOpen" class="date-picker-backdrop"></div>
 
+  <materialize-input
     [disabled]="disabled"
     [floatLabel]="floatLabel"
     [id]="id"
+    [placeholder]="placeholder"
+    [required]="required"
     [value]="value"
-    [required]="required">
-  </materialize-input>
-  <materialize-calendar
-    (onSelectDay)="onSelectDay($event)"
-    (onBlur)="onCalendarBlur($event)"
   >
-  </materialize-calendar>
+    <materialize-button materializeSuffix
+      className="calendar-button"
+      iconName="calendar_today"
+      [isRounded]="true"
+      (onClick)="open()"
+    >
+    </materialize-button>
+  </materialize-input>
+
+  <materialize-calendar *ngIf="isOpen" (onSelectDay)="onSelectDay($event)"></materialize-calendar>
 </div>
