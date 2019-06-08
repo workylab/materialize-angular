@@ -1,7 +1,7 @@
-<div class="calendar-container" tabindex="1" (blur)="onBlur($event)">
+<div class="calendar-container">
   <div class="calendar-header-container">
     <div class="calendar-header-selected-year">
-      <materialize-button (onClick)="displayYears()">{{ selectedDate.date.getFullYear() }}</materialize-button>
+      <materialize-button (onClick)="displayYears()">{{ selectedMonth.year }}</materialize-button>
     </div>
     <div class="calendar-header-selected-date">
       <materialize-button (onClick)="showYears = false">
@@ -58,12 +58,10 @@
           *ngFor="let year of years"
 
           (click)="onSelectYear(year)"
-          [class.current]="year === selectedDate.date.getFullYear()"
+          [class.current]="year === selectedMonth.year"
 
           materializeRipple
           [rippleDuration]="selectYearAnimationDuration"
-
-          
         >
           {{ year }}
         </div>
