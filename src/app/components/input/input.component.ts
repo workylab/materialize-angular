@@ -45,8 +45,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     placeholder: '',
     required: false,
     type: 'text',
-    validateOnBlur: true,
-    validateOnChange: true,
     value: ''
   };
 
@@ -88,8 +86,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
   public placeholder: string;
   public required: boolean;
   public type: string;
-  public validateOnBlur: boolean;
-  public validateOnChange: boolean;
   public value: string;
 
   constructor() {
@@ -126,8 +122,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.type = this.typeInput || defaultProps.type;
-    this.validateOnBlur = getBooleanValue(this.validateOnBlurInput, defaultProps.validateOnBlur);
-    this.validateOnChange = getBooleanValue(this.validateOnChangeInput, defaultProps.validateOnChange);
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
@@ -140,7 +134,8 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
 
     this.onBlurEmitter.emit(event);
 
-    if (this.validateOnBlur && (!this.floatLabel || relatedTarget !== nativeElement)) {
+    // TODO:
+    if (!this.floatLabel || relatedTarget !== nativeElement) {
       this.isTouched = true;
       this.isFocused = false;
     }

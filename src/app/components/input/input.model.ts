@@ -10,7 +10,5 @@ export interface InputModel {
   placeholder: string;
   required: boolean;
   type: string;
-  validateOnBlur: boolean;
-  validateOnChange: boolean;
   value: string;
 }
