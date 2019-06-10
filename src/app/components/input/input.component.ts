@@ -54,8 +54,8 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
   @ContentChildren(PrefixDirective) materializePrefixQueryList: QueryList<PrefixDirective>;
   @ContentChildren(SuffixDirective) materializeSuffixQueryList: QueryList<SuffixDirective>;
 
-  @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
-  @Output('onChange') onChangeEmitter: EventEmitter<Event>;
+  @Output('onFocus') onFocusEmitter: EventEmitter<void>;
+  @Output('onChange') onChangeEmitter: EventEmitter<string>;
   @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
 
   @Input('autocomplete') autocompleteInput: string;
@@ -134,17 +134,18 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
 
     this.onBlurEmitter.emit(event);
 
-    // TODO:
     if (!this.floatLabel || relatedTarget !== nativeElement) {
       this.isTouched = true;
       this.isFocused = false;
+
+      // TODO: this.onTouched();
     }
   }
 
   onFocus(event: Event): void {
     if (!this.disabled) {
       this.isFocused = true;
-      this.onFocusEmitter.emit(event);
+      this.onFocusEmitter.emit();
       this.inputRef.nativeElement.focus();
 
       this.onTouched();
@@ -155,7 +156,7 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     const { value } = event.target;
 
     this.value = value;
-    this.onChangeEmitter.emit(event);
+    this.onChangeEmitter.emit(this.value);
     this.onInputChange(value);
   }
 
