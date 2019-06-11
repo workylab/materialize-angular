@@ -1,6 +1,7 @@
 export interface DatePickerModel {
   autocomplete: string;
   className: string;
+  date: Date;
   disabled: boolean;
   floatLabel: string;
   format: string;
@@ -12,5 +13,5 @@ export interface DatePickerModel {
   placeholder: string;
   required: boolean;
   type: string;
-  value: Date;
+  value: string;
 }
