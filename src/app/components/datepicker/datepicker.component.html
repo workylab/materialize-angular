@@ -8,15 +8,20 @@
     [placeholder]="placeholder"
     [required]="required"
     [value]="value"
+
+    (onChange)="onInputChange($event)"
+    (onFocus)="onInputFocus()"
   >
     <materialize-button materializeSuffix
       className="calendar-button"
       iconName="calendar_today"
+
+      [disabled]="disabled"
       [isRounded]="true"
       (onClick)="open()"
     >
     </materialize-button>
   </materialize-input>
 
-  <materialize-calendar *ngIf="isOpen" (onSelectDay)="onSelectDay($event)"></materialize-calendar>
+  <materialize-calendar *ngIf="isOpen" (onSelectDay)="onSelectDay($event)" [date]="date"></materialize-calendar>
 </div>
