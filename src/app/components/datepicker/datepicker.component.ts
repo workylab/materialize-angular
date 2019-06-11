@@ -1,4 +1,5 @@
 import { Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DateModel } from '../calendar/calendar.model';
 import { DatePickerModel } from './datepicker.model';
 import { FormFieldAbstract } from '../form/form-field.abstract';
@@ -8,15 +9,24 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   providers: [{
     provide: FormFieldAbstract,
     useExisting: forwardRef(() => DatePickerComponent)
+  }, {
+    multi: true,
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => DatePickerComponent)
   }],
   selector: 'materialize-datepicker',
   styleUrls: ['./datepicker.component.scss'],
   templateUrl: './datepicker.component.html'
 })
-export class DatePickerComponent extends FormFieldAbstract implements OnInit {
+export class DatePickerComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit {
+  static readonly DAY_KEY = 'dd';
+  static readonly MONTH_KEY = 'mm';
+  static readonly YEAR_KEY = 'yyyy';
+
   static readonly defaultProps: DatePickerModel = {
     autocomplete: 'none',
     className: '',
+    date: new Date(),
     disabled: false,
     floatLabel: '',
     format: 'dd-mm-yyyy',
@@ -45,6 +55,7 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
   @Input('value') valueInput: string;
 
   public className: string;
+  public date: Date;
   public disabled: boolean;
   public floatLabel: string;
   public format: string;
@@ -80,17 +91,21 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
+    this.date = this.buildDate(this.value);
     this.isOpen = false;
   }
 
   onSelectDay(selectedDate: DateModel) {
-    this.value = this.formatDate(selectedDate.date);
     this.isOpen = false;
+    this.date = selectedDate.date;
+    this.value = this.formatDate(selectedDate.date);
+
+    this.onChange(this.value);
   }
 
   formatDate(date: Date) {
     const day = date.getDate();
-    const month = date.getMonth();
+    const month = date.getMonth() + 1;
 
     const dayString = day < 10
       ? `0${ day }`
@@ -110,6 +125,32 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
     return formatedDate;
   }
 
+  buildDate(value: string): Date {
+    const dayStartPosition = this.format.indexOf(DatePickerComponent.DAY_KEY);
+    const monthStartPosition = this.format.indexOf(DatePickerComponent.MONTH_KEY);
+    const yearStartPosition = this.format.indexOf(DatePickerComponent.YEAR_KEY);
+
+    if (dayStartPosition >= 0 && monthStartPosition >= 0 && yearStartPosition >= 0) {
+      const dayEndPosition = dayStartPosition + DatePickerComponent.DAY_KEY.length;
+      const monthEndPosition = monthStartPosition + DatePickerComponent.MONTH_KEY.length;
+      const yearEndPosition = yearStartPosition + DatePickerComponent.YEAR_KEY.length;
+
+      const dayString = value.substring(dayStartPosition, dayEndPosition);
+      const monthString = value.substring(monthStartPosition, monthEndPosition);
+      const yearString = value.substring(yearStartPosition, yearEndPosition);
+
+      if (dayString && monthString && yearString) {
+        const day = Number(dayString);
+        const month = Number(monthString) - 1;
+        const year = Number(yearString);
+
+        return new Date(year, month, day);
+      }
+    }
+
+    return new Date();
+  }
+
   open() {
     this.isOpen = true;
 
@@ -121,4 +162,36 @@ export class DatePickerComponent extends FormFieldAbstract implements OnInit {
   close() {
     this.isOpen = false;
   }
+
+  onInputChange(value: string) {
+    this.onChange(value);
+
+    this.date = this.buildDate(value);
+  }
+
+  onInputFocus() {
+    this.onTouched();
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  writeValue(value: string): void {
+    this.value = value;
+
+    this.date = this.buildDate(this.value);
+  }
+
+  registerOnChange(fn: (value: string) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  onChange(value: string): void {}
+
+  onTouched(): void {}
 }
