@@ -71,6 +71,8 @@ export class HomeComponent {
     text: 'Item 3'
   }];
 
+  public date = new Date(2019, 11, 25);
+
   onTableSort(sortedColum: SortedColumnModel) {
   }
 }

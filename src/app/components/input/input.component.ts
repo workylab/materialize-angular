@@ -45,8 +45,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     placeholder: '',
     required: false,
     type: 'text',
-    validateOnBlur: true,
-    validateOnChange: true,
     value: ''
   };
 
@@ -56,8 +54,8 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
   @ContentChildren(PrefixDirective) materializePrefixQueryList: QueryList<PrefixDirective>;
   @ContentChildren(SuffixDirective) materializeSuffixQueryList: QueryList<SuffixDirective>;
 
-  @Output('onFocus') onFocusEmitter: EventEmitter<Event>;
-  @Output('onChange') onChangeEmitter: EventEmitter<Event>;
+  @Output('onFocus') onFocusEmitter: EventEmitter<void>;
+  @Output('onChange') onChangeEmitter: EventEmitter<string>;
   @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
 
   @Input('autocomplete') autocompleteInput: string;
@@ -88,8 +86,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
   public placeholder: string;
   public required: boolean;
   public type: string;
-  public validateOnBlur: boolean;
-  public validateOnChange: boolean;
   public value: string;
 
   constructor() {
@@ -126,8 +122,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     this.placeholder = this.placeholderInput || defaultProps.placeholder;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.type = this.typeInput || defaultProps.type;
-    this.validateOnBlur = getBooleanValue(this.validateOnBlurInput, defaultProps.validateOnBlur);
-    this.validateOnChange = getBooleanValue(this.validateOnChangeInput, defaultProps.validateOnChange);
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
@@ -140,16 +134,18 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
 
     this.onBlurEmitter.emit(event);
 
-    if (this.validateOnBlur && (!this.floatLabel || relatedTarget !== nativeElement)) {
+    if (!this.floatLabel || relatedTarget !== nativeElement) {
       this.isTouched = true;
       this.isFocused = false;
+
+      // TODO: this.onTouched();
     }
   }
 
   onFocus(event: Event): void {
     if (!this.disabled) {
       this.isFocused = true;
-      this.onFocusEmitter.emit(event);
+      this.onFocusEmitter.emit();
       this.inputRef.nativeElement.focus();
 
       this.onTouched();
@@ -160,7 +156,7 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     const { value } = event.target;
 
     this.value = value;
-    this.onChangeEmitter.emit(event);
+    this.onChangeEmitter.emit(this.value);
     this.onInputChange(value);
   }
 

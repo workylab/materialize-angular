@@ -29,8 +29,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     placeholder: '',
     required: false,
     type: 'text',
-    validateOnBlur: false,
-    validateOnChange: false,
     value: ''
   };
 
@@ -96,8 +94,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     this.isFocused = false;
     this.isTouched = false;
     this.type = defaultProps.type;
-    this.validateOnBlur = defaultProps.validateOnBlur;
-    this.validateOnChange = defaultProps.validateOnChange;
 
     this.isValid = this.validate(this.value, this.required);
   }

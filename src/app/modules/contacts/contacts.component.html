@@ -47,6 +47,9 @@ navbar content
       <materialize-radio value="c">Value 3</materialize-radio>
     </materialize-radio-group>
     {{ form.controls.favorite.errors | json }}
+    
+    <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy"></materialize-datepicker>
+    {{ form.controls.dateOfBirth.errors | json }}
   </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>

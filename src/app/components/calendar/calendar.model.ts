@@ -1,4 +1,5 @@
 export interface CalendarModel {
+  date: Date;
   displayOtherMonthDays: boolean;
 }
 
@@ -13,6 +14,7 @@ export interface DateModel {
 
 export interface MonthModel {
   label: DateLabel;
+  number: number;
   year: number;
 }
 
