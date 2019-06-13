@@ -1,6 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { RangeSliderModel, RangeSliderOptionModel } from './range-slider.model';
 import { supportedEvents, supportTouchEvents } from '../../utils/get-supported-events.util';
+import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SupportedEventsModel } from '../common/models/supported-events.model';
 
 @Component({
@@ -13,6 +14,7 @@ export class RangeSliderComponent implements OnInit {
     className: '',
     maxValue: 10,
     minValue: 0,
+    showTicks: false,
     value: 5
   };
 
@@ -27,13 +29,15 @@ export class RangeSliderComponent implements OnInit {
 
   @Input('maxValue') maxValueInput: number;
   @Input('minValue') minValueInput: number;
-  @Input('value') valueInput: number;
+  @Input('showTicks') showTicksInput: boolean;
   @Input('options') optionsInput: Array<RangeSliderOptionModel>;
+  @Input('value') valueInput: number;
 
   public isFocused: boolean;
   public maxValue: number;
   public minValue: number;
   public options: Array<RangeSliderOptionModel>;
+  public showTicks: boolean;
   public supportTouchEvents: boolean;
   public supportedEvents: SupportedEventsModel;
   public value: number;
@@ -45,7 +49,7 @@ export class RangeSliderComponent implements OnInit {
     this.actionDown = this.actionDown.bind(this);
     this.actionMove = this.actionMove.bind(this);
     this.actionUp = this.actionUp.bind(this);
-    this.updateTrack = this.updateTrack.bind(this);
+    this.updateTrackByEvent = this.updateTrackByEvent.bind(this);
 
     this.onChange = new EventEmitter();
     this.isFocused = false;
@@ -60,14 +64,18 @@ export class RangeSliderComponent implements OnInit {
 
     this.maxValue = this.maxValueInput || defaultProps.maxValue;
     this.minValue = this.minValueInput || defaultProps.minValue;
+    this.showTicks = getBooleanValue(this.showTicksInput, defaultProps.showTicks);
     this.value = this.valueInput || defaultProps.value;
     this.options = this.optionsInput || this.fillOptions(this.minValue, this.maxValue);
     this.sliderTrack.nativeElement.addEventListener(this.supportedEvents.down, this.actionDown);
 
     this.updateTrack();
-    this.renderTrackInterval();
 
-    window.addEventListener(this.supportedEvents.resize, this.updateTrack);
+    if (this.showTicks) {
+      this.renderTrackInterval();
+    }
+
+    window.addEventListener(this.supportedEvents.resize, this.updateTrackByEvent);
   }
 
   fillOptions(minValue: number, maxValue: number): Array<RangeSliderOptionModel> {
@@ -92,7 +100,7 @@ export class RangeSliderComponent implements OnInit {
 
     const x = this.getXCoordinateByEvent(event);
 
-    this.animateTrack(x);
+    this.animateTrack(x, true);
     this.value = this.getValueFromXCoordinate(x);
 
     window.addEventListener(this.supportedEvents.up, this.actionUp);
@@ -100,12 +108,9 @@ export class RangeSliderComponent implements OnInit {
   }
 
   actionMove(event: any) {
-    this.sliderIndicatorContainer.nativeElement.style.transitionDuration = '0ms';
-    this.sliderTrackFill.nativeElement.style.transitionDuration = '0ms';
-
     const x = this.getXCoordinateByEvent(event);
 
-    this.animateTrack(x);
+    this.animateTrack(x, false);
     this.value = this.getValueFromXCoordinate(x);
   }
 
@@ -121,11 +126,18 @@ export class RangeSliderComponent implements OnInit {
     this.updateTrack();
   }
 
+  updateTrackByEvent() {
+    const pixelInterval = this.getPixelInterval();
+    const x = pixelInterval * this.value;
+
+    this.animateTrack(x, false);
+  }
+
   updateTrack() {
     const pixelInterval = this.getPixelInterval();
     const x = pixelInterval * this.value;
 
-    this.animateTrack(x);
+    this.animateTrack(x, true);
   }
 
   getValueFromXCoordinate(x: number) {
@@ -168,7 +180,14 @@ export class RangeSliderComponent implements OnInit {
     this.sliderTrackInterval.nativeElement.style.backgroundSize = `${ percent }% 2px`;
   }
 
-  animateTrack(x: number) {
+  animateTrack(x: number, hasAnimation: boolean) {
+    this.sliderTrackFill.nativeElement.style.transitionDuration = hasAnimation
+      ? null
+      : '0ms';
+    this.sliderIndicatorContainer.nativeElement.style.transitionDuration = hasAnimation
+      ? null
+      : '0ms';
+
     const { offsetWidth } = this.sliderIndicatorContainer.nativeElement;
     const sliderCenterHorizontal = offsetWidth / 2;
     const translate = `translate(${ x - sliderCenterHorizontal }px, -50%)`;

@@ -2,7 +2,7 @@
   <div class="range-slider-track" #sliderTrack>
     <div class="range-slider-track-background" #sliderTrackBackground>
       <div class="range-slider-track-fill" #sliderTrackFill></div>
-      <div class="range-slider-track-interval" #sliderTrackInterval></div>
+      <div class="range-slider-track-interval" #sliderTrackInterval *ngIf="showTicks"></div>
     </div>
 
     <div class="range-slider-indicator-container" #sliderIndicatorContainer>
