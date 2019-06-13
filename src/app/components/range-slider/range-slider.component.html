@@ -1,6 +1,21 @@
-<div class="range-slider-container">
-  <div class="range-slider-track">
-    <div class="range-slider-fill"></div>
-    <div class="range-slider-indicator" #rangeSlider></div>
+<div class="range-slider-container" [class.active]="isFocused">
+  <div class="range-slider-track" #sliderTrack>
+    <div class="range-slider-track-background" #sliderTrackBackground>
+      <div class="range-slider-track-fill" #sliderTrackFill></div>
+      <div class="range-slider-track-interval" #sliderTrackInterval></div>
+    </div>
+
+    <div class="range-slider-indicator-container" #sliderIndicatorContainer>
+      <label class="range-slider-label" *ngIf="options && options[value]">
+        {{ options[value].label }}
+      </label>
+      <div class="range-slider-indicator">
+        <div class="range-slider-indicator-ripple"
+          materializeRipple
+          [isRippleActive]="!disabled"
+          [rippleDuration]="200">
+        </div>
+      </div>
+    </div>
   </div>
 </div>
