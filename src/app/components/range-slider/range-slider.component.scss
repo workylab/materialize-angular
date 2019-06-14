@@ -5,20 +5,52 @@ $range-slider-track-size: 3px;
 $range-slider-indicator-size: 13px;
 
 .range-slider-container {
-  padding: $space-xxxl $space-sm $space-xs;
+  padding: $space-xxxl $space-xl $space-xs;
   width: 100%;
 
-  &.active {
+  input[type='range'] {
+    display: none;
+  }
+
+  &.focused {
     .range-slider-label {
+      font-size: 13px;
       height: $range-slider-indicator-size * 2;
       opacity: 1;
       width: $range-slider-indicator-size * 2;
     }
+
+    .range-slider-indicator-ripple {
+      background-color: rgba($color-purple, 0.1);
+    }
+  }
+
+  &.disabled {
+    .range-slider-track-background {
+      background-color: $color-gray;
+    }
+
+    .range-slider-track-fill {
+      background-color: $color-gray-dark;
+    }
+
+    .range-slider-indicator {
+      background-color: $color-gray-dark;
+      border: $border-lg solid $color-white;
+      box-sizing: content-box;
+      height: $range-slider-indicator-size - $border-lg;
+      width: $range-slider-indicator-size - $border-lg;
+    }
+
+    .range-slider-indicator-ripple:hover {
+      background-color: unset;
+    }
   }
 }
 
-.range-slider-track {
+.range-slider-track-container {
   cursor: pointer;
+  outline: none;
   padding: $space-sm 0;
   position: relative;
   width: 100%;
@@ -71,7 +103,7 @@ $range-slider-indicator-size: 13px;
   color: $color-white;
   display: flex;
   font-family: $font-family-primary;
-  font-size: 13px;
+  font-size: 0;
   font-weight: $font-weight-light;
   height: 0;
   justify-content: center;
@@ -81,7 +113,7 @@ $range-slider-indicator-size: 13px;
   position: absolute;
   transform: translateX(-50%);
   transition-duration: 200ms;
-  transition-property: opacity, height, width;
+  transition-property: opacity, height, width, font-size;
   transition-timing-function: linear;
   width: 0;
 
