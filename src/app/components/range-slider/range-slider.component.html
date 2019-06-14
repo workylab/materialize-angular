@@ -1,14 +1,20 @@
-<div class="range-slider-container" [class.active]="isFocused">
-  <div class="range-slider-track" #sliderTrack>
+<div class="range-slider-container"
+  [class.focused]="isFocused"
+  [class.disabled]="disabled"
+>
+  <div class="range-slider-track-container"
+    #sliderTrack [tabindex]="disabled ? '-1' : '0'"
+    
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  >
     <div class="range-slider-track-background" #sliderTrackBackground>
       <div class="range-slider-track-fill" #sliderTrackFill></div>
-      <div class="range-slider-track-interval" #sliderTrackInterval *ngIf="showTicks"></div>
+      <div class="range-slider-track-interval" #sliderTrackInterval></div>
     </div>
 
     <div class="range-slider-indicator-container" #sliderIndicatorContainer>
-      <label class="range-slider-label" *ngIf="options && options[value]">
-        {{ options[value].label }}
-      </label>
+      <label class="range-slider-label" *ngIf="options[value]">{{ options[value].label }}</label>
       <div class="range-slider-indicator">
         <div class="range-slider-indicator-ripple"
           materializeRipple
@@ -18,4 +24,6 @@
       </div>
     </div>
   </div>
+
+  <input type="range" [disabled]="disabled" [attr.id]="id" [name]="name" [required]="required" [step]="step" [min]="minValue" [max]="maxValue" />
 </div>
