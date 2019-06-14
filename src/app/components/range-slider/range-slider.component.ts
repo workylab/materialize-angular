@@ -12,9 +12,14 @@ import { SupportedEventsModel } from '../common/models/supported-events.model';
 export class RangeSliderComponent implements OnInit {
   static readonly defaultProps: RangeSliderModel = {
     className: '',
+    disabled: false,
+    id: null,
     maxValue: 10,
     minValue: 0,
+    name: '',
+    required: false,
     showTicks: false,
+    step: 1,
     value: 5
   };
 
@@ -27,17 +32,29 @@ export class RangeSliderComponent implements OnInit {
 
   @Output() onChange: EventEmitter<number>;
 
+  @Input('className') classNameInput: string;
+  @Input('disabled') disabledInput: boolean;
+  @Input('id') idInput: string | null;
   @Input('maxValue') maxValueInput: number;
   @Input('minValue') minValueInput: number;
-  @Input('showTicks') showTicksInput: boolean;
+  @Input('name') nameInput: string;
   @Input('options') optionsInput: Array<RangeSliderOptionModel>;
+  @Input('required') requiredInput: boolean;
+  @Input('showTicks') showTicksInput: boolean;
+  @Input('step') stepInput: number;
   @Input('value') valueInput: number;
 
+  public className: string;
+  public disabled: boolean;
+  public id: string | null;
   public isFocused: boolean;
   public maxValue: number;
   public minValue: number;
+  public name: string;
   public options: Array<RangeSliderOptionModel>;
+  public required: boolean;
   public showTicks: boolean;
+  public step: number;
   public supportTouchEvents: boolean;
   public supportedEvents: SupportedEventsModel;
   public value: number;
@@ -49,10 +66,10 @@ export class RangeSliderComponent implements OnInit {
     this.actionDown = this.actionDown.bind(this);
     this.actionMove = this.actionMove.bind(this);
     this.actionUp = this.actionUp.bind(this);
+    this.updateTrack = this.updateTrack.bind(this);
     this.updateTrackByEvent = this.updateTrackByEvent.bind(this);
 
     this.onChange = new EventEmitter();
-    this.isFocused = false;
   }
 
   ngOnInit() {
@@ -62,18 +79,25 @@ export class RangeSliderComponent implements OnInit {
   initValues() {
     const { defaultProps } = RangeSliderComponent;
 
+    this.className = this.classNameInput || defaultProps.className;
+    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.id = this.idInput || defaultProps.id;
     this.maxValue = this.maxValueInput || defaultProps.maxValue;
     this.minValue = this.minValueInput || defaultProps.minValue;
+    this.name = this.nameInput || defaultProps.name;
+    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.showTicks = getBooleanValue(this.showTicksInput, defaultProps.showTicks);
+    this.step = this.stepInput || defaultProps.step;
     this.value = this.valueInput || defaultProps.value;
+
     this.options = this.optionsInput || this.fillOptions(this.minValue, this.maxValue);
+    this.isFocused = false;
+
+    this.renderTrackInterval();
+
     this.sliderTrack.nativeElement.addEventListener(this.supportedEvents.down, this.actionDown);
 
-    this.updateTrack();
-
-    if (this.showTicks) {
-      this.renderTrackInterval();
-    }
+    setTimeout(this.updateTrack, 0);
 
     window.addEventListener(this.supportedEvents.resize, this.updateTrackByEvent);
   }
@@ -92,19 +116,15 @@ export class RangeSliderComponent implements OnInit {
   }
 
   actionDown(event: any) {
-    if (!this.supportTouchEvents) {
-      event.preventDefault();
+    if (!this.disabled) {
+      const x = this.getXCoordinateByEvent(event);
+
+      this.animateTrack(x, true);
+      this.value = this.getValueFromXCoordinate(x);
+
+      window.addEventListener(this.supportedEvents.up, this.actionUp);
+      window.addEventListener(this.supportedEvents.move, this.actionMove);
     }
-
-    this.isFocused = true;
-
-    const x = this.getXCoordinateByEvent(event);
-
-    this.animateTrack(x, true);
-    this.value = this.getValueFromXCoordinate(x);
-
-    window.addEventListener(this.supportedEvents.up, this.actionUp);
-    window.addEventListener(this.supportedEvents.move, this.actionMove);
   }
 
   actionMove(event: any) {
@@ -118,7 +138,6 @@ export class RangeSliderComponent implements OnInit {
     window.removeEventListener(this.supportedEvents.up, this.actionUp);
     window.removeEventListener(this.supportedEvents.move, this.actionMove);
 
-    this.isFocused = false;
     this.sliderTrackFill.nativeElement.style.transitionDuration = null;
     this.sliderIndicatorContainer.nativeElement.style.transitionDuration = null;
     this.onChange.emit(this.value);
@@ -169,6 +188,7 @@ export class RangeSliderComponent implements OnInit {
     const difference = this.options
       ? this.options.length - 1
       : this.maxValue - this.minValue;
+
     const pixelInterval = this.sliderTrack.nativeElement.offsetWidth / difference;
 
     return pixelInterval;
@@ -176,8 +196,11 @@ export class RangeSliderComponent implements OnInit {
 
   renderTrackInterval() {
     const percent = 100 / (this.options.length - 1);
+    const stepPercent = percent * this.step;
 
-    this.sliderTrackInterval.nativeElement.style.backgroundSize = `${ percent }% 2px`;
+    if (this.showTicks) {
+      this.sliderTrackInterval.nativeElement.style.backgroundSize = `${ stepPercent }% 1px`;
+    }
   }
 
   animateTrack(x: number, hasAnimation: boolean) {
@@ -194,5 +217,15 @@ export class RangeSliderComponent implements OnInit {
 
     this.sliderTrackFill.nativeElement.style.width = `${ x }px`;
     this.sliderIndicatorContainer.nativeElement.style.transform = translate;
+  }
+
+  onFocus(event: any): void {
+    if (!this.disabled) {
+      this.isFocused = true;
+    }
+  }
+
+  onBlur(event: any): void {
+    this.isFocused = false;
   }
 }
