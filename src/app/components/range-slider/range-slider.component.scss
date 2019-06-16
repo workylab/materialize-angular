@@ -161,3 +161,35 @@ $range-slider-indicator-size: 13px;
     background-color: rgba($color-purple, 0.3);
   }
 }
+
+:host.ng-touched.ng-dirty.ng-invalid {
+  .range-slider-container.focused .range-slider-indicator-ripple {
+    background-color: rgba($color-red, 0.1);
+  }
+
+  .range-slider-track-background {
+    background-color: lighten($color-red, 40%);
+  }
+
+  .range-slider-track-fill {
+    background-color: $color-red;
+  }
+
+  .range-slider-label::after {
+    background-color: $color-red;
+  }
+
+  .range-slider-indicator {
+    background-color: $color-red;
+  }
+
+  .range-slider-indicator-ripple {
+    &:hover {
+      background-color: rgba($color-red, 0.1);
+    }
+
+    ::ng-deep .ripple {
+      background-color: rgba($color-red, 0.3);
+    }
+  }
+}
