@@ -1,15 +1,21 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, forwardRef, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RangeSliderModel, RangeSliderOptionModel } from './range-slider.model';
 import { supportedEvents, supportTouchEvents } from '../../utils/get-supported-events.util';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SupportedEventsModel } from '../common/models/supported-events.model';
 
 @Component({
+  providers: [{
+    multi: true,
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => RangeSliderComponent)
+  }],
   selector: 'materialize-range-slider',
   styleUrls: ['./range-slider.component.scss'],
   templateUrl: './range-slider.component.html'
 })
-export class RangeSliderComponent implements OnInit {
+export class RangeSliderComponent implements ControlValueAccessor, OnInit {
   static readonly defaultProps: RangeSliderModel = {
     className: '',
     disabled: false,
@@ -30,7 +36,7 @@ export class RangeSliderComponent implements OnInit {
   @ViewChild('sliderTrackFill') sliderTrackFill: ElementRef;
   @ViewChild('sliderTrackInterval') sliderTrackInterval: ElementRef;
 
-  @Output() onChange: EventEmitter<number>;
+  @Output('onChange') onChangeEmitter: EventEmitter<number>;
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
@@ -69,7 +75,7 @@ export class RangeSliderComponent implements OnInit {
     this.updateTrack = this.updateTrack.bind(this);
     this.updateTrackByEvent = this.updateTrackByEvent.bind(this);
 
-    this.onChange = new EventEmitter();
+    this.onChangeEmitter = new EventEmitter();
   }
 
   ngOnInit() {
@@ -140,8 +146,9 @@ export class RangeSliderComponent implements OnInit {
 
     this.sliderTrackFill.nativeElement.style.transitionDuration = null;
     this.sliderIndicatorContainer.nativeElement.style.transitionDuration = null;
-    this.onChange.emit(this.value);
+    this.onChangeEmitter.emit(this.value);
 
+    this.onChange(this.value);
     this.updateTrack();
   }
 
@@ -222,10 +229,32 @@ export class RangeSliderComponent implements OnInit {
   onFocus(event: any): void {
     if (!this.disabled) {
       this.isFocused = true;
+
+      this.onTouched();
     }
   }
 
   onBlur(event: any): void {
     this.isFocused = false;
   }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  writeValue(value: number): void {
+    this.value = value;
+  }
+
+  registerOnChange(fn: (value: number) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  onChange(value: number): void {}
+
+  onTouched(): void {}
 }
