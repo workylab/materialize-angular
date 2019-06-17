@@ -9,7 +9,7 @@ navbar content
 <materialize-form>
   <!--
   <materialize-form-group iconName="message">
-    
+ 
   </materialize-form-group>
   <materialize-form-group iconName="map">
     <materialize-select label="State" [required]="true" name="state" [options]="stateOptions" materializeFormField></materialize-select>
@@ -50,6 +50,9 @@ navbar content
     
     <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy"></materialize-datepicker>
     {{ form.controls.dateOfBirth.errors | json }}
+
+    <materialize-range-slider formControlName="amount"></materialize-range-slider>
+    {{ form.controls.amount.errors | json }}
   </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>

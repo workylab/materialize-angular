@@ -33,6 +33,10 @@ export class ContactsComponent {
     }];
 
     this.form = new FormGroup({
+      amount: new FormControl({ disabled: false, value: 5 }, [
+        Validators.min(3),
+        Validators.max(7)
+      ]),
       dateOfBirth: new FormControl({
         disabled: false,
         value: '25/12/1992'
