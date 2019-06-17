@@ -47,14 +47,12 @@ navbar content
       <materialize-radio value="c">Value 3</materialize-radio>
     </materialize-radio-group>
     {{ form.controls.favorite.errors | json }}
-<<<<<<< HEAD
     
     <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy"></materialize-datepicker>
     {{ form.controls.dateOfBirth.errors | json }}
-=======
 
     <materialize-range-slider formControlName="amount"></materialize-range-slider>
->>>>>>> Implemented angular reactive forms in range slider.
+    {{ form.controls.amount.errors | json }}
   </div>
 
   <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>
