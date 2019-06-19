@@ -1,26 +1,26 @@
-<div class="form-control-container"
-  tabindex="0"
+<div class="form-control-select" [class.open]="isFocused">
+  <div #backdrop *ngIf="isFocused" class="form-select-backdrop"></div>
 
-  (focus)="openMenu()"
-  (blur)="closeMenu()"
-  (click)="openMenu()"
+  <div class="form-control-container"
+    tabindex="1"
 
-  [ngClass]="className"
-  [class.active]="isFocused || (selectedOption && selectedOption.content)"
-  [class.disabled]="disabled"
-  [class.focused]="isFocused"
-  [class.float-label]="floatLabel">
+    (click)="onClick($event)"
 
-  <div class="form-control-wrapper">
-    <!-- <div class="form-control-float-label">{{ floatLabel }}</div> -->
+    [ngClass]="className"
+    [class.float-label]="floatLabel"
+    [class.active]="value || placeholder"
+    [class.focused]="isFocused"
+    [class.disabled]="disabled">
+    <div class="form-control-wrapper">
+      <div class="form-control-float-label">{{ floatLabel }}</div>
+      <div class="form-control" #labelContainer>&nbsp;</div>
+      <materialize-icon className="form-icon-error" name="error" size="lg"></materialize-icon>
+    </div>
 
-    <div class="form-control" #labelContainer></div>
-
-    <materialize-icon className="form-icon-error" name="error" size="lg"></materialize-icon>
+    <materialize-icon className="form-control-select-icon" name="arrow_drop_down" size="lg"></materialize-icon>
   </div>
 
-  <div class="select-menu" [class.open]="isFocused">
-    <!-- <ng-template *ngTemplateOutlet="transcludeTemplate"></ng-template> -->
+  <div class="form-control-select-menu">
     <ng-content select="materialize-select-option"></ng-content>
   </div>
 </div>

@@ -2,12 +2,13 @@ import {
   AfterContentInit,
   Component,
   ContentChildren,
+  ElementRef,
   forwardRef,
   Input,
   OnInit,
   QueryList,
-  ViewChild,
-  ViewContainerRef
+  Renderer2,
+  ViewChild
 } from '@angular/core';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
@@ -34,7 +35,8 @@ export class SelectComponent extends FormFieldAbstract implements OnInit, AfterC
     value: ''
   };
 
-  @ViewChild('labelContainer', { read: ViewContainerRef }) labelContainerRef: ViewContainerRef;
+  @ViewChild('backdrop') backdropRef: ElementRef;
+  @ViewChild('labelContainer') labelContainerRef: ElementRef;
 
   @ContentChildren(SelectOptionComponent) optionsQueryList: QueryList<SelectOptionComponent>;
 
@@ -51,16 +53,16 @@ export class SelectComponent extends FormFieldAbstract implements OnInit, AfterC
   public floatLabel: string;
   public id: string;
   public isFocused: boolean;
-  public isTouched: boolean;
   public name: string;
   public options: Array<SelectOptionComponent>;
   public required: boolean;
   public valueLabel: string;
   public value: string;
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
     super();
 
+    this.close = this.close.bind(this);
     this.selectOption = this.selectOption.bind(this);
   }
 
@@ -80,17 +82,12 @@ export class SelectComponent extends FormFieldAbstract implements OnInit, AfterC
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   ngAfterContentInit() {
     this.options = this.optionsQueryList.toArray();
 
     this.registerOptions();
-
-    if (this.disabled) {
-      //
-    }
   }
 
   registerOptions() {
@@ -103,40 +100,41 @@ export class SelectComponent extends FormFieldAbstract implements OnInit, AfterC
     }
   }
 
-  getIndexOption(value: string, options: Array<SelectOptionComponent>): number | null {
-    for (let i = 0; i < options.length; i++) {
-      const currentOption = options[i];
-
-      if (value === currentOption.value) {
-        return i;
-      }
-    }
-
-    return null;
+  desactiveAllOptions() {
+    this.options.forEach(option => {
+      option.isActive = false;
+    });
   }
 
   selectOption(value: string) {
+    const { nativeElement: labelContainer } = this.labelContainerRef;
+
+    this.desactiveAllOptions();
+    this.renderer.removeChild(labelContainer, labelContainer.firstChild);
+
     const selectOption = this.options.find(item => item.value === value);
 
     if (selectOption) {
-      this.labelContainerRef.clear();
+      const template = selectOption.template.nativeElement.firstChild;
+      const cloned = template.cloneNode(true);
 
-      const view = selectOption.template.createEmbeddedView(null);
-
-      this.labelContainerRef.insert(view);
+      this.renderer.appendChild(labelContainer, cloned);
       this.value = value;
-      this.closeMenu();
+      this.close();
+
+      selectOption.isActive = true;
     }
   }
 
-  openMenu() {
-    if (!this.disabled) {
-      this.isFocused = true;
-    }
+  onClick() {
+    this.isFocused = true;
+
+    setTimeout(() => {
+      this.backdropRef.nativeElement.addEventListener('click', this.close);
+    }, 0);
   }
 
-  closeMenu() {
-    this.isTouched = true;
+  close() {
     this.isFocused = false;
   }
 }
