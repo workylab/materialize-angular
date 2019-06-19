@@ -79,7 +79,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
   public floatLabel: string;
   public hasCounter: boolean;
   public id: string | null;
-  public isTouched: boolean;
   public isFocused: boolean;
   public maxLength: number;
   public name: string;
@@ -125,7 +124,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   onBlur(event: any): void {
@@ -135,7 +133,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     this.onBlurEmitter.emit(event);
 
     if (!this.floatLabel || relatedTarget !== nativeElement) {
-      this.isTouched = true;
       this.isFocused = false;
 
       // TODO: this.onTouched();

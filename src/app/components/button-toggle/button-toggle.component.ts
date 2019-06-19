@@ -42,7 +42,6 @@ export class ButtonToggleComponent extends FormFieldAbstract implements OnInit {
   public id: string;
   public isFocused: boolean;
   public isMultiple: boolean;
-  public isTouched: boolean;
   public isValid: boolean;
   public items: Array<ButtonToggleItemModel>;
   public label: string;
@@ -75,8 +74,7 @@ export class ButtonToggleComponent extends FormFieldAbstract implements OnInit {
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = {};
 
-    this.isFocused = false;
-    this.isTouched = false;
+    this.isFocused = false;    
     this.isValid = false;
   }
 
@@ -93,8 +91,6 @@ export class ButtonToggleComponent extends FormFieldAbstract implements OnInit {
   }
 
   updateAndValidity() {
-    this.isTouched = true;
-
     // TODO: this.isValid = this.validate(this.value, this.required);
   }
 }

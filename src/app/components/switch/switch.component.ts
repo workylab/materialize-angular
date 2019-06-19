@@ -38,7 +38,6 @@ export class SwitchComponent extends FormFieldAbstract implements ControlValueAc
   public disabled: boolean;
   public id: string;
   public isFocused: boolean;
-  public isTouched: boolean;
   public name: string;
   public required: boolean;
   public value: boolean;
@@ -62,7 +61,6 @@ export class SwitchComponent extends FormFieldAbstract implements ControlValueAc
     this.value = getBooleanValue(this.valueInput, defaultProps.value);
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   toggleValue(): void {
@@ -76,7 +74,6 @@ export class SwitchComponent extends FormFieldAbstract implements ControlValueAc
 
   onBlur(event: any): void {
     this.isFocused = false;
-    this.isTouched = true;
   }
 
   onFocus(event: any): void {

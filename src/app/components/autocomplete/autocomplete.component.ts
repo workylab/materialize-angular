@@ -56,7 +56,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   public id: string | null;
   public isFocused: boolean;
   public isMatchValue: boolean;
-  public isTouched: boolean;
   public maxLength: number;
   public name: string;
   public patternName: string;
@@ -90,7 +89,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     // this.options = this.filterOptions(this.value);
 
     this.isFocused = false;
-    this.isTouched = false;
     this.type = defaultProps.type;
 
     this.isValid = this.validate(this.value, this.required);
@@ -123,7 +121,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
       this.materializeInput.isValid = this.isValid;
       this.materializeInput.isFocused = false;
-      this.materializeInput.isTouched = true;
     }
   }
 
@@ -176,7 +173,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
   closeMenu() {
     this.isFocused = false;
-    this.isTouched = true;
 
     this.materializeInput.isFocused = false;
   }
@@ -188,6 +184,5 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   updateAndValidity() {
     this.materializeInput.updateAndValidity();
     this.isValid = this.validate(this.value, this.required);
-    this.isTouched = true;
   }
 }

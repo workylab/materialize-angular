@@ -4,7 +4,7 @@
   [class.active]="value.length"
   [class.focused]="isFocused"
   [class.disabled]="disabled"
-  [class.error]="!isValid && isTouched">
+  [class.error]="!isValid">
 
   <materialize-label>{{ label }}</materialize-label>
 
@@ -31,11 +31,11 @@
       <materialize-icon className="icon-error"
         name="error"
         size="lg"
-        *ngIf="!isValid && isTouched">
+        *ngIf="!isValid">
       </materialize-icon>
     </div>
 
-    <materialize-form-message type="error" *ngIf="!isValid && isTouched">{{ errorMessage }}</materialize-form-message>
+    <materialize-form-message type="error" *ngIf="!isValid">{{ errorMessage }}</materialize-form-message>
   </div>
 </div>
 

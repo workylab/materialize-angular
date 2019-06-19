@@ -5,7 +5,6 @@ export abstract class FormFieldAbstract {
   public disabled: boolean;
   public id: string | null;
   public isFocused: boolean;
-  public isTouched: boolean;
   public isValid: boolean;
   public name: string;
   public required: boolean;

@@ -46,7 +46,6 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
   public disabled: boolean;
   public id: string;
   public isFocused: boolean;
-  public isTouched: boolean;
   public name: string;
   public required: boolean;
   public value: CheckboxListValueModel | null;
@@ -89,7 +88,6 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   disableAllCheckboxes() {
@@ -116,7 +114,6 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
     });
 
     this.checkAllValue = value;
-    this.isTouched = true;
     this.value = this.generateValue(this.checkboxes);
 
     this.onTouched();
@@ -127,7 +124,6 @@ export class CheckboxListComponent extends FormFieldAbstract implements AfterCon
     currentCheckbox.value = value;
 
     this.value = this.generateValue(this.checkboxes);
-    this.isTouched = true;
     this.checkAllValue = this.isCheckedAll();
 
     this.onTouched();

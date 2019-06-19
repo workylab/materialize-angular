@@ -59,7 +59,6 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   public id: string;
   public indicatorAtEnd: boolean;
   public isFocused: boolean;
-  public isTouched: boolean;
   public name: string;
   public radios: Array<RadioComponent>;
   public required: boolean;
@@ -101,7 +100,6 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   initRadios() {
@@ -125,8 +123,6 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   }
 
   toggleRadios(value: string) {
-    this.isTouched = true;
-
     this.setValueAllRadios(value);
 
     const currentRadio = this.radios.find(item => item.value === value);
