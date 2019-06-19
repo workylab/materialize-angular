@@ -1,5 +1,4 @@
-<ng-container #template>
-  <div class="select-option-container" (click)="onClick()" [class.active]="isActive">
-    <ng-content></ng-content>
-  </div>    
-</ng-container>
+<div class="select-option-container" (click)="onClick()" [class.active]="isActive" #template>
+  <ng-content></ng-content>
+</div>
+ 
