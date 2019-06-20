@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, TemplateRef, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SelectOptionModel } from './select-option.model';
 

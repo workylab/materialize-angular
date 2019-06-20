@@ -74,7 +74,7 @@ export class ButtonToggleComponent extends FormFieldAbstract implements OnInit {
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = {};
 
-    this.isFocused = false;    
+    this.isFocused = false;
     this.isValid = false;
   }
 
