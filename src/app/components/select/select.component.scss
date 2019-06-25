@@ -2,6 +2,7 @@
 
 .form-control {
   @extend %form-control-base;
+  cursor: pointer;
 }
 
 .form-control-wrapper {
@@ -40,7 +41,7 @@
     transform: translateY(-50%) rotate(180deg);
   }
 
-  .disabled ::ng-deep .form-control-select-icon {
+  &.disabled ::ng-deep .form-control-select-icon {
     color: $color-gray;
   }
 }
@@ -48,13 +49,9 @@
 .form-control-select {
   position: relative;
 
-  .form-control-container,
-  .form-control-float-label {
-    cursor: pointer;
-  }
-
   ::ng-deep .form-control-select-icon {
     color: $color-gray-dark;
+    cursor: pointer;
     position: absolute;
     right: $space-xs;
     top: 50%;
