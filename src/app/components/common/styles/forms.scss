@@ -84,6 +84,9 @@
 }
 
 %form-control-base {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background-color: transparent;
   border: 0;
   box-sizing: border-box;
