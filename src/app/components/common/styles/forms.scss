@@ -129,6 +129,7 @@
   font-size: 16px;
   font-weight: $font-weight-regular;
   left: 0;
+  pointer-events: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
