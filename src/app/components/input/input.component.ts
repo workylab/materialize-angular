@@ -48,7 +48,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     value: ''
   };
 
-  @ViewChild('input') inputRef: ElementRef;
   @ViewChild('formControlWrapper') formControlWrapperRef: ElementRef;
 
   @ContentChildren(PrefixDirective) materializePrefixQueryList: QueryList<PrefixDirective>;
@@ -143,7 +142,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     if (!this.disabled) {
       this.isFocused = true;
       this.onFocusEmitter.emit();
-      this.inputRef.nativeElement.focus();
 
       this.onTouched();
     }
