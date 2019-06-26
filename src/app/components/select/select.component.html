@@ -1,19 +1,49 @@
-<div class="form-control-select" [class.open]="isFocused">
-  <div #backdrop *ngIf="isFocused" class="form-select-backdrop"></div>
+<div class="form-control-select" *ngIf="isNativeControl">
+  <div class="form-control-container form-control-native"
+    [ngClass]="className"
+    [class.float-label]="floatLabel"
+    [class.active]="value"
+    [class.focused]="isFocused"
+    [class.disabled]="disabled"
+  >
+    <div class="form-control-wrapper">
+      <div class="form-control-float-label">{{ floatLabel }}</div>
+      <select class="form-control"
+        [attr.id]="id"
+        [disabled]="disabled"
+        [name]="name"
+        [required]="required"
+        [value]="value"
 
+        (blur)="onBlur()"
+        (click)="onClick()"
+        (focus)="onFocus()"
+        (input)="onChangeNativeOption($event)">
+        <option [value]="option.value" *ngFor="let option of optionsQueryList">
+          {{ option.content }}
+        </option>
+      </select>
+      <materialize-icon className="form-icon-error" name="error" size="lg"></materialize-icon>
+    </div>
+    <materialize-icon className="form-control-select-icon" name="arrow_drop_down" size="lg"></materialize-icon>
+  </div>
+</div>
+
+
+<div class="form-control-select" *ngIf="!isNativeControl" [class.open]="isOpen" tabindex="0" (focus)="onFocus()" (blur)="onBlur()">
+  <div #backdrop *ngIf="isOpen" class="form-select-backdrop"></div>
   <div class="form-control-container"
-    tabindex="1"
 
-    (click)="onClick($event)"
+    (click)="onClick()"
 
     [ngClass]="className"
     [class.float-label]="floatLabel"
-    [class.active]="value || placeholder"
+    [class.active]="value"
     [class.focused]="isFocused"
     [class.disabled]="disabled">
     <div class="form-control-wrapper">
       <div class="form-control-float-label">{{ floatLabel }}</div>
-      <div class="form-control" #labelContainer>&nbsp;</div>
+      <div class="form-control" #labelContainer></div>
       <materialize-icon className="form-icon-error" name="error" size="lg"></materialize-icon>
     </div>
 
@@ -24,15 +54,3 @@
     <ng-content select="materialize-select-option"></ng-content>
   </div>
 </div>
-
-  <!-- <select
-    (blur)="onSelectBlur()"
-    (change)="onSelectChange($event)"
-    [disabled]="disabled"
-    [name]="name"
-    [required]="required"
-    [value]="value">
-    <option [value]="option.value" *ngFor="let option of options">
-      {{ option.content }}
-    </option>
-  </select> -->
