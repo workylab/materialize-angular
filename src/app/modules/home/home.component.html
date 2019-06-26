@@ -312,7 +312,7 @@ Native Select
   <materialize-select-option value="2">Option 2</materialize-select-option>
 </materialize-select>
 Native Select with Id
-<materialize-select [isNativeControl]="true" id="select_id">
+<materialize-select [isNativeControl]="true" id="select_native_id">
   <materialize-select-option value="1">Option 1</materialize-select-option>
   <materialize-select-option value="2">Option 2</materialize-select-option>
 </materialize-select>
@@ -343,6 +343,50 @@ Native Select disabled with Value
 </materialize-select>
 Native Select disabled with Value and FloatLabel
 <materialize-select [isNativeControl]="true" [disabled]="true" value="2" floatLabel="Select">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+
+<br />
+<br />
+
+Select
+<materialize-select>
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Select with Id
+<materialize-select id="select_id">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Select Required
+<materialize-select [required]="true">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Select with Value
+<materialize-select value="2">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Select disabled
+<materialize-select [disabled]="true">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Select with FloatLabel
+<materialize-select floatLabel="Select">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Select disabled with Value
+<materialize-select [disabled]="true" value="2">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Select disabled with Value and FloatLabel
+<materialize-select [disabled]="true" value="2" floatLabel="Select">
   <materialize-select-option value="1">Option 1</materialize-select-option>
   <materialize-select-option value="2">Option 2</materialize-select-option>
 </materialize-select>

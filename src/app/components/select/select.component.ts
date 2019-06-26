@@ -95,6 +95,12 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     this.isOpen = false;
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.onSelectOption(this.value);
+    }, 0);
+  }
+
   ngAfterContentChecked() {
     this.options = this.optionsQueryList.toArray();
 
@@ -134,17 +140,21 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     }
   }
 
-  cloneOption(selectOption: SelectOptionComponent) {
+  cloneOption(selectedOption: SelectOptionComponent) {
+    if (!this.labelContainerRef) {
+      return;
+    }
+
     const { nativeElement: labelContainer } = this.labelContainerRef;
+    const { template } = selectedOption;
 
     if (labelContainer.firstChild) {
       this.renderer.removeChild(labelContainer, labelContainer.firstChild);
     }
 
-    const template = selectOption.template.nativeElement.firstChild;
-
     if (template) {
-      const cloned = template.cloneNode(true);
+      const { firstChild } = template.nativeElement;
+      const cloned = firstChild.cloneNode(true);
 
       this.renderer.appendChild(labelContainer, cloned);
     }
