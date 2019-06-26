@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { AfterContentChecked, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SelectOptionModel } from './select-option.model';
 
@@ -7,7 +7,7 @@ import { SelectOptionModel } from './select-option.model';
   styleUrls: ['./select-option.component.scss'],
   templateUrl: './select-option.component.html'
 })
-export class SelectOptionComponent {
+export class SelectOptionComponent implements AfterContentChecked {
   static readonly defaultProps: SelectOptionModel = {
     className: '',
     disabled: false,
@@ -23,12 +23,19 @@ export class SelectOptionComponent {
   @Input('value') valueInput: string;
 
   public className: string;
+  public content: HTMLElement;
   public disabled: boolean;
   public isActive: boolean;
   public value: string;
 
   constructor(private element: ElementRef) {
     this.onClickEmitter = new EventEmitter();
+  }
+
+  ngAfterContentChecked() {
+    this.content = this.template.nativeElement.firstChild
+      ? this.template.nativeElement.firstChild.textContent
+      : '';
   }
 
   ngOnInit() {
