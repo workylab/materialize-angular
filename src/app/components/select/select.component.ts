@@ -3,9 +3,11 @@ import {
   Component,
   ContentChildren,
   ElementRef,
+  EventEmitter,
   forwardRef,
   Input,
   OnInit,
+  Output,
   QueryList,
   Renderer2,
   ViewChild
@@ -46,6 +48,8 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
 
   @ContentChildren(SelectOptionComponent) optionsQueryList: QueryList<SelectOptionComponent>;
 
+  @Output('onChange') onChangeEmitter: EventEmitter<string>;
+
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
@@ -70,6 +74,8 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
 
   constructor(private renderer: Renderer2) {
     super();
+
+    this.onChangeEmitter = new EventEmitter();
 
     this.addBackdropListener = this.addBackdropListener.bind(this);
     this.onSelectOption = this.onSelectOption.bind(this);
@@ -136,6 +142,7 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
 
       selectOption.isActive = true;
 
+      this.onChangeEmitter.emit(this.value);
       this.onChange(this.value);
     }
   }
@@ -146,14 +153,14 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     }
 
     const { nativeElement: labelContainer } = this.labelContainerRef;
-    const { template } = selectedOption;
+    const { optionTemplateRef } = selectedOption;
 
     if (labelContainer.firstChild) {
       this.renderer.removeChild(labelContainer, labelContainer.firstChild);
     }
 
-    if (template) {
-      const { firstChild } = template.nativeElement;
+    if (optionTemplateRef) {
+      const { firstChild } = optionTemplateRef.nativeElement;
       const cloned = firstChild.cloneNode(true);
 
       this.renderer.appendChild(labelContainer, cloned);
@@ -166,6 +173,7 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
 
     this.value = value;
 
+    this.onChangeEmitter.emit(this.value);
     this.onChange(this.value);
   }
 
