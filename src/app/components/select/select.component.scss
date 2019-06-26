@@ -3,6 +3,13 @@
 .form-control {
   @extend %form-control-base;
   cursor: pointer;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 18px;
+    width: 0;
+  }
 }
 
 .form-control-wrapper {

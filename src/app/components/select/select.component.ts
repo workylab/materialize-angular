@@ -118,24 +118,35 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
   }
 
   onSelectOption(value: string) {
-    const { nativeElement: labelContainer } = this.labelContainerRef;
-
     this.desactiveAllOptions();
-    this.renderer.removeChild(labelContainer, labelContainer.firstChild);
 
     const selectOption = this.options.find(item => item.value === value);
 
     if (selectOption) {
-      const template = selectOption.template.nativeElement.firstChild;
-      const cloned = template.cloneNode(true);
+      this.cloneOption(selectOption);
 
-      this.renderer.appendChild(labelContainer, cloned);
       this.value = value;
       this.isOpen = false;
 
       selectOption.isActive = true;
 
       this.onChange(this.value);
+    }
+  }
+
+  cloneOption(selectOption: SelectOptionComponent) {
+    const { nativeElement: labelContainer } = this.labelContainerRef;
+
+    if (labelContainer.firstChild) {
+      this.renderer.removeChild(labelContainer, labelContainer.firstChild);
+    }
+
+    const template = selectOption.template.nativeElement.firstChild;
+
+    if (template) {
+      const cloned = template.cloneNode(true);
+
+      this.renderer.appendChild(labelContainer, cloned);
     }
   }
 
@@ -161,11 +172,13 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
   }
 
   onClick() {
-    this.isFocused = true;
-    this.isOpen = true;
+    if (!this.disabled) {
+      this.isFocused = true;
+      this.isOpen = true;
 
-    if (!this.isNativeControl) {
-      setTimeout(this.addBackdropListener, 0);
+      if (!this.isNativeControl) {
+        setTimeout(this.addBackdropListener, 0);
+      }
     }
   }
 
@@ -181,6 +194,10 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
 
   writeValue(value: string): void {
     this.value = value;
+
+    setTimeout(() => {
+      this.onSelectOption(this.value);
+    }, 0);
   }
 
   registerOnChange(fn: (value: string) => void): void {
