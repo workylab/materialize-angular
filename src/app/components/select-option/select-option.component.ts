@@ -11,7 +11,7 @@ export class SelectOptionComponent implements AfterContentChecked {
   static readonly defaultProps: SelectOptionModel = {
     className: '',
     disabled: false,
-    transitionDuration: 300,
+    transitionDuration: 250,
     value: ''
   };
 
