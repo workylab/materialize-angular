@@ -37,17 +37,19 @@
 .form-control-container {
   @extend %form-control-container-base;
 
-  &.focused ::ng-deep .form-control-select-icon {
-    transform: translateY(-50%) rotate(180deg);
-  }
-
   &.disabled ::ng-deep .form-control-select-icon {
     color: $color-gray;
+    cursor: not-allowed;
   }
 }
 
 .form-control-select {
+  outline: none;
   position: relative;
+
+  &.open ::ng-deep .form-control-select-icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
 
   ::ng-deep .form-control-select-icon {
     color: $color-gray-dark;
@@ -62,4 +64,8 @@
   &.open .form-control-select-menu {
     display: block;
   }
+}
+
+:host.ng-touched.ng-dirty.ng-invalid {
+  @extend %form-control-error;
 }
