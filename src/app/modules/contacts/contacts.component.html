@@ -61,6 +61,13 @@ navbar content
 
     <materialize-range-slider formControlName="amount"></materialize-range-slider>
     {{ form.controls.amount.errors | json }}
+
+    <materialize-select [isNativeControl]="true" formControlName="select" floatLabel="State">
+      <materialize-select-option></materialize-select-option>
+      <materialize-select-option value="AL">Alabama</materialize-select-option>
+      <materialize-select-option value="IL">Illinois</materialize-select-option>
+      <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
+    </materialize-select>
   </div>
 
   <materialize-button iconName="send" type="submit" [iconAtEnd]="true">Submit</materialize-button>

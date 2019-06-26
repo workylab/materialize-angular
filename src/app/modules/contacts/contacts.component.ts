@@ -33,7 +33,8 @@ export class ContactsComponent {
       } }, Validators.required),
       isWorkPhone: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
       message: new FormControl({ disabled: false, value: 'My Message' }, Validators.required),
-      name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+'))
+      name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+')),
+      select: new FormControl({ disabled: false, value: 'PA' }, Validators.required)
     });
   }
 }
