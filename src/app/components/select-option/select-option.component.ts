@@ -11,10 +11,11 @@ export class SelectOptionComponent implements AfterContentChecked {
   static readonly defaultProps: SelectOptionModel = {
     className: '',
     disabled: false,
+    transitionDuration: 300,
     value: ''
   };
 
-  @ViewChild('template') template: ElementRef;
+  @ViewChild('optionTemplate') optionTemplateRef: ElementRef;
 
   @Output('onClick') onClickEmitter: EventEmitter<string>;
 
@@ -26,15 +27,18 @@ export class SelectOptionComponent implements AfterContentChecked {
   public content: HTMLElement;
   public disabled: boolean;
   public isActive: boolean;
+  public transitionDuration: number;
   public value: string;
 
   constructor(private element: ElementRef) {
     this.onClickEmitter = new EventEmitter();
+
+    this.emitClick = this.emitClick.bind(this);
   }
 
   ngAfterContentChecked() {
-    this.content = this.template.nativeElement.firstChild
-      ? this.template.nativeElement.firstChild.textContent
+    this.content = this.optionTemplateRef.nativeElement
+      ? this.optionTemplateRef.nativeElement.textContent
       : '';
   }
 
@@ -47,6 +51,7 @@ export class SelectOptionComponent implements AfterContentChecked {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
+    this.transitionDuration = defaultProps.transitionDuration;
     this.value = this.valueInput || defaultProps.value;
 
     this.isActive = false;
@@ -54,7 +59,11 @@ export class SelectOptionComponent implements AfterContentChecked {
 
   onClick() {
     if (!this.disabled) {
-      this.onClickEmitter.emit(this.value);
+      setTimeout(this.emitClick, this.transitionDuration);
     }
+  }
+
+  emitClick() {
+    this.onClickEmitter.emit(this.value);
   }
 }

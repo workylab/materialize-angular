@@ -1,6 +1,14 @@
-<div class="select-option-container" (click)="onClick()" [class.active]="isActive" #template>
-  <span>
-    <ng-content></ng-content>
-  </span>
+<div class="select-option-container"
+  materializeRipple
+
+  (click)="onClick()"
+
+  [class.active]="isActive"  
+  [rippleDuration]="transitionDuration">
+  <div #optionTemplate>
+    <span>
+      <ng-content></ng-content>
+    </span>
+  </div>
 </div>
  
