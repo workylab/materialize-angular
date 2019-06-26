@@ -306,29 +306,50 @@ Datepicker Custom Format
 <br />
 <br />
 
-Select
-<materialize-select>
+Native Select
+<materialize-select [isNativeControl]="true">
   <materialize-select-option value="1">Option 1</materialize-select-option>
   <materialize-select-option value="2">Option 2</materialize-select-option>
-  <materialize-select-option value="3">Option 3</materialize-select-option>
 </materialize-select>
-Select with FloatLabel
-<materialize-select floatLabel="Select an option">
+Native Select with Id
+<materialize-select [isNativeControl]="true" id="select_id">
   <materialize-select-option value="1">Option 1</materialize-select-option>
   <materialize-select-option value="2">Option 2</materialize-select-option>
-  <materialize-select-option value="3">Option 3</materialize-select-option>
 </materialize-select>
-<!-- <materialize-select id="select-id"></materialize-select>
-With Value
-<materialize-select value="2"></materialize-select>
-Disabled
-<materialize-select [disabled]="true"></materialize-select>
-Disabled with value
-<materialize-select [disabled]="true" value="2"></materialize-select>
-Required
-<materialize-select [required]="true"></materialize-select>
-Float label
-<materialize-select floatLabel="Float label"></materialize-select> -->
+Native Select Required
+<materialize-select [isNativeControl]="true" [required]="true">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Native Select with Value
+<materialize-select [isNativeControl]="true" value="2">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Native Select disabled
+<materialize-select [isNativeControl]="true" [disabled]="true">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Native Select with FloatLabel
+<materialize-select [isNativeControl]="true" floatLabel="Select">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Native Select disabled with Value
+<materialize-select [isNativeControl]="true" [disabled]="true" value="2">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+Native Select disabled with Value and FloatLabel
+<materialize-select [isNativeControl]="true" [disabled]="true" value="2" floatLabel="Select">
+  <materialize-select-option value="1">Option 1</materialize-select-option>
+  <materialize-select-option value="2">Option 2</materialize-select-option>
+</materialize-select>
+
+<br />
+<br />
+<br />
 
 <!--
 <materialize-autocomplete [options]="selectOptions"></materialize-autocomplete>
