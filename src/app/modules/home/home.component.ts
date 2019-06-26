@@ -1,7 +1,6 @@
 import { SortedColumnModel, TableModel } from '../../components/table/table.model';
 import { Component } from '@angular/core';
 import { DropdownItemModel } from '../../components/dropdown/dropdown.model';
-import { SelectOptionModel } from '../../components/select/select.model';
 
 @Component({
   selector: 'home-page',
@@ -51,14 +50,6 @@ export class HomeComponent {
       type: 'text'
     }]
   }
-
-  public selectOptions: Array<SelectOptionModel> = [{
-    content: 'Option1',
-    value: '1'
-  }, {
-    content: 'Option2',
-    value: '2'
-  }];
 
   public dropDownItems: Array<DropdownItemModel> = [{
     iconName: 'menu',

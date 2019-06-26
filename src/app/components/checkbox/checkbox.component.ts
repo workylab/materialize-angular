@@ -43,7 +43,6 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit, OnCh
   public id: string;
   public indeterminate: boolean;
   public isFocused: boolean;
-  public isTouched: boolean;
   public name: string;
   public required: boolean;
   public value: boolean;
@@ -86,7 +85,6 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit, OnCh
     this.value = getBooleanValue(this.valueInput, defaultProps.value);
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   toggleValue(): void {
@@ -109,7 +107,6 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit, OnCh
 
   onBlur(event: Event): void {
     this.isFocused = false;
-    this.isTouched = true;
   }
 
   setDisabledState(isDisabled: boolean): void {

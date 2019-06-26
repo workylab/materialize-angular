@@ -3,7 +3,6 @@ import { AutocompleteModel } from './autocomplete.model';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { InputComponent } from '../input/input.component';
-import { SelectOptionModel } from '../select/select.model';
 
 @Component({
   providers: [{
@@ -25,7 +24,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     isMatchValue: false,
     maxLength: 500,
     name: '',
-    options: [],
     placeholder: '',
     required: false,
     type: 'text',
@@ -43,7 +41,8 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   @Input('isMatchValue') isMatchValueInput: boolean;
   @Input('maxLength') maxLengthInput: number;
   @Input('name') nameInput: string;
-  @Input('options') optionsInput: Array<SelectOptionModel>;
+
+  // @Input('options') optionsInput: Array<SelectOptionModel>;
   @Input('placeholder') placeholderInput: string;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
@@ -57,10 +56,8 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   public id: string | null;
   public isFocused: boolean;
   public isMatchValue: boolean;
-  public isTouched: boolean;
   public maxLength: number;
   public name: string;
-  public options: Array<SelectOptionModel>;
   public patternName: string;
   public placeholder: string;
   public required: boolean;
@@ -89,10 +86,9 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
-    this.options = this.filterOptions(this.value);
+    // this.options = this.filterOptions(this.value);
 
     this.isFocused = false;
-    this.isTouched = false;
     this.type = defaultProps.type;
 
     this.isValid = this.validate(this.value, this.required);
@@ -108,7 +104,7 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   onInputChange(event: any) {
     const { value } = event.target;
 
-    this.options = this.filterOptions(value);
+    // this.options = this.filterOptions(value);
     this.value = value;
     this.isValid = this.validate(this.value, this.required);
 
@@ -125,7 +121,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
       this.materializeInput.isValid = this.isValid;
       this.materializeInput.isFocused = false;
-      this.materializeInput.isTouched = true;
     }
   }
 
@@ -142,31 +137,31 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   }
 
   isValidOption(value: string): boolean {
-    for (let i = 0; i < this.options.length; i++) {
-      const currentOption = this.options[i];
-      const validatedContent = currentOption.content || '';
+    // for (let i = 0; i < this.options.length; i++) {
+    //   const currentOption = this.options[i];
+    //   const validatedContent = currentOption.content || '';
 
-      if (value.toLowerCase() === validatedContent.toLowerCase()) {
-        return true;
-      }
-    }
+    //   if (value.toLowerCase() === validatedContent.toLowerCase()) {
+    //     return true;
+    //   }
+    // }
 
     return false;
   }
 
-  filterOptions(value: string): Array<SelectOptionModel> {
-    const validValue = value || '';
-    const valueLowerCase = validValue.toLowerCase();
+  // filterOptions(value: string): Array<SelectOptionModel> {
+  //   const validValue = value || '';
+  //   const valueLowerCase = validValue.toLowerCase();
 
-    return this.optionsInput.filter(item => {
-      const content = item.content || '';
-      const contentLowerCase = content.toLowerCase();
+  //   return this.optionsInput.filter(item => {
+  //     const content = item.content || '';
+  //     const contentLowerCase = content.toLowerCase();
 
-      if (contentLowerCase.includes(valueLowerCase)) {
-        return item;
-      }
-    });
-  }
+  //     if (contentLowerCase.includes(valueLowerCase)) {
+  //       return item;
+  //     }
+  //   });
+  // }
 
   selectOption(value: string) {
     this.value = value || '';
@@ -178,7 +173,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
   closeMenu() {
     this.isFocused = false;
-    this.isTouched = true;
 
     this.materializeInput.isFocused = false;
   }
@@ -190,6 +184,5 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
   updateAndValidity() {
     this.materializeInput.updateAndValidity();
     this.isValid = this.validate(this.value, this.required);
-    this.isTouched = true;
   }
 }

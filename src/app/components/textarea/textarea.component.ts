@@ -59,7 +59,6 @@ export class TextAreaComponent extends FormFieldAbstract implements OnInit, Cont
   public hasCounter: boolean;
   public id: string;
   public isFocused: boolean;
-  public isTouched: boolean;
   public minLength: number;
   public maxLength: number;
   public name: string;
@@ -97,7 +96,6 @@ export class TextAreaComponent extends FormFieldAbstract implements OnInit, Cont
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   onBlur(event: any): void {
@@ -105,7 +103,6 @@ export class TextAreaComponent extends FormFieldAbstract implements OnInit, Cont
     const { relatedTarget } = event;
 
     if (!this.floatLabel || relatedTarget !== nativeElement) {
-      this.isTouched = true;
       this.isFocused = false;
 
       this.onBlurEmitter.emit(event);

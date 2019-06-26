@@ -11,9 +11,7 @@ navbar content
   <materialize-form-group iconName="message">
  
   </materialize-form-group>
-  <materialize-form-group iconName="map">
-    <materialize-select label="State" [required]="true" name="state" [options]="stateOptions" materializeFormField></materialize-select>
-  </materialize-form-group>
+
   <materialize-form-group iconName="attach_file">
     <materialize-input-file label="Add File" [required]="true" name="file" materializeFormField></materialize-input-file>
   </materialize-form-group>
@@ -22,6 +20,16 @@ navbar content
   </materialize-form-group> -->
 
   <div [formGroup]="form">
+    <materialize-select floatLabel="State">
+      <materialize-select-option value="1">Option 1</materialize-select-option>
+      <materialize-select-option value="2">Option 2</materialize-select-option>
+      <materialize-select-option value="3">Option 3</materialize-select-option>
+    </materialize-select>
+
+    <br>
+    <br>
+    <br>
+
     <materialize-input formControlName="name" floatLabel="Name" placeholder="Write your name"></materialize-input>
     {{ form.controls.name.errors | json }}
 
@@ -53,7 +61,23 @@ navbar content
 
     <materialize-range-slider formControlName="amount"></materialize-range-slider>
     {{ form.controls.amount.errors | json }}
+
+    <materialize-select formControlName="stateNative" [isNativeControl]="true" floatLabel="State">
+      <materialize-select-option></materialize-select-option>
+      <materialize-select-option value="AL">Alabama</materialize-select-option>
+      <materialize-select-option value="IL">Illinois</materialize-select-option>
+      <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
+    </materialize-select>
+    {{ form.controls.stateNative.errors | json }}
+
+    <materialize-select formControlName="state" floatLabel="State">
+      <materialize-select-option></materialize-select-option>
+      <materialize-select-option value="AL">Alabama</materialize-select-option>
+      <materialize-select-option value="IL">Illinois</materialize-select-option>
+      <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
+    </materialize-select>
+    {{ form.controls.state.errors | json }}
   </div>
 
-  <materialize-button iconName="send" text="Submit" type="submit" [iconAtEnd]="true"></materialize-button>
+  <materialize-button iconName="send" type="submit" [iconAtEnd]="true">Submit</materialize-button>
 </materialize-form>

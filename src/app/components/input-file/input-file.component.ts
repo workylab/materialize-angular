@@ -55,7 +55,6 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
   public id: string;
   public isMultiple: boolean;
   public isFocused: boolean;
-  public isTouched: boolean;
   public isValid: boolean;
   public label: string;
   public maxSize: number;
@@ -93,7 +92,6 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.filesInput || defaultProps.value;
 
-    this.isTouched = false;
     this.isFocused = false;
     this.isValid = this.validate(this.value);
   }
@@ -113,7 +111,6 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
   }
 
   onBlur() {
-    this.isTouched = true;
     this.isFocused = false;
   }
 
@@ -198,7 +195,6 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
   }
 
   updateAndValidity() {
-    this.isTouched = true;
     this.isValid = this.validate(this.value);
   }
 }

@@ -1,57 +1,79 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { SelectModel, SelectOptionModel } from './select.model';
-import fieldValidations from '../../fixtures/field-validations';
+import {
+  AfterContentChecked,
+  Component,
+  ContentChildren,
+  ElementRef,
+  forwardRef,
+  Input,
+  OnInit,
+  QueryList,
+  Renderer2,
+  ViewChild
+} from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
+import { SelectModel } from './select.model';
+import { SelectOptionComponent } from '../select-option/select-option.component';
 
 @Component({
   providers: [{
     provide: FormFieldAbstract,
+    useExisting: forwardRef(() => SelectComponent)
+  }, {
+    multi: true,
+    provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SelectComponent)
   }],
   selector: 'materialize-select',
   styleUrls: ['./select.component.scss'],
   templateUrl: './select.component.html'
 })
-export class SelectComponent extends FormFieldAbstract implements OnInit {
+export class SelectComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit, AfterContentChecked {
   static readonly defaultProps: SelectModel = {
     className: '',
     disabled: false,
-    errorMessage: '',
     floatLabel: '',
     id: '',
-    label: '',
+    isNativeControl: false,
     name: '',
-    options: [],
     required: false,
-    selectedOption: {} as SelectOptionModel,
     value: ''
   };
+
+  @ViewChild('backdrop') backdropRef: ElementRef;
+  @ViewChild('labelContainer') labelContainerRef: ElementRef;
+
+  @ContentChildren(SelectOptionComponent) optionsQueryList: QueryList<SelectOptionComponent>;
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
   @Input('floatLabel') floatLabelInput: string;
   @Input('id') idInput: string;
-  @Input('label') labelInput: string;
+  @Input('isNativeControl') isNativeControlInput: boolean;
   @Input('name') nameInput: string;
-  @Input('options') optionsInput: Array<SelectOptionModel>;
   @Input('required') requiredInput: boolean;
   @Input('value') valueInput: string;
 
   public className: string;
   public disabled: boolean;
-  public errorMessage: string;
   public floatLabel: string;
   public id: string;
   public isFocused: boolean;
-  public isTouched: boolean;
-  public isValid: boolean;
-  public label: string;
+  public isNativeControl: boolean;
+  public isOpen: boolean;
   public name: string;
-  public options: Array<SelectOptionModel>;
+  public options: Array<SelectOptionComponent>;
   public required: boolean;
-  public selectedOption: SelectOptionModel;
+  public valueLabel: string;
   public value: string;
+
+  constructor(private renderer: Renderer2) {
+    super();
+
+    this.addBackdropListener = this.addBackdropListener.bind(this);
+    this.onSelectOption = this.onSelectOption.bind(this);
+  }
 
   ngOnInit() {
     this.initValues();
@@ -64,69 +86,139 @@ export class SelectComponent extends FormFieldAbstract implements OnInit {
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.id = this.idInput || defaultProps.id;
-    this.label = this.labelInput || defaultProps.label;
+    this.isNativeControl = getBooleanValue(this.isNativeControlInput, defaultProps.isNativeControl);
     this.name = this.nameInput || defaultProps.name;
-    this.options = this.optionsInput || defaultProps.options;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isTouched = false;
-    this.selectedOption = this.getInitOption(this.value, this.options);
-    this.isValid = this.validate(this.value, this.required);
+    this.isOpen = false;
   }
 
-  validate(value: string, required: boolean): boolean {
-    if (required && !value) {
-      const fieldValidation = fieldValidations['required'];
-
-      this.errorMessage = fieldValidation.errorMessage;
-
-      return false;
-    }
-
-    return true;
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.onSelectOption(this.value);
+    }, 0);
   }
 
-  getInitOption(value: string, options: Array<SelectOptionModel>): SelectOptionModel {
-    for (let i = 0; i < options.length; i++) {
-      const currentOption = options[i];
+  ngAfterContentChecked() {
+    this.options = this.optionsQueryList.toArray();
 
-      if (value === currentOption.value) {
-        return currentOption;
-      }
-    }
-
-    return {} as SelectOptionModel;
+    this.registerOptions();
   }
 
-  selectOption(event: any, selectedOption: SelectOptionModel) {
-    event.stopImmediatePropagation();
+  registerOptions() {
+    for (let i = 0; i < this.options.length; i++) {
+      const currentOption = this.options[i];
 
-    this.selectedOption = selectedOption;
+      currentOption.isActive = (currentOption.value === this.value);
 
-    this.value = selectedOption
-      ? selectedOption.value
-      : '';
-
-    this.closeMenu();
-
-    this.isValid = this.validate(this.value, this.required);
-  }
-
-  openMenu() {
-    if (!this.disabled) {
-      this.isFocused = true;
+      currentOption.onClickEmitter.subscribe(this.onSelectOption);
     }
   }
 
-  closeMenu() {
-    this.isTouched = true;
+  desactiveAllOptions() {
+    this.options.forEach(option => {
+      option.isActive = false;
+    });
+  }
+
+  onSelectOption(value: string) {
+    this.desactiveAllOptions();
+
+    const selectOption = this.options.find(item => item.value === value);
+
+    if (selectOption) {
+      this.cloneOption(selectOption);
+
+      this.value = value;
+      this.isOpen = false;
+
+      selectOption.isActive = true;
+
+      this.onChange(this.value);
+    }
+  }
+
+  cloneOption(selectedOption: SelectOptionComponent) {
+    if (!this.labelContainerRef) {
+      return;
+    }
+
+    const { nativeElement: labelContainer } = this.labelContainerRef;
+    const { template } = selectedOption;
+
+    if (labelContainer.firstChild) {
+      this.renderer.removeChild(labelContainer, labelContainer.firstChild);
+    }
+
+    if (template) {
+      const { firstChild } = template.nativeElement;
+      const cloned = firstChild.cloneNode(true);
+
+      this.renderer.appendChild(labelContainer, cloned);
+    }
+  }
+
+  onChangeNativeOption(event: any) {
+    const { selectedOptions } = event.target;
+    const { value } = selectedOptions[0];
+
+    this.value = value;
+
+    this.onChange(this.value);
+  }
+
+  onBlur(): void {
     this.isFocused = false;
   }
 
-  updateAndValidity() {
-    this.isTouched = true;
-    this.isValid = this.validate(this.value, this.required);
+  onFocus(): void {
+    if (!this.disabled) {
+      this.isFocused = true;
+
+      this.onTouched();
+    }
   }
+
+  onClick() {
+    if (!this.disabled) {
+      this.isFocused = true;
+      this.isOpen = true;
+
+      if (!this.isNativeControl) {
+        setTimeout(this.addBackdropListener, 0);
+      }
+    }
+  }
+
+  addBackdropListener() {
+    this.backdropRef.nativeElement.addEventListener('click', () => {
+      this.isOpen = false;
+    });
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  writeValue(value: string): void {
+    this.value = value;
+
+    setTimeout(() => {
+      this.onSelectOption(this.value);
+    }, 0);
+  }
+
+  registerOnChange(fn: (value: string) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  onChange(value: string): void {}
+
+  onTouched(): void {}
 }

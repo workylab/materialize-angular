@@ -48,7 +48,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     value: ''
   };
 
-  @ViewChild('input') inputRef: ElementRef;
   @ViewChild('formControlWrapper') formControlWrapperRef: ElementRef;
 
   @ContentChildren(PrefixDirective) materializePrefixQueryList: QueryList<PrefixDirective>;
@@ -79,7 +78,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
   public floatLabel: string;
   public hasCounter: boolean;
   public id: string | null;
-  public isTouched: boolean;
   public isFocused: boolean;
   public maxLength: number;
   public name: string;
@@ -125,7 +123,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isTouched = false;
   }
 
   onBlur(event: any): void {
@@ -135,7 +132,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     this.onBlurEmitter.emit(event);
 
     if (!this.floatLabel || relatedTarget !== nativeElement) {
-      this.isTouched = true;
       this.isFocused = false;
 
       // TODO: this.onTouched();
@@ -146,7 +142,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
     if (!this.disabled) {
       this.isFocused = true;
       this.onFocusEmitter.emit();
-      this.inputRef.nativeElement.focus();
 
       this.onTouched();
     }

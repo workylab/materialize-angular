@@ -1,15 +1,12 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { NavbarOptionModel } from '../../components/navbar/navbar.model';
-import { SelectOptionModel } from '../../components/select/select.model';
 
 @Component({
   templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {
   public navbarOptions: Array<NavbarOptionModel>;
-  public stateOptions: Array<SelectOptionModel>;
-
   public form: FormGroup;
 
   constructor() {
@@ -17,20 +14,6 @@ export class ContactsComponent {
       { iconName: 'search', type: 'search' },
       { iconName: 'more_vert', type: 'dropdown' }
     ];
-
-    this.stateOptions = [{
-      content: '',
-      value: ''
-    }, {
-      content: 'Alabama',
-      value: 'AL'
-    }, {
-      content: 'Hawaii',
-      value: 'HI'
-    }, {
-      content: 'Pennsylvania',
-      value: 'PA'
-    }];
 
     this.form = new FormGroup({
       amount: new FormControl({ disabled: false, value: 5 }, [
@@ -50,7 +33,9 @@ export class ContactsComponent {
       } }, Validators.required),
       isWorkPhone: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
       message: new FormControl({ disabled: false, value: 'My Message' }, Validators.required),
-      name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+'))
+      name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+')),
+      state: new FormControl({ disabled: false, value: 'PA' }, Validators.required),
+      stateNative: new FormControl({ disabled: false, value: 'IL' }, Validators.required)
     });
   }
 }
