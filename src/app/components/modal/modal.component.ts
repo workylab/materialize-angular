@@ -80,7 +80,9 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
 
   ngAfterContentChecked() {
     if (this.modalHandler) {
-      this.modalHandler.onClickEmitter.subscribe(this.open);
+      if (!this.modalHandler.onClickEmitter.observers.length) {
+        this.modalHandler.onClickEmitter.subscribe(this.open);
+      }
     }
 
     if (this.modalContent) {
@@ -130,13 +132,13 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
     this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration }ms`;
 
     this.isOpen = true;
-    this.onCloseEmitter.emit();
+    this.onOpenEmitter.emit();
   }
 
   close() {
     this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration / 2 }ms`;
 
     this.isOpen = false;
-    this.onOpenEmitter.emit();
+    this.onCloseEmitter.emit();
   }
 }
