@@ -1,5 +1,5 @@
 import {
-  AfterContentChecked,
+  AfterContentInit,
   Component,
   ContentChildren,
   ElementRef,
@@ -31,7 +31,7 @@ import { SelectOptionComponent } from '../select-option/select-option.component'
   styleUrls: ['./select.component.scss'],
   templateUrl: './select.component.html'
 })
-export class SelectComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit, AfterContentChecked {
+export class SelectComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit, AfterContentInit {
   static readonly defaultProps: SelectModel = {
     className: '',
     disabled: false,
@@ -67,7 +67,6 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
   public isNativeControl: boolean;
   public isOpen: boolean;
   public name: string;
-  public options: Array<SelectOptionComponent>;
   public required: boolean;
   public valueLabel: string;
   public value: string;
@@ -78,7 +77,8 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     this.onChangeEmitter = new EventEmitter();
 
     this.addBackdropListener = this.addBackdropListener.bind(this);
-    this.onSelectOption = this.onSelectOption.bind(this);
+    this.onChangeOption = this.onChangeOption.bind(this);
+    this.registerOptions = this.registerOptions.bind(this);
   }
 
   ngOnInit() {
@@ -101,49 +101,59 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     this.isOpen = false;
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.onSelectOption(this.value);
-    }, 0);
-  }
-
-  ngAfterContentChecked() {
-    this.options = this.optionsQueryList.toArray();
-
+  ngAfterContentInit() {
     this.registerOptions();
-  }
 
-  registerOptions() {
-    for (let i = 0; i < this.options.length; i++) {
-      const currentOption = this.options[i];
-
-      currentOption.isActive = (currentOption.value === this.value);
-
-      currentOption.onClickEmitter.subscribe(this.onSelectOption);
-    }
-  }
-
-  desactiveAllOptions() {
-    this.options.forEach(option => {
-      option.isActive = false;
+    this.optionsQueryList.changes.subscribe(changes => {
+      setTimeout(this.registerOptions, 0);
     });
   }
 
-  onSelectOption(value: string) {
-    this.desactiveAllOptions();
+  registerOptions() {
+    const options = this.optionsQueryList.toArray();
 
-    const selectOption = this.options.find(item => item.value === value);
+    for (let i = 0; i < options.length; i++) {
+      const currentOption = options[i];
+
+      currentOption.isActive = (currentOption.value === this.value);
+
+      currentOption.onClickEmitter.subscribe(this.onChangeOption);
+    }
+
+    this.updateControl(this.value);
+  }
+
+  updateControl(value: string) {
+    this.value = value;
+    this.isOpen = false;
+
+    this.desactiveAllOption();
+    this.activeSelectedOption(this.value);
+  }
+
+  onChangeOption(value: string) {
+    this.updateControl(value);
+
+    this.onChangeEmitter.emit(this.value);
+    this.onChange(this.value);
+  }
+
+  desactiveAllOption() {
+    const options = this.optionsQueryList.toArray();
+
+    options.forEach(item => {
+      item.isActive = false;
+    });
+  }
+
+  activeSelectedOption(value: string) {
+    const options = this.optionsQueryList.toArray();
+    const selectOption = options.find(item => item.value === value);
 
     if (selectOption) {
-      this.cloneOption(selectOption);
-
-      this.value = value;
-      this.isOpen = false;
-
       selectOption.isActive = true;
 
-      this.onChangeEmitter.emit(this.value);
-      this.onChange(this.value);
+      this.cloneOption(selectOption);
     }
   }
 
@@ -214,7 +224,7 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     this.value = value;
 
     setTimeout(() => {
-      this.onSelectOption(this.value);
+      this.updateControl(this.value);
     }, 0);
   }
 
