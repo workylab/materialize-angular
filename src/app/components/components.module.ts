@@ -23,8 +23,8 @@ import { InputFileComponent } from './input-file/input-file.component';
 import { LabelComponent } from './label/label.component';
 import { ModalCloseDirective } from '../directives/modal-close.directive';
 import { ModalComponent } from './modal/modal.component';
-import { ModalContentDirective } from '../directives/modal-content.directive';
-import { ModalHandlerDirective } from '../directives/modal-handler.directive';
+import { ModalContentComponent } from './modal-content/modal-content.component';
+import { ModalHandlerComponent } from './modal-handler/modal-handler.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { PrefixDirective } from '../directives/prefix.directive';
@@ -71,8 +71,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     LabelComponent,
     ModalCloseDirective,
     ModalComponent,
-    ModalContentDirective,
-    ModalHandlerDirective,
+    ModalContentComponent,
+    ModalHandlerComponent,
     NavbarComponent,
     PrefixDirective,
     SuffixDirective,
@@ -116,8 +116,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     LabelComponent,
     ModalCloseDirective,
     ModalComponent,
-    ModalContentDirective,
-    ModalHandlerDirective,
+    ModalContentComponent,
+    ModalHandlerComponent,
     NavbarComponent,
     PrefixDirective,
     RadioComponent,
