@@ -4,14 +4,16 @@ import {
   Component,
   ContentChild,
   ElementRef,
+  EventEmitter,
   Input,
   OnDestroy,
+  Output,
   ViewChild
 } from '@angular/core';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { ModalCloseDirective } from '../../directives/modal-close.directive';
-import { ModalContentDirective } from '../../directives/modal-content.directive';
-import { ModalHandlerDirective } from '../../directives/modal-handler.directive';
+import { ModalContentComponent } from '../modal-content/modal-content.component';
+import { ModalHandlerComponent } from '../modal-handler/modal-handler.component';
 import { ModalModel } from './modal.model';
 
 @Component({
@@ -29,12 +31,15 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
     transitionDuration: 400
   };
 
-  @ContentChild(ModalContentDirective) modalContent: ModalContentDirective;
-  @ContentChild(ModalHandlerDirective) modalHandler: ModalHandlerDirective;
+  @ContentChild(ModalContentComponent) modalContent: ModalContentComponent;
+  @ContentChild(ModalHandlerComponent) modalHandler: ModalHandlerComponent;
 
   @ViewChild('modal') modalRef: ElementRef;
   @ViewChild('modalContent') modalContentRef: ElementRef;
   @ViewChild('backdrop') backdropRef: ElementRef;
+
+  @Output('onOpen') onOpenEmitter: EventEmitter<void>;
+  @Output('onClose') onCloseEmitter: EventEmitter<void>;
 
   @Input('className') classNameInput: string;
   @Input('dismissOnBackdrop') dismissOnBackdropInput: boolean;
@@ -57,6 +62,9 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
     this.close = this.close.bind(this);
     this.closeByBackdrop = this.closeByBackdrop.bind(this);
 
+    this.onOpenEmitter = new EventEmitter();
+    this.onCloseEmitter = new EventEmitter();
+
     this.closeElements = [];
   }
 
@@ -72,7 +80,7 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
 
   ngAfterContentChecked() {
     if (this.modalHandler) {
-      this.modalHandler.elementRef.nativeElement.addEventListener('click', this.open);
+      this.modalHandler.onClickEmitter.subscribe(this.open);
     }
 
     if (this.modalContent) {
@@ -122,11 +130,13 @@ export class ModalComponent implements AfterContentChecked, AfterViewInit, Modal
     this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration }ms`;
 
     this.isOpen = true;
+    this.onCloseEmitter.emit();
   }
 
   close() {
     this.modalRef.nativeElement.style.transitionDuration = `${ this.transitionDuration / 2 }ms`;
 
     this.isOpen = false;
+    this.onOpenEmitter.emit();
   }
 }
