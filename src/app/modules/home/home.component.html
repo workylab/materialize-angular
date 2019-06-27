@@ -436,45 +436,45 @@ Select disabled with Value and FloatLabel
 <br />
 
 <h3>Modal</h3>
-<materialize-modal>
-  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
-  <div materializeModalContent>
-    <materialize-button materializeModalClose text="close modal"></materialize-button>
-  </div>
-</materialize-modal>
-
-<h3>Modal</h3>
 <materialize-modal [isOpen]="false">
 </materialize-modal>
 
 <h3>Modal Default</h3>
 <materialize-modal>
-  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
-  <div materializeModalContent>Modal</div>
+  <materialize-modal-handler>
+    <materialize-icon name="loupe" size="xl"></materialize-icon>
+  </materialize-modal-handler>
+  <materialize-modal-content>Modal</materialize-modal-content>
 </materialize-modal>
 
 <h3>Modal not close on backdrop</h3>
 <materialize-modal [dismissOnBackdrop]="false">
-  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
-  <div materializeModalContent>
-    <materialize-button materializeModalClose text="close modal"></materialize-button>
-  </div>
+  <materialize-modal-handler>
+    <materialize-icon name="loupe" size="xl"></materialize-icon>
+  </materialize-modal-handler>
+  <materialize-modal-content>
+    <materialize-button>close modal</materialize-button>
+  </materialize-modal-content>
 </materialize-modal>
 
 <h3>Modal without backdrop</h3>
 <materialize-modal [hasBackdrop]="false">
-  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
-  <div materializeModalContent>
-    <materialize-button materializeModalClose text="close modal"></materialize-button>
-  </div>
+  <materialize-modal-handler>
+    <materialize-icon name="loupe" size="xl"></materialize-icon>
+  </materialize-modal-handler>
+  <materialize-modal-content>
+    <materialize-button materializeModalClose>close modal</materialize-button>
+  </materialize-modal-content>
 </materialize-modal>
 
 <h3>Modal without close button</h3>
 <materialize-modal [hasCloseButton]="false">
-  <materialize-icon name="loupe" size="xl" materializeModalHandler></materialize-icon>
-  <div materializeModalContent>
-    <materialize-button materializeModalClose text="close modal"></materialize-button>
-  </div>
+  <materialize-modal-handler>
+    <materialize-icon name="loupe" size="xl"></materialize-icon>
+  </materialize-modal-handler>
+  <materialize-modal-content>
+    <materialize-button materializeModalClose>close modal</materialize-button>
+  </materialize-modal-content>
 </materialize-modal>
 
 <br />
