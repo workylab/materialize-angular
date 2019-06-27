@@ -1,4 +1,4 @@
-<ng-content select="[materializeModalHandler]"></ng-content>
+<ng-content select="materialize-modal-handler"></ng-content>
 
 <div class="modal" [ngClass]="className" [class.active]="isOpen" #modal>
   <div class="modal-backdrop" #backdrop *ngIf="hasBackdrop"></div>
@@ -10,6 +10,6 @@
       [isPointer]="true"
       (onClick)="close()">
     </materialize-icon>
-    <ng-content select="[materializeModalContent]"></ng-content>
+    <ng-content select="materialize-modal-content"></ng-content>
   </div>
 </div>

@@ -24,6 +24,8 @@ export * from './app/components/input/input.component';
 export * from './app/components/input-file/input-file.component';
 export * from './app/components/label/label.component';
 export * from './app/components/modal/modal.component';
+export * from './app/components/modal-content/modal-content.component';
+export * from './app/components/modal-handler/modal-handler.component';
 export * from './app/components/navbar/navbar.component';
 export * from './app/components/radio/radio.component';
 export * from './app/components/radio-group/radio-group.component';
