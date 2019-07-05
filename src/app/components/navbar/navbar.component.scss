@@ -8,17 +8,9 @@
   color: $color-white;
   display: flex;
   flex-direction: row;
+  font-family: $font-family-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-regular;
   height: 72px;
   padding: $space-lg $space-xs;
-}
-
-.navbar-title {
-  display: inline-block;
-  flex: 1;
-  font-size: $font-size-lg;
-  margin-left: $space-xl;
-}
-
-.navbar-icon-container {
-  padding: 0 $space-xs;
 }
