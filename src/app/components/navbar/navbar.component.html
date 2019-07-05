@@ -1,16 +1,3 @@
-<div [ngClass]="_className">
-  <div class="navbar-icon-container">
-    <sidenav
-      [titleIconName]="_titleIconName"
-      [title]="_title"
-      [menuIconName]="_menuIconName">
-      <ng-content></ng-content>
-    </sidenav>
-  </div>
-  
-  <span class="navbar-title">{{ _title }}</span>
-
-  <div class="navbar-icon-container" *ngFor="let option of _options">
-    <materialize-icon [name]="option.iconName" size="lg"></materialize-icon>
-  </div>
+<div [ngClass]="className">
+  <ng-content></ng-content>
 </div>
