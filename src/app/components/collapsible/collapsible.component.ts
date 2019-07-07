@@ -1,4 +1,14 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  Renderer2,
+  SimpleChanges
+} from '@angular/core';
 import { CollapsibleModel } from './collapsible.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
@@ -7,7 +17,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   styleUrls: ['./collapsible.component.scss'],
   templateUrl: './collapsible.component.html'
 })
-export class CollapsibleComponent implements CollapsibleModel, OnInit {
+export class CollapsibleComponent implements CollapsibleModel, OnInit, OnChanges {
   static readonly defaultProps: CollapsibleModel = {
     className: '',
     isOpen: false,

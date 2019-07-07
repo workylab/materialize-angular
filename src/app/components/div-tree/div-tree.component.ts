@@ -1,10 +1,10 @@
-import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'div-tree',
+  selector: 'materialize-div-tree',
   templateUrl: './div-tree.component.html'
 })
-export class DivTreeComponent {
+export class DivTreeComponent implements OnInit {
   @Input() classNames: Array<string>;
 
   constructor(private element: ElementRef, private renderer: Renderer2) {

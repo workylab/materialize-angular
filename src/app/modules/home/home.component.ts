@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { DropdownItemModel } from '../../components/dropdown/dropdown.model';
 
 @Component({
-  selector: 'home-page',
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
@@ -49,7 +48,7 @@ export class HomeComponent {
       key: 'column_3',
       type: 'text'
     }]
-  }
+  };
 
   public dropDownItems: Array<DropdownItemModel> = [{
     iconName: 'menu',

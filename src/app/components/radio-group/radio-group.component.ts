@@ -113,12 +113,10 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   }
 
   registerRadios() {
-    for (let i = 0; i < this.radios.length; i++) {
-      const currentRadio = this.radios[i];
+    for (const radio of this.radios) {
+      radio.isActive = (radio.value === this.value);
 
-      currentRadio.isActive = (currentRadio.value === this.value);
-
-      currentRadio.onClickEmitter.subscribe(this.toggleRadios);
+      radio.onClickEmitter.subscribe(this.toggleRadios);
     }
   }
 
@@ -138,15 +136,13 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   }
 
   setValueAllRadios(value: string) {
-    for (let i = 0; i < this.radios.length; i++) {
-      const currentRadio = this.radios[i];
-
-      if (currentRadio.value !== value) {
-        currentRadio.isActive = false;
+    for (const radio of this.radios) {
+      if (radio.value !== value) {
+        radio.isActive = false;
       }
 
-      if (currentRadio.value === value && !this.canUncheck) {
-        currentRadio.isActive = true;
+      if (radio.value === value && !this.canUncheck) {
+        radio.isActive = true;
       }
     }
   }

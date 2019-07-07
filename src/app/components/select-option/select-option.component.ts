@@ -1,4 +1,13 @@
-import { AfterContentChecked, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  AfterContentChecked,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SelectOptionModel } from './select-option.model';
 
@@ -7,7 +16,7 @@ import { SelectOptionModel } from './select-option.model';
   styleUrls: ['./select-option.component.scss'],
   templateUrl: './select-option.component.html'
 })
-export class SelectOptionComponent implements AfterContentChecked {
+export class SelectOptionComponent implements AfterContentChecked, OnInit {
   static readonly defaultProps: SelectOptionModel = {
     className: '',
     disabled: false,
@@ -30,7 +39,7 @@ export class SelectOptionComponent implements AfterContentChecked {
   public transitionDuration: number;
   public value: string;
 
-  constructor(private element: ElementRef) {
+  constructor() {
     this.onClickEmitter = new EventEmitter();
 
     this.emitClick = this.emitClick.bind(this);

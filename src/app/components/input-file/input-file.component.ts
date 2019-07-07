@@ -100,7 +100,7 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
     this.errorMessage = '';
 
     if (this.required && !files.length) {
-      const fieldValidation = fieldValidations['required'];
+      const fieldValidation = fieldValidations.required;
 
       this.errorMessage = fieldValidation.errorMessage;
 

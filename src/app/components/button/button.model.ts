@@ -5,5 +5,5 @@ export interface ButtonModel {
   iconName: string;
   isRounded: boolean;
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  type: 'button' | 'submit'
+  type: 'button' | 'submit';
 }

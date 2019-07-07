@@ -23,15 +23,19 @@
   ],
   "scripts": {
     "ng": "ng",
-    "lint": "ng lint",
-    "test": "ng test",
-    "test:coverage": "ng test --code-coverage",
     "start": "webpack-dev-server --hot --progress",
-    "package:library": "npm run build:library && cd dist/materialize-angular && npm pack",
-    "build": "npm run build:library && npm run build:styles && npm run build:fonts",
+    "test:unit": "ng test",
+    "test:unit:coverage": "ng test --code-coverage",
+    "test": "npm run test:unit && test:unit:coverage",
+    "lint:scss": "stylelint './src/**/*.s?(a|c)ss'",
+    "lint:ts": "eslint './src/app/**/*.ts'",
+    "lint:ng": "ng lint",
+    "lint": "npm run lint:scss && npm run lint:ng && npm run lint:ts",
+    "build:scss": "cpx './src/styles/**/*' './dist/materialize-angular/styles' && scss-bundle -e ./src/styles/main.scss -d ./dist/materialize-angular/styles/materialize-angular.scss",
+    "build:fonts": "cpx './src/fonts/**/*' './dist/materialize-angular/fonts/assets'",
     "build:library": "ng build materialize-angular",
-    "build:styles": "cpx \"./src/styles/**/*\" \"./dist/materialize-angular/styles\" && scss-bundle -e ./src/styles/main.scss -d ./dist/materialize-angular/styles/materialize-angular.scss",
-    "build:fonts": "cpx \"./src/fonts/**/*\" \"./dist/materialize-angular/fonts/assets\""
+    "build:package": "npm run build:library && cd dist/materialize-angular && npm pack",
+    "build": "npm run build:library && npm run build:scss && npm run build:fonts"
   },
   "private": true,
   "dependencies": {

@@ -420,13 +420,11 @@ export class SwiperComponent implements AfterContentInit, SwiperModel {
   }
 
   deleteClones() {
-    const clons = this.container.querySelectorAll('.cloned');
+    const clons: any = this.container.querySelectorAll('.cloned');
 
-    for (let i = 0; i < clons.length; i++) {
-      const currentItem = clons[i] as HTMLElement;
-
-      if (currentItem.parentNode) {
-        currentItem.parentNode.removeChild(currentItem);
+    for (const item of clons) {
+      if (item.parentNode) {
+        item.parentNode.removeChild(item);
       }
     }
   }
