@@ -1,0 +1,18 @@
+<div class="drawer"
+  
+  [ngClass]="[className, type]"
+  [class.open]="isOpen"
+  [class.backdrop]="hasBackdrop"
+
+  #drawer
+>
+  <div class="drawer-backdrop" #backdrop></div>
+
+  <div class="drawer-content">
+    <ng-content select="materialize-drawer-content"></ng-content>
+  </div>
+
+  <div class="drawer-container">
+    <ng-content select="materialize-drawer-container"></ng-content>
+  </div>
+</div>

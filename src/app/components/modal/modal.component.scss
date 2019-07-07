@@ -61,8 +61,4 @@
   transition-duration: inherit;
   width: 100%;
   z-index: $zindex-level-0;
-
-  &.active {
-    opacity: 1;
-  }
 }

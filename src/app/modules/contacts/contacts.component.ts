@@ -1,20 +1,13 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
-import { NavbarOptionModel } from '../../components/navbar/navbar.model';
 
 @Component({
   templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {
-  public navbarOptions: Array<NavbarOptionModel>;
   public form: FormGroup;
 
   constructor() {
-    this.navbarOptions = [
-      { iconName: 'search', type: 'search' },
-      { iconName: 'more_vert', type: 'dropdown' }
-    ];
-
     this.form = new FormGroup({
       amount: new FormControl({ disabled: false, value: 5 }, [
         Validators.min(3),
