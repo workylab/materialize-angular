@@ -12,6 +12,11 @@ import { CollapsibleTitleComponent } from './collapsible-title/collapsible-title
 import { CommonModule } from '@angular/common';
 import { DatePickerComponent } from './datepicker/datepicker.component';
 import { DivTreeComponent } from './div-tree/div-tree.component';
+import { DrawerCloseDirective } from '../directives/drawer-close.directive';
+import { DrawerComponent } from './drawer/drawer.component';
+import { DrawerContainerComponent } from './drawer-container/drawer-container.component';
+import { DrawerContentComponent } from './drawer-content/drawer-content.component';
+import { DrawerHandlerComponent } from './drawer-handler/drawer-handler.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { FormComponent } from './form/form.component';
 import { FormFieldDirective } from '../directives/form-field.directive';
@@ -60,6 +65,11 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     CollapsibleTitleComponent,
     DatePickerComponent,
     DivTreeComponent,
+    DrawerCloseDirective,
+    DrawerComponent,
+    DrawerContainerComponent,
+    DrawerContentComponent,
+    DrawerHandlerComponent,
     DropdownComponent,
     FormComponent,
     FormFieldDirective,
@@ -105,6 +115,11 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     CollapsibleTitleComponent,
     DatePickerComponent,
     DivTreeComponent,
+    DrawerCloseDirective,
+    DrawerComponent,
+    DrawerContainerComponent,
+    DrawerContentComponent,
+    DrawerHandlerComponent,
     DropdownComponent,
     FormComponent,
     FormFieldDirective,
