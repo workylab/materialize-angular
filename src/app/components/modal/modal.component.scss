@@ -37,8 +37,9 @@
   padding: $space-xxl;
   position: relative;
   transform: scale(0.9);
-  transition: opacity, transform cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
   transition-duration: inherit;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
   z-index: $zindex-level-1;
 }
 

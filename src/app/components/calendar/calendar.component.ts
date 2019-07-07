@@ -29,7 +29,7 @@ export class CalendarComponent implements OnInit {
   public selectedDate: DateModel;
   public selectedMonth: MonthModel;
   public showYears: boolean;
-  public weeks: Array<Array<DateModel>>
+  public weeks: Array<Array<DateModel>>;
   public years: Array<number>;
 
   public selectYearAnimationDuration = 200;

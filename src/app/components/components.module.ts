@@ -40,7 +40,6 @@ import { RippleDirective } from '../directives/ripple.directive';
 import { RouterModule } from '@angular/router';
 import { SelectComponent } from './select/select.component';
 import { SelectOptionComponent } from './select-option/select-option.component';
-import { SideNavComponent } from './sidenav/sidenav.component';
 import { SuffixDirective } from '../directives/suffix.directive';
 import { SwiperComponent } from './swiper/swiper.component';
 import { SwiperItemComponent } from './swiper-item/swiper-item.component';
@@ -92,7 +91,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     RippleDirective,
     SelectComponent,
     SelectOptionComponent,
-    SideNavComponent,
     SwiperComponent,
     SwiperItemComponent,
     SwitchComponent,
@@ -141,7 +139,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     RippleDirective,
     SelectComponent,
     SelectOptionComponent,
-    SideNavComponent,
     SuffixDirective,
     SwiperComponent,
     SwiperItemComponent,

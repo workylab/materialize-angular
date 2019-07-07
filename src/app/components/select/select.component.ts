@@ -112,12 +112,10 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
   registerOptions() {
     const options = this.optionsQueryList.toArray();
 
-    for (let i = 0; i < options.length; i++) {
-      const currentOption = options[i];
+    for (const option of options) {
+      option.isActive = (option.value === this.value);
 
-      currentOption.isActive = (currentOption.value === this.value);
-
-      currentOption.onClickEmitter.subscribe(this.onChangeOption);
+      option.onClickEmitter.subscribe(this.onChangeOption);
     }
 
     this.updateControl(this.value);

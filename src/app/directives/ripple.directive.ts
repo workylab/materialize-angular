@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 interface Coordinate {
   x: number;
@@ -8,7 +8,7 @@ interface Coordinate {
 @Directive({
   selector: '[materializeRipple]'
 })
-export class RippleDirective {
+export class RippleDirective implements OnInit {
   @Input() rippleDuration = 500;
   @Input() isRippleActive = true;
   @Input() isRippleCenter = false;

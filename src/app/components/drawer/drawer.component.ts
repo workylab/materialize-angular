@@ -1,10 +1,13 @@
 import {
+  AfterContentInit,
+  AfterViewInit,
   Component,
   ContentChild,
   ContentChildren,
   ElementRef,
   EventEmitter,
   Input,
+  OnInit,
   Output,
   QueryList,
   ViewChild
@@ -19,7 +22,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
   styleUrls: ['./drawer.component.scss'],
   templateUrl: './drawer.component.html'
 })
-export class DrawerComponent {
+export class DrawerComponent implements OnInit, AfterViewInit, AfterContentInit {
   static readonly defaultProps: DrawerModel = {
     className: '',
     closeOnBackdrop: true,

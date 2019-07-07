@@ -1,6 +1,6 @@
 export interface TableModel {
-  body: Array<Array<TableBodyCellModel>>,
-  headers: Array<TableHeaderCellModel>
+  body: Array<Array<TableBodyCellModel>>;
+  headers: Array<TableHeaderCellModel>;
 }
 
 export interface TableHeaderCellModel {

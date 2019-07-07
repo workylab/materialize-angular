@@ -13,7 +13,7 @@ export interface InputFileModel {
   name: string;
   required: boolean;
   value: Array<FileModel>;
-};
+}
 
 export interface FileModel {
   file: string | ArrayBuffer | null;

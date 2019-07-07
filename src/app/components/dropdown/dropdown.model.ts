@@ -5,7 +5,7 @@ export interface DropdownModel {
 }
 
 export interface DropdownItemModel {
-  callback?: () => void,
+  callback?: () => void;
   iconName?: string;
   text: string;
 }

@@ -4,7 +4,7 @@ export class DrawerModel {
   hasBackdrop: boolean;
   isOpen: boolean;
   transitionDuration: number;
-  type: DRAWER_TYPE
+  type: DRAWER_TYPE;
 }
 
 export enum DRAWER_TYPE {

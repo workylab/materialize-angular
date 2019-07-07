@@ -7,6 +7,7 @@ import {
   EventEmitter,
   Input,
   OnDestroy,
+  OnInit,
   Output,
   ViewChild
 } from '@angular/core';
@@ -21,7 +22,7 @@ import { ModalModel } from './modal.model';
   styleUrls: ['./modal.component.scss'],
   templateUrl: './modal.component.html'
 })
-export class ModalComponent implements AfterContentChecked, AfterViewInit, ModalModel, OnDestroy {
+export class ModalComponent implements AfterContentChecked, AfterViewInit, OnInit, ModalModel, OnDestroy {
   static readonly defaultProps: ModalModel = {
     className: '',
     dismissOnBackdrop: true,
