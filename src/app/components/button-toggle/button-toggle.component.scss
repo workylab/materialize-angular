@@ -11,10 +11,6 @@
 
   &.disabled {
     background-color: $color-gray-light;
-
-    .button-toggle-item {
-      cursor: not-allowed;
-    }
   }
 
   &:hover {
