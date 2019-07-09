@@ -1,13 +1,16 @@
 <div class="button-toggle"
   (click)="onClick()"
   (blur)="onBlur()"
-  (focus)="onFocus($event)"
+  (focus)="onFocus()"
 
   [class.active]="isActive"
   [class.disabled]="disabled"
   [class.focused]="isFocused"
   
   [tabindex]="disabled ? '-1': '0'"
+
+  materializeRipple
+  [isRippleActive]="!disabled"
 >    
   <ng-content></ng-content>
 </div>

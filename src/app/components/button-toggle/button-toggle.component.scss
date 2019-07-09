@@ -3,21 +3,35 @@
 
 .button-toggle {
   align-items: center;
-  border-bottom: $border-sm solid $color-gray-light;
-  border-top: $border-sm solid $color-gray-light;
+  background-color: $color-white;
+  border-right: $border-sm solid $color-purple;
+  color: $color-purple;
   cursor: pointer;
   display: flex;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-regular;
+  outline: none;
   padding: $space-sm $space-md;
+  transition: background-color 300ms ease;
 
-  &.disabled {
-    background-color: $color-gray-light;
-  }
-
-  &:hover {
-    background-color: $color-gray-light;
+  &:hover,
+  &.focused {
+    background-color: rgba($color-purple, 0.1);
   }
 
   &.active {
-    background-color: $color-gray;
+    background-color: $color-purple;
+    color: $color-white;
+  }
+
+  &.disabled {
+    background-color: $color-gray-light;
+    border-right-color: $color-gray;
+    color: $color-gray;
+    cursor: not-allowed;
+  }
+
+  .ripple {
+    background-color: rgba(lighten($color-purple, 50%), 0.2);
   }
 }
