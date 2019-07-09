@@ -1,0 +1,8 @@
+@import '../common/styles/metrics.scss';
+
+.button-toggle-group {
+  border-radius: $radius-sm;
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
