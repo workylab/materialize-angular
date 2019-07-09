@@ -566,22 +566,11 @@ Select disabled with Value and FloatLabel
 <br />
 
 <h3>Button Toggle</h3>
-<materialize-button-toggle
-[items]="[
-  { value: '1', content: 'Option 1', iconName: 'person', name: 'op1' },
-  { value: '2', content: 'Option 1', iconName: 'person', name: 'op2'},
-  { value: '3', content: 'Option 1', iconName: 'person', name: 'op3'}
-]">
-</materialize-button-toggle>
-
-<h3>Button Toggle Disabled</h3>
-<materialize-button-toggle
-[items]="[
-  { value: '1', content: 'Option 1', iconName: 'person', name: 'op1'},
-  { value: '2', content: 'Option 1', iconName: 'person', name: 'op2'}
-]"
-[disabled]="true">
-</materialize-button-toggle>
+<materialize-button-toggle-group>
+  <materialize-button-toggle>Text1</materialize-button-toggle>
+  <materialize-button-toggle>Text2</materialize-button-toggle>
+  <materialize-button-toggle>Text3</materialize-button-toggle>
+</materialize-button-toggle-group>
 
 <br />
 <br />
