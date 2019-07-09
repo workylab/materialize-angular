@@ -1,22 +1,7 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
 
-.button-toggle-container {
-  border-radius: $radius-sm;
-  display: flex;
-  flex-direction: row;
-  width: max-content;
-
-  &.disabled {
-    background-color: $color-gray-light;
-
-    .button-toggle-item {
-      cursor: not-allowed;
-    }
-  }
-}
-
-.button-toggle-item {
+.button-toggle {
   align-items: center;
   border-bottom: $border-sm solid $color-gray-light;
   border-top: $border-sm solid $color-gray-light;
@@ -24,14 +9,12 @@
   display: flex;
   padding: $space-sm $space-md;
 
-  &:first-child {
-    border-left: $border-sm solid $color-gray-light;
-    border-radius: $radius-sm 0 0 $radius-sm;
-  }
+  &.disabled {
+    background-color: $color-gray-light;
 
-  &:last-child {
-    border-radius: 0 $radius-sm $radius-sm 0;
-    border-right: $border-sm solid $color-gray-light;
+    .button-toggle-item {
+      cursor: not-allowed;
+    }
   }
 
   &:hover {
@@ -41,12 +24,4 @@
   &.active {
     background-color: $color-gray;
   }
-}
-
-.button-toggle-icon {
-  margin-right: $space-sm;
-}
-
-.button-toggle-content {
-  font-size: $font-size-sm;
 }
