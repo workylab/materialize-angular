@@ -60,14 +60,12 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   public indicatorAtEnd: boolean;
   public isFocused: boolean;
   public name: string;
-  public radios: Array<RadioComponent>;
   public required: boolean;
   public value: string;
 
   constructor() {
     super();
 
-    this.disableAllRadios = this.disableAllRadios.bind(this);
     this.registerRadios = this.registerRadios.bind(this);
     this.toggleRadios = this.toggleRadios.bind(this);
 
@@ -95,7 +93,6 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
     this.indicatorAtEnd = getBooleanValue(this.indicatorAtEndInput, defaultProps.indicatorAtEnd);
     this.canUncheck = getBooleanValue(this.canUncheckInput, defaultProps.canUncheck);
     this.name = this.nameInput || defaultProps.name;
-    this.radios = [];
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.value = this.valueInput || defaultProps.value;
 
@@ -103,27 +100,23 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   }
 
   initRadios() {
-    this.radios = this.radiosQueryList.toArray();
+    this.disableAllRadios(this.disabled);
 
     setTimeout(this.registerRadios, 0);
-
-    if (this.disabled) {
-      this.disableAllRadios();
-    }
   }
 
   registerRadios() {
-    for (const radio of this.radios) {
+    this.radiosQueryList.forEach(radio => {
       radio.isActive = (radio.value === this.value);
 
       radio.onClickEmitter.subscribe(this.toggleRadios);
-    }
+    });
   }
 
   toggleRadios(value: string) {
     this.setValueAllRadios(value);
 
-    const currentRadio = this.radios.find(item => item.value === value);
+    const currentRadio = this.radiosQueryList.find(radio => radio.value === value);
 
     this.value = currentRadio && currentRadio.isActive
       ? currentRadio.value
@@ -136,7 +129,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   }
 
   setValueAllRadios(value: string) {
-    for (const radio of this.radios) {
+    this.radiosQueryList.forEach(radio => {
       if (radio.value !== value) {
         radio.isActive = false;
       }
@@ -144,27 +137,29 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
       if (radio.value === value && !this.canUncheck) {
         radio.isActive = true;
       }
-    }
+    });
+  }
+
+  disableAllRadios(disabled: boolean) {
+    this.radiosQueryList.forEach(radio => {
+      radio.disabled = disabled;
+    });
   }
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
 
-    if (this.disabled) {
-      setTimeout(this.disableAllRadios, 0);
-    }
-  }
-
-  disableAllRadios() {
-    this.radios.forEach(item => {
-      item.disabled = true;
-    });
+    setTimeout(() => {
+      this.disableAllRadios(this.disabled);
+    }, 0);
   }
 
   writeValue(value: string): void {
     this.value = value;
 
-    this.setValueAllRadios(this.value);
+    setTimeout(() => {
+      this.setValueAllRadios(this.value);
+    });
   }
 
   registerOnChange(fn: (value: string) => void): void {
