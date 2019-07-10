@@ -1,8 +1,38 @@
+@import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
 
 .button-toggle-group {
+  border: $border-sm solid $color-purple;
   border-radius: $radius-sm;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
   width: max-content;
+
+  ::ng-deep > *:last-child .button-toggle {
+    border-right: 0;
+  }
+
+  &.disabled {
+    border-color: $color-gray;
+  }
+}
+
+:host.ng-touched.ng-dirty.ng-invalid .button-toggle-group {
+  border-color: $color-red;
+
+  ::ng-deep .button-toggle {
+    border-right-color: $color-red;
+    color: $color-red;
+
+    &:hover,
+    &.focused {
+      background-color: rgba($color-red, 0.1);
+    }
+
+    &.active {
+      background-color: $color-red;
+      color: $color-white;
+    }
+  }
 }
