@@ -57,8 +57,8 @@
     margin: 0 $space-xxxs;
   }
 
-  ::ng-deep .ripple {
-    background-color: rgba(lighten($color-purple, 50%), 0.1);
+  .ripple {
+    background-color: rgba(lighten($color-purple, 50%), 0.2);
   }
 }
 

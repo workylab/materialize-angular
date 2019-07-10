@@ -1,6 +1,6 @@
 @import '../common/styles/colors.scss';
 
-:host.ng-touched.ng-dirty.ng-invalid .form-radio-container ::ng-deep {
+:host.ng-touched.ng-dirty.ng-invalid .form-radio-group-container ::ng-deep {
   .form-radio-indicator {
     border-color: $color-red;
 

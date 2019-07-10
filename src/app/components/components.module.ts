@@ -3,6 +3,7 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { ButtonComponent } from './button/button.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { ButtonToggleGroupComponent } from './button-toggle-group/button-toggle-group.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CheckboxListComponent } from './checkbox-list/checkbox-list.component';
@@ -56,6 +57,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     AutocompleteComponent,
     ButtonComponent,
     ButtonToggleComponent,
+    ButtonToggleGroupComponent,
     CalendarComponent,
     CheckboxComponent,
     CheckboxListComponent,
@@ -105,6 +107,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     AutocompleteComponent,
     ButtonComponent,
     ButtonToggleComponent,
+    ButtonToggleGroupComponent,
     CalendarComponent,
     CheckboxComponent,
     CheckboxListComponent,

@@ -74,6 +74,13 @@
           <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
         </materialize-select>
         {{ form.controls.state.errors | json }}
+
+        <materialize-button-toggle-group formControlName="technology" [canUncheck]="true">
+          <materialize-button-toggle value="a">Java</materialize-button-toggle>
+          <materialize-button-toggle value="b">PHP</materialize-button-toggle>
+          <materialize-button-toggle value="c">Javascrip</materialize-button-toggle>
+        </materialize-button-toggle-group>
+        {{ form.controls.technology.errors | json }}
       </div>
     
       <materialize-button iconName="send" type="submit" [iconAtEnd]="true">Submit</materialize-button>
