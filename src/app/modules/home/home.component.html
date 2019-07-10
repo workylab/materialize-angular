@@ -395,6 +395,31 @@ Select disabled with Value and FloatLabel
 <br />
 <br />
 
+Button Toggle
+<materialize-button-toggle-group>
+  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
+  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
+</materialize-button-toggle-group>
+Button Toggle with Value
+<materialize-button-toggle-group value="2">
+  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
+  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
+</materialize-button-toggle-group>
+Button Toggle can uncheck
+<materialize-button-toggle-group [canUncheck]="true">
+  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
+  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
+</materialize-button-toggle-group>
+Button Toggle disabled
+<materialize-button-toggle-group [disabled]="true">
+  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
+  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
+</materialize-button-toggle-group>
+
+<br />
+<br />
+<br />
+
 <!--
 <materialize-autocomplete [options]="selectOptions"></materialize-autocomplete>
 <materialize-autocomplete [options]="selectOptions" label="Label"></materialize-autocomplete>
@@ -560,17 +585,6 @@ Select disabled with Value and FloatLabel
 <materialize-tooltip text="Description..." position="right">
   <materialize-button iconName="send" size="xs" [isRounded]="true"></materialize-button>
 </materialize-tooltip>
-
-<br />
-<br />
-<br />
-
-<h3>Button Toggle</h3>
-<materialize-button-toggle-group>
-  <materialize-button-toggle>Text1</materialize-button-toggle>
-  <materialize-button-toggle>Text2</materialize-button-toggle>
-  <materialize-button-toggle>Text3</materialize-button-toggle>
-</materialize-button-toggle-group>
 
 <br />
 <br />

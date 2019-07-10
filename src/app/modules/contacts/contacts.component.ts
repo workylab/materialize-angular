@@ -28,7 +28,8 @@ export class ContactsComponent {
       message: new FormControl({ disabled: false, value: 'My Message' }, Validators.required),
       name: new FormControl({ disabled: false, value: 'MyName' }, Validators.pattern('[a-zA-Z]+')),
       state: new FormControl({ disabled: false, value: 'PA' }, Validators.required),
-      stateNative: new FormControl({ disabled: false, value: 'IL' }, Validators.required)
+      stateNative: new FormControl({ disabled: false, value: 'IL' }, Validators.required),
+      technology: new FormControl({ disabled: false, value: 'b'}, Validators.required)
     });
   }
 }
