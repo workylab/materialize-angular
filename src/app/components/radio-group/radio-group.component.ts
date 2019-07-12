@@ -159,7 +159,7 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
 
     setTimeout(() => {
       this.setValueAllRadios(this.value);
-    });
+    }, 0);
   }
 
   registerOnChange(fn: (value: string) => void): void {

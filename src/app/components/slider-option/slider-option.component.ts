@@ -9,16 +9,16 @@ import { SliderOptionModel } from './slider-option.model';
 export class SliderOptionComponent implements OnInit {
   static readonly defaultProps: SliderOptionModel = {
     className: '',
-    value: ''
+    value: null
   };
 
   @ViewChild('template') templateRef: ElementRef;
   @Input('className') classNameInput: string;
-  @Input('value') valueInput: string;
+  @Input('value') valueInput: number | string | boolean | null;
 
   public className: string;
   public isActive: boolean;
-  public value: string;
+  public value: number | string | boolean | null;
 
   ngOnInit() {
     this.initValues();
@@ -28,7 +28,9 @@ export class SliderOptionComponent implements OnInit {
     const { defaultProps } = SliderOptionComponent;
 
     this.className = this.classNameInput || defaultProps.className;
-    this.value = this.valueInput || defaultProps.value;
+    this.value = typeof this.valueInput === 'undefined'
+      ? defaultProps.value
+      : this.valueInput;
 
     this.isActive = false;
   }

@@ -170,4 +170,8 @@ $slider-indicator-size: 13px;
       background-color: rgba($color-red, 0.3);
     }
   }
+
+  .slider-tick-interval {
+    background-color: $color-red;
+  }
 }
