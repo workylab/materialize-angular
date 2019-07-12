@@ -1,0 +1,18 @@
+@import '../common/styles/forms.scss';
+@import '../../../styles/variables.scss';
+
+.form-control {
+  @extend %form-control-base;
+}
+
+.form-control-wrapper {
+  @extend %form-control-wrapper-base;
+
+  input[type='file'] {
+    display: none;
+  }
+}
+
+.form-control-container {
+  @extend %form-control-container-base;
+}

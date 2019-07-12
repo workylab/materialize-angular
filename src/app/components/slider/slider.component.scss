@@ -1,0 +1,173 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
+
+$slider-track-size: 3px;
+$slider-indicator-size: 13px;
+
+.slider-container {
+  padding: $space-xxxl $space-xl $space-xxl;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+
+  &.labels-top .slider-labels-container ::ng-deep > * {
+    bottom: $space-xxxl;
+  }
+
+  &.labels-bottom .slider-labels-container ::ng-deep > * {
+    top: $space-xs;
+  }
+
+  &.focused {
+    .slider-label {
+      font-size: 13px;
+      height: $slider-indicator-size * 2;
+      opacity: 1;
+      width: $slider-indicator-size * 2;
+    }
+
+    .slider-indicator-ripple {
+      background-color: rgba($color-purple, 0.1);
+    }
+  }
+
+  &.disabled {
+    .slider-track-background {
+      background-color: $color-gray;
+    }
+
+    .slider-track-fill {
+      background-color: $color-gray-dark;
+    }
+
+    .slider-indicator {
+      background-color: $color-gray-dark;
+      border: $border-lg solid $color-white;
+      box-sizing: content-box;
+      height: $slider-indicator-size - $border-lg;
+      width: $slider-indicator-size - $border-lg;
+    }
+
+    .slider-indicator-ripple:hover {
+      background-color: unset;
+    }
+  }
+}
+
+.slider-track-container {
+  cursor: pointer;
+  outline: none;
+  padding: $space-sm 0;
+  position: relative;
+  width: 100%;
+}
+
+.slider-track-interval {
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.slider-tick-interval {
+  background-color: $color-purple;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: $border-sm;
+}
+
+.slider-track-background {
+  background-color: lighten($color-purple, 40%);
+  border-radius: $radius-md;
+  height: $slider-track-size;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider-track-fill {
+  background-color: $color-purple;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transition: width 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.slider-indicator-container {
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: $zindex-level-1;
+}
+
+.slider-indicator {
+  background-color: $color-purple;
+  border-radius: $radius-full;
+  height: $slider-indicator-size;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: $slider-indicator-size;
+}
+
+.slider-labels-container {
+  position: relative;
+  width: 100%;
+}
+
+.slider-indicator-ripple {
+  border-radius: $radius-full;
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 300ms ease;
+  width: 40px;
+  z-index: $zindex-level-1;
+
+  &:hover {
+    background-color: rgba($color-purple, 0.1);
+  }
+
+  ::ng-deep .ripple {
+    background-color: rgba($color-purple, 0.3);
+  }
+}
+
+:host.ng-touched.ng-dirty.ng-invalid {
+  .slider-container.focused .slider-indicator-ripple {
+    background-color: rgba($color-red, 0.1);
+  }
+
+  .slider-track-background {
+    background-color: lighten($color-red, 40%);
+  }
+
+  .slider-track-fill {
+    background-color: $color-red;
+  }
+
+  .slider-label::after {
+    background-color: $color-red;
+  }
+
+  .slider-indicator {
+    background-color: $color-red;
+  }
+
+  .slider-indicator-ripple {
+    &:hover {
+      background-color: rgba($color-red, 0.1);
+    }
+
+    .ripple {
+      background-color: rgba($color-red, 0.3);
+    }
+  }
+}

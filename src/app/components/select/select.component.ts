@@ -102,7 +102,7 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
   }
 
   ngAfterContentInit() {
-    this.registerOptions();
+    setTimeout(this.registerOptions, 0);
 
     this.optionsQueryList.changes.subscribe(changes => {
       setTimeout(this.registerOptions, 0);
@@ -110,13 +110,11 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
   }
 
   registerOptions() {
-    const options = this.optionsQueryList.toArray();
-
-    for (const option of options) {
+    this.optionsQueryList.forEach(option => {
       option.isActive = (option.value === this.value);
 
       option.onClickEmitter.subscribe(this.onChangeOption);
-    }
+    });
 
     this.updateControl(this.value);
   }
@@ -125,7 +123,6 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     this.value = value;
     this.isOpen = false;
 
-    this.desactiveAllOption();
     this.activeSelectedOption(this.value);
   }
 
@@ -136,23 +133,16 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
     this.onChange(this.value);
   }
 
-  desactiveAllOption() {
-    const options = this.optionsQueryList.toArray();
-
-    options.forEach(item => {
-      item.isActive = false;
-    });
-  }
-
   activeSelectedOption(value: string) {
-    const options = this.optionsQueryList.toArray();
-    const selectOption = options.find(item => item.value === value);
+    this.optionsQueryList.forEach(option => {
+      if (option.value === value) {
+        option.isActive = true;
 
-    if (selectOption) {
-      selectOption.isActive = true;
-
-      this.cloneOption(selectOption);
-    }
+        this.cloneOption(option);
+      } else {
+        option.isActive = false;
+      }
+    });
   }
 
   cloneOption(selectedOption: SelectOptionComponent) {

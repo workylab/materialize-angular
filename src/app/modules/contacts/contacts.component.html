@@ -54,7 +54,11 @@
         <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy"></materialize-datepicker>
         {{ form.controls.dateOfBirth.errors | json }}
     
-        <materialize-range-slider formControlName="amount"></materialize-range-slider>
+        <materialize-slider formControlName="amount">
+          <materialize-slider-option></materialize-slider-option>
+          <materialize-slider-option value="1"></materialize-slider-option>
+          <materialize-slider-option></materialize-slider-option>
+        </materialize-slider>
         {{ form.controls.amount.errors | json }}
     
         <materialize-select formControlName="stateNative" [isNativeControl]="true" floatLabel="State Native">
