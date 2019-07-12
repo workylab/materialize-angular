@@ -39,7 +39,7 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     required: false,
     showLabels: true,
     showTicks: true,
-    value: ''
+    value: null
   };
 
   @ContentChildren(SliderOptionComponent) options: QueryList<SliderOptionComponent>;
@@ -51,7 +51,7 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
   @ViewChild('sliderTrackFill') sliderTrackFill: ElementRef;
   @ViewChild('sliderTrackInterval') sliderTrackInterval: ElementRef;
 
-  @Output('onChange') onChangeEmitter: EventEmitter<number | string>;
+  @Output('onChange') onChangeEmitter: EventEmitter<number | string | boolean | null>;
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
@@ -59,7 +59,7 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
   @Input('required') requiredInput: boolean;
   @Input('showLabels') showLabelsInput: boolean;
   @Input('showTicks') showTicksInput: boolean;
-  @Input('value') valueInput: number | string | boolean;
+  @Input('value') valueInput: number | string | boolean | null;
 
   public className: string;
   public disabled: boolean;
@@ -69,7 +69,7 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
   public showLabels: boolean;
   public showTicks: boolean;
   public supportedEvents: SupportedEventsModel;
-  public value: number | string | boolean;
+  public value: number | string | boolean | null;
 
   constructor(private renderer: Renderer2) {
     this.supportedEvents = supportedEvents();
@@ -77,11 +77,11 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     this.actionDown = this.actionDown.bind(this);
     this.actionMove = this.actionMove.bind(this);
     this.actionUp = this.actionUp.bind(this);
-    this.renderPositions = this.renderPositions.bind(this);
+    this.update = this.update.bind(this);
 
     this.onChangeEmitter = new EventEmitter();
 
-    window.addEventListener(this.supportedEvents.resize, this.renderPositions);
+    window.addEventListener(this.supportedEvents.resize, this.update);
   }
 
   ngOnInit() {
@@ -89,9 +89,9 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
   }
 
   ngAfterContentInit() {
-    setTimeout(this.renderPositions, 0);
+    setTimeout(this.update, 0);
 
-    this.options.changes.subscribe(this.renderPositions);
+    this.options.changes.subscribe(this.update);
   }
 
   initValues() {
@@ -106,7 +106,13 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     this.value = this.valueInput || defaultProps.value;
 
     this.isFocused = false;
+
     this.sliderTrack.nativeElement.addEventListener(this.supportedEvents.down, this.actionDown);
+  }
+
+  update() {
+    this.renderPositions();
+    this.moveToValue(this.value, false);
   }
 
   renderPositions() {
@@ -116,9 +122,9 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
 
     this.options.forEach((option, index) => {
       const leftSpace = pixelInterval * index;
+      const { nativeElement } = option.templateRef;
 
-      option.isActive = (this.value === option.value);
-      this.renderer.setStyle(option.templateRef.nativeElement, 'left', `${ leftSpace }px`);
+      this.renderer.setStyle(nativeElement, 'left', `${ leftSpace }px`);
 
       if (this.showTicks) {
         const tick = this.renderer.createElement('div');
@@ -164,18 +170,28 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
 
     const x = this.getXCoordinate(event, this.supportedEvents.up);
     const index = this.getIndexFromXCoordinate(x);
-    const pixelInterval = this.getPixelInterval();
-    const nextXCoordinate = index * pixelInterval;
     const options = this.options.toArray();
 
-    this.value = options[index] && options[index].value;
+    this.value = options[index].value;
     this.onChangeEmitter.emit(this.value);
     this.onChange(this.value);
-    this.animate(nextXCoordinate, true);
+    this.moveToValue(this.value, true);
+  }
+
+  moveToValue(value: number | string | boolean | null, hasAnimation: boolean) {
+    const options = this.options.toArray();
+    const index = options.findIndex(option => option.value === value);
+    const validatedIndex = index >= 0
+      ? index
+      : 0;
+    const pixelInterval = this.getPixelInterval();
+    const nextXCoordinate = validatedIndex * pixelInterval;
+
+    this.animate(nextXCoordinate, hasAnimation);
     this.activeOption(this.value);
   }
 
-  activeOption(value: number | string | boolean) {
+  activeOption(value: number | string | boolean | null) {
     this.options.forEach(item => {
       item.isActive = (item.value === value);
     });
@@ -185,7 +201,11 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     const pixelInterval = this.getPixelInterval();
 
     if (pixelInterval) {
-      return Math.round(x / pixelInterval);
+      const index = Math.round(x / pixelInterval);
+
+      if (index >= 0 && index <= this.options.length) {
+        return index;
+      }
     }
 
     return 0;
@@ -259,11 +279,15 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     this.disabled = isDisabled;
   }
 
-  writeValue(value: number | string | boolean): void {
+  writeValue(value: number | string | boolean | null): void {
     this.value = value;
+
+    setTimeout(() => {
+      this.moveToValue(value, false);
+    }, 0);
   }
 
-  registerOnChange(fn: (value: number | string | boolean) => void): void {
+  registerOnChange(fn: (value: number | string | boolean | null) => void): void {
     this.onChange = fn;
   }
 
@@ -271,7 +295,7 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     this.onTouched = fn;
   }
 
-  onChange(value: number | string | boolean): void {}
+  onChange(value: number | string | boolean | null): void {}
 
   onTouched(): void {}
 }

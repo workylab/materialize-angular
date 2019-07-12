@@ -5,5 +5,5 @@ export interface SliderModel {
   required: boolean;
   showLabels: boolean;
   showTicks: boolean;
-  value: number | string | boolean;
+  value: number | string | boolean | null;
 }

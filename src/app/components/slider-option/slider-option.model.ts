@@ -1,4 +1,4 @@
 export interface SliderOptionModel {
   className: string;
-  value: string;
+  value: number | string | boolean | null;
 }
