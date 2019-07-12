@@ -118,12 +118,6 @@ $slider-indicator-size: 13px;
 .slider-labels-container {
   position: relative;
   width: 100%;
-
-  ::ng-deep > * {
-    left: 0;
-    position: absolute;
-    transform: translateX(-50%);
-  }
 }
 
 .slider-indicator-ripple {

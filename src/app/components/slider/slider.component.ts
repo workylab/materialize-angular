@@ -117,7 +117,8 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     this.options.forEach((option, index) => {
       const leftSpace = pixelInterval * index;
 
-      this.renderer.setStyle(option.element.nativeElement, 'left', `${ leftSpace }px`);
+      option.isActive = (this.value === option.value);
+      this.renderer.setStyle(option.templateRef.nativeElement, 'left', `${ leftSpace }px`);
 
       if (this.showTicks) {
         const tick = this.renderer.createElement('div');
@@ -171,6 +172,13 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     this.onChangeEmitter.emit(this.value);
     this.onChange(this.value);
     this.animate(nextXCoordinate, true);
+    this.activeOption(this.value);
+  }
+
+  activeOption(value: number | string | boolean) {
+    this.options.forEach(item => {
+      item.isActive = (item.value === value);
+    });
   }
 
   getIndexFromXCoordinate(x: number) {

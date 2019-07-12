@@ -1,1 +1,7 @@
-<ng-content></ng-content>
+<div class="slider-option-container"
+  [class.active]="isActive"
+  [ngClass]="className"
+
+  #template>
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,13 @@
+@import '../common/styles/metrics.scss';
+
+.slider-option-container {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-light;
+  left: 0;
+  position: absolute;
+  transform: translateX(-50%);
+
+  &.active {
+    font-weight: $font-weight-regular;
+  }
+}
