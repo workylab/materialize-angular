@@ -1,11 +1,14 @@
 <div [ngClass]="className">
   <ul class="tabs-header"  #tabsHeader>
-    <li *ngFor="let tab of tabComponentList; index as i"
-      (click)="selectTab(i, tab)"
-      [class.active]="i === selectedIndex"
+    <li class="tab-header-item" *ngFor="let tab of tabs; index as i"
 
-      materializeRipple
-      [isRippleActive]="!tab.disabled">
+      [class.active]="i === selectedIndex"
+      [class.disabled]="tab.disabled"
+      [isRippleActive]="!tab.disabled"
+
+      (click)="selectTab(i, tab)"
+
+      materializeRipple>
       {{ tab.title }}
     </li>
     <div class="tabs-header-indicator" #tabsIndicator></div>

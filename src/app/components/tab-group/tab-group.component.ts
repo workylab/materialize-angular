@@ -1,5 +1,17 @@
-import { AfterContentInit, Component, ContentChildren, ElementRef, Input, QueryList, ViewChild } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  ElementRef,
+  Input,
+  OnInit,
+  QueryList,
+  Renderer2,
+  ViewChild
+} from '@angular/core';
 import { Router } from '@angular/router';
+import { supportedEvents } from '../../utils/get-supported-events.util';
+import { SupportedEventsModel } from '../common/models/supported-events.model';
 import { TabComponent } from '../tab/tab.component';
 import { TabGroupModel } from './tab-group.model';
 
@@ -8,14 +20,14 @@ import { TabGroupModel } from './tab-group.model';
   styleUrls: ['./tab-group.component.scss'],
   templateUrl: './tab-group.component.html'
 })
-export class TabGroupComponent implements AfterContentInit {
+export class TabGroupComponent implements AfterContentInit, OnInit {
   static readonly defaultProps: TabGroupModel = {
     className: '',
     selectedIndex: 0,
     transitionDuration: 450
   };
 
-  @ContentChildren(TabComponent) tabComponentList: QueryList<TabComponent>;
+  @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
   @ViewChild('tabsIndicator') tabsIndicatorRef: ElementRef;
   @ViewChild('tabsHeader') tabsHeader: ElementRef;
@@ -26,15 +38,23 @@ export class TabGroupComponent implements AfterContentInit {
 
   public className: string;
   public selectedIndex: number;
-  public tabs: Array<TabComponent>;
+  public supportedEvents: SupportedEventsModel;
   public transitionDuration: number;
 
-  constructor(private router: Router) {
-    this.initValues = this.initValues.bind(this);
+  constructor(private router: Router, private renderer: Renderer2) {
+    this.supportedEvents = supportedEvents();
+
+    this.update = this.update.bind(this);
+
+    window.addEventListener(this.supportedEvents.resize, this.update);
+  }
+
+  ngOnInit() {
+    this.initValues();
   }
 
   ngAfterContentInit() {
-    setTimeout(this.initValues, 0);
+    setTimeout(this.update, 0);
   }
 
   initValues() {
@@ -42,21 +62,17 @@ export class TabGroupComponent implements AfterContentInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.selectedIndex = this.selectedIndexInput || defaultProps.selectedIndex;
-    this.tabs = this.tabComponentList.toArray();
     this.transitionDuration = this.transitionDurationInput || defaultProps.transitionDuration;
-
-    this.activateIndex(this.selectedIndex);
-    this.moveIndicator(this.selectedIndex, false);
   }
 
   selectTab(index: number, tab: TabComponent) {
-    if (this.tabs[index].disabled) {
+    const tabs = this.tabs.toArray();
+
+    if (tabs[index].disabled) {
       return;
     }
 
     this.selectedIndex = index;
-
-    this.activateIndex(this.selectedIndex);
     this.moveIndicator(this.selectedIndex, true);
 
     if (tab.link) {
@@ -66,23 +82,27 @@ export class TabGroupComponent implements AfterContentInit {
     }
   }
 
-  activateIndex(index: number) {
-    for (const tab of this.tabs) {
-      tab.isActive = false;
-    }
+  update() {
+    this.moveIndicator(this.selectedIndex, false);
+  }
 
-    this.tabs[index].isActive = true;
+  activateIndex(index: number) {
+    this.tabs.forEach((tab, i) => {
+      tab.isActive = i === index;
+    });
   }
 
   moveIndicator(index: number, hasAnimation: boolean) {
-    const child = this.tabsHeader.nativeElement.children[index];
-    const { style } = this.tabsIndicatorRef.nativeElement;
+    this.activateIndex(index);
 
-    style.transitionDuration = hasAnimation
+    const { nativeElement } = this.tabsIndicatorRef;
+    const child = this.tabsHeader.nativeElement.children[index];
+    const transitionDuration = hasAnimation
       ? `${ this.transitionDuration }ms`
       : null;
 
-    style.width = `${ child.offsetWidth }px`;
-    style.transform = `translateX(${ child.offsetLeft }px)`;
+    this.renderer.setStyle(nativeElement, 'transitionDuration', transitionDuration);
+    this.renderer.setStyle(nativeElement, 'width', `${ child.offsetWidth }px`);
+    this.renderer.setStyle(nativeElement, 'transform', `translateX(${ child.offsetLeft }px)`);
   }
 }
