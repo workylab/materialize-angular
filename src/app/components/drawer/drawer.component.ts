@@ -32,7 +32,7 @@ export class DrawerComponent implements OnInit, AfterViewInit, AfterContentInit 
     type: DRAWER_TYPE.OVER
   };
 
-  @ContentChild(DrawerHandlerComponent) modalHandler: DrawerHandlerComponent;
+  @ContentChild(DrawerHandlerComponent) drawerHandler: DrawerHandlerComponent;
   @ContentChildren(DrawerCloseDirective, { descendants: true }) closeItems: QueryList<DrawerCloseDirective>;
 
   @ViewChild('backdrop') backdropRef: ElementRef;
@@ -71,7 +71,9 @@ export class DrawerComponent implements OnInit, AfterViewInit, AfterContentInit 
   ngAfterContentInit() {
     this.registerCloseItems();
 
-    this.modalHandler.onClickEmitter.subscribe(this.onHandlerClick);
+    if (this.drawerHandler) {
+      this.drawerHandler.onClickEmitter.subscribe(this.onHandlerClick);
+    }
 
     this.closeItems.changes.subscribe(changes => {
       this.registerCloseItems();
