@@ -27,6 +27,8 @@ import { IconComponent } from './icon/icon.component';
 import { InputComponent } from './input/input.component';
 import { InputFileComponent } from './input-file/input-file.component';
 import { LabelComponent } from './label/label.component';
+import { ListComponent } from './list/list.component';
+import { ListItemComponent } from './list-item/list-item.component';
 import { ModalCloseDirective } from '../directives/modal-close.directive';
 import { ModalComponent } from './modal/modal.component';
 import { ModalContentComponent } from './modal-content/modal-content.component';
@@ -81,6 +83,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     InputComponent,
     InputFileComponent,
     LabelComponent,
+    ListComponent,
+    ListItemComponent,
     ModalCloseDirective,
     ModalComponent,
     ModalContentComponent,
@@ -132,6 +136,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     InputComponent,
     InputFileComponent,
     LabelComponent,
+    ListComponent,
+    ListItemComponent,
     ModalCloseDirective,
     ModalComponent,
     ModalContentComponent,
