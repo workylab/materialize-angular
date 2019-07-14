@@ -1,0 +1,33 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/metrics.scss';
+
+.list-item {
+  align-items: center;
+  border-radius: $radius-md;
+  color: $color-gray-dark;
+  cursor: pointer;
+  display: flex;
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  margin-bottom: $space-xxxs;
+  padding: $space-md $space-lg;
+  transition-duration: 250ms;
+  transition-property: background, color;
+  transition-timing-function: ease;
+
+  &:hover {
+    background-color: lighten($color-purple, 50%);
+    color: $color-purple;
+  }
+
+  &.active {
+    background-color: lighten($color-purple, 40%);
+    color: $color-purple;
+    font-weight: $font-weight-medium;
+  }
+
+  .ripple {
+    background-color: rgba($color-purple, 0.15);
+  }
+}
