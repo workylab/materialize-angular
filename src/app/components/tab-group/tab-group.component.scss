@@ -9,15 +9,34 @@
   list-style: none;
   margin-bottom: $space-lg;
   position: relative;
+}
 
-  li {
-    cursor: pointer;
-    padding: $space-md $space-xl;
-    text-align: center;
+.tab-header-item {
+  border-radius: $radius-md $radius-md 0 0;
+  color: $color-black;
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  padding: $space-md $space-xl;
+  text-align: center;
+  transition: background 300ms ease;
 
-    @if ($materialize-tab-headers-equal-size == true) {
-      flex: 1;
-    }
+  @if ($materialize-tab-headers-equal-size == true) {
+    flex: 1;
+  }
+
+  &:hover:not(.disabled) {
+    background-color: lighten($color-purple, 50%);
+  }
+
+  &.active {
+    font-weight: $font-weight-medium;
+  }
+
+  &.disabled {
+    color: $color-gray;
+    cursor: not-allowed;
   }
 }
 
