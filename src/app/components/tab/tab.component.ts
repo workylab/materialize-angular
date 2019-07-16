@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { TabModel } from './tab.model';
 
 @Component({
-  selector: 'materialize-tab',
+  selector: `${ config.components.prefix }-tab }`,
   templateUrl: './tab.component.html'
 })
 export class TabComponent implements OnInit {

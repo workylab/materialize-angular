@@ -1,23 +1,20 @@
 import { Component, ElementRef, EventEmitter, forwardRef, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormFieldAbstract } from '../form/form-field.abstract';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { TextAreaModel } from './textarea.model';
 
 @Component({
   providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => TextAreaComponent)
-  }, {
     multi: true,
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => TextAreaComponent)
   }],
-  selector: 'materialize-textarea',
+  selector: `${ config.components.prefix }-textarea }`,
   styleUrls: ['./textarea.component.scss'],
   templateUrl: './textarea.component.html'
 })
-export class TextAreaComponent extends FormFieldAbstract implements OnInit, ControlValueAccessor {
+export class TextAreaComponent implements OnInit, ControlValueAccessor {
   static readonly defaultProps: TextAreaModel = {
     className: '',
     disabled: false,
@@ -68,8 +65,6 @@ export class TextAreaComponent extends FormFieldAbstract implements OnInit, Cont
   public value: string;
 
   constructor() {
-    super();
-
     this.onBlurEmitter = new EventEmitter();
     this.onChangeEmitter = new EventEmitter();
     this.onFocusEmitter = new EventEmitter();

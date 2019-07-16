@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DropdownItemModel, DropdownModel } from './dropdown.model';
+import { config } from '../../config';
 
 @Component({
-  selector: 'materialize-dropdown',
+  selector: `${ config.components.prefix }-dropdown }`,
   styleUrls: ['./dropdown.component.scss'],
   templateUrl: './dropdown.component.html'
 })

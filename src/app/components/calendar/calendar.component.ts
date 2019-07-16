@@ -1,11 +1,12 @@
 import { CalendarModel, DateLabel, DateModel, DayLabels, MonthLabels, MonthModel } from './calendar.model';
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { config } from '../../config';
 import { days } from '../../fixtures/calendar-week-days';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { months } from '../../fixtures/calendar-months';
 
 @Component({
-  selector: 'materialize-calendar',
+  selector: `${ config.components.prefix }-calendar }`,
   styleUrls: ['./calendar.component.scss'],
   templateUrl: './calendar.component.html'
 })

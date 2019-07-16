@@ -14,6 +14,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { supportedEvents, supportTouchEvents } from '../../utils/get-supported-events.util';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SliderModel } from './slider.model';
 import { SliderOptionComponent } from '../slider-option/slider-option.component';
@@ -25,7 +26,7 @@ import { SupportedEventsModel } from '../common/models/supported-events.model';
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SliderComponent)
   }],
-  selector: 'materialize-slider',
+  selector: `${ config.components.prefix }-slider }`,
   styleUrls: ['./slider.component.scss'],
   templateUrl: './slider.component.html'
 })

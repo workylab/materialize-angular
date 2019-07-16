@@ -3,11 +3,9 @@ export interface InputFileModel {
   className: string;
   dataType: 'blob' | 'base64';
   disabled: boolean;
-  errorMessage: string;
   floatLabel: string;
   id: string;
   isMultiple: boolean;
-  label: string;
   maxSize: number;
   minSize: number;
   name: string;

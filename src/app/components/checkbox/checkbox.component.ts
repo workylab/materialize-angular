@@ -1,23 +1,20 @@
 import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CheckboxModel } from './checkbox.model';
-import { FormFieldAbstract } from '../form/form-field.abstract';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => CheckboxComponent)
-  }, {
     multi: true,
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => CheckboxComponent)
   }],
-  selector: 'materialize-checkbox',
+  selector: `${ config.components.prefix }-checkbox }`,
   styleUrls: ['./checkbox.component.scss'],
   templateUrl: './checkbox.component.html'
 })
-export class CheckboxComponent extends FormFieldAbstract implements OnInit, OnChanges, ControlValueAccessor {
+export class CheckboxComponent implements OnInit, OnChanges, ControlValueAccessor {
   static readonly defaultProps: CheckboxModel = {
     className: '',
     disabled: false,
@@ -48,8 +45,6 @@ export class CheckboxComponent extends FormFieldAbstract implements OnInit, OnCh
   public value: boolean;
 
   constructor() {
-    super();
-
     this.onChangeEmitter = new EventEmitter();
   }
 

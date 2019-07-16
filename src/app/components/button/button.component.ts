@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonModel } from './button.model';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
-  selector: 'materialize-button',
+  selector: `${ config.components.prefix }-button }`,
   styleUrls: ['./button.component.scss'],
   templateUrl: './button.component.html'
 })

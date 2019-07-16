@@ -11,6 +11,7 @@ import {
   Output,
   ViewChild
 } from '@angular/core';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { ModalCloseDirective } from '../../directives/modal-close.directive';
 import { ModalContentComponent } from '../modal-content/modal-content.component';
@@ -18,7 +19,7 @@ import { ModalHandlerComponent } from '../modal-handler/modal-handler.component'
 import { ModalModel } from './modal.model';
 
 @Component({
-  selector: 'materialize-modal',
+  selector: `${ config.components.prefix }-modal }`,
   styleUrls: ['./modal.component.scss'],
   templateUrl: './modal.component.html'
 })

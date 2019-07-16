@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { config } from '../../config';
 import { ListItemModel } from './list-item.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'materialize-list-item',
+  selector: `${ config.components.prefix }-list-item }`,
   styleUrls: ['./list-item.component.scss'],
   templateUrl: './list-item.component.html'
 })

@@ -1,29 +1,21 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FileModel, InputFileModel } from './input-file.model';
-import fieldValidations from '../../fixtures/field-validations';
-import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 // TODO: preview - multifile - filesize (mb, kb, b)
 @Component({
-  providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => InputFileComponent)
-  }],
   selector: 'materialize-input-file',
   templateUrl: './input-file.component.html'
 })
-export class InputFileComponent extends FormFieldAbstract implements OnInit {
+export class InputFileComponent implements OnInit {
   static readonly defaultProps: InputFileModel = {
     accept: ['application/pdf', 'image/*'],
     className: '',
     dataType: 'base64',
     disabled: false,
-    errorMessage: '',
     floatLabel: '',
     id: '',
     isMultiple: false,
-    label: '',
     maxSize: 2000,
     minSize: 0,
     name: '',
@@ -35,12 +27,10 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
   @Input('className') classNameInput: string;
   @Input('dataType') dataTypeInput: 'blob' | 'base64';
   @Input('disabled') disabledInput: boolean;
-  @Input('errorMessage') errorMessageInput: string;
   @Input('files') filesInput: Array<FileModel>;
   @Input('floatLabel') floatLabelInput: string;
   @Input('id') idInput: string;
   @Input('isMultiple') isMultipleInput: boolean;
-  @Input('label') labelInput: string;
   @Input('name') nameInput: string;
   @Input('maxSize') maxSizeInput: number;
   @Input('minSize') minSizeInput: number;
@@ -50,13 +40,10 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
   public className: string;
   public dataType: 'blob' | 'base64';
   public disabled: boolean;
-  public errorMessage: string;
   public floatLabel: string;
   public id: string;
   public isMultiple: boolean;
   public isFocused: boolean;
-  public isValid: boolean;
-  public label: string;
   public maxSize: number;
   public minSize: number;
   public name: string;
@@ -64,8 +51,6 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
   public value: Array<FileModel>;
 
   constructor() {
-    super();
-
     this.onBlur = this.onBlur.bind(this);
     this.onChange = this.onChange.bind(this);
   }
@@ -81,11 +66,9 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
     this.className = this.classNameInput || defaultProps.className;
     this.dataType = this.dataTypeInput || defaultProps.dataType;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.errorMessage = this.errorMessageInput || defaultProps.errorMessage;
     this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
     this.id = this.idInput || defaultProps.id;
     this.isMultiple = getBooleanValue(this.isMultipleInput, this.isMultiple);
-    this.label = this.labelInput || defaultProps.label;
     this.maxSize = this.maxSizeInput || defaultProps.maxSize;
     this.minSize = this.minSizeInput || defaultProps.minSize;
     this.name = this.nameInput || defaultProps.name;
@@ -93,21 +76,6 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
     this.value = this.filesInput || defaultProps.value;
 
     this.isFocused = false;
-    this.isValid = this.validate(this.value);
-  }
-
-  validate(files: Array<FileModel>) {
-    this.errorMessage = '';
-
-    if (this.required && !files.length) {
-      const fieldValidation = fieldValidations.required;
-
-      this.errorMessage = fieldValidation.errorMessage;
-
-      return false;
-    }
-
-    return true;
   }
 
   onBlur() {
@@ -170,8 +138,6 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
     } else {
       this.value = [file];
     }
-
-    this.isValid = this.validate(this.value);
   }
 
   generateFileSize(size: number) {
@@ -192,9 +158,5 @@ export class InputFileComponent extends FormFieldAbstract implements OnInit {
     /* TODO: alert('The file is bigger or smaller'); */
 
     return false;
-  }
-
-  updateAndValidity() {
-    this.isValid = this.validate(this.value);
   }
 }

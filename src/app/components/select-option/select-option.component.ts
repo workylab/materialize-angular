@@ -8,11 +8,12 @@ import {
   Output,
   ViewChild
 } from '@angular/core';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SelectOptionModel } from './select-option.model';
 
 @Component({
-  selector: 'materialize-select-option',
+  selector: `${ config.components.prefix }-select-option }`,
   styleUrls: ['./select-option.component.scss'],
   templateUrl: './select-option.component.html'
 })

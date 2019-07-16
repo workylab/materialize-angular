@@ -1,7 +1,8 @@
 import { Component, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import { config } from '../../config';
 
 @Component({
-  selector: 'materialize-modal-handler',
+  selector: `${ config.components.prefix }-modal-handler }`,
   templateUrl: './modal-handler.component.html'
 })
 export class ModalHandlerComponent {

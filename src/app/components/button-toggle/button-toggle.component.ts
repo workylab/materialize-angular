@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonToggleModel } from './button-toggle.model';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
-  selector: 'materialize-button-toggle',
+  selector: `${ config.components.prefix }-button-toggle }`,
   styleUrls: ['./button-toggle.component.scss'],
   templateUrl: './button-toggle.component.html'
 })

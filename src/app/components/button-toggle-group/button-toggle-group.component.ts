@@ -12,6 +12,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ButtonToggleComponent } from '../button-toggle/button-toggle.component';
 import { ButtonToggleGroupModel } from './button-toggle-group.model';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
@@ -20,7 +21,7 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => ButtonToggleGroupComponent)
   }],
-  selector: 'materialize-button-toggle-group',
+  selector: `${ config.components.prefix }-button-toggle-group }`,
   styleUrls: ['./button-toggle-group.component.scss'],
   templateUrl: './button-toggle-group.component.html'
 })

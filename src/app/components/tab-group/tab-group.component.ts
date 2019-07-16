@@ -9,6 +9,7 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
+import { config } from '../../config';
 import { Router } from '@angular/router';
 import { supportedEvents } from '../../utils/get-supported-events.util';
 import { SupportedEventsModel } from '../common/models/supported-events.model';
@@ -16,7 +17,7 @@ import { TabComponent } from '../tab/tab.component';
 import { TabGroupModel } from './tab-group.model';
 
 @Component({
-  selector: 'materialize-tab-group',
+  selector: `${ config.components.prefix }-tab-group }`,
   styleUrls: ['./tab-group.component.scss'],
   templateUrl: './tab-group.component.html'
 })

@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { config } from '../../config';
 import { TooltipModel } from './tooltip.model';
 
 @Component({
-  selector: 'materialize-tooltip',
+  selector: `${ config.components.prefix }-tooltip }`,
   styleUrls: ['./tooltip.component.scss'],
   templateUrl: './tooltip.component.html'
 })

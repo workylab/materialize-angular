@@ -10,25 +10,22 @@ import {
   QueryList
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormFieldAbstract } from '../form/form-field.abstract';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { RadioComponent } from '../radio/radio.component';
 import { RadioGroupModel } from './radio-group.model';
 
 @Component({
   providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => RadioGroupComponent)
-  }, {
     multi: true,
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => RadioGroupComponent)
   }],
-  selector: 'materialize-radio-group',
+  selector: `${ config.components.prefix }-radio-group }`,
   styleUrls: ['./radio-group.component.scss'],
   templateUrl: './radio-group.component.html'
 })
-export class RadioGroupComponent extends FormFieldAbstract implements OnInit, AfterContentInit, ControlValueAccessor {
+export class RadioGroupComponent implements OnInit, AfterContentInit, ControlValueAccessor {
   static readonly defaultProps: RadioGroupModel = {
     canUncheck: false,
     className: '',
@@ -64,8 +61,6 @@ export class RadioGroupComponent extends FormFieldAbstract implements OnInit, Af
   public value: string;
 
   constructor() {
-    super();
-
     this.registerRadios = this.registerRadios.bind(this);
     this.toggleRadios = this.toggleRadios.bind(this);
 

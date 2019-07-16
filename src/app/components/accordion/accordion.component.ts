@@ -10,9 +10,10 @@ import {
 } from '@angular/core';
 import { AccordionModel } from './accordion.model';
 import { CollapsibleComponent } from '../collapsible/collapsible.component';
+import { config } from '../../config';
 
 @Component({
-  selector: 'materialize-accordion',
+  selector: `${ config.components.prefix }-accordion }`,
   templateUrl: './accordion.component.html'
 })
 export class AccordionComponent implements AccordionModel, AfterContentInit, OnInit {

@@ -33,10 +33,13 @@
   background-color: $color-white;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 250ms ease;
+  transition: max-height 250ms ease-out;
 }
 
 .collapsible-content {
   overflow: visible;
-  padding: $space-md;
+
+  &:not(:empty) {
+    padding: $space-md;
+  }
 }

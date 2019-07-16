@@ -1,8 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { config } from '../../config';
 import { SliderOptionModel } from './slider-option.model';
 
 @Component({
-  selector: 'materialize-slider-option',
+  selector: `${ config.components.prefix }-slider-option }`,
   styleUrls: ['./slider-option.component.scss'],
   templateUrl: './slider-option.component.html'
 })

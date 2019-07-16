@@ -13,12 +13,13 @@ import {
   ViewChild
 } from '@angular/core';
 import { DRAWER_TYPE, DrawerModel } from './drawer.model';
+import { config } from '../../config';
 import { DrawerCloseDirective } from '../../directives/drawer-close.directive';
 import { DrawerHandlerComponent } from '../drawer-handler/drawer-handler.component';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
-  selector: 'materialize-drawer',
+  selector: `${ config.components.prefix }-drawer }`,
   styleUrls: ['./drawer.component.scss'],
   templateUrl: './drawer.component.html'
 })
