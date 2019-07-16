@@ -1,8 +1,22 @@
-@import './variables.scss';
-
 @import './reset';
-@import './fonts';
 
-@import '../app/components/common/styles/colors';
-@import '../app/components/common/styles/metrics';
-@import '../app/components/common/styles/ripple';
+@import './theme/borders';
+@import './theme/colors';
+@import './theme/cursors';
+@import './theme/fonts';
+@import './theme/icons';
+@import './theme/metrics';
+@import './theme/radius';
+@import './theme/shadows';
+@import './theme/zindex-levels';
+
+@import './transitions/functions';
+@import './transitions/properties';
+@import './transitions/timers';
+
+@import './variables.scss';
+@import './variables/cards';
+
+@import './components/fonts';
+
+@import '../app/components/card/card.component';
