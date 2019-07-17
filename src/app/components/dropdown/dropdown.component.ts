@@ -49,11 +49,11 @@ export class DropdownComponent implements OnInit {
     this.isFocused = true;
   }
 
-  onBlurIcon(event: any) {
-    const { relatedTarget } = event;
+  onBlurIcon() {
+    // const { relatedTarget } = event;
 
-    if (!relatedTarget || !relatedTarget.className.includes('dropdown-items-container')) {
-      this.isFocused = false;
-    }
+    // if (!relatedTarget || !relatedTarget.className.includes('dropdown-items-container')) {
+    //   this.isFocused = false;
+    // }
   }
 }

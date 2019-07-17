@@ -1,6 +1,9 @@
 <materialize-card>Card...</materialize-card>
 
-<materialize-slider value="2">
+<materialize-slider value="1">
+  <materialize-slider-indicator>
+    <materialize-icon name="location_on"></materialize-icon>
+  </materialize-slider-indicator>
   <materialize-slider-option value="1">1</materialize-slider-option>
   <materialize-slider-option value="2">2</materialize-slider-option>
 </materialize-slider>
@@ -230,21 +233,10 @@ Radio Group with Indicator at the End
 
 <h3>Simple Button</h3>
 <materialize-button>Button</materialize-button>
+<materialize-button>
+  <materialize-icon name="code"></materialize-icon>
+</materialize-button>
 <materialize-button [disabled]="true">Disabled</materialize-button>
-<materialize-button [isRounded]="true">Rounded</materialize-button>
-<materialize-button iconName="add">With Icon</materialize-button>
-<materialize-button iconName="add" [iconAtEnd]="true">With Icon at End</materialize-button>
-<materialize-button iconName="phone" [isRounded]="true" [iconAtEnd]="true">Rounded with icon at the end</materialize-button>
-<materialize-button iconName="phone" size="xs" [isRounded]="true"></materialize-button>
-<materialize-button iconName="phone" size="sm" [isRounded]="true"></materialize-button>
-<materialize-button iconName="phone" size="md" [isRounded]="true"></materialize-button>
-<materialize-button iconName="phone" size="lg" [isRounded]="true"></materialize-button>
-<materialize-button iconName="phone" size="xl" [isRounded]="true"></materialize-button>
-<materialize-button iconName="phone" size="xs">Size XS</materialize-button>
-<materialize-button iconName="phone" size="sm">Size SM</materialize-button>
-<materialize-button iconName="phone" size="md">Size MD</materialize-button>
-<materialize-button iconName="phone" size="lg">Size LG</materialize-button>
-<materialize-button iconName="phone" size="xl">Size XL</materialize-button>
 
 <br />
 <br />
@@ -568,7 +560,7 @@ Button Toggle disabled
 
 <h3>Tooltip Right</h3>
 <materialize-tooltip text="Description..." position="right">
-  <materialize-button iconName="send" size="xs" [isRounded]="true"></materialize-button>
+  <materialize-button>something</materialize-button>
 </materialize-tooltip>
 
 

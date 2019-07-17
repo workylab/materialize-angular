@@ -1,34 +1,16 @@
-<div class="slider-container"
+<div [ngClass]="[prefix + '-slider-container', className]" [class.focused]="isFocused" [class.disabled]="disabled">
 
-  [class.focused]="isFocused"
-  [class.disabled]="disabled"
-  [class.labels-top]="labelsPosition === 'top'"
-  [class.labels-bottom]="labelsPosition === 'bottom'">
-  <div class="slider-track-container"
-    #sliderTrack
-    
-    [tabindex]="disabled ? '-1' : '0'"
-    (focus)="onFocus()"
-    (blur)="onBlur()">
-    <div class="slider-track-background" #sliderTrackBackground>
-      <div class="slider-track-fill" #sliderTrackFill></div>
-    </div>
+  <div [ngClass]="prefix + '-slider-track-container'" #sliderTrack [tabindex]="disabled ? '-1' : '0'" (focus)="onFocus()" (blur)="onBlur()">
+    <div #sliderTrackInterval></div>
 
-    <div class="slider-track-interval" #sliderTrackInterval></div>
+    <div [ngClass]="prefix + '-slider-track'" #sliderTrackBackground></div>
 
-    <div class="slider-indicator-container" #sliderIndicatorContainer>
-      <div class="slider-indicator">
-        <div class="slider-indicator-ripple"
-          materializeRipple
-
-          [isRippleActive]="!disabled"
-          [rippleDuration]="200">
-        </div>
-      </div>
+    <div [ngClass]="prefix + '-slider-indicator-container'" #sliderIndicatorContainer>
+      <ng-content select="materialize-slider-indicator"></ng-content>
     </div>
   </div>
 
-  <div class="slider-labels-container" *ngIf="showLabels">
+  <div [ngClass]="prefix + '-slider-labels-container'" *ngIf="showLabels">
     <ng-content select="materialize-slider-option"></ng-content>
   </div>
 </div>

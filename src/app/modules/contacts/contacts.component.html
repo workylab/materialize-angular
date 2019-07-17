@@ -54,6 +54,9 @@
       {{ form.controls.dateOfBirth.errors | json }}
   
       <materialize-slider formControlName="amount">
+        <materialize-slider-indicator>
+          <materialize-icon name="location_on"></materialize-icon>
+        </materialize-slider-indicator>
         <materialize-slider-option [value]="false"></materialize-slider-option>
         <materialize-slider-option></materialize-slider-option>
         <materialize-slider-option [value]="true"></materialize-slider-option>
@@ -86,7 +89,7 @@
       {{ form.controls.technology.errors | json }}
     </div>
   
-    <materialize-button iconName="send" type="submit" [iconAtEnd]="true">Submit</materialize-button>
+    <materialize-button type="submit">Submit</materialize-button>
 
   </materialize-drawer-container>
 </materialize-drawer>

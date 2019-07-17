@@ -39,6 +39,7 @@ import { RouterModule } from '@angular/router';
 import { SelectComponent } from './select/select.component';
 import { SelectOptionComponent } from './select-option/select-option.component';
 import { SliderComponent } from './slider/slider.component';
+import { SliderIndicatorComponent } from './slider-indicator/slider-indicator.component';
 import { SliderOptionComponent } from './slider-option/slider-option.component';
 import { SuffixDirective } from '../directives/suffix.directive';
 import { SwitchComponent } from './switch/switch.component';
@@ -88,6 +89,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SelectComponent,
     SelectOptionComponent,
     SliderComponent,
+    SliderIndicatorComponent,
     SliderOptionComponent,
     SwitchComponent,
     TabComponent,
@@ -134,6 +136,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SelectComponent,
     SelectOptionComponent,
     SliderComponent,
+    SliderIndicatorComponent,
     SliderOptionComponent,
     SuffixDirective,
     SwitchComponent,

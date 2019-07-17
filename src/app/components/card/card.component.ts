@@ -6,5 +6,5 @@ import { config } from '../../config';
   templateUrl: './card.component.html'
 })
 export class CardComponent {
-  public classPrefix = config.components.prefix;
+  public prefix = config.components.prefix;
 }

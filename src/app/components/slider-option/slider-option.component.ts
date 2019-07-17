@@ -4,7 +4,6 @@ import { SliderOptionModel } from './slider-option.model';
 
 @Component({
   selector: `${ config.components.prefix }-slider-option }`,
-  styleUrls: ['./slider-option.component.scss'],
   templateUrl: './slider-option.component.html'
 })
 export class SliderOptionComponent implements OnInit {
@@ -14,8 +13,11 @@ export class SliderOptionComponent implements OnInit {
   };
 
   @ViewChild('template') templateRef: ElementRef;
+
   @Input('className') classNameInput: string;
   @Input('value') valueInput: number | string | boolean | null;
+
+  public prefix = config.components.prefix;
 
   public className: string;
   public isActive: boolean;

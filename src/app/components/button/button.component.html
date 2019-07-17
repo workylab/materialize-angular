@@ -1,20 +1,14 @@
-<button class="button button-{{ size }}"
-  materializeRipple
-
-  (blur)="onBlur($event)"
+<button [ngClass]="[prefix + '-button', className]"
+  (blur)="onBlur()"
   (click)="onClick()"
   (focus)="onFocus()"
 
+  materializeRipple
   [isRippleActive]="!disabled"
   [rippleDuration]="400"
-  [ngClass]="className"
+  
   [class.focused]="isFocused"
-  [class.icon-end]="iconAtEnd"
-  [class.rounded]="isRounded"
   [disabled]="disabled"
   [type]="type">
-  <span class="button-text">
-    <ng-content></ng-content>
-  </span>
-  <materialize-icon className="button-icon" *ngIf="iconName" [name]="iconName" [size]="size"></materialize-icon>
+  <ng-content></ng-content>
 </button>
