@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SortedColumnModel, TableHeaderCellModel, TableModel } from './table.model';
+import { config } from '../../config';
 
 @Component({
-  selector: 'materialize-table',
+  selector: `${ config.components.prefix }-table }`,
   styleUrls: ['./table.component.scss'],
   templateUrl: './table.component.html'
 })

@@ -1,83 +1,40 @@
-@import '../common/styles/colors.scss';
-@import '../common/styles/metrics.scss';
-@import '../../../styles/variables.scss';
-
-.button {
-  align-items: center;
-  background-color: $color-purple;
-  border: 0;
-  border-radius: $radius-sm;
-  box-shadow: $shadow-sm;
-  color: $color-white;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  outline: none;
-  padding: $space-sm $space-xs;
-  text-transform: uppercase;
-  transition: background-color 300ms ease;
+.#{$prefix}-button {
+  background: $button-primary-background;
+  border: $button-primary-border;
+  border-radius: $button-primary-border-radius;
+  box-shadow: $button-primary-box-shadow;
+  color: $button-primary-color;
+  cursor: $button-primary-cursor;
+  font-family: $button-primary-font-family;
+  font-size: $button-primary-font-size;
+  font-weight: $button-primary-font-weight;
+  height: $button-primary-height;
+  margin: $space-none;
+  outline: $button-primary-outline;
+  padding: $button-primary-padding;
+  -webkit-tap-highlight-color: $button-primary-tap-highlight-color;
+  text-align: $button-primary-text-align;
+  text-transform: $button-primary-text-transform;
+  transition: $button-primary-transition;
+  white-space: $button-primary-white-space;
+  width: $button-primary-width;
 
   &:hover {
-    background-color: lighten($color-purple, 5%);
+    background-color: $button-primary-hover-background-color;
   }
 
   &.focused {
-    background-color: lighten($color-purple, 10%);
+    background-color: $button-primary-focused-background-color;
   }
 
   &[disabled] {
-    background-color: $color-gray;
-    box-shadow: none;
-    color: $color-gray-dark;
-    cursor: not-allowed;
-  }
-
-  &.rounded {
-    border-radius: 100px;
-  }
-
-  &.icon-end .button-text {
-    order: 0;
-  }
-
-  .button-text {
-    display: flex;
-    font-family: $materialize-font-family;
-    font-weight: $font-weight-regular;
-    order: 1;
-
-    &:not(:empty) {
-      margin: 0 $space-xs;
-    }
-  }
-
-  ::ng-deep .button-icon {
-    display: flex;
-    margin: 0 $space-xxxs;
+    background-color: $button-primary-disabled-background-color;
+    box-shadow: $button-primary-disabled-box-shadow;
+    color: $button-primary-disabled-color;
+    cursor: $button-primary-disabled-cursor;
   }
 
   .ripple {
-    background-color: rgba(lighten($color-purple, 50%), 0.2);
+    background-color: $button-primary-ripple-background-color;
   }
-}
-
-.button-xl {
-  font-size: $icon-xl;
-}
-
-.button-lg {
-  font-size: $icon-lg;
-}
-
-.button-md {
-  font-size: $icon-md;
-}
-
-.button-sm {
-  font-size: $icon-sm;
-}
-
-.button-xs {
-  font-size: $icon-xs;
 }

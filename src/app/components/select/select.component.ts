@@ -13,25 +13,22 @@ import {
   ViewChild
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormFieldAbstract } from '../form/form-field.abstract';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SelectModel } from './select.model';
 import { SelectOptionComponent } from '../select-option/select-option.component';
 
 @Component({
   providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => SelectComponent)
-  }, {
     multi: true,
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SelectComponent)
   }],
-  selector: 'materialize-select',
+  selector: `${ config.components.prefix }-select }`,
   styleUrls: ['./select.component.scss'],
   templateUrl: './select.component.html'
 })
-export class SelectComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit, AfterContentInit {
+export class SelectComponent implements ControlValueAccessor, OnInit, AfterContentInit {
   static readonly defaultProps: SelectModel = {
     className: '',
     disabled: false,
@@ -72,8 +69,6 @@ export class SelectComponent extends FormFieldAbstract implements ControlValueAc
   public value: string;
 
   constructor(private renderer: Renderer2) {
-    super();
-
     this.onChangeEmitter = new EventEmitter();
 
     this.addBackdropListener = this.addBackdropListener.bind(this);

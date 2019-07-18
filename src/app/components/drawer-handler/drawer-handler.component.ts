@@ -1,7 +1,8 @@
 import { Component, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import { config } from '../../config';
 
 @Component({
-  selector: 'materialize-drawer-handler',
+  selector: `${ config.components.prefix }-drawer-handler }`,
   templateUrl: './drawer-handler.component.html'
 })
 export class DrawerHandlerComponent {

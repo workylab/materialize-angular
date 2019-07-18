@@ -1,6 +1,5 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
-@import '../../../styles/variables.scss';
 
 .tabs-header {
   border-bottom: $border-sm solid $color-gray;
@@ -22,9 +21,9 @@
   text-align: center;
   transition: background 300ms ease;
 
-  @if ($materialize-tab-headers-equal-size == true) {
-    flex: 1;
-  }
+  // @if ($materialize-tab-headers-equal-size == true) {
+  //   flex: 1;
+  // }
 
   &:hover:not(.disabled) {
     background-color: lighten($color-purple, 50%);
@@ -41,7 +40,7 @@
 }
 
 .tabs-header-indicator {
-  background-color: $materialize-tab-headers-indicator-color;
+  background-color: $color-purple;
   bottom: 0;
   content: '';
   height: $border-md;

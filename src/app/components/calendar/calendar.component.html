@@ -14,13 +14,17 @@
     <div *ngIf="!showYears">
       <div class="calendar-controls-container">
         <div class="calendar-month-control">
-          <materialize-button iconName="chevron_left" iconSize="xl" [isRounded]="true" (onClick)="showPrevMonth()"></materialize-button>
+          <materialize-button (onClick)="showPrevMonth()">
+              <!-- iconName="chevron_left" iconSize="xl" -->
+          </materialize-button>
         </div>
         <div class="calendar-month-label">
           {{ selectedMonth.label.shortName }} {{ selectedMonth.year }}
         </div>
         <div class="calendar-month-control">
-          <materialize-button iconName="chevron_right" iconSize="xl" [isRounded]="true" (onClick)="showNextMonth()"></materialize-button>
+          <materialize-button (onClick)="showNextMonth()">
+            <!-- iconName="chevron_right" iconSize="xl" -->
+          </materialize-button>
         </div>
       </div>
       

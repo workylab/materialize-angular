@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { RadioModel } from './radio.model';
 
 @Component({
-  selector: 'materialize-radio',
+  selector: `${ config.components.prefix }-radio }`,
   styleUrls: ['./radio.component.scss'],
   templateUrl: './radio.component.html'
 })

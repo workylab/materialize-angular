@@ -10,10 +10,11 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { CollapsibleModel } from './collapsible.model';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
-  selector: 'materialize-collapsible',
+  selector: `${ config.components.prefix }-collapsible }`,
   styleUrls: ['./collapsible.component.scss'],
   templateUrl: './collapsible.component.html'
 })

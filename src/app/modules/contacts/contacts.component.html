@@ -13,88 +13,88 @@
       Contacts
     </materialize-navbar>
 
-    <materialize-form>
-      <div [formGroup]="form">
-        <materialize-select floatLabel="State">
-          <materialize-select-option value="1">Option 1</materialize-select-option>
-          <materialize-select-option value="2">Option 2</materialize-select-option>
-          <materialize-select-option value="3">Option 3</materialize-select-option>
-        </materialize-select>
-    
-        <br>
-        <br>
-        <br>
-    
-        <materialize-input formControlName="name" floatLabel="Name" placeholder="Write your name"></materialize-input>
-        {{ form.controls.name.errors | json }}
-    
-        <materialize-textarea floatLabel="Message" formControlName="message"></materialize-textarea>
-        {{ form.controls.message.errors | json }}
-    
-        <materialize-switch formControlName="isWorkPhone">Work Phone</materialize-switch>
-        {{ form.controls.isWorkPhone.errors | json }}
-    
-        <materialize-checkbox formControlName="hasLocation">Location</materialize-checkbox>
-        {{ form.controls.hasLocation.errors | json }}
-    
-        <materialize-checkbox-list checkAllLabel="Has all phones" formControlName="hasPhones">
-          <materialize-checkbox name="hasHousePhone">Has house phone</materialize-checkbox>
-          <materialize-checkbox name="hasPersonalPhone">Has personal phone</materialize-checkbox>
-          <materialize-checkbox name="hasWorkPhone">Has work phone</materialize-checkbox>
-        </materialize-checkbox-list>
-        {{ form.controls.hasPhones.errors | json }}
-    
-        <materialize-radio-group [canUncheck]="true" formControlName="favorite">
-          <materialize-radio value="a">Value 1</materialize-radio>
-          <materialize-radio value="b">Value 2</materialize-radio>
-          <materialize-radio value="c">Value 3</materialize-radio>
-        </materialize-radio-group>
-        {{ form.controls.favorite.errors | json }}
-        
-        <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy" [fullSize]="true"></materialize-datepicker>
-        {{ form.controls.dateOfBirth.errors | json }}
-    
-        <materialize-slider formControlName="amount">
-          <materialize-slider-option [value]="false"></materialize-slider-option>
-          <materialize-slider-option></materialize-slider-option>
-          <materialize-slider-option [value]="true"></materialize-slider-option>
-        </materialize-slider>
-        {{ form.controls.amount.errors | json }}
-    
-        <materialize-select formControlName="stateNative" [isNativeControl]="true" floatLabel="State Native">
-          <materialize-select-option></materialize-select-option>
-          <materialize-select-option value="AL">Alabama</materialize-select-option>
-          <materialize-select-option value="IL">Illinois</materialize-select-option>
-          <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
-        </materialize-select>
-        {{ form.controls.stateNative.errors | json }}
-    
-        <materialize-select formControlName="state" floatLabel="State">
-          <materialize-select-option></materialize-select-option>
-          <materialize-select-option value="AL">Alabama</materialize-select-option>
-          <materialize-select-option value="IL">
-            <materialize-icon name="map"></materialize-icon> Illinois
-          </materialize-select-option>
-          <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
-        </materialize-select>
-        {{ form.controls.state.errors | json }}
+    <div [formGroup]="form">
+      <materialize-select floatLabel="State">
+        <materialize-select-option value="1">Option 1</materialize-select-option>
+        <materialize-select-option value="2">Option 2</materialize-select-option>
+        <materialize-select-option value="3">Option 3</materialize-select-option>
+      </materialize-select>
+  
+      <br>
+      <br>
+      <br>
+  
+      <materialize-input formControlName="name" floatLabel="Name" placeholder="Write your name"></materialize-input>
+      {{ form.controls.name.errors | json }}
+  
+      <materialize-textarea floatLabel="Message" formControlName="message"></materialize-textarea>
+      {{ form.controls.message.errors | json }}
+  
+      <materialize-switch formControlName="isWorkPhone">Work Phone</materialize-switch>
+      {{ form.controls.isWorkPhone.errors | json }}
+  
+      <materialize-checkbox formControlName="hasLocation">Location</materialize-checkbox>
+      {{ form.controls.hasLocation.errors | json }}
+  
+      <materialize-checkbox-list checkAllLabel="Has all phones" formControlName="hasPhones">
+        <materialize-checkbox name="hasHousePhone">Has house phone</materialize-checkbox>
+        <materialize-checkbox name="hasPersonalPhone">Has personal phone</materialize-checkbox>
+        <materialize-checkbox name="hasWorkPhone">Has work phone</materialize-checkbox>
+      </materialize-checkbox-list>
+      {{ form.controls.hasPhones.errors | json }}
+  
+      <materialize-radio-group [canUncheck]="true" formControlName="favorite">
+        <materialize-radio value="a">Value 1</materialize-radio>
+        <materialize-radio value="b">Value 2</materialize-radio>
+        <materialize-radio value="c">Value 3</materialize-radio>
+      </materialize-radio-group>
+      {{ form.controls.favorite.errors | json }}
+      
+      <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy" [fullSize]="true"></materialize-datepicker>
+      {{ form.controls.dateOfBirth.errors | json }}
+  
+      <materialize-slider formControlName="amount">
+        <materialize-slider-indicator>
+          <materialize-icon name="location_on"></materialize-icon>
+        </materialize-slider-indicator>
+        <materialize-slider-option [value]="false"></materialize-slider-option>
+        <materialize-slider-option></materialize-slider-option>
+        <materialize-slider-option [value]="true"></materialize-slider-option>
+      </materialize-slider>
+      {{ form.controls.amount.errors | json }}
+  
+      <materialize-select formControlName="stateNative" [isNativeControl]="true" floatLabel="State Native">
+        <materialize-select-option></materialize-select-option>
+        <materialize-select-option value="AL">Alabama</materialize-select-option>
+        <materialize-select-option value="IL">Illinois</materialize-select-option>
+        <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
+      </materialize-select>
+      {{ form.controls.stateNative.errors | json }}
+  
+      <materialize-select formControlName="state" floatLabel="State">
+        <materialize-select-option></materialize-select-option>
+        <materialize-select-option value="AL">Alabama</materialize-select-option>
+        <materialize-select-option value="IL">
+          <materialize-icon name="map"></materialize-icon> Illinois
+        </materialize-select-option>
+        <materialize-select-option value="PA">Pennsylvania</materialize-select-option>
+      </materialize-select>
+      {{ form.controls.state.errors | json }}
 
-        <materialize-button-toggle-group formControlName="technology" [canUncheck]="true">
-          <materialize-button-toggle value="a">Java</materialize-button-toggle>
-          <materialize-button-toggle value="b">PHP</materialize-button-toggle>
-          <materialize-button-toggle value="c">Javascrip</materialize-button-toggle>
-        </materialize-button-toggle-group>
-        {{ form.controls.technology.errors | json }}
-      </div>
-    
-      <materialize-button iconName="send" type="submit" [iconAtEnd]="true">Submit</materialize-button>
-    </materialize-form>
+      <materialize-button-toggle-group formControlName="technology" [canUncheck]="true">
+        <materialize-button-toggle value="a">Java</materialize-button-toggle>
+        <materialize-button-toggle value="b">PHP</materialize-button-toggle>
+        <materialize-button-toggle value="c">Javascrip</materialize-button-toggle>
+      </materialize-button-toggle-group>
+      {{ form.controls.technology.errors | json }}
+    </div>
+  
+    <materialize-button type="submit">Submit</materialize-button>
 
   </materialize-drawer-container>
 </materialize-drawer>
 
   <!-- <materialize-form-group iconName="message"></materialize-form-group>
-
   <materialize-form-group iconName="attach_file">
     <materialize-input-file label="Add File" [required]="true" name="file" materializeFormField></materialize-input-file>
   </materialize-form-group>

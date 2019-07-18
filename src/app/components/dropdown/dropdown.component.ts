@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DropdownItemModel, DropdownModel } from './dropdown.model';
+import { config } from '../../config';
 
 @Component({
-  selector: 'materialize-dropdown',
+  selector: `${ config.components.prefix }-dropdown }`,
   styleUrls: ['./dropdown.component.scss'],
   templateUrl: './dropdown.component.html'
 })
@@ -48,11 +49,11 @@ export class DropdownComponent implements OnInit {
     this.isFocused = true;
   }
 
-  onBlurIcon(event: any) {
-    const { relatedTarget } = event;
+  onBlurIcon() {
+    // const { relatedTarget } = event;
 
-    if (!relatedTarget || !relatedTarget.className.includes('dropdown-items-container')) {
-      this.isFocused = false;
-    }
+    // if (!relatedTarget || !relatedTarget.className.includes('dropdown-items-container')) {
+    //   this.isFocused = false;
+    // }
   }
 }

@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { config } from '../../config';
 import { FormMessageModel } from './form-message.model';
 
 @Component({
-  selector: 'materialize-form-message',
+  selector: `${ config.components.prefix }-form-message }`,
   styleUrls: ['./form-message.component.scss'],
   templateUrl: './form-message.component.html'
 })

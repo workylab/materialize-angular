@@ -1,12 +1,8 @@
 
 
 <div class="dropdown-container">
-  <materialize-button className="dropdown-button-icon"
-    (onClick)="onClickIcon()"
-    (onBlur)="onBlurIcon($event)"
-    [iconName]="iconName"
-    [isRounded]="true"
-  >
+  <materialize-button className="dropdown-button-icon" (onClick)="onClickIcon()" (onBlur)="onBlurIcon()">
+    <!-- TODO -->
   </materialize-button>
 
   <div class="dropdown-items-container" [class.active]="isFocused" tabindex="1">

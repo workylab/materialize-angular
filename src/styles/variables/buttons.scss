@@ -1,0 +1,28 @@
+$button-primary-background: $color-purple !default;
+$button-primary-border: $border-none !default;
+$button-primary-border-radius: $radius-sm !default;
+$button-primary-box-shadow: $shadow-sm !default;
+$button-primary-color: $color-white !default;
+$button-primary-cursor: $cursor-pointer !default;
+$button-primary-font-family: $font-family-primary !default;
+$button-primary-font-size: $font-size-sm !default;
+$button-primary-font-weight: $font-weight-regular !default;
+$button-primary-height: auto;
+$button-primary-outline: none !default;
+$button-primary-padding: $space-sm $space-md !default;
+$button-primary-tap-highlight-color: $color-transparent !default;
+$button-primary-text-align: center !default;
+$button-primary-text-transform: uppercase !default;
+$button-primary-transition: $property-background-color $timer-md $function-ease !default;
+$button-primary-white-space: nowrap !default;
+$button-primary-width: auto;
+
+$button-primary-hover-background-color: lighten($color-purple, 5%) !default;
+$button-primary-focused-background-color: lighten($color-purple, 10%) !default;
+
+$button-primary-disabled-background-color: $color-gray !default;
+$button-primary-disabled-box-shadow: none !default;
+$button-primary-disabled-color: $color-gray-dark !default;
+$button-primary-disabled-cursor: $cursor-not-allowed !default;
+
+$button-primary-ripple-background-color: rgba(lighten($color-purple, 50%), 0.2) !default;

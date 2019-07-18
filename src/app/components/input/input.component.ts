@@ -13,7 +13,7 @@ import {
   ViewChild
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormFieldAbstract } from '../form/form-field.abstract';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { InputModel } from './input.model';
 import { PrefixDirective } from '../../directives/prefix.directive';
@@ -21,18 +21,15 @@ import { SuffixDirective } from '../../directives/suffix.directive';
 
 @Component({
   providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => InputComponent)
-  }, {
     multi: true,
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => InputComponent)
   }],
-  selector: 'materialize-input',
+  selector: `${ config.components.prefix }-input }`,
   styleUrls: ['./input.component.scss'],
   templateUrl: './input.component.html'
 })
-export class InputComponent extends FormFieldAbstract implements ControlValueAccessor, OnChanges, OnInit {
+export class InputComponent implements ControlValueAccessor, OnChanges, OnInit {
   static readonly defaultProps: InputModel = {
     autocomplete: 'none',
     className: '',
@@ -87,8 +84,6 @@ export class InputComponent extends FormFieldAbstract implements ControlValueAcc
   public value: string;
 
   constructor() {
-    super();
-
     this.onBlurEmitter = new EventEmitter();
     this.onChangeEmitter = new EventEmitter();
     this.onFocusEmitter = new EventEmitter();

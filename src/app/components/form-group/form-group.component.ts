@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { config } from '../../config';
 
 @Component({
-  selector: 'materialize-form-group',
+  selector: `${ config.components.prefix }-form-group`,
   styleUrls: ['./form-group.component.scss'],
   templateUrl: './form-group.component.html'
 })

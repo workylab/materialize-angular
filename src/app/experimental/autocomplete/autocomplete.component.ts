@@ -1,19 +1,14 @@
-import { Component, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AutocompleteModel } from './autocomplete.model';
-import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
-import { InputComponent } from '../input/input.component';
+import { InputComponent } from '../../components/input/input.component';
 
 @Component({
-  providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => AutocompleteComponent)
-  }],
   selector: 'materialize-autocomplete',
   styleUrls: ['./autocomplete.component.scss'],
   templateUrl: './autocomplete.component.html'
 })
-export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
+export class AutocompleteComponent implements OnInit {
   static readonly defaultProps: AutocompleteModel = {
     autocomplete: '',
     className: '',
@@ -90,8 +85,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
     this.isFocused = false;
     this.type = defaultProps.type;
-
-    this.isValid = this.validate(this.value, this.required);
   }
 
   onInputFocus(event: any) {
@@ -106,9 +99,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
     // this.options = this.filterOptions(value);
     this.value = value;
-    this.isValid = this.validate(this.value, this.required);
-
-    this.materializeInput.isValid = this.isValid;
   }
 
   onInputBlur(event: any) {
@@ -117,9 +107,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
     if (!relatedTarget || relatedTarget.className !== 'autocomplete-option') {
       this.closeMenu();
 
-      this.isValid = this.validate(this.value, this.required);
-
-      this.materializeInput.isValid = this.isValid;
       this.materializeInput.isFocused = false;
     }
   }
@@ -165,8 +152,6 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
   selectOption(value: string) {
     this.value = value || '';
-    this.isValid = this.validate(this.value, this.required);
-    this.materializeInput.isValid = this.isValid;
 
     this.closeMenu();
   }
@@ -179,10 +164,5 @@ export class AutocompleteComponent extends FormFieldAbstract implements OnInit {
 
   openMenu() {
     this.isFocused = true;
-  }
-
-  updateAndValidity() {
-    this.materializeInput.updateAndValidity();
-    this.isValid = this.validate(this.value, this.required);
   }
 }

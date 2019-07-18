@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { config } from '../../config';
 import { NavbarModel } from './navbar.model';
 
 @Component({
-  selector: 'materialize-navbar',
+  selector: `${ config.components.prefix }-navbar }`,
   styleUrls: ['./navbar.component.scss'],
   templateUrl: './navbar.component.html'
 })

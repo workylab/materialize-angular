@@ -14,6 +14,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { supportedEvents, supportTouchEvents } from '../../utils/get-supported-events.util';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SliderModel } from './slider.model';
 import { SliderOptionComponent } from '../slider-option/slider-option.component';
@@ -25,17 +26,15 @@ import { SupportedEventsModel } from '../common/models/supported-events.model';
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SliderComponent)
   }],
-  selector: 'materialize-slider',
-  styleUrls: ['./slider.component.scss'],
+  selector: `${ config.components.prefix }-slider }`,
   templateUrl: './slider.component.html'
 })
 export class SliderComponent implements AfterContentInit, ControlValueAccessor, OnInit {
-  static readonly tickClassName = 'slider-tick-interval';
+  static readonly tickClassName = config.components.prefix + '-slider-step';
 
   static readonly defaultProps: SliderModel = {
     className: '',
     disabled: false,
-    labelsPosition: 'bottom',
     required: false,
     showLabels: true,
     showTicks: true,
@@ -48,23 +47,22 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
   @ViewChild('sliderIndicatorContainer') sliderIndicatorContainer: ElementRef;
   @ViewChild('sliderTrack') sliderTrack: ElementRef;
   @ViewChild('sliderTrackBackground') sliderTrackBackground: ElementRef;
-  @ViewChild('sliderTrackFill') sliderTrackFill: ElementRef;
   @ViewChild('sliderTrackInterval') sliderTrackInterval: ElementRef;
 
   @Output('onChange') onChangeEmitter: EventEmitter<number | string | boolean | null>;
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('labelsPosition') labelsPositionInput: 'top' | 'bottom';
   @Input('required') requiredInput: boolean;
   @Input('showLabels') showLabelsInput: boolean;
   @Input('showTicks') showTicksInput: boolean;
   @Input('value') valueInput: number | string | boolean | null;
 
+  public prefix = config.components.prefix;
+
   public className: string;
   public disabled: boolean;
   public isFocused: boolean;
-  public labelsPosition: 'top' | 'bottom';
   public required: boolean;
   public showLabels: boolean;
   public showTicks: boolean;
@@ -99,7 +97,6 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.labelsPosition = this.labelsPositionInput || defaultProps.labelsPosition;
     this.required = getBooleanValue(this.requiredInput, defaultProps.required);
     this.showLabels = getBooleanValue(this.showLabelsInput, defaultProps.showLabels);
     this.showTicks = getBooleanValue(this.showTicksInput, defaultProps.showTicks);
@@ -165,7 +162,6 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
     window.removeEventListener(this.supportedEvents.up, this.actionUp);
     window.removeEventListener(this.supportedEvents.move, this.actionMove);
 
-    this.renderer.setStyle(this.sliderTrackFill.nativeElement, 'transitionDuration', null);
     this.renderer.setStyle(this.sliderIndicatorContainer.nativeElement, 'transitionDuration', null);
 
     const x = this.getXCoordinate(event, this.supportedEvents.up);
@@ -250,17 +246,12 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
   }
 
   animate(x: number, hasAnimation: boolean) {
-    const { offsetWidth } = this.sliderIndicatorContainer.nativeElement;
-    const sliderCenterHorizontal = offsetWidth / 2;
-    const transform = `translate(${ x - sliderCenterHorizontal }px, -50%)`;
     const transitionDuration = hasAnimation
       ? null
       : '0ms';
 
-    this.renderer.setStyle(this.sliderTrackFill.nativeElement, 'transitionDuration', transitionDuration);
-    this.renderer.setStyle(this.sliderTrackFill.nativeElement, 'width', `${ x }px`);
     this.renderer.setStyle(this.sliderIndicatorContainer.nativeElement, 'transitionDuration', transitionDuration);
-    this.renderer.setStyle(this.sliderIndicatorContainer.nativeElement, 'transform', transform);
+    this.renderer.setStyle(this.sliderIndicatorContainer.nativeElement, 'left', `${ x }px`);
   }
 
   onFocus(): void {

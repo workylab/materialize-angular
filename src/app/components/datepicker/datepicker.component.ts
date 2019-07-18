@@ -1,24 +1,21 @@
 import { Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { config } from '../../config';
 import { DateModel } from '../calendar/calendar.model';
 import { DatePickerModel } from './datepicker.model';
-import { FormFieldAbstract } from '../form/form-field.abstract';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => DatePickerComponent)
-  }, {
     multi: true,
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => DatePickerComponent)
   }],
-  selector: 'materialize-datepicker',
+  selector: `${ config.components.prefix }-datepicker }`,
   styleUrls: ['./datepicker.component.scss'],
   templateUrl: './datepicker.component.html'
 })
-export class DatePickerComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit {
+export class DatePickerComponent implements ControlValueAccessor, OnInit {
   static readonly DAY_KEY = 'dd';
   static readonly MONTH_KEY = 'mm';
   static readonly YEAR_KEY = 'yyyy';
@@ -68,8 +65,6 @@ export class DatePickerComponent extends FormFieldAbstract implements ControlVal
   public value: string;
 
   constructor() {
-    super();
-
     this.close = this.close.bind(this);
   }
 

@@ -1,23 +1,20 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormFieldAbstract } from '../form/form-field.abstract';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SwitchModel } from './switch.model';
 
 @Component({
   providers: [{
-    provide: FormFieldAbstract,
-    useExisting: forwardRef(() => SwitchComponent)
-  }, {
     multi: true,
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SwitchComponent)
   }],
-  selector: 'materialize-switch',
+  selector: `${ config.components.prefix }-switch }`,
   styleUrls: ['./switch.component.scss'],
   templateUrl: './switch.component.html'
 })
-export class SwitchComponent extends FormFieldAbstract implements ControlValueAccessor, OnInit {
+export class SwitchComponent implements ControlValueAccessor, OnInit {
   static readonly defaultProps: SwitchModel = {
     className: '',
     disabled: false,
@@ -41,10 +38,6 @@ export class SwitchComponent extends FormFieldAbstract implements ControlValueAc
   public name: string;
   public required: boolean;
   public value: boolean;
-
-  constructor() {
-    super();
-  }
 
   ngOnInit(): void {
     this.initValues();

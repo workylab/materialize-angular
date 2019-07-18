@@ -1,6 +1,5 @@
-<div class="slider-option-container"
+<div [ngClass]="[prefix + '-slider-option-container', className]"
   [class.active]="isActive"
-  [ngClass]="className"
 
   #template>
   <ng-content></ng-content>

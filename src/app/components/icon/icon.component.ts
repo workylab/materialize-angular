@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { config } from '../../config';
 import { IconModel } from './icon.model';
 
 @Component({
-  selector: 'materialize-icon',
+  selector: `${ config.components.prefix }-icon }`,
   styleUrls: ['./icon.component.scss'],
   templateUrl: './icon.component.html'
 })

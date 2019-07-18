@@ -12,6 +12,7 @@
   font-weight: $font-weight-regular;
   outline: none;
   padding: $space-sm $space-md;
+  -webkit-tap-highlight-color: transparent;
   transition: background-color 300ms ease;
 
   &:hover,

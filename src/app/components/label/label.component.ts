@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { config } from '../../config';
 import { LabelModel } from './label.model';
 
 @Component({
-  selector: 'materialize-label',
+  selector: `${ config.components.prefix }-label }`,
   styleUrls: ['./label.component.scss'],
   templateUrl: './label.component.html'
 })

@@ -1,41 +1,31 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonModel } from './button.model';
+import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
-  selector: 'materialize-button',
-  styleUrls: ['./button.component.scss'],
+  selector: `${ config.components.prefix }-button }`,
   templateUrl: './button.component.html'
 })
 export class ButtonComponent implements ButtonModel, OnInit {
   static readonly defaultProps: ButtonModel = {
     className: '',
     disabled: false,
-    iconAtEnd: false,
-    iconName: '',
-    isRounded: false,
-    size: 'md',
     type: 'button'
   };
 
   @Input('className') classNameInput: string;
   @Input('disabled') disabledInput: boolean;
-  @Input('iconAtEnd') iconAtEndInput: boolean;
-  @Input('iconName') iconNameInput: string;
-  @Input('isRounded') isRoundedInput: boolean;
-  @Input('size') sizeInput: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   @Input('type') typeInput: 'button' | 'submit';
 
-  @Output('onBlur') onBlurEmitter: EventEmitter<Event>;
+  @Output('onBlur') onBlurEmitter: EventEmitter<void>;
   @Output('onClick') onClickEmitter: EventEmitter<void>;
+
+  public prefix = config.components.prefix;
 
   public className: string;
   public disabled: boolean;
-  public iconName: string;
-  public iconAtEnd: boolean;
   public isFocused: boolean;
-  public isRounded: boolean;
-  public size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   public type: 'button' | 'submit';
 
   constructor() {
@@ -52,10 +42,6 @@ export class ButtonComponent implements ButtonModel, OnInit {
 
     this.className = this.classNameInput || defaultProps.className;
     this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.iconName = this.iconNameInput || defaultProps.iconName;
-    this.iconAtEnd = this.iconAtEndInput || defaultProps.iconAtEnd;
-    this.isRounded = getBooleanValue(this.isRoundedInput, defaultProps.isRounded);
-    this.size = this.sizeInput || defaultProps.size;
     this.type = this.typeInput || defaultProps.type;
 
     this.isFocused = false;
@@ -75,8 +61,8 @@ export class ButtonComponent implements ButtonModel, OnInit {
     }
   }
 
-  onBlur(event: Event) {
-    this.onBlurEmitter.emit(event);
+  onBlur() {
+    this.onBlurEmitter.emit();
 
     this.isFocused = false;
   }

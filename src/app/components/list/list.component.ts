@@ -1,9 +1,10 @@
 import { AfterContentInit, Component, ContentChildren, Input, OnInit, QueryList } from '@angular/core';
+import { config } from '../../config';
 import { ListItemComponent } from '../list-item/list-item.component';
 import { ListModel } from './list.model';
 
 @Component({
-  selector: 'materialize-list',
+  selector: `${ config.components.prefix }-list }`,
   styleUrls: ['./list.component.scss'],
   templateUrl: './list.component.html'
 })
