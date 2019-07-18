@@ -14,15 +14,17 @@
 @import './transitions/properties';
 @import './transitions/timers';
 
-@import './variables.scss';
+@import './variables';
 @import './variables/buttons';
 @import './variables/cards';
+@import './variables/labels';
 @import './variables/slider';
 @import './variables/slider-option';
 
 @import './components/button';
 @import './components/card';
 @import './components/fonts';
+@import './components/label';
 @import './components/ripple';
 @import './components/slider';
 @import './components/slider-option';
