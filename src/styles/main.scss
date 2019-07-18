@@ -20,10 +20,9 @@
 @import './variables/slider';
 @import './variables/slider-option';
 
+@import './components/button';
+@import './components/card';
 @import './components/fonts';
 @import './components/ripple';
-
-@import '../app/components/button/button.component';
-@import '../app/components/card/card.component';
-@import '../app/components/slider/slider.component';
-@import '../app/components/slider-option/slider-option.component';
+@import './components/slider';
+@import './components/slider-option';
