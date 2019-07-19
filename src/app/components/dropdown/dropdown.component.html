@@ -7,12 +7,7 @@
 
   <div class="dropdown-items-container" [class.active]="isFocused" tabindex="1">
     <div class="dropdown-item" *ngFor="let item of items" (click)="selectItem(item)">
-      <materialize-icon
-        *ngIf="item.iconName"
-        className="dropdown-item-icon"
-        size="lg"
-        [name]="item.iconName">
-      </materialize-icon>
+      <!-- <materialize-icon *ngIf="item.iconName" className="dropdown-item-icon" size="lg" [name]="item.iconName"></materialize-icon> -->
       {{ item.text }}
     </div>
   </div>

@@ -2,7 +2,7 @@
 
 <materialize-slider value="1">
   <materialize-slider-indicator>
-    <materialize-icon name="location_on"></materialize-icon>
+    <materialize-icon>location_on</materialize-icon>
   </materialize-slider-indicator>
   <materialize-slider-option value="1">1</materialize-slider-option>
   <materialize-slider-option value="2">2</materialize-slider-option>
@@ -39,7 +39,7 @@ Input with Prefix
 </materialize-input>
 Input with Prefix Icon
 <materialize-input>
-  <materialize-icon materializePrefix name="phone"></materialize-icon>
+  <materialize-icon materializePrefix>phone</materialize-icon>
 </materialize-input>
 Input with Prefix and Float Label
 <materialize-input floatLabel="Float Label">
@@ -47,7 +47,7 @@ Input with Prefix and Float Label
 </materialize-input>
 Input with Prefix Icon and Float Label
 <materialize-input floatLabel="Float Label">
-  <materialize-icon materializePrefix name="phone"></materialize-icon>
+  <materialize-icon materializePrefix>phone</materialize-icon>
 </materialize-input>
 Input with Suffix
 <materialize-input>
@@ -55,7 +55,7 @@ Input with Suffix
 </materialize-input>
 Input with Suffix Icon
 <materialize-input>
-  <materialize-icon materializeSuffix name="phone"></materialize-icon>
+  <materialize-icon materializeSuffix>phone</materialize-icon>
 </materialize-input>
 Input with Suffix and Float Label
 <materialize-input floatLabel="Float Label">
@@ -63,7 +63,7 @@ Input with Suffix and Float Label
 </materialize-input>
 Input with Suffix Icon and FloatLabel
 <materialize-input floatLabel="Float Label">
-  <materialize-icon materializeSuffix name="phone"></materialize-icon>
+  <materialize-icon materializeSuffix>phone</materialize-icon>
 </materialize-input>
 
 <br />
@@ -236,7 +236,7 @@ Radio Group with Indicator at the End
 <h3>Simple Button</h3>
 <materialize-button>Button</materialize-button>
 <materialize-button>
-  <materialize-icon name="code"></materialize-icon>
+  <materialize-icon>code</materialize-icon>
 </materialize-button>
 <materialize-button [disabled]="true">Disabled</materialize-button>
 
@@ -245,15 +245,15 @@ Radio Group with Indicator at the End
 <br />
 
 Simple Icon XS
-<materialize-icon name="done" size="xs"></materialize-icon>
+<materialize-icon className="icon-xs">done</materialize-icon>
 Simple Icon SM
-<materialize-icon name="done" size="sm"></materialize-icon>
+<materialize-icon className="icon-sm">done</materialize-icon>
 Simple Icon MD
-<materialize-icon name="done" size="md"></materialize-icon>
+<materialize-icon className="icon-md">done</materialize-icon>
 Simple Icon LG
-<materialize-icon name="done" size="lg"></materialize-icon>
+<materialize-icon className="icon-lg">done</materialize-icon>
 Simple Icon XL
-<materialize-icon name="done" size="xl"></materialize-icon>
+<materialize-icon className="icon-xl">done</materialize-icon>
 
 <br />
 <br />
@@ -430,15 +430,6 @@ Button Toggle disabled
 <br />
 <br />
 
-<h3>Form Group</h3>
-<materialize-form-group iconName="email" className="my-class-name">
-  <materialize-input></materialize-input>
-</materialize-form-group>
-
-<br />
-<br />
-<br />
-
 <h3>Modal</h3>
 <materialize-modal [isOpen]="false">
 </materialize-modal>
@@ -446,7 +437,7 @@ Button Toggle disabled
 <h3>Modal Default</h3>
 <materialize-modal>
   <materialize-modal-handler>
-    <materialize-icon name="loupe" size="xl"></materialize-icon>
+    <materialize-icon>loupe</materialize-icon>
   </materialize-modal-handler>
   <materialize-modal-content>Modal</materialize-modal-content>
 </materialize-modal>
@@ -454,7 +445,7 @@ Button Toggle disabled
 <h3>Modal not close on backdrop</h3>
 <materialize-modal [dismissOnBackdrop]="false">
   <materialize-modal-handler>
-    <materialize-icon name="loupe" size="xl"></materialize-icon>
+    <materialize-icon>loupe</materialize-icon>
   </materialize-modal-handler>
   <materialize-modal-content>
     <materialize-button materializeModalClose>close modal</materialize-button>
@@ -464,7 +455,7 @@ Button Toggle disabled
 <h3>Modal without backdrop</h3>
 <materialize-modal [hasBackdrop]="false">
   <materialize-modal-handler>
-    <materialize-icon name="loupe" size="xl"></materialize-icon>
+    <materialize-icon>loupe</materialize-icon>
   </materialize-modal-handler>
   <materialize-modal-content>
     <materialize-button materializeModalClose>close modal</materialize-button>
@@ -474,7 +465,7 @@ Button Toggle disabled
 <h3>Modal without close button</h3>
 <materialize-modal [hasCloseButton]="false">
   <materialize-modal-handler>
-    <materialize-icon name="loupe" size="xl"></materialize-icon>
+    <materialize-icon>loupe</materialize-icon>
   </materialize-modal-handler>
   <materialize-modal-content>
     <materialize-button materializeModalClose>close modal</materialize-button>
@@ -611,4 +602,9 @@ Button Toggle disabled
 <div-tree [classNames]="['row', 'col', 'row2', 'col2']">
   <h3>Div Tree</h3>
 </div-tree>
+
+<h3>Form Group</h3>
+<materialize-form-group iconName="email" className="my-class-name">
+  <materialize-input></materialize-input>
+</materialize-form-group>
 -->
