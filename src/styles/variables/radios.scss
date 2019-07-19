@@ -1,0 +1,26 @@
+$radio-outline: unset !default;
+$radio-padding: $space-xxxs $space-none !default;
+
+$radio-label-color: $color-gray-darkest !default;
+$radio-label-cursor: $cursor-pointer !default;
+$radio-label-display: inline-block !default;
+$radio-label-font-family: $font-family-primary !default;
+$radio-label-font-size: $font-size-sm !default;
+$radio-label-font-weight: $font-weight-regular !default;
+$radio-label-vertical-align: middle !default;
+
+$radio-indicator-border: $border-md solid $color-gray-dark !default;
+$radio-indicator-border-radius: $radius-full !default;
+$radio-indicator-cursor: $cursor-pointer !default;
+$radio-indicator-display: inline-block !default;
+$radio-indicator-margin: 0 $space-sm !default;
+$radio-indicator-outline: none !default;
+$radio-indicator-padding: $space-none $space-sm !default;
+$radio-indicator-position: relative !default;
+$radio-indicator-tap-highlight-color: $color-transparent !default;
+$radio-indicator-vertical-align: middle !default;
+$radio-indicator-size: 20px !default;
+
+$radio-indicator-ripple-size: 40px !default;
+$radio-indicator-ripple-background: $color-purple !default;
+$radio-indicator-active-size: 16px !default;

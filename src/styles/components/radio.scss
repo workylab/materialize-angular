@@ -1,0 +1,81 @@
+.#{$prefix}-radio {
+  outline: $radio-outline;
+  padding: $radio-padding;
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  &.focused .#{$prefix}-radio-indicator-ripple {
+    background-color: rgba($radio-indicator-ripple-background, 0.1);
+  }
+
+  &.focused.active .#{$prefix}-radio-indicator-ripple {
+    background-color: rgba($radio-indicator-ripple-background, 0.1);
+  }
+
+  &.active {
+    .#{$prefix}-radio-indicator {
+      border-color: $color-purple;
+
+      &::before {
+        background-color: $color-purple;
+      }
+    }
+  }
+
+  &:not(.disabled).#{$prefix}-radio-indicator-ripple:hover {
+    background-color: rgba($color-gray-dark, 0.1);
+
+    &.focused .#{$prefix}-radio-indicator-ripple:hover {
+      background-color: rgba($color-gray, 0.3);
+    }
+  }
+}
+
+.#{$prefix}-radio-label {
+  color: $radio-label-color;
+  cursor: $radio-label-cursor;
+  display: $radio-label-display;
+  font-family: $radio-label-font-family;
+  font-size: $radio-label-font-size;
+  font-weight: $radio-label-font-weight;
+  vertical-align: $radio-label-vertical-align;
+}
+
+.#{$prefix}-radio-indicator {
+  border: $radio-indicator-border;
+  border-radius: $radio-indicator-border-radius;
+  cursor: $radio-indicator-cursor;
+  display: $radio-indicator-display;
+  height: $radio-indicator-size;
+  margin: $radio-indicator-margin;
+  outline: $radio-indicator-outline;
+  position: $radio-indicator-position;
+  -webkit-tap-highlight-color: $radio-indicator-tap-highlight-color;
+  vertical-align: $radio-indicator-vertical-align;
+  width: $radio-indicator-size;
+
+  &::before {
+    border-radius: $radio-indicator-border-radius;
+    content: '';
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+  }
+}
+
+.#{$prefix}-radio-indicator-ripple {
+  border-radius: $radio-indicator-border-radius;
+  height: $radio-indicator-ripple-size;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 300ms ease;
+  width: $radio-indicator-ripple-size;
+  z-index: $zindex-level-1;
+}
