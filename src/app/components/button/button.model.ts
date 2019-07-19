@@ -1,5 +1,10 @@
 export interface ButtonModel {
   className: string;
   disabled: boolean;
-  type: 'button' | 'submit';
+  type: BUTTON_TYPE;
+}
+
+export enum BUTTON_TYPE {
+  BUTTON = 'button',
+  SUBMIT = 'submit'
 }
