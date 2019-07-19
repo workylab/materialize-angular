@@ -6,29 +6,48 @@
     display: none;
   }
 
-  &.focused .#{$prefix}-radio-indicator-ripple {
-    background-color: rgba($radio-indicator-ripple-background, 0.1);
-  }
+  &:not(.disabled) {
+    @media (hover: hover) {
+      .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
+        background-color: rgba($color-gray-dark, 0.2);
+      }
 
-  &.focused.active .#{$prefix}-radio-indicator-ripple {
-    background-color: rgba($radio-indicator-ripple-background, 0.1);
-  }
-
-  &.active {
-    .#{$prefix}-radio-indicator {
-      border-color: $color-purple;
-
-      &::before {
-        background-color: $color-purple;
+      &.active .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
+        background-color: rgba($radio-indicator-ripple-background, 0.2);
       }
     }
   }
 
-  &:not(.disabled).#{$prefix}-radio-indicator-ripple:hover {
-    background-color: rgba($color-gray-dark, 0.1);
+  &.focused:not(.disabled) {
+    .#{$prefix}-radio-indicator-ripple {
+      background-color: rgba($color-gray-dark, 0.1);
+    }
 
-    &.focused .#{$prefix}-radio-indicator-ripple:hover {
-      background-color: rgba($color-gray, 0.3);
+    &.active .#{$prefix}-radio-indicator-ripple {
+      background-color: rgba($radio-indicator-ripple-background, 0.1);
+    }
+  }
+
+  &.active:not(.disabled) {
+    .ripple {
+      background-color: rgba($radio-indicator-ripple-background, 0.3);
+    }
+
+    .#{$prefix}-radio-indicator {
+      border-color: $color-purple;
+
+      &::before {
+        height: 10px;
+        width: 10px;
+      }
+    }
+  }
+
+  &.disabled .#{$prefix}-radio-indicator {
+    border-color: $color-gray;
+
+    &::before {
+      background-color: $color-gray;
     }
   }
 }
@@ -57,14 +76,18 @@
   width: $radio-indicator-size;
 
   &::before {
+    background-color: $color-purple;
     border-radius: $radio-indicator-border-radius;
     content: '';
-    height: 10px;
+    height: 0;
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 10px;
+    transition-duration: 250ms;
+    transition-property: height, width;
+    transition-timing-function: ease;
+    width: 0;
   }
 }
 
@@ -75,7 +98,7 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: background-color 300ms ease;
+  transition: background-color 250ms ease;
   width: $radio-indicator-ripple-size;
   z-index: $zindex-level-1;
 }
