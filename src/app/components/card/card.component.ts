@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CardModel } from './card.model';
 import { config } from '../../config';
 
 @Component({
@@ -6,5 +7,9 @@ import { config } from '../../config';
   templateUrl: './card.component.html'
 })
 export class CardComponent {
+  static readonly defaultProps: CardModel = { className: ''};
+
+  @Input() className: string = CardComponent.defaultProps.className;
+
   public prefix = config.components.prefix;
 }
