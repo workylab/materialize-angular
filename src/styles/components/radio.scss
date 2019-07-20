@@ -1,4 +1,7 @@
 .#{$prefix}-radio {
+  align-items: center;
+  cursor: $radio-cursor;
+  display: flex;
   outline: $radio-outline;
   padding: $radio-padding;
 
@@ -9,7 +12,7 @@
   &:not(.disabled) {
     @media (hover: hover) {
       .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
-        background-color: rgba($color-gray-dark, 0.2);
+        background-color: rgba($radio-indicator-disabled-color, 0.2);
       }
 
       &.active .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
@@ -20,7 +23,7 @@
 
   &.focused:not(.disabled) {
     .#{$prefix}-radio-indicator-ripple {
-      background-color: rgba($color-gray-dark, 0.1);
+      background-color: rgba($radio-indicator-ripple-background, 0.1);
     }
 
     &.active .#{$prefix}-radio-indicator-ripple {
@@ -34,49 +37,48 @@
     }
 
     .#{$prefix}-radio-indicator {
-      border-color: $color-purple;
+      border-color: $radio-indicator-active-border-color;
 
       &::before {
-        height: 10px;
-        width: 10px;
+        height: $radio-indicator-active-size;
+        width: $radio-indicator-active-size;
       }
     }
   }
 
   &.disabled .#{$prefix}-radio-indicator {
-    border-color: $color-gray;
+    border-color: $radio-indicator-disabled-color;
 
     &::before {
-      background-color: $color-gray;
+      background-color: $radio-indicator-disabled-color;
     }
   }
 }
 
 .#{$prefix}-radio-label {
   color: $radio-label-color;
-  cursor: $radio-label-cursor;
   display: $radio-label-display;
+  flex: 1;
   font-family: $radio-label-font-family;
   font-size: $radio-label-font-size;
   font-weight: $radio-label-font-weight;
-  vertical-align: $radio-label-vertical-align;
+  padding: $radio-label-padding;
+  text-align: $radio-label-text-align;
 }
 
 .#{$prefix}-radio-indicator {
   border: $radio-indicator-border;
   border-radius: $radio-indicator-border-radius;
-  cursor: $radio-indicator-cursor;
   display: $radio-indicator-display;
   height: $radio-indicator-size;
   margin: $radio-indicator-margin;
   outline: $radio-indicator-outline;
   position: $radio-indicator-position;
   -webkit-tap-highlight-color: $radio-indicator-tap-highlight-color;
-  vertical-align: $radio-indicator-vertical-align;
   width: $radio-indicator-size;
 
   &::before {
-    background-color: $color-purple;
+    background: $radio-indicator-active-background;
     border-radius: $radio-indicator-border-radius;
     content: '';
     height: 0;
@@ -98,7 +100,7 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: background-color 250ms ease;
+  transition: $radio-indicator-ripple-transition;
   width: $radio-indicator-ripple-size;
   z-index: $zindex-level-1;
 }
