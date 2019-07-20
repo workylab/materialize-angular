@@ -271,9 +271,9 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
   }
 
   writeValue(value: number | string | boolean | null): void {
-    this.value = value;
-
     setTimeout(() => {
+      this.value = value;
+
       this.moveToValue(value, false);
     }, 0);
   }
