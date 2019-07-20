@@ -1,4 +1,5 @@
 .#{$prefix}-slider-container {
+  margin: $slider-margin;
   padding: $slider-padding;
   -webkit-tap-highlight-color: $slider-tap-highlight-color;
   width: $slider-width;
