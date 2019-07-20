@@ -1,50 +1,33 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ButtonModel } from './button.model';
+import { BUTTON_TYPE, ButtonModel } from './button.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { config } from '../../config';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   selector: `${ config.components.prefix }-button }`,
   templateUrl: './button.component.html'
 })
-export class ButtonComponent implements ButtonModel, OnInit {
+export class ButtonComponent implements ButtonModel {
   static readonly defaultProps: ButtonModel = {
     className: '',
     disabled: false,
-    type: 'button'
+    type: BUTTON_TYPE.BUTTON
   };
 
-  @Input('className') classNameInput: string;
-  @Input('disabled') disabledInput: boolean;
-  @Input('type') typeInput: 'button' | 'submit';
+  @Input() className: string = ButtonComponent.defaultProps.className;
+  @Input() disabled: boolean = ButtonComponent.defaultProps.disabled;
+  @Input() type: BUTTON_TYPE = ButtonComponent.defaultProps.type;
 
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
   @Output('onClick') onClickEmitter: EventEmitter<void>;
 
   public prefix = config.components.prefix;
-
-  public className: string;
-  public disabled: boolean;
   public isFocused: boolean;
-  public type: 'button' | 'submit';
 
   constructor() {
+    this.isFocused = false;
+
     this.onBlurEmitter = new EventEmitter();
     this.onClickEmitter = new EventEmitter();
-  }
-
-  ngOnInit() {
-    this.initValues();
-  }
-
-  initValues() {
-    const { defaultProps } = ButtonComponent;
-
-    this.className = this.classNameInput || defaultProps.className;
-    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.type = this.typeInput || defaultProps.type;
-
-    this.isFocused = false;
   }
 
   onFocus() {

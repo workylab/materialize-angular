@@ -9,6 +9,7 @@
   font-weight: $card-font-weight;
   margin: $card-margin;
   padding: $card-padding;
+  -webkit-tap-highlight-color: $card-tap-highlight-color;
   transition: $card-transition;
 
   &:hover {

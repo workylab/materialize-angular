@@ -4,7 +4,6 @@ import { LabelModel } from './label.model';
 
 @Component({
   selector: `${ config.components.prefix }-label }`,
-  styleUrls: ['./label.component.scss'],
   templateUrl: './label.component.html'
 })
 export class LabelComponent implements LabelModel, OnInit {
@@ -14,6 +13,7 @@ export class LabelComponent implements LabelModel, OnInit {
 
   @Input('className') classNameInput: string;
 
+  public prefix = config.components.prefix;
   public className: string;
 
   ngOnInit() {

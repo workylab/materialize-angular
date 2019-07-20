@@ -19,7 +19,6 @@ export * from './app/components/drawer-container/drawer-container.component';
 export * from './app/components/drawer-content/drawer-content.component';
 export * from './app/components/drawer-handler/drawer-handler.component';
 export * from './app/components/dropdown/dropdown.component';
-export * from './app/components/form-group/form-group.component';
 export * from './app/components/form-message/form-message.component';
 export * from './app/components/icon/icon.component';
 export * from './app/components/input/input.component';

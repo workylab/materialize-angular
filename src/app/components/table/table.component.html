@@ -5,14 +5,9 @@
     <div class="table-head">
       <div class="table-row">
         <div class="table-cell" *ngFor="let header of data.headers">
-          
           <div class="table-sort-container" [class.active]="header.direction">
-            <materialize-icon
-              *ngIf="header.canSort"
-              className="table-sort-icon"
-              (onClick)="sort(header)"
-              [isPointer]="true"
-              [name]="header.direction === 'asc' ? 'arrow_upward' : 'arrow_downward'">
+            <materialize-icon *ngIf="header.canSort" className="table-sort-icon" (onClick)="sort(header)">
+              {{ header.direction === 'asc' ? 'arrow_upward' : 'arrow_downward' }}
             </materialize-icon>
             <div class="table-sort-text">
               {{ header.content }}

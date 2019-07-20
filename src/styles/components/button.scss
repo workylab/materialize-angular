@@ -5,11 +5,12 @@
   box-shadow: $button-primary-box-shadow;
   color: $button-primary-color;
   cursor: $button-primary-cursor;
+  display: $button-primary-display;
   font-family: $button-primary-font-family;
   font-size: $button-primary-font-size;
   font-weight: $button-primary-font-weight;
   height: $button-primary-height;
-  margin: $space-none;
+  margin: $button-primary-margin;
   outline: $button-primary-outline;
   padding: $button-primary-padding;
   -webkit-tap-highlight-color: $button-primary-tap-highlight-color;
@@ -28,7 +29,7 @@
   }
 
   &[disabled] {
-    background-color: $button-primary-disabled-background-color;
+    background: $button-primary-disabled-background;
     box-shadow: $button-primary-disabled-box-shadow;
     color: $button-primary-disabled-color;
     cursor: $button-primary-disabled-cursor;

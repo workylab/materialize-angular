@@ -18,7 +18,6 @@ import { DrawerContainerComponent } from './drawer-container/drawer-container.co
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
 import { DrawerHandlerComponent } from './drawer-handler/drawer-handler.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
-import { FormGroupComponent } from './form-group/form-group.component';
 import { FormMessageComponent } from './form-message/form-message.component';
 import { IconComponent } from './icon/icon.component';
 import { InputComponent } from './input/input.component';
@@ -69,7 +68,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerContentComponent,
     DrawerHandlerComponent,
     DropdownComponent,
-    FormGroupComponent,
     FormMessageComponent,
     IconComponent,
     InputComponent,
@@ -117,7 +115,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerContentComponent,
     DrawerHandlerComponent,
     DropdownComponent,
-    FormGroupComponent,
     FormMessageComponent,
     IconComponent,
     InputComponent,

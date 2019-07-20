@@ -14,16 +14,22 @@
 @import './transitions/properties';
 @import './transitions/timers';
 
-@import './variables.scss';
+@import './variables';
 @import './variables/buttons';
 @import './variables/cards';
+@import './variables/icons';
+@import './variables/labels';
+@import './variables/radios';
 @import './variables/slider';
 @import './variables/slider-option';
 
+@import './components/button';
+@import './components/card';
 @import './components/fonts';
+@import './components/icon';
+@import './components/label';
+@import './components/radio';
+@import './components/radio-group';
 @import './components/ripple';
-
-@import '../app/components/button/button.component';
-@import '../app/components/card/card.component';
-@import '../app/components/slider/slider.component';
-@import '../app/components/slider-option/slider-option.component';
+@import './components/slider';
+@import './components/slider-option';

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { config } from '../../config';
 import { SliderOptionModel } from './slider-option.model';
 
@@ -6,7 +6,7 @@ import { SliderOptionModel } from './slider-option.model';
   selector: `${ config.components.prefix }-slider-option }`,
   templateUrl: './slider-option.component.html'
 })
-export class SliderOptionComponent implements OnInit {
+export class SliderOptionComponent {
   static readonly defaultProps: SliderOptionModel = {
     className: '',
     value: null
@@ -14,27 +14,13 @@ export class SliderOptionComponent implements OnInit {
 
   @ViewChild('template') templateRef: ElementRef;
 
-  @Input('className') classNameInput: string;
-  @Input('value') valueInput: number | string | boolean | null;
+  @Input() className: string = SliderOptionComponent.defaultProps.className;
+  @Input() value: number | string | boolean | null = SliderOptionComponent.defaultProps.value;
 
   public prefix = config.components.prefix;
-
-  public className: string;
   public isActive: boolean;
-  public value: number | string | boolean | null;
 
-  ngOnInit() {
-    this.initValues();
-  }
-
-  initValues() {
-    const { defaultProps } = SliderOptionComponent;
-
-    this.className = this.classNameInput || defaultProps.className;
-    this.value = typeof this.valueInput === 'undefined'
-      ? defaultProps.value
-      : this.valueInput;
-
+  constructor() {
     this.isActive = false;
   }
 }

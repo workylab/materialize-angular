@@ -5,13 +5,11 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output,
   QueryList
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { RadioComponent } from '../radio/radio.component';
 import { RadioGroupModel } from './radio-group.model';
 
@@ -22,16 +20,14 @@ import { RadioGroupModel } from './radio-group.model';
     useExisting: forwardRef(() => RadioGroupComponent)
   }],
   selector: `${ config.components.prefix }-radio-group }`,
-  styleUrls: ['./radio-group.component.scss'],
   templateUrl: './radio-group.component.html'
 })
-export class RadioGroupComponent implements OnInit, AfterContentInit, ControlValueAccessor {
+export class RadioGroupComponent implements AfterContentInit, ControlValueAccessor {
   static readonly defaultProps: RadioGroupModel = {
     canUncheck: false,
     className: '',
     disabled: false,
     id: '',
-    indicatorAtEnd: false,
     name: '',
     required: false,
     value: ''
@@ -41,34 +37,24 @@ export class RadioGroupComponent implements OnInit, AfterContentInit, ControlVal
 
   @Output('onChange') onChangeEmitter: EventEmitter<string>;
 
-  @Input('canUncheck') canUncheckInput: boolean;
-  @Input('className') classNameInput: string;
-  @Input('disabled') disabledInput: boolean;
-  @Input('id') idInput: string;
-  @Input('indicatorAtEnd') indicatorAtEndInput: boolean;
-  @Input('name') nameInput: string;
-  @Input('required') requiredInput: boolean;
-  @Input('value') valueInput: string;
+  @Input() canUncheck: boolean = RadioGroupComponent.defaultProps.canUncheck;
+  @Input() className: string = RadioGroupComponent.defaultProps.className;
+  @Input() disabled: boolean = RadioGroupComponent.defaultProps.disabled;
+  @Input() id: string = RadioGroupComponent.defaultProps.id;
+  @Input() name: string = RadioGroupComponent.defaultProps.name;
+  @Input() required: boolean = RadioGroupComponent.defaultProps.required;
+  @Input() value: string = RadioGroupComponent.defaultProps.value;
 
-  public canUncheck: boolean;
-  public className: string;
-  public disabled: boolean;
-  public id: string;
-  public indicatorAtEnd: boolean;
+  public prefix = config.components.prefix;
   public isFocused: boolean;
-  public name: string;
-  public required: boolean;
-  public value: string;
 
   constructor() {
+    this.isFocused = false;
+
     this.registerRadios = this.registerRadios.bind(this);
     this.toggleRadios = this.toggleRadios.bind(this);
 
     this.onChangeEmitter = new EventEmitter();
-  }
-
-  ngOnInit() {
-    this.initValues();
   }
 
   ngAfterContentInit() {
@@ -77,21 +63,6 @@ export class RadioGroupComponent implements OnInit, AfterContentInit, ControlVal
     this.radiosQueryList.changes.subscribe(changes => {
       this.initRadios();
     });
-  }
-
-  initValues() {
-    const { defaultProps } = RadioGroupComponent;
-
-    this.className = this.classNameInput || defaultProps.className;
-    this.disabled = this.disabledInput || defaultProps.disabled;
-    this.id = this.idInput || defaultProps.id;
-    this.indicatorAtEnd = getBooleanValue(this.indicatorAtEndInput, defaultProps.indicatorAtEnd);
-    this.canUncheck = getBooleanValue(this.canUncheckInput, defaultProps.canUncheck);
-    this.name = this.nameInput || defaultProps.name;
-    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
-    this.value = this.valueInput || defaultProps.value;
-
-    this.isFocused = false;
   }
 
   initRadios() {

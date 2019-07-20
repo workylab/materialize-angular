@@ -1,14 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { config } from '../../config';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { RadioModel } from './radio.model';
 
 @Component({
   selector: `${ config.components.prefix }-radio }`,
-  styleUrls: ['./radio.component.scss'],
   templateUrl: './radio.component.html'
 })
-export class RadioComponent implements OnInit {
+export class RadioComponent {
   static readonly defaultProps: RadioModel = {
     className: '',
     disabled: false,
@@ -20,42 +18,23 @@ export class RadioComponent implements OnInit {
 
   @Output('onClick') onClickEmitter: EventEmitter<string>;
 
-  @Input('className') classNameInput: string;
-  @Input('disabled') disabledInput: boolean;
-  @Input('id') idInput: string;
-  @Input('name') nameInput: string;
-  @Input('required') requiredInput: boolean;
-  @Input('value') valueInput: string;
+  @Input() className: string = RadioComponent.defaultProps.className;
+  @Input() disabled: boolean = RadioComponent.defaultProps.disabled;
+  @Input() id: string = RadioComponent.defaultProps.id;
+  @Input() name: string = RadioComponent.defaultProps.name;
+  @Input() required: boolean = RadioComponent.defaultProps.required;
+  @Input() value: string = RadioComponent.defaultProps.value;
 
-  public className: string;
-  public disabled: boolean;
-  public id: string;
+  public prefix = config.components.prefix;
+
   public isActive: boolean;
   public isFocused: boolean;
-  public name: string;
-  public required: boolean;
-  public value: string;
 
   constructor() {
-    this.onClickEmitter = new EventEmitter();
-  }
-
-  ngOnInit() {
-    this.initValues();
-  }
-
-  initValues() {
-    const { defaultProps } = RadioComponent;
-
-    this.className = this.classNameInput || defaultProps.className;
-    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.id = this.idInput || defaultProps.id;
-    this.name = this.nameInput || defaultProps.name;
-    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
-    this.value = this.valueInput || defaultProps.value;
-
     this.isActive = false;
     this.isFocused = false;
+
+    this.onClickEmitter = new EventEmitter();
   }
 
   onClick() {
@@ -70,7 +49,7 @@ export class RadioComponent implements OnInit {
     this.isFocused = false;
   }
 
-  onFocus(event: Event): void {
+  onFocus(): void {
     if (!this.disabled) {
       this.isFocused = true;
     }
