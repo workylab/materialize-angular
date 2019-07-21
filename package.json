@@ -24,7 +24,7 @@
   "scripts": {
     "ng": "ng",
     "start": "webpack-dev-server --hot --progress",
-    "test:unit": "ng test",
+    "test:unit": "ng test --code-coverage",
     "test:unit:coverage": "ng test --code-coverage --watch=false",
     "test": "npm run test:unit:coverage",
     "lint:scss": "stylelint './src/**/*.s?(a|c)ss'",
