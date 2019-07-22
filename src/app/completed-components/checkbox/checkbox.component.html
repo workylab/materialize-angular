@@ -1,0 +1,19 @@
+<div  (click)="toggleValue()" (blur)="onBlur()" (focus)="onFocus()"  
+
+  [ngClass]="[prefix + '-checkbox', className]"
+  [class.active]="value"
+  [class.focused]="isFocused"
+  [class.indeterminate]="indeterminate && !value"
+  [class.disabled]="disabled"
+  [tabindex]="disabled ? '-1': '0'"
+>
+  <div [ngClass]="[prefix + '-checkbox-indicator']">
+    <div [ngClass]="[prefix + '-checkbox-indicator-ripple']" materializeRipple [isRippleActive]="!disabled" [rippleDuration]="200"></div>
+  </div>
+  <div [ngClass]="[prefix + '-checkbox-label']">
+    <ng-content></ng-content>
+  </div>
+
+  <input type="checkbox" [disabled]="disabled" [id]="id" [name]="name" [required]="required" [checked]="value" [indeterminate]="indeterminate" [value]="value" />
+</div>
+  
