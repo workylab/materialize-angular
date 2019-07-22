@@ -12,7 +12,7 @@
   }
 
   &.active .#{$prefix}-switch-indicator {
-    left: 14px;
+    left: $switch-indicator-track-width - $switch-indicator-size;
   }
 
   &:not(.disabled) {
