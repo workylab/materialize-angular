@@ -1,0 +1,25 @@
+$colors: (
+  'primary': #5707EB,
+  'secondary': #03DAC6,
+  'success': #28A745,
+  'danger': #A22027,
+  'warning': #FFC107,
+  'info': #17A2B8,
+  'black': #000000,
+  'white': #FFFFFF
+);
+
+@function generate_color_pallete($color, $prefix-variable) {
+  $i: 10;
+  $limit: 90;
+  $pallete: ();
+
+  @while $i <= $limit {
+    $pallete: map-merge($pallete, ('#{$prefix-variable}-#{$i}': darken($color, percentage($i / 100))));
+    $i: $i + 10;
+  }
+
+  @return $pallete;
+}
+
+$colors: map-merge($colors, generate_color_pallete(map-get($colors, 'white'), 'gray'));
