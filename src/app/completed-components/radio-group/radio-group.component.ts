@@ -22,7 +22,7 @@ import { RadioGroupModel } from './radio-group.model';
   selector: `${ config.components.prefix }-radio-group }`,
   templateUrl: './radio-group.component.html'
 })
-export class RadioGroupComponent implements AfterContentInit, ControlValueAccessor {
+export class RadioGroupComponent implements AfterContentInit, ControlValueAccessor, RadioGroupModel {
   static readonly defaultProps: RadioGroupModel = {
     canUncheck: false,
     className: '',

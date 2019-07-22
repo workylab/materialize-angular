@@ -1,0 +1,38 @@
+$switch-cursor: $cursor-pointer !default;
+$switch-padding: $space-xs $space-none !default;
+$switch-outline: none !default;
+$switch-tap-highlight-color: $color-transparent !default;
+
+$switch-label-color: $color-gray-darkest !default;
+$switch-label-font-family: $font-family-primary !default;
+$switch-label-font-size: $font-size-sm !default;
+$switch-label-font-weight: $font-weight-regular !default;
+$switch-label-padding: $space-none !default;
+$switch-label-text-align: left !default;
+
+$switch-indicator-track-background: lighten($color-gray-dark, 30%) !default;
+$switch-indicator-track-height: 14px !default;
+$switch-indicator-track-margin: 0 $space-sm !default;
+$switch-indicator-track-width: 34px !default;
+$switch-indicator-track-active-background: lighten($color-purple, 30%) !default;
+$switch-indicator-track-disabled-background: $color-gray !default;
+
+$switch-indicator-background: $color-white !default;
+$switch-indicator-border-radius: $radius-full !default;
+$switch-indicator-box-shadow: $shadow-sm !default;
+$switch-indicator-transition: $property-left $timer-sm $function-ease !default;
+$switch-indicator-size: 20px !default;
+$switch-indicator-active-background: $color-purple !default;
+$switch-indicator-disabled-background: lighten($color-gray, 10%) !default;
+
+$switch-indicator-ripple-hover-inactive-background: rgba($color-gray-darkest, 0.1) !default;
+$switch-indicator-ripple-hover-active-background: rgba($color-purple, 0.2) !default;
+$switch-indicator-ripple-focused-inactive-background: rgba($color-gray-darkest, 0.05) !default;
+$switch-indicator-ripple-focused-active-background: rgba($color-purple, 0.1) !default;
+
+$switch-indicator-ripple-background: $color-purple !default;
+$switch-indicator-ripple-size: 40px !default;
+$switch-indicator-ripple-transition: $property-background $timer-sm $function-ease !default;
+
+$switch-ripple-active-background: rgba($color-purple, 0.2) !default;
+$switch-ripple-background: rgba($color-gray-darkest, 0.2) !default;

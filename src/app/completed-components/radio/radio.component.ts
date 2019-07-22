@@ -6,7 +6,7 @@ import { RadioModel } from './radio.model';
   selector: `${ config.components.prefix }-radio }`,
   templateUrl: './radio.component.html'
 })
-export class RadioComponent {
+export class RadioComponent implements RadioModel {
   static readonly defaultProps: RadioModel = {
     className: '',
     disabled: false,

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { config } from '../../config';
 import { IconModel } from './icon.model';
 
@@ -6,7 +6,7 @@ import { IconModel } from './icon.model';
   selector: `${ config.components.prefix }-icon }`,
   templateUrl: './icon.component.html'
 })
-export class IconComponent {
+export class IconComponent implements IconModel {
   static readonly defaultProps: IconModel = { className: '' };
 
   @Output('onClick') onClickEmitter: EventEmitter<void>;

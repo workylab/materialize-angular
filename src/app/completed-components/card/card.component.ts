@@ -6,7 +6,7 @@ import { config } from '../../config';
   selector: `${ config.components.prefix }-card }`,
   templateUrl: './card.component.html'
 })
-export class CardComponent {
+export class CardComponent implements CardModel {
   static readonly defaultProps: CardModel = { className: ''};
 
   @Input() className: string = CardComponent.defaultProps.className;

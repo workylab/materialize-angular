@@ -1,0 +1,23 @@
+<div [ngClass]="[prefix + '-switch', className]"
+
+  (click)="toggleValue()"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+
+  [class.active]="value"
+  [class.disabled]="disabled"
+  [class.focused]="isFocused"
+  [tabindex]="disabled ? '-1': '0'"
+>
+  <div [ngClass]="prefix + '-switch-label'">
+    <ng-content></ng-content>
+  </div>
+
+  <div [ngClass]="prefix + '-switch-indicator-track'">
+    <div [ngClass]="prefix + '-switch-indicator'">
+      <div [ngClass]="prefix + '-switch-indicator-ripple'" materializeRipple [isRippleActive]="!disabled" [rippleDuration]="200"></div>
+    </div>
+  </div>
+
+  <input type="checkbox" [disabled]="disabled" [id]="id" [name]="name" [required]="required" [value]="value" />
+</div>

@@ -17,12 +17,13 @@
 @import './variables';
 @import './variables/buttons';
 @import './variables/cards';
+@import './variables/colors';
 @import './variables/icons';
 @import './variables/labels';
 @import './variables/radios';
 @import './variables/slider';
 @import './variables/slider-option';
-@import './variables/colors';
+@import './variables/switches';
 
 @import './components/button';
 @import './components/card';
@@ -34,3 +35,4 @@
 @import './components/ripple';
 @import './components/slider';
 @import './components/slider-option';
+@import './components/switch';
