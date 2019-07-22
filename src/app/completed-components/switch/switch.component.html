@@ -1,8 +1,8 @@
 <div [ngClass]="[prefix + '-switch', className]"
 
   (click)="toggleValue()"
-  (focus)="onFocus($event)"
-  (blur)="onBlur($event)"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
 
   [class.active]="value"
   [class.disabled]="disabled"

@@ -46,11 +46,11 @@ export class SwitchComponent implements ControlValueAccessor, SwitchModel {
     }
   }
 
-  onBlur(event: any): void {
+  onBlur(): void {
     this.isFocused = false;
   }
 
-  onFocus(event: any): void {
+  onFocus(): void {
     if (!this.disabled) {
       this.isFocused = true;
 
