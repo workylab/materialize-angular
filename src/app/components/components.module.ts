@@ -5,7 +5,7 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ButtonToggleGroupComponent } from './button-toggle-group/button-toggle-group.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CardComponent } from '../completed-components/card/card.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CheckboxComponent } from '../completed-components/checkbox/checkbox.component';
 import { CheckboxListComponent } from './checkbox-list/checkbox-list.component';
 import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CollapsibleContentComponent } from './collapsible-content/collapsible-content.component';
