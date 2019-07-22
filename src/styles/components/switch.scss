@@ -1,0 +1,140 @@
+.#{$prefix}-switch {
+  align-items: center;
+  cursor: $switch-cursor;
+  display: flex;
+  flex-direction: row;
+  outline: $switch-outline;
+  padding: $switch-padding;
+  -webkit-tap-highlight-color: $switch-tap-highlight-color;
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  &.active .#{$prefix}-switch-indicator {
+    left: 14px;
+  }
+
+  &:not(.disabled) {
+    @media (hover: hover) {
+      .#{$prefix}-switch-indicator:hover .#{$prefix}-switch-indicator-ripple {
+        background: $switch-indicator-ripple-hover-inactive-background;
+      }
+
+      &.active .#{$prefix}-switch-indicator:hover .#{$prefix}-switch-indicator-ripple {
+        background: $switch-indicator-ripple-hover-active-background;
+      }
+    }
+  }
+
+  &.focused:not(.disabled) {
+    &.active .#{$prefix}-switch-indicator-ripple {
+      background: $switch-indicator-ripple-focused-active-background;
+    }
+
+    .#{$prefix}-switch-indicator-ripple {
+      background: $switch-indicator-ripple-focused-inactive-background;
+    }
+  }
+
+  &.active:not(.disabled) {
+    .#{$prefix}-switch-indicator-track {
+      background: $switch-indicator-track-active-background;
+    }
+
+    .#{$prefix}-switch-indicator {
+      background: $switch-indicator-active-background;
+    }
+
+    .ripple {
+      background: $switch-ripple-active-background;
+    }
+  }
+
+  &.disabled {
+    .#{$prefix}-switch-indicator-track {
+      background: $switch-indicator-track-disabled-background;
+    }
+
+    .#{$prefix}-switch-indicator {
+      background: $switch-indicator-disabled-background;
+      cursor: not-allowed;
+    }
+
+    &.active .#{$prefix}-switch-indicator-track {
+      background: $switch-indicator-track-disabled-background;
+    }
+  }
+}
+
+.#{$prefix}-switch-label {
+  color: $switch-label-color;
+  flex: 1;
+  font-family: $switch-label-font-family;
+  font-size: $switch-label-font-size;
+  font-weight: $switch-label-font-weight;
+  padding: $switch-label-padding;
+  text-align: $switch-label-text-align;
+}
+
+.#{$prefix}-switch-indicator-track {
+  background: $switch-indicator-track-background;
+  border-radius: $switch-indicator-track-height / 2;
+  height: $switch-indicator-track-height;
+  margin: $switch-indicator-track-margin;
+  position: relative;
+  width: $switch-indicator-track-width;
+}
+
+.#{$prefix}-switch-indicator {
+  background: $switch-indicator-background;
+  border-radius: $switch-indicator-border-radius;
+  box-shadow: $switch-indicator-box-shadow;
+  height: $switch-indicator-size;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: $switch-indicator-transition;
+  width: $switch-indicator-size;
+}
+
+.#{$prefix}-switch-indicator-ripple {
+  border-radius: $switch-indicator-border-radius;
+  height: $switch-indicator-ripple-size;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: $switch-indicator-ripple-transition;
+  width: $switch-indicator-ripple-size;
+  z-index: $zindex-level-1;
+
+  .ripple {
+    background: $switch-ripple-background;
+  }
+}
+
+#{$prefix}-switch.ng-touched.ng-dirty.ng-invalid {
+  .#{$prefix}-switch-indicator-track {
+    background: lighten($color-red, 40%);
+  }
+
+  .#{$prefix}-switch-indicator {
+    background: $color-red;
+  }
+
+  .#{$prefix}-switch.focused .#{$prefix}-switch-indicator-ripple {
+    background-color: rgba($color-red, 0.05);
+  }
+
+  @media (hover: hover) {
+    &:hover .#{$prefix}-switch-indicator-ripple {
+      background-color: rgba($color-red, 0.1);
+    }
+  }
+
+  .ripple {
+    background: rgba($color-red, 0.3);
+  }
+}
