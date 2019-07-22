@@ -1,4 +1,4 @@
-.#{$prefix}-button {
+.#{$prefix}-button.accent {
   background: $button-primary-background;
   border: $button-primary-border;
   border-radius: $button-primary-border-radius;
@@ -32,10 +32,91 @@
     background: $button-primary-disabled-background;
     box-shadow: $button-primary-disabled-box-shadow;
     color: $button-primary-disabled-color;
-    cursor: $button-primary-disabled-cursor;
+    cursor: not-allowed;
   }
 
   .ripple {
     background-color: $button-primary-ripple-background-color;
+  }
+}
+
+.#{$prefix}-button.outline {
+  background: $button-outline-background;
+  border: $button-outline-border;
+  border-radius: $button-outline-border-radius;
+  color: $button-outline-color;
+  cursor: $button-outline-cursor;
+  display: $button-outline-display;
+  font-family: $button-outline-font-family;
+  font-size: $button-outline-font-size;
+  font-weight: $button-outline-font-weight;
+  height: $button-outline-height;
+  margin: $button-outline-margin;
+  outline: $button-outline-outline;
+  padding: $button-outline-padding;
+  -webkit-tap-highlight-color: $button-outline-tap-highlight-color;
+  text-align: $button-outline-text-align;
+  text-transform: $button-outline-text-transform;
+  transition: $button-outline-transition;
+  white-space: $button-outline-white-space;
+  width: $button-outline-width;
+
+  &:hover {
+    background-color: $button-outline-hover-background-color;
+  }
+
+  &.focused {
+    background-color: $button-outline-focused-background-color;
+  }
+
+  &[disabled] {
+    background: $button-outline-disabled-background;
+    border: $button-outline-disabled-border;
+    color: $button-outline-disabled-color;
+    cursor: not-allowed;
+  }
+
+  .ripple {
+    background-color: $button-outline-ripple-background-color;
+  }
+}
+
+.#{$prefix}-button.text {
+  background: $button-text-background;
+  border: $button-text-border;
+  border-radius: $button-text-border-radius;
+  color: $button-text-color;
+  cursor: $button-text-cursor;
+  display: $button-text-display;
+  font-family: $button-text-font-family;
+  font-size: $button-text-font-size;
+  font-weight: $button-text-font-weight;
+  height: $button-text-height;
+  margin: $button-text-margin;
+  outline: $button-text-outline;
+  padding: $button-text-padding;
+  -webkit-tap-highlight-color: $button-text-tap-highlight-color;
+  text-align: $button-text-text-align;
+  text-transform: $button-text-text-transform;
+  transition: $button-text-transition;
+  white-space: $button-text-white-space;
+  width: $button-text-width;
+
+  &:hover {
+    background-color: $button-text-hover-background-color;
+  }
+
+  &.focused {
+    background-color: $button-text-focused-background-color;
+  }
+
+  &[disabled] {
+    background: $button-text-disabled-background;
+    color: $button-text-disabled-color;
+    cursor: not-allowed;
+  }
+
+  .ripple {
+    background-color: $button-text-ripple-background-color;
   }
 }
