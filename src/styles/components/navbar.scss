@@ -1,0 +1,14 @@
+.#{$prefix}-navbar {
+  align-items: center;
+  background: $navbar-background;
+  box-shadow: $navbar-box-shadow;
+  color: $navbar-color;
+  display: flex;
+  flex-direction: row;
+  font-family: $navbar-font-family;
+  font-size: $navbar-font-size;
+  font-weight: $navbar-font-weight;
+  height: $navbar-height;
+  margin: $navbar-margin;
+  padding: $navbar-padding;
+}

@@ -28,7 +28,7 @@ import { ModalCloseDirective } from '../directives/modal-close.directive';
 import { ModalComponent } from './modal/modal.component';
 import { ModalContentComponent } from './modal-content/modal-content.component';
 import { ModalHandlerComponent } from './modal-handler/modal-handler.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from '../completed-components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { PrefixDirective } from '../directives/prefix.directive';
 import { RadioComponent } from '../completed-components/radio/radio.component';

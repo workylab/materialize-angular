@@ -27,7 +27,7 @@ export * from './app/completed-components/label/label.component';
 export * from './app/components/modal/modal.component';
 export * from './app/components/modal-content/modal-content.component';
 export * from './app/components/modal-handler/modal-handler.component';
-export * from './app/components/navbar/navbar.component';
+export * from './app/completed-components/navbar/navbar.component';
 export * from './app/completed-components/radio/radio.component';
 export * from './app/completed-components/radio-group/radio-group.component';
 export * from './app/components/slider/slider.component';
