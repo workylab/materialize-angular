@@ -1,0 +1,21 @@
+<div
+  [ngClass]="[prefix + '-radio', className]"
+  [class.active]="isActive"
+  [class.disabled]="disabled"
+  [class.focused]="isFocused"
+  [tabindex]="disabled ? '-1': '0'"
+
+  (click)="onClick()"
+  (blur)="onBlur()"
+  (focus)="onFocus()"
+>
+  <div [ngClass]="prefix + '-radio-label'">
+    <ng-content></ng-content>
+  </div>
+
+  <div [ngClass]="prefix + '-radio-indicator'">
+    <div [ngClass]="prefix + '-radio-indicator-ripple'" materializeRipple [isRippleActive]="!disabled" [rippleDuration]="200"></div>
+  </div>
+
+  <input type="radio" [attr.id]="id" [checked]="isActive" [disabled]="disabled" [name]="name" [required]="required" [value]= "value" />
+</div>
