@@ -1,0 +1,28 @@
+$badges-background-color: map-get($colors, 'primary') !default;
+$badges-color: map-get($colors, 'white') !default;
+$badges-border-radius: 4px !default;
+$badges-box-sizing: border-box !default;
+$badges-display: inline-block !default;
+$badges-font-family: $font-family-primary !default;
+$badges-font-size: 75% !default;
+$badges-font-weight: $font-weight-bold !default;
+$badges-line-height: 100% !default;
+$badges-text-align: center !default;
+
+$badge-primary-background-color: map-get($colors, 'primary') !default;
+$badge-secondary-background-color: map-get($colors, 'secondary') !default;
+$badge-success-background-color: map-get($colors, 'success') !default;
+$badge-danger-background-color: map-get($colors, 'danger') !default;
+$badge-warning-background-color: map-get($colors, 'warning') !default;
+$badge-info-background-color: map-get($colors, 'info') !default;
+$badge-light-background-color: map-get($colors, 'white') !default;
+$badge-dark-background-color: map-get($colors, 'black') !default;
+
+$badge-primary-color: map-get($colors, 'white') !default;
+$badge-secondary-color: map-get($colors, 'white') !default;
+$badge-success-color: map-get($colors, 'white') !default;
+$badge-danger-color: map-get($colors, 'white') !default;
+$badge-warning-color: map-get($colors, 'black') !default;
+$badge-info-color: map-get($colors, 'white') !default;
+$badge-light-color: map-get($colors, 'black') !default;
+$badge-dark-color: map-get($colors, 'white') !default;
