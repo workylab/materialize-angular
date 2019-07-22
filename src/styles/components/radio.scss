@@ -2,6 +2,7 @@
   align-items: center;
   cursor: $radio-cursor;
   display: flex;
+  flex-direction: row;
   outline: $radio-outline;
   padding: $radio-padding;
 
@@ -12,28 +13,28 @@
   &:not(.disabled) {
     @media (hover: hover) {
       .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
-        background-color: rgba($radio-indicator-disabled-color, 0.2);
+        background: rgba($radio-indicator-disabled-color, 0.2);
       }
 
       &.active .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
-        background-color: rgba($radio-indicator-ripple-background, 0.2);
+        background: rgba($radio-indicator-ripple-background, 0.2);
       }
     }
   }
 
   &.focused:not(.disabled) {
     .#{$prefix}-radio-indicator-ripple {
-      background-color: rgba($radio-indicator-ripple-background, 0.1);
+      background: rgba($radio-indicator-ripple-background, 0.1);
     }
 
     &.active .#{$prefix}-radio-indicator-ripple {
-      background-color: rgba($radio-indicator-ripple-background, 0.1);
+      background: rgba($radio-indicator-ripple-background, 0.1);
     }
   }
 
   &.active:not(.disabled) {
     .ripple {
-      background-color: rgba($radio-indicator-ripple-background, 0.3);
+      background: rgba($radio-indicator-ripple-background, 0.3);
     }
 
     .#{$prefix}-radio-indicator {
@@ -48,16 +49,16 @@
 
   &.disabled .#{$prefix}-radio-indicator {
     border-color: $radio-indicator-disabled-color;
+    cursor: not-allowed;
 
     &::before {
-      background-color: $radio-indicator-disabled-color;
+      background: $radio-indicator-disabled-color;
     }
   }
 }
 
 .#{$prefix}-radio-label {
   color: $radio-label-color;
-  display: $radio-label-display;
   flex: 1;
   font-family: $radio-label-font-family;
   font-size: $radio-label-font-size;
@@ -103,4 +104,8 @@
   transition: $radio-indicator-ripple-transition;
   width: $radio-indicator-ripple-size;
   z-index: $zindex-level-1;
+
+  .ripple {
+    background: rgba($radio-indicator-ripple-background, 0.3);
+  }
 }
