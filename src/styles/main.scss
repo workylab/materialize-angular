@@ -24,6 +24,8 @@
 @import './variables/slider';
 @import './variables/slider-option';
 @import './variables/switches';
+@import './variables/colors';
+@import './variables/typography.scss';
 
 @import './components/button';
 @import './components/card';
@@ -36,3 +38,5 @@
 @import './components/slider';
 @import './components/slider-option';
 @import './components/switch';
+
+@import './css/typography.scss';
