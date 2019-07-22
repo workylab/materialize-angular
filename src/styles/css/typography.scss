@@ -1,0 +1,65 @@
+.h1 {
+  display: block;
+  font-family: $heading-1-font-family;
+  font-size: $heading-1-font-size;
+  font-weight: $heading-1-font-weight;
+  line-height: 100%;
+  margin: $space-xxxl 0 $space-xxl 0;
+}
+
+.h2 {
+  display: block;
+  font-family: $heading-2-font-family;
+  font-size: $heading-2-font-size;
+  font-weight: $heading-2-font-weight;
+  line-height: 100%;
+  margin: $space-xxl 0 $space-xl 0;
+}
+
+.h3 {
+  display: block;
+  font-family: $heading-3-font-family;
+  font-size: $heading-3-font-size;
+  font-weight: $heading-3-font-weight;
+  line-height: 100%;
+  margin: $space-xl 0 $space-lg 0;
+}
+
+.h4 {
+  display: block;
+  font-family: $heading-4-font-family;
+  font-size: $heading-4-font-size;
+  font-weight: $heading-4-font-weight;
+  line-height: 100%;
+  margin: $space-lg 0 $space-md 0;
+}
+
+.h5 {
+  display: block;
+  font-family: $heading-5-font-family;
+  font-size: $heading-5-font-size;
+  font-weight: $heading-5-font-weight;
+  line-height: 100%;
+  margin: $space-md 0 $space-sm 0;
+}
+
+.h6 {
+  display: block;
+  font-family: $heading-6-font-family;
+  font-size: $heading-6-font-size;
+  font-weight: $heading-6-font-weight;
+  line-height: 100%;
+  margin: $space-sm 0 $space-xs 0;
+}
+
+.blockquote {
+  border-left: $blockquote-border-color solid $blockquote-border-size;
+  color: $blockquote-font-color;
+  display: block;
+  font-family: $blockquote-font-family;
+  font-size: $blockquote-font-size;
+  font-weight: $blockquote-font-weight;
+  line-height: $blockquote-line-height;
+  margin: $space-lg 0 $space-lg;
+  padding-left: $space-lg;
+}
