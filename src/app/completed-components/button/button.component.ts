@@ -1,4 +1,4 @@
-import { BUTTON_TYPE, ButtonModel } from './button.model';
+import { BUTTON_LEVEL, BUTTON_TYPE, ButtonModel } from './button.model';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { config } from '../../config';
 
@@ -10,11 +10,13 @@ export class ButtonComponent implements ButtonModel {
   static readonly defaultProps: ButtonModel = {
     className: '',
     disabled: false,
+    level: BUTTON_LEVEL.ACCENT,
     type: BUTTON_TYPE.BUTTON
   };
 
   @Input() className: string = ButtonComponent.defaultProps.className;
   @Input() disabled: boolean = ButtonComponent.defaultProps.disabled;
+  @Input() level: BUTTON_LEVEL = ButtonComponent.defaultProps.level;
   @Input() type: BUTTON_TYPE = ButtonComponent.defaultProps.type;
 
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
