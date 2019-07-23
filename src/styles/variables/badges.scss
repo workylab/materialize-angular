@@ -26,3 +26,10 @@ $badge-warning-color: map-get($colors, 'black') !default;
 $badge-info-color: map-get($colors, 'white') !default;
 $badge-light-color: map-get($colors, 'black') !default;
 $badge-dark-color: map-get($colors, 'white') !default;
+
+$badge-notification-background-color: map-get($colors, 'primary') !default;
+$badge-notification-color: map-get($colors, 'white') !default;
+$badge-notification-font-size: 10px !default;
+$badge-notification-size: 18px !default;
+$badge-notification-line-height: 18px !default;
+$badge-notification-outside-size: 10px !default;

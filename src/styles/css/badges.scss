@@ -51,3 +51,65 @@
   background-color: $badge-dark-background-color;
   color: $badge-dark-color;
 }
+
+.badge-notification {
+  display: inline-block;
+  margin-right: $badge-notification-outside-size;
+  margin-top: $badge-notification-outside-size;
+  position: relative;
+}
+
+.badge-notification[data-badge]::after {
+  background: $badge-notification-background-color;
+  border-radius: 50%;
+  color: $badge-notification-color;
+  content: attr(data-badge);
+  font-size: $badge-notification-font-size;
+  height: $badge-notification-size;
+  line-height: $badge-notification-line-height;
+  position: absolute;
+  right: -$badge-notification-outside-size;
+  text-align: center;
+  top: -$badge-notification-outside-size;
+  width: $badge-notification-size;
+}
+
+.badge-notification-primary[data-badge]::after {
+  background-color: $badge-primary-background-color;
+  color: $badge-primary-color;
+}
+
+.badge-notification-secondary[data-badge]::after {
+  background-color: $badge-secondary-background-color;
+  color: $badge-secondary-color;
+}
+
+.badge-notification-success[data-badge]::after {
+  background-color: $badge-success-background-color;
+  color: $badge-success-color;
+}
+
+.badge-notification-danger[data-badge]::after {
+  background-color: $badge-danger-background-color;
+  color: $badge-danger-color;
+}
+
+.badge-notification-warning[data-badge]::after {
+  background-color: $badge-warning-background-color;
+  color: $badge-warning-color;
+}
+
+.badge-notification-info[data-badge]::after {
+  background-color: $badge-info-background-color;
+  color: $badge-info-color;
+}
+
+.badge-notification-light[data-badge]::after {
+  background-color: $badge-light-background-color;
+  color: $badge-light-color;
+}
+
+.badge-notification-dark[data-badge]::after {
+  background-color: $badge-dark-background-color;
+  color: $badge-dark-color;
+}
