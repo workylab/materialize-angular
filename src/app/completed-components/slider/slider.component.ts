@@ -6,7 +6,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output,
   QueryList,
   Renderer2,
@@ -15,10 +14,9 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { supportedEvents, supportTouchEvents } from '../../utils/get-supported-events.util';
 import { config } from '../../config';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { SliderModel } from './slider.model';
 import { SliderOptionComponent } from '../slider-option/slider-option.component';
-import { SupportedEventsModel } from '../common/models/supported-events.model';
+import { SupportedEventsModel } from '../../components/common/models/supported-events.model';
 
 @Component({
   providers: [{
@@ -29,7 +27,7 @@ import { SupportedEventsModel } from '../common/models/supported-events.model';
   selector: `${ config.components.prefix }-slider }`,
   templateUrl: './slider.component.html'
 })
-export class SliderComponent implements AfterContentInit, ControlValueAccessor, OnInit {
+export class SliderComponent implements AfterContentInit, ControlValueAccessor {
   static readonly tickClassName = config.components.prefix + '-slider-step';
 
   static readonly defaultProps: SliderModel = {
@@ -51,25 +49,20 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
 
   @Output('onChange') onChangeEmitter: EventEmitter<number | string | boolean | null>;
 
-  @Input('className') classNameInput: string;
-  @Input('disabled') disabledInput: boolean;
-  @Input('required') requiredInput: boolean;
-  @Input('showLabels') showLabelsInput: boolean;
-  @Input('showTicks') showTicksInput: boolean;
-  @Input('value') valueInput: number | string | boolean | null;
+  @Input() className: string = SliderComponent.defaultProps.className;
+  @Input() disabled: boolean = SliderComponent.defaultProps.disabled;
+  @Input() required: boolean = SliderComponent.defaultProps.required;
+  @Input() showLabels: boolean = SliderComponent.defaultProps.showLabels;
+  @Input() showTicks: boolean = SliderComponent.defaultProps.showTicks;
+  @Input() value: number | string | boolean | null = SliderComponent.defaultProps.value;
 
   public prefix = config.components.prefix;
 
-  public className: string;
-  public disabled: boolean;
   public isFocused: boolean;
-  public required: boolean;
-  public showLabels: boolean;
-  public showTicks: boolean;
   public supportedEvents: SupportedEventsModel;
-  public value: number | string | boolean | null;
 
   constructor(private renderer: Renderer2) {
+    this.isFocused = false;
     this.supportedEvents = supportedEvents();
 
     this.actionDown = this.actionDown.bind(this);
@@ -79,32 +72,15 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor, 
 
     this.onChangeEmitter = new EventEmitter();
 
-    window.addEventListener(this.supportedEvents.resize, this.update);
-  }
+    this.sliderTrack.nativeElement.addEventListener(this.supportedEvents.down, this.actionDown);
 
-  ngOnInit() {
-    this.initValues();
+    window.addEventListener(this.supportedEvents.resize, this.update);
   }
 
   ngAfterContentInit() {
     setTimeout(this.update, 0);
 
     this.options.changes.subscribe(this.update);
-  }
-
-  initValues() {
-    const { defaultProps } = SliderComponent;
-
-    this.className = this.classNameInput || defaultProps.className;
-    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
-    this.showLabels = getBooleanValue(this.showLabelsInput, defaultProps.showLabels);
-    this.showTicks = getBooleanValue(this.showTicksInput, defaultProps.showTicks);
-    this.value = this.valueInput || defaultProps.value;
-
-    this.isFocused = false;
-
-    this.sliderTrack.nativeElement.addEventListener(this.supportedEvents.down, this.actionDown);
   }
 
   update() {
