@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AutocompleteModel } from './autocomplete.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
-import { InputComponent } from '../../components/input/input.component';
+import { InputComponent } from '../../completed-components/input/input.component';
+import { INPUT_TYPE } from 'src/app/completed-components/input/input.model';
 
 @Component({
   selector: 'materialize-autocomplete',
-  styleUrls: ['./autocomplete.component.scss'],
   templateUrl: './autocomplete.component.html'
 })
 export class AutocompleteComponent implements OnInit {
@@ -21,7 +21,7 @@ export class AutocompleteComponent implements OnInit {
     name: '',
     placeholder: '',
     required: false,
-    type: 'text',
+    type: INPUT_TYPE.TEXT,
     value: ''
   };
 
