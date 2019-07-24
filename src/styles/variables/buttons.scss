@@ -19,14 +19,14 @@ $button-primary-transition: $property-background $timer-md $function-ease !defau
 $button-primary-white-space: nowrap !default;
 $button-primary-width: auto !default;
 
-$button-primary-hover-background-color: lighten($color-purple, 5%) !default;
-$button-primary-focused-background-color: lighten($color-purple, 10%) !default;
+$button-primary-hover-background: lighten($color-purple, 5%) !default;
+$button-primary-focused-background: lighten($color-purple, 10%) !default;
 
 $button-primary-disabled-background: $color-gray !default;
 $button-primary-disabled-box-shadow: none !default;
 $button-primary-disabled-color: $color-gray-dark !default;
 
-$button-primary-ripple-background-color: rgba(lighten($color-purple, 50%), 0.2) !default;
+$button-primary-ripple-background: rgba(lighten($color-purple, 50%), 0.2) !default;
 
 $button-outline-background: $color-transparent !default;
 $button-outline-border: $border-sm solid $color-gray !default;
@@ -48,14 +48,14 @@ $button-outline-transition: $property-background $timer-md $function-ease !defau
 $button-outline-white-space: nowrap !default;
 $button-outline-width: auto !default;
 
-$button-outline-hover-background-color: rgba($color-purple, 0.05) !default;
-$button-outline-focused-background-color: rgba($color-purple, 0.1) !default;
+$button-outline-hover-background: rgba($color-purple, 0.05) !default;
+$button-outline-focused-background: rgba($color-purple, 0.1) !default;
 
 $button-outline-disabled-background: $color-transparent !default;
 $button-outline-disabled-border: $border-sm solid $color-gray !default;
 $button-outline-disabled-color: $color-gray !default;
 
-$button-outline-ripple-background-color: rgba($color-purple, 0.2) !default;
+$button-outline-ripple-background: rgba($color-purple, 0.2) !default;
 
 $button-text-background: $color-transparent !default;
 $button-text-border: $border-none !default;
@@ -77,10 +77,10 @@ $button-text-transition: $property-background $timer-md $function-ease !default;
 $button-text-white-space: nowrap !default;
 $button-text-width: auto !default;
 
-$button-text-hover-background-color: rgba($color-purple, 0.05) !default;
-$button-text-focused-background-color: rgba($color-purple, 0.1) !default;
+$button-text-hover-background: rgba($color-purple, 0.05) !default;
+$button-text-focused-background: rgba($color-purple, 0.1) !default;
 
 $button-text-disabled-background: $color-transparent !default;
 $button-text-disabled-color: $color-gray !default;
 
-$button-text-ripple-background-color: rgba($color-purple, 0.2) !default;
+$button-text-ripple-background: rgba($color-purple, 0.2) !default;
