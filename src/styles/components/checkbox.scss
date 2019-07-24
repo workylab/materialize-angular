@@ -49,6 +49,7 @@
 
   &.disabled {
     .#{$prefix}-checkbox-indicator {
+      background: $checkbox-indicator-disabled-background;
       border: $checkbox-indicator-disabled-border;
       cursor: not-allowed;
     }
