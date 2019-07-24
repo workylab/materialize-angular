@@ -6,5 +6,5 @@ export interface SelectModel {
   isNativeControl: boolean;
   name: string;
   required: boolean;
-  value: string;
+  value: string | number | boolean | null;
 }

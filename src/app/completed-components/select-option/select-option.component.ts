@@ -16,11 +16,11 @@ export class SelectOptionComponent implements AfterContentChecked {
 
   @ViewChild('optionTemplate') optionTemplateRef: ElementRef;
 
-  @Output('onClick') onClickEmitter: EventEmitter<string>;
+  @Output('onClick') onClickEmitter: EventEmitter<string | number | boolean | null>;
 
   @Input() className: string = SelectOptionComponent.defaultProps.className;
   @Input() disabled: boolean = SelectOptionComponent.defaultProps.disabled;
-  @Input() value: string = SelectOptionComponent.defaultProps.value;
+  @Input() value: string | number | boolean | null = SelectOptionComponent.defaultProps.value;
 
   public prefix = config.components.prefix;
 

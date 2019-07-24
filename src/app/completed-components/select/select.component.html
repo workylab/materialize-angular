@@ -16,7 +16,12 @@
         [required]="required"
         [value]="value"
       >
-        <option [value]="option.value" *ngFor="let option of options">{{ option.content }}</option>
+        <option
+          [selected]="option.value === value"
+          [value]="option.value"
+          *ngFor="let option of options">
+          {{ option.content }}
+        </option>
       </select>
     </div>
 

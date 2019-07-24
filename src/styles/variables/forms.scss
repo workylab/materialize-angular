@@ -3,7 +3,6 @@ $form-control-container-border-color: $color-gray-dark !default;
 $form-control-container-border-radius: $radius-sm $radius-sm $space-none $space-none !default;
 $form-control-container-border-style: solid !default;
 $form-control-container-border-width: 0 0 $border-sm 0 !default;
-$form-control-container-line-width: 0 !default;
 $form-control-container-margin: $space-none !default;
 $form-control-container-outiline: none !default;
 
@@ -11,6 +10,7 @@ $form-control-container-line-bottom: -1px !default;
 $form-control-container-line-color: $color-purple !default;
 $form-control-container-line-height: $border-md !default;
 $form-control-container-line-transition: $timer-md $function-ease $property-width !default;
+$form-control-container-line-width: 0 !default;
 $form-control-container-line-z-index:  $zindex-level-1 !default;
 
 $form-control-caret-color: $color-purple !default;
@@ -45,5 +45,6 @@ $form-control-focused-container-line-width: 100% !default;
 $form-control-focused-label-color: $color-purple !default;
 
 $form-control-disabled-container-border-color: $color-gray !default;
+$form-control-disabled-container-backgorund: $color-gray-light !default;
 $form-control-disabled-label-color: $color-gray !default;
 $form-control-disabled-color: $color-gray !default;

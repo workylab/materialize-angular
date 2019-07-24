@@ -45,6 +45,7 @@
   }
 
   &.disabled {
+    background: $form-control-disabled-container-backgorund;
     border-color: $form-control-disabled-container-border-color;
 
     .#{$prefix}-form-control,
@@ -86,6 +87,7 @@
   outline: none;
   padding: $form-control-padding;
   resize: vertical;
+  white-space: nowrap;
   width: 100%;
 
   &::placeholder {

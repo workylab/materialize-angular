@@ -34,7 +34,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit {
     isNativeControl: false,
     name: '',
     required: false,
-    value: ''
+    value: null
   };
 
   @ViewChild('backdrop') backdropRef: ElementRef;
@@ -42,7 +42,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit {
 
   @ContentChildren(SelectOptionComponent) options: QueryList<SelectOptionComponent>;
 
-  @Output('onChange') onChangeEmitter: EventEmitter<string>;
+  @Output('onChange') onChangeEmitter: EventEmitter<string | number | boolean | null>;
 
   @Input() className: string = SelectComponent.defaultProps.className;
   @Input() disabled: boolean = SelectComponent.defaultProps.disabled;
@@ -51,7 +51,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit {
   @Input() isNativeControl: boolean = SelectComponent.defaultProps.isNativeControl;
   @Input() name: string = SelectComponent.defaultProps.name;
   @Input() required: boolean = SelectComponent.defaultProps.required;
-  @Input() value: string = SelectComponent.defaultProps.value;
+  @Input() value: string | number | boolean | null = SelectComponent.defaultProps.value;
 
   public prefix = config.components.prefix;
 
@@ -87,21 +87,21 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit {
     this.updateControl(this.value);
   }
 
-  updateControl(value: string) {
+  updateControl(value: string | number | boolean | null) {
     this.value = value;
     this.isOpen = false;
 
     this.activeSelectedOption(this.value);
   }
 
-  onChangeOption(value: string) {
+  onChangeOption(value: string | number | boolean | null) {
     this.updateControl(value);
 
     this.onChangeEmitter.emit(this.value);
     this.onChange(this.value);
   }
 
-  activeSelectedOption(value: string) {
+  activeSelectedOption(value: string | number | boolean | null) {
     this.options.forEach(option => {
       if (option.value === value) {
         option.isActive = true;
@@ -176,7 +176,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit {
     this.disabled = isDisabled;
   }
 
-  writeValue(value: string): void {
+  writeValue(value: string | number | boolean | null): void {
     this.value = value;
 
     setTimeout(() => {
@@ -184,7 +184,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit {
     }, 0);
   }
 
-  registerOnChange(fn: (value: string) => void): void {
+  registerOnChange(fn: (value: string | number | boolean | null) => void): void {
     this.onChange = fn;
   }
 
@@ -192,7 +192,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit {
     this.onTouched = fn;
   }
 
-  onChange(value: string): void {}
+  onChange(value: string | number | boolean | null): void {}
 
   onTouched(): void {}
 }
