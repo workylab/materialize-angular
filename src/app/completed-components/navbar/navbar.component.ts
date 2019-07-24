@@ -8,11 +8,10 @@ import { NavbarModel } from './navbar.model';
 })
 export class NavbarComponent {
   static readonly defaultProps: NavbarModel = {
-    className: 'navbar'
+    className: ''
   };
 
-  @Input() classNameInput: string = NavbarComponent.defaultProps.className;
+  @Input() className: string = NavbarComponent.defaultProps.className;
 
   public prefix = config.components.prefix;
-  public className: string;
 }
