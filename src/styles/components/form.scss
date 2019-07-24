@@ -42,10 +42,6 @@
     .#{$prefix}-form-control-label {
       color: $form-control-focused-label-color;
     }
-
-    .#{$prefix}-form-control {
-      caret-color: $form-control-focused-caret-color;
-    }
   }
 
   &.disabled {
@@ -78,6 +74,7 @@
   background: transparent;
   border: 0;
   box-sizing: border-box;
+  caret-color: $form-control-caret-color;
   color: $form-control-color;
   font-family: $form-control-font-family;
   font-size: $form-control-font-size;

@@ -13,6 +13,7 @@ $form-control-container-line-height: $border-md !default;
 $form-control-container-line-transition: $timer-md $function-ease $property-width !default;
 $form-control-container-line-z-index:  $zindex-level-1 !default;
 
+$form-control-caret-color: $color-purple !default;
 $form-control-color: $color-gray-darkest !default;
 $form-control-font-family: $font-family-primary !default;
 $form-control-font-size: $font-size-sm !default;
@@ -42,7 +43,6 @@ $form-control-active-label-top: $space-none !default;
 
 $form-control-focused-container-line-width: 100% !default;
 $form-control-focused-label-color: $color-purple !default;
-$form-control-focused-caret-color: $color-purple !default;
 
 $form-control-disabled-container-border-color: $color-gray !default;
 $form-control-disabled-label-color: $color-gray !default;
