@@ -13,7 +13,7 @@ describe('cloneObject', () => {
   });
 
   it('should be inmmutable', () => {
-    const a = {a:1, b:0};
+    const a = { a:1, b:0 };
     const b = cloneObject(a);
 
     expect(a).toEqual(b);
@@ -28,7 +28,7 @@ describe('cloneObject', () => {
 
   it('should be null when the object is undefined', () => {
     expect(cloneObject(undefined)).toBeNull();
-  })
+  });
 
   it('should be null when object is null', () => {
     expect(cloneObject(null)).toBeNull();
