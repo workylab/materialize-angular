@@ -37,7 +37,7 @@ import { RadioGroupComponent } from '../completed-components/radio-group/radio-g
 import { RippleDirective } from '../directives/ripple.directive';
 import { RouterModule } from '@angular/router';
 import { SelectComponent } from '../completed-components/select/select.component';
-import { SelectOptionComponent } from './select-option/select-option.component';
+import { SelectOptionComponent } from '../completed-components/select-option/select-option.component';
 import { SliderComponent } from '../completed-components/slider/slider.component';
 import { SliderIndicatorComponent } from '../completed-components/slider-indicator/slider-indicator.component';
 import { SliderOptionComponent } from '../completed-components/slider-option/slider-option.component';
