@@ -15,30 +15,43 @@
 @import './transitions/timers';
 
 @import './variables';
+@import './variables/badges';
 @import './variables/buttons';
 @import './variables/cards';
-@import './variables/colors';
+@import './variables/checkboxes';
+@import './variables/forms';
 @import './variables/icons';
 @import './variables/labels';
+@import './variables/navbars';
 @import './variables/radios';
-@import './variables/slider';
-@import './variables/slider-option';
+@import './variables/select-options';
+@import './variables/sliders';
+@import './variables/slider-options';
 @import './variables/switches';
-@import './variables/colors';
-@import './variables/typography.scss';
-@import './variables/badges.scss';
+@import './variables/typography';
+
+@import './placeholders/forms';
+
+@import './css/badges';
+@import './css/typography';
 
 @import './components/button';
 @import './components/card';
+@import './components/checkbox';
 @import './components/fonts';
+@import './components/form';
+@import './components/html-visualizer';
 @import './components/icon';
+@import './components/input';
 @import './components/label';
+@import './components/navbar';
 @import './components/radio';
 @import './components/radio-group';
 @import './components/ripple';
+@import './components/select';
+@import './components/select-option';
 @import './components/slider';
 @import './components/slider-option';
+@import './components/stepper';
 @import './components/switch';
-
-@import './css/typography.scss';
-@import './css/badges.scss';
+@import './components/textarea';

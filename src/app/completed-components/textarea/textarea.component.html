@@ -1,0 +1,26 @@
+<div (blur)="onBlur()" (focus)="onFocus()"
+  [ngClass]="[prefix + '-form-control-container', className]"
+  [class.float-label]="floatLabel"
+  [class.active]="value || placeholder"
+  [class.focused]="isFocused"
+  [class.disabled]="disabled"
+>
+  <div [ngClass]="prefix + '-form-control-wrapper'">
+    <div [ngClass]="prefix + '-form-control-label'">{{ floatLabel }}</div>
+
+    <textarea (input)="onChange($event)" (blur)="onBlur()" (focus)="onFocus()"
+      [ngClass]="prefix + '-form-control'"
+      [disabled]="disabled"
+      [id]="id"
+      [maxLength]="maxLength"
+      [minLength]="minLength"
+      [name]="name"
+      [placeholder]="placeholder"
+      [required]="required"
+      [rows]="rows"
+      [value]="value">
+    </textarea>
+  </div>
+</div>
+
+<materialize-form-message type="info" *ngIf="hasCounter">{{ value.length }} / {{ maxLength }}</materialize-form-message>

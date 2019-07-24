@@ -1,4 +1,4 @@
-import { InputModel } from '../input/input.model';
+import { InputModel } from '../../completed-components/input/input.model';
 
 export interface DatePickerModel extends InputModel {
   date: Date;

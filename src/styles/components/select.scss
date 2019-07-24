@@ -1,0 +1,56 @@
+.#{$prefix}-form-control-select-container {
+  cursor: pointer;
+  outline: none;
+  position: relative;
+
+  .#{$prefix}-form-control-container.disabled .#{$prefix}-form-control-select-icon {
+    color: $color-gray;
+    cursor: not-allowed;
+  }
+
+  &.open .#{$prefix}-form-control-select-icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &.open .#{$prefix}-form-control-select-menu {
+    display: block;
+  }
+}
+
+.#{$prefix}-form-control-select-icon {
+  color: $color-gray-dark;
+  position: absolute;
+  right: $space-xs;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 300ms ease;
+}
+
+.#{$prefix}-form-control-select-backdrop {
+  background-color: transparent;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: $zindex-level-1;
+}
+
+.#{$prefix}-form-control-select-menu {
+  background: $color-white;
+  box-shadow: $shadow-md;
+  cursor: pointer;
+  display: none;
+  left: 0;
+  padding: $space-xs 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: $zindex-level-2;
+}
+
+#{$prefix}-select.ng-touched.ng-dirty.ng-invalid {
+  @extend %form-control-error;
+}

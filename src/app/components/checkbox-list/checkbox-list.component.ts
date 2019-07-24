@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, ContentChildren, forwardRef, Input, OnInit, QueryList } from '@angular/core';
 import { CheckboxListModel, CheckboxListValueModel } from './checkbox-list.model';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { CheckboxComponent } from '../checkbox/checkbox.component';
+import { CheckboxComponent } from '../../completed-components/checkbox/checkbox.component';
 import { config } from '../../config';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
 

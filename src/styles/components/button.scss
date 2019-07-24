@@ -20,12 +20,14 @@
   white-space: $button-primary-white-space;
   width: $button-primary-width;
 
-  &:hover {
-    background-color: $button-primary-hover-background-color;
+  @media (hover: hover) {
+    &:hover {
+      background: $button-primary-hover-background;
+    }
   }
 
   &.focused {
-    background-color: $button-primary-focused-background-color;
+    background: $button-primary-focused-background;
   }
 
   &[disabled] {
@@ -36,7 +38,7 @@
   }
 
   .ripple {
-    background-color: $button-primary-ripple-background-color;
+    background: $button-primary-ripple-background;
   }
 }
 
@@ -61,12 +63,14 @@
   white-space: $button-outline-white-space;
   width: $button-outline-width;
 
-  &:hover {
-    background-color: $button-outline-hover-background-color;
+  @media (hover: hover) {
+    &:hover {
+      background: $button-outline-hover-background;
+    }
   }
 
   &.focused {
-    background-color: $button-outline-focused-background-color;
+    background: $button-outline-focused-background;
   }
 
   &[disabled] {
@@ -77,7 +81,7 @@
   }
 
   .ripple {
-    background-color: $button-outline-ripple-background-color;
+    background: $button-outline-ripple-background;
   }
 }
 
@@ -102,12 +106,14 @@
   white-space: $button-text-white-space;
   width: $button-text-width;
 
-  &:hover {
-    background-color: $button-text-hover-background-color;
+  @media (hover: hover) {
+    &:hover {
+      background: $button-text-hover-background;
+    }
   }
 
   &.focused {
-    background-color: $button-text-focused-background-color;
+    background: $button-text-focused-background;
   }
 
   &[disabled] {
@@ -117,6 +123,6 @@
   }
 
   .ripple {
-    background-color: $button-text-ripple-background-color;
+    background: $button-text-ripple-background;
   }
 }

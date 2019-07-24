@@ -3,7 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
 import { DateModel } from '../calendar/calendar.model';
 import { DatePickerModel } from './datepicker.model';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
+import { INPUT_TYPE } from '../../completed-components/input/input.model';
 
 @Component({
   providers: [{
@@ -12,7 +12,6 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => DatePickerComponent)
   }],
   selector: `${ config.components.prefix }-datepicker }`,
-  styleUrls: ['./datepicker.component.scss'],
   templateUrl: './datepicker.component.html'
 })
 export class DatePickerComponent implements ControlValueAccessor, OnInit {
@@ -34,60 +33,34 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     name: '',
     placeholder: '',
     required: false,
-    type: 'text',
+    type: INPUT_TYPE.TEXT,
     value: ''
   };
 
   @ViewChild('backdrop') backdropRef: ElementRef;
 
-  @Input('className') classNameInput: string;
-  @Input('disabled') disabledInput: boolean;
-  @Input('floatLabel') floatLabelInput: string;
-  @Input('format') formatInput: string;
-  @Input('fullSize') fullSizeInput: boolean;
-  @Input('id') idInput: string | null;
-  @Input('name') nameInput: string;
-  @Input('placeholder') placeholderInput: string;
-  @Input('required') requiredInput: boolean;
-  @Input('value') valueInput: string;
+  @Input() className: string = DatePickerComponent.defaultProps.className;
+  @Input() disabled: boolean = DatePickerComponent.defaultProps.disabled;
+  @Input() floatLabel: string = DatePickerComponent.defaultProps.floatLabel;
+  @Input() format: string = DatePickerComponent.defaultProps.format;
+  @Input() fullSize: boolean = DatePickerComponent.defaultProps.fullSize;
+  @Input() id: string | null = DatePickerComponent.defaultProps.id;
+  @Input() name: string = DatePickerComponent.defaultProps.name;
+  @Input() placeholder: string = DatePickerComponent.defaultProps.placeholder;
+  @Input() required: boolean = DatePickerComponent.defaultProps.required;
+  @Input() value: string = DatePickerComponent.defaultProps.value;
 
-  public className: string;
   public date: Date;
-  public disabled: boolean;
-  public floatLabel: string;
-  public format: string;
-  public fullSize: boolean;
-  public id: string | null;
   public isOpen: boolean;
-  public name: string;
-  public placeholder: string;
-  public required: boolean;
-  public value: string;
 
   constructor() {
+    this.isOpen = false;
+
     this.close = this.close.bind(this);
   }
 
   ngOnInit() {
-    this.initValues();
-  }
-
-  initValues() {
-    const { defaultProps } = DatePickerComponent;
-
-    this.className = this.classNameInput || defaultProps.className;
-    this.disabled = getBooleanValue(this.disabledInput, defaultProps.disabled);
-    this.floatLabel = this.floatLabelInput || defaultProps.floatLabel;
-    this.format = this.formatInput || defaultProps.format;
-    this.fullSize = getBooleanValue(this.fullSizeInput, defaultProps.fullSize);
-    this.id = this.idInput || defaultProps.id;
-    this.name = this.nameInput || defaultProps.name;
-    this.placeholder = this.placeholderInput || defaultProps.placeholder;
-    this.required = getBooleanValue(this.requiredInput, defaultProps.required);
-    this.value = this.valueInput || defaultProps.value;
-
     this.date = this.buildDate(this.value);
-    this.isOpen = false;
   }
 
   onSelectDay(selectedDate: DateModel) {

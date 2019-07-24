@@ -5,7 +5,7 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ButtonToggleGroupComponent } from './button-toggle-group/button-toggle-group.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CardComponent } from '../completed-components/card/card.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CheckboxComponent } from '../completed-components/checkbox/checkbox.component';
 import { CheckboxListComponent } from './checkbox-list/checkbox-list.component';
 import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CollapsibleContentComponent } from './collapsible-content/collapsible-content.component';
@@ -19,8 +19,9 @@ import { DrawerContentComponent } from './drawer-content/drawer-content.componen
 import { DrawerHandlerComponent } from './drawer-handler/drawer-handler.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { FormMessageComponent } from './form-message/form-message.component';
+import { HTMLVisualizerComponent } from '../completed-components/html-visualizer/html-visualizer.component';
 import { IconComponent } from '../completed-components/icon/icon.component';
-import { InputComponent } from './input/input.component';
+import { InputComponent } from '../completed-components/input/input.component';
 import { LabelComponent } from '../completed-components/label/label.component';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
@@ -28,24 +29,26 @@ import { ModalCloseDirective } from '../directives/modal-close.directive';
 import { ModalComponent } from './modal/modal.component';
 import { ModalContentComponent } from './modal-content/modal-content.component';
 import { ModalHandlerComponent } from './modal-handler/modal-handler.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from '../completed-components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { PrefixDirective } from '../directives/prefix.directive';
 import { RadioComponent } from '../completed-components/radio/radio.component';
 import { RadioGroupComponent } from '../completed-components/radio-group/radio-group.component';
 import { RippleDirective } from '../directives/ripple.directive';
 import { RouterModule } from '@angular/router';
-import { SelectComponent } from './select/select.component';
-import { SelectOptionComponent } from './select-option/select-option.component';
-import { SliderComponent } from './slider/slider.component';
-import { SliderIndicatorComponent } from './slider-indicator/slider-indicator.component';
-import { SliderOptionComponent } from './slider-option/slider-option.component';
+import { SelectComponent } from '../completed-components/select/select.component';
+import { SelectOptionComponent } from '../completed-components/select-option/select-option.component';
+import { SliderComponent } from '../completed-components/slider/slider.component';
+import { SliderIndicatorComponent } from '../completed-components/slider-indicator/slider-indicator.component';
+import { SliderOptionComponent } from '../completed-components/slider-option/slider-option.component';
+import { StepComponent } from '../completed-components/step/step.component';
+import { StepperComponent } from '../completed-components/stepper/stepper.component';
 import { SuffixDirective } from '../directives/suffix.directive';
 import { SwitchComponent } from '../completed-components/switch/switch.component';
 import { TabComponent } from './tab/tab.component';
 import { TabGroupComponent } from './tab-group/tab-group.component';
 import { TableComponent } from './table/table.component';
-import { TextAreaComponent } from './textarea/textarea.component';
+import { TextAreaComponent } from '../completed-components/textarea/textarea.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 
 @NgModule({
@@ -69,6 +72,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
+    HTMLVisualizerComponent,
     IconComponent,
     InputComponent,
     LabelComponent,
@@ -89,6 +93,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SliderComponent,
     SliderIndicatorComponent,
     SliderOptionComponent,
+    StepComponent,
+    StepperComponent,
     SwitchComponent,
     TabComponent,
     TabGroupComponent,
@@ -116,6 +122,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
+    HTMLVisualizerComponent,
     IconComponent,
     InputComponent,
     LabelComponent,
@@ -135,6 +142,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SliderComponent,
     SliderIndicatorComponent,
     SliderOptionComponent,
+    StepComponent,
+    StepperComponent,
     SuffixDirective,
     SwitchComponent,
     TabComponent,

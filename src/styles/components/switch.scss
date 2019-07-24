@@ -12,7 +12,7 @@
   }
 
   &.active .#{$prefix}-switch-indicator {
-    left: 14px;
+    left: $switch-indicator-track-width - $switch-indicator-size;
   }
 
   &:not(.disabled) {
@@ -125,12 +125,12 @@
   }
 
   .#{$prefix}-switch.focused .#{$prefix}-switch-indicator-ripple {
-    background-color: rgba($color-red, 0.05);
+    background: rgba($color-red, 0.05);
   }
 
   @media (hover: hover) {
     &:hover .#{$prefix}-switch-indicator-ripple {
-      background-color: rgba($color-red, 0.1);
+      background: rgba($color-red, 0.1);
     }
   }
 
