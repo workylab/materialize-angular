@@ -1,0 +1,101 @@
+.spinner {
+  animation: $spinner-animation;
+  border: $spinner-border-size solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  color: $spinner-color;
+  display: inline-block;
+  height: $spinner-size;
+  width: $spinner-size;
+}
+
+.spinner-primary {
+  color: $spinner-primary-border-color;
+}
+
+.spinner-secondary {
+  color: $spinner-secondary-border-color;
+}
+
+.spinner-success {
+  color: $spinner-success-border-color;
+}
+
+.spinner-danger {
+  color: $spinner-danger-border-color;
+}
+
+.spinner-warning {
+  color: $spinner-warning-border-color;
+}
+
+.spinner-info {
+  color: $spinner-info-border-color;
+}
+
+.spinner-light {
+  color: $spinner-light-border-color;
+}
+
+.spinner-dark {
+  color: $spinner-dark-border-color;
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: $loader-animation;
+  background-color: currentColor;
+  border-radius: 50%;
+  color: $loader-color;
+  display: inline-block;
+  height: $loader-size;
+  opacity: 0;
+  width: $loader-size;
+}
+
+.loader-primary {
+  color: $loader-primary-color;
+}
+
+.loader-secondary {
+  color: $loader-secondary-color;
+}
+
+.loader-success {
+  color: $loader-success-color;
+}
+
+.loader-danger {
+  color: $loader-danger-color;
+}
+
+.loader-warning {
+  color: $loader-warning-color;
+}
+
+.loader-info {
+  color: $loader-info-color;
+}
+
+.loader-light {
+  color: $loader-light-color;
+}
+
+.loader-dark {
+  color: $loader-dark-color;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
