@@ -1,0 +1,27 @@
+.#{$prefix}-html-visualizer {
+  background-color: #282925;
+  border-radius: 5px;
+  color: rgb(255, 24, 105);
+  font-size: 14px;
+  font-weight: $font-weight-regular;
+  line-height: 18px;
+  margin: $space-xs 0;
+  padding: $space-xxxl;
+}
+
+.#{$prefix}-html-visualizer-content {
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.#{$prefix}-html-visualizer-attribute {
+  color: rgb(255, 238, 153);
+}
+
+.#{$prefix}-html-visualizer-value {
+  color: $color-white;
+}
+
+.#{$prefix}-html-visualizer-symbol {
+  color: $color-gray-light;
+}
