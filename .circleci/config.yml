@@ -55,8 +55,9 @@ jobs:
           command: cd ~/repo/dist/materialize-angular && npm publish  
 workflows:
   version: 2
-  test-deploy:
+  test-build-publish:
     jobs:
+      - test
       - deploy:
           requires:
             - test
