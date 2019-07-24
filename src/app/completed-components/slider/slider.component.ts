@@ -1,5 +1,6 @@
 import {
   AfterContentInit,
+  AfterViewInit,
   Component,
   ContentChildren,
   ElementRef,
@@ -27,7 +28,7 @@ import { SupportedEventsModel } from '../../components/common/models/supported-e
   selector: `${ config.components.prefix }-slider }`,
   templateUrl: './slider.component.html'
 })
-export class SliderComponent implements AfterContentInit, ControlValueAccessor {
+export class SliderComponent implements AfterContentInit, AfterViewInit, ControlValueAccessor {
   static readonly tickClassName = config.components.prefix + '-slider-step';
 
   static readonly defaultProps: SliderModel = {
@@ -64,17 +65,18 @@ export class SliderComponent implements AfterContentInit, ControlValueAccessor {
   constructor(private renderer: Renderer2) {
     this.isFocused = false;
     this.supportedEvents = supportedEvents();
+    this.onChangeEmitter = new EventEmitter();
 
     this.actionDown = this.actionDown.bind(this);
     this.actionMove = this.actionMove.bind(this);
     this.actionUp = this.actionUp.bind(this);
     this.update = this.update.bind(this);
 
-    this.onChangeEmitter = new EventEmitter();
-
-    this.sliderTrack.nativeElement.addEventListener(this.supportedEvents.down, this.actionDown);
-
     window.addEventListener(this.supportedEvents.resize, this.update);
+  }
+
+  ngAfterViewInit() {
+    this.sliderTrack.nativeElement.addEventListener(this.supportedEvents.down, this.actionDown);
   }
 
   ngAfterContentInit() {
