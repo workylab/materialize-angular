@@ -19,6 +19,7 @@ import { DrawerContentComponent } from './drawer-content/drawer-content.componen
 import { DrawerHandlerComponent } from './drawer-handler/drawer-handler.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { FormMessageComponent } from './form-message/form-message.component';
+import { HTMLVisualizerComponent } from '../completed-components/html-visualizer/html-visualizer.component';
 import { IconComponent } from '../completed-components/icon/icon.component';
 import { InputComponent } from './input/input.component';
 import { LabelComponent } from '../completed-components/label/label.component';
@@ -40,6 +41,8 @@ import { SelectOptionComponent } from './select-option/select-option.component';
 import { SliderComponent } from './slider/slider.component';
 import { SliderIndicatorComponent } from './slider-indicator/slider-indicator.component';
 import { SliderOptionComponent } from './slider-option/slider-option.component';
+import { StepComponent } from '../completed-components/step/step.component';
+import { StepperComponent } from '../completed-components/stepper/stepper.component';
 import { SuffixDirective } from '../directives/suffix.directive';
 import { SwitchComponent } from '../completed-components/switch/switch.component';
 import { TabComponent } from './tab/tab.component';
@@ -69,6 +72,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
+    HTMLVisualizerComponent,
     IconComponent,
     InputComponent,
     LabelComponent,
@@ -89,6 +93,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SliderComponent,
     SliderIndicatorComponent,
     SliderOptionComponent,
+    StepComponent,
+    StepperComponent,
     SwitchComponent,
     TabComponent,
     TabGroupComponent,
@@ -116,6 +122,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
+    HTMLVisualizerComponent,
     IconComponent,
     InputComponent,
     LabelComponent,
@@ -135,6 +142,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SliderComponent,
     SliderIndicatorComponent,
     SliderOptionComponent,
+    StepComponent,
+    StepperComponent,
     SuffixDirective,
     SwitchComponent,
     TabComponent,
