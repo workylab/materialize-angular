@@ -19,6 +19,7 @@
 @import './variables/cards';
 @import './variables/checkboxes';
 @import './variables/colors';
+@import './variables/forms';
 @import './variables/icons';
 @import './variables/labels';
 @import './variables/navbars';
@@ -30,12 +31,16 @@
 @import './variables/typography.scss';
 @import './variables/badges.scss';
 
+@import './placeholders/forms';
+
 @import './components/button';
 @import './components/card';
 @import './components/checkbox';
 @import './components/fonts';
+@import './components/form';
 @import './components/html-visualizer';
 @import './components/icon';
+@import './components/input';
 @import './components/label';
 @import './components/navbar';
 @import './components/radio';

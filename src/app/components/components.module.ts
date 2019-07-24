@@ -11,7 +11,7 @@ import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CollapsibleContentComponent } from './collapsible-content/collapsible-content.component';
 import { CollapsibleTitleComponent } from './collapsible-title/collapsible-title.component';
 import { CommonModule } from '@angular/common';
-import { DatePickerComponent } from './datepicker/datepicker.component';
+import { DatePickerComponent } from '../completed-components/datepicker/datepicker.component';
 import { DrawerCloseDirective } from '../directives/drawer-close.directive';
 import { DrawerComponent } from './drawer/drawer.component';
 import { DrawerContainerComponent } from './drawer-container/drawer-container.component';
@@ -21,7 +21,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { FormMessageComponent } from './form-message/form-message.component';
 import { HTMLVisualizerComponent } from '../completed-components/html-visualizer/html-visualizer.component';
 import { IconComponent } from '../completed-components/icon/icon.component';
-import { InputComponent } from './input/input.component';
+import { InputComponent } from '../completed-components/input/input.component';
 import { LabelComponent } from '../completed-components/label/label.component';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
@@ -36,7 +36,7 @@ import { RadioComponent } from '../completed-components/radio/radio.component';
 import { RadioGroupComponent } from '../completed-components/radio-group/radio-group.component';
 import { RippleDirective } from '../directives/ripple.directive';
 import { RouterModule } from '@angular/router';
-import { SelectComponent } from './select/select.component';
+import { SelectComponent } from '../completed-components/select/select.component';
 import { SelectOptionComponent } from './select-option/select-option.component';
 import { SliderComponent } from './slider/slider.component';
 import { SliderIndicatorComponent } from './slider-indicator/slider-indicator.component';
@@ -48,7 +48,7 @@ import { SwitchComponent } from '../completed-components/switch/switch.component
 import { TabComponent } from './tab/tab.component';
 import { TabGroupComponent } from './tab-group/tab-group.component';
 import { TableComponent } from './table/table.component';
-import { TextAreaComponent } from './textarea/textarea.component';
+import { TextAreaComponent } from '../completed-components/textarea/textarea.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 
 @NgModule({
