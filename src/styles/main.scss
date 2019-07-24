@@ -25,8 +25,9 @@
 @import './variables/labels';
 @import './variables/navbars';
 @import './variables/radios';
-@import './variables/slider';
-@import './variables/slider-option';
+@import './variables/select-options';
+@import './variables/sliders';
+@import './variables/slider-options';
 @import './variables/switches';
 @import './variables/typography.scss';
 
@@ -45,6 +46,8 @@
 @import './components/radio';
 @import './components/radio-group';
 @import './components/ripple';
+@import './components/select';
+@import './components/select-option';
 @import './components/slider';
 @import './components/slider-option';
 @import './components/stepper';

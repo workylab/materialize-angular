@@ -1,0 +1,11 @@
+$select-option-background: $color-white !default;
+$select-option-color: $color-gray-dark !default;
+$select-option-font-family: $font-family-primary !default;
+$select-option-font-size: $font-size-sm !default;
+$select-option-font-weight: $font-weight-regular !default;
+$select-option-outline: none !default;
+$select-option-padding: $space-md $space-sm !default;
+
+$select-option-active-background: $color-gray-light !default;
+
+$select-option-hover-background: rgba($color-purple, 0.1) !default;

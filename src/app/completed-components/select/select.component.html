@@ -1,0 +1,53 @@
+<div [ngClass]="[className, prefix + '-form-control-select-container']" *ngIf="isNativeControl">
+  <div [ngClass]="prefix + '-form-control-container'"
+    [class.float-label]="floatLabel"
+    [class.active]="value"
+    [class.focused]="isFocused"
+    [class.disabled]="disabled"
+  >
+    <div [ngClass]="prefix + '-form-control-wrapper'">
+      <div [ngClass]="prefix + '-form-control-label'">{{ floatLabel }}</div>
+
+      <select (blur)="onBlur()" (click)="onClick()" (focus)="onFocus()" (input)="onChangeNativeOption($event)"
+        [ngClass]="prefix + '-form-control'"
+        [attr.id]="id"
+        [disabled]="disabled"
+        [name]="name"
+        [required]="required"
+        [value]="value"
+      >
+        <option [value]="option.value" *ngFor="let option of options">{{ option.content }}</option>
+      </select>
+    </div>
+
+    <materialize-icon [className]="prefix + '-form-control-select-icon'" size="lg">arrow_drop_down</materialize-icon>
+  </div>
+</div>
+
+
+<div (focus)="onFocus()" (blur)="onBlur()" *ngIf="!isNativeControl"
+  [ngClass]="[className, prefix + '-form-control-select-container']"
+  [class.open]="isOpen"
+  [tabindex]="disabled ? '-1' : '0'"
+>
+  <div #backdrop *ngIf="isOpen" [ngClass]="prefix + '-form-control-select-backdrop'"></div>
+
+  <div (click)="onClick()"
+    [ngClass]="[prefix + '-form-control-container' , className]"
+    [class.float-label]="floatLabel"
+    [class.active]="value"
+    [class.focused]="isFocused"
+    [class.disabled]="disabled"
+  >
+    <div [ngClass]="prefix + '-form-control-wrapper'">
+      <div [ngClass]="prefix + '-form-control-label'">{{ floatLabel }}</div>
+      <div [ngClass]="prefix + '-form-control'" #labelContainer>&nbsp;</div>
+    </div>
+
+    <materialize-icon [className]="prefix + '-form-control-select-icon'" size="lg">arrow_drop_down</materialize-icon>
+  </div>
+
+  <div [className]="prefix + '-form-control-select-menu'">
+    <ng-content select="materialize-select-option"></ng-content>
+  </div>
+</div>
