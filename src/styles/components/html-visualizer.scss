@@ -1,12 +1,13 @@
 .#{$prefix}-html-visualizer {
-  background-color: #282925;
+  background-color: #F8F8FA;
   border-radius: 5px;
-  color: rgb(255, 24, 105);
+  color: #005CC5;
+  font-family: $font-family-secondary;
   font-size: 14px;
   font-weight: $font-weight-regular;
   line-height: 18px;
   margin: $space-xs 0;
-  padding: $space-xxxl;
+  padding: $space-sm;
 }
 
 .#{$prefix}-html-visualizer-content {
@@ -15,13 +16,13 @@
 }
 
 .#{$prefix}-html-visualizer-attribute {
-  color: rgb(255, 238, 153);
+  color: #6F42C1;
 }
 
 .#{$prefix}-html-visualizer-value {
-  color: $color-white;
+  color: #032F62;
 }
 
 .#{$prefix}-html-visualizer-symbol {
-  color: $color-gray-light;
+  color: #032F62;
 }

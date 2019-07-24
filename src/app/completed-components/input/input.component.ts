@@ -30,7 +30,7 @@ export class InputComponent implements ControlValueAccessor {
 
   @Output() onFocusEmitter: EventEmitter<void>;
   @Output() onChangeEmitter: EventEmitter<string>;
-  @Output() onBlurEmitter: EventEmitter<Event>;
+  @Output() onBlurEmitter: EventEmitter<void>;
 
   @Input() autocomplete: string = InputComponent.defaultProps.autocomplete;
   @Input() className: string = InputComponent.defaultProps.className;
@@ -58,7 +58,7 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   onBlur(): void {
-    this.onBlurEmitter.emit(event);
+    this.onBlurEmitter.emit();
     this.isFocused = false;
   }
 

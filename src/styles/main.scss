@@ -15,6 +15,7 @@
 @import './transitions/timers';
 
 @import './variables';
+@import './variables/badges.scss';
 @import './variables/buttons';
 @import './variables/cards';
 @import './variables/checkboxes';
@@ -27,9 +28,7 @@
 @import './variables/slider';
 @import './variables/slider-option';
 @import './variables/switches';
-@import './variables/colors';
 @import './variables/typography.scss';
-@import './variables/badges.scss';
 
 @import './placeholders/forms';
 
@@ -50,6 +49,7 @@
 @import './components/slider-option';
 @import './components/stepper';
 @import './components/switch';
+@import './components/textarea';
 
-@import './css/typography.scss';
 @import './css/badges.scss';
+@import './css/typography.scss';
