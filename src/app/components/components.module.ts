@@ -11,7 +11,7 @@ import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CollapsibleContentComponent } from './collapsible-content/collapsible-content.component';
 import { CollapsibleTitleComponent } from './collapsible-title/collapsible-title.component';
 import { CommonModule } from '@angular/common';
-import { DatePickerComponent } from '../completed-components/datepicker/datepicker.component';
+import { DatePickerComponent } from './datepicker/datepicker.component';
 import { DrawerCloseDirective } from '../directives/drawer-close.directive';
 import { DrawerComponent } from './drawer/drawer.component';
 import { DrawerContainerComponent } from './drawer-container/drawer-container.component';
