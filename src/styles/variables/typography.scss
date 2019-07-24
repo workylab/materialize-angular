@@ -1,10 +1,10 @@
 $blockquote-font-family: $font-family-primary !default;
-$blockquote-border-color: map-get($colors, 'primary');
-$blockquote-border-size: 5px;
-$blockquote-font-color: map-get($colors, 'black');
-$blockquote-font-size: $font-size-sm;
-$blockquote-font-weight: $font-weight-medium;
-$blockquote-line-height: $font-size-xxl;
+$blockquote-border-color: map-get($colors, 'primary') !default;
+$blockquote-border-size: 5px !default;
+$blockquote-font-color: map-get($colors, 'black') !default;
+$blockquote-font-size: $font-size-sm !default;
+$blockquote-font-weight: $font-weight-medium !default;
+$blockquote-line-height: $font-size-xxl !default;
 
 $heading-font-family: $font-family-primary !default;
 $heading-1-font-family: $heading-font-family !default;

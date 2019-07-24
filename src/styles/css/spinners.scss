@@ -46,3 +46,56 @@
     transform: rotate(360deg);
   }
 }
+
+.loader {
+  animation: $loader-animation;
+  background-color: currentColor;
+  border-radius: 50%;
+  color: $loader-color;
+  display: inline-block;
+  height: $loader-size;
+  opacity: 0;
+  width: $loader-size;
+}
+
+.loader-primary {
+  color: $loader-primary-color;
+}
+
+.loader-secondary {
+  color: $loader-secondary-color;
+}
+
+.loader-success {
+  color: $loader-success-color;
+}
+
+.loader-danger {
+  color: $loader-danger-color;
+}
+
+.loader-warning {
+  color: $loader-warning-color;
+}
+
+.loader-info {
+  color: $loader-info-color;
+}
+
+.loader-light {
+  color: $loader-light-color;
+}
+
+.loader-dark {
+  color: $loader-dark-color;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
