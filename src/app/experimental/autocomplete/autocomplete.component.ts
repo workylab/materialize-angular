@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AutocompleteModel } from './autocomplete.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
-import { InputComponent } from '../../completed-components/input/input.component';
 import { INPUT_TYPE } from 'src/app/completed-components/input/input.model';
+import { InputComponent } from '../../completed-components/input/input.component';
 
 @Component({
   selector: 'materialize-autocomplete',
