@@ -13,7 +13,11 @@ describe('cloneObject', () => {
   });
 
   it('should be inmmutable', () => {
+<<<<<<< HEAD
     const a = { a: 1, b: 0 };
+=======
+    const a = { a:1, b:0 };
+>>>>>>> Fixing linting
     const b = cloneObject(a);
 
     expect(a).toEqual(b);
