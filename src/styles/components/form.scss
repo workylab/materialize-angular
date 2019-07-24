@@ -90,6 +90,11 @@
   padding: $form-control-padding;
   resize: vertical;
   width: 100%;
+
+  &::placeholder {
+    color: $form-control-placeholder-color;
+    font-weight: $form-control-placeholder-font-weight;
+  }
 }
 
 .#{$prefix}-form-control-label {
