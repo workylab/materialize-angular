@@ -10,7 +10,7 @@ export class ModalHandlerComponent {
   @Input() modal: ModalComponent;
 
   @HostListener('click', ['$event'])
-  onClick() {
+  onClick(event: any) {
     if (this.modal) {
       this.modal.open();
     }

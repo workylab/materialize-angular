@@ -42,6 +42,8 @@ export class ModalComponent implements AfterViewInit, ModalModel {
   @Input() isOpen: boolean = ModalComponent.defaultProps.isOpen;
   @Input() transitionDuration: number = ModalComponent.defaultProps.transitionDuration;
 
+  public prefix = config.components.prefix;
+
   constructor() {
     this.onOpenEmitter = new EventEmitter();
     this.onCloseEmitter = new EventEmitter();
