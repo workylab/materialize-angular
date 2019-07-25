@@ -1,0 +1,8 @@
+<div [ngClass]="[prefix + '-modal', className]" [class.active]="isOpen" #modal>
+  <div [ngClass]="prefix + '-modal-backdrop'" #backdrop *ngIf="hasBackdrop"></div>
+  <div [ngClass]="prefix + '-modal-content'">
+    <materialize-icon [className]="prefix + '-modal-icon-close'" *ngIf="hasCloseButton" (onClick)="close()">close</materialize-icon>
+
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -517,11 +517,17 @@ Button Toggle disabled
 <br />
 <br />
 
-<h3>Modal</h3>
-<materialize-modal [isOpen]="false">
-</materialize-modal>
+<materialize-form-message type="info">Info Message</materialize-form-message>
+<materialize-form-message type="error">Error Message</materialize-form-message>
+<materialize-form-message type="warning">Warning Message</materialize-form-message>
+<materialize-form-message type="success">Success Message</materialize-form-message>
 
-<h3>Modal Default</h3>
+<br />
+<br />
+<br />
+
+<!--
+Modal Default
 <materialize-modal>
   <materialize-modal-handler>
     <materialize-icon>loupe</materialize-icon>
@@ -529,7 +535,7 @@ Button Toggle disabled
   <materialize-modal-content>Modal</materialize-modal-content>
 </materialize-modal>
 
-<h3>Modal not close on backdrop</h3>
+Modal not close on backdrop
 <materialize-modal [dismissOnBackdrop]="false">
   <materialize-modal-handler>
     <materialize-icon>loupe</materialize-icon>
@@ -539,7 +545,7 @@ Button Toggle disabled
   </materialize-modal-content>
 </materialize-modal>
 
-<h3>Modal without backdrop</h3>
+Modal without backdrop
 <materialize-modal [hasBackdrop]="false">
   <materialize-modal-handler>
     <materialize-icon>loupe</materialize-icon>
@@ -547,16 +553,15 @@ Button Toggle disabled
   <materialize-modal-content>
     <materialize-button materializeModalClose>close modal</materialize-button>
   </materialize-modal-content>
-</materialize-modal>
+</materialize-modal> -->
 
-<h3>Modal without close button</h3>
-<materialize-modal [hasCloseButton]="false">
-  <materialize-modal-handler>
-    <materialize-icon>loupe</materialize-icon>
-  </materialize-modal-handler>
-  <materialize-modal-content>
-    <materialize-button materializeModalClose>close modal</materialize-button>
-  </materialize-modal-content>
+Modal without close button
+<materialize-modal-handler [modal]="modalExample">
+  <materialize-icon>loupe</materialize-icon>
+</materialize-modal-handler>
+
+<materialize-modal #modalExample>  
+  <materialize-button materializeModalClose>close modal</materialize-button>
 </materialize-modal>
 
 <br />
