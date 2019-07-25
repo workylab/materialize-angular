@@ -18,7 +18,7 @@ import { DrawerContainerComponent } from './drawer-container/drawer-container.co
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
 import { DrawerHandlerComponent } from './drawer-handler/drawer-handler.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
-import { FormMessageComponent } from './form-message/form-message.component';
+import { FormMessageComponent } from '../completed-components/form-message/form-message.component';
 import { HTMLVisualizerComponent } from '../completed-components/html-visualizer/html-visualizer.component';
 import { IconComponent } from '../completed-components/icon/icon.component';
 import { InputComponent } from '../completed-components/input/input.component';
@@ -26,9 +26,8 @@ import { LabelComponent } from '../completed-components/label/label.component';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ModalCloseDirective } from '../directives/modal-close.directive';
-import { ModalComponent } from './modal/modal.component';
-import { ModalContentComponent } from './modal-content/modal-content.component';
-import { ModalHandlerComponent } from './modal-handler/modal-handler.component';
+import { ModalComponent } from '../completed-components/modal/modal.component';
+import { ModalHandlerComponent } from '../completed-components/modal-handler/modal-handler.component';
 import { NavbarComponent } from '../completed-components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { PrefixDirective } from '../directives/prefix.directive';
@@ -80,7 +79,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     ListItemComponent,
     ModalCloseDirective,
     ModalComponent,
-    ModalContentComponent,
     ModalHandlerComponent,
     NavbarComponent,
     PrefixDirective,
@@ -130,7 +128,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     ListItemComponent,
     ModalCloseDirective,
     ModalComponent,
-    ModalContentComponent,
     ModalHandlerComponent,
     NavbarComponent,
     PrefixDirective,
