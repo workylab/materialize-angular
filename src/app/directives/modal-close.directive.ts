@@ -1,9 +1,17 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
   selector: '[materializeModalClose]'
 })
 export class ModalCloseDirective {
-  constructor(public elementRef: ElementRef) {
+  @Output('onClick') onClickEmitter: EventEmitter<void>;
+
+  constructor() {
+    this.onClickEmitter = new EventEmitter();
+  }
+
+  @HostListener('click', ['$event'])
+  onClick(event: any) {
+    this.onClickEmitter.emit();
   }
 }
