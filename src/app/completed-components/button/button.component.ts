@@ -11,12 +11,14 @@ export class ButtonComponent implements ButtonModel {
     className: '',
     disabled: false,
     level: BUTTON_LEVEL.ACCENT,
+    rippleDuration: 250,
     type: BUTTON_TYPE.BUTTON
   };
 
   @Input() className: string = ButtonComponent.defaultProps.className;
   @Input() disabled: boolean = ButtonComponent.defaultProps.disabled;
   @Input() level: BUTTON_LEVEL = ButtonComponent.defaultProps.level;
+  @Input() rippleDuration: number = ButtonComponent.defaultProps.rippleDuration;
   @Input() type: BUTTON_TYPE = ButtonComponent.defaultProps.type;
 
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
@@ -40,9 +42,10 @@ export class ButtonComponent implements ButtonModel {
 
   onClick() {
     if (!this.disabled) {
-      this.onClickEmitter.emit();
-
-      this.isFocused = false;
+      setTimeout(() => {
+        this.isFocused = false;
+        this.onClickEmitter.emit();
+      }, this.rippleDuration);
     }
   }
 
