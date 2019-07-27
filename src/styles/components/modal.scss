@@ -46,7 +46,7 @@
   max-height: $modal-content-max-height;
   max-width: $modal-content-max-width;
   opacity: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: $modal-content-padding;
   position: relative;
   transform: $modal-content-transform;

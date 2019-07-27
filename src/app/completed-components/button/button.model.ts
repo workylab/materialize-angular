@@ -2,6 +2,7 @@ export interface ButtonModel {
   className: string;
   disabled: boolean;
   level: BUTTON_LEVEL;
+  rippleDuration: number;
   type: BUTTON_TYPE;
 }
 
