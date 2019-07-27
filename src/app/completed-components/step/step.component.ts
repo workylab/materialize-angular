@@ -6,7 +6,7 @@ import { StepModel } from './step.model';
   selector: `${ config.components.prefix }-step }`,
   templateUrl: './step.component.html'
 })
-export class StepComponent {
+export class StepComponent implements StepModel {
   static readonly defaultProps: StepModel = {
     step: ''
   };

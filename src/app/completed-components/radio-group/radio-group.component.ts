@@ -51,6 +51,7 @@ export class RadioGroupComponent implements AfterContentInit, ControlValueAccess
   constructor() {
     this.isFocused = false;
 
+    this.initRadios = this.initRadios.bind(this);
     this.registerRadios = this.registerRadios.bind(this);
     this.toggleRadios = this.toggleRadios.bind(this);
 
@@ -60,9 +61,7 @@ export class RadioGroupComponent implements AfterContentInit, ControlValueAccess
   ngAfterContentInit() {
     this.initRadios();
 
-    this.radiosQueryList.changes.subscribe(changes => {
-      this.initRadios();
-    });
+    this.radiosQueryList.changes.subscribe(this.initRadios);
   }
 
   initRadios() {

@@ -12,7 +12,7 @@ import { TextAreaModel } from './textarea.model';
   selector: `${ config.components.prefix }-textarea }`,
   templateUrl: './textarea.component.html'
 })
-export class TextAreaComponent implements ControlValueAccessor {
+export class TextAreaComponent implements ControlValueAccessor, TextAreaModel {
   static readonly defaultProps: TextAreaModel = {
     className: '',
     disabled: false,

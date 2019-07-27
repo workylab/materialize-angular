@@ -6,7 +6,7 @@ import { SelectOptionModel } from './select-option.model';
   selector: `${ config.components.prefix }-select-option }`,
   templateUrl: './select-option.component.html'
 })
-export class SelectOptionComponent implements AfterContentChecked {
+export class SelectOptionComponent implements AfterContentChecked, SelectOptionModel {
   static readonly defaultProps: SelectOptionModel = {
     className: '',
     disabled: false,

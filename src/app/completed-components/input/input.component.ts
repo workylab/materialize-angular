@@ -12,7 +12,7 @@ import { config } from '../../config';
   selector: `${ config.components.prefix }-input }`,
   templateUrl: './input.component.html'
 })
-export class InputComponent implements ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor, InputModel {
   static readonly defaultProps: InputModel = {
     autocomplete: 'none',
     className: '',
