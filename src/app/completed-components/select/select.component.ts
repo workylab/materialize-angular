@@ -25,7 +25,7 @@ import { SelectOptionComponent } from '../select-option/select-option.component'
   selector: `${ config.components.prefix }-select }`,
   templateUrl: './select.component.html'
 })
-export class SelectComponent implements ControlValueAccessor, AfterContentInit {
+export class SelectComponent implements ControlValueAccessor, AfterContentInit, SelectModel {
   static readonly defaultProps: SelectModel = {
     className: '',
     disabled: false,

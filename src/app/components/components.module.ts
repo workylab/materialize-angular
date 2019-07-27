@@ -35,6 +35,8 @@ import { RadioComponent } from '../completed-components/radio/radio.component';
 import { RadioGroupComponent } from '../completed-components/radio-group/radio-group.component';
 import { RippleDirective } from '../directives/ripple.directive';
 import { RouterModule } from '@angular/router';
+import { ScrollSpyComponent } from '../completed-components/scroll-spy/scroll-spy.component';
+import { ScrollSpyItemComponent } from '../completed-components/scroll-spy-item/scroll-spy-item.component';
 import { SelectComponent } from '../completed-components/select/select.component';
 import { SelectOptionComponent } from '../completed-components/select-option/select-option.component';
 import { SliderComponent } from '../completed-components/slider/slider.component';
@@ -86,6 +88,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     RadioComponent,
     RadioGroupComponent,
     RippleDirective,
+    ScrollSpyComponent,
+    ScrollSpyItemComponent,
     SelectComponent,
     SelectOptionComponent,
     SliderComponent,
@@ -134,6 +138,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     RadioComponent,
     RadioGroupComponent,
     RippleDirective,
+    ScrollSpyComponent,
+    ScrollSpyItemComponent,
     SelectComponent,
     SelectOptionComponent,
     SliderComponent,

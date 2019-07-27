@@ -28,7 +28,7 @@ import { SupportedEventsModel } from '../../components/common/models/supported-e
   selector: `${ config.components.prefix }-slider }`,
   templateUrl: './slider.component.html'
 })
-export class SliderComponent implements AfterContentInit, AfterViewInit, ControlValueAccessor {
+export class SliderComponent implements AfterContentInit, AfterViewInit, ControlValueAccessor, SliderModel {
   static readonly tickClassName = config.components.prefix + '-slider-step';
 
   static readonly defaultProps: SliderModel = {

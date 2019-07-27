@@ -4,12 +4,13 @@
   "version": "0.1.58",
   "author": "Alejandro Villanueva",
   "homepage": "https://github.com/materialize-js/materialize-angular.git",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/materialize-js/materialize-angular.git"
+    "url": "https://github.com/workylab/materialize-angular"
   },
   "bugs": {
-    "url": "https://github.com/materialize-js/materialize-angular/issues"
+    "url": "https://github.com/workylab/materialize-angular/issues"
   },
   "keywords": [
     "angular",
@@ -33,9 +34,10 @@
     "lint": "npm run lint:scss && npm run lint:ng && npm run lint:ts",
     "build:scss": "cpx './src/styles/**/*' './dist/materialize-angular/styles' && scss-bundle -e ./src/styles/main.scss -d ./dist/materialize-angular/styles/materialize-angular.scss",
     "build:fonts": "cpx './src/fonts/**/*' './dist/materialize-angular/fonts/assets'",
+    "build:licence": "cpx './LICENSE' './dist/materialize-angular'",
     "build:library": "ng build materialize-angular",
     "build:package": "npm run build:library && cd dist/materialize-angular && npm pack",
-    "build": "npm run build:library && npm run build:scss && npm run build:fonts"
+    "build": "npm run build:library && npm run build:scss && npm run build:fonts && npm run build:licence"
   },
   "private": true,
   "dependencies": {

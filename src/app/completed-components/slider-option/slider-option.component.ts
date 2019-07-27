@@ -6,7 +6,7 @@ import { SliderOptionModel } from './slider-option.model';
   selector: `${ config.components.prefix }-slider-option }`,
   templateUrl: './slider-option.component.html'
 })
-export class SliderOptionComponent {
+export class SliderOptionComponent implements SliderOptionModel {
   static readonly defaultProps: SliderOptionModel = {
     className: '',
     value: null

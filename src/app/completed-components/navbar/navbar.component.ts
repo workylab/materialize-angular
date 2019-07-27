@@ -6,7 +6,7 @@ import { NavbarModel } from './navbar.model';
   selector: `${ config.components.prefix }-navbar }`,
   templateUrl: './navbar.component.html'
 })
-export class NavbarComponent {
+export class NavbarComponent implements NavbarModel {
   static readonly defaultProps: NavbarModel = {
     className: ''
   };
