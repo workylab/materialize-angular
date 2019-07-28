@@ -22,7 +22,7 @@ export class ScrollSpyComponent implements ScrollSpyModel, AfterContentInit {
   @Input() itemId: string = ScrollSpyComponent.defaultProps.itemId;
 
   constructor() {
-    this.onChangeEmitter = new EventEmitter();
+    this.onChangeEmitter = new EventEmitter<string>();
 
     this.onScroll = this.onScroll.bind(this);
     this.validateScroll = this.validateScroll.bind(this);

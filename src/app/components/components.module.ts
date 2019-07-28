@@ -19,6 +19,8 @@ import { DrawerContentComponent } from './drawer-content/drawer-content.componen
 import { DrawerHandlerComponent } from './drawer-handler/drawer-handler.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { FormMessageComponent } from '../completed-components/form-message/form-message.component';
+import { GlossaryComponent } from '../completed-components/glossary/glossary.component.component';
+import { GlossaryItemComponent } from '../completed-components/glossary-item/glossary-item.component';
 import { HTMLVisualizerComponent } from '../completed-components/html-visualizer/html-visualizer.component';
 import { IconComponent } from '../completed-components/icon/icon.component';
 import { InputComponent } from '../completed-components/input/input.component';
@@ -73,6 +75,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
+    GlossaryComponent,
+    GlossaryItemComponent,
     HTMLVisualizerComponent,
     IconComponent,
     InputComponent,
@@ -124,6 +128,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
+    GlossaryComponent,
+    GlossaryItemComponent,
     HTMLVisualizerComponent,
     IconComponent,
     InputComponent,
