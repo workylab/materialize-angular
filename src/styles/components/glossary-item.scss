@@ -9,11 +9,12 @@
 
   &::before {
     content: '';
-    height: 100%;
+    height: $glossary-item-line-height;
     left: 0;
     position: absolute;
-    top: 0;
-    width: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $glossary-item-line-width;
   }
 
   @media (hover: hover) {
