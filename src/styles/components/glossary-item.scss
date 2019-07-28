@@ -1,0 +1,36 @@
+.#{$prefix}-glossary-item {
+  color: $glossary-item-color;
+  cursor: $glossary-item-cursor;
+  font-family: $glossary-font-family;
+  font-size: $glossary-font-size;
+  font-weight: $glossary-font-weight;
+  padding: $glossary-item-padding;
+  position: relative;
+
+  &::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $glossary-item-hover-color;
+
+      &::before {
+        background: $glossary-item-hover-line-background;
+      }
+    }
+  }
+
+  &.active {
+    color: $glossary-item-active-color;
+
+    &::before {
+      background: $glossary-item-active-line-background;
+    }
+  }
+}
