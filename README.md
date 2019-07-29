@@ -13,19 +13,22 @@
   <br>
   <br>
   <a href="https://circleci.com/gh/workylab/materialize-angular">
-    <img src="https://circleci.com/gh/workylab/materialize-angular/tree/master.svg?style=svg" alt="Circle CI badge">
+    <img src="https://circleci.com/gh/workylab/materialize-angular/tree/master.svg?style=svg" alt="Circle CI badge" />
   </a>
   <a href="https://badge.fury.io/js/materialize-css">
-    <img src="https://badge.fury.io/js/materialize-angular.svg" alt="npm version badge">
+    <img src="https://badge.fury.io/js/materialize-angular.svg" alt="npm version badge" />
   </a>
   <a href="https://david-dm.org/workylab/materialize-angular">
-    <img src="https://david-dm.org/workylab/materialize-angular.svg" alt="dependencies Status badge">
+    <img src="https://david-dm.org/workylab/materialize-angular.svg" alt="dependencies Status badge" />
     </a>
   <a href="https://david-dm.org/workylab/materialize-angular#info=devDependencies">
-    <img src="https://david-dm.org/workylab/materialize-angular/dev-status.svg" alt="devDependency Status badge">
+    <img src="https://david-dm.org/workylab/materialize-angular/dev-status.svg" alt="devDependency Status badge" />
   </a>
   <a href="https://spectrum.chat/materialize">
-    <img alt="Join the community on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
+    <img src="https://withspectrum.github.io/badge/badge.svg" alt="Join the community on Spectrum" />
+  </a>
+  <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/b87b6059adefcd07fbd8/maintainability" alt="Codeclimate analyze" />
   </a>
 </p>
 

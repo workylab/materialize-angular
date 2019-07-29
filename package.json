@@ -35,9 +35,10 @@
     "build:scss": "cpx './src/styles/**/*' './dist/materialize-angular/styles' && scss-bundle -e ./src/styles/main.scss -d ./dist/materialize-angular/styles/materialize-angular.scss",
     "build:fonts": "cpx './src/fonts/**/*' './dist/materialize-angular/fonts/assets'",
     "build:licence": "cpx './LICENSE' './dist/materialize-angular'",
+    "build:readme": "cpx './README.md' './dist/materialize-angular'",
     "build:library": "ng build materialize-angular",
     "build:package": "npm run build:library && cd dist/materialize-angular && npm pack",
-    "build": "npm run build:library && npm run build:scss && npm run build:fonts && npm run build:licence"
+    "build": "npm run build:library && npm run build:scss && npm run build:fonts && npm run build:licence && npm run build:readme"
   },
   "private": true,
   "dependencies": {
