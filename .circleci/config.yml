@@ -1,0 +1,68 @@
+version: 2
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:12-browsers
+jobs:
+  test:
+    <<: *defaults 
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: npm install
+
+      # - run:
+      #     name: Audit packages
+      #     command: npm audit
+
+      - run:
+          name: Run linting
+          command: npm run lint
+
+      - run:
+          name: Run tests
+          command: npm run test
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build library
+          command: npm run build
+
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/dist/materialize-angular/.npmrc
+
+      - run:
+          name: Publish package
+          command: cd ~/repo/dist/materialize-angular && npm publish  
+workflows:
+  version: 2
+  test-build-publish:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
