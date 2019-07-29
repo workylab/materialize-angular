@@ -15,7 +15,7 @@
   <a href="https://circleci.com/gh/workylab/materialize-angular">
     <img src="https://circleci.com/gh/workylab/materialize-angular/tree/master.svg?style=svg" alt="Circle CI badge" />
   </a>
-  <a href="https://badge.fury.io/js/materialize-css">
+  <a href="https://badge.fury.io/js/materialize-angular">
     <img src="https://badge.fury.io/js/materialize-angular.svg" alt="npm version badge" />
   </a>
   <a href="https://david-dm.org/workylab/materialize-angular">
