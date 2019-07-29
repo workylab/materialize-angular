@@ -18,7 +18,7 @@ export class CalendarComponent implements OnInit {
 
   @ViewChild('yearsContainer') yearsContainerRef: ElementRef;
 
-  @Output('onSelectDay') onSelectDayEmmiter: EventEmitter<DateModel>;
+  @Output('onSelectDay') onSelectDayEmitter: EventEmitter<DateModel>;
 
   @Input('date') dateInput: Date;
   @Input('displayOtherMonthDays') displayOtherMonthDaysInput: boolean;
@@ -38,7 +38,7 @@ export class CalendarComponent implements OnInit {
   constructor() {
     this.scrollToActiveYear = this.scrollToActiveYear.bind(this);
 
-    this.onSelectDayEmmiter = new EventEmitter();
+    this.onSelectDayEmitter = new EventEmitter();
 
     this.dayLabels = this.getDayLabels(days);
     this.monthLabels = this.getMonthLabels(months);
@@ -221,7 +221,7 @@ export class CalendarComponent implements OnInit {
     }
 
     this.selectedDate = date;
-    this.onSelectDayEmmiter.emit(this.selectedDate);
+    this.onSelectDayEmitter.emit(this.selectedDate);
   }
 
   onSelectYear(year: number) {

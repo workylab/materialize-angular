@@ -21,7 +21,7 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
 
   @ContentChildren(CollapsibleComponent) collapsiblesQueryList: QueryList<CollapsibleComponent>;
 
-  @Output('onToggle') onToggleEmmiter: EventEmitter<number | null>;
+  @Output('onToggle') onToggleEmitter: EventEmitter<number | null>;
 
   @Input('className') classNameInput: string;
 
@@ -30,7 +30,7 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
   public collapsibles: Array<CollapsibleComponent>;
 
   constructor() {
-    this.onToggleEmmiter = new EventEmitter();
+    this.onToggleEmitter = new EventEmitter();
   }
 
   ngOnInit() {
@@ -60,7 +60,7 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
       ? index
       : null;
 
-    this.onToggleEmmiter.emit(this.activeIndex);
+    this.onToggleEmitter.emit(this.activeIndex);
 
     for (let i = 0; i < this.collapsibles.length; i++) {
       if (i === this.activeIndex) {
@@ -74,7 +74,7 @@ export class AccordionComponent implements AccordionModel, AfterContentInit, OnI
   closeAll() {
     this.activeIndex = null;
 
-    this.onToggleEmmiter.emit(this.activeIndex);
+    this.onToggleEmitter.emit(this.activeIndex);
 
     this.collapsibles.forEach(item => {
       item.toggleCollapsible(false);
