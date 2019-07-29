@@ -32,7 +32,7 @@ export class GlossaryComponent implements AfterContentInit, GlossaryModel {
   ngAfterContentInit() {
     this.registerOptions();
 
-    setTimeout(this.update, 0);
+    setTimeout(this.update, 30);
 
     if (this.scrollSpy) {
       this.scrollSpy.onChangeEmitter.subscribe((referenceId: string) => {
@@ -52,7 +52,7 @@ export class GlossaryComponent implements AfterContentInit, GlossaryModel {
   }
 
   scrollTo(referenceId: string) {
-    const element = document.querySelector('#' + referenceId);
+    const element = document.getElementById(referenceId);
 
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start'});
@@ -81,7 +81,11 @@ export class GlossaryComponent implements AfterContentInit, GlossaryModel {
     this.activeItemByReferenceId(referenceId);
     this.scrollTo(referenceId);
 
-    this.router.navigate([''], { fragment: referenceId });
+    const routerTree = this.router.parseUrl(this.router.url);
+    const { segments } = routerTree.root.children.primary;
+    const urlWithoutParams = segments.map(segment => segment.path);
+
+    this.router.navigate(urlWithoutParams, { fragment: referenceId });
   }
 
   activeItemByReferenceId(referenceId: string) {
