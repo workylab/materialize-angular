@@ -1,0 +1,25 @@
+<div [ngClass]="className">
+  <ul [ngClass]="prefix + '-tab-group'" #header>
+
+    <li (click)="selectTab(i)"
+      *ngFor="let tab of tabs; let i = index"
+
+      [ngClass]="prefix + '-tab-group-item'"
+      [class.active]="i === selectedIndex"
+      [class.disabled]="tab.disabled"
+      [isRippleActive]="!tab.disabled"
+
+      materializeRipple
+    >
+      {{ tab.title }}
+    </li>
+
+    <div [ngClass]="prefix + '-tab-group-indicator-container'" #indicator>
+      <div [ngClass]="prefix + '-tab-group-indicator'"></div>
+    </div>
+  </ul>
+  
+  <div>
+    <ng-content select="materialize-tab"></ng-content>
+  </div>
+</div>
