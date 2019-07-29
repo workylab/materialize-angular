@@ -1,0 +1,53 @@
+.#{$prefix}-tab-group {
+  align-items: $tab-group-align-items;
+  border-color: $tab-group-border-color;
+  border-style: $tab-group-border-style;
+  border-width: $tab-group-border-width;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: $tab-group-margin;
+  padding: $tab-group-padding;
+  position: relative;
+}
+
+.#{$prefix}-tab-group-item {
+  border-radius: $tab-group-item-border-radius;
+  color: $tab-group-item-color;
+  cursor: $tab-group-item-cursor;
+  font-family: $tab-group-item-font-family;
+  font-size: $tab-group-item-font-size;
+  font-weight: $tab-group-item-font-weight;
+  padding: $tab-group-item-padding;
+  text-align: $tab-group-item-text-align;
+  transition: $tab-group-item-transition;
+
+  &:hover:not(.disabled) {
+    background: $tab-group-hover-background;
+  }
+
+  &.active {
+    color: $tab-group-active-color;
+  }
+
+  &.disabled {
+    color: $tab-group-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+.#{$prefix}-tab-group-indicator-container {
+  bottom: $tab-group-indicator-container-bottom;
+  left: 0;
+  position: absolute;
+  transition-timing-function: $tab-group-indicator-container-transition-function;
+}
+
+.#{$prefix}-tab-group-indicator {
+  background: $tab-group-indicator-background;
+  height: $tab-group-indicator-height;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: $tab-group-indicator-width;
+}
