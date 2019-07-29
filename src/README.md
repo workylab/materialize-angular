@@ -33,7 +33,7 @@
 npm install materialize-angular
 
 ## Add to angular project
-```
+```bash
 angular.json -> 
   {
     ...
