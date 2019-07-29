@@ -1,4 +1,4 @@
-import {  cloneObject } from './clone-object.util';
+import { cloneObject } from './clone-object.util';
 
 describe('cloneObject', () => {
   it('should copy and object with all properties', () => {

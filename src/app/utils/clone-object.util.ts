@@ -1,4 +1,4 @@
-export const cloneObject = (object: Array<any> | {[key: string]: any} ): any => {
+export const cloneObject = (object: Array<any> | {[key: string]: any}): any => {
   if (typeof object === 'undefined') {
     return null;
   }
