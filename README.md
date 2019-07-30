@@ -30,6 +30,9 @@
   <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/b87b6059adefcd07fbd8/maintainability" alt="Codeclimate analyze" />
   </a>
+  <a href="https://npmjs.com/package/materialize-angular">
+    <img src="https://img.shields.io/npm/dm/materialize-angular.svg" alt="Monthly npm downloads" />
+  </a>
 </p>
 
 ## Install
