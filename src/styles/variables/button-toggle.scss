@@ -1,0 +1,23 @@
+$button-toggle-backgorund: $color-white !default;
+$button-toggle-color: $color-purple !default;
+$button-toggle-cursor: $cursor-pointer !default;
+$button-toggle-font-family: $font-family-primary !default;
+$button-toggle-font-size: $font-size-sm !default;
+$button-toggle-font-weight: $font-weight-regular !default;
+$button-toggle-outline: none !default;
+$button-toggle-padding: $space-sm $space-md !default;
+$button-toggle-tap-highlight-color: $color-transparent !default;
+$button-toggle-text-align: center !default;
+$button-toggle-transition: $property-background $timer-md $function-ease;
+$button-toggle-width: auto !default;
+
+$button-toggle-hover-background: rgba($color-purple, 0.1) !default;
+$button-toggle-focused-background: rgba($color-purple, 0.2) !default;
+
+$button-toggle-active-background: $color-purple !default;
+$button-toggle-active-color: $color-white !default;
+
+$button-toggle-disabled-background: $color-gray-light !default;
+$button-toggle-disabled-color: $color-gray !default;
+
+$button-toggle-ripple-background: rgba(lighten($color-purple, 50%), 0.2);
