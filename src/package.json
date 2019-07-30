@@ -1,12 +1,26 @@
 {
   "name": "materialize-angular",
+  "description": "Material UI Angular library",
+  "version": "0.2.24",
+  "author": "workylab",
+  "homepage": "https://materialize-angular.workylab.com",
   "license": "MIT",
-  "version": "0.2.4",
-  "peerDependencies": {
-    "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/workylab/materialize-angular"
   },
-  "scripts": {
-    "postinstall": "node scripts/postinstall || echo \"ignore\""
-  }  
+  "bugs": {
+    "url": "https://github.com/workylab/materialize-angular/issues"
+  },
+  "keywords": [
+    "angular",
+    "angular-library",
+    "material-ui",
+    "material-design",
+    "angulario",
+    "scss-library",
+    "typescript-library",
+    "typescript",
+    "library"
+  ]
 }
