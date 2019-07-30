@@ -1,0 +1,49 @@
+.#{$prefix}-button-toggle-group {
+  border-color: $button-toggle-group-border-color;
+  border-radius: $button-toggle-group-border-radius;
+  border-style: $button-toggle-group-border-style;
+  border-width: $button-toggle-group-border-width;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: $button-toggle-group-width;
+
+  #{$prefix}-button-toggle {
+    .#{$prefix}-button-toggle {
+      border-right: $button-toggle-group-border-width
+        $button-toggle-group-border-style
+        $button-toggle-group-border-color;
+
+      &.disabled {
+        border-right-color: $button-toggle-group-disabled-border-color;
+      }
+    }
+
+    &:last-child .#{$prefix}-button-toggle {
+      border-right-width: 0;
+    }
+  }
+
+  &.disabled {
+    border-color: $button-toggle-group-disabled-border-color;
+  }
+}
+
+#{$prefix}-button-toggle-group.ng-touched.ng-dirty.ng-invalid .#{$prefix}-button-toggle-group {
+  border-color: $color-red;
+
+  .#{$prefix}-button-toggle {
+    border-right-color: $color-red;
+    color: $color-red;
+
+    &:hover,
+    &.focused {
+      background-color: rgba($color-red, 0.1);
+    }
+
+    &.active {
+      background-color: $color-red;
+      color: $color-white;
+    }
+  }
+}

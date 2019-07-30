@@ -5,7 +5,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output,
   QueryList
 } from '@angular/core';
@@ -13,7 +12,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ButtonToggleComponent } from '../button-toggle/button-toggle.component';
 import { ButtonToggleGroupModel } from './button-toggle-group.model';
 import { config } from '../../config';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 
 @Component({
   providers: [{
@@ -22,10 +20,9 @@ import { getBooleanValue } from '../../utils/get-boolean-value.util';
     useExisting: forwardRef(() => ButtonToggleGroupComponent)
   }],
   selector: `${ config.components.prefix }-button-toggle-group }`,
-  styleUrls: ['./button-toggle-group.component.scss'],
   templateUrl: './button-toggle-group.component.html'
 })
-export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit, AfterContentInit {
+export class ButtonToggleGroupComponent implements ControlValueAccessor, AfterContentInit, ButtonToggleGroupModel {
   static readonly defaultProps: ButtonToggleGroupModel = {
     canUncheck: false,
     className: '',
@@ -37,49 +34,34 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
   @Output('onChange') onChangeEmitter: EventEmitter<string>;
 
-  @Input('canUncheck') canUncheckInput: boolean;
-  @Input('className') classNameInput: string;
-  @Input('disabled') disabledInput: boolean;
-  @Input('value') valueInput: string;
+  @Input() canUncheck: boolean = ButtonToggleGroupComponent.defaultProps.canUncheck;
+  @Input() className: string = ButtonToggleGroupComponent.defaultProps.className;
+  @Input() disabled: boolean = ButtonToggleGroupComponent.defaultProps.disabled;
+  @Input() value: string = ButtonToggleGroupComponent.defaultProps.value;
 
-  public canUncheck: boolean;
-  public className: string;
-  public disabled: boolean;
+  public prefix = config.components.prefix;
+
   public isFocused: boolean;
-  public value: string;
 
   constructor() {
+    this.isFocused = false;
+    this.onChangeEmitter = new EventEmitter();
+
+    this.initButtons = this.initButtons.bind(this);
     this.registerButtons = this.registerButtons.bind(this);
     this.toggleButton = this.toggleButton.bind(this);
-
-    this.onChangeEmitter = new EventEmitter();
-  }
-
-  ngOnInit() {
-    this.initValues();
   }
 
   ngAfterContentInit() {
     this.initButtons();
 
-    this.buttonsQueryList.changes.subscribe(changes => {
-      this.initButtons();
-    });
-  }
-
-  initValues() {
-    const { defaultProps } = ButtonToggleGroupComponent;
-
-    this.className = this.classNameInput || defaultProps.className;
-    this.disabled = this.disabledInput || defaultProps.disabled;
-    this.canUncheck = getBooleanValue(this.canUncheckInput, defaultProps.canUncheck);
-    this.value = this.valueInput || defaultProps.value;
-
-    this.isFocused = false;
+    this.buttonsQueryList.changes.subscribe(this.initButtons);
   }
 
   initButtons() {
-    this.disableButtons(this.disabled);
+    if (this.disabled) {
+      this.disableButtons(this.disabled);
+    }
 
     setTimeout(this.registerButtons, 0);
   }

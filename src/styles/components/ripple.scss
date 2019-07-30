@@ -1,11 +1,10 @@
 .ripple-element {
-  cursor: pointer;
   -webkit-mask-image: -webkit-radial-gradient($color-black, $color-white);
   overflow: hidden;
   position: relative;
 
-  &.ripple-disabled {
-    cursor: unset;
+  &:not(.ripple-disabled) {
+    cursor: pointer;
   }
 }
 

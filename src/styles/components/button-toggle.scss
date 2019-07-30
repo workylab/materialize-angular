@@ -1,0 +1,37 @@
+.#{$prefix}-button-toggle {
+  background: $button-toggle-backgorund;
+  color: $button-toggle-color;
+  cursor: $button-toggle-cursor;
+  font-family: $button-toggle-font-family;
+  font-size: $button-toggle-font-size;
+  font-weight: $button-toggle-font-weight;
+  outline: $button-toggle-outline;
+  padding: $button-toggle-padding;
+  -webkit-tap-highlight-color: $button-toggle-tap-highlight-color;
+  text-align: $button-toggle-text-align;
+  transition: $button-toggle-transition;
+  width: $button-toggle-width;
+
+  &:hover {
+    background: $button-toggle-hover-background;
+  }
+
+  &.focused {
+    background: $button-toggle-focused-background;
+  }
+
+  &.active {
+    background: $button-toggle-active-background;
+    color: $button-toggle-active-color;
+  }
+
+  &.disabled {
+    background: $button-toggle-disabled-background;
+    color: $button-toggle-disabled-color;
+    cursor: not-allowed;
+  }
+
+  .ripple {
+    background-color: $button-toggle-ripple-background;
+  }
+}
