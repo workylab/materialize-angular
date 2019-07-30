@@ -25,7 +25,7 @@ export class AutocompleteComponent implements OnInit {
     value: ''
   };
 
-  @ViewChild('materializeInput') materializeInput: InputComponent;
+  @ViewChild('materializeInput', { static: true }) materializeInput: InputComponent;
 
   @Input('autocomplete') autocompleteInput: string;
   @Input('className') classNameInput: string;

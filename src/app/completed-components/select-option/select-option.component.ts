@@ -14,7 +14,7 @@ export class SelectOptionComponent implements AfterContentChecked, SelectOptionM
     value: ''
   };
 
-  @ViewChild('optionTemplate') optionTemplateRef: ElementRef;
+  @ViewChild('optionTemplate', { static: true }) optionTemplateRef: ElementRef;
 
   @Output('onClick') onClickEmitter: EventEmitter<string | number | boolean | null>;
 

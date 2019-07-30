@@ -16,7 +16,7 @@ export class CalendarComponent implements OnInit {
     displayOtherMonthDays: true
   };
 
-  @ViewChild('yearsContainer') yearsContainerRef: ElementRef;
+  @ViewChild('yearsContainer', {static: false}) yearsContainerRef: ElementRef;
 
   @Output('onSelectDay') onSelectDayEmitter: EventEmitter<DateModel>;
 

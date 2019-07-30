@@ -28,8 +28,8 @@ export class TabGroupComponent implements AfterContentInit {
 
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
-  @ViewChild('indicator') indicatorRef: ElementRef;
-  @ViewChild('header') headerRef: ElementRef;
+  @ViewChild('indicator', { static: true }) indicatorRef: ElementRef;
+  @ViewChild('header', { static: true }) headerRef: ElementRef;
 
   @Input() className: string = TabGroupComponent.defaultProps.className;
   @Input() selectedIndex: number = TabGroupComponent.defaultProps.selectedIndex;

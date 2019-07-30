@@ -44,7 +44,7 @@ module.exports = {
 					},
 					{
   					loader: 'eslint-loader',
-  					options: { configFileName: '.eslintrc' }
+  					options: { configFile: '.eslintrc' }
   				},
 					'angular2-template-loader'
 				],

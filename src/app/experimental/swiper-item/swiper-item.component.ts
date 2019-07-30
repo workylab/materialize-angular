@@ -10,7 +10,7 @@ export class SwiperItemComponent implements OnInit {
     className: ''
   };
 
-  @ViewChild('swiperItemContainer') swiperItemContainerRef: ElementRef;
+  @ViewChild('swiperItemContainer', { static: true }) swiperItemContainerRef: ElementRef;
 
   @Input('className') classNameInput: string;
 

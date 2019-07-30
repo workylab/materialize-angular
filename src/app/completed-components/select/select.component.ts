@@ -37,8 +37,8 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit, 
     value: null
   };
 
-  @ViewChild('backdrop') backdropRef: ElementRef;
-  @ViewChild('labelContainer') labelContainerRef: ElementRef;
+  @ViewChild('backdrop', { static: false }) backdropRef: ElementRef;
+  @ViewChild('labelContainer', { static: false }) labelContainerRef: ElementRef;
 
   @ContentChildren(SelectOptionComponent) options: QueryList<SelectOptionComponent>;
 
