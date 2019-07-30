@@ -1,7 +1,7 @@
 {
   "name": "materialize-angular",
   "description": "Material UI Angular library",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "workylab",
   "homepage": "https://materialize-angular.workylab.com",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/workylab/materialize-angular"
   },
-   "peerDependencies": {
+  "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
   },
