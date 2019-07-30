@@ -2,8 +2,8 @@
   "name": "materialize-angular",
   "description": "Material UI Angular library",
   "version": "0.2.4",
-  "author": "Alejandro Villanueva",
-  "homepage": "https://github.com/materialize-js/materialize-angular.git",
+  "author": "workylab",
+  "homepage": "https://materialize-angular.workylab.com",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   },
   "keywords": [
     "angular",
+    "angular-library",
     "material-ui",
     "material-design",
     "angulario",
