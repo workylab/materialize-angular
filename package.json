@@ -39,7 +39,8 @@
     "build:readme": "cpx './README.md' './dist/materialize-angular'",
     "build:library": "ng build materialize-angular",
     "build:package": "npm run build:library && cd dist/materialize-angular && npm pack",
-    "build": "npm run build:library && npm run build:scss && npm run build:fonts && npm run build:licence && npm run build:readme"
+    "build": "npm run build:library && npm run build:scss && npm run build:fonts && npm run build:licence && npm run build:readme",
+    "postinstall": "node scripts/postinstall || echo \"ignore\""
   },
   "private": true,
   "dependencies": {
