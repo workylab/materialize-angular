@@ -14,7 +14,7 @@ function log(it) {
 
 if (!ADBLOCK && !CI && !SILENT) {
   log('\u001B[96mThank you for using materialize-angular (\u001B[94m https://github.com/workylab/materialize-angular \u001B[96m) for create awesome websites!\u001B[0m\n');
-  log('\u001B[96mThe project needs your help! Please consider supporting of materialize-angular on Patreon or check our site: \u001B[0m');
-  log('\u001B[96m>\u001B[94m https://www.patreon.com/materialize_angular \u001B[0m\n');
+  log('\u001B[96mThe project needs your help! Please consider supporting of materialize-angular on Patreon or check our site: \u001B[0m\n');
+  log('\u001B[96m>\u001B[94m https://www.patreon.com/materialize_angular \u001B[0m');
   log('\u001B[96m>\u001B[94m https://materialize-angular.workylab.com/help \u001B[0m\n');
 }
