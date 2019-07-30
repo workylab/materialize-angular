@@ -41,4 +41,4 @@ git tag -d $TAG
 cd src && npm version $OPT
 cd .. && git commit -a --amend --no-edit
 git tag $TAG
-git push origin master --tags
+git push origin master --follow-tags
