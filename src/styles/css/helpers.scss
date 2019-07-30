@@ -1,0 +1,74 @@
+body {
+  .text-align-left {
+    text-align: left;
+  }
+
+  .text-align-right {
+    text-align: right;
+  }
+
+  .text-align-center {
+    text-align: center;
+  }
+
+  .clearfix::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .truncate {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .text-lowercase {
+    text-transform: lowercase;
+  }
+
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+
+  .font-weight-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  .font-weight-regular {
+    font-weight: $font-weight-regular;
+  }
+
+  .font-weight-thin {
+    font-weight: $font-weight-thin;
+  }
+
+  .font-weight-light {
+    font-weight: $font-weight-light;
+  }
+
+  .font-weight-medium {
+    font-weight: $font-weight-medium;
+  }
+
+  .font-weight-black {
+    font-weight: $font-weight-black;
+  }
+
+  .font-italic {
+    font-style: italic;
+  }
+}
