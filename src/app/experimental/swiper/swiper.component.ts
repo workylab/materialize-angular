@@ -49,8 +49,8 @@ export class SwiperComponent implements AfterContentInit, SwiperModel {
     up: 'mouseup'
   };
 
-  @ViewChild('swiperContainer') swiperContainerRef: ElementRef;
-  @ViewChild('swiper') swiperRef: ElementRef;
+  @ViewChild('swiperContainer', { static: true }) swiperContainerRef: ElementRef;
+  @ViewChild('swiper', { static: true }) swiperRef: ElementRef;
 
   @ContentChildren(SwiperItemComponent) itemsQuery: QueryList<SwiperItemComponent>;
 

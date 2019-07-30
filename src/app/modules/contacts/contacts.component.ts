@@ -9,7 +9,7 @@ export class ContactsComponent {
 
   constructor() {
     this.form = new FormGroup({
-      amount: new FormControl({ disabled: true, value: null }, Validators.required),
+      amount: new FormControl({ disabled: false, value: null }, Validators.required),
       dateOfBirth: new FormControl({
         disabled: false,
         value: '25/12/1992'

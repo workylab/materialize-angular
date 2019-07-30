@@ -37,7 +37,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     value: ''
   };
 
-  @ViewChild('backdrop') backdropRef: ElementRef;
+  @ViewChild('backdrop', {static: false}) backdropRef: ElementRef;
 
   @Input() className: string = DatePickerComponent.defaultProps.className;
   @Input() disabled: boolean = DatePickerComponent.defaultProps.disabled;

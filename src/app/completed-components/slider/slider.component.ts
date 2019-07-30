@@ -42,11 +42,11 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
 
   @ContentChildren(SliderOptionComponent) options: QueryList<SliderOptionComponent>;
 
-  @ViewChild('Slider') Slider: ElementRef;
-  @ViewChild('sliderIndicatorContainer') sliderIndicatorContainer: ElementRef;
-  @ViewChild('sliderTrack') sliderTrack: ElementRef;
-  @ViewChild('sliderTrackBackground') sliderTrackBackground: ElementRef;
-  @ViewChild('sliderTrackInterval') sliderTrackInterval: ElementRef;
+  @ViewChild('Slider', { static: true }) Slider: ElementRef;
+  @ViewChild('sliderIndicatorContainer', { static: true }) sliderIndicatorContainer: ElementRef;
+  @ViewChild('sliderTrack', { static: true }) sliderTrack: ElementRef;
+  @ViewChild('sliderTrackBackground', { static: true }) sliderTrackBackground: ElementRef;
+  @ViewChild('sliderTrackInterval', { static: true }) sliderTrackInterval: ElementRef;
 
   @Output('onChange') onChangeEmitter: EventEmitter<number | string | boolean | null>;
 

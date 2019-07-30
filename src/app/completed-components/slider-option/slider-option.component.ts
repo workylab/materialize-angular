@@ -12,7 +12,7 @@ export class SliderOptionComponent implements SliderOptionModel {
     value: null
   };
 
-  @ViewChild('template') templateRef: ElementRef;
+  @ViewChild('template', { static: true }) templateRef: ElementRef;
 
   @Input() className: string = SliderOptionComponent.defaultProps.className;
   @Input() value: number | string | boolean | null = SliderOptionComponent.defaultProps.value;

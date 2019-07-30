@@ -33,11 +33,11 @@ export class DrawerComponent implements OnInit, AfterViewInit, AfterContentInit 
     type: DRAWER_TYPE.OVER
   };
 
-  @ContentChild(DrawerHandlerComponent) drawerHandler: DrawerHandlerComponent;
+  @ContentChild(DrawerHandlerComponent, { static: true }) drawerHandler: DrawerHandlerComponent;
   @ContentChildren(DrawerCloseDirective, { descendants: true }) closeItems: QueryList<DrawerCloseDirective>;
 
-  @ViewChild('backdrop') backdropRef: ElementRef;
-  @ViewChild('drawer') drawerRef: ElementRef;
+  @ViewChild('backdrop', { static: true }) backdropRef: ElementRef;
+  @ViewChild('drawer', { static: true }) drawerRef: ElementRef;
 
   @Output('onOpen') onOpenEmitter: EventEmitter<void>;
   @Output('onClose') onCloseEmitter: EventEmitter<void>;

@@ -29,8 +29,8 @@ export class ModalComponent implements AfterViewInit, ModalModel {
 
   @ContentChildren(ModalCloseDirective, { descendants: true }) closeElements: QueryList<ModalCloseDirective>;
 
-  @ViewChild('modal') modalRef: ElementRef;
-  @ViewChild('backdrop') backdropRef: ElementRef;
+  @ViewChild('modal', { static: true }) modalRef: ElementRef;
+  @ViewChild('backdrop', { static: false }) backdropRef: ElementRef;
 
   @Output('onOpen') onOpenEmitter: EventEmitter<void>;
   @Output('onClose') onCloseEmitter: EventEmitter<void>;
