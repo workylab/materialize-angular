@@ -11,16 +11,17 @@ $tab-group-item-color: $color-gray-darkest !default;
 $tab-group-item-cursor: $cursor-pointer !default;
 $tab-group-item-font-family: $font-family-primary !default;
 $tab-group-item-font-size: $font-size-sm !default;
-$tab-group-item-font-weight: $font-weight-medium !default;
+$tab-group-item-font-weight: $font-weight-regular !default;
 $tab-group-item-letter-spacing: 0 !default;
 $tab-group-item-line-height: 100% !default;
 $tab-group-item-padding: $space-md $space-lg !default;
 $tab-group-item-text-align: center !default;
 $tab-group-item-transition: $property-background $timer-md $function-ease !default;
 
-$tab-group-hover-background: $color-gray-light !default;
-$tab-group-active-color: $color-purple !default;
-$tab-group-disabled-color: $color-gray !default;
+$tab-group-hover-item-background: $color-gray-light !default;
+$tab-group-active-item-color: $color-purple !default;
+$tab-group-active-item-font-weight: $font-weight-medium !default;
+$tab-group-disabled-item-color: $color-gray !default;
 
 $tab-group-indicator-container-bottom: 0 !default;
 $tab-group-indicator-container-transition-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
