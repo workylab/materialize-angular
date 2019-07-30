@@ -61,8 +61,4 @@ workflows:
       - deploy:
           requires:
             - test
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+          tag: /v[0-9]+(\.[0-9]+)*/
