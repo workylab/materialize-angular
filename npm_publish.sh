@@ -35,10 +35,10 @@ then
 fi
 
 # Patch version
-echo npm version $OPT
-echo TAG=$(git tag --points-at HEAD)
-echo git tag -d $TAG
-echo cd src && npm version $OPT
-echo cd .. && git commit -a --amend --no-edit
-echo git tag $TAG
-echo git push origin master --tags
+npm version $OPT
+TAG=$(git tag --points-at HEAD)
+git tag -d $TAG
+cd src && npm version $OPT
+cd .. && git commit -a --amend --no-edit
+git tag $TAG
+git push origin master --tags
