@@ -26,15 +26,16 @@
   transition: $tab-group-item-transition;
 
   &:hover:not(.disabled) {
-    background: $tab-group-hover-background;
+    background: $tab-group-hover-item-background;
   }
 
   &.active {
-    color: $tab-group-active-color;
+    color: $tab-group-active-item-color;
+    font-weight: $tab-group-active-item-font-weight;
   }
 
   &.disabled {
-    color: $tab-group-disabled-color;
+    color: $tab-group-disabled-item-color;
     cursor: not-allowed;
   }
 }
