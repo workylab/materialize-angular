@@ -2,6 +2,7 @@ $tab-group-align-items: flex-start !default;
 $tab-group-border-color: $color-gray !default;
 $tab-group-border-style: solid !default;
 $tab-group-border-width: 0 0 $border-sm 0 !default;
+$tab-group-justify-content: flex-start !default;
 $tab-group-margin: 0 0 $space-lg !default;
 $tab-group-padding: 0 !default;
 
@@ -11,6 +12,8 @@ $tab-group-item-cursor: $cursor-pointer !default;
 $tab-group-item-font-family: $font-family-primary !default;
 $tab-group-item-font-size: $font-size-sm !default;
 $tab-group-item-font-weight: $font-weight-medium !default;
+$tab-group-item-letter-spacing: 0 !default;
+$tab-group-item-line-height: 100% !default;
 $tab-group-item-padding: $space-md $space-lg !default;
 $tab-group-item-text-align: center !default;
 $tab-group-item-transition: $property-background $timer-md $function-ease !default;
