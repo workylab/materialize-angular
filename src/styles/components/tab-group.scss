@@ -5,6 +5,7 @@
   border-width: $tab-group-border-width;
   display: flex;
   flex-direction: row;
+  justify-content: $tab-group-justify-content;
   list-style: none;
   margin: $tab-group-margin;
   padding: $tab-group-padding;
@@ -18,6 +19,8 @@
   font-family: $tab-group-item-font-family;
   font-size: $tab-group-item-font-size;
   font-weight: $tab-group-item-font-weight;
+  letter-spacing: $tab-group-item-letter-spacing;
+  line-height: $tab-group-item-line-height;
   padding: $tab-group-item-padding;
   text-align: $tab-group-item-text-align;
   transition: $tab-group-item-transition;

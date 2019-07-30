@@ -47,7 +47,7 @@ export class TabGroupComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    setTimeout(this.update, 500);
+    setTimeout(this.update, 0);
   }
 
   update() {
