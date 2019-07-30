@@ -1,7 +1,7 @@
 {
   "name": "materialize-angular",
   "description": "Material UI Angular library",
-  "version": "0.2.24",
+  "version": "0.2.4",
   "author": "workylab",
   "homepage": "https://materialize-angular.workylab.com",
   "license": "MIT",
