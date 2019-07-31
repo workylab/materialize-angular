@@ -1,0 +1,12 @@
+<div
+  [ngClass]="[prefix + '-collapsible-title', className]"
+  [isRippleActive]="!disabled"
+  materializeRipple
+>
+  <ng-content></ng-content>
+  <materialize-icon
+    *ngIf="showIndicator"
+    [className]="prefix + '-collapsible-title-icon'">
+    expand_more
+  </materialize-icon>
+</div>
