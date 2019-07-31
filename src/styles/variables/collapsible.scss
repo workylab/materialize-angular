@@ -1,7 +1,7 @@
 $collapsible-background: $color-white !default;
 $collapsible-box-shadow: $shadow-sm !default;
 $collapsible-border: 0 !default;
-$collapsible-margin: $space-sm $space-none !default;
+$collapsible-margin: $space-none !default;
 $collapsible-padding: $space-none !default;
 
 $collapsible-title-background: $color-white !default;
@@ -18,7 +18,6 @@ $collapsible-title-ripple-background: ligthen(rgba($color-gray, 0.1), 20%) !defa
 
 $collapsible-content-background: $color-white !default;
 $collapsible-content-color: $color-gray-darkest !default;
-$collapsible-content-cursor: $cursor-pointer !default;
 $collapsible-content-font-family: $font-family-primary !default;
 $collapsible-content-font-size: $font-size-sm !default;
 $collapsible-content-font-weight: $font-weight-regular !default;
