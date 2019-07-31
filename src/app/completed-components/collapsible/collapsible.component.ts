@@ -54,14 +54,14 @@ export class CollapsibleComponent implements CollapsibleModel, AfterContentInit 
   }
 
   onToggle() {
-    if (!this.disabled && this.isOpen) {
-      this.close();
-      this.onCloseEmitter.emit();
-    }
-
-    if (!this.disabled && !this.isOpen) {
-      this.open();
-      this.onOpenEmitter.emit();
+    if (!this.disabled) {
+      if (this.isOpen) {
+        this.close();
+        this.onCloseEmitter.emit();
+      } else {
+        this.open();
+        this.onOpenEmitter.emit();
+      }
     }
   }
 
