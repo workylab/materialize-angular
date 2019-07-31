@@ -1,0 +1,13 @@
+.#{$prefix}-collapsible {
+  background: $collapsible-background;
+  border: $collapsible-border;
+  box-shadow: $collapsible-box-shadow;
+  margin: $collapsible-margin;
+  padding: $collapsible-padding;
+
+  &.open {
+    .#{$prefix}-collapsible-title-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
