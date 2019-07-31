@@ -1,0 +1,67 @@
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  EventEmitter,
+  Input,
+  Output,
+  QueryList
+} from '@angular/core';
+import { AccordionModel } from './accordion.model';
+import { CollapsibleComponent } from '../collapsible/collapsible.component';
+import { config } from '../../config';
+
+@Component({
+  selector: `${ config.components.prefix }-accordion }`,
+  templateUrl: './accordion.component.html'
+})
+export class AccordionComponent implements AccordionModel, AfterContentInit {
+  static readonly defaultProps: AccordionModel = { className: '' };
+
+  @ContentChildren(CollapsibleComponent) collapsibles: QueryList<CollapsibleComponent>;
+
+  @Output('onToggle') onToggleEmitter: EventEmitter<number | null>;
+
+  @Input() className: string = AccordionComponent.defaultProps.className;
+
+  public activeIndex: number;
+
+  constructor() {
+    this.activeIndex = 0;
+    this.onToggleEmitter = new EventEmitter();
+  }
+
+  ngAfterContentInit() {
+    this.collapsibles.forEach((item, index) => {
+      item.onOpenEmitter.subscribe(() => {
+        this.toggleCollapsibles(index);
+      });
+    });
+  }
+
+  toggleCollapsibles(currentIndex: number) {
+    this.activeIndex = currentIndex;
+
+    this.onToggleEmitter.emit(this.activeIndex);
+
+    this.collapsibles.forEach((item, index) => {
+      if (index === currentIndex) {
+        item.open();
+      } else {
+        item.close();
+      }
+    });
+  }
+
+  showNext() {
+    const nextIndex = this.activeIndex + 1;
+
+    this.toggleCollapsibles(nextIndex);
+  }
+
+  showPrev() {
+    const prevIndex = this.activeIndex - 1;
+
+    this.toggleCollapsibles(prevIndex);
+  }
+}
