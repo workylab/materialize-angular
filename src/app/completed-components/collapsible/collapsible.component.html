@@ -1,0 +1,4 @@
+<div [ngClass]="[prefix + '-collapsible', className]" [class.open]="isOpen">
+  <ng-content select="materialize-collapsible-title"></ng-content>
+  <ng-content select="materialize-collapsible-content"></ng-content>
+</div>
