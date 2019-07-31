@@ -1,5 +1,5 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AccordionComponent } from './accordion/accordion.component';
+import { AccordionComponent } from '../completed-components/accordion/accordion.component';
 import { ButtonComponent } from '../completed-components/button/button.component';
 import { ButtonToggleComponent } from '../completed-components/button-toggle/button-toggle.component';
 import { ButtonToggleGroupComponent } from '../completed-components/button-toggle-group/button-toggle-group.component';

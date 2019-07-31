@@ -23,7 +23,8 @@ export class CollapsibleComponent implements CollapsibleModel, AfterContentInit 
     showIndicator: true
   };
 
-  @Output('onClick') onClickEventEmitter: EventEmitter<boolean>;
+  @Output('onClose') onCloseEmitter: EventEmitter<boolean>;
+  @Output('onOpen') onOpenEmitter: EventEmitter<boolean>;
 
   @ViewChild('container', { static: true }) containerRef: ElementRef;
 
@@ -35,6 +36,9 @@ export class CollapsibleComponent implements CollapsibleModel, AfterContentInit 
   public prefix = config.components.prefix;
 
   constructor(private renderer: Renderer2) {
+    this.onCloseEmitter = new EventEmitter<boolean>();
+    this.onOpenEmitter = new EventEmitter<boolean>();
+
     this.onToggle = this.onToggle.bind(this);
     this.update = this.update.bind(this);
 
@@ -44,31 +48,42 @@ export class CollapsibleComponent implements CollapsibleModel, AfterContentInit 
   ngAfterContentInit() {
     if (this.isOpen) {
       setTimeout(() => {
-        this.toggle(true);
+        this.toggle();
       }, 300);
     }
   }
 
   onToggle() {
-    if (!this.disabled) {
-      this.isOpen = !this.isOpen;
+    if (!this.disabled && this.isOpen) {
+      this.close();
+      this.onCloseEmitter.emit();
+    }
 
-      this.toggle(this.isOpen);
-      this.onClickEventEmitter.emit(this.isOpen);
+    if (!this.disabled && !this.isOpen) {
+      this.open();
+      this.onOpenEmitter.emit();
     }
   }
 
   update() {
-    const { maxHeight } = this.containerRef.nativeElement.style;
-
-    if (maxHeight) {
-      this.toggle(true);
+    if (this.isOpen) {
+      this.toggle();
     }
   }
 
-  toggle(isOpen: boolean) {
+  open() {
+    this.isOpen = true;
+    this.toggle();
+  }
+
+  close() {
+    this.isOpen = false;
+    this.toggle();
+  }
+
+  toggle() {
     const contentContainer: HTMLElement = this.containerRef.nativeElement;
-    const maxHeight = isOpen
+    const maxHeight = this.isOpen
       ? contentContainer.scrollHeight
       : 0;
 

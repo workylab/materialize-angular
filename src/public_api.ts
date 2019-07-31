@@ -4,7 +4,7 @@
 
 export * from './app/components/components.module';
 
-export * from './app/components/accordion/accordion.component';
+export * from './app/completed-components/accordion/accordion.component';
 export * from './app/completed-components/button/button.component';
 export * from './app/completed-components/button-toggle/button-toggle.component';
 export * from './app/components/calendar/calendar.component';

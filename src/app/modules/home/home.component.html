@@ -342,23 +342,41 @@ Collapsible Disabled
 <br />
 
 Accordion
-<materialize-accordion>
+<materialize-accordion #accordionExample>
   <materialize-collapsible>
-    <materialize-collapsible-title>Title</materialize-collapsible-title>
+    <materialize-collapsible-title>Title 1</materialize-collapsible-title>
     <materialize-collapsible-content>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
       Aliquam minima soluta enim porro atque placeat quis commodi
       deserunt veniam libero molestiae doloremque eveniet incidunt,
       odit expedita cupiditate est tenetur reprehenderit.
+
+      <materialize-button (onClick)="accordionExample.showPrev()">Show Prev</materialize-button>
+      <materialize-button (onClick)="accordionExample.showNext()">Show Next</materialize-button>
     </materialize-collapsible-content>
   </materialize-collapsible>
   <materialize-collapsible>
-    <materialize-collapsible-title>Title</materialize-collapsible-title>
+    <materialize-collapsible-title>Title 2</materialize-collapsible-title>
     <materialize-collapsible-content>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
       Aliquam minima soluta enim porro atque placeat quis commodi
       deserunt veniam libero molestiae doloremque eveniet incidunt,
       odit expedita cupiditate est tenetur reprehenderit.
+
+      <materialize-button (onClick)="accordionExample.showPrev()">Show Prev</materialize-button>
+      <materialize-button (onClick)="accordionExample.showNext()">Show Next</materialize-button>
+    </materialize-collapsible-content>
+  </materialize-collapsible>
+  <materialize-collapsible>
+    <materialize-collapsible-title>Title 3</materialize-collapsible-title>
+    <materialize-collapsible-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Aliquam minima soluta enim porro atque placeat quis commodi
+      deserunt veniam libero molestiae doloremque eveniet incidunt,
+      odit expedita cupiditate est tenetur reprehenderit.
+
+      <materialize-button (onClick)="accordionExample.showPrev()">Show Prev</materialize-button>
+      <materialize-button (onClick)="accordionExample.showNext()">Show Next</materialize-button>
     </materialize-collapsible-content>
   </materialize-collapsible>
 </materialize-accordion>
