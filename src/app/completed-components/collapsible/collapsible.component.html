@@ -1,4 +1,24 @@
-<div [ngClass]="[prefix + '-collapsible', className]" [class.open]="isOpen">
-  <ng-content select="materialize-collapsible-title"></ng-content>
-  <ng-content select="materialize-collapsible-content"></ng-content>
+<div
+  [ngClass]="[prefix + '-collapsible', className]"
+  [class.disabled]="disabled"
+  [class.open]="isOpen"
+>
+  <div (click)="onToggle()"
+    [isRippleActive]="!disabled"
+    [ngClass]="[prefix + '-collapsible-title', className]"
+
+    materializeRipple
+  >
+    <ng-content select="materialize-collapsible-title"></ng-content>
+
+    <materialize-icon *ngIf="showIndicator" [className]="prefix + '-collapsible-title-icon'">
+      expand_more
+    </materialize-icon>
+  </div>
+
+  <div [ngClass]="[prefix + '-collapsible-content-container', className]" #container>
+    <div [ngClass]="prefix + '-collapsible-content'">
+      <ng-content select="materialize-collapsible-content"></ng-content>
+    </div>
+  </div>
 </div>

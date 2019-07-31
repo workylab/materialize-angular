@@ -1,64 +1,77 @@
 import {
   AfterContentInit,
   Component,
-  ContentChild,
+  ElementRef,
   EventEmitter,
   Input,
-  OnChanges,
   Output,
-  SimpleChanges
+  Renderer2,
+  ViewChild
 } from '@angular/core';
-import { CollapsibleContentComponent } from '../collapsible-content/collapsible-content.component';
 import { CollapsibleModel } from './collapsible.model';
-import { CollapsibleTitleComponent } from '../collapsible-title/collapsible-title.component';
 import { config } from '../../config';
 
 @Component({
   selector: `${ config.components.prefix }-collapsible }`,
   templateUrl: './collapsible.component.html'
 })
-export class CollapsibleComponent implements AfterContentInit, CollapsibleModel, OnChanges {
+export class CollapsibleComponent implements CollapsibleModel, AfterContentInit {
   static readonly defaultProps: CollapsibleModel = {
     className: '',
-    isOpen: false
+    disabled: false,
+    isOpen: false,
+    showIndicator: true
   };
 
   @Output('onClick') onClickEventEmitter: EventEmitter<boolean>;
 
-  @ContentChild(CollapsibleTitleComponent, { static: false }) title: CollapsibleTitleComponent;
-  @ContentChild(CollapsibleContentComponent, { static: false }) content: CollapsibleContentComponent;
+  @ViewChild('container', { static: true }) containerRef: ElementRef;
 
   @Input() className: string = CollapsibleComponent.defaultProps.className;
+  @Input() disabled: boolean = CollapsibleComponent.defaultProps.disabled;
   @Input() isOpen: boolean = CollapsibleComponent.defaultProps.isOpen;
+  @Input() showIndicator: boolean = CollapsibleComponent.defaultProps.showIndicator;
 
   public prefix = config.components.prefix;
 
-  constructor() {
-    this.onClickEventEmitter = new EventEmitter();
-
-    this.onResizeWindow = this.onResizeWindow.bind(this);
+  constructor(private renderer: Renderer2) {
     this.onToggle = this.onToggle.bind(this);
+    this.update = this.update.bind(this);
 
-    window.addEventListener('resize', this.onResizeWindow);
+    window.addEventListener('resize', this.update);
   }
 
   ngAfterContentInit() {
-    this.title.onClickEventEmitter.subscribe(this.onToggle);
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-  }
-
-  onResizeWindow() {
     if (this.isOpen) {
-      this.content.toggle(this.isOpen);
+      setTimeout(() => {
+        this.toggle(true);
+      }, 300);
     }
   }
 
   onToggle() {
-    this.isOpen = !this.isOpen;
+    if (!this.disabled) {
+      this.isOpen = !this.isOpen;
 
-    this.content.toggle(this.isOpen);
-    this.onClickEventEmitter.emit(this.isOpen);
+      this.toggle(this.isOpen);
+      this.onClickEventEmitter.emit(this.isOpen);
+    }
+  }
+
+  update() {
+    const { maxHeight } = this.containerRef.nativeElement.style;
+
+    if (maxHeight) {
+      this.toggle(true);
+    }
+  }
+
+  toggle(isOpen: boolean) {
+    const contentContainer: HTMLElement = this.containerRef.nativeElement;
+    const maxHeight = isOpen
+      ? contentContainer.scrollHeight
+      : 0;
+
+    this.renderer.setStyle(contentContainer, 'maxHeight', `${ maxHeight }px`);
   }
 }
