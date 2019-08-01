@@ -1,0 +1,70 @@
+.#{$prefix}-collapsible {
+  background: $collapsible-background;
+  border: $collapsible-border;
+  box-shadow: $collapsible-box-shadow;
+  margin: $collapsible-margin;
+  padding: $collapsible-padding;
+
+  &.open .#{$prefix}-collapsible-title-icon {
+    transform: rotate(180deg);
+  }
+
+  &:hover:not(.disabled) .#{$prefix}-collapsible-title {
+    @media (hover: hover) {
+      background: $collapsible-title-hover-background;
+    }
+  }
+
+  &.disabled .#{$prefix}-collapsible-title {
+    cursor: not-allowed;
+
+    .#{$prefix}-collapsible-title-icon {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.#{$prefix}-collapsible-content-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: $collapsible-content-transition;
+}
+
+.#{$prefix}-collapsible-content {
+  background: $collapsible-content-background;
+  color: $collapsible-content-color;
+  font-family: $collapsible-content-font-family;
+  font-size: $collapsible-content-font-size;
+  font-weight: $collapsible-content-font-weight;
+  margin: $collapsible-content-margin;
+  overflow: visible;
+  position: relative;
+
+  &:not(:empty) {
+    padding: $collapsible-title-padding;
+  }
+}
+
+.#{$prefix}-collapsible-title {
+  background: $collapsible-title-background;
+  color: $collapsible-title-color;
+  cursor: $collapsible-title-cursor;
+  font-family: $collapsible-title-font-family;
+  font-size: $collapsible-title-font-size;
+  font-weight: $collapsible-title-font-weight;
+  margin: $collapsible-title-margin;
+  padding: $collapsible-title-padding;
+  position: relative;
+
+  .ripple {
+    background: $collapsible-title-ripple-background;
+  }
+}
+
+.#{$prefix}-collapsible-title-icon {
+  font-size: 22px;
+  position: absolute;
+  right: $space-xxxs;
+  top: $space-xs;
+  transition: transform 250ms ease;
+}

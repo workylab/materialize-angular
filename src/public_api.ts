@@ -4,16 +4,16 @@
 
 export * from './app/components/components.module';
 
-export * from './app/components/accordion/accordion.component';
+export * from './app/completed-components/accordion/accordion.component';
 export * from './app/completed-components/button/button.component';
 export * from './app/completed-components/button-toggle/button-toggle.component';
 export * from './app/components/calendar/calendar.component';
 export * from './app/completed-components/card/card.component';
 export * from './app/completed-components/checkbox/checkbox.component';
 export * from './app/components/checkbox-list/checkbox-list.component';
-export * from './app/components/collapsible/collapsible.component';
-export * from './app/components/collapsible-content/collapsible-content.component';
-export * from './app/components/collapsible-title/collapsible-title.component';
+export * from './app/completed-components/collapsible/collapsible.component';
+export * from './app/completed-components/collapsible-content/collapsible-content.component';
+export * from './app/completed-components/collapsible-title/collapsible-title.component';
 export * from './app/components/datepicker/datepicker.component';
 export * from './app/components/drawer/drawer.component';
 export * from './app/components/drawer-container/drawer-container.component';
