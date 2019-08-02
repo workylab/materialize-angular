@@ -87,6 +87,7 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
 
   update() {
     this.renderPositions();
+    this.activeOption(this.value);
     this.moveToValue(this.value, false);
   }
 
@@ -133,6 +134,7 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
   actionMove(event: any) {
     const x = this.getXCoordinate(event, this.supportedEvents.move);
 
+    this.value = this.getValueFromXCoordinate(x);
     this.animate(x, false);
   }
 
@@ -143,10 +145,8 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
     this.renderer.setStyle(this.sliderIndicatorContainer.nativeElement, 'transitionDuration', null);
 
     const x = this.getXCoordinate(event, this.supportedEvents.up);
-    const index = this.getIndexFromXCoordinate(x);
-    const options = this.options.toArray();
 
-    this.value = options[index].value;
+    this.value = this.getValueFromXCoordinate(x);
     this.onChangeEmitter.emit(this.value);
     this.onChange(this.value);
     this.moveToValue(this.value, true);
@@ -162,13 +162,22 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
     const nextXCoordinate = validatedIndex * pixelInterval;
 
     this.animate(nextXCoordinate, hasAnimation);
-    this.activeOption(this.value);
   }
 
   activeOption(value: number | string | boolean | null) {
     this.options.forEach(item => {
       item.isActive = (item.value === value);
     });
+  }
+
+  getValueFromXCoordinate(x: number) {
+    const index = this.getIndexFromXCoordinate(x);
+    const options = this.options.toArray();
+    const value = options[index].value;
+
+    this.activeOption(value);
+
+    return value;
   }
 
   getIndexFromXCoordinate(x: number) {
