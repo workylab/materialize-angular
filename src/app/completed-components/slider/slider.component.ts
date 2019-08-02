@@ -80,15 +80,16 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
   }
 
   ngAfterContentInit() {
-    setTimeout(this.update, 0);
+    this.update();
 
     this.options.changes.subscribe(this.update);
   }
 
   update() {
-    this.renderPositions();
-    this.activeOption(this.value);
-    this.moveToValue(this.value, false);
+    setTimeout(() => {
+      this.renderPositions();
+      this.moveToValue(this.value, false);
+    }, 0);
   }
 
   renderPositions() {
@@ -175,8 +176,6 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
     const options = this.options.toArray();
     const value = options[index].value;
 
-    this.activeOption(value);
-
     return value;
   }
 
@@ -233,6 +232,8 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
   }
 
   animate(x: number, hasAnimation: boolean) {
+    this.activeOption(this.value);
+
     const transitionDuration = hasAnimation
       ? null
       : '0ms';
