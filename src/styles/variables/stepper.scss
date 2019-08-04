@@ -1,0 +1,33 @@
+$stepper-margin: $space-none !default;
+$stepper-padding: $space-md $space-lg !default;
+
+$stepper-divider-background: $color-gray-light !default;
+$stepper-divider-height: $border-md !default;
+$stepper-divider-margin: $space-md $space-none $space-none !default;
+$stepper-divider-width: 100% !default;
+
+$stepper-indicator-background: $color-gray-light !default;
+$stepper-indicator-border-radius: $radius-full !default;
+$stepper-indicator-color: $color-gray !default;
+$stepper-indicator-font-family: $font-family-primary !default;
+$stepper-indicator-font-size: $font-size-lg !default;
+$stepper-indicator-font-weight: $font-weight-regular !default;
+$stepper-indicator-margin: $space-none $space-none $space-xs !default;
+$stepper-indicator-size: 33px !default;
+
+$stepper-indicator-icon-color: $color-white !default;
+$stepper-indicator-icon-size: 24px !default;
+
+$stepper-content-color: $color-gray-darkest !default;
+$stepper-content-font-family: $font-family-primary !default;
+$stepper-content-font-size: $font-size-sm !default;
+$stepper-content-font-weight: $font-weight-regular !default;
+
+$step-padding: 0 $space-md !default;
+
+$step-active-indicator-background: $color-purple !default;
+$step-active-indicator-color: $color-white !default;
+$step-active-indicator-font-weight: $font-weight-medium !default;
+
+$step-completed-indicator-background: $color-purple !default;
+$step-completed-indicator-color: $color-white !default;
