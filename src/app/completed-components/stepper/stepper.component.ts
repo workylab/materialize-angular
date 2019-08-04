@@ -11,7 +11,7 @@ export class StepperComponent implements StepperModel, AfterContentInit {
   static readonly defaultProps: StepperModel = {
     activeIndex: 0,
     className: '',
-    showTicks: false
+    showTicks: true
   };
 
   @Input() className: string = StepperComponent.defaultProps.className;
