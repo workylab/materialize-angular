@@ -6,7 +6,7 @@ import { config } from '../../config';
   templateUrl: './step.component.html'
 })
 export class StepComponent {
-  @ViewChild('contentTemplate', { static: false }) contentTemplate: TemplateRef<any>;
+  @ViewChild('labelTemplate', { static: false }) labelTemplate: TemplateRef<any>;
   @ViewChild('indicatorTemplate', { static: false }) indicatorTemplate: TemplateRef<any>;
 
   public prefix = config.components.prefix;

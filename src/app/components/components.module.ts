@@ -45,8 +45,8 @@ import { SliderComponent } from '../completed-components/slider/slider.component
 import { SliderIndicatorComponent } from '../completed-components/slider-indicator/slider-indicator.component';
 import { SliderOptionComponent } from '../completed-components/slider-option/slider-option.component';
 import { StepComponent } from '../completed-components/step/step.component';
-import { StepContentComponent } from '../completed-components/step-content/step-content.component';
 import { StepIndicatorComponent } from '../completed-components/step-indicator/step-indicator.component';
+import { StepLabelComponent } from '../completed-components/step-label/step-label.component';
 import { StepperComponent } from '../completed-components/stepper/stepper.component';
 import { SuffixDirective } from '../directives/suffix.directive';
 import { SwitchComponent } from '../completed-components/switch/switch.component';
@@ -102,8 +102,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SliderIndicatorComponent,
     SliderOptionComponent,
     StepComponent,
-    StepContentComponent,
     StepIndicatorComponent,
+    StepLabelComponent,
     StepperComponent,
     SwitchComponent,
     TabComponent,
@@ -156,8 +156,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     SliderIndicatorComponent,
     SliderOptionComponent,
     StepComponent,
-    StepContentComponent,
     StepIndicatorComponent,
+    StepLabelComponent,
     StepperComponent,
     SuffixDirective,
     SwitchComponent,

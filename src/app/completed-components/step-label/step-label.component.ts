@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { config } from '../../config';
 
 @Component({
-  selector: `${ config.components.prefix }-step-content`,
-  templateUrl: './step-content.component.html'
+  selector: `${ config.components.prefix }-step-label`,
+  templateUrl: './step-label.component.html'
 })
-export class StepContentComponent {
+export class StepLabelComponent {
   public prefix = config.components.prefix;
 }

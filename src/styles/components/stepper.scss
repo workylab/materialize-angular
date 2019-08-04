@@ -34,11 +34,11 @@
   font-size: $stepper-indicator-icon-size;
 }
 
-.#{$prefix}-step-content {
-  color: $stepper-content-color;
-  font-family: $stepper-content-font-family;
-  font-size: $stepper-content-font-size;
-  font-weight: $stepper-content-font-weight;
+.#{$prefix}-step-label {
+  color: $stepper-label-color;
+  font-family: $stepper-label-font-family;
+  font-size: $stepper-label-font-size;
+  font-weight: $stepper-label-font-weight;
 }
 
 .#{$prefix}-step {
