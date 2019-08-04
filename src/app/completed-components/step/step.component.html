@@ -1,5 +1,9 @@
-<div [ngClass]="prefix + '-step'">
-  <div [ngClass]="prefix + '-step-indicator'">{{ step }}</div>
-  <ng-content></ng-content>
-</div>
-
+<ng-template #indicatorTemplate>
+  <div [ngClass]="prefix + '-step-indicator'">
+    <materialize-icon [className]="prefix + '-step-indicator-icon'" *ngIf="isCompleted">done</materialize-icon>
+    <ng-content select="materialize-step-indicator" *ngIf="!isCompleted"></ng-content>
+  </div>
+</ng-template>
+<ng-template #contentTemplate>
+  <ng-content select="materialize-step-content"></ng-content>
+</ng-template>
