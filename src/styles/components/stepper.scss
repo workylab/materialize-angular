@@ -1,41 +1,65 @@
 .#{$prefix}-stepper {
+  align-items: flex-start;
   display: flex;
   flex-direction: row;
-  list-style: none;
-  margin-bottom: $space-xs;
-  padding: $space-lg 0;
+  margin-bottom: 0;
+  padding: $space-md $space-lg;
+}
+
+.#{$prefix}-step-divider {
+  background: $color-gray-light;
+  height: $border-md;
+  margin-top: 16px;
+  width: 100%;
 }
 
 .#{$prefix}-step {
-  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 $space-md;
+  white-space: nowrap;
+
+  &.active {
+    .#{$prefix}-step-indicator {
+      background: $color-purple;
+      color: $color-white;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &.completed {
+    .#{$prefix}-step-indicator {
+      background: $color-purple;
+      color: $color-white;
+    }
+  }
+}
+
+.#{$prefix}-step-indicator-icon {
+  color: $color-white;
+  display: flex;
+  font-size: 24px;
 }
 
 .#{$prefix}-step-indicator {
   align-items: center;
-  background-color: $color-gray-light;
+  background: $color-gray-light;
   border-radius: $radius-full;
   color: $color-gray;
   display: flex;
   font-family: $font-family-primary;
   font-size: 20px;
-  font-weight: $font-weight-bold;
-  height: 34px;
+  font-weight: $font-weight-regular;
+  height: 33px;
   justify-content: center;
-  margin-bottom: $space-xxxs;
-  position: relative;
-  width: 34px;
+  margin-bottom: $space-xs;
+  width: 33px;
+}
 
-  &:first-child::before {
-    display: none;
-  }
-
-  &::before {
-    background-color: $color-gray-light;
-    content: '';
-    height: $space-xxxs;
-    position: absolute;
-    top: $space-md;
-    transform: translateX(-50%);
-    width: 100%;
-  }
+.#{$prefix}-step-content {
+  color: $color-gray-darkest;
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
 }
