@@ -2,64 +2,64 @@
   align-items: flex-start;
   display: flex;
   flex-direction: row;
-  margin-bottom: 0;
-  padding: $space-md $space-lg;
+  margin: $stepper-margin;
+  padding: $stepper-padding;
 }
 
 .#{$prefix}-step-divider {
-  background: $color-gray-light;
-  height: $border-md;
-  margin-top: 16px;
-  width: 100%;
+  background: $stepper-divider-background;
+  height: $stepper-divider-height;
+  margin: $stepper-divider-margin;
+  width: $stepper-divider-width;
+}
+
+.#{$prefix}-step-indicator {
+  align-items: center;
+  background: $stepper-indicator-background;
+  border-radius: $stepper-indicator-border-radius;
+  color: $stepper-indicator-color;
+  display: flex;
+  font-family: $stepper-indicator-font-family;
+  font-size: $stepper-indicator-font-size;
+  font-weight: $stepper-indicator-font-weight;
+  height: $stepper-indicator-size;
+  justify-content: center;
+  margin: $stepper-indicator-margin;
+  width: $stepper-indicator-size;
+}
+
+.#{$prefix}-step-indicator-icon {
+  color: $stepper-indicator-icon-color;
+  display: flex;
+  font-size: $stepper-indicator-icon-size;
+}
+
+.#{$prefix}-step-content {
+  color: $stepper-content-color;
+  font-family: $stepper-content-font-family;
+  font-size: $stepper-content-font-size;
+  font-weight: $stepper-content-font-weight;
 }
 
 .#{$prefix}-step {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 0 $space-md;
+  padding: $step-padding;
   white-space: nowrap;
 
   &.active {
     .#{$prefix}-step-indicator {
-      background: $color-purple;
-      color: $color-white;
-      font-weight: $font-weight-medium;
+      background: $step-active-indicator-background;
+      color: $step-active-indicator-color;
+      font-weight: $step-active-indicator-font-weight;
     }
   }
 
   &.completed {
     .#{$prefix}-step-indicator {
-      background: $color-purple;
-      color: $color-white;
+      background: $step-completed-indicator-background;
+      color: $step-completed-indicator-color;
     }
   }
-}
-
-.#{$prefix}-step-indicator-icon {
-  color: $color-white;
-  display: flex;
-  font-size: 24px;
-}
-
-.#{$prefix}-step-indicator {
-  align-items: center;
-  background: $color-gray-light;
-  border-radius: $radius-full;
-  color: $color-gray;
-  display: flex;
-  font-family: $font-family-primary;
-  font-size: 20px;
-  font-weight: $font-weight-regular;
-  height: 33px;
-  justify-content: center;
-  margin-bottom: $space-xs;
-  width: 33px;
-}
-
-.#{$prefix}-step-content {
-  color: $color-gray-darkest;
-  font-family: $font-family-primary;
-  font-size: 16px;
-  font-weight: $font-weight-regular;
 }
