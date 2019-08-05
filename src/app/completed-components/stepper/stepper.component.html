@@ -1,3 +1,15 @@
 <div [ngClass]="[prefix + '-stepper', className]">
-  <ng-content select="materialize-step"></ng-content>
+  <ng-container *ngFor="let step of steps; index as i">
+    <div [ngClass]="prefix + '-step-divider'" *ngIf="i > 0"></div>
+
+    <div
+      [ngClass]="prefix + '-step'"
+      [class.active]="i === activeIndex"
+      [class.completed]="i < activeIndex"
+      *ngIf="!isContentReady"
+    >
+      <ng-template [ngTemplateOutlet]="step.indicatorTemplate"></ng-template>
+      <ng-template [ngTemplateOutlet]="step.labelTemplate"></ng-template>
+    </div>
+  </ng-container>
 </div>

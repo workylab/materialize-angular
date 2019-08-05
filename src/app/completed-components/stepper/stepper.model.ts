@@ -1,4 +1,5 @@
 export interface StepperModel {
-  activeStep: string;
+  activeIndex: number;
   className: string;
+  showTicks: boolean;
 }

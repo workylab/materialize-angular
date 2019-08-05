@@ -13,6 +13,21 @@
       Contacts
     </materialize-navbar>
 
+    <materialize-stepper [activeIndex]="1">
+      <materialize-step>
+        <materialize-step-indicator>1</materialize-step-indicator>
+        <materialize-step-label>Step 1</materialize-step-label>
+      </materialize-step>
+      <materialize-step>
+        <materialize-step-indicator>2</materialize-step-indicator>
+        <materialize-step-label>Step 2</materialize-step-label>
+      </materialize-step>
+      <materialize-step>
+        <materialize-step-indicator>3</materialize-step-indicator>
+        <materialize-step-label>Step 3</materialize-step-label>
+      </materialize-step>
+    </materialize-stepper>
+
     <div [formGroup]="form">
       <materialize-select floatLabel="State">
         <materialize-select-option value="1">Option 1</materialize-select-option>

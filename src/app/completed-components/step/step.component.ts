@@ -1,17 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { config } from '../../config';
-import { StepModel } from './step.model';
 
 @Component({
   selector: `${ config.components.prefix }-step }`,
   templateUrl: './step.component.html'
 })
-export class StepComponent implements StepModel {
-  static readonly defaultProps: StepModel = {
-    step: ''
-  };
-
-  @Input() step: string = StepComponent.defaultProps.step;
+export class StepComponent {
+  @ViewChild('labelTemplate', { static: false }) labelTemplate: TemplateRef<any>;
+  @ViewChild('indicatorTemplate', { static: false }) indicatorTemplate: TemplateRef<any>;
 
   public prefix = config.components.prefix;
+
+  public isCompleted: boolean;
+
+  constructor() {
+    this.isCompleted = false;
+  }
 }
