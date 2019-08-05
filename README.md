@@ -51,6 +51,7 @@
 ## Changelog
 ## Testing
 ## Contributing
+[Workylab](https://github.com/workylab) welcomes contributions to this project. When contributing, please [follow this steps](CONTRIBUTING.md).
 ## Copyright and license
 &copy; 2019 [WorkyLab](https://github.com/workylab) This project is licensed under the MIT License - see the [license file](LICENSE) for details.
 ## Install
