@@ -11,34 +11,38 @@
   height: $stepper-divider-height;
   margin: $stepper-divider-margin;
   width: $stepper-divider-width;
+
+  &.completed {
+    background: $stepper-divider-completed-background;
+  }
 }
 
 .#{$prefix}-step-indicator {
   align-items: center;
-  background: $stepper-indicator-background;
-  border-radius: $stepper-indicator-border-radius;
-  color: $stepper-indicator-color;
+  background: $step-indicator-background;
+  border-radius: $step-indicator-border-radius;
+  color: $step-indicator-color;
   display: flex;
-  font-family: $stepper-indicator-font-family;
-  font-size: $stepper-indicator-font-size;
-  font-weight: $stepper-indicator-font-weight;
-  height: $stepper-indicator-size;
+  font-family: $step-indicator-font-family;
+  font-size: $step-indicator-font-size;
+  font-weight: $step-indicator-font-weight;
+  height: $step-indicator-size;
   justify-content: center;
-  margin: $stepper-indicator-margin;
-  width: $stepper-indicator-size;
+  margin: $step-indicator-margin;
+  width: $step-indicator-size;
 }
 
 .#{$prefix}-step-indicator-icon {
-  color: $stepper-indicator-icon-color;
+  color: $step-indicator-icon-color;
   display: flex;
-  font-size: $stepper-indicator-icon-size;
+  font-size: $step-indicator-icon-size;
 }
 
 .#{$prefix}-step-label {
-  color: $stepper-label-color;
-  font-family: $stepper-label-font-family;
-  font-size: $stepper-label-font-size;
-  font-weight: $stepper-label-font-weight;
+  color: $step-label-color;
+  font-family: $step-label-font-family;
+  font-size: $step-label-font-size;
+  font-weight: $step-label-font-weight;
 }
 
 .#{$prefix}-step {
