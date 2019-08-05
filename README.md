@@ -35,6 +35,23 @@
   </a>
 </p>
 
+## Table of contents
+
+- [Quickstart](#quickstart)
+- [Documentation](#documentation)
+- [Supported Browsers](#supported-browsers)
+- [Changelog](#changelog)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [Copyright and license](#copyright-and-license)
+
+## Quickstart
+## Documentation
+## Supported Browsers
+## Changelog
+## Testing
+## Contributing
+## Copyright and license
 ## Install
 npm install materialize-angular
 
