@@ -52,6 +52,7 @@
 ## Testing
 ## Contributing
 ## Copyright and license
+&copy; 2019 [WorkyLab](https://github.com/workylab) This project is licensed under the MIT License - see the [license file](LICENSE) for details.
 ## Install
 npm install materialize-angular
 
