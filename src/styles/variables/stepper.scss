@@ -6,24 +6,26 @@ $stepper-divider-height: $border-md !default;
 $stepper-divider-margin: $space-md $space-none $space-none !default;
 $stepper-divider-width: 100% !default;
 
-$stepper-indicator-background: $color-gray-light !default;
-$stepper-indicator-border-radius: $radius-full !default;
-$stepper-indicator-color: $color-gray !default;
-$stepper-indicator-font-family: $font-family-primary !default;
-$stepper-indicator-font-size: $font-size-lg !default;
-$stepper-indicator-font-weight: $font-weight-regular !default;
-$stepper-indicator-margin: $space-none $space-none $space-xs !default;
-$stepper-indicator-size: 33px !default;
-
-$stepper-indicator-icon-color: $color-white !default;
-$stepper-indicator-icon-size: 24px !default;
-
-$stepper-label-color: $color-gray-darkest !default;
-$stepper-label-font-family: $font-family-primary !default;
-$stepper-label-font-size: $font-size-sm !default;
-$stepper-label-font-weight: $font-weight-regular !default;
+$stepper-divider-completed-background: $color-purple !default;
 
 $step-padding: 0 $space-md !default;
+
+$step-indicator-background: $color-gray-light !default;
+$step-indicator-border-radius: $radius-full !default;
+$step-indicator-color: $color-gray !default;
+$step-indicator-font-family: $font-family-primary !default;
+$step-indicator-font-size: $font-size-lg !default;
+$step-indicator-font-weight: $font-weight-regular !default;
+$step-indicator-margin: $space-none $space-none $space-xs !default;
+$step-indicator-size: 33px !default;
+
+$step-indicator-icon-color: $color-white !default;
+$step-indicator-icon-size: 24px !default;
+
+$step-label-color: $color-gray-darkest !default;
+$step-label-font-family: $font-family-primary !default;
+$step-label-font-size: $font-size-sm !default;
+$step-label-font-weight: $font-weight-regular !default;
 
 $step-active-indicator-background: $color-purple !default;
 $step-active-indicator-color: $color-white !default;
