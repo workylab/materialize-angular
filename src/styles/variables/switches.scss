@@ -20,6 +20,7 @@ $switch-indicator-track-disabled-background: $color-gray !default;
 $switch-indicator-background: $color-white !default;
 $switch-indicator-border-radius: $radius-full !default;
 $switch-indicator-box-shadow: $shadow-sm !default;
+$switch-indicator-left: 0 !default;
 $switch-indicator-transition: $property-left $timer-sm $function-ease !default;
 $switch-indicator-size: 20px !default;
 $switch-indicator-active-background: $color-purple !default;
@@ -33,6 +34,8 @@ $switch-indicator-ripple-focused-active-background: rgba($color-purple, 0.1) !de
 $switch-indicator-ripple-background: $color-purple !default;
 $switch-indicator-ripple-size: 40px !default;
 $switch-indicator-ripple-transition: $property-background $timer-sm $function-ease !default;
+
+$switch-active-indicator-left: $switch-indicator-track-width - $switch-indicator-size !default;
 
 $switch-ripple-active-background: rgba($color-purple, 0.2) !default;
 $switch-ripple-background: rgba($color-gray-darkest, 0.2) !default;
