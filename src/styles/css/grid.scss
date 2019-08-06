@@ -1,0 +1,92 @@
+$grid-columns: 12;
+$grid-gap-size: 16px;
+$media-breakpoint-sm: 576px;
+$media-breakpoint-md: 768px;
+$media-breakpoint-lg: 992px;
+$media-breakpoint-xl: 1200px;
+$container-max-width-sm: 540px;
+$container-max-width-md: 720px;
+$container-max-width-lg: 960px;
+$container-max-width-xl: 1140px;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $grid-gap-size;
+  padding-right: $grid-gap-size;
+  width: 100%;
+}
+
+@media (min-width: $media-breakpoint-xl) {
+  .container {
+    max-width: $container-max-width-xl;
+  }
+}
+
+@media (min-width: $media-breakpoint-lg) {
+  .container {
+    max-width: $container-max-width-lg;
+  }
+}
+
+@media (min-width: $media-breakpoint-md) {
+  .container {
+    max-width: $container-max-width-md;
+  }
+}
+
+@media (min-width: $media-breakpoint-sm) {
+  .container {
+    max-width: $container-max-width-sm;
+  }
+}
+
+.row {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat($grid-columns, 1fr);
+    margin-left: -$grid-gap-size;
+    margin-right: -$grid-gap-size;
+}
+
+@mixin generate-columns($columns) {
+  @for $i from 1 through $columns {
+    .col-#{$i} {
+      grid-column: span $i;
+    }
+  }
+
+  @media (min-width: $media-breakpoint-sm) {
+    @for $i from 1 through $columns {
+      .col-sm-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  @media (min-width: $media-breakpoint-md) {
+    @for $i from 1 through $columns {
+      .col-md-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  @media (min-width: $media-breakpoint-lg) {
+    @for $i from 1 through $columns {
+      .col-lg-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  @media (min-width: $media-breakpoint-xl) {
+    @for $i from 1 through $columns {
+      .col-xl-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+}
+
+@include generate-columns($grid-columns);
