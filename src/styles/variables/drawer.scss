@@ -1,0 +1,9 @@
+$drawer-content-background: $color-white !default;
+$drawer-content-width: 280px !default;
+$drawer-content-z-index: $zindex-level-2 !default;
+$drawer-content-transition-function: $function-in !default;
+
+$drawer-backdrop-background: rgba(0, 0, 0, 0.5) !default;
+$drawer-backdrop-transition-function: $function-out !default;
+$drawer-backdrop-transition-property: $property-opacity !default;
+$drawer-backdrop-z-index: $zindex-level-1 !default;
