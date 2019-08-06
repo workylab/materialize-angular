@@ -12,7 +12,7 @@
   }
 
   &.active .#{$prefix}-switch-indicator {
-    left: $switch-indicator-track-width - $switch-indicator-size;
+    left: $switch-active-indicator-left;
   }
 
   &:not(.disabled) {
@@ -91,7 +91,7 @@
   border-radius: $switch-indicator-border-radius;
   box-shadow: $switch-indicator-box-shadow;
   height: $switch-indicator-size;
-  left: 0;
+  left: $switch-indicator-left;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
