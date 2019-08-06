@@ -27,8 +27,8 @@
   <a href="https://spectrum.chat/materialize">
     <img src="https://withspectrum.github.io/badge/badge.svg" alt="Join the community on Spectrum" />
   </a>
-  <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/b87b6059adefcd07fbd8/maintainability" alt="Codeclimate analyze" />
+  <a href="https://codeclimate.com/github/workylab/materialize-angular/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/b87b6059adefcd07fbd8/maintainability" />
   </a>
   <a href="https://npmjs.com/package/materialize-angular">
     <img src="https://img.shields.io/npm/dm/materialize-angular.svg" alt="Monthly npm downloads" />
