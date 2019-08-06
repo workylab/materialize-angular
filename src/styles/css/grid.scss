@@ -8,6 +8,10 @@ $container-max-width-sm: 540px;
 $container-max-width-md: 720px;
 $container-max-width-lg: 960px;
 $container-max-width-xl: 1140px;
+$media-query-hide-sm: '(min-width: 576px) and (max-width: 767px)';
+$media-query-hide-md: '(min-width: 768px) and (max-width: 991px)';
+$media-query-hide-lg: '(min-width: 992px) and (max-width: 1199px)';
+$media-query-hide-xl: '(min-width: 1200px)';
 
 .container {
   margin-left: auto;
@@ -90,3 +94,27 @@ $container-max-width-xl: 1140px;
 }
 
 @include generate-columns($grid-columns);
+
+@media $media-query-hide-sm {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media $media-query-hide-md {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media $media-query-hide-lg {
+  .hidden-lg {
+    display: none;
+  }
+}
+
+@media $media-query-hide-xl {
+  .hidden-xl {
+    display: none;
+  }
+}
