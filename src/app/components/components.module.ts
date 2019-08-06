@@ -13,10 +13,9 @@ import { CollapsibleTitleComponent } from '../completed-components/collapsible-t
 import { CommonModule } from '@angular/common';
 import { DatePickerComponent } from './datepicker/datepicker.component';
 import { DrawerCloseDirective } from '../directives/drawer-close.directive';
-import { DrawerComponent } from './drawer/drawer.component';
-import { DrawerContainerComponent } from './drawer-container/drawer-container.component';
-import { DrawerContentComponent } from './drawer-content/drawer-content.component';
-import { DrawerHandlerComponent } from './drawer-handler/drawer-handler.component';
+import { DrawerComponent } from '../completed-components/drawer/drawer.component';
+import { DrawerContainerComponent } from '../completed-components/drawer-container/drawer-container.component';
+import { DrawerContentComponent } from '../completed-components/drawer-content/drawer-content.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { FormMessageComponent } from '../completed-components/form-message/form-message.component';
 import { GlossaryComponent } from '../completed-components/glossary/glossary.component.component';
@@ -74,7 +73,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerComponent,
     DrawerContainerComponent,
     DrawerContentComponent,
-    DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
     GlossaryComponent,
@@ -129,7 +127,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
     DrawerComponent,
     DrawerContainerComponent,
     DrawerContentComponent,
-    DrawerHandlerComponent,
     DropdownComponent,
     FormMessageComponent,
     GlossaryComponent,
