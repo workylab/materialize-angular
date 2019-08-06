@@ -3,11 +3,17 @@ export class DrawerModel {
   closeOnBackdrop: boolean;
   hasBackdrop: boolean;
   isOpen: boolean;
+  position: DRAWER_POSITIONS;
   transitionDuration: number;
-  type: DRAWER_TYPE;
+  type: DRAWER_TYPES;
 }
 
-export enum DRAWER_TYPE {
+export enum DRAWER_POSITIONS {
+  RIGHT = 'right',
+  LEFT = 'left'
+}
+
+export enum DRAWER_TYPES {
   OVER = 'over',
   PUSH = 'push',
   STATIC = 'static'
