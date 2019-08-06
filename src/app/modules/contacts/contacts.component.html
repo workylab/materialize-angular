@@ -1,4 +1,4 @@
-<materialize-drawer>
+<materialize-drawer #drawer type="static" position="left">
   <materialize-drawer-content>
     Content
     <materialize-icon materializeDrawerClose>close</materialize-icon>
@@ -6,9 +6,7 @@
 
   <materialize-drawer-container>
     <materialize-navbar>
-      <materialize-drawer-handler>
-        <materialize-icon>menu</materialize-icon>
-      </materialize-drawer-handler>
+      <materialize-icon (click)="drawer.open()">menu</materialize-icon>
 
       Contacts
     </materialize-navbar>

@@ -1,0 +1,95 @@
+.#{$prefix}-drawer {
+  overflow: hidden;
+  position: relative;
+
+  &.left {
+    .#{$prefix}-drawer-content {
+      left: 0;
+    }
+
+    &.static .#{$prefix}-drawer-container {
+      margin-left: $drawer-content-width;
+    }
+
+    &.push .#{$prefix}-drawer-content,
+    &.over .#{$prefix}-drawer-content {
+      transform: translateX(-100%);
+    }
+
+    &.open.push .#{$prefix}-drawer-container {
+      margin-left: $drawer-content-width;
+    }
+  }
+
+  &.right {
+    .#{$prefix}-drawer-content {
+      right: 0;
+    }
+
+    &.static .#{$prefix}-drawer-container {
+      margin-right: $drawer-content-width;
+    }
+
+    &.push .#{$prefix}-drawer-content,
+    &.over .#{$prefix}-drawer-content {
+      transform: translateX(100%);
+    }
+
+    &.open.push .#{$prefix}-drawer-container {
+      margin-right: $drawer-content-width;
+    }
+  }
+
+  &.static .#{$prefix}-drawer-content {
+    position: fixed;
+  }
+
+  &.push .#{$prefix}-drawer-container {
+    transition-duration: inherit;
+    transition-property: margin;
+    transition-timing-function: $drawer-content-transition-function;
+  }
+
+  &.push .#{$prefix}-drawer-content,
+  &.over .#{$prefix}-drawer-content {
+    transition-duration: inherit;
+    transition-property: transform;
+    transition-timing-function: $drawer-content-transition-function;
+  }
+
+  &.open {
+    &.backdrop .#{$prefix}-drawer-backdrop {
+      opacity: 1;
+    }
+
+    &.over .#{$prefix}-drawer-content,
+    &.push .#{$prefix}-drawer-content {
+      transform: translateX(0);
+    }
+  }
+}
+
+.#{$prefix}-drawer-backdrop {
+  background-color: $drawer-backdrop-background;
+  bottom: 0;
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition-duration: inherit;
+  transition-property: $drawer-backdrop-transition-property;
+  transition-timing-function: $drawer-backdrop-transition-function;
+  width: 100%;
+  z-index: $drawer-backdrop-z-index;
+}
+
+.#{$prefix}-drawer-content {
+  background: $drawer-content-background;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: $drawer-content-width;
+  z-index: $drawer-content-z-index;
+}
