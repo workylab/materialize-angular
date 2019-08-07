@@ -46,58 +46,77 @@
 - [Copyright and license](#copyright-and-license)
 
 ## Quickstart
+
+##### Step 1: Install npm package:
+```bash
+  npm install --save materialize-angular
+```
+
+##### Step 2: Import component modules in your app module:
+You can import all the available components by importing: `MaterializeComponentsModule`
+
+```typescript
+import { Component, NgModule } from '@angular/core';
+import { MaterializeComponentsModule } from 'materialize-angular';
+
+@NgModule({
+  imports: [ MaterializeComponentsModule ]
+})
+export class MyModule {}
+```
+
+Or if you prefer you can import just specific components by importing each one like `MaterializeButtonModule`, `MaterializeCardModule`, etc.
+
+```typescript
+import { Component, NgModule } from '@angular/core';
+import { MaterializeButtonModule, MaterializeCardModule } from 'materialize-angular';
+
+@NgModule({
+  imports: [
+    MaterializeButtonModule,
+    MaterializeCardModule
+  ]
+})
+export class MyModule {}
+```
+
+##### Step 3: Use imported components:
+Use the imported components into your apps components:
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-demo',
+  template: `
+    <materialize-card>
+      <materialize-button>Hello From Materialize Angular!</materialize-button>
+    </materialize-card>
+  `
+})
+export class MyDemoComponent {}
+```
+
+##### Step 4: Add styles
+Finally import materialize angular styles by writing the following lines in your `styles.scss`file (it is located in `my-project/src/styles.scss`)
+
+```CSS
+$materialize-fonts-path: '~materialize-angular/fonts';
+
+@import '~materialize-angular/styles/materialize-angular.scss';
+```
+
 ## Documentation
+
 ## Supported Browsers
+
 ## Changelog
 [Learn about the latest improvements](CHANGELOG.md).
+
 ## Testing
+
 ## Contributing
 [Workylab](https://github.com/workylab) welcomes contributions to this project. When contributing, please [follow this steps](CONTRIBUTING.md).
+
 ## Copyright and license
 &copy; 2019 [WorkyLab](https://github.com/workylab) This project is licensed under the MIT License - see the [license file](LICENSE) for details.
-## Install
-npm install materialize-angular
-
-## Add to angular project
-```bash
-angular.json -> 
-  {
-    ...
-    "projects": {
-      [your-project-name]: {
-        ...
-        "architect": {
-          ...
-          "build": {
-            ...
-            "options": {
-              ...
-              "assets": [
-                ...
-                {
-                  "glob": "**/*",
-                  "input": "./node_modules/materialize-angular/fonts/assets",
-                  "output": "src/assets/fonts/"
-                }
-                ...
-              ]
-              ...
-            }
-            ...
-          }
-          ...
-        }
-        ...
-      }
-    }
-    ...
-  }
-```
-
-## Add Styles
-```bash
-styles.scss -> 
-
-$materialize-fonts-path: '../node_modules/materialize-angular/fonts/assets';
-@import 'materialize-angular/styles/materialize-angular.scss';
-```
