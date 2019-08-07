@@ -16,5 +16,5 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class ButtonModule {
+export class MaterializeButtonModule {
 }
