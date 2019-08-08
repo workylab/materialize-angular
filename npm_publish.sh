@@ -3,6 +3,12 @@
 # Exit if one of the commands fail
 set -e 
 
+if [[ "$GITHUB_TOKEN" = "" ]]
+then
+  echo 'Aborting script. No GITHUB_TOKEN env variable found.';
+  exit 1;
+fi
+
 # Get first parameter
 OPT="$1";
 
@@ -34,11 +40,22 @@ then
   exit 1;
 fi
 
-# Patch version
+# Bump version
 npm version $OPT
 TAG=$(git tag --points-at HEAD)
 git tag -d $TAG
 cd src && npm version $OPT
 cd .. && git commit -a --amend --no-edit
+git tag $TAG
+git push origin master $TAG # push to create CHANGELOG
+
+# Update CHANGELOG
+docker run -it --rm -v "$(pwd)":/usr/local/src/your-app ferrarimarco/github-changelog-generator --user workylab --project materialize-angular --token ${GITHUB_TOKEN}
+git add CHANGELOG.md
+git commit -m "Update CHANGELOG for $TAG [skip ci]"
+
+# Retag version
+git tag -d $TAG
+git push origin :refs/tags/$TAG
 git tag $TAG
 git push origin master $TAG
