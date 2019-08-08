@@ -1,7 +1,7 @@
 <materialize-drawer #drawer type="static" position="left">
   <materialize-drawer-content>
     Content
-    <materialize-icon materializeDrawerClose>close</materialize-icon>
+    <materialize-icon (onClick)="drawer.close()">close</materialize-icon>
   </materialize-drawer-content>
 
   <materialize-drawer-container>
@@ -49,12 +49,12 @@
       <materialize-checkbox formControlName="hasLocation">Location</materialize-checkbox>
       {{ form.controls.hasLocation.errors | json }}
   
-      <materialize-checkbox-list checkAllLabel="Has all phones" formControlName="hasPhones">
+      <!-- <materialize-checkbox-list checkAllLabel="Has all phones" formControlName="hasPhones">
         <materialize-checkbox name="hasHousePhone">Has house phone</materialize-checkbox>
         <materialize-checkbox name="hasPersonalPhone">Has personal phone</materialize-checkbox>
         <materialize-checkbox name="hasWorkPhone">Has work phone</materialize-checkbox>
       </materialize-checkbox-list>
-      {{ form.controls.hasPhones.errors | json }}
+      {{ form.controls.hasPhones.errors | json }} -->
   
       <materialize-radio-group [canUncheck]="true" formControlName="favorite">
         <materialize-radio value="a">Value 1</materialize-radio>
@@ -63,8 +63,8 @@
       </materialize-radio-group>
       {{ form.controls.favorite.errors | json }}
       
-      <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy" [fullSize]="true"></materialize-datepicker>
-      {{ form.controls.dateOfBirth.errors | json }}
+      <!-- <materialize-datepicker formControlName="dateOfBirth" format="dd/mm/yyyy" [fullSize]="true"></materialize-datepicker>
+      {{ form.controls.dateOfBirth.errors | json }} -->
   
       <materialize-slider formControlName="amount">
         <materialize-slider-indicator>
