@@ -101,8 +101,6 @@ export class MyDemoComponent {}
 ## Changelog
 [Learn about the latest improvements](CHANGELOG.md).
 
-## Testing
-
 ## Contributing
 [Workylab](https://github.com/workylab) welcomes contributions to this project. When contributing, please [follow this steps](CONTRIBUTING.md).
 
