@@ -1,0 +1,76 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $grid-gap-size;
+  padding-right: $grid-gap-size;
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  margin-left: -$grid-gap-size;
+  margin-right: -$grid-gap-size;
+}
+
+.row-gap {
+  grid-gap: $grid-gap-size;
+}
+
+@mixin generate-container-rules($breakpoints) {
+  @each $key, $value in $breakpoints {
+    @media (min-width: map-get($value,
+    'breakpoint')) {
+      .container {
+        max-width: map-get($value,
+        'container-width');
+      }
+    }
+  }
+}
+
+@mixin generate-hidden-classes($media-queries) {
+  @each $key, $value in $media-queries {
+    @if map-get($value, 'max') {
+      @media (min-width: map-get($value,
+      'min')) and (max-width: map-get($value,
+      'max')) {
+        .hidden-#{$key} {
+          display: none;
+        }
+      }
+    }
+    @else {
+      @media (min-width: map-get($value,
+      'min')) {
+        .hidden-#{$key} {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-columns($columns, $breakpoints) {
+  @for $i from 1 through $columns {
+    .col-#{$i} {
+      grid-column: span $i;
+    }
+  }
+
+  @each $key, $value in $breakpoints {
+    @media (min-width: map-get($value,
+    'breakpoint')) {
+      @for $i from 1 through $columns {
+        .col-#{$key}-#{$i} {
+          grid-column: span $i;
+        }
+      }
+    }
+  }
+}
+
+@include generate-columns($grid-columns, $media-breakpoints);
+@include generate-hidden-classes($media-breakpoints);
+@include generate-container-rules($media-breakpoints);

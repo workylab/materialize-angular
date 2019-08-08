@@ -1,0 +1,35 @@
+$grid-columns: 12;
+$grid-gap-size: 16px;
+$media-breakpoint-sm: 576px;
+$media-breakpoint-md: 768px;
+$media-breakpoint-lg: 992px;
+$media-breakpoint-xl: 1200px;
+$container-max-width-sm: 540px;
+$container-max-width-md: 720px;
+$container-max-width-lg: 960px;
+$container-max-width-xl: 1140px;
+$media-breakpoints: (
+  sm: (
+    breakpoint: 576px,
+    container-width: 540px,
+    min: 576px,
+    max: 767px
+  ),
+  md: (
+    breakpoint: 768px,
+    container-width: 720px,
+    min: 768px,
+    max: 991px
+  ),
+  lg: (
+    breakpoint: 992px,
+    container-width: 960px,
+    min: 992px,
+    max: 1199px
+  ),
+  xl: (
+    breakpoint: 1200px,
+    container-width: 1140px,
+    min: 1200px
+  )
+);
