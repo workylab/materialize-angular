@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { DrawerComponent } from './Drawer.component';
+import { DrawerComponent } from './drawer.component';
 import { DrawerContainerComponent } from './drawer-container/drawer-container.component';
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
 import { NgModule } from '@angular/core';
