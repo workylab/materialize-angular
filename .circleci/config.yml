@@ -28,6 +28,10 @@ jobs:
           name: Run tests
           command: npm run test
 
+      - run:
+          name: Build library
+          command: npm run build          
+
       - save_cache:
           paths:
             - node_modules
@@ -57,12 +61,19 @@ workflows:
   version: 2
   test-build-publish:
     jobs:
-      - test
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /^v.*/
       - deploy:
           requires:
             - test
           filters:
             tags:
-              only: /^v\d+\.\d+\.\d+$/
+              only: /^v.*/
             branches:
-              only: master
+              ignore: /.*/
