@@ -1,5 +1,18 @@
 # Change Log
 
+## [v0.4.0](https://github.com/workylab/materialize-angular/tree/v0.4.0) (2019-08-08)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.3.11...v0.4.0)
+
+**Implemented enhancements:**
+
+- Feature/grid css [\#90](https://github.com/workylab/materialize-angular/pull/90) ([rodwyn](https://github.com/rodwyn))
+
+**Merged pull requests:**
+
+- New release [\#99](https://github.com/workylab/materialize-angular/pull/99) ([alexzoul](https://github.com/alexzoul))
+- Regression from master [\#98](https://github.com/workylab/materialize-angular/pull/98) ([igayoso](https://github.com/igayoso))
+
 ## [v0.3.11](https://github.com/workylab/materialize-angular/tree/v0.3.11) (2019-08-08)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.3.10...v0.3.11)
