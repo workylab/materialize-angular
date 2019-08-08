@@ -47,12 +47,12 @@
 
 ## Quickstart
 
-##### Step 1: Install npm package:
+#### Step 1: Install npm package:
 ```bash
   npm install --save materialize-angular
 ```
 
-##### Step 2: Add styles
+#### Step 2: Add styles
 Import materialize angular styles by writing the following lines in your `styles.scss`file (it is located in `my-project/src/styles.scss`)
 
 ```SASS
@@ -61,7 +61,7 @@ $materialize-fonts-path: '~materialize-angular/fonts';
 @import '~materialize-angular/styles/materialize-angular.scss';
 ```
 
-##### Step 3: Import component modules in your app module:
+#### Step 3: Import component modules in your app module:
 Import just specific components by importing each one like `MaterializeButtonModule`, `MaterializeCardModule`, etc.
 
 ```typescript
@@ -77,7 +77,7 @@ import { MaterializeButtonModule, MaterializeCardModule } from 'materialize-angu
 export class MyModule {}
 ```
 
-##### Step 4: Use imported components:
+#### Step 4: Use imported components:
 Finally use the imported components into your apps components:
 
 ```typescript
