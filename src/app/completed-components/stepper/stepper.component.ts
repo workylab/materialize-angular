@@ -1,6 +1,6 @@
 import { AfterContentInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { config } from '../../config';
-import { StepComponent } from '../step/step.component';
+import { StepComponent } from './step/step.component';
 import { StepperModel } from './stepper.model';
 
 @Component({

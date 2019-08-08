@@ -9,7 +9,7 @@ import {
   QueryList
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ButtonToggleComponent } from '../button-toggle/button-toggle.component';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ButtonToggleGroupModel } from './button-toggle-group.model';
 import { config } from '../../config';
 

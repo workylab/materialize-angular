@@ -1,16 +1,13 @@
 import {
   AfterViewInit,
   Component,
-  ContentChildren,
   ElementRef,
   EventEmitter,
   Input,
   Output,
-  QueryList,
   ViewChild
 } from '@angular/core';
 import { config } from '../../config';
-import { ModalCloseDirective } from '../../directives/modal-close.directive';
 import { ModalModel } from './modal.model';
 
 @Component({
@@ -26,8 +23,6 @@ export class ModalComponent implements AfterViewInit, ModalModel {
     isOpen: false,
     transitionDuration: 400
   };
-
-  @ContentChildren(ModalCloseDirective, { descendants: true }) closeElements: QueryList<ModalCloseDirective>;
 
   @ViewChild('modal', { static: true }) modalRef: ElementRef;
   @ViewChild('backdrop', { static: false }) backdropRef: ElementRef;
@@ -57,16 +52,6 @@ export class ModalComponent implements AfterViewInit, ModalModel {
     if (this.hasBackdrop && this.dismissOnBackdrop) {
       this.backdropRef.nativeElement.addEventListener('click', this.closeByBackdrop);
     }
-
-    this.setFunctionToCloseElements();
-
-    this.closeElements.changes.subscribe(this.setFunctionToCloseElements);
-  }
-
-  setFunctionToCloseElements() {
-    this.closeElements.forEach(item => {
-      item.onClickEmitter.subscribe(this.close);
-    });
   }
 
   closeByBackdrop(event: Event) {

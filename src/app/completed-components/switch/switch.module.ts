@@ -1,15 +1,15 @@
-import { ButtonComponent } from './button.component';
 import { CommonModule } from '@angular/common';
 import { MaterializeCommonModule } from '../common/common.module';
 import { NgModule } from '@angular/core';
+import { SwitchComponent } from './switch.component';
 
 @NgModule({
-  declarations: [ButtonComponent],
-  exports: [ButtonComponent],
+  declarations: [SwitchComponent],
+  exports: [SwitchComponent],
   imports: [
     CommonModule,
     MaterializeCommonModule
   ]
 })
-export class MaterializeButtonModule {
+export class MaterializeSwitchModule {
 }

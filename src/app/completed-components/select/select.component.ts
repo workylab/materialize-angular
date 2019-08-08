@@ -14,7 +14,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
 import { SelectModel } from './select.model';
-import { SelectOptionComponent } from '../select-option/select-option.component';
+import { SelectOptionComponent } from './select-option/select-option.component';
 
 @Component({
   providers: [{

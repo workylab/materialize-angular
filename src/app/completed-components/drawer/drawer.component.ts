@@ -1,25 +1,21 @@
 import {
-  AfterContentInit,
   AfterViewInit,
   Component,
-  ContentChildren,
   ElementRef,
   EventEmitter,
   Input,
   Output,
-  QueryList,
   Renderer2,
   ViewChild
 } from '@angular/core';
 import { DRAWER_POSITIONS, DRAWER_TYPES, DrawerModel } from './drawer.model';
 import { config } from '../../config';
-import { DrawerCloseDirective } from '../../directives/drawer-close.directive';
 
 @Component({
   selector: `${ config.components.prefix }-drawer }`,
   templateUrl: './drawer.component.html'
 })
-export class DrawerComponent implements AfterViewInit, AfterContentInit {
+export class DrawerComponent implements AfterViewInit {
   static readonly defaultProps: DrawerModel = {
     className: '',
     closeOnBackdrop: true,
@@ -29,8 +25,6 @@ export class DrawerComponent implements AfterViewInit, AfterContentInit {
     transitionDuration: 250,
     type: DRAWER_TYPES.OVER
   };
-
-  @ContentChildren(DrawerCloseDirective, { descendants: true }) closeItems: QueryList<DrawerCloseDirective>;
 
   @ViewChild('backdrop', { static: true }) backdropRef: ElementRef;
   @ViewChild('drawer', { static: true }) drawerRef: ElementRef;
@@ -51,17 +45,10 @@ export class DrawerComponent implements AfterViewInit, AfterContentInit {
   constructor(private renderer: Renderer2) {
     this.close = this.close.bind(this);
     this.closeByBackdrop = this.closeByBackdrop.bind(this);
-    this.registerCloseItems = this.registerCloseItems.bind(this);
     this.open = this.open.bind(this);
 
     this.onOpenEmitter = new EventEmitter<void>();
     this.onCloseEmitter = new EventEmitter<void>();
-  }
-
-  ngAfterContentInit() {
-    this.registerCloseItems();
-
-    this.closeItems.changes.subscribe(this.registerCloseItems);
   }
 
   ngAfterViewInit() {
@@ -72,12 +59,6 @@ export class DrawerComponent implements AfterViewInit, AfterContentInit {
         this.backdropRef.nativeElement.addEventListener('click', this.closeByBackdrop);
       }
     }, 0);
-  }
-
-  registerCloseItems() {
-    this.closeItems.forEach(item => {
-      item.elementRef.nativeElement.addEventListener('click', this.close);
-    });
   }
 
   open() {

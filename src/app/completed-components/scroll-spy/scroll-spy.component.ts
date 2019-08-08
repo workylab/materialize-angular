@@ -1,6 +1,6 @@
 import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
 import { config } from '../../config';
-import { ScrollSpyItemComponent } from '../scroll-spy-item/scroll-spy-item.component';
+import { ScrollSpyItemComponent } from './scroll-spy-item/scroll-spy-item.component';
 import { ScrollSpyModel } from './scroll-spy.model';
 import { windowScrollPosition } from '../../utils/window-scroll-position.util';
 

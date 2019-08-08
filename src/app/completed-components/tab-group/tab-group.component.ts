@@ -12,7 +12,7 @@ import { config } from '../../config';
 import { Router } from '@angular/router';
 import { supportedEvents } from '../../utils/get-supported-events.util';
 import { SupportedEventsModel } from '../../components/common/models/supported-events.model';
-import { TabComponent } from '../tab/tab.component';
+import { TabComponent } from './tab/tab.component';
 import { TabGroupModel } from './tab-group.model';
 
 @Component({

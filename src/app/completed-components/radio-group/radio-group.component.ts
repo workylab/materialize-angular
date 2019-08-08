@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
-import { RadioComponent } from '../radio/radio.component';
+import { RadioComponent } from './radio/radio.component';
 import { RadioGroupModel } from './radio-group.model';
 
 @Component({

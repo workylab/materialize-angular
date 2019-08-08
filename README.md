@@ -47,25 +47,22 @@
 
 ## Quickstart
 
-##### Step 1: Install npm package:
+#### Step 1: Install npm package:
 ```bash
   npm install --save materialize-angular
 ```
 
-##### Step 2: Import component modules in your app module:
-You can import all the available components by importing: `MaterializeComponentsModule`
+#### Step 2: Add styles
+Import materialize angular styles by writing the following lines in your `styles.scss`file (it is located in `my-project/src/styles.scss`)
 
-```typescript
-import { Component, NgModule } from '@angular/core';
-import { MaterializeComponentsModule } from 'materialize-angular';
+```SASS
+$materialize-fonts-path: '~materialize-angular/fonts';
 
-@NgModule({
-  imports: [ MaterializeComponentsModule ]
-})
-export class MyModule {}
+@import '~materialize-angular/styles/materialize-angular.scss';
 ```
 
-Or if you prefer you can import just specific components by importing each one like `MaterializeButtonModule`, `MaterializeCardModule`, etc.
+#### Step 3: Import component modules in your app module:
+Import just specific components by importing each one like `MaterializeButtonModule`, `MaterializeCardModule`, etc.
 
 ```typescript
 import { Component, NgModule } from '@angular/core';
@@ -80,8 +77,8 @@ import { MaterializeButtonModule, MaterializeCardModule } from 'materialize-angu
 export class MyModule {}
 ```
 
-##### Step 3: Use imported components:
-Use the imported components into your apps components:
+#### Step 4: Use imported components:
+Finally use the imported components into your apps components:
 
 ```typescript
 import { Component } from '@angular/core';
@@ -97,23 +94,12 @@ import { Component } from '@angular/core';
 export class MyDemoComponent {}
 ```
 
-##### Step 4: Add styles
-Finally import materialize angular styles by writing the following lines in your `styles.scss`file (it is located in `my-project/src/styles.scss`)
-
-```CSS
-$materialize-fonts-path: '~materialize-angular/fonts';
-
-@import '~materialize-angular/styles/materialize-angular.scss';
-```
-
 ## Documentation
 
 ## Supported Browsers
 
 ## Changelog
 [Learn about the latest improvements](CHANGELOG.md).
-
-## Testing
 
 ## Contributing
 [Workylab](https://github.com/workylab) welcomes contributions to this project. When contributing, please [follow this steps](CONTRIBUTING.md).
