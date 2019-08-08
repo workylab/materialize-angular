@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { supportedEvents, supportTouchEvents } from '../../utils/get-supported-events.util';
 import { config } from '../../config';
 import { SliderModel } from './slider.model';
-import { SliderOptionComponent } from '../slider-option/slider-option.component';
+import { SliderOptionComponent } from './slider-option/slider-option.component';
 import { SupportedEventsModel } from '../../components/common/models/supported-events.model';
 
 @Component({
