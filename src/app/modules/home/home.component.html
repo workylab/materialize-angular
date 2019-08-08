@@ -250,11 +250,11 @@ Input with Suffix Icon and FloatLabel
 <br />
 <br />
 
-<materialize-checkbox-list checkAllLabel="Select all">
+<!-- <materialize-checkbox-list checkAllLabel="Select all">
   <materialize-checkbox [value]="true">Checkbox 1</materialize-checkbox>
   <materialize-checkbox [value]="true">Checkbox 2</materialize-checkbox>
   <materialize-checkbox [value]="true">Checkbox 3</materialize-checkbox>
-</materialize-checkbox-list>
+</materialize-checkbox-list> -->
 
 <br />
 <br />
@@ -385,12 +385,12 @@ Accordion
 <br />
 <br />
 
-List
+<!-- List
 <materialize-list>
   <materialize-list-item>Inbox</materialize-list-item>
   <materialize-list-item>Bookmark</materialize-list-item>
   <materialize-list-item>Chat</materialize-list-item>
-</materialize-list>
+</materialize-list> -->
 
 <br />
 <br />
@@ -497,18 +497,18 @@ Ripple disabled
 <br />
 <br />
 
-Calendar
+<!-- Calendar
 <materialize-calendar [displayOtherMonthDays]="false"></materialize-calendar>
 Calendar that displays other month days
 <materialize-calendar></materialize-calendar>
 Calendar with value
-<materialize-calendar [date]="date"></materialize-calendar>
+<materialize-calendar [date]="date"></materialize-calendar> -->
 
 <br />
 <br />
 <br />
 
-Datepicker
+<!-- Datepicker
 <materialize-datepicker></materialize-datepicker>
 Datepicker with Placeholder
 <materialize-datepicker placeholder="dd-mm-yyyy"></materialize-datepicker>
@@ -523,7 +523,7 @@ Datepicker disabled with FloatLabel and value
 Datepicker Full size
 <materialize-datepicker [fullSize]="true"></materialize-datepicker>
 Datepicker Custom Format
-<materialize-datepicker format="yyyy/mm/dd"></materialize-datepicker>
+<materialize-datepicker format="yyyy/mm/dd"></materialize-datepicker> -->
 
 <br />
 <br />
@@ -682,9 +682,7 @@ Modal without backdrop
 </materialize-modal> -->
 
 Modal without close button
-<materialize-modal-handler [modal]="modalExample">
-  <materialize-icon>loupe</materialize-icon>
-</materialize-modal-handler>
+<materialize-icon (click)="modalExample.open()">loupe</materialize-icon>
 
 <materialize-modal #modalExample>  
   <materialize-button materializeModalClose>close modal</materialize-button>
@@ -694,26 +692,26 @@ Modal without close button
 <br />
 <br />
 
-<h3>Dropdown</h3>
-<materialize-dropdown [items]="dropDownItems"></materialize-dropdown>
+<!-- <h3>Dropdown</h3>
+<materialize-dropdown [items]="dropDownItems"></materialize-dropdown> -->
 
 <br />
 <br />
 <br />
 
-<h3>Table</h3>
+<!-- <h3>Table</h3>
 <materialize-table
   [data]="tableData"
   (onSort)="onTableSort($event)"
   title="Table Example">
   <div>esto es un test...</div>
-</materialize-table>
+</materialize-table> -->
 
 <br />
 <br />
 <br />
 
-<h3>Tooltip Top</h3>
+<!-- <h3>Tooltip Top</h3>
 <p>
   Lorem ipsum dolor sit amet <materialize-tooltip text="Description...">TOOLTIP</materialize-tooltip>,
   adipisicing elit. Officiis quae ducimus sit nihil obcaecati consectetur!
@@ -772,7 +770,7 @@ Modal without close button
 <h3>Tooltip Right</h3>
 <materialize-tooltip text="Description..." position="right">
   <materialize-button>something</materialize-button>
-</materialize-tooltip>
+</materialize-tooltip> -->
 
 
 <!--

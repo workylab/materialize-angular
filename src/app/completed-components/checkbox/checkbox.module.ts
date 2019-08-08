@@ -1,15 +1,15 @@
-import { ButtonComponent } from './button.component';
+import { CheckboxComponent } from './checkbox.component';
 import { CommonModule } from '@angular/common';
 import { MaterializeCommonModule } from '../common/common.module';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [ButtonComponent],
-  exports: [ButtonComponent],
+  declarations: [CheckboxComponent],
+  exports: [CheckboxComponent],
   imports: [
     CommonModule,
     MaterializeCommonModule
   ]
 })
-export class MaterializeButtonModule {
+export class MaterializeCheckboxModule {
 }
