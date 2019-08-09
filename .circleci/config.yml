@@ -34,14 +34,14 @@ jobs:
       - run:
           name: Run tests
           command: | 
-          ./tmp/cc-test-reporter before-build
-          npm run test
-          ./tmp/cc-test-reporter format-coverage -t lcov -o tmp/coverage-materialize-angular.json coverage/materialize-angular/lcov.info
+            ./tmp/cc-test-reporter before-build
+            npm run test
+            ./tmp/cc-test-reporter format-coverage -t lcov -o tmp/coverage-materialize-angular.json coverage/materialize-angular/lcov.info
 
       - run:
-        name: Upload coverage results to Code Climate
-        command: |
-          ./tmp/cc-test-reporter upload-coverage -i tmp/coverage-materialize-angular.json
+          name: Upload coverage results to Code Climate
+          command: |
+            ./tmp/cc-test-reporter upload-coverage -i tmp/coverage-materialize-angular.json
 
       - run:
           name: Build library
