@@ -30,6 +30,9 @@
   <a href="https://codeclimate.com/github/workylab/materialize-angular/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/b87b6059adefcd07fbd8/maintainability" />
   </a>
+  <a href="https://codeclimate.com/github/workylab/materialize-angular/test_coverage">
+    <img src="https://api.codeclimate.com/v1/badges/b87b6059adefcd07fbd8/test_coverage" />
+  </a>
   <a href="https://npmjs.com/package/materialize-angular">
     <img src="https://img.shields.io/npm/dm/materialize-angular.svg" alt="Monthly npm downloads" />
   </a>
