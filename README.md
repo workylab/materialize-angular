@@ -103,11 +103,11 @@ export class MyDemoComponent {}
 
 | Browser   | Supported versions |
 | ------------- | ------------- |
-| Google Chrome  | 75  |
-| Safari  | 12.1  |
-| Edge  | 18  |
-| Firefox  | 68  |
-| Internet Explorer  | 11  |
+| Google Chrome  | 75+  |
+| Safari  | 12.1+  |
+| Edge  | 18+  |
+| Firefox  | 68+  |
+| Internet Explorer  | 11+  |
 
 ## Changelog
 [Learn about the latest improvements](CHANGELOG.md).
