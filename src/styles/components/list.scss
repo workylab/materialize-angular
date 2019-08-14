@@ -1,6 +1,3 @@
-@import '../common/styles/colors.scss';
-@import '../common/styles/metrics.scss';
-
 .list-item {
   align-items: center;
   border-radius: $radius-md;
@@ -29,5 +26,14 @@
 
   .ripple {
     background-color: rgba($color-purple, 0.15);
+  }
+}
+
+.list {
+  list-style: none;
+  padding: $space-md $space-xs;
+
+  > *:last-child {
+    margin-bottom: 0;
   }
 }
