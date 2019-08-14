@@ -1,5 +1,21 @@
 # Change Log
 
+## [v0.4.1](https://github.com/workylab/materialize-angular/tree/v0.4.1) (2019-08-14)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.0...v0.4.1)
+
+**Implemented enhancements:**
+
+- Improved browsers list. [\#105](https://github.com/workylab/materialize-angular/pull/105) ([alexzoul](https://github.com/alexzoul))
+- New Release [\#104](https://github.com/workylab/materialize-angular/pull/104) ([alexzoul](https://github.com/alexzoul))
+- Feature/lists [\#103](https://github.com/workylab/materialize-angular/pull/103) ([alexzoul](https://github.com/alexzoul))
+- Add code coverage in codeclimate.com [\#100](https://github.com/workylab/materialize-angular/pull/100) ([igayoso](https://github.com/igayoso))
+
+**Merged pull requests:**
+
+- Branch regression \[ci-skip\] [\#102](https://github.com/workylab/materialize-angular/pull/102) ([igayoso](https://github.com/igayoso))
+- Add code coverage badge to README [\#101](https://github.com/workylab/materialize-angular/pull/101) ([igayoso](https://github.com/igayoso))
+
 ## [v0.4.0](https://github.com/workylab/materialize-angular/tree/v0.4.0) (2019-08-08)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.3.11...v0.4.0)
