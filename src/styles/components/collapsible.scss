@@ -6,7 +6,7 @@
   padding: $collapsible-padding;
 
   &.open .#{$prefix}-collapsible-title-icon {
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
   }
 
   &:hover:not(.disabled) .#{$prefix}-collapsible-title {
@@ -62,6 +62,7 @@
 }
 
 .#{$prefix}-collapsible-title-icon {
+  color: $collapsible-title-icon-color;
   font-size: $collapsible-title-icon-size;
   position: absolute;
   right: $collapsible-title-icon-right;
