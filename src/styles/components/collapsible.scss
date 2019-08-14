@@ -62,9 +62,10 @@
 }
 
 .#{$prefix}-collapsible-title-icon {
-  font-size: 22px;
+  font-size: $collapsible-title-icon-size;
   position: absolute;
-  right: $space-xxxs;
-  top: $space-xs;
-  transition: transform 250ms ease;
+  right: $collapsible-title-icon-right;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: $collapsible-title-icon-transition;
 }
