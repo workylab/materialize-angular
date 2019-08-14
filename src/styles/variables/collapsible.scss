@@ -13,9 +13,10 @@ $collapsible-title-font-weight: $font-weight-regular !default;
 $collapsible-title-margin: $space-none !default;
 $collapsible-title-padding: $space-sm !default;
 
+$collapsible-title-icon-color: $color-gray-darkest !default;
 $collapsible-title-icon-right: $space-xxxs !default;
-$collapsible-title-icon-transition: $property-transform $timer-md $function-ease !default;
 $collapsible-title-icon-size: 22px !default;
+$collapsible-title-icon-transition: $property-transform $timer-md $function-ease !default;
 
 $collapsible-title-hover-background: $color-gray-light !default;
 $collapsible-title-ripple-background: ligthen(rgba($color-gray, 0.1), 20%) !default;
