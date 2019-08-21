@@ -1,17 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AccordionComponent } from './accordion.component';
-import { CollapsibleComponent } from '../collapsible/collapsible.component';
 
 describe('AccordionComponent', () => {
   let component: AccordionComponent;
   let fixture: ComponentFixture<AccordionComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AccordionComponent],
-      imports: []
-    })
-    .compileComponents();
+    TestBed.configureTestingModule(
+      {
+        declarations: [AccordionComponent]
+      }
+    ).compileComponents();
   }));
 
   beforeEach(() => {
