@@ -16,7 +16,10 @@ import { config } from '../../config';
   templateUrl: './accordion.component.html'
 })
 export class AccordionComponent implements AccordionModel, AfterContentInit {
-  static readonly defaultProps: AccordionModel = { className: '' };
+  static readonly defaultProps: AccordionModel = {
+    activeIndex: 0,
+    className: ''
+  };
 
   @ContentChildren(CollapsibleComponent) collapsibles: QueryList<CollapsibleComponent>;
 
@@ -27,8 +30,9 @@ export class AccordionComponent implements AccordionModel, AfterContentInit {
   public activeIndex: number;
 
   constructor() {
-    this.activeIndex = 0;
     this.onToggleEmitter = new EventEmitter();
+
+    this.activeIndex = AccordionComponent.defaultProps.activeIndex;
   }
 
   ngAfterContentInit() {

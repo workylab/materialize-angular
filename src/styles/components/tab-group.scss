@@ -49,6 +49,7 @@
 
 .#{$prefix}-tab-group-indicator {
   background: $tab-group-indicator-background;
+  border-radius: $tab-group-indicator-border-radius;
   height: $tab-group-indicator-height;
   left: 50%;
   position: absolute;
