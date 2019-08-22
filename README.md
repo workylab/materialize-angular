@@ -44,7 +44,6 @@
 - [Documentation](#documentation)
 - [Supported Browsers](#supported-browsers)
 - [Changelog](#changelog)
-- [Testing](#testing)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
