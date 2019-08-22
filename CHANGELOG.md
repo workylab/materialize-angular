@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.4.4](https://github.com/workylab/materialize-angular/tree/v0.4.4) (2019-08-22)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.3...v0.4.4)
+
+**Implemented enhancements:**
+
+- New Release [\#109](https://github.com/workylab/materialize-angular/pull/109) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.4.3](https://github.com/workylab/materialize-angular/tree/v0.4.3) (2019-08-22)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.2...v0.4.3)
