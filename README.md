@@ -99,15 +99,83 @@ export class MyDemoComponent {}
 
 ## Documentation
 
-## Supported Browsers
+## Available features
 
-| Browser   | Supported versions |
-| ------------- | ------------- |
-| Google Chrome  | 75+  |
-| Safari  | 12.1+  |
-| Edge  | 18+  |
-| Firefox  | 68+  |
-| Internet Explorer  | 11+  |
+| Feature          | Docs         |
+|------------------|--------------|
+| Components       |              |
+|------------------|--------------|
+| Accordion        | [Docs][1]    |
+| Collapsible      | [Docs][2]    |
+| Button           | [Docs][3]    |
+| Calendar         | [Docs][4]    |
+| Dropdown         | [Docs][5]    |
+| List             | [Docs][6]    |
+| Modal            | [Docs][7]    |
+| Table            | [Docs][8]    |
+| Tooltip          | [Docs][9]    |
+| Forms            |              |
+|------------------|--------------|
+| Button Toggle    | [Docs][10]   |
+| Checkbox         | [Docs][11]   |
+| Checkbox List    | [Docs][12]   |
+| Date Picker      | [Docs][13]   |
+| Input            | [Docs][14]   |
+| Label            | [Docs][15]   |
+| Radio            | [Docs][16]   |
+| Select           | [Docs][17]   |
+| Slider           | [Docs][18]   |
+| Switch           | [Docs][19]   |
+| Textarea         | [Docs][20]   |
+| CSS              |              |
+|------------------|--------------|
+| Card             | [Docs][21]   |
+| Divider          | [Docs][22]   |
+| Icon             | [Docs][23]   |
+| Ripple           | [Docs][24]   |
+| Layout           |              |
+|------------------|--------------|
+| Drawer           | [Docs][25]   |
+| Navbar           | [Docs][26]   |
+| Tab              | [Docs][27]   |
+
+ [1]: https://materialize-angular-guide.workylab.now.sh/components/accordion
+ [2]: https://materialize-angular-guide.workylab.now.sh/components/collapsible
+ [3]: https://materialize-angular-guide.workylab.now.sh/components/button
+ [4]: https://materialize-angular-guide.workylab.now.sh/components/calendar
+ [5]: https://materialize-angular-guide.workylab.now.sh/components/dropdown
+ [6]: https://materialize-angular-guide.workylab.now.sh/components/list
+ [7]: https://materialize-angular-guide.workylab.now.sh/components/modal
+ [8]: https://materialize-angular-guide.workylab.now.sh/components/table
+ [9]: https://materialize-angular-guide.workylab.now.sh/components/tooltip
+ [10]: https://materialize-angular-guide.workylab.now.sh/forms/button-toggle
+ [11]: https://materialize-angular-guide.workylab.now.sh/forms/checkbox
+ [12]: https://materialize-angular-guide.workylab.now.sh/forms/checkbox-list
+ [13]: https://materialize-angular-guide.workylab.now.sh/forms/date-picker
+ [14]: https://materialize-angular-guide.workylab.now.sh/forms/input
+ [15]: https://materialize-angular-guide.workylab.now.sh/forms/label
+ [16]: https://materialize-angular-guide.workylab.now.sh/forms/radio
+ [17]: https://materialize-angular-guide.workylab.now.sh/forms/select
+ [18]: https://materialize-angular-guide.workylab.now.sh/forms/slider
+ [19]: https://materialize-angular-guide.workylab.now.sh/forms/switch
+ [20]: https://materialize-angular-guide.workylab.now.sh/forms/textarea
+ [21]: https://materialize-angular-guide.workylab.now.sh/css/card
+ [22]: https://materialize-angular-guide.workylab.now.sh/css/divider
+ [23]: https://materialize-angular-guide.workylab.now.sh/css/icon
+ [24]: https://materialize-angular-guide.workylab.now.sh/css/ripple
+ [25]: https://materialize-angular-guide.workylab.now.sh/layout/drawer
+ [26]: https://materialize-angular-guide.workylab.now.sh/layout/navbar
+ [27]: https://materialize-angular-guide.workylab.now.sh/layout/tab
+ 
+ ## Supported Browsers
+
+| Browser           | Supported versions |
+| --------------    | ------------------ |
+| Google Chrome     | 75+                |
+| Safari            | 12.1+              |
+| Edge              | 18+                |
+| Firefox           | 68+                |
+| Internet Explorer | 11+                |
 
 ## Changelog
 [Learn about the latest improvements](CHANGELOG.md).
