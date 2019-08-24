@@ -42,6 +42,7 @@
 
 - [Quickstart](#quickstart)
 - [Documentation](#documentation)
+- [Available Features](#available-features)
 - [Supported Browsers](#supported-browsers)
 - [Changelog](#changelog)
 - [Testing](#testing)
