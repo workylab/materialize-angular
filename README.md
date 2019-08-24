@@ -40,12 +40,19 @@
 
 ## Table of contents
 
+- [Why Materialize Angular](#why-materialize-angular)
 - [Quickstart](#quickstart)
 - [Documentation](#documentation)
 - [Supported Browsers](#supported-browsers)
 - [Changelog](#changelog)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
+
+## Why Materialize Angular
+
+Materialize Angular is a library to help you easily doing beautiful websites. The goal of the project is to help the user in the creation of websites based on Angular and using the Material Design specification. Also, we are trying to do awesome and best quality components for different website types.
+
+It's a very early version but it is ready for production environments. We're working on LTS versions and try to do the library compatible with different Angular versions.
 
 ## Quickstart
 
