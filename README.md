@@ -101,10 +101,8 @@ export class MyDemoComponent {}
 
 ## Available features
 
-| Feature          | Docs         |
-|------------------|--------------|
-| Components       |              |
-|------------------|--------------|
+| Components       | Docs         |
+| ---------------- | ------------ |
 | Accordion        | [Docs][1]    |
 | Collapsible      | [Docs][2]    |
 | Button           | [Docs][3]    |
@@ -114,8 +112,9 @@ export class MyDemoComponent {}
 | Modal            | [Docs][7]    |
 | Table            | [Docs][8]    |
 | Tooltip          | [Docs][9]    |
-| Forms            |              |
-|------------------|--------------|
+
+| Forms            | Docs         |
+| ---------------- | ------------ |
 | Button Toggle    | [Docs][10]   |
 | Checkbox         | [Docs][11]   |
 | Checkbox List    | [Docs][12]   |
@@ -127,14 +126,16 @@ export class MyDemoComponent {}
 | Slider           | [Docs][18]   |
 | Switch           | [Docs][19]   |
 | Textarea         | [Docs][20]   |
-| CSS              |              |
-|------------------|--------------|
+
+| CSS              | Docs         |
+| ---------------- | ------------ |
 | Card             | [Docs][21]   |
 | Divider          | [Docs][22]   |
 | Icon             | [Docs][23]   |
 | Ripple           | [Docs][24]   |
-| Layout           |              |
-|------------------|--------------|
+
+| Layout           | Docs         |
+| ---------------- | ------------ |
 | Drawer           | [Docs][25]   |
 | Navbar           | [Docs][26]   |
 | Tab              | [Docs][27]   |
@@ -170,7 +171,7 @@ export class MyDemoComponent {}
  ## Supported Browsers
 
 | Browser           | Supported versions |
-| --------------    | ------------------ |
+| ----------------- | ------------------ |
 | Google Chrome     | 75+                |
 | Safari            | 12.1+              |
 | Edge              | 18+                |
