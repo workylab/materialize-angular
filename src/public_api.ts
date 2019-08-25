@@ -12,6 +12,7 @@ export * from './app/completed-components/button-toggle-group/button-toggle-grou
 export * from './app/completed-components/card/card.module';
 export * from './app/completed-components/checkbox/checkbox.module';
 export * from './app/completed-components/collapsible/collapsible.module';
+export * from './app/completed-components/common/common.module';
 export * from './app/completed-components/drawer/drawer.module';
 export * from './app/completed-components/form-message/form-message.module';
 export * from './app/completed-components/glossary/glossary.module';
