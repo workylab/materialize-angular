@@ -33,7 +33,7 @@
     "lint:ts": "eslint './src/app/**/*.ts'",
     "lint:ng": "ng lint",
     "lint": "npm run lint:scss && npm run lint:ng && npm run lint:ts",
-    "build:scss": "cpx './src/styles/**/*' './dist/materialize-angular/styles' && scss-bundle -e ./src/styles/main.scss -d ./dist/materialize-angular/styles/materialize-angular.scss",
+    "build:scss": "cpx './src/styles/**/*' './dist/materialize-angular/styles' && scss-bundle",
     "build:fonts": "cpx './src/fonts/**/*' './dist/materialize-angular/fonts'",
     "build:licence": "cpx './LICENSE' './dist/materialize-angular'",
     "build:readme": "cpx './README.md' './dist/materialize-angular'",
