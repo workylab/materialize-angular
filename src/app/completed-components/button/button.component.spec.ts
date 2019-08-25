@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BUTTON_LEVEL } from './button.model';
 import { ButtonComponent } from './button.component';
-import { MaterializeCommonModule } from '../common/common.module';
 import { config } from 'src/app/config';
+import { MaterializeCommonModule } from '../common/common.module';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
