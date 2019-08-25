@@ -1,0 +1,9 @@
+{
+  "bundlerOptions": {
+      "entryFile": "./src/styles/main.scss",
+      "rootDir": "./src/styles/",
+      "outFile": "./dist/materialize-angular/styles/materialize-angular.scss",
+      "ignoreImports": [],
+      "logLevel": "silent"
+  }
+}
