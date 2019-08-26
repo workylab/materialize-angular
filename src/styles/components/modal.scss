@@ -57,10 +57,13 @@
 }
 
 .#{$prefix}-modal-icon-close {
+  align-items: center;
   color: $modal-icon-close-color;
   cursor: pointer;
+  display: flex;
   font-size: $modal-icon-close-size * 2;
   height: $modal-icon-close-size;
+  justify-content: center;
   position: absolute;
   right: $modal-icon-close-right;
   top: $modal-icon-close-top;

@@ -30,6 +30,7 @@
   &.active .#{$prefix}-form-control-label,
   &.focused .#{$prefix}-form-control-label {
     font-size: $form-control-active-label-font-size;
+    line-height: $form-control-active-label-font-size;
     top: $form-control-active-label-top;
     transform: unset;
   }
@@ -105,6 +106,7 @@
   font-weight: $form-control-label-font-weight;
   left: 0;
   letter-spacing: $form-control-label-letter-spacing;
+  line-height: $form-control-label-font-size;
   pointer-events: none;
   position: absolute;
   top: 50%;
