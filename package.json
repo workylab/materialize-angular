@@ -59,7 +59,7 @@
     "cpx": "^1.5.0",
     "css-loader": "^3.2.0",
     "eslint": "^6.2.2",
-    "eslint-loader": "^2.2.1",
+    "eslint-loader": "^3.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "rxjs": "~6.5.2",
