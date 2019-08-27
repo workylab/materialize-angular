@@ -50,7 +50,7 @@ git tag $TAG
 git push origin master $TAG # push to create CHANGELOG
 
 # Update CHANGELOG
-docker run -it --rm -v "$(pwd)":/usr/local/src/your-app ferrarimarco/github-changelog-generator --user workylab --project materialize-angular --token ${GITHUB_TOKEN}
+docker run -it --rm -v "$(pwd)":/usr/local/src/your-app ferrarimarco/github-changelog-generator --user workylab --project materialize-angular --token ${GITHUB_TOKEN} --exclude-labels 'duplicate,question,invalid,wontfix,nochangelog'
 git add CHANGELOG.md
 git commit -m "Update CHANGELOG for $TAG [skip ci]"
 
