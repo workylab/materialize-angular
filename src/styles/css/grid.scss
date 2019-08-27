@@ -1,4 +1,5 @@
-.container {
+.#{$prefix}-container,
+.#{$prefix}-container-fluid {
   margin-left: auto;
   margin-right: auto;
   padding-left: $grid-gap-size;
@@ -6,7 +7,7 @@
   width: 100%;
 }
 
-.row {
+.#{$prefix}-row {
   display: grid;
   grid-auto-rows: min-content;
   grid-template-columns: repeat($grid-columns, 1fr);
@@ -14,15 +15,19 @@
   margin-right: -$grid-gap-size;
 }
 
-.row-gap {
+.#{$prefix}-row-gap {
   grid-gap: $grid-gap-size;
+}
+
+[class^='#{$prefix}-col-'] {
+  padding: $grid-gap-size;
 }
 
 @mixin generate-container-rules($breakpoints) {
   @each $key, $value in $breakpoints {
     @media (min-width: map-get($value,
     'breakpoint')) {
-      .container {
+      .#{$prefix}-container {
         max-width: map-get($value,
         'container-width');
       }
@@ -36,7 +41,7 @@
       @media (min-width: map-get($value,
       'min')) and (max-width: map-get($value,
       'max')) {
-        .hidden-#{$key} {
+        .#{$prefix}-hidden-#{$key} {
           display: none;
         }
       }
@@ -44,7 +49,7 @@
     @else {
       @media (min-width: map-get($value,
       'min')) {
-        .hidden-#{$key} {
+        .#{$prefix}-hidden-#{$key} {
           display: none;
         }
       }
@@ -54,7 +59,7 @@
 
 @mixin generate-columns($columns, $breakpoints) {
   @for $i from 1 through $columns {
-    .col-#{$i} {
+    .#{$prefix}-col-#{$i} {
       grid-column: span $i;
     }
   }
@@ -63,7 +68,7 @@
     @media (min-width: map-get($value,
     'breakpoint')) {
       @for $i from 1 through $columns {
-        .col-#{$key}-#{$i} {
+        .#{$prefix}-col-#{$key}-#{$i} {
           grid-column: span $i;
         }
       }
