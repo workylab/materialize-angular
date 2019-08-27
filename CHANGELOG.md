@@ -1,5 +1,33 @@
 # Change Log
 
+## [v0.4.6](https://github.com/workylab/materialize-angular/tree/v0.4.6) (2019-08-26)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.5...v0.4.6)
+
+**Fixed bugs:**
+
+- Hotfix/styles [\#116](https://github.com/workylab/materialize-angular/pull/116) ([igayoso](https://github.com/igayoso))
+
+**Merged pull requests:**
+
+- New release [\#117](https://github.com/workylab/materialize-angular/pull/117) ([igayoso](https://github.com/igayoso))
+- Merge back [\#115](https://github.com/workylab/materialize-angular/pull/115) ([igayoso](https://github.com/igayoso))
+
+## [v0.4.5](https://github.com/workylab/materialize-angular/tree/v0.4.5) (2019-08-25)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.4...v0.4.5)
+
+**Implemented enhancements:**
+
+- New Release [\#114](https://github.com/workylab/materialize-angular/pull/114) ([alexzoul](https://github.com/alexzoul))
+- Feature/modules export [\#113](https://github.com/workylab/materialize-angular/pull/113) ([alexzoul](https://github.com/alexzoul))
+- Add why materialize angular readme content [\#112](https://github.com/workylab/materialize-angular/pull/112) ([igayoso](https://github.com/igayoso))
+- Features readme [\#111](https://github.com/workylab/materialize-angular/pull/111) ([igayoso](https://github.com/igayoso))
+
+**Merged pull requests:**
+
+- Update dependencies [\#110](https://github.com/workylab/materialize-angular/pull/110) ([igayoso](https://github.com/igayoso))
+
 ## [v0.4.4](https://github.com/workylab/materialize-angular/tree/v0.4.4) (2019-08-22)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.3...v0.4.4)
