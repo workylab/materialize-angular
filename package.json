@@ -53,8 +53,6 @@
     "@angular/platform-browser-dynamic": "~8.2.3",
     "@angular/router": "~8.2.3",
     "core-js": "^3.2.1",
-
-    
     "rxjs": "~6.5.2",
     "zone.js": "~0.10.2"
   },
