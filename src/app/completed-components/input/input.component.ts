@@ -28,9 +28,9 @@ export class InputComponent implements ControlValueAccessor, InputModel {
     value: ''
   };
 
-  @Output() onFocusEmitter: EventEmitter<void>;
-  @Output() onChangeEmitter: EventEmitter<string>;
-  @Output() onBlurEmitter: EventEmitter<void>;
+  @Output('onFocus') onFocusEmitter: EventEmitter<void>;
+  @Output('onChange') onChangeEmitter: EventEmitter<string>;
+  @Output('onBlur') onBlurEmitter: EventEmitter<void>;
 
   @Input() autocomplete: string = InputComponent.defaultProps.autocomplete;
   @Input() className: string = InputComponent.defaultProps.className;
