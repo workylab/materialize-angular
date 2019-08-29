@@ -58,19 +58,24 @@
 <br />
 <br />
 <br />
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-9">HOLA</div>
-    <div class="col-12 hidden-sm">hidden-sm</div>
-    <div class="col-12 hidden-md">hidden-md</div>
-    <div class="col-12 hidden-lg">hidden-lg</div>
-    <div class="col-12 hidden-xl">hidden-xl</div>
+<div class="materialize-container">
+  <div class="materialize-row">
+    <div class="materialize-col-12 materialize-col-sm-6 materialize-col-md-4 materialize-col-lg-6 materialize-col-xl-9">HOLA</div>
+    <div class="materialize-col-12 materialize-hidden-sm">hidden-sm</div>
+    <div class="materialize-col-12 materialize-hidden-md">hidden-md</div>
+    <div class="materialize-col-12 materialize-hidden-lg">hidden-lg</div>
+    <div class="materialize-col-12 materialize-hidden-xl">hidden-xl</div>
   </div>
 </div>
-<div class="container">
-  <div class="row row-gap">
-    <div class="col-12 col-sm-3 col-md-4 col-lg-6 col-xl-9">HOLA</div>
-    <div class="col-12 col-sm-9 col-md-8 col-lg-6 col-xl-3">ADIOS</div>
+<div class="materialize-container">
+  <div class="materialize-row materialize-row-gap">
+    <div class="materialize-col-12 materialize-col-sm-3 materialize-col-md-4 materialize-col-lg-6 materialize-col-xl-9">HOLA</div>
+    <div class="materialize-col-12 materialize-col-sm-9 materialize-col-md-8 materialize-col-lg-6 materialize-col-xl-3">ADIOS</div>
+  </div>
+</div>
+<div class="materialize-container-fluid">
+  <div class="materialize-row">
+    <div class="materialize-col-12">HOLA</div>
   </div>
 </div>
 
@@ -158,17 +163,6 @@
 <p class="font-weight-bold">Bold text.</p>
 <p class="font-weight-normal">Normal weight text.</p>
 <p class="font-italic">Italic text.</p>
-<materialize-card>Card...</materialize-card>
-
-<materialize-slider value="1">
-  <materialize-slider-indicator>
-    <materialize-icon>location_on</materialize-icon>
-  </materialize-slider-indicator>
-  <materialize-slider-option value="1">1</materialize-slider-option>
-  <materialize-slider-option value="2">2</materialize-slider-option>
-</materialize-slider>
-
-<materialize-label>Label</materialize-label>
 
 <materialize-html-visualizer html='
   <materialize-input label="With prefix">
@@ -182,85 +176,6 @@
   <materialize-step step="3">Last Step</materialize-step>
 </materialize-stepper>
 
-Input
-<materialize-input></materialize-input>
-Input Password
-<materialize-input type="password"></materialize-input>
-Input with Id
-<materialize-input id="input-id"></materialize-input>
-Input with Value
-<materialize-input value="My value"></materialize-input>
-Input with Counter
-<materialize-input [hasCounter]="true"></materialize-input>
-Input with Counter and MaxLength
-<materialize-input [hasCounter]="true" [maxLength]="5"></materialize-input>
-Input with Placeholder
-<materialize-input label="Placeholder" placeholder="Write here"></materialize-input>
-Input Disabled
-<materialize-input [disabled]="true"></materialize-input>
-Input Disabled and value
-<materialize-input [disabled]="true" value="My value"></materialize-input>
-<materialize-input [disabled]="true" value="My value" floatLabel="Float label"></materialize-input>
-Input Float Label
-<materialize-input floatLabel="Float label"></materialize-input>
-Input Float Label with Placeholder
-<materialize-input floatLabel="Float Label and placeholder" placeholder="Write here"></materialize-input>
-Input with Prefix
-<materialize-input label="With prefix">
-  <span materializePrefix>+1</span>
-</materialize-input>
-Input with Prefix Icon
-<materialize-input>
-  <materialize-icon materializePrefix>phone</materialize-icon>
-</materialize-input>
-Input with Prefix and Float Label
-<materialize-input floatLabel="Float Label">
-  <span materializePrefix>+1</span>
-</materialize-input>
-Input with Prefix Icon and Float Label
-<materialize-input floatLabel="Float Label">
-  <materialize-icon materializePrefix>phone</materialize-icon>
-</materialize-input>
-Input with Suffix
-<materialize-input>
-  <span materializeSuffix>.00</span>
-</materialize-input>
-Input with Suffix Icon
-<materialize-input>
-  <materialize-icon materializeSuffix>phone</materialize-icon>
-</materialize-input>
-Input with Suffix and Float Label
-<materialize-input floatLabel="Float Label">
-  <span materializeSuffix>.00</span>
-</materialize-input>
-Input with Suffix Icon and FloatLabel
-<materialize-input floatLabel="Float Label">
-  <materialize-icon materializeSuffix>phone</materialize-icon>
-</materialize-input>
-
-<br />
-<br />
-<br />
-
-<materialize-switch>Switch</materialize-switch>
-<materialize-switch id="switch-id">With Id</materialize-switch>
-<materialize-switch [value]="true">With Value</materialize-switch>
-<materialize-switch [disabled]="true">Disabled</materialize-switch>
-<materialize-switch [disabled]="true" [value]="true">Disabled with value</materialize-switch>
-<materialize-switch [required]="true">Required</materialize-switch>
-
-<br />
-<br />
-<br />
-
-<materialize-checkbox>Checkbox</materialize-checkbox>
-<materialize-checkbox id="checkbox-id">With Id</materialize-checkbox>
-<materialize-checkbox [value]="true">With Value</materialize-checkbox>
-<materialize-checkbox [disabled]="true">Disabled</materialize-checkbox>
-<materialize-checkbox [disabled]="true" [value]="true">Disabled with value</materialize-checkbox>
-<materialize-checkbox [required]="true">Required</materialize-checkbox>
-<materialize-checkbox [required]="true" [indeterminate]="true">Indeterminate</materialize-checkbox>
-
 <br />
 <br />
 <br />
@@ -270,135 +185,6 @@ Input with Suffix Icon and FloatLabel
   <materialize-checkbox [value]="true">Checkbox 2</materialize-checkbox>
   <materialize-checkbox [value]="true">Checkbox 3</materialize-checkbox>
 </materialize-checkbox-list> -->
-
-<br />
-<br />
-<br />
-
-TextArea
-<materialize-textarea></materialize-textarea>
-TextArea with Id
-<materialize-textarea id="textarea-id"></materialize-textarea>
-TextArea with Value
-<materialize-textarea value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
-TextArea with 3 Rows
-<materialize-textarea [rows]="3"></materialize-textarea>
-TextArea with Counter
-<materialize-textarea [hasCounter]="true"></materialize-textarea>
-TextArea with Counter and Maxlength
-<materialize-textarea [hasCounter]="true" [maxLength]="5"></materialize-textarea>
-TextArea with Placeholder
-<materialize-textarea placeholder="Write here"></materialize-textarea>
-TextArea Disabled
-<materialize-textarea [disabled]="true"></materialize-textarea>
-TextArea Disabled with Value
-<materialize-textarea [disabled]="true" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
-TextArea Disabled with Value and Float Label
-<materialize-textarea [disabled]="true" floatLabel="Float Label" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
-TextArea Required
-<materialize-textarea [required]="true"></materialize-textarea>
-TextArea with Float Label
-<materialize-textarea floatLabel="Float Label"></materialize-textarea>
-TextArea with Float Label and Value
-<materialize-textarea floatLabel="Float Label" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."></materialize-textarea>
-TextArea with Float Label and Placeholder
-<materialize-textarea floatLabel="Float Label and placeholder" placeholder="Placeholder"></materialize-textarea>
-
-<br />
-<br />
-<br />
-
-Collapsible
-<materialize-collapsible>
-  <materialize-collapsible-title>Title</materialize-collapsible-title>
-  <materialize-collapsible-content>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Aliquam minima soluta enim porro atque placeat quis commodi
-    deserunt veniam libero molestiae doloremque eveniet incidunt,
-    odit expedita cupiditate est tenetur reprehenderit.
-  </materialize-collapsible-content>
-</materialize-collapsible>
-
-Collapsible Open
-<materialize-collapsible [isOpen]="true">
-  <materialize-collapsible-title>Title</materialize-collapsible-title>
-  <materialize-collapsible-content>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Aliquam minima soluta enim porro atque placeat quis commodi
-    deserunt veniam libero molestiae doloremque eveniet incidunt,
-    odit expedita cupiditate est tenetur reprehenderit.
-  </materialize-collapsible-content>
-</materialize-collapsible>
-
-Collapsible Open Disabled
-<materialize-collapsible [isOpen]="true" [disabled]="true">
-  <materialize-collapsible-title>Title</materialize-collapsible-title>
-  <materialize-collapsible-content>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Aliquam minima soluta enim porro atque placeat quis commodi
-    deserunt veniam libero molestiae doloremque eveniet incidunt,
-    odit expedita cupiditate est tenetur reprehenderit.
-  </materialize-collapsible-content>
-</materialize-collapsible>
-
-Collapsible Disabled
-<materialize-collapsible [disabled]="true">
-  <materialize-collapsible-title>Title</materialize-collapsible-title>
-  <materialize-collapsible-content>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Aliquam minima soluta enim porro atque placeat quis commodi
-    deserunt veniam libero molestiae doloremque eveniet incidunt,
-    odit expedita cupiditate est tenetur reprehenderit.
-  </materialize-collapsible-content>
-</materialize-collapsible>
-
-<br />
-<br />
-<br />
-
-Accordion
-<materialize-accordion #accordionExample>
-  <materialize-collapsible>
-    <materialize-collapsible-title>Title 1</materialize-collapsible-title>
-    <materialize-collapsible-content>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Aliquam minima soluta enim porro atque placeat quis commodi
-      deserunt veniam libero molestiae doloremque eveniet incidunt,
-      odit expedita cupiditate est tenetur reprehenderit.
-
-      <materialize-button (onClick)="accordionExample.showPrev()">Show Prev</materialize-button>
-      <materialize-button (onClick)="accordionExample.showNext()">Show Next</materialize-button>
-    </materialize-collapsible-content>
-  </materialize-collapsible>
-  <materialize-collapsible>
-    <materialize-collapsible-title>Title 2</materialize-collapsible-title>
-    <materialize-collapsible-content>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Aliquam minima soluta enim porro atque placeat quis commodi
-      deserunt veniam libero molestiae doloremque eveniet incidunt,
-      odit expedita cupiditate est tenetur reprehenderit.
-
-      <materialize-button (onClick)="accordionExample.showPrev()">Show Prev</materialize-button>
-      <materialize-button (onClick)="accordionExample.showNext()">Show Next</materialize-button>
-    </materialize-collapsible-content>
-  </materialize-collapsible>
-  <materialize-collapsible>
-    <materialize-collapsible-title>Title 3</materialize-collapsible-title>
-    <materialize-collapsible-content>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Aliquam minima soluta enim porro atque placeat quis commodi
-      deserunt veniam libero molestiae doloremque eveniet incidunt,
-      odit expedita cupiditate est tenetur reprehenderit.
-
-      <materialize-button (onClick)="accordionExample.showPrev()">Show Prev</materialize-button>
-      <materialize-button (onClick)="accordionExample.showNext()">Show Next</materialize-button>
-    </materialize-collapsible-content>
-  </materialize-collapsible>
-</materialize-accordion>
-
-<br />
-<br />
-<br />
 
 <!-- List
 <materialize-list>
@@ -411,106 +197,12 @@ Accordion
 <br />
 <br />
 
-<materialize-radio>Radio</materialize-radio>
-<materialize-radio id="radio-id">With Id</materialize-radio>
-<materialize-radio value="2">With Value</materialize-radio>
-<materialize-radio [disabled]="true">Disabled</materialize-radio>
-
-Radio Group
-<materialize-radio-group>
-  <materialize-radio value="a">Value A</materialize-radio>
-  <materialize-radio value="b">Value B</materialize-radio>
-</materialize-radio-group>
-Radio Group with Value
-<materialize-radio-group value="b">
-  <materialize-radio value="a">Value A</materialize-radio>
-  <materialize-radio value="b">Value B</materialize-radio>
-</materialize-radio-group>
-Radio Group Can Uncheck
-<materialize-radio-group [canUncheck]="true">
-  <materialize-radio value="a">Value A</materialize-radio>
-  <materialize-radio value="b">Value B</materialize-radio>
-</materialize-radio-group>
-Radio Group Disabled
-<materialize-radio-group [disabled]="true">
-  <materialize-radio value="a">Value A</materialize-radio>
-  <materialize-radio value="b">Value B</materialize-radio>
-</materialize-radio-group>
-Radio Group Disabled With Value
-<materialize-radio-group [disabled]="true" value="b">
-  <materialize-radio value="a">Value A</materialize-radio>
-  <materialize-radio value="b">Value B</materialize-radio>
-</materialize-radio-group>
-Radio Group Required
-<materialize-radio-group [required]="true">
-  <materialize-radio value="a">Value A</materialize-radio>
-  <materialize-radio value="b">Value B</materialize-radio>
-</materialize-radio-group>
 Radio Group with Indicator at the End
 <!-- <materialize-radio-group [indicatorAtEnd]="true">
   <materialize-radio value="a">Value A</materialize-radio>
   <materialize-radio value="b">Value B</materialize-radio>
 </materialize-radio-group> -->
 
-<br />
-<br />
-<br />
-
-Button Accent
-<materialize-button>Button</materialize-button>
-<materialize-button [disabled]="true">Disabled</materialize-button>
-
-Button Outline
-<materialize-button level="outline">Button</materialize-button>
-<materialize-button level="outline" [disabled]="true">Disabled</materialize-button>
-
-Button Text
-<materialize-button level="text">Button</materialize-button>
-<materialize-button level="text" [disabled]="true">Disabled</materialize-button>
-
-<br />
-<br />
-<br />
-
-Simple Icon XS
-<materialize-icon className="icon-xs">done</materialize-icon>
-Simple Icon SM
-<materialize-icon className="icon-sm">done</materialize-icon>
-Simple Icon MD
-<materialize-icon className="icon-md">done</materialize-icon>
-Simple Icon LG
-<materialize-icon className="icon-lg">done</materialize-icon>
-Simple Icon XL
-<materialize-icon className="icon-xl">done</materialize-icon>
-
-<br />
-<br />
-<br />
-
-Tabs
-<materialize-tab-group>
-  <materialize-tab title="header 0"></materialize-tab>
-  <materialize-tab title="header1" [disabled]="true">content 1</materialize-tab>
-  <materialize-tab title="header2 Longer">content 2</materialize-tab>
-  <materialize-tab title="header3 the longest">content 3</materialize-tab>
-</materialize-tab-group>
-
-<br />
-<br />
-<br />
-
-Ripple
-<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
-Ripple Center
-<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleCenter]="true"></div>
-Ripple duration 2 seg
-<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [rippleDuration]="2000"></div>
-Ripple disabled
-<div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleActive]="false"></div>
-
-<br />
-<br />
-<br />
 
 <!-- Calendar
 <materialize-calendar [displayOtherMonthDays]="false"></materialize-calendar>
@@ -540,172 +232,10 @@ Datepicker Full size
 Datepicker Custom Format
 <materialize-datepicker format="yyyy/mm/dd"></materialize-datepicker> -->
 
-<br />
-<br />
-<br />
-
-Native Select
-<materialize-select [isNativeControl]="true">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Native Select with Id
-<materialize-select [isNativeControl]="true" id="select_native_id">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Native Select Required
-<materialize-select [isNativeControl]="true" [required]="true">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Native Select with Value
-<materialize-select [isNativeControl]="true" value="2">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Native Select disabled
-<materialize-select [isNativeControl]="true" [disabled]="true">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Native Select with FloatLabel
-<materialize-select [isNativeControl]="true" floatLabel="Select">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Native Select disabled with Value
-<materialize-select [isNativeControl]="true" [disabled]="true" value="2">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Native Select disabled with Value and FloatLabel
-<materialize-select [isNativeControl]="true" [disabled]="true" value="2" floatLabel="Select">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-
-<br />
-<br />
-
-Select
-<materialize-select>
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Select with Id
-<materialize-select id="select_id">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Select Required
-<materialize-select [required]="true">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Select with Value
-<materialize-select value="2">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Select disabled
-<materialize-select [disabled]="true">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Select with FloatLabel
-<materialize-select floatLabel="Select">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Select disabled with Value
-<materialize-select [disabled]="true" value="2">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-Select disabled with Value and FloatLabel
-<materialize-select [disabled]="true" value="2" floatLabel="Select">
-  <materialize-select-option value="1">Option 1</materialize-select-option>
-  <materialize-select-option value="2">Option 2</materialize-select-option>
-</materialize-select>
-
-<br />
-<br />
-<br />
-
-Button Toggle
-<materialize-button-toggle-group>
-  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
-  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
-</materialize-button-toggle-group>
-Button Toggle with Value
-<materialize-button-toggle-group value="2">
-  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
-  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
-</materialize-button-toggle-group>
-Button Toggle can uncheck
-<materialize-button-toggle-group [canUncheck]="true">
-  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
-  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
-</materialize-button-toggle-group>
-Button Toggle disabled
-<materialize-button-toggle-group [disabled]="true">
-  <materialize-button-toggle value="1">Text1</materialize-button-toggle>
-  <materialize-button-toggle value="2">Text2</materialize-button-toggle>
-</materialize-button-toggle-group>
-
-<br />
-<br />
-<br />
-
 <materialize-form-message type="info">Info Message</materialize-form-message>
 <materialize-form-message type="error">Error Message</materialize-form-message>
 <materialize-form-message type="warning">Warning Message</materialize-form-message>
 <materialize-form-message type="success">Success Message</materialize-form-message>
-
-<br />
-<br />
-<br />
-
-<!--
-Modal Default
-<materialize-modal>
-  <materialize-modal-handler>
-    <materialize-icon>loupe</materialize-icon>
-  </materialize-modal-handler>
-  <materialize-modal-content>Modal</materialize-modal-content>
-</materialize-modal>
-
-Modal not close on backdrop
-<materialize-modal [dismissOnBackdrop]="false">
-  <materialize-modal-handler>
-    <materialize-icon>loupe</materialize-icon>
-  </materialize-modal-handler>
-  <materialize-modal-content>
-    <materialize-button materializeModalClose>close modal</materialize-button>
-  </materialize-modal-content>
-</materialize-modal>
-
-Modal without backdrop
-<materialize-modal [hasBackdrop]="false">
-  <materialize-modal-handler>
-    <materialize-icon>loupe</materialize-icon>
-  </materialize-modal-handler>
-  <materialize-modal-content>
-    <materialize-button materializeModalClose>close modal</materialize-button>
-  </materialize-modal-content>
-</materialize-modal> -->
-
-Modal without close button
-<materialize-icon (click)="modalExample.open()">loupe</materialize-icon>
-
-<materialize-modal #modalExample>  
-  <materialize-button materializeModalClose>close modal</materialize-button>
-</materialize-modal>
-
-<br />
-<br />
-<br />
 
 <!-- <h3>Dropdown</h3>
 <materialize-dropdown [items]="dropDownItems"></materialize-dropdown> -->

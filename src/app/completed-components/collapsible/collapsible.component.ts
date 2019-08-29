@@ -4,6 +4,7 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnChanges,
   Output,
   Renderer2,
   ViewChild
@@ -15,7 +16,7 @@ import { config } from '../../config';
   selector: `${ config.components.prefix }-collapsible }`,
   templateUrl: './collapsible.component.html'
 })
-export class CollapsibleComponent implements CollapsibleModel, AfterContentInit {
+export class CollapsibleComponent implements CollapsibleModel, AfterContentInit, OnChanges {
   static readonly defaultProps: CollapsibleModel = {
     className: '',
     disabled: false,
@@ -48,9 +49,13 @@ export class CollapsibleComponent implements CollapsibleModel, AfterContentInit 
   ngAfterContentInit() {
     if (this.isOpen) {
       setTimeout(() => {
-        this.toggle();
+        this.update();
       }, 300);
     }
+  }
+
+  ngOnChanges() {
+    this.update();
   }
 
   onToggle() {
@@ -65,23 +70,17 @@ export class CollapsibleComponent implements CollapsibleModel, AfterContentInit 
     }
   }
 
-  update() {
-    if (this.isOpen) {
-      this.toggle();
-    }
-  }
-
   open() {
     this.isOpen = true;
-    this.toggle();
+    this.update();
   }
 
   close() {
     this.isOpen = false;
-    this.toggle();
+    this.update();
   }
 
-  toggle() {
+  update() {
     const contentContainer: HTMLElement = this.containerRef.nativeElement;
     const maxHeight = this.isOpen
       ? contentContainer.scrollHeight

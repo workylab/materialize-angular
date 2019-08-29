@@ -12,7 +12,7 @@ export class GlossaryItemComponent implements GlossaryItemModel {
     referenceId: ''
   };
 
-  @Output() onClickEmitter: EventEmitter<string>;
+  @Output('onClick') onClickEmitter: EventEmitter<string>;
 
   @Input() className: string = GlossaryItemComponent.defaultProps.className;
   @Input() referenceId: string = GlossaryItemComponent.defaultProps.referenceId;

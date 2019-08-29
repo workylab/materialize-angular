@@ -16,7 +16,7 @@ export class ScrollSpyComponent implements ScrollSpyModel, AfterContentInit {
 
   @ContentChildren(ScrollSpyItemComponent) items: QueryList<ScrollSpyItemComponent>;
 
-  @Output() onChangeEmitter: EventEmitter<string>;
+  @Output('onChange') onChangeEmitter: EventEmitter<string>;
 
   @Input() className: string = ScrollSpyComponent.defaultProps.className;
   @Input() itemId: string = ScrollSpyComponent.defaultProps.itemId;
