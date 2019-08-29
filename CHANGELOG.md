@@ -1,5 +1,20 @@
 # Change Log
 
+## [v0.4.7](https://github.com/workylab/materialize-angular/tree/v0.4.7) (2019-08-29)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.6...v0.4.7)
+
+**Implemented enhancements:**
+
+- New release [\#122](https://github.com/workylab/materialize-angular/pull/122) ([alexzoul](https://github.com/alexzoul))
+- Fix/event names [\#121](https://github.com/workylab/materialize-angular/pull/121) ([alexzoul](https://github.com/alexzoul))
+- Feature/grid css [\#120](https://github.com/workylab/materialize-angular/pull/120) ([rodwyn](https://github.com/rodwyn))
+- Add exclude labels parameter when changelog is generated [\#119](https://github.com/workylab/materialize-angular/pull/119) ([igayoso](https://github.com/igayoso))
+
+**Merged pull requests:**
+
+- Add update packages script and update all the packages [\#118](https://github.com/workylab/materialize-angular/pull/118) ([igayoso](https://github.com/igayoso))
+
 ## [v0.4.6](https://github.com/workylab/materialize-angular/tree/v0.4.6) (2019-08-26)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.5...v0.4.6)
