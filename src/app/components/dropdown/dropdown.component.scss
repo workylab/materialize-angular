@@ -6,29 +6,29 @@
 }
 
 .dropdown-button-icon {
-  background-color: $color-white;
-  color: $color-gray-dark;
+  background-color: $materialize-color-white;
+  color: $materialize-color-gray-dark;
   cursor: pointer;
   display: inline-block;
   outline: none;
 
   &:hover,
   &:focus {
-    background-color: $color-gray-light;
+    background-color: $materialize-color-gray-light;
   }
 }
 
 .dropdown-items-container {
-  background-color: $color-white;
-  border-radius: $radius-sm;
-  box-shadow: $shadow-md;
+  background-color: $materialize-color-white;
+  border-radius: $materialize-radius-sm;
+  box-shadow: $materialize-shadow-md;
   display: none;
-  margin-top: $space-xs;
+  margin-top: $materialize-space-xs;
   outline: none;
-  padding: $space-xs 0;
+  padding: $materialize-space-xs 0;
   position: absolute;
   top: 100%;
-  z-index: $zindex-level-1;
+  z-index: $materialize-zindex-level-1;
 
   &.active {
     display: block;
@@ -40,14 +40,14 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  font-size: $font-size-xs;
-  padding: $space-md $space-lg;
+  font-size: $materialize-font-size-xs;
+  padding: $materialize-space-md $materialize-space-lg;
 
   &:hover {
-    background-color: $color-gray-light;
+    background-color: $materialize-color-gray-light;
   }
 }
 
 .dropdown-item-icon {
-  margin-right: $space-sm;
+  margin-right: $materialize-space-sm;
 }

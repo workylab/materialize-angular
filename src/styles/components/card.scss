@@ -1,18 +1,18 @@
 .#{$prefix}-card {
-  background-color: $card-background-color;
-  border-radius: $card-border-radius;
-  box-shadow: $card-box-shadow;
-  color: $card-color;
-  cursor: $card-cursor;
-  font-family: $card-font-family;
-  font-size: $card-font-size;
-  font-weight: $card-font-weight;
-  margin: $card-margin;
-  padding: $card-padding;
-  -webkit-tap-highlight-color: $card-tap-highlight-color;
-  transition: $card-transition;
+  background-color: $materialize-card-background-color;
+  border-radius: $materialize-card-border-radius;
+  box-shadow: $materialize-card-box-shadow;
+  color: $materialize-card-color;
+  cursor: $materialize-card-cursor;
+  font-family: $materialize-card-font-family;
+  font-size: $materialize-card-font-size;
+  font-weight: $materialize-card-font-weight;
+  margin: $materialize-card-margin;
+  padding: $materialize-card-padding;
+  -webkit-tap-highlight-color: $materialize-card-tap-highlight-color;
+  transition: $materialize-card-transition;
 
   &:hover {
-    box-shadow: $card-hover-box-shadow;
+    box-shadow: $materialize-card-hover-box-shadow;
   }
 }

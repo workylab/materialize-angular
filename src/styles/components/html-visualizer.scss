@@ -2,12 +2,12 @@
   background-color: #F8F8FA;
   border-radius: 5px;
   color: #005CC5;
-  font-family: $font-family-secondary;
+  font-family: $materialize-font-family-secondary;
   font-size: 14px;
-  font-weight: $font-weight-regular;
+  font-weight: $materialize-font-weight-regular;
   line-height: 18px;
-  margin: $space-xs 0;
-  padding: $space-sm;
+  margin: $materialize-space-xs 0;
+  padding: $materialize-space-sm;
 }
 
 .#{$prefix}-html-visualizer-content {

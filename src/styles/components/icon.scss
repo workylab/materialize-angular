@@ -1,35 +1,35 @@
 .#{$prefix}-icon {
-  color: $icon-color;
-  cursor: $icon-cursor;
-  display: $icon-display;
-  font-family: $icon-font-family;
-  outline: $icon-outline;
-  text-transform: $icon-text-transform;
+  color: $materialize-icon-color;
+  cursor: $materialize-icon-cursor;
+  display: $materialize-icon-display;
+  font-family: $materialize-icon-font-family;
+  outline: $materialize-icon-outline;
+  text-transform: $materialize-icon-text-transform;
 }
 
 .#{$prefix}-icon-xl {
-  font-size: $icon-xl;
+  font-size: $materialize-icon-xl;
 }
 
 .#{$prefix}-icon-lg {
-  font-size: $icon-lg;
+  font-size: $materialize-icon-lg;
 }
 
 .#{$prefix}-icon-md {
-  font-size: $icon-md;
+  font-size: $materialize-icon-md;
 }
 
 .#{$prefix}-icon-sm {
-  font-size: $icon-sm;
+  font-size: $materialize-icon-sm;
 }
 
 .#{$prefix}-icon-xs {
-  font-size: $icon-xs;
+  font-size: $materialize-icon-xs;
 }
 
 @font-face {
-  font-family: $icon-font-family;
+  font-family: $materialize-icon-font-family;
   font-style: normal;
-  font-weight: $font-weight-thin;
+  font-weight: $materialize-font-weight-thin;
   src: url('#{$materialize-fonts-path}/material-icons/material-icons.woff2');
 }

@@ -1,8 +1,8 @@
 .#{$prefix}-modal {
-  align-items: $modal-align-items;
+  align-items: $materialize-modal-align-items;
   display: flex;
   height: 100%;
-  justify-content: $modal-justify-content;
+  justify-content: $materialize-modal-justify-content;
   left: 0;
   position: fixed;
   top: 0;
@@ -10,7 +10,7 @@
   z-index: -1;
 
   &.active {
-    z-index: $zindex-level-4;
+    z-index: $materialize-zindex-level-4;
 
     .#{$prefix}-modal-backdrop {
       opacity: 1;
@@ -24,7 +24,7 @@
 }
 
 .#{$prefix}-modal-backdrop {
-  background: $modal-backdrop-background;
+  background: $materialize-modal-backdrop-background;
   bottom: 0;
   height: 100%;
   left: 0;
@@ -33,39 +33,39 @@
   right: 0;
   top: 0;
   transition-duration: inherit;
-  transition-property: $modal-backdrop-transition-property;
-  transition-timing-function: $modal-backdrop-transition-function;
+  transition-property: $materialize-modal-backdrop-transition-property;
+  transition-timing-function: $materialize-modal-backdrop-transition-function;
   width: 100%;
-  z-index: $zindex-level-0;
+  z-index: $materialize-zindex-level-0;
 }
 
 .#{$prefix}-modal-content {
-  background: $modal-content-background;
-  border-radius: $modal-content-border-radius;
-  box-shadow: $modal-content-box-shadow;
-  max-height: $modal-content-max-height;
-  max-width: $modal-content-max-width;
+  background: $materialize-modal-content-background;
+  border-radius: $materialize-modal-content-border-radius;
+  box-shadow: $materialize-modal-content-box-shadow;
+  max-height: $materialize-modal-content-max-height;
+  max-width: $materialize-modal-content-max-width;
   opacity: 0;
   overflow-y: auto;
-  padding: $modal-content-padding;
+  padding: $materialize-modal-content-padding;
   position: relative;
-  transform: $modal-content-transform;
+  transform: $materialize-modal-content-transform;
   transition-duration: inherit;
   transition-property: opacity, transform;
-  transition-timing-function: $modal-content-transition-function;
-  z-index: $zindex-level-1;
+  transition-timing-function: $materialize-modal-content-transition-function;
+  z-index: $materialize-zindex-level-1;
 }
 
 .#{$prefix}-modal-icon-close {
   align-items: center;
-  color: $modal-icon-close-color;
+  color: $materialize-modal-icon-close-color;
   cursor: pointer;
   display: flex;
-  font-size: $modal-icon-close-size * 2;
-  height: $modal-icon-close-size;
+  font-size: $materialize-modal-icon-close-size * 2;
+  height: $materialize-modal-icon-close-size;
   justify-content: center;
   position: absolute;
-  right: $modal-icon-close-right;
-  top: $modal-icon-close-top;
-  width: $modal-icon-close-size;
+  right: $materialize-modal-icon-close-right;
+  top: $materialize-modal-icon-close-top;
+  width: $materialize-modal-icon-close-size;
 }

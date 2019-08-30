@@ -1,16 +1,16 @@
 .#{$prefix}-select-option {
-  color: $select-option-color;
-  font-family: $select-option-font-family;
-  font-size: $select-option-font-size;
-  font-weight: $select-option-font-weight;
-  outline: $select-option-outline;
-  padding: $select-option-padding;
+  color: $materialize-select-option-color;
+  font-family: $materialize-select-option-font-family;
+  font-size: $materialize-select-option-font-size;
+  font-weight: $materialize-select-option-font-weight;
+  outline: $materialize-select-option-outline;
+  padding: $materialize-select-option-padding;
 
   &:hover {
-    background-color: $select-option-active-background;
+    background-color: $materialize-select-option-active-background;
   }
 
   &.active {
-    background-color: $select-option-hover-background;
+    background-color: $materialize-select-option-hover-background;
   }
 }
