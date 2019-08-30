@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.5.0](https://github.com/workylab/materialize-angular/tree/v0.5.0) (2019-08-30)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.7...v0.5.0)
+
+**Implemented enhancements:**
+
+- New release [\#124](https://github.com/workylab/materialize-angular/pull/124) ([alexzoul](https://github.com/alexzoul))
+- Feature/variables prefix [\#123](https://github.com/workylab/materialize-angular/pull/123) ([rodwyn](https://github.com/rodwyn))
+
 ## [v0.4.7](https://github.com/workylab/materialize-angular/tree/v0.4.7) (2019-08-29)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.6...v0.4.7)
