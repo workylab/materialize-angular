@@ -1,48 +1,56 @@
-$checkbox-cursor: $cursor-pointer !default;
-$checkbox-outline: none !default;
-$checkbox-padding: $space-sm $space-none !default;
-$checkbox-tap-highlight-color: $color-transparent !default;
+$materialize-checkbox-cursor: $materialize-cursor-pointer !default;
+$materialize-checkbox-outline: none !default;
+$materialize-checkbox-padding: $materialize-space-sm $materialize-space-none !default;
+$materialize-checkbox-tap-highlight-color: $materialize-color-transparent !default;
 
-$checkbox-label-color: $color-gray-darkest !default;
-$checkbox-label-font-family: $font-family-primary !default;
-$checkbox-label-font-size: $font-size-sm !default;
-$checkbox-label-font-weight: $font-weight-regular !default;
-$checkbox-label-padding: $space-none !default;
-$checkbox-label-text-align: left !default;
+$materialize-checkbox-label-color: $materialize-color-gray-darkest !default;
+$materialize-checkbox-label-font-family: $materialize-font-family-primary !default;
+$materialize-checkbox-label-font-size: $materialize-font-size-sm !default;
+$materialize-checkbox-label-font-weight: $materialize-font-weight-regular !default;
+$materialize-checkbox-label-padding: $materialize-space-none !default;
+$materialize-checkbox-label-text-align: left !default;
 
-$checkbox-indicator-background: $color-white !default;
-$checkbox-indicator-border: $border-md solid $color-gray-dark !default;
-$checkbox-indicator-border-radius: $radius-xs !default;
-$checkbox-indicator-margin: $space-none $space-sm !default;
-$checkbox-indicator-size: 18px !default;
+$materialize-checkbox-indicator-background: $materialize-color-white !default;
+$materialize-checkbox-indicator-border: $materialize-border-md solid $materialize-color-gray-dark !default;
+$materialize-checkbox-indicator-border-radius: $materialize-radius-xs !default;
+$materialize-checkbox-indicator-margin: $materialize-space-none $materialize-space-sm !default;
+$materialize-checkbox-indicator-size: 18px !default;
 
-$checkbox-indicator-arrow-color: $color-white !default;
-$checkbox-indicator-arrow-left: 0 !default;
-$checkbox-indicator-arrow-size: 13px !default;
-$checkbox-indicator-arrow-top: 2px !default;
-$checkbox-indicator-arrow-width: $border-md !default;
+$materialize-checkbox-indicator-arrow-color: $materialize-color-white !default;
+$materialize-checkbox-indicator-arrow-left: 0 !default;
+$materialize-checkbox-indicator-arrow-size: 13px !default;
+$materialize-checkbox-indicator-arrow-top: 2px !default;
+$materialize-checkbox-indicator-arrow-width: $materialize-border-md !default;
 
-$checkbox-indicator-active-background: $color-purple !default;
-$checkbox-indicator-active-border: $border-md solid $color-purple !default;
+$materialize-checkbox-indicator-active-background: $materialize-color-purple !default;
+$materialize-checkbox-indicator-active-border:
+$materialize-border-md solid $materialize-color-purple !default;
 
-$checkbox-indicator-indeterminate-border: $border-md solid $color-white !default;
-$checkbox-indicator-indeterminate-height: 0 !default;
-$checkbox-indicator-indeterminate-width: 12px !default;
+$materialize-checkbox-indicator-indeterminate-border:
+$materialize-border-md solid $materialize-color-white !default;
+$materialize-checkbox-indicator-indeterminate-height: 0 !default;
+$materialize-checkbox-indicator-indeterminate-width: 12px !default;
 
-$checkbox-indicator-ripple-border-radius: $radius-full !default;
-$checkbox-indicator-ripple-transition: $property-background $timer-sm $function-ease !default;
-$checkbox-indicator-ripple-size: 40px !default;
-$checkbox-indicator-ripple-background: rgba($color-purple, 0.3) !default;
+$materialize-checkbox-indicator-ripple-border-radius: $materialize-radius-full !default;
+$materialize-checkbox-indicator-ripple-transition:
+$materialize-property-background $materialize-timer-sm $materialize-function-ease !default;
+$materialize-checkbox-indicator-ripple-size: 40px !default;
+$materialize-checkbox-indicator-ripple-background: rgba($materialize-color-purple, 0.3) !default;
 
-$checkbox-indicator-active-background: $color-purple !default;
-$checkbox-indicator-disabled-active-background: lighten($color-gray-dark, 30%);
-$checkbox-indicator-disabled-background: $color-white !default;
-$checkbox-indicator-disabled-border: $border-md solid lighten($color-gray-dark, 30%) !default;
+$materialize-checkbox-indicator-active-background: $materialize-color-purple !default;
+$materialize-checkbox-indicator-disabled-active-background: lighten($materialize-color-gray-dark, 30%);
+$materialize-checkbox-indicator-disabled-background: $materialize-color-white !default;
+$materialize-checkbox-indicator-disabled-border:
+$materialize-border-md solid lighten($materialize-color-gray-dark, 30%) !default;
 
-$checkbox-indicator-ripple-hover-inactive-background: rgba($color-gray-darkest, 0.1) !default;
-$checkbox-indicator-ripple-hover-active-background: rgba($color-purple, 0.2) !default;
-$checkbox-indicator-ripple-focused-inactive-background: rgba($color-gray-darkest, 0.05) !default;
-$checkbox-indicator-ripple-focused-active-background: rgba($color-purple, 0.1) !default;
+$materialize-checkbox-indicator-ripple-hover-inactive-background:
+rgba($materialize-color-gray-darkest, 0.1) !default;
+$materialize-checkbox-indicator-ripple-hover-active-background:
+rgba($materialize-color-purple, 0.2) !default;
+$materialize-checkbox-indicator-ripple-focused-inactive-background:
+rgba($materialize-color-gray-darkest, 0.05) !default;
+$materialize-checkbox-indicator-ripple-focused-active-background:
+rgba($materialize-color-purple, 0.1) !default;
 
-$checkbox-ripple-active-background: rgba($color-purple, 0.2) !default;
-$checkbox-ripple-background: rgba($color-gray-darkest, 0.2) !default;
+$materialize-checkbox-ripple-active-background: rgba($materialize-color-purple, 0.2) !default;
+$materialize-checkbox-ripple-background: rgba($materialize-color-gray-darkest, 0.2) !default;

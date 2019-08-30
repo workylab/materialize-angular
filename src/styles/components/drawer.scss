@@ -8,7 +8,7 @@
     }
 
     &.static .#{$prefix}-drawer-container {
-      margin-left: $drawer-content-width;
+      margin-left: $materialize-drawer-content-width;
     }
 
     &.push .#{$prefix}-drawer-content,
@@ -17,7 +17,7 @@
     }
 
     &.open.push .#{$prefix}-drawer-container {
-      margin-left: $drawer-content-width;
+      margin-left: $materialize-drawer-content-width;
     }
   }
 
@@ -27,7 +27,7 @@
     }
 
     &.static .#{$prefix}-drawer-container {
-      margin-right: $drawer-content-width;
+      margin-right: $materialize-drawer-content-width;
     }
 
     &.push .#{$prefix}-drawer-content,
@@ -36,7 +36,7 @@
     }
 
     &.open.push .#{$prefix}-drawer-container {
-      margin-right: $drawer-content-width;
+      margin-right: $materialize-drawer-content-width;
     }
   }
 
@@ -47,14 +47,14 @@
   &.push .#{$prefix}-drawer-container {
     transition-duration: inherit;
     transition-property: margin;
-    transition-timing-function: $drawer-content-transition-function;
+    transition-timing-function: $materialize-drawer-content-transition-function;
   }
 
   &.push .#{$prefix}-drawer-content,
   &.over .#{$prefix}-drawer-content {
     transition-duration: inherit;
     transition-property: transform;
-    transition-timing-function: $drawer-content-transition-function;
+    transition-timing-function: $materialize-drawer-content-transition-function;
   }
 
   &.open {
@@ -70,7 +70,7 @@
 }
 
 .#{$prefix}-drawer-backdrop {
-  background-color: $drawer-backdrop-background;
+  background-color: $materialize-drawer-backdrop-background;
   bottom: 0;
   display: none;
   height: 100%;
@@ -79,17 +79,17 @@
   right: 0;
   top: 0;
   transition-duration: inherit;
-  transition-property: $drawer-backdrop-transition-property;
-  transition-timing-function: $drawer-backdrop-transition-function;
+  transition-property: $materialize-drawer-backdrop-transition-property;
+  transition-timing-function: $materialize-drawer-backdrop-transition-function;
   width: 100%;
-  z-index: $drawer-backdrop-z-index;
+  z-index: $materialize-drawer-backdrop-z-index;
 }
 
 .#{$prefix}-drawer-content {
-  background: $drawer-content-background;
+  background: $materialize-drawer-content-background;
   height: 100%;
   position: absolute;
   top: 0;
-  width: $drawer-content-width;
-  z-index: $drawer-content-z-index;
+  width: $materialize-drawer-content-width;
+  z-index: $materialize-drawer-content-z-index;
 }

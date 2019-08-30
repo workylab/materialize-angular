@@ -1,9 +1,9 @@
-$drawer-content-background: $color-white !default;
-$drawer-content-width: 280px !default;
-$drawer-content-z-index: $zindex-level-2 !default;
-$drawer-content-transition-function: $function-in !default;
+$materialize-drawer-content-background: $materialize-color-white !default;
+$materialize-drawer-content-width: 280px !default;
+$materialize-drawer-content-z-index: $materialize-zindex-level-2 !default;
+$materialize-drawer-content-transition-function: $materialize-function-in !default;
 
-$drawer-backdrop-background: rgba(0, 0, 0, 0.5) !default;
-$drawer-backdrop-transition-function: $function-out !default;
-$drawer-backdrop-transition-property: $property-opacity !default;
-$drawer-backdrop-z-index: $zindex-level-1 !default;
+$materialize-drawer-backdrop-background: rgba(0, 0, 0, 0.5) !default;
+$materialize-drawer-backdrop-transition-function: $materialize-function-out !default;
+$materialize-drawer-backdrop-transition-property: $materialize-property-opacity !default;
+$materialize-drawer-backdrop-z-index: $materialize-zindex-level-1 !default;

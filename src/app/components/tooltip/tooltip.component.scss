@@ -1,7 +1,7 @@
 @import '../common/styles/colors.scss';
 @import '../common/styles/metrics.scss';
 
-$tooltip-distance: $space-xs;
+$tooltip-distance: $materialize-space-xs;
 
 .tooltip {
   cursor: pointer;
@@ -12,13 +12,13 @@ $tooltip-distance: $space-xs;
 }
 
 .tooltip-container {
-  background-color: $color-gray-darkest;
+  background-color: $materialize-color-gray-darkest;
   border-radius: 100px;
-  color: $color-white;
+  color: $materialize-color-white;
   font-size: 12px;
-  font-weight: $font-weight-light;
+  font-weight: $materialize-font-weight-light;
   opacity: 0;
-  padding: $space-xxs $space-sm;
+  padding: $materialize-space-xxs $materialize-space-sm;
   position: absolute;
   transition-duration: 250ms;
   transition-property: opacity, visibility;
@@ -29,7 +29,7 @@ $tooltip-distance: $space-xs;
   &.active {
     opacity: 1;
     visibility: visible;
-    z-index: $zindex-level-1;
+    z-index: $materialize-zindex-level-1;
   }
 
   &.tooltip-position-bottom,

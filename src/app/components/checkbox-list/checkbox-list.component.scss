@@ -5,24 +5,24 @@
   position: relative;
 
   .form-checkboxes-list-item {
-    padding-left: $space-xxl;
+    padding-left: $materialize-space-xxl;
   }
 }
 
 :host.ng-touched.ng-dirty.ng-invalid .form-checkboxes-list-container ::ng-deep {
   .form-checkbox-control.indeterminate {
-    background-color: $color-red;
+    background-color: $materialize-color-red;
   }
 
   .form-checkbox-control {
-    border-color: $color-red;
+    border-color: $materialize-color-red;
 
     &:hover .form-checkbox-control-ripple {
-      background-color: rgba($color-red, 0.1);
+      background-color: rgba($materialize-color-red, 0.1);
     }
 
     .ripple {
-      background-color: rgba($color-red, 0.3);
+      background-color: rgba($materialize-color-red, 0.3);
     }
   }
 }

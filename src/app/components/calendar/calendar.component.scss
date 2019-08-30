@@ -2,19 +2,19 @@
 @import '../common/styles/metrics.scss';
 
 .calendar-container {
-  background-color: $color-white;
-  border-radius: $radius-sm;
-  box-shadow: $shadow-md;
+  background-color: $materialize-color-white;
+  border-radius: $materialize-radius-sm;
+  box-shadow: $materialize-shadow-md;
   outline: none;
   overflow: hidden;
   width: 300px;
 }
 
 .calendar-header-container {
-  background-color: $color-purple;
-  color: $color-white;
-  font-family: $font-family-primary;
-  padding: $space-sm;
+  background-color: $materialize-color-purple;
+  color: $materialize-color-white;
+  font-family: $materialize-font-family-primary;
+  padding: $materialize-space-sm;
 }
 
 .calendar-header-selected-year {
@@ -23,7 +23,7 @@
   ::ng-deep .button {
     box-shadow: unset;
     margin: 0;
-    padding: $space-xxs;
+    padding: $materialize-space-xxs;
 
     .button-text {
       font-size: 15px;
@@ -34,33 +34,33 @@
 .calendar-header-selected-date {
   ::ng-deep .button {
     box-shadow: unset;
-    padding: $space-xxs;
+    padding: $materialize-space-xxs;
     text-transform: unset;
 
     .button-text {
       font-size: 28px;
-      font-weight: $font-weight-light;
-      margin: 0 $space-xxxs;
+      font-weight: $materialize-font-weight-light;
+      margin: 0 $materialize-space-xxxs;
     }
   }
 }
 
 .calendar-body-container {
   height: 330px;
-  padding: $space-sm $space-xs;
+  padding: $materialize-space-sm $materialize-space-xs;
 }
 
 .calendar-controls-container {
   align-items: center;
   display: flex;
-  margin-bottom: $space-xs;
+  margin-bottom: $materialize-space-xs;
 }
 
 .calendar-month-label {
   flex-grow: 1;
-  font-family: $font-family-primary;
+  font-family: $materialize-font-family-primary;
   font-size: 16px;
-  font-weight: $font-weight-regular;
+  font-weight: $materialize-font-weight-regular;
   text-align: center;
 }
 
@@ -68,17 +68,17 @@
   flex-grow: 0;
 
   ::ng-deep .button {
-    background-color: $color-white;
+    background-color: $materialize-color-white;
     box-shadow: unset;
-    color: $color-gray-dark;
-    padding: $space-xs $space-xxxs;
+    color: $materialize-color-gray-dark;
+    padding: $materialize-space-xs $materialize-space-xxxs;
 
     .button-icon {
       font-size: 22px;
     }
 
     .ripple {
-      background-color: rgba($color-black, 0.1);
+      background-color: rgba($materialize-color-black, 0.1);
     }
   }
 }
@@ -88,11 +88,11 @@
 }
 
 .calendar-day-label-container {
-  color: $color-gray;
-  font-family: $font-family-primary;
+  color: $materialize-color-gray;
+  font-family: $materialize-font-family-primary;
   font-size: 12px;
-  font-weight: $font-weight-light;
-  padding: $space-xxxs $space-xxxs $space-sm;
+  font-weight: $materialize-font-weight-light;
+  padding: $materialize-space-xxxs $materialize-space-xxxs $materialize-space-sm;
   text-align: center;
 }
 
@@ -105,13 +105,13 @@
 
 .calendar-day-number {
   align-items: center;
-  border-radius: $radius-full;
-  color: $color-gray-dark;
+  border-radius: $materialize-radius-full;
+  color: $materialize-color-gray-dark;
   cursor: pointer;
   display: flex;
-  font-family: $font-family-primary;
+  font-family: $materialize-font-family-primary;
   font-size: 14px;
-  font-weight: $font-weight-regular;
+  font-weight: $materialize-font-weight-regular;
   height: 38px;
   justify-content: center;
   text-align: center;
@@ -119,28 +119,28 @@
   width: 38px;
 
   &:hover {
-    background-color: $color-gray-light;
-    border-radius: $radius-full;
+    background-color: $materialize-color-gray-light;
+    border-radius: $materialize-radius-full;
   }
 
   ::ng-deep .ripple {
-    background-color: rgba(lighten($color-purple, 50%), 0.3);
+    background-color: rgba(lighten($materialize-color-purple, 50%), 0.3);
   }
 
   &.disabled {
-    background-color: $color-gray-light;
-    border-radius: $radius-full;
-    color: $color-gray-dark;
+    background-color: $materialize-color-gray-light;
+    border-radius: $materialize-radius-full;
+    color: $materialize-color-gray-dark;
     cursor: not-allowed;
   }
 
   &.current {
-    border: $border-sm solid $color-gray;
+    border: $materialize-border-sm solid $materialize-color-gray;
   }
 
   &.selected {
-    background-color: $color-purple;
-    color: $color-white;
+    background-color: $materialize-color-purple;
+    color: $materialize-color-white;
   }
 }
 
@@ -152,16 +152,16 @@
 
 .calendar-year-number {
   cursor: pointer;
-  font-family: $font-family-primary;
+  font-family: $materialize-font-family-primary;
   font-size: 16px;
-  font-weight: $font-weight-regular;
-  margin: $space-xxxs 0;
-  padding: $space-sm;
+  font-weight: $materialize-font-weight-regular;
+  margin: $materialize-space-xxxs 0;
+  padding: $materialize-space-sm;
   text-align: center;
   width: 100%;
 
   &.current {
-    color: $color-purple;
+    color: $materialize-color-purple;
     font-size: 24px;
   }
 }

@@ -1,23 +1,23 @@
-$modal-align-items: center !default;
-$modal-justify-content: center !default;
+$materialize-modal-align-items: center !default;
+$materialize-modal-justify-content: center !default;
 
-$modal-content-background: $color-white !default;
-$modal-content-border-radius: $radius-sm !default;
-$modal-content-box-shadow: $shadow-lg !default;
-$modal-content-max-height: calc(100% - #{ $space-xxxl }) !default;
-$modal-content-max-width: calc(100% - #{ $space-xxxl }) !default;
-$modal-content-padding: $space-xl !default;
-$modal-content-transform: scale(0.8) !default;
-$modal-content-transition-property: opacity, transform !default;
-$modal-content-transition-function: cubic-bezier(0.17, 0.84, 0.44, 1) forwards !default;
+$materialize-modal-content-background: $materialize-color-white !default;
+$materialize-modal-content-border-radius: $materialize-radius-sm !default;
+$materialize-modal-content-box-shadow: $materialize-shadow-lg !default;
+$materialize-modal-content-max-height: calc(100% - #{ $materialize-space-xxxl }) !default;
+$materialize-modal-content-max-width: calc(100% - #{ $materialize-space-xxxl }) !default;
+$materialize-modal-content-padding: $materialize-space-xl !default;
+$materialize-modal-content-transform: scale(0.8) !default;
+$materialize-modal-content-transition-property: opacity, transform !default;
+$materialize-modal-content-transition-function: cubic-bezier(0.17, 0.84, 0.44, 1) forwards !default;
 
-$modal-backdrop-background: rgba($color-black, 0.4) !default;
-$modal-backdrop-transition-property: opacity !default;
-$modal-backdrop-transition-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+$materialize-modal-backdrop-background: rgba($materialize-color-black, 0.4) !default;
+$materialize-modal-backdrop-transition-property: opacity !default;
+$materialize-modal-backdrop-transition-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
 
-$modal-icon-close-color: $color-gray-darkest !default;
-$modal-icon-close-size: 12px !default;
-$modal-icon-close-right: $space-xs !default;
-$modal-icon-close-top: $space-xs !default;
+$materialize-modal-icon-close-color: $materialize-color-gray-darkest !default;
+$materialize-modal-icon-close-size: 12px !default;
+$materialize-modal-icon-close-right: $materialize-space-xs !default;
+$materialize-modal-icon-close-top: $materialize-space-xs !default;
 
-$modal-active-content-transform: scale(1) !default;
+$materialize-modal-active-content-transform: scale(1) !default;

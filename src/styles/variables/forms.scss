@@ -1,50 +1,52 @@
-$form-control-container-background: $color-gray-light !default;
-$form-control-container-border-color: $color-gray-dark !default;
-$form-control-container-border-radius: $radius-sm $radius-sm $space-none $space-none !default;
-$form-control-container-border-style: solid !default;
-$form-control-container-border-width: 0 0 $border-sm 0 !default;
-$form-control-container-margin: $space-none !default;
-$form-control-container-outiline: none !default;
+$materialize-form-control-container-background: $materialize-color-gray-light !default;
+$materialize-form-control-container-border-color: $materialize-color-gray-dark !default;
+$materialize-form-control-container-border-radius:
+$materialize-radius-sm $materialize-radius-sm $materialize-space-none $materialize-space-none !default;
+$materialize-form-control-container-border-style: solid !default;
+$materialize-form-control-container-border-width: 0 0 $materialize-border-sm 0 !default;
+$materialize-form-control-container-margin: $materialize-space-none !default;
+$materialize-form-control-container-outiline: none !default;
 
-$form-control-container-line-bottom: -1px !default;
-$form-control-container-line-color: $color-purple !default;
-$form-control-container-line-height: $border-md !default;
-$form-control-container-line-transition: $timer-md $function-ease $property-width !default;
-$form-control-container-line-width: 0 !default;
-$form-control-container-line-z-index:  $zindex-level-1 !default;
+$materialize-form-control-container-line-bottom: -1px !default;
+$materialize-form-control-container-line-color: $materialize-color-purple !default;
+$materialize-form-control-container-line-height: $materialize-border-md !default;
+$materialize-form-control-container-line-transition:
+$materialize-timer-md $materialize-function-ease $materialize-property-width !default;
+$materialize-form-control-container-line-width: 0 !default;
+$materialize-form-control-container-line-z-index:  $materialize-zindex-level-1 !default;
 
-$form-control-caret-color: $color-purple !default;
-$form-control-color: $color-gray-darkest !default;
-$form-control-font-family: $font-family-primary !default;
-$form-control-font-size: $font-size-sm !default;
-$form-control-font-weight: $font-weight-regular !default;
-$form-control-line-height: 100% !default;
-$form-control-letter-spacing: 0 !default;
-$form-control-padding: $space-sm !default;
+$materialize-form-control-caret-color: $materialize-color-purple !default;
+$materialize-form-control-color: $materialize-color-gray-darkest !default;
+$materialize-form-control-font-family: $materialize-font-family-primary !default;
+$materialize-form-control-font-size: $materialize-font-size-sm !default;
+$materialize-form-control-font-weight: $materialize-font-weight-regular !default;
+$materialize-form-control-line-height: 100% !default;
+$materialize-form-control-letter-spacing: 0 !default;
+$materialize-form-control-padding: $materialize-space-sm !default;
 
-$form-control-placeholder-color: $color-gray !default;
-$form-control-placeholder-font-weight: $font-weight-regular !default;
+$materialize-form-control-placeholder-color: $materialize-color-gray !default;
+$materialize-form-control-placeholder-font-weight: $materialize-font-weight-regular !default;
 
-$form-control-with-label-padding-top: $space-xl !default;
+$materialize-form-control-with-label-padding-top: $materialize-space-xl !default;
 
-$form-control-label-background: $color-gray-light !default;
-$form-control-label-color: $color-gray-dark !default;
-$form-control-label-font-family: $font-family-primary !default;
-$form-control-label-font-size: $font-size-sm !default;
-$form-control-label-font-weight: $font-weight-regular !default;
-$form-control-label-letter-spacing: 0 !default;
-$form-control-label-transition-duration: $timer-sm !default;
-$form-control-label-transition-function: $function-ease !default;
-$form-control-label-transition-property: $property-top $property-font-size !default;
-$form-control-label-padding: $space-xs $space-sm $space-xxxs !default;
+$materialize-form-control-label-background: $materialize-color-gray-light !default;
+$materialize-form-control-label-color: $materialize-color-gray-dark !default;
+$materialize-form-control-label-font-family: $materialize-font-family-primary !default;
+$materialize-form-control-label-font-size: $materialize-font-size-sm !default;
+$materialize-form-control-label-font-weight: $materialize-font-weight-regular !default;
+$materialize-form-control-label-letter-spacing: 0 !default;
+$materialize-form-control-label-transition-duration: $materialize-timer-sm !default;
+$materialize-form-control-label-transition-function: $materialize-function-ease !default;
+$materialize-form-control-label-transition-property: $materialize-property-top $materialize-property-font-size !default;
+$materialize-form-control-label-padding: $materialize-space-xs $materialize-space-sm $materialize-space-xxxs !default;
 
-$form-control-active-label-font-size: $font-size-xxs !default;
-$form-control-active-label-top: $space-none !default;
+$materialize-form-control-active-label-font-size: $materialize-font-size-xxs !default;
+$materialize-form-control-active-label-top: $materialize-space-none !default;
 
-$form-control-focused-container-line-width: 100% !default;
-$form-control-focused-label-color: $color-purple !default;
+$materialize-form-control-focused-container-line-width: 100% !default;
+$materialize-form-control-focused-label-color: $materialize-color-purple !default;
 
-$form-control-disabled-container-border-color: $color-gray !default;
-$form-control-disabled-container-backgorund: $color-gray-light !default;
-$form-control-disabled-label-color: $color-gray !default;
-$form-control-disabled-color: $color-gray !default;
+$materialize-form-control-disabled-container-border-color: $materialize-color-gray !default;
+$materialize-form-control-disabled-container-backgorund: $materialize-color-gray-light !default;
+$materialize-form-control-disabled-label-color: $materialize-color-gray !default;
+$materialize-form-control-disabled-color: $materialize-color-gray !default;

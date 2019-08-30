@@ -1,66 +1,66 @@
 .#{$prefix}-slider-container {
-  margin: $slider-margin;
-  padding: $slider-padding;
-  -webkit-tap-highlight-color: $slider-tap-highlight-color;
-  width: $slider-width;
+  margin: $materialize-slider-margin;
+  padding: $materialize-slider-padding;
+  -webkit-tap-highlight-color: $materialize-slider-tap-highlight-color;
+  width: $materialize-slider-width;
 
   &.disabled {
     .#{$prefix}-slider-track {
-      background-color: $slider-disabled-track-background;
+      background-color: $materialize-slider-disabled-track-background;
     }
 
     .#{$prefix}-slider-step {
-      background-color: $slider-disabled-step-background;
+      background-color: $materialize-slider-disabled-step-background;
     }
   }
 }
 
 .#{$prefix}-slider-track-container {
-  cursor: $slider-track-container-cursor;
-  outline: $slider-track-container-outline;
-  padding: $slider-track-container-padding;
-  position: $slider-track-container-position;
-  width: $slider-track-container-width;
+  cursor: $materialize-slider-track-container-cursor;
+  outline: $materialize-slider-track-container-outline;
+  padding: $materialize-slider-track-container-padding;
+  position: $materialize-slider-track-container-position;
+  width: $materialize-slider-track-container-width;
 }
 
 .#{$prefix}-slider-step {
-  background: $slider-step-background;
-  height: $slider-step-height;
-  position: $slider-step-position;
-  top: $slider-step-top;
-  transform: $slider-step-transform;
-  width: $slider-step-width;
+  background: $materialize-slider-step-background;
+  height: $materialize-slider-step-height;
+  position: $materialize-slider-step-position;
+  top: $materialize-slider-step-top;
+  transform: $materialize-slider-step-transform;
+  width: $materialize-slider-step-width;
 }
 
 .#{$prefix}-slider-track {
-  background: $slider-track-background;
-  border-radius: $slider-track-border-radius;
-  height: $slider-track-height;
-  overflow: $slider-track-overflow;
-  position: $slider-track-position;
-  width: $slider-track-width;
+  background: $materialize-slider-track-background;
+  border-radius: $materialize-slider-track-border-radius;
+  height: $materialize-slider-track-height;
+  overflow: $materialize-slider-track-overflow;
+  position: $materialize-slider-track-position;
+  width: $materialize-slider-track-width;
 }
 
 .#{$prefix}-slider-indicator-container {
-  left: $slider-indicator-container-left;
-  position: $slider-indicator-container-position;
-  top: $slider-indicator-container-top;
-  transform: $slider-indicator-container-transform;
-  transition: $slider-indicator-container-transition;
-  z-index: $slider-indicator-container-z-index;
+  left: $materialize-slider-indicator-container-left;
+  position: $materialize-slider-indicator-container-position;
+  top: $materialize-slider-indicator-container-top;
+  transform: $materialize-slider-indicator-container-transform;
+  transition: $materialize-slider-indicator-container-transition;
+  z-index: $materialize-slider-indicator-container-z-index;
 }
 
 .#{$prefix}-slider-labels-container {
-  position: $slider-labels-container-position;
-  width: $slider-labels-container-width;
+  position: $materialize-slider-labels-container-position;
+  width: $materialize-slider-labels-container-width;
 }
 
 #{$prefix}-slider.ng-touched.ng-dirty.ng-invalid {
   .#{$prefix}-slider-track {
-    background: $slider-invalid-track-background;
+    background: $materialize-slider-invalid-track-background;
   }
 
   .#{$prefix}-slider-step {
-    background: $slider-invalid-step-background;
+    background: $materialize-slider-invalid-step-background;
   }
 }

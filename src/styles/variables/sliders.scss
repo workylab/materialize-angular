@@ -1,40 +1,41 @@
-$slider-margin: $space-none !default;
-$slider-padding: $space-xxxl $space-xl $space-xxl !default;
-$slider-tap-highlight-color: $color-transparent !default;
-$slider-width: $space-full !default;
+$materialize-slider-margin: $materialize-space-none !default;
+$materialize-slider-padding: $materialize-space-xxxl $materialize-space-xl $materialize-space-xxl !default;
+$materialize-slider-tap-highlight-color: $materialize-color-transparent !default;
+$materialize-slider-width: $materialize-space-full !default;
 
-$slider-track-container-cursor: $cursor-pointer !default;
-$slider-track-container-outline: none !default;
-$slider-track-container-padding: $space-sm $space-none !default;
-$slider-track-container-position: relative !default;
-$slider-track-container-width: $space-full !default;
+$materialize-slider-track-container-cursor: $materialize-cursor-pointer !default;
+$materialize-slider-track-container-outline: none !default;
+$materialize-slider-track-container-padding: $materialize-space-sm $materialize-space-none !default;
+$materialize-slider-track-container-position: relative !default;
+$materialize-slider-track-container-width: $materialize-space-full !default;
 
-$slider-step-background: $color-purple !default;
-$slider-step-height: $space-sm !default;
-$slider-step-position: absolute !default;
-$slider-step-top: 50% !default;
-$slider-step-width: $border-md !default;
-$slider-step-transform: translate(-50%, -50%);
+$materialize-slider-step-background: $materialize-color-purple !default;
+$materialize-slider-step-height: $materialize-space-sm !default;
+$materialize-slider-step-position: absolute !default;
+$materialize-slider-step-top: 50% !default;
+$materialize-slider-step-width: $materialize-border-md !default;
+$materialize-slider-step-transform: translate(-50%, -50%);
 
-$slider-track-background: $color-purple !default;
-$slider-track-border-radius: $radius-sm !default;
-$slider-track-height: $border-lg !default;
-$slider-track-overflow: hidden !default;
-$slider-track-position: relative !default;
-$slider-track-width: $space-full !default;
+$materialize-slider-track-background: $materialize-color-purple !default;
+$materialize-slider-track-border-radius: $materialize-radius-sm !default;
+$materialize-slider-track-height: $materialize-border-lg !default;
+$materialize-slider-track-overflow: hidden !default;
+$materialize-slider-track-position: relative !default;
+$materialize-slider-track-width: $materialize-space-full !default;
 
-$slider-indicator-container-left: $space-none !default;
-$slider-indicator-container-position: absolute !default;
-$slider-indicator-container-top: $space-half !default;
-$slider-indicator-container-transform: translate(-50%, -50%) !default;
-$slider-indicator-container-transition: $property-left $timer-md $function-out !default;
-$slider-indicator-container-z-index: $zindex-level-1 !default;
+$materialize-slider-indicator-container-left: $materialize-space-none !default;
+$materialize-slider-indicator-container-position: absolute !default;
+$materialize-slider-indicator-container-top: $materialize-space-half !default;
+$materialize-slider-indicator-container-transform: translate(-50%, -50%) !default;
+$materialize-slider-indicator-container-transition:
+$materialize-property-left $materialize-timer-md $materialize-function-out !default;
+$materialize-slider-indicator-container-z-index: $materialize-zindex-level-1 !default;
 
-$slider-labels-container-position: relative !default;
-$slider-labels-container-width: $space-full !default;
+$materialize-slider-labels-container-position: relative !default;
+$materialize-slider-labels-container-width: $materialize-space-full !default;
 
-$slider-invalid-track-background: $color-red !default;
-$slider-invalid-step-background: $color-red !default;
+$materialize-slider-invalid-track-background: $materialize-color-red !default;
+$materialize-slider-invalid-step-background: $materialize-color-red !default;
 
-$slider-disabled-track-background: $color-gray !default;
-$slider-disabled-step-background: $color-gray !default;
+$materialize-slider-disabled-track-background: $materialize-color-gray !default;
+$materialize-slider-disabled-step-background: $materialize-color-gray !default;

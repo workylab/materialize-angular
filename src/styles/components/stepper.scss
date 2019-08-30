@@ -2,68 +2,68 @@
   align-items: flex-start;
   display: flex;
   flex-direction: row;
-  margin: $stepper-margin;
-  padding: $stepper-padding;
+  margin: $materialize-stepper-margin;
+  padding: $materialize-stepper-padding;
 }
 
 .#{$prefix}-step-divider {
-  background: $stepper-divider-background;
-  height: $stepper-divider-height;
-  margin: $stepper-divider-margin;
-  width: $stepper-divider-width;
+  background: $materialize-stepper-divider-background;
+  height: $materialize-stepper-divider-height;
+  margin: $materialize-stepper-divider-margin;
+  width: $materialize-stepper-divider-width;
 
   &.completed {
-    background: $stepper-divider-completed-background;
+    background: $materialize-stepper-divider-completed-background;
   }
 }
 
 .#{$prefix}-step-indicator {
   align-items: center;
-  background: $step-indicator-background;
-  border-radius: $step-indicator-border-radius;
-  color: $step-indicator-color;
+  background: $materialize-step-indicator-background;
+  border-radius: $materialize-step-indicator-border-radius;
+  color: $materialize-step-indicator-color;
   display: flex;
-  font-family: $step-indicator-font-family;
-  font-size: $step-indicator-font-size;
-  font-weight: $step-indicator-font-weight;
-  height: $step-indicator-size;
+  font-family: $materialize-step-indicator-font-family;
+  font-size: $materialize-step-indicator-font-size;
+  font-weight: $materialize-step-indicator-font-weight;
+  height: $materialize-step-indicator-size;
   justify-content: center;
-  margin: $step-indicator-margin;
-  width: $step-indicator-size;
+  margin: $materialize-step-indicator-margin;
+  width: $materialize-step-indicator-size;
 }
 
 .#{$prefix}-step-indicator-icon {
-  color: $step-indicator-icon-color;
+  color: $materialize-step-indicator-icon-color;
   display: flex;
-  font-size: $step-indicator-icon-size;
+  font-size: $materialize-step-indicator-icon-size;
 }
 
 .#{$prefix}-step-label {
-  color: $step-label-color;
-  font-family: $step-label-font-family;
-  font-size: $step-label-font-size;
-  font-weight: $step-label-font-weight;
+  color: $materialize-step-label-color;
+  font-family: $materialize-step-label-font-family;
+  font-size: $materialize-step-label-font-size;
+  font-weight: $materialize-step-label-font-weight;
 }
 
 .#{$prefix}-step {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: $step-padding;
+  padding: $materialize-step-padding;
   white-space: nowrap;
 
   &.active {
     .#{$prefix}-step-indicator {
-      background: $step-active-indicator-background;
-      color: $step-active-indicator-color;
-      font-weight: $step-active-indicator-font-weight;
+      background: $materialize-step-active-indicator-background;
+      color: $materialize-step-active-indicator-color;
+      font-weight: $materialize-step-active-indicator-font-weight;
     }
   }
 
   &.completed {
     .#{$prefix}-step-indicator {
-      background: $step-completed-indicator-background;
-      color: $step-completed-indicator-color;
+      background: $materialize-step-completed-indicator-background;
+      color: $materialize-step-completed-indicator-color;
     }
   }
 }

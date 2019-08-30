@@ -1,10 +1,10 @@
 .#{$prefix}-label {
-  color: $label-color;
-  display: $label-display;
-  font-family: $label-font-family;
-  font-size: $label-font-size;
-  font-weight: $label-font-weight;
-  margin: $label-margin;
-  outline: $label-outline;
-  padding: $label-padding;
+  color: $materialize-label-color;
+  display: $materialize-label-display;
+  font-family: $materialize-label-font-family;
+  font-size: $materialize-label-font-size;
+  font-weight: $materialize-label-font-weight;
+  margin: $materialize-label-margin;
+  outline: $materialize-label-outline;
+  padding: $materialize-label-padding;
 }

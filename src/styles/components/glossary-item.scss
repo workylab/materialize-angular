@@ -1,37 +1,37 @@
 .#{$prefix}-glossary-item {
-  color: $glossary-item-color;
-  cursor: $glossary-item-cursor;
-  font-family: $glossary-font-family;
-  font-size: $glossary-font-size;
-  font-weight: $glossary-font-weight;
-  padding: $glossary-item-padding;
+  color: $materialize-glossary-item-color;
+  cursor: $materialize-glossary-item-cursor;
+  font-family: $materialize-glossary-font-family;
+  font-size: $materialize-glossary-font-size;
+  font-weight: $materialize-glossary-font-weight;
+  padding: $materialize-glossary-item-padding;
   position: relative;
 
   &::before {
     content: '';
-    height: $glossary-item-line-height;
+    height: $materialize-glossary-item-line-height;
     left: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: $glossary-item-line-width;
+    width: $materialize-glossary-item-line-width;
   }
 
   @media (hover: hover) {
     &:hover {
-      color: $glossary-item-hover-color;
+      color: $materialize-glossary-item-hover-color;
 
       &::before {
-        background: $glossary-item-hover-line-background;
+        background: $materialize-glossary-item-hover-line-background;
       }
     }
   }
 
   &.active {
-    color: $glossary-item-active-color;
+    color: $materialize-glossary-item-active-color;
 
     &::before {
-      background: $glossary-item-active-line-background;
+      background: $materialize-glossary-item-active-line-background;
     }
   }
 }

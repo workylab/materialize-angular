@@ -1,30 +1,31 @@
-$radio-cursor: $cursor-pointer !default;
-$radio-outline: unset !default;
-$radio-padding: $space-xxxs $space-none !default;
+$materialize-radio-cursor: $materialize-cursor-pointer !default;
+$materialize-radio-outline: unset !default;
+$materialize-radio-padding: $materialize-space-xxxs $materialize-space-none !default;
 
-$radio-label-color: $color-gray-darkest !default;
-$radio-label-font-family: $font-family-primary !default;
-$radio-label-font-size: $font-size-sm !default;
-$radio-label-font-weight: $font-weight-regular !default;
-$radio-label-padding: $space-none !default;
-$radio-label-text-align: right !default;
+$materialize-radio-label-color: $materialize-color-gray-darkest !default;
+$materialize-radio-label-font-family: $materialize-font-family-primary !default;
+$materialize-radio-label-font-size: $materialize-font-size-sm !default;
+$materialize-radio-label-font-weight: $materialize-font-weight-regular !default;
+$materialize-radio-label-padding: $materialize-space-none !default;
+$materialize-radio-label-text-align: right !default;
 
-$radio-indicator-border: $border-md solid $color-gray-dark !default;
-$radio-indicator-border-radius: $radius-full !default;
-$radio-indicator-display: inline-block !default;
-$radio-indicator-margin: 0 $space-sm !default;
-$radio-indicator-outline: none !default;
-$radio-indicator-padding: $space-none $space-sm !default;
-$radio-indicator-position: relative !default;
-$radio-indicator-tap-highlight-color: $color-transparent !default;
-$radio-indicator-size: 20px !default;
+$materialize-radio-indicator-border: $materialize-border-md solid $materialize-color-gray-dark !default;
+$materialize-radio-indicator-border-radius: $materialize-radius-full !default;
+$materialize-radio-indicator-display: inline-block !default;
+$materialize-radio-indicator-margin: 0 $materialize-space-sm !default;
+$materialize-radio-indicator-outline: none !default;
+$materialize-radio-indicator-padding: $materialize-space-none $materialize-space-sm !default;
+$materialize-radio-indicator-position: relative !default;
+$materialize-radio-indicator-tap-highlight-color: $materialize-color-transparent !default;
+$materialize-radio-indicator-size: 20px !default;
 
-$radio-indicator-active-border-color: $color-purple !default;
-$radio-indicator-active-background: $color-purple !default;
-$radio-indicator-active-size: 10px !default;
+$materialize-radio-indicator-active-border-color: $materialize-color-purple !default;
+$materialize-radio-indicator-active-background: $materialize-color-purple !default;
+$materialize-radio-indicator-active-size: 10px !default;
 
-$radio-indicator-disabled-color: $color-gray !default;
+$materialize-radio-indicator-disabled-color: $materialize-color-gray !default;
 
-$radio-indicator-ripple-background: $color-purple !default;
-$radio-indicator-ripple-size: 40px !default;
-$radio-indicator-ripple-transition: $property-background $timer-sm $function-ease !default;
+$materialize-radio-indicator-ripple-background: $materialize-color-purple !default;
+$materialize-radio-indicator-ripple-size: 40px !default;
+$materialize-radio-indicator-ripple-transition:
+$materialize-property-background $materialize-timer-sm $materialize-function-ease !default;

@@ -18,40 +18,40 @@
 
 .button-swiper-control-next,
 .button-swiper-control-prev {
-  background-color: $color-white;
-  color: $color-purple;
+  background-color: $materialize-color-white;
+  color: $materialize-color-purple;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 
   &:focus {
-    background-color: darken($color-white, 10%);
+    background-color: darken($materialize-color-white, 10%);
   }
 }
 
 .button-swiper-control-next {
-  right: $space-xs;
+  right: $materialize-space-xs;
 }
 
 .button-swiper-control-prev {
-  left: $space-xs;
+  left: $materialize-space-xs;
 }
 
 .swiper-dots-container {
   display: flex;
   justify-content: center;
-  padding: $space-md;
+  padding: $materialize-space-md;
 }
 
 .swiper-dot {
-  background-color: lighten($color-purple, 40%);
-  border-radius: $radius-full;
+  background-color: lighten($materialize-color-purple, 40%);
+  border-radius: $materialize-radius-full;
   cursor: pointer;
   height: 8px;
-  margin: 0 $space-xxxs;
+  margin: 0 $materialize-space-xxxs;
   width: 8px;
 
   &.active {
-    background: $color-purple;
+    background: $materialize-color-purple;
   }
 }

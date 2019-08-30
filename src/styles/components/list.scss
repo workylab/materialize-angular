@@ -1,37 +1,37 @@
 .list-item {
   align-items: center;
-  border-radius: $radius-md;
-  color: $color-gray-dark;
+  border-radius: $materialize-radius-md;
+  color: $materialize-color-gray-dark;
   cursor: pointer;
   display: flex;
-  font-family: $font-family-primary;
+  font-family: $materialize-font-family-primary;
   font-size: 16px;
-  font-weight: $font-weight-regular;
-  margin-bottom: $space-xxxs;
-  padding: $space-md $space-lg;
+  font-weight: $materialize-font-weight-regular;
+  margin-bottom: $materialize-space-xxxs;
+  padding: $materialize-space-md $materialize-space-lg;
   transition-duration: 250ms;
   transition-property: background, color;
   transition-timing-function: ease;
 
   &:hover {
-    background-color: lighten($color-purple, 50%);
-    color: $color-purple;
+    background-color: lighten($materialize-color-purple, 50%);
+    color: $materialize-color-purple;
   }
 
   &.active {
-    background-color: lighten($color-purple, 40%);
-    color: $color-purple;
-    font-weight: $font-weight-medium;
+    background-color: lighten($materialize-color-purple, 40%);
+    color: $materialize-color-purple;
+    font-weight: $materialize-font-weight-medium;
   }
 
   .ripple {
-    background-color: rgba($color-purple, 0.15);
+    background-color: rgba($materialize-color-purple, 0.15);
   }
 }
 
 .list {
   list-style: none;
-  padding: $space-md $space-xs;
+  padding: $materialize-space-md $materialize-space-xs;
 
   > *:last-child {
     margin-bottom: 0;

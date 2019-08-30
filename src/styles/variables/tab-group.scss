@@ -1,32 +1,33 @@
-$tab-group-align-items: flex-start !default;
-$tab-group-border-color: $color-gray !default;
-$tab-group-border-style: solid !default;
-$tab-group-border-width: 0 0 $border-sm 0 !default;
-$tab-group-justify-content: flex-start !default;
-$tab-group-margin: 0 0 $space-lg !default;
-$tab-group-padding: 0 !default;
+$materialize-tab-group-align-items: flex-start !default;
+$materialize-tab-group-border-color: $materialize-color-gray !default;
+$materialize-tab-group-border-style: solid !default;
+$materialize-tab-group-border-width: 0 0 $materialize-border-sm 0 !default;
+$materialize-tab-group-justify-content: flex-start !default;
+$materialize-tab-group-margin: 0 0 $materialize-space-lg !default;
+$materialize-tab-group-padding: 0 !default;
 
-$tab-group-item-border-radius: 0 !default;
-$tab-group-item-color: $color-gray-darkest !default;
-$tab-group-item-cursor: $cursor-pointer !default;
-$tab-group-item-font-family: $font-family-primary !default;
-$tab-group-item-font-size: $font-size-sm !default;
-$tab-group-item-font-weight: $font-weight-regular !default;
-$tab-group-item-letter-spacing: 0 !default;
-$tab-group-item-line-height: 100% !default;
-$tab-group-item-padding: $space-md $space-lg !default;
-$tab-group-item-text-align: center !default;
-$tab-group-item-transition: $property-background $timer-md $function-ease !default;
+$materialize-tab-group-item-border-radius: 0 !default;
+$materialize-tab-group-item-color: $materialize-color-gray-darkest !default;
+$materialize-tab-group-item-cursor: $materialize-cursor-pointer !default;
+$materialize-tab-group-item-font-family: $materialize-font-family-primary !default;
+$materialize-tab-group-item-font-size: $materialize-font-size-sm !default;
+$materialize-tab-group-item-font-weight: $materialize-font-weight-regular !default;
+$materialize-tab-group-item-letter-spacing: 0 !default;
+$materialize-tab-group-item-line-height: 100% !default;
+$materialize-tab-group-item-padding: $materialize-space-md $materialize-space-lg !default;
+$materialize-tab-group-item-text-align: center !default;
+$materialize-tab-group-item-transition:
+$materialize-property-background $materialize-timer-md $materialize-function-ease !default;
 
-$tab-group-hover-item-background: $color-gray-light !default;
-$tab-group-active-item-color: $color-purple !default;
-$tab-group-active-item-font-weight: $font-weight-medium !default;
-$tab-group-disabled-item-color: $color-gray !default;
+$materialize-tab-group-hover-item-background: $materialize-color-gray-light !default;
+$materialize-tab-group-active-item-color: $materialize-color-purple !default;
+$materialize-tab-group-active-item-font-weight: $materialize-font-weight-medium !default;
+$materialize-tab-group-disabled-item-color: $materialize-color-gray !default;
 
-$tab-group-indicator-container-bottom: 0 !default;
-$tab-group-indicator-container-transition-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
+$materialize-tab-group-indicator-container-bottom: 0 !default;
+$materialize-tab-group-indicator-container-transition-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
 
-$tab-group-indicator-background: $color-purple !default;
-$tab-group-indicator-border-radius: $border-md !default;
-$tab-group-indicator-height: $border-md !default;
-$tab-group-indicator-width: 100% !default;
+$materialize-tab-group-indicator-background: $materialize-color-purple !default;
+$materialize-tab-group-indicator-border-radius: $materialize-border-md !default;
+$materialize-tab-group-indicator-height: $materialize-border-md !default;
+$materialize-tab-group-indicator-width: 100% !default;
