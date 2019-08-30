@@ -1,11 +1,11 @@
-$select-option-background: $color-white !default;
-$select-option-color: $color-gray-dark !default;
-$select-option-font-family: $font-family-primary !default;
-$select-option-font-size: $font-size-sm !default;
-$select-option-font-weight: $font-weight-regular !default;
-$select-option-outline: none !default;
-$select-option-padding: $space-md $space-sm !default;
+$materialize-select-option-background: $materialize-color-white !default;
+$materialize-select-option-color: $materialize-color-gray-dark !default;
+$materialize-select-option-font-family: $materialize-font-family-primary !default;
+$materialize-select-option-font-size: $materialize-font-size-sm !default;
+$materialize-select-option-font-weight: $materialize-font-weight-regular !default;
+$materialize-select-option-outline: none !default;
+$materialize-select-option-padding: $materialize-space-md $materialize-space-sm !default;
 
-$select-option-active-background: $color-gray-light !default;
+$materialize-select-option-active-background: $materialize-color-gray-light !default;
 
-$select-option-hover-background: rgba($color-purple, 0.1) !default;
+$materialize-select-option-hover-background: rgba($materialize-color-purple, 0.1) !default;

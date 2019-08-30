@@ -5,16 +5,16 @@
 }
 
 .autocomplete-options-container {
-  background: $color-white;
-  box-shadow: $shadow-md;
+  background: $materialize-color-white;
+  box-shadow: $materialize-shadow-md;
   cursor: pointer;
   display: none;
   left: 0;
-  padding: $space-xs 0;
+  padding: $materialize-space-xs 0;
   position: absolute;
   top: 100%;
   width: 100%;
-  z-index: $zindex-level-2;
+  z-index: $materialize-zindex-level-2;
 
   &.open {
     display: block;
@@ -23,17 +23,17 @@
 
 .autocomplete-option {
   box-sizing: border-box;
-  color: $color-gray-dark;
-  font-size: $font-size-xs;
-  font-weight: $font-weight-light;
+  color: $materialize-color-gray-dark;
+  font-size: $materialize-font-size-xs;
+  font-weight: $materialize-font-weight-light;
   outline: none;
-  padding: $space-md $space-sm;
+  padding: $materialize-space-md $materialize-space-sm;
 
   &:hover {
-    background-color: $color-gray-light;
+    background-color: $materialize-color-gray-light;
   }
 
   &.active {
-    background-color: rgba($color-purple, 0.1);
+    background-color: rgba($materialize-color-purple, 0.1);
   }
 }

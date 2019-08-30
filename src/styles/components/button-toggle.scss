@@ -1,37 +1,37 @@
 .#{$prefix}-button-toggle {
-  background: $button-toggle-backgorund;
-  color: $button-toggle-color;
-  cursor: $button-toggle-cursor;
-  font-family: $button-toggle-font-family;
-  font-size: $button-toggle-font-size;
-  font-weight: $button-toggle-font-weight;
-  outline: $button-toggle-outline;
-  padding: $button-toggle-padding;
-  -webkit-tap-highlight-color: $button-toggle-tap-highlight-color;
-  text-align: $button-toggle-text-align;
-  transition: $button-toggle-transition;
-  width: $button-toggle-width;
+  background: $materialize-button-toggle-backgorund;
+  color: $materialize-button-toggle-color;
+  cursor: $materialize-button-toggle-cursor;
+  font-family: $materialize-button-toggle-font-family;
+  font-size: $materialize-button-toggle-font-size;
+  font-weight: $materialize-button-toggle-font-weight;
+  outline: $materialize-button-toggle-outline;
+  padding: $materialize-button-toggle-padding;
+  -webkit-tap-highlight-color: $materialize-button-toggle-tap-highlight-color;
+  text-align: $materialize-button-toggle-text-align;
+  transition: $materialize-button-toggle-transition;
+  width: $materialize-button-toggle-width;
 
   &:hover {
-    background: $button-toggle-hover-background;
+    background: $materialize-button-toggle-hover-background;
   }
 
   &.focused {
-    background: $button-toggle-focused-background;
+    background: $materialize-button-toggle-focused-background;
   }
 
   &.active {
-    background: $button-toggle-active-background;
-    color: $button-toggle-active-color;
+    background: $materialize-button-toggle-active-background;
+    color: $materialize-button-toggle-active-color;
   }
 
   &.disabled {
-    background: $button-toggle-disabled-background;
-    color: $button-toggle-disabled-color;
+    background: $materialize-button-toggle-disabled-background;
+    color: $materialize-button-toggle-disabled-color;
     cursor: not-allowed;
   }
 
   .ripple {
-    background-color: $button-toggle-ripple-background;
+    background-color: $materialize-button-toggle-ripple-background;
   }
 }

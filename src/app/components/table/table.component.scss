@@ -2,15 +2,15 @@
 @import '../common/styles/metrics.scss';
 
 .table-container {
-  border-radius: $radius-sm;
-  box-shadow: $shadow-sm;
+  border-radius: $materialize-radius-sm;
+  box-shadow: $materialize-shadow-sm;
   font-size: 20px;
-  padding-top: $space-lg;
+  padding-top: $materialize-space-lg;
 }
 
 .table-title {
-  margin-bottom: $space-md;
-  margin-left: $space-lg;
+  margin-bottom: $materialize-space-md;
+  margin-left: $materialize-space-lg;
 }
 
 .table {
@@ -23,13 +23,13 @@
 }
 
 .table-cell {
-  border-bottom: $border-sm solid $color-gray;
-  border-right: $border-sm solid $color-gray;
-  color: $color-gray-dark;
+  border-bottom: $materialize-border-sm solid $materialize-color-gray;
+  border-right: $materialize-border-sm solid $materialize-color-gray;
+  color: $materialize-color-gray-dark;
   cursor: pointer;
   display: table-cell;
   font-size: 13px;
-  padding: $space-md $space-lg;
+  padding: $materialize-space-md $materialize-space-lg;
 
   &:last-child {
     border-right: 0;
@@ -43,7 +43,7 @@
     border-bottom: 0;
     border-right: 0;
     font-size: 12px;
-    font-weight: $font-weight-bold;
+    font-weight: $materialize-font-weight-bold;
   }
 }
 
@@ -51,11 +51,11 @@
   display: table-row-group;
 
   .table-row:hover {
-    background: $color-gray-light;
+    background: $materialize-color-gray-light;
   }
 
   .table-row:first-child .table-cell {
-    border-top: $border-sm solid $color-gray;
+    border-top: $materialize-border-sm solid $materialize-color-gray;
   }
 }
 
@@ -65,18 +65,18 @@
 
 .table-sort-container {
   align-content: center;
-  color: $color-gray-dark;
+  color: $materialize-color-gray-dark;
   display: flex;
   flex-direction: row;
 
   &.active .table-sort-icon {
-    color: $color-black;
+    color: $materialize-color-black;
   }
 }
 
 .table-sort-icon {
-  color: $color-gray;
-  margin-right: $space-xs;
+  color: $materialize-color-gray;
+  margin-right: $materialize-space-xs;
 }
 
 .table-sort-text {

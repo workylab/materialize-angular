@@ -7,7 +7,7 @@
   right: 0;
   top: 0;
   width: 100%;
-  z-index: $zindex-level-1;
+  z-index: $materialize-zindex-level-1;
 }
 
 .date-picker {
@@ -15,7 +15,7 @@
 
   &.full-size {
     .date-picker-backdrop {
-      background-color: rgba($color-black, 0.4);
+      background-color: rgba($materialize-color-black, 0.4);
     }
 
     ::ng-deep .calendar-container {
@@ -31,38 +31,38 @@
 
   ::ng-deep {
     .form-control-suffix-container {
-      padding-right: $space-xxxs;
+      padding-right: $materialize-space-xxxs;
     }
 
     .calendar-button {
       background-color: unset;
       box-shadow: unset;
-      color: $color-black;
-      padding: $space-xs $space-xxxs;
+      color: $materialize-color-black;
+      padding: $materialize-space-xs $materialize-space-xxxs;
 
       &.focused {
-        background-color: darken($color-gray-light, 5%);
+        background-color: darken($materialize-color-gray-light, 5%);
       }
 
       &:hover {
-        background-color: darken($color-gray-light, 10%);
+        background-color: darken($materialize-color-gray-light, 10%);
       }
 
       &[disabled] {
-        background: $color-gray-light;
+        background: $materialize-color-gray-light;
       }
 
       .ripple {
-        background-color: rgba($color-black, 0.1);
+        background-color: rgba($materialize-color-black, 0.1);
       }
     }
 
     .calendar-container {
       bottom: 100%;
-      margin-bottom: $space-xs;
+      margin-bottom: $materialize-space-xs;
       position: absolute;
-      right: $space-xs;
-      z-index: $zindex-level-2;
+      right: $materialize-space-xs;
+      z-index: $materialize-zindex-level-2;
     }
   }
 }

@@ -4,7 +4,7 @@
   position: relative;
 
   .#{$prefix}-form-control-container.disabled .#{$prefix}-form-control-select-icon {
-    color: $color-gray;
+    color: $materialize-color-gray;
     cursor: not-allowed;
   }
 
@@ -18,9 +18,9 @@
 }
 
 .#{$prefix}-form-control-select-icon {
-  color: $color-gray-dark;
+  color: $materialize-color-gray-dark;
   position: absolute;
-  right: $space-xs;
+  right: $materialize-space-xs;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 300ms ease;
@@ -35,20 +35,20 @@
   right: 0;
   top: 0;
   width: 100%;
-  z-index: $zindex-level-1;
+  z-index: $materialize-zindex-level-1;
 }
 
 .#{$prefix}-form-control-select-menu {
-  background: $color-white;
-  box-shadow: $shadow-md;
+  background: $materialize-color-white;
+  box-shadow: $materialize-shadow-md;
   cursor: pointer;
   display: none;
   left: 0;
-  padding: $space-xs 0;
+  padding: $materialize-space-xs 0;
   position: absolute;
   top: 100%;
   width: 100%;
-  z-index: $zindex-level-2;
+  z-index: $materialize-zindex-level-2;
 }
 
 #{$prefix}-select.ng-touched.ng-dirty.ng-invalid {

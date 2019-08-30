@@ -1,23 +1,24 @@
-$button-toggle-backgorund: $color-white !default;
-$button-toggle-color: $color-purple !default;
-$button-toggle-cursor: $cursor-pointer !default;
-$button-toggle-font-family: $font-family-primary !default;
-$button-toggle-font-size: $font-size-sm !default;
-$button-toggle-font-weight: $font-weight-regular !default;
-$button-toggle-outline: none !default;
-$button-toggle-padding: $space-sm $space-md !default;
-$button-toggle-tap-highlight-color: $color-transparent !default;
-$button-toggle-text-align: center !default;
-$button-toggle-transition: $property-background $timer-md $function-ease;
-$button-toggle-width: auto !default;
+$materialize-button-toggle-backgorund: $materialize-color-white !default;
+$materialize-button-toggle-color: $materialize-color-purple !default;
+$materialize-button-toggle-cursor: $materialize-cursor-pointer !default;
+$materialize-button-toggle-font-family: $materialize-font-family-primary !default;
+$materialize-button-toggle-font-size: $materialize-font-size-sm !default;
+$materialize-button-toggle-font-weight: $materialize-font-weight-regular !default;
+$materialize-button-toggle-outline: none !default;
+$materialize-button-toggle-padding: $materialize-space-sm $materialize-space-md !default;
+$materialize-button-toggle-tap-highlight-color: $materialize-color-transparent !default;
+$materialize-button-toggle-text-align: center !default;
+$materialize-button-toggle-transition:
+$materialize-property-background $materialize-timer-md $materialize-function-ease;
+$materialize-button-toggle-width: auto !default;
 
-$button-toggle-hover-background: rgba($color-purple, 0.1) !default;
-$button-toggle-focused-background: rgba($color-purple, 0.2) !default;
+$materialize-button-toggle-hover-background: rgba($materialize-color-purple, 0.1) !default;
+$materialize-button-toggle-focused-background: rgba($materialize-color-purple, 0.2) !default;
 
-$button-toggle-active-background: $color-purple !default;
-$button-toggle-active-color: $color-white !default;
+$materialize-button-toggle-active-background: $materialize-color-purple !default;
+$materialize-button-toggle-active-color: $materialize-color-white !default;
 
-$button-toggle-disabled-background: $color-gray-light !default;
-$button-toggle-disabled-color: $color-gray !default;
+$materialize-button-toggle-disabled-background: $materialize-color-gray-light !default;
+$materialize-button-toggle-disabled-color: $materialize-color-gray !default;
 
-$button-toggle-ripple-background: rgba(lighten($color-purple, 50%), 0.2);
+$materialize-button-toggle-ripple-background: rgba(lighten($materialize-color-purple, 50%), 0.2);

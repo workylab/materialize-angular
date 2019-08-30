@@ -1,18 +1,18 @@
-$color-transparent: transparent;
+$materialize-color-transparent: transparent;
 
-$color-blue: #17A2B8;
-$color-purple: #5707EB;
-$color-red: #A22027;
-$color-yellow: #FFC107;
+$materialize-color-blue: #17A2B8;
+$materialize-color-purple: #5707EB;
+$materialize-color-red: #A22027;
+$materialize-color-yellow: #FFC107;
 
-$color-white: #FFFFFF;
-$color-gray-light: #F4F3F4;
-$color-gray: #DCDBDC;
-$color-gray-dark: #6A6A6A;
-$color-gray-darkest: #232F34;
-$color-black: #000000;
+$materialize-color-white: #FFFFFF;
+$materialize-color-gray-light: #F4F3F4;
+$materialize-color-gray: #DCDBDC;
+$materialize-color-gray-dark: #6A6A6A;
+$materialize-color-gray-darkest: #232F34;
+$materialize-color-black: #000000;
 
-$colors: (
+$materialize-colors: (
   'primary': #5707EB,
   'secondary': #03DAC6,
   'success': #28A745,
@@ -23,17 +23,19 @@ $colors: (
   'white': #FFFFFF
 );
 
-@function generate_color_pallete($color, $prefix-variable) {
+@function generate_color_pallete($materialize-color, $prefix-variable) {
   $i: 10;
   $limit: 90;
   $pallete: ();
 
   @while $i <= $limit {
-    $pallete: map-merge($pallete, ('#{$prefix-variable}-#{$i}': darken($color, percentage($i / 100))));
+    $pallete: map-merge($pallete, ('#{$prefix-variable}-#{$i}':
+    darken($materialize-color, percentage($i / 100))));
     $i: $i + 10;
   }
 
   @return $pallete;
 }
 
-$colors: map-merge($colors, generate_color_pallete(map-get($colors, 'white'), 'gray'));
+$materialize-colors: map-merge($materialize-colors,
+generate_color_pallete(map-get($materialize-colors, 'white'), 'gray'));

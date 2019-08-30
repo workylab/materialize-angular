@@ -1,15 +1,15 @@
 .#{$prefix}-navbar {
   align-items: center;
-  background: $navbar-background;
-  box-shadow: $navbar-box-shadow;
-  color: $navbar-color;
+  background: $materialize-navbar-background;
+  box-shadow: $materialize-navbar-box-shadow;
+  color: $materialize-navbar-color;
   display: flex;
   flex-direction: row;
-  font-family: $navbar-font-family;
-  font-size: $navbar-font-size;
-  font-weight: $navbar-font-weight;
-  height: $navbar-height;
+  font-family: $materialize-navbar-font-family;
+  font-size: $materialize-navbar-font-size;
+  font-weight: $materialize-navbar-font-weight;
+  height: $materialize-navbar-height;
   justify-content: center;
-  margin: $navbar-margin;
-  padding: $navbar-padding;
+  margin: $materialize-navbar-margin;
+  padding: $materialize-navbar-padding;
 }

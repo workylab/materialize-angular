@@ -1,40 +1,43 @@
-$switch-cursor: $cursor-pointer !default;
-$switch-padding: $space-xs $space-none !default;
-$switch-outline: none !default;
-$switch-tap-highlight-color: $color-transparent !default;
+$materialize-switch-cursor: $materialize-cursor-pointer !default;
+$materialize-switch-padding: $materialize-space-xs $materialize-space-none !default;
+$materialize-switch-outline: none !default;
+$materialize-switch-tap-highlight-color: $materialize-color-transparent !default;
 
-$switch-label-color: $color-gray-darkest !default;
-$switch-label-font-family: $font-family-primary !default;
-$switch-label-font-size: $font-size-sm !default;
-$switch-label-font-weight: $font-weight-regular !default;
-$switch-label-padding: $space-none !default;
-$switch-label-text-align: left !default;
+$materialize-switch-label-color: $materialize-color-gray-darkest !default;
+$materialize-switch-label-font-family: $materialize-font-family-primary !default;
+$materialize-switch-label-font-size: $materialize-font-size-sm !default;
+$materialize-switch-label-font-weight: $materialize-font-weight-regular !default;
+$materialize-switch-label-padding: $materialize-space-none !default;
+$materialize-switch-label-text-align: left !default;
 
-$switch-indicator-track-background: lighten($color-gray-dark, 30%) !default;
-$switch-indicator-track-height: 14px !default;
-$switch-indicator-track-margin: 0 $space-sm !default;
-$switch-indicator-track-width: 36px !default;
-$switch-indicator-track-active-background: lighten($color-purple, 30%) !default;
-$switch-indicator-track-disabled-background: $color-gray !default;
+$materialize-switch-indicator-track-background: lighten($materialize-color-gray-dark, 30%) !default;
+$materialize-switch-indicator-track-height: 14px !default;
+$materialize-switch-indicator-track-margin: 0 $materialize-space-sm !default;
+$materialize-switch-indicator-track-width: 36px !default;
+$materialize-switch-indicator-track-active-background: lighten($materialize-color-purple, 30%) !default;
+$materialize-switch-indicator-track-disabled-background: $materialize-color-gray !default;
 
-$switch-indicator-background: $color-white !default;
-$switch-indicator-border-radius: $radius-full !default;
-$switch-indicator-box-shadow: $shadow-sm !default;
-$switch-indicator-left: 0 !default;
-$switch-indicator-transition: $property-left $timer-sm $function-ease !default;
-$switch-indicator-size: 20px !default;
-$switch-indicator-active-background: $color-purple !default;
-$switch-indicator-disabled-background: lighten($color-gray, 10%) !default;
+$materialize-switch-indicator-background: $materialize-color-white !default;
+$materialize-switch-indicator-border-radius: $materialize-radius-full !default;
+$materialize-switch-indicator-box-shadow: $materialize-shadow-sm !default;
+$materialize-switch-indicator-left: 0 !default;
+$materialize-switch-indicator-transition:
+$materialize-property-left $materialize-timer-sm $materialize-function-ease !default;
+$materialize-switch-indicator-size: 20px !default;
+$materialize-switch-indicator-active-background: $materialize-color-purple !default;
+$materialize-switch-indicator-disabled-background: lighten($materialize-color-gray, 10%) !default;
 
-$switch-indicator-ripple-hover-inactive-background: rgba($color-gray-darkest, 0.1) !default;
-$switch-indicator-ripple-hover-active-background: rgba($color-purple, 0.2) !default;
-$switch-indicator-ripple-focused-inactive-background: rgba($color-gray-darkest, 0.05) !default;
-$switch-indicator-ripple-focused-active-background: rgba($color-purple, 0.1) !default;
+$materialize-switch-indicator-ripple-hover-inactive-background: rgba($materialize-color-gray-darkest, 0.1) !default;
+$materialize-switch-indicator-ripple-hover-active-background: rgba($materialize-color-purple, 0.2) !default;
+$materialize-switch-indicator-ripple-focused-inactive-background: rgba($materialize-color-gray-darkest, 0.05) !default;
+$materialize-switch-indicator-ripple-focused-active-background: rgba($materialize-color-purple, 0.1) !default;
 
-$switch-indicator-ripple-size: 40px !default;
-$switch-indicator-ripple-transition: $property-background $timer-sm $function-ease !default;
+$materialize-switch-indicator-ripple-size: 40px !default;
+$materialize-switch-indicator-ripple-transition:
+$materialize-property-background $materialize-timer-sm $materialize-function-ease !default;
 
-$switch-active-indicator-left: $switch-indicator-track-width - $switch-indicator-size !default;
+$materialize-switch-active-indicator-left:
+$materialize-switch-indicator-track-width - $materialize-switch-indicator-size !default;
 
-$switch-ripple-active-background: rgba($color-purple, 0.2) !default;
-$switch-ripple-background: rgba($color-gray-darkest, 0.2) !default;
+$materialize-switch-ripple-active-background: rgba($materialize-color-purple, 0.2) !default;
+$materialize-switch-ripple-background: rgba($materialize-color-gray-darkest, 0.2) !default;

@@ -1,14 +1,14 @@
 %form-control-error {
   .#{$prefix}-form-control-container::after {
-    background-color: $color-red;
+    background-color: $materialize-color-red;
     width: 100%;
   }
 
   .#{$prefix}-form-control-label {
-    color: $color-red;
+    color: $materialize-color-red;
   }
 
   .#{$prefix}-form-control {
-    caret-color: $color-red;
+    caret-color: $materialize-color-red;
   }
 }

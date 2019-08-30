@@ -1,58 +1,58 @@
 .#{$prefix}-tab-group {
-  align-items: $tab-group-align-items;
-  border-color: $tab-group-border-color;
-  border-style: $tab-group-border-style;
-  border-width: $tab-group-border-width;
+  align-items: $materialize-tab-group-align-items;
+  border-color: $materialize-tab-group-border-color;
+  border-style: $materialize-tab-group-border-style;
+  border-width: $materialize-tab-group-border-width;
   display: flex;
   flex-direction: row;
-  justify-content: $tab-group-justify-content;
+  justify-content: $materialize-tab-group-justify-content;
   list-style: none;
-  margin: $tab-group-margin;
-  padding: $tab-group-padding;
+  margin: $materialize-tab-group-margin;
+  padding: $materialize-tab-group-padding;
   position: relative;
 }
 
 .#{$prefix}-tab-group-item {
-  border-radius: $tab-group-item-border-radius;
-  color: $tab-group-item-color;
-  cursor: $tab-group-item-cursor;
-  font-family: $tab-group-item-font-family;
-  font-size: $tab-group-item-font-size;
-  font-weight: $tab-group-item-font-weight;
-  letter-spacing: $tab-group-item-letter-spacing;
-  line-height: $tab-group-item-line-height;
-  padding: $tab-group-item-padding;
-  text-align: $tab-group-item-text-align;
-  transition: $tab-group-item-transition;
+  border-radius: $materialize-tab-group-item-border-radius;
+  color: $materialize-tab-group-item-color;
+  cursor: $materialize-tab-group-item-cursor;
+  font-family: $materialize-tab-group-item-font-family;
+  font-size: $materialize-tab-group-item-font-size;
+  font-weight: $materialize-tab-group-item-font-weight;
+  letter-spacing: $materialize-tab-group-item-letter-spacing;
+  line-height: $materialize-tab-group-item-line-height;
+  padding: $materialize-tab-group-item-padding;
+  text-align: $materialize-tab-group-item-text-align;
+  transition: $materialize-tab-group-item-transition;
 
   &:hover:not(.disabled) {
-    background: $tab-group-hover-item-background;
+    background: $materialize-tab-group-hover-item-background;
   }
 
   &.active {
-    color: $tab-group-active-item-color;
-    font-weight: $tab-group-active-item-font-weight;
+    color: $materialize-tab-group-active-item-color;
+    font-weight: $materialize-tab-group-active-item-font-weight;
   }
 
   &.disabled {
-    color: $tab-group-disabled-item-color;
+    color: $materialize-tab-group-disabled-item-color;
     cursor: not-allowed;
   }
 }
 
 .#{$prefix}-tab-group-indicator-container {
-  bottom: $tab-group-indicator-container-bottom;
+  bottom: $materialize-tab-group-indicator-container-bottom;
   left: 0;
   position: absolute;
-  transition-timing-function: $tab-group-indicator-container-transition-function;
+  transition-timing-function: $materialize-tab-group-indicator-container-transition-function;
 }
 
 .#{$prefix}-tab-group-indicator {
-  background: $tab-group-indicator-background;
-  border-radius: $tab-group-indicator-border-radius;
-  height: $tab-group-indicator-height;
+  background: $materialize-tab-group-indicator-background;
+  border-radius: $materialize-tab-group-indicator-border-radius;
+  height: $materialize-tab-group-indicator-height;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
-  width: $tab-group-indicator-width;
+  width: $materialize-tab-group-indicator-width;
 }

@@ -1,49 +1,49 @@
 .#{$prefix}-form-message {
   &.error {
-    color: $form-message-error-color;
-    font-family: $form-message-error-font-family;
-    font-size: $form-message-error-font-size;
-    font-weight: $form-message-error-font-weight;
-    letter-spacing: $form-message-error-letter-spacing;
-    line-height: $form-message-error-line-height;
-    margin: $form-message-error-margin;
-    padding: $form-message-error-padding;
-    text-align: $form-message-error-text-align;
+    color: $materialize-form-message-error-color;
+    font-family: $materialize-form-message-error-font-family;
+    font-size: $materialize-form-message-error-font-size;
+    font-weight: $materialize-form-message-error-font-weight;
+    letter-spacing: $materialize-form-message-error-letter-spacing;
+    line-height: $materialize-form-message-error-line-height;
+    margin: $materialize-form-message-error-margin;
+    padding: $materialize-form-message-error-padding;
+    text-align: $materialize-form-message-error-text-align;
   }
 
   &.info {
-    color: $form-message-info-color;
-    font-family: $form-message-info-font-family;
-    font-size: $form-message-info-font-size;
-    font-weight: $form-message-info-font-weight;
-    letter-spacing: $form-message-info-letter-spacing;
-    line-height: $form-message-info-line-height;
-    margin: $form-message-info-margin;
-    padding: $form-message-info-padding;
-    text-align: $form-message-info-text-align;
+    color: $materialize-form-message-info-color;
+    font-family: $materialize-form-message-info-font-family;
+    font-size: $materialize-form-message-info-font-size;
+    font-weight: $materialize-form-message-info-font-weight;
+    letter-spacing: $materialize-form-message-info-letter-spacing;
+    line-height: $materialize-form-message-info-line-height;
+    margin: $materialize-form-message-info-margin;
+    padding: $materialize-form-message-info-padding;
+    text-align: $materialize-form-message-info-text-align;
   }
 
   &.success {
-    color: $form-message-success-color;
-    font-family: $form-message-success-font-family;
-    font-size: $form-message-success-font-size;
-    font-weight: $form-message-success-font-weight;
-    letter-spacing: $form-message-success-letter-spacing;
-    line-height: $form-message-success-line-height;
-    margin: $form-message-success-margin;
-    padding: $form-message-success-padding;
-    text-align: $form-message-success-text-align;
+    color: $materialize-form-message-success-color;
+    font-family: $materialize-form-message-success-font-family;
+    font-size: $materialize-form-message-success-font-size;
+    font-weight: $materialize-form-message-success-font-weight;
+    letter-spacing: $materialize-form-message-success-letter-spacing;
+    line-height: $materialize-form-message-success-line-height;
+    margin: $materialize-form-message-success-margin;
+    padding: $materialize-form-message-success-padding;
+    text-align: $materialize-form-message-success-text-align;
   }
 
   &.warning {
-    color: $form-message-warning-color;
-    font-family: $form-message-warning-font-family;
-    font-size: $form-message-warning-font-size;
-    font-weight: $form-message-warning-font-weight;
-    letter-spacing: $form-message-warning-letter-spacing;
-    line-height: $form-message-warning-line-height;
-    margin: $form-message-warning-margin;
-    padding: $form-message-warning-padding;
-    text-align: $form-message-warning-text-align;
+    color: $materialize-form-message-warning-color;
+    font-family: $materialize-form-message-warning-font-family;
+    font-size: $materialize-form-message-warning-font-size;
+    font-weight: $materialize-form-message-warning-font-weight;
+    letter-spacing: $materialize-form-message-warning-letter-spacing;
+    line-height: $materialize-form-message-warning-line-height;
+    margin: $materialize-form-message-warning-margin;
+    padding: $materialize-form-message-warning-padding;
+    text-align: $materialize-form-message-warning-text-align;
   }
 }
