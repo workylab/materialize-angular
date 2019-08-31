@@ -99,6 +99,7 @@
 
 .#{$prefix}-form-control-label {
   background: $materialize-form-control-label-background;
+  border-radius: $materialize-form-control-container-border-radius;
   color: $materialize-form-control-label-color;
   cursor: text;
   font-family: $materialize-form-control-label-font-family;
