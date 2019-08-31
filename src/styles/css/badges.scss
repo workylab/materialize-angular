@@ -1,5 +1,5 @@
 .badge {
-  background-color: $materialize-badges-background-color;
+  background: $materialize-badges-background;
   border-radius: $materialize-badges-border-radius;
   box-sizing: $materialize-badges-box-sizing;
   color: $materialize-badges-color;
@@ -13,42 +13,42 @@
 }
 
 .badge-primary {
-  background-color: $materialize-badge-primary-background-color;
+  background: $materialize-badge-primary-background;
   color: $materialize-badge-primary-color;
 }
 
 .badge-secondary {
-  background-color: $materialize-badge-secondary-background-color;
+  background: $materialize-badge-secondary-background;
   color: $materialize-badge-secondary-color;
 }
 
 .badge-success {
-  background-color: $materialize-badge-success-background-color;
+  background: $materialize-badge-success-background;
   color: $materialize-badge-success-color;
 }
 
 .badge-danger {
-  background-color: $materialize-badge-danger-background-color;
+  background: $materialize-badge-danger-background;
   color: $materialize-badge-danger-color;
 }
 
 .badge-warning {
-  background-color: $materialize-badge-warning-background-color;
+  background: $materialize-badge-warning-background;
   color: $materialize-badge-warning-color;
 }
 
 .badge-info {
-  background-color: $materialize-badge-info-background-color;
+  background: $materialize-badge-info-background;
   color: $materialize-badge-info-color;
 }
 
 .badge-light {
-  background-color: $materialize-badge-light-background-color;
+  background: $materialize-badge-light-background;
   color: $materialize-badge-light-color;
 }
 
 .badge-dark {
-  background-color: $materialize-badge-dark-background-color;
+  background: $materialize-badge-dark-background;
   color: $materialize-badge-dark-color;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .badge-notification[data-badge]::after {
-  background: $materialize-badge-notification-background-color;
+  background: $materialize-badge-notification-background;
   border-radius: 50%;
   color: $materialize-badge-notification-color;
   content: attr(data-badge);
@@ -75,41 +75,41 @@
 }
 
 .badge-notification-primary[data-badge]::after {
-  background-color: $materialize-badge-primary-background-color;
+  background: $materialize-badge-primary-background;
   color: $materialize-badge-primary-color;
 }
 
 .badge-notification-secondary[data-badge]::after {
-  background-color: $materialize-badge-secondary-background-color;
+  background: $materialize-badge-secondary-background;
   color: $materialize-badge-secondary-color;
 }
 
 .badge-notification-success[data-badge]::after {
-  background-color: $materialize-badge-success-background-color;
+  background: $materialize-badge-success-background;
   color: $materialize-badge-success-color;
 }
 
 .badge-notification-danger[data-badge]::after {
-  background-color: $materialize-badge-danger-background-color;
+  background: $materialize-badge-danger-background;
   color: $materialize-badge-danger-color;
 }
 
 .badge-notification-warning[data-badge]::after {
-  background-color: $materialize-badge-warning-background-color;
+  background: $materialize-badge-warning-background;
   color: $materialize-badge-warning-color;
 }
 
 .badge-notification-info[data-badge]::after {
-  background-color: $materialize-badge-info-background-color;
+  background: $materialize-badge-info-background;
   color: $materialize-badge-info-color;
 }
 
 .badge-notification-light[data-badge]::after {
-  background-color: $materialize-badge-light-background-color;
+  background: $materialize-badge-light-background;
   color: $materialize-badge-light-color;
 }
 
 .badge-notification-dark[data-badge]::after {
-  background-color: $materialize-badge-dark-background-color;
+  background: $materialize-badge-dark-background;
   color: $materialize-badge-dark-color;
 }
