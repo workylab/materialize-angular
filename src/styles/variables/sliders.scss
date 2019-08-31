@@ -1,11 +1,11 @@
-$materialize-slider-margin: $materialize-space-none !default;
+$materialize-slider-margin: 0 !default;
 $materialize-slider-padding: $materialize-space-xxxl $materialize-space-xl $materialize-space-xxl !default;
 $materialize-slider-tap-highlight-color: $materialize-color-transparent !default;
 $materialize-slider-width: $materialize-space-full !default;
 
 $materialize-slider-track-container-cursor: $materialize-cursor-pointer !default;
 $materialize-slider-track-container-outline: none !default;
-$materialize-slider-track-container-padding: $materialize-space-sm $materialize-space-none !default;
+$materialize-slider-track-container-padding: $materialize-space-sm 0 !default;
 $materialize-slider-track-container-position: relative !default;
 $materialize-slider-track-container-width: $materialize-space-full !default;
 
@@ -23,7 +23,7 @@ $materialize-slider-track-overflow: hidden !default;
 $materialize-slider-track-position: relative !default;
 $materialize-slider-track-width: $materialize-space-full !default;
 
-$materialize-slider-indicator-container-left: $materialize-space-none !default;
+$materialize-slider-indicator-container-left: 0 !default;
 $materialize-slider-indicator-container-position: absolute !default;
 $materialize-slider-indicator-container-top: $materialize-space-half !default;
 $materialize-slider-indicator-container-transform: translate(-50%, -50%) !default;

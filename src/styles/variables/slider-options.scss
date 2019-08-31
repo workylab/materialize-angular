@@ -3,11 +3,11 @@ $materialize-slider-option-font-family: $materialize-font-family-primary !defaul
 $materialize-slider-option-font-size: $materialize-font-size-sm !default;
 $materialize-slider-option-font-weight: $materialize-font-weight-regular !default;
 $materialize-slider-option-height: auto !default;
-$materialize-slider-option-left: $materialize-space-none !default;
+$materialize-slider-option-left: 0 !default;
 $materialize-slider-option-position: absolute !default;
 $materialize-slider-option-text-align: center !default;
 $materialize-slider-option-text-transform: none !default;
-$materialize-slider-option-top: $materialize-space-none !default;
+$materialize-slider-option-top: 0 !default;
 $materialize-slider-option-transform: translateX(-50%) !default;
 $materialize-slider-option-transition:
 $materialize-property-font-size $materialize-timer-sm $materialize-function-ease !default;

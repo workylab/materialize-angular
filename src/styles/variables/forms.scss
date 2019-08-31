@@ -1,10 +1,10 @@
 $materialize-form-control-container-background: $materialize-color-gray-light !default;
 $materialize-form-control-container-border-color: $materialize-color-gray-dark !default;
 $materialize-form-control-container-border-radius:
-$materialize-radius-sm $materialize-radius-sm $materialize-space-none $materialize-space-none !default;
+$materialize-radius-sm $materialize-radius-sm 0 0 !default;
 $materialize-form-control-container-border-style: solid !default;
 $materialize-form-control-container-border-width: 0 0 $materialize-border-sm 0 !default;
-$materialize-form-control-container-margin: $materialize-space-none !default;
+$materialize-form-control-container-margin: 0 !default;
 $materialize-form-control-container-outiline: none !default;
 
 $materialize-form-control-container-line-bottom: -1px !default;
@@ -41,7 +41,7 @@ $materialize-form-control-label-transition-property: $materialize-property-top $
 $materialize-form-control-label-padding: $materialize-space-xs $materialize-space-sm $materialize-space-xxxs !default;
 
 $materialize-form-control-active-label-font-size: $materialize-font-size-xxs !default;
-$materialize-form-control-active-label-top: $materialize-space-none !default;
+$materialize-form-control-active-label-top: 0 !default;
 
 $materialize-form-control-focused-container-line-width: 100% !default;
 $materialize-form-control-focused-label-color: $materialize-color-purple !default;
