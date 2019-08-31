@@ -1,5 +1,5 @@
 .date-picker-backdrop {
-  background-color: transparent;
+  background: transparent;
   bottom: 0;
   height: 100%;
   left: 0;
@@ -15,7 +15,7 @@
 
   &.full-size {
     .date-picker-backdrop {
-      background-color: rgba($materialize-color-black, 0.4);
+      background: rgba($materialize-color-black, 0.4);
     }
 
     ::ng-deep .calendar-container {
@@ -35,17 +35,17 @@
     }
 
     .calendar-button {
-      background-color: unset;
+      background: unset;
       box-shadow: unset;
       color: $materialize-color-black;
       padding: $materialize-space-xs $materialize-space-xxxs;
 
       &.focused {
-        background-color: darken($materialize-color-gray-light, 5%);
+        background: darken($materialize-color-gray-light, 5%);
       }
 
       &:hover {
-        background-color: darken($materialize-color-gray-light, 10%);
+        background: darken($materialize-color-gray-light, 10%);
       }
 
       &[disabled] {
@@ -53,7 +53,7 @@
       }
 
       .ripple {
-        background-color: rgba($materialize-color-black, 0.1);
+        background: rgba($materialize-color-black, 0.1);
       }
     }
 

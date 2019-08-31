@@ -49,7 +49,7 @@
 
 .loader {
   animation: $materialize-loader-animation;
-  background-color: currentColor;
+  background: currentColor;
   border-radius: 50%;
   color: $materialize-loader-color;
   display: inline-block;

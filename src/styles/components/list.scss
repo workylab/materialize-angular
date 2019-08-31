@@ -14,18 +14,18 @@
   transition-timing-function: ease;
 
   &:hover {
-    background-color: lighten($materialize-color-purple, 50%);
+    background: lighten($materialize-color-purple, 50%);
     color: $materialize-color-purple;
   }
 
   &.active {
-    background-color: lighten($materialize-color-purple, 40%);
+    background: lighten($materialize-color-purple, 40%);
     color: $materialize-color-purple;
     font-weight: $materialize-font-weight-medium;
   }
 
   .ripple {
-    background-color: rgba($materialize-color-purple, 0.15);
+    background: rgba($materialize-color-purple, 0.15);
   }
 }
 

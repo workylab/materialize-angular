@@ -6,11 +6,11 @@
 
   &.disabled {
     .#{$prefix}-slider-track {
-      background-color: $materialize-slider-disabled-track-background;
+      background: $materialize-slider-disabled-track-background;
     }
 
     .#{$prefix}-slider-step {
-      background-color: $materialize-slider-disabled-step-background;
+      background: $materialize-slider-disabled-step-background;
     }
   }
 }

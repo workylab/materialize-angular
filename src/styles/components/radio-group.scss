@@ -4,17 +4,17 @@
   }
 
   &.focused .#{$prefix}-radio-indicator-ripple {
-    background-color: rgba($materialize-color-red, 0.1);
+    background: rgba($materialize-color-red, 0.1);
   }
 
   .ripple {
-    background-color: rgba($materialize-color-red, 0.3);
+    background: rgba($materialize-color-red, 0.3);
   }
 
   &:not(.disabled) {
     @media (hover: hover) {
       .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
-        background-color: rgba($materialize-color-red, 0.2);
+        background: rgba($materialize-color-red, 0.2);
       }
     }
   }

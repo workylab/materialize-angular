@@ -70,7 +70,7 @@
 }
 
 .#{$prefix}-drawer-backdrop {
-  background-color: $materialize-drawer-backdrop-background;
+  background: $materialize-drawer-backdrop-background;
   bottom: 0;
   display: none;
   height: 100%;
