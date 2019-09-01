@@ -1,5 +1,20 @@
 # Change Log
 
+## [v0.5.1](https://github.com/workylab/materialize-angular/tree/v0.5.1) (2019-09-01)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.0...v0.5.1)
+
+**Implemented enhancements:**
+
+- Feature/space helpers [\#130](https://github.com/workylab/materialize-angular/pull/130) ([rodwyn](https://github.com/rodwyn))
+- New release [\#129](https://github.com/workylab/materialize-angular/pull/129) ([alexzoul](https://github.com/alexzoul))
+- Removed background-color properties [\#128](https://github.com/workylab/materialize-angular/pull/128) ([alexzoul](https://github.com/alexzoul))
+- Removed space-none unnecessary variable. [\#127](https://github.com/workylab/materialize-angular/pull/127) ([alexzoul](https://github.com/alexzoul))
+
+**Fixed bugs:**
+
+- Fixed border radius on float label. [\#126](https://github.com/workylab/materialize-angular/pull/126) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.5.0](https://github.com/workylab/materialize-angular/tree/v0.5.0) (2019-08-30)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.4.7...v0.5.0)
