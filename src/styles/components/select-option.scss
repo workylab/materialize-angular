@@ -7,10 +7,10 @@
   padding: $materialize-select-option-padding;
 
   &:hover {
-    background-color: $materialize-select-option-active-background;
+    background: $materialize-select-option-active-background;
   }
 
   &.active {
-    background-color: $materialize-select-option-hover-background;
+    background: $materialize-select-option-hover-background;
   }
 }

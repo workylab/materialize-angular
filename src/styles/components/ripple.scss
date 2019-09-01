@@ -9,7 +9,7 @@
 }
 
 .ripple {
-  background-color: rgba($materialize-color-black, 0.1);
+  background: rgba($materialize-color-black, 0.1);
   border-radius: $materialize-radius-full;
   position: absolute;
   transform: scale(0);

@@ -1,6 +1,6 @@
 %form-control-error {
   .#{$prefix}-form-control-container::after {
-    background-color: $materialize-color-red;
+    background: $materialize-color-red;
     width: 100%;
   }
 

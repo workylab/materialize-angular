@@ -1,5 +1,5 @@
 $materialize-switch-cursor: $materialize-cursor-pointer !default;
-$materialize-switch-padding: $materialize-space-xs $materialize-space-none !default;
+$materialize-switch-padding: $materialize-space-xs 0 !default;
 $materialize-switch-outline: none !default;
 $materialize-switch-tap-highlight-color: $materialize-color-transparent !default;
 
@@ -7,7 +7,7 @@ $materialize-switch-label-color: $materialize-color-gray-darkest !default;
 $materialize-switch-label-font-family: $materialize-font-family-primary !default;
 $materialize-switch-label-font-size: $materialize-font-size-sm !default;
 $materialize-switch-label-font-weight: $materialize-font-weight-regular !default;
-$materialize-switch-label-padding: $materialize-space-none !default;
+$materialize-switch-label-padding: 0 !default;
 $materialize-switch-label-text-align: left !default;
 
 $materialize-switch-indicator-track-background: lighten($materialize-color-gray-dark, 30%) !default;

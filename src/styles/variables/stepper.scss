@@ -1,9 +1,9 @@
-$materialize-stepper-margin: $materialize-space-none !default;
+$materialize-stepper-margin: 0 !default;
 $materialize-stepper-padding: $materialize-space-md $materialize-space-lg !default;
 
 $materialize-stepper-divider-background: $materialize-color-gray-light !default;
 $materialize-stepper-divider-height: $materialize-border-md !default;
-$materialize-stepper-divider-margin: $materialize-space-md $materialize-space-none $materialize-space-none !default;
+$materialize-stepper-divider-margin: $materialize-space-md 0 0 !default;
 $materialize-stepper-divider-width: 100% !default;
 
 $materialize-stepper-divider-completed-background: $materialize-color-purple !default;
@@ -16,7 +16,7 @@ $materialize-step-indicator-color: $materialize-color-gray !default;
 $materialize-step-indicator-font-family: $materialize-font-family-primary !default;
 $materialize-step-indicator-font-size: $materialize-font-size-lg !default;
 $materialize-step-indicator-font-weight: $materialize-font-weight-regular !default;
-$materialize-step-indicator-margin: $materialize-space-none $materialize-space-none $materialize-space-xs !default;
+$materialize-step-indicator-margin: 0 0 $materialize-space-xs !default;
 $materialize-step-indicator-size: 33px !default;
 
 $materialize-step-indicator-icon-color: $materialize-color-white !default;

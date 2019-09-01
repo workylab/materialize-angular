@@ -1,0 +1,18 @@
+@mixin generate-classes() {
+  @each $type in $materialize-spacer-types {
+    @each $orientation-abb, $orientation-val in $materialize-spacer-orientations {
+      @each $key, $value in $materialize-spacer-values {
+        .#{$prefix}-#{$type}-#{$orientation-abb}-#{$key} {
+          @if $type == 'm' {
+            margin-#{$orientation-val}: $value;
+          }
+          @else {
+            padding-#{$orientation-val}: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include generate-classes();

@@ -1,4 +1,4 @@
-$materialize-badges-background-color: map-get($materialize-colors, 'primary') !default;
+$materialize-badges-background: map-get($materialize-colors, 'primary') !default;
 $materialize-badges-color: map-get($materialize-colors, 'white') !default;
 $materialize-badges-border-radius: 4px !default;
 $materialize-badges-box-sizing: border-box !default;
@@ -9,14 +9,14 @@ $materialize-badges-font-weight: $materialize-font-weight-bold !default;
 $materialize-badges-line-height: 100% !default;
 $materialize-badges-text-align: center !default;
 
-$materialize-badge-primary-background-color: map-get($materialize-colors, 'primary') !default;
-$materialize-badge-secondary-background-color: map-get($materialize-colors, 'secondary') !default;
-$materialize-badge-success-background-color: map-get($materialize-colors, 'success') !default;
-$materialize-badge-danger-background-color: map-get($materialize-colors, 'danger') !default;
-$materialize-badge-warning-background-color: map-get($materialize-colors, 'warning') !default;
-$materialize-badge-info-background-color: map-get($materialize-colors, 'info') !default;
-$materialize-badge-light-background-color: map-get($materialize-colors, 'white') !default;
-$materialize-badge-dark-background-color: map-get($materialize-colors, 'black') !default;
+$materialize-badge-primary-background: map-get($materialize-colors, 'primary') !default;
+$materialize-badge-secondary-background: map-get($materialize-colors, 'secondary') !default;
+$materialize-badge-success-background: map-get($materialize-colors, 'success') !default;
+$materialize-badge-danger-background: map-get($materialize-colors, 'danger') !default;
+$materialize-badge-warning-background: map-get($materialize-colors, 'warning') !default;
+$materialize-badge-info-background: map-get($materialize-colors, 'info') !default;
+$materialize-badge-light-background: map-get($materialize-colors, 'white') !default;
+$materialize-badge-dark-background: map-get($materialize-colors, 'black') !default;
 
 $materialize-badge-primary-color: map-get($materialize-colors, 'white') !default;
 $materialize-badge-secondary-color: map-get($materialize-colors, 'white') !default;
@@ -27,7 +27,7 @@ $materialize-badge-info-color: map-get($materialize-colors, 'white') !default;
 $materialize-badge-light-color: map-get($materialize-colors, 'black') !default;
 $materialize-badge-dark-color: map-get($materialize-colors, 'white') !default;
 
-$materialize-badge-notification-background-color: map-get($materialize-colors, 'primary') !default;
+$materialize-badge-notification-background: map-get($materialize-colors, 'primary') !default;
 $materialize-badge-notification-color: map-get($materialize-colors, 'white') !default;
 $materialize-badge-notification-font-size: 10px !default;
 $materialize-badge-notification-size: 18px !default;

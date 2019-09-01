@@ -1,19 +1,19 @@
 $materialize-checkbox-cursor: $materialize-cursor-pointer !default;
 $materialize-checkbox-outline: none !default;
-$materialize-checkbox-padding: $materialize-space-sm $materialize-space-none !default;
+$materialize-checkbox-padding: $materialize-space-sm 0 !default;
 $materialize-checkbox-tap-highlight-color: $materialize-color-transparent !default;
 
 $materialize-checkbox-label-color: $materialize-color-gray-darkest !default;
 $materialize-checkbox-label-font-family: $materialize-font-family-primary !default;
 $materialize-checkbox-label-font-size: $materialize-font-size-sm !default;
 $materialize-checkbox-label-font-weight: $materialize-font-weight-regular !default;
-$materialize-checkbox-label-padding: $materialize-space-none !default;
+$materialize-checkbox-label-padding: 0 !default;
 $materialize-checkbox-label-text-align: left !default;
 
 $materialize-checkbox-indicator-background: $materialize-color-white !default;
 $materialize-checkbox-indicator-border: $materialize-border-md solid $materialize-color-gray-dark !default;
 $materialize-checkbox-indicator-border-radius: $materialize-radius-xs !default;
-$materialize-checkbox-indicator-margin: $materialize-space-none $materialize-space-sm !default;
+$materialize-checkbox-indicator-margin: 0 $materialize-space-sm !default;
 $materialize-checkbox-indicator-size: 18px !default;
 
 $materialize-checkbox-indicator-arrow-color: $materialize-color-white !default;
