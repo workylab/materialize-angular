@@ -1,74 +1,79 @@
 body {
-  .text-align-left {
+  .#{$prefix}-text-align-left {
     text-align: left;
   }
 
-  .text-align-right {
+  .#{$prefix}-text-align-right {
     text-align: right;
   }
 
-  .text-align-center {
+  .#{$prefix}-text-align-center {
     text-align: center;
   }
 
-  .clearfix::after {
+  .#{$prefix}-clearfix::after {
     clear: both;
     content: '';
     display: block;
   }
 
-  .float-left {
+  .#{$prefix}-float-left {
     float: left;
   }
 
-  .float-right {
+  .#{$prefix}-float-right {
     float: right;
   }
 
-  .truncate {
+  .#{$prefix}-truncate {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .text-lowercase {
+  .#{$prefix}-text-lowercase {
     text-transform: lowercase;
   }
 
-  .text-uppercase {
+  .#{$prefix}-text-uppercase {
     text-transform: uppercase;
   }
 
-  .text-capitalize {
+  .#{$prefix}-text-capitalize {
     text-transform: capitalize;
   }
 
-  .font-weight-bold {
+  .#{$prefix}-font-weight-bold {
     font-weight: $materialize-font-weight-bold;
   }
 
-  .font-weight-regular {
+  .#{$prefix}-font-weight-regular {
     font-weight: $materialize-font-weight-regular;
   }
 
-  .font-weight-thin {
+  .#{$prefix}-font-weight-thin {
     font-weight: $materialize-font-weight-thin;
   }
 
-  .font-weight-light {
+  .#{$prefix}-font-weight-light {
     font-weight: $materialize-font-weight-light;
   }
 
-  .font-weight-medium {
+  .#{$prefix}-font-weight-medium {
     font-weight: $materialize-font-weight-medium;
   }
 
-  .font-weight-black {
+  .#{$prefix}-font-weight-black {
     font-weight: $materialize-font-weight-black;
   }
 
-  .font-italic {
+  .#{$prefix}-font-italic {
     font-style: italic;
+  }
+
+  .#{$prefix}-img-fluid {
+    height: auto;
+    width: 100%;
   }
 }
