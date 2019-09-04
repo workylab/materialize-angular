@@ -1,14 +1,14 @@
 %form-control-error {
-  .#{$prefix}-form-control-container::after {
-    background: $materialize-color-red;
+  .#{$materialize-prefix}-form-control-container::after {
+    background: map-get($theme-colors, 'danger');
     width: 100%;
   }
 
-  .#{$prefix}-form-control-label {
-    color: $materialize-color-red;
+  .#{$materialize-prefix}-form-control-label {
+    color: map-get($theme-colors, 'danger');
   }
 
-  .#{$prefix}-form-control {
-    caret-color: $materialize-color-red;
+  .#{$materialize-prefix}-form-control {
+    caret-color: map-get($theme-colors, 'danger');
   }
 }

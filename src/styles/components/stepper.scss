@@ -1,4 +1,4 @@
-.#{$prefix}-stepper {
+.#{$materialize-prefix}-stepper {
   align-items: flex-start;
   display: flex;
   flex-direction: row;
@@ -6,7 +6,7 @@
   padding: $materialize-stepper-padding;
 }
 
-.#{$prefix}-step-divider {
+.#{$materialize-prefix}-step-divider {
   background: $materialize-stepper-divider-background;
   height: $materialize-stepper-divider-height;
   margin: $materialize-stepper-divider-margin;
@@ -17,7 +17,7 @@
   }
 }
 
-.#{$prefix}-step-indicator {
+.#{$materialize-prefix}-step-indicator {
   align-items: center;
   background: $materialize-step-indicator-background;
   border-radius: $materialize-step-indicator-border-radius;
@@ -32,20 +32,20 @@
   width: $materialize-step-indicator-size;
 }
 
-.#{$prefix}-step-indicator-icon {
+.#{$materialize-prefix}-step-indicator-icon {
   color: $materialize-step-indicator-icon-color;
   display: flex;
   font-size: $materialize-step-indicator-icon-size;
 }
 
-.#{$prefix}-step-label {
+.#{$materialize-prefix}-step-label {
   color: $materialize-step-label-color;
   font-family: $materialize-step-label-font-family;
   font-size: $materialize-step-label-font-size;
   font-weight: $materialize-step-label-font-weight;
 }
 
-.#{$prefix}-step {
+.#{$materialize-prefix}-step {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@
   white-space: nowrap;
 
   &.active {
-    .#{$prefix}-step-indicator {
+    .#{$materialize-prefix}-step-indicator {
       background: $materialize-step-active-indicator-background;
       color: $materialize-step-active-indicator-color;
       font-weight: $materialize-step-active-indicator-font-weight;
@@ -61,7 +61,7 @@
   }
 
   &.completed {
-    .#{$prefix}-step-indicator {
+    .#{$materialize-prefix}-step-indicator {
       background: $materialize-step-completed-indicator-background;
       color: $materialize-step-completed-indicator-color;
     }

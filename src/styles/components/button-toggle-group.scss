@@ -1,4 +1,4 @@
-.#{$prefix}-button-toggle-group {
+.#{$materialize-prefix}-button-toggle-group {
   border-color: $materialize-button-toggle-group-border-color;
   border-radius: $materialize-button-toggle-group-border-radius;
   border-style: $materialize-button-toggle-group-border-style;
@@ -8,8 +8,8 @@
   overflow: hidden;
   width: $materialize-button-toggle-group-width;
 
-  #{$prefix}-button-toggle {
-    .#{$prefix}-button-toggle {
+  #{$materialize-prefix}-button-toggle {
+    .#{$materialize-prefix}-button-toggle {
       border-right: $materialize-button-toggle-group-border-width
         $materialize-button-toggle-group-border-style
         $materialize-button-toggle-group-border-color;
@@ -19,7 +19,7 @@
       }
     }
 
-    &:last-child .#{$prefix}-button-toggle {
+    &:last-child .#{$materialize-prefix}-button-toggle {
       border-right-width: 0;
     }
   }
@@ -29,21 +29,21 @@
   }
 }
 
-#{$prefix}-button-toggle-group.ng-touched.ng-dirty.ng-invalid .#{$prefix}-button-toggle-group {
-  border-color: $materialize-color-red;
+#{$materialize-prefix}-button-toggle-group.ng-touched.ng-dirty.ng-invalid .#{$materialize-prefix}-button-toggle-group {
+  border-color: map-get($theme-colors, 'danger');
 
-  .#{$prefix}-button-toggle {
-    border-right-color: $materialize-color-red;
-    color: $materialize-color-red;
+  .#{$materialize-prefix}-button-toggle {
+    border-right-color: map-get($theme-colors, 'danger');
+    color: map-get($theme-colors, 'danger');
 
     &:hover,
     &.focused {
-      background: rgba($materialize-color-red, 0.1);
+      background: rgba(map-get($theme-colors, 'danger'), 0.1);
     }
 
     &.active {
-      background: $materialize-color-red;
-      color: $materialize-color-white;
+      background: map-get($theme-colors, 'danger');
+      color: map-get($theme-colors, 'white');
     }
   }
 }

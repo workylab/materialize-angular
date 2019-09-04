@@ -1,0 +1,16 @@
+$theme-transition-function-in: cubic-bezier(0.4, 0, 0.2, 1);
+$theme-transition-function-out: cubic-bezier(0.25, 0.8, 0.25, 1);
+$theme-transition-function-ease: ease;
+
+$theme-property-background: background;
+$theme-property-box-shadow: box-shadow;
+$theme-property-font-size: font-size;
+$theme-property-left: left;
+$theme-property-max-height: max-height;
+$theme-property-opacity: opacity;
+$theme-property-top: top;
+$theme-property-transform: transform;
+$theme-property-width: width;
+
+$theme-timer-sm: 200ms;
+$theme-timer-md: 350ms;

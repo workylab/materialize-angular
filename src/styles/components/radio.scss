@@ -1,4 +1,4 @@
-.#{$prefix}-radio {
+.#{$materialize-prefix}-radio {
   align-items: center;
   cursor: $materialize-radio-cursor;
   display: flex;
@@ -12,22 +12,22 @@
 
   &:not(.disabled) {
     @media (hover: hover) {
-      .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
+      .#{$materialize-prefix}-radio-indicator:hover .#{$materialize-prefix}-radio-indicator-ripple {
         background: rgba($materialize-radio-indicator-disabled-color, 0.2);
       }
 
-      &.active .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
+      &.active .#{$materialize-prefix}-radio-indicator:hover .#{$materialize-prefix}-radio-indicator-ripple {
         background: rgba($materialize-radio-indicator-ripple-background, 0.2);
       }
     }
   }
 
   &.focused:not(.disabled) {
-    .#{$prefix}-radio-indicator-ripple {
+    .#{$materialize-prefix}-radio-indicator-ripple {
       background: rgba($materialize-radio-indicator-ripple-background, 0.1);
     }
 
-    &.active .#{$prefix}-radio-indicator-ripple {
+    &.active .#{$materialize-prefix}-radio-indicator-ripple {
       background: rgba($materialize-radio-indicator-ripple-background, 0.1);
     }
   }
@@ -37,7 +37,7 @@
       background: rgba($materialize-radio-indicator-ripple-background, 0.3);
     }
 
-    .#{$prefix}-radio-indicator {
+    .#{$materialize-prefix}-radio-indicator {
       border-color: $materialize-radio-indicator-active-border-color;
 
       &::before {
@@ -47,7 +47,7 @@
     }
   }
 
-  &.disabled .#{$prefix}-radio-indicator {
+  &.disabled .#{$materialize-prefix}-radio-indicator {
     border-color: $materialize-radio-indicator-disabled-color;
     cursor: not-allowed;
 
@@ -57,7 +57,7 @@
   }
 }
 
-.#{$prefix}-radio-label {
+.#{$materialize-prefix}-radio-label {
   color: $materialize-radio-label-color;
   flex: 1;
   font-family: $materialize-radio-label-font-family;
@@ -67,7 +67,7 @@
   text-align: $materialize-radio-label-text-align;
 }
 
-.#{$prefix}-radio-indicator {
+.#{$materialize-prefix}-radio-indicator {
   border: $materialize-radio-indicator-border;
   border-radius: $materialize-radio-indicator-border-radius;
   display: $materialize-radio-indicator-display;
@@ -94,7 +94,7 @@
   }
 }
 
-.#{$prefix}-radio-indicator-ripple {
+.#{$materialize-prefix}-radio-indicator-ripple {
   border-radius: $materialize-radio-indicator-border-radius;
   height: $materialize-radio-indicator-ripple-size;
   left: 50%;
@@ -103,7 +103,7 @@
   transform: translate(-50%, -50%);
   transition: $materialize-radio-indicator-ripple-transition;
   width: $materialize-radio-indicator-ripple-size;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 
   .ripple {
     background: rgba($materialize-radio-indicator-ripple-background, 0.3);

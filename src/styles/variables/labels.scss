@@ -1,8 +1,8 @@
-$materialize-label-color: $materialize-color-purple !default;
+$materialize-label-color: map-get($theme-colors, 'primary') !default;
 $materialize-label-display: block !default;
-$materialize-label-font-family: $materialize-font-family-primary !default;
-$materialize-label-font-size: $materialize-font-size-xxs !default;
-$materialize-label-font-weight: $materialize-font-weight-regular !default;
+$materialize-label-font-family: $theme-font-family-primary !default;
+$materialize-label-font-size: $theme-font-size-sm !default;
+$materialize-label-font-weight: $theme-font-weight-regular !default;
 $materialize-label-margin: 0 !default;
 $materialize-label-outline: none !default;
-$materialize-label-padding: $materialize-space-xs $materialize-space-sm !default;
+$materialize-label-padding: $theme-space-xs $theme-space-sm !default;
