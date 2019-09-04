@@ -1,44 +1,44 @@
 .#{$prefix}-button.accent {
-  background: $materialize-button-primary-background;
-  border: $materialize-button-primary-border;
-  border-radius: $materialize-button-primary-border-radius;
-  box-shadow: $materialize-button-primary-box-shadow;
-  color: $materialize-button-primary-color;
-  cursor: $materialize-button-primary-cursor;
-  display: $materialize-button-primary-display;
-  font-family: $materialize-button-primary-font-family;
-  font-size: $materialize-button-primary-font-size;
-  font-weight: $materialize-button-primary-font-weight;
-  height: $materialize-button-primary-height;
-  margin: $materialize-button-primary-margin;
-  outline: $materialize-button-primary-outline;
-  padding: $materialize-button-primary-padding;
-  -webkit-tap-highlight-color: $materialize-button-primary-tap-highlight-color;
-  text-align: $materialize-button-primary-text-align;
-  text-transform: $materialize-button-primary-text-transform;
-  transition: $materialize-button-primary-transition;
-  white-space: $materialize-button-primary-white-space;
-  width: $materialize-button-primary-width;
+  background: $materialize-button-accent-background;
+  border: $materialize-button-accent-border;
+  border-radius: $materialize-button-accent-border-radius;
+  box-shadow: $materialize-button-accent-box-shadow;
+  color: $materialize-button-accent-color;
+  cursor: $materialize-button-accent-cursor;
+  display: $materialize-button-accent-display;
+  font-family: $materialize-button-accent-font-family;
+  font-size: $materialize-button-accent-font-size;
+  font-weight: $materialize-button-accent-font-weight;
+  height: $materialize-button-accent-height;
+  margin: $materialize-button-accent-margin;
+  outline: $materialize-button-accent-outline;
+  padding: $materialize-button-accent-padding;
+  -webkit-tap-highlight-color: $materialize-button-accent-tap-highlight-color;
+  text-align: $materialize-button-accent-text-align;
+  text-transform: $materialize-button-accent-text-transform;
+  transition: $materialize-button-accent-transition;
+  white-space: $materialize-button-accent-white-space;
+  width: $materialize-button-accent-width;
 
   @media (hover: hover) {
     &:hover {
-      background: $materialize-button-primary-hover-background;
+      background: $materialize-button-accent-hover-background;
     }
   }
 
   &.focused {
-    background: $materialize-button-primary-focused-background;
+    background: $materialize-button-accent-focused-background;
   }
 
   &[disabled] {
-    background: $materialize-button-primary-disabled-background;
-    box-shadow: $materialize-button-primary-disabled-box-shadow;
-    color: $materialize-button-primary-disabled-color;
+    background: $materialize-button-accent-disabled-background;
+    box-shadow: $materialize-button-accent-disabled-box-shadow;
+    color: $materialize-button-accent-disabled-color;
     cursor: not-allowed;
   }
 
   .ripple {
-    background: $materialize-button-primary-ripple-background;
+    background: $materialize-button-accent-ripple-background;
   }
 }
 

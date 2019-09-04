@@ -1,33 +1,33 @@
-$materialize-button-primary-background: map-get($theme-colors, 'primary') !default;
-$materialize-button-primary-border: 0 !default;
-$materialize-button-primary-border-radius: $theme-radius-sm !default;
-$materialize-button-primary-box-shadow: $theme-shadow-sm !default;
-$materialize-button-primary-color: map-get($theme-colors, 'white') !default;
-$materialize-button-primary-cursor: pointer !default;
-$materialize-button-primary-display: block !default;
-$materialize-button-primary-font-family: $theme-font-family-primary !default;
-$materialize-button-primary-font-size: $theme-font-size-md !default;
-$materialize-button-primary-font-weight: $theme-font-weight-regular !default;
-$materialize-button-primary-height: auto !default;
-$materialize-button-primary-margin: $theme-space-sm auto !default;
-$materialize-button-primary-outline: none !default;
-$materialize-button-primary-padding: $theme-space-sm $theme-space-md !default;
-$materialize-button-primary-tap-highlight-color: transparent !default;
-$materialize-button-primary-text-align: center !default;
-$materialize-button-primary-text-transform: uppercase !default;
-$materialize-button-primary-transition:
+$materialize-button-accent-background: map-get($theme-colors, 'primary') !default;
+$materialize-button-accent-border: 0 !default;
+$materialize-button-accent-border-radius: $theme-radius-sm !default;
+$materialize-button-accent-box-shadow: $theme-shadow-sm !default;
+$materialize-button-accent-color: map-get($theme-colors, 'white') !default;
+$materialize-button-accent-cursor: pointer !default;
+$materialize-button-accent-display: block !default;
+$materialize-button-accent-font-family: $theme-font-family-primary !default;
+$materialize-button-accent-font-size: $theme-font-size-md !default;
+$materialize-button-accent-font-weight: $theme-font-weight-regular !default;
+$materialize-button-accent-height: auto !default;
+$materialize-button-accent-margin: $theme-space-sm auto !default;
+$materialize-button-accent-outline: none !default;
+$materialize-button-accent-padding: $theme-space-sm $theme-space-md !default;
+$materialize-button-accent-tap-highlight-color: transparent !default;
+$materialize-button-accent-text-align: center !default;
+$materialize-button-accent-text-transform: uppercase !default;
+$materialize-button-accent-transition:
 $theme-property-background $theme-timer-md $theme-transition-function-ease !default;
-$materialize-button-primary-white-space: nowrap !default;
-$materialize-button-primary-width: auto !default;
+$materialize-button-accent-white-space: nowrap !default;
+$materialize-button-accent-width: auto !default;
 
-$materialize-button-primary-hover-background: lighten(map-get($theme-colors, 'primary'), 5%) !default;
-$materialize-button-primary-focused-background: lighten(map-get($theme-colors, 'primary'), 10%) !default;
+$materialize-button-accent-hover-background: lighten(map-get($theme-colors, 'primary'), 5%) !default;
+$materialize-button-accent-focused-background: lighten(map-get($theme-colors, 'primary'), 10%) !default;
 
-$materialize-button-primary-disabled-background: $materialize-color-gray !default;
-$materialize-button-primary-disabled-box-shadow: none !default;
-$materialize-button-primary-disabled-color: $materialize-color-gray-dark !default;
+$materialize-button-accent-disabled-background: $materialize-color-gray !default;
+$materialize-button-accent-disabled-box-shadow: none !default;
+$materialize-button-accent-disabled-color: $materialize-color-gray-dark !default;
 
-$materialize-button-primary-ripple-background: rgba(lighten(map-get($theme-colors, 'primary'), 50%), 0.2) !default;
+$materialize-button-accent-ripple-background: rgba(lighten(map-get($theme-colors, 'primary'), 50%), 0.2) !default;
 
 $materialize-button-outline-background: transparent !default;
 $materialize-button-outline-border: $theme-border-sm solid $materialize-color-gray !default;
