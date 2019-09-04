@@ -23,17 +23,27 @@ $theme-colors: (
   'white': $theme-color-white
 );
 
-@function generate_color_pallete($materialize-color, $prefix-variable) {
+@function generate_color_pallete($materialize-color, $materialize-prefix-variable) {
   $i: 10;
   $limit: 90;
   $pallete: ();
 
   @while $i <= $limit {
-    $pallete: map-merge($pallete, ('#{$prefix-variable}-#{$i}': darken($materialize-color, percentage($i / 100))));
+    $pallete: map-merge(
+      $pallete, (
+        '#{$materialize-prefix-variable}-#{$i}': darken(
+          $materialize-color, percentage($i / 100)
+        )
+      )
+    );
     $i: $i + 10;
   }
 
   @return $pallete;
 }
 
-$theme-colors: map-merge($theme-colors, generate_color_pallete(map-get($theme-colors, 'white'), 'gray'));
+$theme-colors: map-merge(
+  $theme-colors, generate_color_pallete(
+    map-get($theme-colors, 'white'), 'gray'
+  )
+);

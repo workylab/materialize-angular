@@ -1,4 +1,4 @@
-.#{$prefix}-icon {
+.#{$materialize-prefix}-icon {
   color: $materialize-icon-color;
   cursor: $materialize-icon-cursor;
   display: $materialize-icon-display;
@@ -7,23 +7,23 @@
   text-transform: $materialize-icon-text-transform;
 }
 
-.#{$prefix}-icon-xl {
+.#{$materialize-prefix}-icon-xl {
   font-size: $theme-icon-xl;
 }
 
-.#{$prefix}-icon-lg {
+.#{$materialize-prefix}-icon-lg {
   font-size: $theme-icon-lg;
 }
 
-.#{$prefix}-icon-md {
+.#{$materialize-prefix}-icon-md {
   font-size: $theme-icon-md;
 }
 
-.#{$prefix}-icon-sm {
+.#{$materialize-prefix}-icon-sm {
   font-size: $theme-icon-sm;
 }
 
-.#{$prefix}-icon-xs {
+.#{$materialize-prefix}-icon-xs {
   font-size: $theme-icon-xs;
 }
 

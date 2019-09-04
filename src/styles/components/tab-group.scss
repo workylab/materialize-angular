@@ -1,4 +1,4 @@
-.#{$prefix}-tab-group {
+.#{$materialize-prefix}-tab-group {
   align-items: $materialize-tab-group-align-items;
   border-color: $materialize-tab-group-border-color;
   border-style: $materialize-tab-group-border-style;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.#{$prefix}-tab-group-item {
+.#{$materialize-prefix}-tab-group-item {
   border-radius: $materialize-tab-group-item-border-radius;
   color: $materialize-tab-group-item-color;
   cursor: $materialize-tab-group-item-cursor;
@@ -40,14 +40,14 @@
   }
 }
 
-.#{$prefix}-tab-group-indicator-container {
+.#{$materialize-prefix}-tab-group-indicator-container {
   bottom: $materialize-tab-group-indicator-container-bottom;
   left: 0;
   position: absolute;
   transition-timing-function: $materialize-tab-group-indicator-container-transition-function;
 }
 
-.#{$prefix}-tab-group-indicator {
+.#{$materialize-prefix}-tab-group-indicator {
   background: $materialize-tab-group-indicator-background;
   border-radius: $materialize-tab-group-indicator-border-radius;
   height: $materialize-tab-group-indicator-height;

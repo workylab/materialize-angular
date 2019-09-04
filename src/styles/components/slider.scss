@@ -1,21 +1,21 @@
-.#{$prefix}-slider-container {
+.#{$materialize-prefix}-slider-container {
   margin: $materialize-slider-margin;
   padding: $materialize-slider-padding;
   -webkit-tap-highlight-color: $materialize-slider-tap-highlight-color;
   width: $materialize-slider-width;
 
   &.disabled {
-    .#{$prefix}-slider-track {
+    .#{$materialize-prefix}-slider-track {
       background: $materialize-slider-disabled-track-background;
     }
 
-    .#{$prefix}-slider-step {
+    .#{$materialize-prefix}-slider-step {
       background: $materialize-slider-disabled-step-background;
     }
   }
 }
 
-.#{$prefix}-slider-track-container {
+.#{$materialize-prefix}-slider-track-container {
   cursor: $materialize-slider-track-container-cursor;
   outline: $materialize-slider-track-container-outline;
   padding: $materialize-slider-track-container-padding;
@@ -23,7 +23,7 @@
   width: $materialize-slider-track-container-width;
 }
 
-.#{$prefix}-slider-step {
+.#{$materialize-prefix}-slider-step {
   background: $materialize-slider-step-background;
   height: $materialize-slider-step-height;
   position: $materialize-slider-step-position;
@@ -32,7 +32,7 @@
   width: $materialize-slider-step-width;
 }
 
-.#{$prefix}-slider-track {
+.#{$materialize-prefix}-slider-track {
   background: $materialize-slider-track-background;
   border-radius: $materialize-slider-track-border-radius;
   height: $materialize-slider-track-height;
@@ -41,7 +41,7 @@
   width: $materialize-slider-track-width;
 }
 
-.#{$prefix}-slider-indicator-container {
+.#{$materialize-prefix}-slider-indicator-container {
   left: $materialize-slider-indicator-container-left;
   position: $materialize-slider-indicator-container-position;
   top: $materialize-slider-indicator-container-top;
@@ -50,17 +50,17 @@
   z-index: $materialize-slider-indicator-container-z-index;
 }
 
-.#{$prefix}-slider-labels-container {
+.#{$materialize-prefix}-slider-labels-container {
   position: $materialize-slider-labels-container-position;
   width: $materialize-slider-labels-container-width;
 }
 
-#{$prefix}-slider.ng-touched.ng-dirty.ng-invalid {
-  .#{$prefix}-slider-track {
+#{$materialize-prefix}-slider.ng-touched.ng-dirty.ng-invalid {
+  .#{$materialize-prefix}-slider-track {
     background: $materialize-slider-invalid-track-background;
   }
 
-  .#{$prefix}-slider-step {
+  .#{$materialize-prefix}-slider-step {
     background: $materialize-slider-invalid-step-background;
   }
 }

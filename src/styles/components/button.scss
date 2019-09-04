@@ -1,4 +1,4 @@
-.#{$prefix}-button.accent {
+.#{$materialize-prefix}-button.accent {
   background: $materialize-button-accent-background;
   border: $materialize-button-accent-border;
   border-radius: $materialize-button-accent-border-radius;
@@ -42,7 +42,7 @@
   }
 }
 
-.#{$prefix}-button.outline {
+.#{$materialize-prefix}-button.outline {
   background: $materialize-button-outline-background;
   border: $materialize-button-outline-border;
   border-radius: $materialize-button-outline-border-radius;
@@ -85,7 +85,7 @@
   }
 }
 
-.#{$prefix}-button.text {
+.#{$materialize-prefix}-button.text {
   background: $materialize-button-text-background;
   border: $materialize-button-text-border;
   border-radius: $materialize-button-text-border-radius;

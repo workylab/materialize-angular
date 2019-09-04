@@ -1,75 +1,75 @@
-.#{$prefix}-drawer {
+.#{$materialize-prefix}-drawer {
   overflow: hidden;
   position: relative;
 
   &.left {
-    .#{$prefix}-drawer-content {
+    .#{$materialize-prefix}-drawer-content {
       left: 0;
     }
 
-    &.static .#{$prefix}-drawer-container {
+    &.static .#{$materialize-prefix}-drawer-container {
       margin-left: $materialize-drawer-content-width;
     }
 
-    &.push .#{$prefix}-drawer-content,
-    &.over .#{$prefix}-drawer-content {
+    &.push .#{$materialize-prefix}-drawer-content,
+    &.over .#{$materialize-prefix}-drawer-content {
       transform: translateX(-100%);
     }
 
-    &.open.push .#{$prefix}-drawer-container {
+    &.open.push .#{$materialize-prefix}-drawer-container {
       margin-left: $materialize-drawer-content-width;
     }
   }
 
   &.right {
-    .#{$prefix}-drawer-content {
+    .#{$materialize-prefix}-drawer-content {
       right: 0;
     }
 
-    &.static .#{$prefix}-drawer-container {
+    &.static .#{$materialize-prefix}-drawer-container {
       margin-right: $materialize-drawer-content-width;
     }
 
-    &.push .#{$prefix}-drawer-content,
-    &.over .#{$prefix}-drawer-content {
+    &.push .#{$materialize-prefix}-drawer-content,
+    &.over .#{$materialize-prefix}-drawer-content {
       transform: translateX(100%);
     }
 
-    &.open.push .#{$prefix}-drawer-container {
+    &.open.push .#{$materialize-prefix}-drawer-container {
       margin-right: $materialize-drawer-content-width;
     }
   }
 
-  &.static .#{$prefix}-drawer-content {
+  &.static .#{$materialize-prefix}-drawer-content {
     position: fixed;
   }
 
-  &.push .#{$prefix}-drawer-container {
+  &.push .#{$materialize-prefix}-drawer-container {
     transition-duration: inherit;
     transition-property: margin;
     transition-timing-function: $materialize-drawer-content-transition-function;
   }
 
-  &.push .#{$prefix}-drawer-content,
-  &.over .#{$prefix}-drawer-content {
+  &.push .#{$materialize-prefix}-drawer-content,
+  &.over .#{$materialize-prefix}-drawer-content {
     transition-duration: inherit;
     transition-property: transform;
     transition-timing-function: $materialize-drawer-content-transition-function;
   }
 
   &.open {
-    &.backdrop .#{$prefix}-drawer-backdrop {
+    &.backdrop .#{$materialize-prefix}-drawer-backdrop {
       opacity: 1;
     }
 
-    &.over .#{$prefix}-drawer-content,
-    &.push .#{$prefix}-drawer-content {
+    &.over .#{$materialize-prefix}-drawer-content,
+    &.push .#{$materialize-prefix}-drawer-content {
       transform: translateX(0);
     }
   }
 }
 
-.#{$prefix}-drawer-backdrop {
+.#{$materialize-prefix}-drawer-backdrop {
   background: $materialize-drawer-backdrop-background;
   bottom: 0;
   display: none;
@@ -85,7 +85,7 @@
   z-index: $materialize-drawer-backdrop-z-index;
 }
 
-.#{$prefix}-drawer-content {
+.#{$materialize-prefix}-drawer-content {
   background: $materialize-drawer-content-background;
   height: 100%;
   position: absolute;

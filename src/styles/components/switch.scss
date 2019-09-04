@@ -1,4 +1,4 @@
-.#{$prefix}-switch {
+.#{$materialize-prefix}-switch {
   align-items: center;
   cursor: $materialize-switch-cursor;
   display: flex;
@@ -11,38 +11,38 @@
     display: none;
   }
 
-  &.active .#{$prefix}-switch-indicator {
+  &.active .#{$materialize-prefix}-switch-indicator {
     left: $materialize-switch-active-indicator-left;
   }
 
   &:not(.disabled) {
     @media (hover: hover) {
-      .#{$prefix}-switch-indicator:hover .#{$prefix}-switch-indicator-ripple {
+      .#{$materialize-prefix}-switch-indicator:hover .#{$materialize-prefix}-switch-indicator-ripple {
         background: $materialize-switch-indicator-ripple-hover-inactive-background;
       }
 
-      &.active .#{$prefix}-switch-indicator:hover .#{$prefix}-switch-indicator-ripple {
+      &.active .#{$materialize-prefix}-switch-indicator:hover .#{$materialize-prefix}-switch-indicator-ripple {
         background: $materialize-switch-indicator-ripple-hover-active-background;
       }
     }
   }
 
   &.focused:not(.disabled) {
-    &.active .#{$prefix}-switch-indicator-ripple {
+    &.active .#{$materialize-prefix}-switch-indicator-ripple {
       background: $materialize-switch-indicator-ripple-focused-active-background;
     }
 
-    .#{$prefix}-switch-indicator-ripple {
+    .#{$materialize-prefix}-switch-indicator-ripple {
       background: $materialize-switch-indicator-ripple-focused-inactive-background;
     }
   }
 
   &.active:not(.disabled) {
-    .#{$prefix}-switch-indicator-track {
+    .#{$materialize-prefix}-switch-indicator-track {
       background: $materialize-switch-indicator-track-active-background;
     }
 
-    .#{$prefix}-switch-indicator {
+    .#{$materialize-prefix}-switch-indicator {
       background: $materialize-switch-indicator-active-background;
     }
 
@@ -52,22 +52,22 @@
   }
 
   &.disabled {
-    .#{$prefix}-switch-indicator-track {
+    .#{$materialize-prefix}-switch-indicator-track {
       background: $materialize-switch-indicator-track-disabled-background;
     }
 
-    .#{$prefix}-switch-indicator {
+    .#{$materialize-prefix}-switch-indicator {
       background: $materialize-switch-indicator-disabled-background;
       cursor: not-allowed;
     }
 
-    &.active .#{$prefix}-switch-indicator-track {
+    &.active .#{$materialize-prefix}-switch-indicator-track {
       background: $materialize-switch-indicator-track-disabled-background;
     }
   }
 }
 
-.#{$prefix}-switch-label {
+.#{$materialize-prefix}-switch-label {
   color: $materialize-switch-label-color;
   flex: 1;
   font-family: $materialize-switch-label-font-family;
@@ -77,7 +77,7 @@
   text-align: $materialize-switch-label-text-align;
 }
 
-.#{$prefix}-switch-indicator-track {
+.#{$materialize-prefix}-switch-indicator-track {
   background: $materialize-switch-indicator-track-background;
   border-radius: $materialize-switch-indicator-track-height / 2;
   height: $materialize-switch-indicator-track-height;
@@ -86,7 +86,7 @@
   width: $materialize-switch-indicator-track-width;
 }
 
-.#{$prefix}-switch-indicator {
+.#{$materialize-prefix}-switch-indicator {
   background: $materialize-switch-indicator-background;
   border-radius: $materialize-switch-indicator-border-radius;
   box-shadow: $materialize-switch-indicator-box-shadow;
@@ -99,7 +99,7 @@
   width: $materialize-switch-indicator-size;
 }
 
-.#{$prefix}-switch-indicator-ripple {
+.#{$materialize-prefix}-switch-indicator-ripple {
   border-radius: $materialize-switch-indicator-border-radius;
   height: $materialize-switch-indicator-ripple-size;
   left: 50%;
@@ -115,21 +115,21 @@
   }
 }
 
-#{$prefix}-switch.ng-touched.ng-dirty.ng-invalid {
-  .#{$prefix}-switch-indicator-track {
+#{$materialize-prefix}-switch.ng-touched.ng-dirty.ng-invalid {
+  .#{$materialize-prefix}-switch-indicator-track {
     background: lighten(map-get($theme-colors, 'danger'), 40%);
   }
 
-  .#{$prefix}-switch-indicator {
+  .#{$materialize-prefix}-switch-indicator {
     background: map-get($theme-colors, 'danger');
   }
 
-  .#{$prefix}-switch.focused .#{$prefix}-switch-indicator-ripple {
+  .#{$materialize-prefix}-switch.focused .#{$materialize-prefix}-switch-indicator-ripple {
     background: rgba(map-get($theme-colors, 'danger'), 0.05);
   }
 
   @media (hover: hover) {
-    &:hover .#{$prefix}-switch-indicator-ripple {
+    &:hover .#{$materialize-prefix}-switch-indicator-ripple {
       background: rgba(map-get($theme-colors, 'danger'), 0.1);
     }
   }

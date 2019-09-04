@@ -1,9 +1,9 @@
-#{$prefix}-radio-group.ng-touched.ng-dirty.ng-invalid .#{$prefix}-radio {
-  .#{$prefix}-radio-indicator {
+#{$materialize-prefix}-radio-group.ng-touched.ng-dirty.ng-invalid .#{$materialize-prefix}-radio {
+  .#{$materialize-prefix}-radio-indicator {
     border-color: map-get($theme-colors, 'danger');
   }
 
-  &.focused .#{$prefix}-radio-indicator-ripple {
+  &.focused .#{$materialize-prefix}-radio-indicator-ripple {
     background: rgba(map-get($theme-colors, 'danger'), 0.1);
   }
 
@@ -13,7 +13,7 @@
 
   &:not(.disabled) {
     @media (hover: hover) {
-      .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
+      .#{$materialize-prefix}-radio-indicator:hover .#{$materialize-prefix}-radio-indicator-ripple {
         background: rgba(map-get($theme-colors, 'danger'), 0.2);
       }
     }

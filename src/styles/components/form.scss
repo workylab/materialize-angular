@@ -1,4 +1,4 @@
-.#{$prefix}-form-control-container {
+.#{$materialize-prefix}-form-control-container {
   background: $materialize-form-control-container-background;
   border-color: $materialize-form-control-container-border-color;
   border-radius: $materialize-form-control-container-border-radius;
@@ -23,12 +23,12 @@
     z-index: $materialize-form-control-container-line-z-index;
   }
 
-  &.float-label .#{$prefix}-form-control {
+  &.float-label .#{$materialize-prefix}-form-control {
     padding-top: $materialize-form-control-with-label-padding-top;
   }
 
-  &.active .#{$prefix}-form-control-label,
-  &.focused .#{$prefix}-form-control-label {
+  &.active .#{$materialize-prefix}-form-control-label,
+  &.focused .#{$materialize-prefix}-form-control-label {
     font-size: $materialize-form-control-active-label-font-size;
     line-height: $materialize-form-control-active-label-font-size;
     top: $materialize-form-control-active-label-top;
@@ -40,7 +40,7 @@
       width: $materialize-form-control-focused-container-line-width;
     }
 
-    .#{$prefix}-form-control-label {
+    .#{$materialize-prefix}-form-control-label {
       color: $materialize-form-control-focused-label-color;
     }
   }
@@ -49,27 +49,27 @@
     background: $materialize-form-control-disabled-container-backgorund;
     border-color: $materialize-form-control-disabled-container-border-color;
 
-    .#{$prefix}-form-control,
-    .#{$prefix}-form-control-label {
+    .#{$materialize-prefix}-form-control,
+    .#{$materialize-prefix}-form-control-label {
       cursor: not-allowed;
     }
 
-    .#{$prefix}-form-control {
+    .#{$materialize-prefix}-form-control {
       color: $materialize-form-control-disabled-color;
     }
 
-    .#{$prefix}-form-control-label {
+    .#{$materialize-prefix}-form-control-label {
       color: $materialize-form-control-disabled-label-color;
     }
   }
 }
 
-.#{$prefix}-form-control-wrapper {
+.#{$materialize-prefix}-form-control-wrapper {
   position: relative;
   width: 100%;
 }
 
-.#{$prefix}-form-control {
+.#{$materialize-prefix}-form-control {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -97,7 +97,7 @@
   }
 }
 
-.#{$prefix}-form-control-label {
+.#{$materialize-prefix}-form-control-label {
   background: $materialize-form-control-label-background;
   border-radius: $materialize-form-control-container-border-radius;
   color: $materialize-form-control-label-color;
@@ -122,8 +122,8 @@
   }
 }
 
-.#{$prefix}-form-control-prefix,
-.#{$prefix}-form-control-suffix {
+.#{$materialize-prefix}-form-control-prefix,
+.#{$materialize-prefix}-form-control-suffix {
   align-items: center;
   color: $materialize-form-control-color;
   display: flex;
@@ -135,10 +135,10 @@
   white-space: nowrap;
 }
 
-.#{$prefix}-form-control-prefix:not(:empty) {
+.#{$materialize-prefix}-form-control-prefix:not(:empty) {
   padding-left: $theme-space-sm;
 }
 
-.#{$prefix}-form-control-suffix:not(:empty) {
+.#{$materialize-prefix}-form-control-suffix:not(:empty) {
   padding-right: $theme-space-sm;
 }

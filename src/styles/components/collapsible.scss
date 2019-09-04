@@ -1,36 +1,36 @@
-.#{$prefix}-collapsible {
+.#{$materialize-prefix}-collapsible {
   background: $materialize-collapsible-background;
   border: $materialize-collapsible-border;
   box-shadow: $materialize-collapsible-box-shadow;
   margin: $materialize-collapsible-margin;
   padding: $materialize-collapsible-padding;
 
-  &.open .#{$prefix}-collapsible-title-icon {
+  &.open .#{$materialize-prefix}-collapsible-title-icon {
     transform: translateY(-50%) rotate(180deg);
   }
 
-  &:hover:not(.disabled) .#{$prefix}-collapsible-title {
+  &:hover:not(.disabled) .#{$materialize-prefix}-collapsible-title {
     @media (hover: hover) {
       background: $materialize-collapsible-title-hover-background;
     }
   }
 
-  &.disabled .#{$prefix}-collapsible-title {
+  &.disabled .#{$materialize-prefix}-collapsible-title {
     cursor: not-allowed;
 
-    .#{$prefix}-collapsible-title-icon {
+    .#{$materialize-prefix}-collapsible-title-icon {
       cursor: not-allowed;
     }
   }
 }
 
-.#{$prefix}-collapsible-content-container {
+.#{$materialize-prefix}-collapsible-content-container {
   max-height: 0;
   overflow: hidden;
   transition: $materialize-collapsible-content-transition;
 }
 
-.#{$prefix}-collapsible-content {
+.#{$materialize-prefix}-collapsible-content {
   background: $materialize-collapsible-content-background;
   color: $materialize-collapsible-content-color;
   font-family: $materialize-collapsible-content-font-family;
@@ -45,7 +45,7 @@
   }
 }
 
-.#{$prefix}-collapsible-title {
+.#{$materialize-prefix}-collapsible-title {
   background: $materialize-collapsible-title-background;
   color: $materialize-collapsible-title-color;
   cursor: $materialize-collapsible-title-cursor;
@@ -61,7 +61,7 @@
   }
 }
 
-.#{$prefix}-collapsible-title-icon {
+.#{$materialize-prefix}-collapsible-title-icon {
   color: $materialize-collapsible-title-icon-color;
   font-size: $materialize-collapsible-title-icon-size;
   position: absolute;
