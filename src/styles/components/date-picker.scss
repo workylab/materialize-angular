@@ -18,7 +18,7 @@
       background: rgba(map-get($theme-colors, 'black'), 0.4);
     }
 
-    ::ng-deep .calendar-container {
+    .calendar-container {
       bottom: unset;
       left: 50%;
       margin-bottom: unset;
@@ -29,44 +29,42 @@
     }
   }
 
-  ::ng-deep {
-    .form-control-suffix-container {
-      padding-right: $theme-space-xxxs;
+  .form-control-suffix-container {
+    padding-right: $theme-space-xxxs;
+  }
+
+  .calendar-button {
+    background: unset;
+    box-shadow: unset;
+    color: map-get($theme-colors, 'black');
+    padding: $theme-space-xs $theme-space-xxxs;
+
+    &.focused {
+      background: darken($materialize-color-gray-light, 5%);
     }
 
-    .calendar-button {
-      background: unset;
-      box-shadow: unset;
-      color: map-get($theme-colors, 'black');
-      padding: $theme-space-xs $theme-space-xxxs;
-
-      &.focused {
-        background: darken($materialize-color-gray-light, 5%);
-      }
-
-      &:hover {
-        background: darken($materialize-color-gray-light, 10%);
-      }
-
-      &[disabled] {
-        background: $materialize-color-gray-light;
-      }
-
-      .ripple {
-        background: rgba(map-get($theme-colors, 'black'), 0.1);
-      }
+    &:hover {
+      background: darken($materialize-color-gray-light, 10%);
     }
 
-    .calendar-container {
-      bottom: 100%;
-      margin-bottom: $theme-space-xs;
-      position: absolute;
-      right: $theme-space-xs;
-      z-index: $theme-zindex-2;
+    &[disabled] {
+      background: $materialize-color-gray-light;
     }
+
+    .ripple {
+      background: rgba(map-get($theme-colors, 'black'), 0.1);
+    }
+  }
+
+  .calendar-container {
+    bottom: 100%;
+    margin-bottom: $theme-space-xs;
+    position: absolute;
+    right: $theme-space-xs;
+    z-index: $theme-zindex-2;
   }
 }
 
-:host.ng-touched.ng-dirty.ng-invalid ::ng-deep {
+#{$materialize-prefix}-date-picker.ng-touched.ng-dirty.ng-invalid {
   @extend %form-control-error;
 }
