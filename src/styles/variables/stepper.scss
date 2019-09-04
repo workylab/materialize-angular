@@ -1,35 +1,35 @@
 $materialize-stepper-margin: 0 !default;
-$materialize-stepper-padding: $materialize-space-md $materialize-space-lg !default;
+$materialize-stepper-padding: $theme-space-md $theme-space-lg !default;
 
 $materialize-stepper-divider-background: $materialize-color-gray-light !default;
-$materialize-stepper-divider-height: $materialize-border-md !default;
-$materialize-stepper-divider-margin: $materialize-space-md 0 0 !default;
+$materialize-stepper-divider-height: $theme-border-md !default;
+$materialize-stepper-divider-margin: $theme-space-md 0 0 !default;
 $materialize-stepper-divider-width: 100% !default;
 
-$materialize-stepper-divider-completed-background: $materialize-color-purple !default;
+$materialize-stepper-divider-completed-background: map-get($theme-colors, 'primary') !default;
 
-$materialize-step-padding: 0 $materialize-space-md !default;
+$materialize-step-padding: 0 $theme-space-md !default;
 
 $materialize-step-indicator-background: $materialize-color-gray-light !default;
-$materialize-step-indicator-border-radius: $materialize-radius-full !default;
+$materialize-step-indicator-border-radius: $theme-radius-full !default;
 $materialize-step-indicator-color: $materialize-color-gray !default;
-$materialize-step-indicator-font-family: $materialize-font-family-primary !default;
-$materialize-step-indicator-font-size: $materialize-font-size-lg !default;
-$materialize-step-indicator-font-weight: $materialize-font-weight-regular !default;
-$materialize-step-indicator-margin: 0 0 $materialize-space-xs !default;
+$materialize-step-indicator-font-family: $theme-font-family-primary !default;
+$materialize-step-indicator-font-size: $theme-font-size-xl !default;
+$materialize-step-indicator-font-weight: $theme-font-weight-regular !default;
+$materialize-step-indicator-margin: 0 0 $theme-space-xs !default;
 $materialize-step-indicator-size: 33px !default;
 
-$materialize-step-indicator-icon-color: $materialize-color-white !default;
+$materialize-step-indicator-icon-color: map-get($theme-colors, 'white') !default;
 $materialize-step-indicator-icon-size: 24px !default;
 
 $materialize-step-label-color: $materialize-color-gray-darkest !default;
-$materialize-step-label-font-family: $materialize-font-family-primary !default;
-$materialize-step-label-font-size: $materialize-font-size-sm !default;
-$materialize-step-label-font-weight: $materialize-font-weight-regular !default;
+$materialize-step-label-font-family: $theme-font-family-primary !default;
+$materialize-step-label-font-size: $theme-font-size-md !default;
+$materialize-step-label-font-weight: $theme-font-weight-regular !default;
 
-$materialize-step-active-indicator-background: $materialize-color-purple !default;
-$materialize-step-active-indicator-color: $materialize-color-white !default;
-$materialize-step-active-indicator-font-weight: $materialize-font-weight-medium !default;
+$materialize-step-active-indicator-background: map-get($theme-colors, 'primary') !default;
+$materialize-step-active-indicator-color: map-get($theme-colors, 'white') !default;
+$materialize-step-active-indicator-font-weight: $theme-font-weight-medium !default;
 
-$materialize-step-completed-indicator-background: $materialize-color-purple !default;
-$materialize-step-completed-indicator-color: $materialize-color-white !default;
+$materialize-step-completed-indicator-background: map-get($theme-colors, 'primary') !default;
+$materialize-step-completed-indicator-color: map-get($theme-colors, 'white') !default;

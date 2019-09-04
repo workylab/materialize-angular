@@ -1,33 +1,33 @@
-$materialize-collapsible-background: $materialize-color-white !default;
-$materialize-collapsible-box-shadow: $materialize-shadow-sm !default;
+$materialize-collapsible-background: map-get($theme-colors, 'white') !default;
+$materialize-collapsible-box-shadow: $theme-shadow-sm !default;
 $materialize-collapsible-border: 0 !default;
 $materialize-collapsible-margin: 0 !default;
 $materialize-collapsible-padding: 0 !default;
 
-$materialize-collapsible-title-background: $materialize-color-white !default;
+$materialize-collapsible-title-background: map-get($theme-colors, 'white') !default;
 $materialize-collapsible-title-color: $materialize-color-gray-darkest !default;
-$materialize-collapsible-title-cursor: $materialize-cursor-pointer !default;
-$materialize-collapsible-title-font-family: $materialize-font-family-primary !default;
-$materialize-collapsible-title-font-size: $materialize-font-size-sm !default;
-$materialize-collapsible-title-font-weight: $materialize-font-weight-regular !default;
+$materialize-collapsible-title-cursor: pointer !default;
+$materialize-collapsible-title-font-family: $theme-font-family-primary !default;
+$materialize-collapsible-title-font-size: $theme-font-size-md !default;
+$materialize-collapsible-title-font-weight: $theme-font-weight-regular !default;
 $materialize-collapsible-title-margin: 0 !default;
-$materialize-collapsible-title-padding: $materialize-space-sm !default;
+$materialize-collapsible-title-padding: $theme-space-sm !default;
 
 $materialize-collapsible-title-icon-color: $materialize-color-gray-darkest !default;
-$materialize-collapsible-title-icon-right: $materialize-space-xxxs !default;
+$materialize-collapsible-title-icon-right: $theme-space-xxxs !default;
 $materialize-collapsible-title-icon-size: 22px !default;
 $materialize-collapsible-title-icon-transition:
-$materialize-property-transform $materialize-timer-md $materialize-function-ease !default;
+$theme-property-transform $theme-timer-md $theme-transition-function-ease !default;
 
 $materialize-collapsible-title-hover-background: $materialize-color-gray-light !default;
 $materialize-collapsible-title-ripple-background: ligthen(rgba($materialize-color-gray, 0.1), 20%) !default;
 
-$materialize-collapsible-content-background: $materialize-color-white !default;
+$materialize-collapsible-content-background: map-get($theme-colors, 'white') !default;
 $materialize-collapsible-content-color: $materialize-color-gray-darkest !default;
-$materialize-collapsible-content-font-family: $materialize-font-family-primary !default;
-$materialize-collapsible-content-font-size: $materialize-font-size-sm !default;
-$materialize-collapsible-content-font-weight: $materialize-font-weight-regular !default;
+$materialize-collapsible-content-font-family: $theme-font-family-primary !default;
+$materialize-collapsible-content-font-size: $theme-font-size-md !default;
+$materialize-collapsible-content-font-weight: $theme-font-weight-regular !default;
 $materialize-collapsible-content-margin: 0 !default;
-$materialize-collapsible-content-padding: $materialize-space-sm !default;
+$materialize-collapsible-content-padding: $theme-space-sm !default;
 $materialize-collapsible-content-transition:
-$materialize-property-max-height $materialize-timer-md $materialize-function-in !default;
+$theme-property-max-height $theme-timer-md $theme-transition-function-in !default;

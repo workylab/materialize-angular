@@ -1,37 +1,37 @@
 .list-item {
   align-items: center;
-  border-radius: $materialize-radius-md;
+  border-radius: $theme-radius-md;
   color: $materialize-color-gray-dark;
   cursor: pointer;
   display: flex;
-  font-family: $materialize-font-family-primary;
+  font-family: $theme-font-family-primary;
   font-size: 16px;
-  font-weight: $materialize-font-weight-regular;
-  margin-bottom: $materialize-space-xxxs;
-  padding: $materialize-space-md $materialize-space-lg;
+  font-weight: $theme-font-weight-regular;
+  margin-bottom: $theme-space-xxxs;
+  padding: $theme-space-md $theme-space-lg;
   transition-duration: 250ms;
   transition-property: background, color;
   transition-timing-function: ease;
 
   &:hover {
-    background: lighten($materialize-color-purple, 50%);
-    color: $materialize-color-purple;
+    background: lighten(map-get($theme-colors, 'primary'), 50%);
+    color: map-get($theme-colors, 'primary');
   }
 
   &.active {
-    background: lighten($materialize-color-purple, 40%);
-    color: $materialize-color-purple;
-    font-weight: $materialize-font-weight-medium;
+    background: lighten(map-get($theme-colors, 'primary'), 40%);
+    color: map-get($theme-colors, 'primary');
+    font-weight: $theme-font-weight-medium;
   }
 
   .ripple {
-    background: rgba($materialize-color-purple, 0.15);
+    background: rgba(map-get($theme-colors, 'primary'), 0.15);
   }
 }
 
 .list {
   list-style: none;
-  padding: $materialize-space-md $materialize-space-xs;
+  padding: $theme-space-md $theme-space-xs;
 
   > *:last-child {
     margin-bottom: 0;

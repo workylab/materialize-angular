@@ -1,5 +1,5 @@
-.#{$prefix}-container,
-.#{$prefix}-container-fluid {
+.#{$materialize-prefix}-container,
+.#{$materialize-prefix}-container-fluid {
   margin-left: auto;
   margin-right: auto;
   padding-left: $materialize-grid-gap-size;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.#{$prefix}-row {
+.#{$materialize-prefix}-row {
   display: grid;
   grid-auto-rows: min-content;
   grid-template-columns: repeat($materialize-grid-columns, 1fr);
@@ -15,11 +15,11 @@
   margin-right: -$materialize-grid-gap-size;
 }
 
-.#{$prefix}-row-gap {
+.#{$materialize-prefix}-row-gap {
   grid-gap: $materialize-grid-gap-size;
 }
 
-[class^='#{$prefix}-col-'] {
+[class^='#{$materialize-prefix}-col-'] {
   padding: $materialize-grid-gap-size;
 }
 
@@ -27,7 +27,7 @@
   @each $key, $value in $materialize-breakpoints {
     @media (min-width: map-get($value,
     'breakpoint')) {
-      .#{$prefix}-container {
+      .#{$materialize-prefix}-container {
         max-width: map-get($value,
         'container-width');
       }
@@ -41,7 +41,7 @@
       @media (min-width: map-get($value,
       'min')) and (max-width: map-get($value,
       'max')) {
-        .#{$prefix}-hidden-#{$key} {
+        .#{$materialize-prefix}-hidden-#{$key} {
           display: none;
         }
       }
@@ -49,7 +49,7 @@
     @else {
       @media (min-width: map-get($value,
       'min')) {
-        .#{$prefix}-hidden-#{$key} {
+        .#{$materialize-prefix}-hidden-#{$key} {
           display: none;
         }
       }
@@ -59,7 +59,7 @@
 
 @mixin generate-columns($columns, $materialize-breakpoints) {
   @for $i from 1 through $columns {
-    .#{$prefix}-col-#{$i} {
+    .#{$materialize-prefix}-col-#{$i} {
       grid-column: span $i;
     }
   }
@@ -68,7 +68,7 @@
     @media (min-width: map-get($value,
     'breakpoint')) {
       @for $i from 1 through $columns {
-        .#{$prefix}-col-#{$key}-#{$i} {
+        .#{$materialize-prefix}-col-#{$key}-#{$i} {
           grid-column: span $i;
         }
       }

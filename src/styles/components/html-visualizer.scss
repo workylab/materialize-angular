@@ -1,28 +1,28 @@
-.#{$prefix}-html-visualizer {
+.#{$materialize-prefix}-html-visualizer {
   background: #F8F8FA;
   border-radius: 5px;
   color: #005CC5;
-  font-family: $materialize-font-family-secondary;
+  font-family: $theme-font-family-secondary;
   font-size: 14px;
-  font-weight: $materialize-font-weight-regular;
+  font-weight: $theme-font-weight-regular;
   line-height: 18px;
-  margin: $materialize-space-xs 0;
-  padding: $materialize-space-sm;
+  margin: $theme-space-xs 0;
+  padding: $theme-space-sm;
 }
 
-.#{$prefix}-html-visualizer-content {
+.#{$materialize-prefix}-html-visualizer-content {
   overflow-x: auto;
   white-space: pre;
 }
 
-.#{$prefix}-html-visualizer-attribute {
+.#{$materialize-prefix}-html-visualizer-attribute {
   color: #6F42C1;
 }
 
-.#{$prefix}-html-visualizer-value {
+.#{$materialize-prefix}-html-visualizer-value {
   color: #032F62;
 }
 
-.#{$prefix}-html-visualizer-symbol {
+.#{$materialize-prefix}-html-visualizer-symbol {
   color: #032F62;
 }

@@ -1,46 +1,10 @@
+$materialize-fonts-path: './../fonts' !default;
+$materialize-prefix: 'materialize' !default;
+
 @import './reset';
 
-@import './theme/borders';
-@import './theme/colors';
-@import './theme/cursors';
-@import './theme/fonts';
-@import './theme/icons';
-@import './theme/metrics';
-@import './theme/radius';
-@import './theme/shadows';
-@import './theme/zindex-levels';
-
-@import './transitions/functions';
-@import './transitions/properties';
-@import './transitions/timers';
-
-@import './variables';
-@import './variables/badges';
-@import './variables/buttons';
-@import './variables/button-toggle';
-@import './variables/button-toggle-group';
-@import './variables/cards';
-@import './variables/checkboxes';
-@import './variables/collapsible';
-@import './variables/drawer';
-@import './variables/forms';
-@import './variables/form-messages';
-@import './variables/glossary-items';
-@import './variables/icons';
-@import './variables/labels';
-@import './variables/modals';
-@import './variables/navbars';
-@import './variables/radios';
-@import './variables/select-options';
-@import './variables/sliders';
-@import './variables/slider-options';
-@import './variables/spinners';
-@import './variables/stepper';
-@import './variables/switches';
-@import './variables/tab-group';
-@import './variables/typography';
-@import './variables/grid';
-@import './variables/spacing';
+@import './theme/main';
+@import './variables/main';
 
 @import './placeholders/forms';
 

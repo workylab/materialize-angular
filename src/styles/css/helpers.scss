@@ -1,78 +1,78 @@
 body {
-  .#{$prefix}-text-align-left {
+  .#{$materialize-prefix}-text-align-left {
     text-align: left;
   }
 
-  .#{$prefix}-text-align-right {
+  .#{$materialize-prefix}-text-align-right {
     text-align: right;
   }
 
-  .#{$prefix}-text-align-center {
+  .#{$materialize-prefix}-text-align-center {
     text-align: center;
   }
 
-  .#{$prefix}-clearfix::after {
+  .#{$materialize-prefix}-clearfix::after {
     clear: both;
     content: '';
     display: block;
   }
 
-  .#{$prefix}-float-left {
+  .#{$materialize-prefix}-float-left {
     float: left;
   }
 
-  .#{$prefix}-float-right {
+  .#{$materialize-prefix}-float-right {
     float: right;
   }
 
-  .#{$prefix}-truncate {
+  .#{$materialize-prefix}-truncate {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .#{$prefix}-text-lowercase {
+  .#{$materialize-prefix}-text-lowercase {
     text-transform: lowercase;
   }
 
-  .#{$prefix}-text-uppercase {
+  .#{$materialize-prefix}-text-uppercase {
     text-transform: uppercase;
   }
 
-  .#{$prefix}-text-capitalize {
+  .#{$materialize-prefix}-text-capitalize {
     text-transform: capitalize;
   }
 
-  .#{$prefix}-font-weight-bold {
-    font-weight: $materialize-font-weight-bold;
+  .#{$materialize-prefix}-font-weight-bold {
+    font-weight: $theme-font-weight-bold;
   }
 
-  .#{$prefix}-font-weight-regular {
-    font-weight: $materialize-font-weight-regular;
+  .#{$materialize-prefix}-font-weight-regular {
+    font-weight: $theme-font-weight-regular;
   }
 
-  .#{$prefix}-font-weight-thin {
-    font-weight: $materialize-font-weight-thin;
+  .#{$materialize-prefix}-font-weight-thin {
+    font-weight: $theme-font-weight-thin;
   }
 
-  .#{$prefix}-font-weight-light {
-    font-weight: $materialize-font-weight-light;
+  .#{$materialize-prefix}-font-weight-light {
+    font-weight: $theme-font-weight-light;
   }
 
-  .#{$prefix}-font-weight-medium {
-    font-weight: $materialize-font-weight-medium;
+  .#{$materialize-prefix}-font-weight-medium {
+    font-weight: $theme-font-weight-medium;
   }
 
-  .#{$prefix}-font-weight-black {
-    font-weight: $materialize-font-weight-black;
+  .#{$materialize-prefix}-font-weight-black {
+    font-weight: $theme-font-weight-black;
   }
 
-  .#{$prefix}-font-italic {
+  .#{$materialize-prefix}-font-italic {
     font-style: italic;
   }
 
-  .#{$prefix}-img-fluid {
+  .#{$materialize-prefix}-img-fluid {
     height: auto;
     width: 100%;
   }

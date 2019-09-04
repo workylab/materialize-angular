@@ -1,4 +1,4 @@
-.#{$prefix}-checkbox {
+.#{$materialize-prefix}-checkbox {
   align-items: center;
   cursor: $materialize-checkbox-cursor;
   display: flex;
@@ -13,22 +13,22 @@
 
   &:not(.disabled) {
     @media (hover: hover) {
-      .#{$prefix}-checkbox-indicator:hover .#{$prefix}-checkbox-indicator-ripple {
+      .#{$materialize-prefix}-checkbox-indicator:hover .#{$materialize-prefix}-checkbox-indicator-ripple {
         background: $materialize-checkbox-indicator-ripple-hover-inactive-background;
       }
 
-      &.active .#{$prefix}-checkbox-indicator:hover .#{$prefix}-checkbox-indicator-ripple {
+      &.active .#{$materialize-prefix}-checkbox-indicator:hover .#{$materialize-prefix}-checkbox-indicator-ripple {
         background: $materialize-checkbox-indicator-ripple-hover-active-background;
       }
     }
   }
 
-  &.active .#{$prefix}-checkbox-indicator::before {
+  &.active .#{$materialize-prefix}-checkbox-indicator::before {
     border-bottom: $materialize-checkbox-indicator-arrow-width solid $materialize-checkbox-indicator-arrow-color;
     border-left: $materialize-checkbox-indicator-arrow-width solid $materialize-checkbox-indicator-arrow-color;
   }
 
-  &.active:not(.disabled) .#{$prefix}-checkbox-indicator {
+  &.active:not(.disabled) .#{$materialize-prefix}-checkbox-indicator {
     background: $materialize-checkbox-indicator-active-background;
     border: $materialize-checkbox-indicator-active-border;
 
@@ -38,29 +38,29 @@
   }
 
   &.focused:not(.disabled) {
-    &.active .#{$prefix}-checkbox-indicator-ripple {
+    &.active .#{$materialize-prefix}-checkbox-indicator-ripple {
       background: $materialize-checkbox-indicator-ripple-focused-active-background;
     }
 
-    .#{$prefix}-checkbox-indicator-ripple {
+    .#{$materialize-prefix}-checkbox-indicator-ripple {
       background: $materialize-checkbox-indicator-ripple-focused-inactive-background;
     }
   }
 
   &.disabled {
-    .#{$prefix}-checkbox-indicator {
+    .#{$materialize-prefix}-checkbox-indicator {
       background: $materialize-checkbox-indicator-disabled-background;
       border: $materialize-checkbox-indicator-disabled-border;
       cursor: not-allowed;
     }
 
-    &.active .#{$prefix}-checkbox-indicator {
+    &.active .#{$materialize-prefix}-checkbox-indicator {
       background: $materialize-checkbox-indicator-disabled-active-background;
     }
   }
 }
 
-.#{$prefix}-checkbox-label {
+.#{$materialize-prefix}-checkbox-label {
   color: $materialize-checkbox-label-color;
   flex: 1;
   font-family: $materialize-checkbox-label-font-family;
@@ -70,7 +70,7 @@
   text-align: $materialize-checkbox-label-text-align;
 }
 
-.#{$prefix}-checkbox-indicator-ripple {
+.#{$materialize-prefix}-checkbox-indicator-ripple {
   border-radius: $materialize-checkbox-indicator-ripple-border-radius;
   height: $materialize-checkbox-indicator-ripple-size;
   left: 50%;
@@ -79,14 +79,14 @@
   transform: translate(-50%, -50%);
   transition: $materialize-checkbox-indicator-ripple-transition;
   width: $materialize-checkbox-indicator-ripple-size;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 
   .ripple {
     background: $materialize-checkbox-ripple-background;
   }
 }
 
-.#{$prefix}-checkbox-indicator {
+.#{$materialize-prefix}-checkbox-indicator {
   background: $materialize-checkbox-indicator-background;
   border: $materialize-checkbox-indicator-border;
   border-radius: $materialize-checkbox-indicator-border-radius;
@@ -106,7 +106,7 @@
   }
 }
 
-.#{$prefix}-checkbox.indeterminate .#{$prefix}-checkbox-indicator {
+.#{$materialize-prefix}-checkbox.indeterminate .#{$materialize-prefix}-checkbox-indicator {
   background: $materialize-checkbox-indicator-active-background;
   border: $materialize-checkbox-indicator-active-border;
 
@@ -120,22 +120,22 @@
   }
 }
 
-#{$prefix}-checkbox.ng-touched.ng-dirty.ng-invalid {
-  .#{$prefix}-checkbox-indicator {
-    border-color: $materialize-color-red;
+#{$materialize-prefix}-checkbox.ng-touched.ng-dirty.ng-invalid {
+  .#{$materialize-prefix}-checkbox-indicator {
+    border-color: map-get($theme-colors, 'danger');
   }
 
-  .#{$prefix}-checkbox.focused .#{$prefix}-checkbox-indicator-ripple {
-    background: rgba($materialize-color-red, 0.05);
+  .#{$materialize-prefix}-checkbox.focused .#{$materialize-prefix}-checkbox-indicator-ripple {
+    background: rgba(map-get($theme-colors, 'danger'), 0.05);
   }
 
   @media (hover: hover) {
-    .#{$prefix}-checkbox-indicator:hover .#{$prefix}-checkbox-indicator-ripple {
-      background: rgba($materialize-color-red, 0.1);
+    .#{$materialize-prefix}-checkbox-indicator:hover .#{$materialize-prefix}-checkbox-indicator-ripple {
+      background: rgba(map-get($theme-colors, 'danger'), 0.1);
     }
   }
 
   .ripple {
-    background: rgba($materialize-color-red, 0.3);
+    background: rgba(map-get($theme-colors, 'danger'), 0.3);
   }
 }

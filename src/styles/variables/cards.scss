@@ -1,14 +1,14 @@
-$materialize-card-background: $materialize-color-white !default;
-$materialize-card-border-radius: $materialize-radius-sm !default;
-$materialize-card-box-shadow: $materialize-shadow-sm !default;
+$materialize-card-background: map-get($theme-colors, 'white') !default;
+$materialize-card-border-radius: $theme-radius-sm !default;
+$materialize-card-box-shadow: $theme-shadow-sm !default;
 $materialize-card-color: $materialize-color-gray-darkest !default;
-$materialize-card-cursor: $materialize-cursor-pointer !default;
-$materialize-card-font-family: $materialize-font-family-primary !default;
-$materialize-card-font-size: $materialize-font-size-sm !default;
-$materialize-card-font-weight: $materialize-font-weight-regular !default;
-$materialize-card-margin: 0 $materialize-space-md $materialize-space-sm !default;
-$materialize-card-padding: $materialize-space-lg !default;
-$materialize-card-tap-highlight-color: $materialize-color-transparent !default;
-$materialize-card-transition: $materialize-property-box-shadow $materialize-timer-sm $materialize-function-in !default;
+$materialize-card-cursor: pointer !default;
+$materialize-card-font-family: $theme-font-family-primary !default;
+$materialize-card-font-size: $theme-font-size-md !default;
+$materialize-card-font-weight: $theme-font-weight-regular !default;
+$materialize-card-margin: 0 $theme-space-md $theme-space-sm !default;
+$materialize-card-padding: $theme-space-lg !default;
+$materialize-card-tap-highlight-color: transparent !default;
+$materialize-card-transition: $theme-property-box-shadow $theme-timer-sm $theme-transition-function-in !default;
 
-$materialize-card-hover-box-shadow: $materialize-shadow-md !default;
+$materialize-card-hover-box-shadow: $theme-shadow-md !default;

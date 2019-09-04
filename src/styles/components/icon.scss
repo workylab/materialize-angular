@@ -1,35 +1,35 @@
-.#{$prefix}-icon {
+.#{$materialize-prefix}-icon {
   color: $materialize-icon-color;
   cursor: $materialize-icon-cursor;
   display: $materialize-icon-display;
-  font-family: $materialize-icon-font-family;
+  font-family: $theme-font-family-icon;
   outline: $materialize-icon-outline;
   text-transform: $materialize-icon-text-transform;
 }
 
-.#{$prefix}-icon-xl {
-  font-size: $materialize-icon-xl;
+.#{$materialize-prefix}-icon-xl {
+  font-size: $theme-icon-xl;
 }
 
-.#{$prefix}-icon-lg {
-  font-size: $materialize-icon-lg;
+.#{$materialize-prefix}-icon-lg {
+  font-size: $theme-icon-lg;
 }
 
-.#{$prefix}-icon-md {
-  font-size: $materialize-icon-md;
+.#{$materialize-prefix}-icon-md {
+  font-size: $theme-icon-md;
 }
 
-.#{$prefix}-icon-sm {
-  font-size: $materialize-icon-sm;
+.#{$materialize-prefix}-icon-sm {
+  font-size: $theme-icon-sm;
 }
 
-.#{$prefix}-icon-xs {
-  font-size: $materialize-icon-xs;
+.#{$materialize-prefix}-icon-xs {
+  font-size: $theme-icon-xs;
 }
 
 @font-face {
-  font-family: $materialize-icon-font-family;
+  font-family: $theme-font-family-icon;
   font-style: normal;
-  font-weight: $materialize-font-weight-thin;
+  font-weight: $theme-font-weight-thin;
   src: url('#{$materialize-fonts-path}/material-icons/material-icons.woff2');
 }

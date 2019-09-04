@@ -1,4 +1,4 @@
-.#{$prefix}-modal {
+.#{$materialize-prefix}-modal {
   align-items: $materialize-modal-align-items;
   display: flex;
   height: 100%;
@@ -10,20 +10,20 @@
   z-index: -1;
 
   &.active {
-    z-index: $materialize-zindex-level-4;
+    z-index: $theme-zindex-3;
 
-    .#{$prefix}-modal-backdrop {
+    .#{$materialize-prefix}-modal-backdrop {
       opacity: 1;
     }
 
-    .#{$prefix}-modal-content {
+    .#{$materialize-prefix}-modal-content {
       opacity: 1;
       transform: scale(1);
     }
   }
 }
 
-.#{$prefix}-modal-backdrop {
+.#{$materialize-prefix}-modal-backdrop {
   background: $materialize-modal-backdrop-background;
   bottom: 0;
   height: 100%;
@@ -36,10 +36,10 @@
   transition-property: $materialize-modal-backdrop-transition-property;
   transition-timing-function: $materialize-modal-backdrop-transition-function;
   width: 100%;
-  z-index: $materialize-zindex-level-0;
+  z-index: 0;
 }
 
-.#{$prefix}-modal-content {
+.#{$materialize-prefix}-modal-content {
   background: $materialize-modal-content-background;
   border-radius: $materialize-modal-content-border-radius;
   box-shadow: $materialize-modal-content-box-shadow;
@@ -53,10 +53,10 @@
   transition-duration: inherit;
   transition-property: opacity, transform;
   transition-timing-function: $materialize-modal-content-transition-function;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 }
 
-.#{$prefix}-modal-icon-close {
+.#{$materialize-prefix}-modal-icon-close {
   align-items: center;
   color: $materialize-modal-icon-close-color;
   cursor: pointer;
