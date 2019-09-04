@@ -30,20 +30,20 @@
 }
 
 #{$prefix}-button-toggle-group.ng-touched.ng-dirty.ng-invalid .#{$prefix}-button-toggle-group {
-  border-color: $materialize-color-red;
+  border-color: map-get($theme-colors, 'danger');
 
   .#{$prefix}-button-toggle {
-    border-right-color: $materialize-color-red;
-    color: $materialize-color-red;
+    border-right-color: map-get($theme-colors, 'danger');
+    color: map-get($theme-colors, 'danger');
 
     &:hover,
     &.focused {
-      background: rgba($materialize-color-red, 0.1);
+      background: rgba(map-get($theme-colors, 'danger'), 0.1);
     }
 
     &.active {
-      background: $materialize-color-red;
-      color: $materialize-color-white;
+      background: map-get($theme-colors, 'danger');
+      color: map-get($theme-colors, 'white');
     }
   }
 }

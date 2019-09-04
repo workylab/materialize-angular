@@ -136,9 +136,9 @@
 }
 
 .#{$prefix}-form-control-prefix:not(:empty) {
-  padding-left: $materialize-space-sm;
+  padding-left: $theme-space-sm;
 }
 
 .#{$prefix}-form-control-suffix:not(:empty) {
-  padding-right: $materialize-space-sm;
+  padding-right: $theme-space-sm;
 }

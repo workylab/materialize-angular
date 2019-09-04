@@ -45,27 +45,27 @@ body {
   }
 
   .#{$prefix}-font-weight-bold {
-    font-weight: $materialize-font-weight-bold;
+    font-weight: $theme-font-weight-bold;
   }
 
   .#{$prefix}-font-weight-regular {
-    font-weight: $materialize-font-weight-regular;
+    font-weight: $theme-font-weight-regular;
   }
 
   .#{$prefix}-font-weight-thin {
-    font-weight: $materialize-font-weight-thin;
+    font-weight: $theme-font-weight-thin;
   }
 
   .#{$prefix}-font-weight-light {
-    font-weight: $materialize-font-weight-light;
+    font-weight: $theme-font-weight-light;
   }
 
   .#{$prefix}-font-weight-medium {
-    font-weight: $materialize-font-weight-medium;
+    font-weight: $theme-font-weight-medium;
   }
 
   .#{$prefix}-font-weight-black {
-    font-weight: $materialize-font-weight-black;
+    font-weight: $theme-font-weight-black;
   }
 
   .#{$prefix}-font-italic {

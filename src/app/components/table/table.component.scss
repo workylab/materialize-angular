@@ -23,8 +23,8 @@
 }
 
 .table-cell {
-  border-bottom: $materialize-border-sm solid $materialize-color-gray;
-  border-right: $materialize-border-sm solid $materialize-color-gray;
+  border-bottom: $theme-border-sm solid $materialize-color-gray;
+  border-right: $theme-border-sm solid $materialize-color-gray;
   color: $materialize-color-gray-dark;
   cursor: pointer;
   display: table-cell;
@@ -55,7 +55,7 @@
   }
 
   .table-row:first-child .table-cell {
-    border-top: $materialize-border-sm solid $materialize-color-gray;
+    border-top: $theme-border-sm solid $materialize-color-gray;
   }
 }
 

@@ -108,7 +108,7 @@
   transform: translate(-50%, -50%);
   transition: $materialize-switch-indicator-ripple-transition;
   width: $materialize-switch-indicator-ripple-size;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 
   .ripple {
     background: $materialize-switch-ripple-background;
@@ -117,24 +117,24 @@
 
 #{$prefix}-switch.ng-touched.ng-dirty.ng-invalid {
   .#{$prefix}-switch-indicator-track {
-    background: lighten($materialize-color-red, 40%);
+    background: lighten(map-get($theme-colors, 'danger'), 40%);
   }
 
   .#{$prefix}-switch-indicator {
-    background: $materialize-color-red;
+    background: map-get($theme-colors, 'danger');
   }
 
   .#{$prefix}-switch.focused .#{$prefix}-switch-indicator-ripple {
-    background: rgba($materialize-color-red, 0.05);
+    background: rgba(map-get($theme-colors, 'danger'), 0.05);
   }
 
   @media (hover: hover) {
     &:hover .#{$prefix}-switch-indicator-ripple {
-      background: rgba($materialize-color-red, 0.1);
+      background: rgba(map-get($theme-colors, 'danger'), 0.1);
     }
   }
 
   .ripple {
-    background: rgba($materialize-color-red, 0.3);
+    background: rgba(map-get($theme-colors, 'danger'), 0.3);
   }
 }

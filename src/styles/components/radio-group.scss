@@ -1,20 +1,20 @@
 #{$prefix}-radio-group.ng-touched.ng-dirty.ng-invalid .#{$prefix}-radio {
   .#{$prefix}-radio-indicator {
-    border-color: $materialize-color-red;
+    border-color: map-get($theme-colors, 'danger');
   }
 
   &.focused .#{$prefix}-radio-indicator-ripple {
-    background: rgba($materialize-color-red, 0.1);
+    background: rgba(map-get($theme-colors, 'danger'), 0.1);
   }
 
   .ripple {
-    background: rgba($materialize-color-red, 0.3);
+    background: rgba(map-get($theme-colors, 'danger'), 0.3);
   }
 
   &:not(.disabled) {
     @media (hover: hover) {
       .#{$prefix}-radio-indicator:hover .#{$prefix}-radio-indicator-ripple {
-        background: rgba($materialize-color-red, 0.2);
+        background: rgba(map-get($theme-colors, 'danger'), 0.2);
       }
     }
   }

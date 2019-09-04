@@ -4,7 +4,7 @@
   font-size: $materialize-heading-1-font-size;
   font-weight: $materialize-heading-1-font-weight;
   line-height: 100%;
-  margin: $materialize-space-xxxl 0 $materialize-space-xxl 0;
+  margin: $theme-space-xxxl 0 $theme-space-xxl 0;
 }
 
 .h2 {
@@ -13,7 +13,7 @@
   font-size: $materialize-heading-2-font-size;
   font-weight: $materialize-heading-2-font-weight;
   line-height: 100%;
-  margin: $materialize-space-xxl 0 $materialize-space-xl 0;
+  margin: $theme-space-xxl 0 $theme-space-xl 0;
 }
 
 .h3 {
@@ -22,7 +22,7 @@
   font-size: $materialize-heading-3-font-size;
   font-weight: $materialize-heading-3-font-weight;
   line-height: 100%;
-  margin: $materialize-space-xl 0 $materialize-space-lg 0;
+  margin: $theme-space-xl 0 $theme-space-lg 0;
 }
 
 .h4 {
@@ -31,7 +31,7 @@
   font-size: $materialize-heading-4-font-size;
   font-weight: $materialize-heading-4-font-weight;
   line-height: 100%;
-  margin: $materialize-space-lg 0 $materialize-space-md 0;
+  margin: $theme-space-lg 0 $theme-space-md 0;
 }
 
 .h5 {
@@ -40,7 +40,7 @@
   font-size: $materialize-heading-5-font-size;
   font-weight: $materialize-heading-5-font-weight;
   line-height: 100%;
-  margin: $materialize-space-md 0 $materialize-space-sm 0;
+  margin: $theme-space-md 0 $theme-space-sm 0;
 }
 
 .h6 {
@@ -49,7 +49,7 @@
   font-size: $materialize-heading-6-font-size;
   font-weight: $materialize-heading-6-font-weight;
   line-height: 100%;
-  margin: $materialize-space-sm 0 $materialize-space-xs 0;
+  margin: $theme-space-sm 0 $theme-space-xs 0;
 }
 
 .blockquote {
@@ -60,6 +60,6 @@
   font-size: $materialize-blockquote-font-size;
   font-weight: $materialize-blockquote-font-weight;
   line-height: $materialize-blockquote-line-height;
-  margin: $materialize-space-lg 0 $materialize-space-lg;
-  padding-left: $materialize-space-lg;
+  margin: $theme-space-lg 0 $theme-space-lg;
+  padding-left: $theme-space-lg;
 }

@@ -103,7 +103,7 @@
   transform: translate(-50%, -50%);
   transition: $materialize-radio-indicator-ripple-transition;
   width: $materialize-radio-indicator-ripple-size;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 
   .ripple {
     background: rgba($materialize-radio-indicator-ripple-background, 0.3);

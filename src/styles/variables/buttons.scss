@@ -1,89 +1,89 @@
-$materialize-button-primary-background: $materialize-color-purple !default;
-$materialize-button-primary-border: $materialize-border-none !default;
-$materialize-button-primary-border-radius: $materialize-radius-sm !default;
-$materialize-button-primary-box-shadow: $materialize-shadow-sm !default;
-$materialize-button-primary-color: $materialize-color-white !default;
-$materialize-button-primary-cursor: $materialize-cursor-pointer !default;
+$materialize-button-primary-background: map-get($theme-colors, 'primary') !default;
+$materialize-button-primary-border: 0 !default;
+$materialize-button-primary-border-radius: $theme-radius-sm !default;
+$materialize-button-primary-box-shadow: $theme-shadow-sm !default;
+$materialize-button-primary-color: map-get($theme-colors, 'white') !default;
+$materialize-button-primary-cursor: pointer !default;
 $materialize-button-primary-display: block !default;
-$materialize-button-primary-font-family: $materialize-font-family-primary !default;
-$materialize-button-primary-font-size: $materialize-font-size-sm !default;
-$materialize-button-primary-font-weight: $materialize-font-weight-regular !default;
+$materialize-button-primary-font-family: $theme-font-family-primary !default;
+$materialize-button-primary-font-size: $theme-font-size-md !default;
+$materialize-button-primary-font-weight: $theme-font-weight-regular !default;
 $materialize-button-primary-height: auto !default;
-$materialize-button-primary-margin: $materialize-space-sm auto !default;
+$materialize-button-primary-margin: $theme-space-sm auto !default;
 $materialize-button-primary-outline: none !default;
-$materialize-button-primary-padding: $materialize-space-sm $materialize-space-md !default;
-$materialize-button-primary-tap-highlight-color: $materialize-color-transparent !default;
+$materialize-button-primary-padding: $theme-space-sm $theme-space-md !default;
+$materialize-button-primary-tap-highlight-color: transparent !default;
 $materialize-button-primary-text-align: center !default;
 $materialize-button-primary-text-transform: uppercase !default;
 $materialize-button-primary-transition:
-$materialize-property-background $materialize-timer-md $materialize-function-ease !default;
+$theme-property-background $theme-timer-md $theme-transition-function-ease !default;
 $materialize-button-primary-white-space: nowrap !default;
 $materialize-button-primary-width: auto !default;
 
-$materialize-button-primary-hover-background: lighten($materialize-color-purple, 5%) !default;
-$materialize-button-primary-focused-background: lighten($materialize-color-purple, 10%) !default;
+$materialize-button-primary-hover-background: lighten(map-get($theme-colors, 'primary'), 5%) !default;
+$materialize-button-primary-focused-background: lighten(map-get($theme-colors, 'primary'), 10%) !default;
 
 $materialize-button-primary-disabled-background: $materialize-color-gray !default;
 $materialize-button-primary-disabled-box-shadow: none !default;
 $materialize-button-primary-disabled-color: $materialize-color-gray-dark !default;
 
-$materialize-button-primary-ripple-background: rgba(lighten($materialize-color-purple, 50%), 0.2) !default;
+$materialize-button-primary-ripple-background: rgba(lighten(map-get($theme-colors, 'primary'), 50%), 0.2) !default;
 
-$materialize-button-outline-background: $materialize-color-transparent !default;
-$materialize-button-outline-border: $materialize-border-sm solid $materialize-color-gray !default;
-$materialize-button-outline-border-radius: $materialize-radius-sm !default;
-$materialize-button-outline-color: $materialize-color-purple !default;
-$materialize-button-outline-cursor: $materialize-cursor-pointer !default;
+$materialize-button-outline-background: transparent !default;
+$materialize-button-outline-border: $theme-border-sm solid $materialize-color-gray !default;
+$materialize-button-outline-border-radius: $theme-radius-sm !default;
+$materialize-button-outline-color: map-get($theme-colors, 'primary') !default;
+$materialize-button-outline-cursor: pointer !default;
 $materialize-button-outline-display: block !default;
-$materialize-button-outline-font-family: $materialize-font-family-primary !default;
-$materialize-button-outline-font-size: $materialize-font-size-sm !default;
-$materialize-button-outline-font-weight: $materialize-font-weight-regular !default;
+$materialize-button-outline-font-family: $theme-font-family-primary !default;
+$materialize-button-outline-font-size: $theme-font-size-md !default;
+$materialize-button-outline-font-weight: $theme-font-weight-regular !default;
 $materialize-button-outline-height: auto !default;
-$materialize-button-outline-margin: $materialize-space-sm auto !default;
+$materialize-button-outline-margin: $theme-space-sm auto !default;
 $materialize-button-outline-outline: none !default;
-$materialize-button-outline-padding: $materialize-space-sm $materialize-space-md !default;
-$materialize-button-outline-tap-highlight-color: $materialize-color-transparent !default;
+$materialize-button-outline-padding: $theme-space-sm $theme-space-md !default;
+$materialize-button-outline-tap-highlight-color: transparent !default;
 $materialize-button-outline-text-align: center !default;
 $materialize-button-outline-text-transform: uppercase !default;
 $materialize-button-outline-transition:
-$materialize-property-background $materialize-timer-md $materialize-function-ease !default;
+$theme-property-background $theme-timer-md $theme-transition-function-ease !default;
 $materialize-button-outline-white-space: nowrap !default;
 $materialize-button-outline-width: auto !default;
 
-$materialize-button-outline-hover-background: rgba($materialize-color-purple, 0.05) !default;
-$materialize-button-outline-focused-background: rgba($materialize-color-purple, 0.1) !default;
+$materialize-button-outline-hover-background: rgba(map-get($theme-colors, 'primary'), 0.05) !default;
+$materialize-button-outline-focused-background: rgba(map-get($theme-colors, 'primary'), 0.1) !default;
 
-$materialize-button-outline-disabled-background: $materialize-color-transparent !default;
-$materialize-button-outline-disabled-border: $materialize-border-sm solid $materialize-color-gray !default;
+$materialize-button-outline-disabled-background: transparent !default;
+$materialize-button-outline-disabled-border: $theme-border-sm solid $materialize-color-gray !default;
 $materialize-button-outline-disabled-color: $materialize-color-gray !default;
 
-$materialize-button-outline-ripple-background: rgba($materialize-color-purple, 0.2) !default;
+$materialize-button-outline-ripple-background: rgba(map-get($theme-colors, 'primary'), 0.2) !default;
 
-$materialize-button-text-background: $materialize-color-transparent !default;
-$materialize-button-text-border: $materialize-border-none !default;
-$materialize-button-text-border-radius: $materialize-radius-sm !default;
-$materialize-button-text-color: $materialize-color-purple !default;
-$materialize-button-text-cursor: $materialize-cursor-pointer !default;
+$materialize-button-text-background: transparent !default;
+$materialize-button-text-border: 0 !default;
+$materialize-button-text-border-radius: $theme-radius-sm !default;
+$materialize-button-text-color: map-get($theme-colors, 'primary') !default;
+$materialize-button-text-cursor: pointer !default;
 $materialize-button-text-display: block !default;
-$materialize-button-text-font-family: $materialize-font-family-primary !default;
-$materialize-button-text-font-size: $materialize-font-size-sm !default;
-$materialize-button-text-font-weight: $materialize-font-weight-regular !default;
+$materialize-button-text-font-family: $theme-font-family-primary !default;
+$materialize-button-text-font-size: $theme-font-size-md !default;
+$materialize-button-text-font-weight: $theme-font-weight-regular !default;
 $materialize-button-text-height: auto !default;
-$materialize-button-text-margin: $materialize-space-sm auto !default;
+$materialize-button-text-margin: $theme-space-sm auto !default;
 $materialize-button-text-outline: none !default;
-$materialize-button-text-padding: $materialize-space-sm $materialize-space-md !default;
-$materialize-button-text-tap-highlight-color: $materialize-color-transparent !default;
+$materialize-button-text-padding: $theme-space-sm $theme-space-md !default;
+$materialize-button-text-tap-highlight-color: transparent !default;
 $materialize-button-text-text-align: center !default;
 $materialize-button-text-text-transform: uppercase !default;
 $materialize-button-text-transition:
-$materialize-property-background $materialize-timer-md $materialize-function-ease !default;
+$theme-property-background $theme-timer-md $theme-transition-function-ease !default;
 $materialize-button-text-white-space: nowrap !default;
 $materialize-button-text-width: auto !default;
 
-$materialize-button-text-hover-background: rgba($materialize-color-purple, 0.05) !default;
-$materialize-button-text-focused-background: rgba($materialize-color-purple, 0.1) !default;
+$materialize-button-text-hover-background: rgba(map-get($theme-colors, 'primary'), 0.05) !default;
+$materialize-button-text-focused-background: rgba(map-get($theme-colors, 'primary'), 0.1) !default;
 
-$materialize-button-text-disabled-background: $materialize-color-transparent !default;
+$materialize-button-text-disabled-background: transparent !default;
 $materialize-button-text-disabled-color: $materialize-color-gray !default;
 
-$materialize-button-text-ripple-background: rgba($materialize-color-purple, 0.2) !default;
+$materialize-button-text-ripple-background: rgba(map-get($theme-colors, 'primary'), 0.2) !default;

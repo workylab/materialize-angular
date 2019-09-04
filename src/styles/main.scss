@@ -2,17 +2,13 @@
 
 @import './theme/borders';
 @import './theme/colors';
-@import './theme/cursors';
 @import './theme/fonts';
 @import './theme/icons';
 @import './theme/metrics';
 @import './theme/radius';
 @import './theme/shadows';
+@import './theme/transitions';
 @import './theme/zindex-levels';
-
-@import './transitions/functions';
-@import './transitions/properties';
-@import './transitions/timers';
 
 @import './variables';
 @import './variables/badges';

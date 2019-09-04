@@ -20,7 +20,7 @@
 .#{$prefix}-form-control-select-icon {
   color: $materialize-color-gray-dark;
   position: absolute;
-  right: $materialize-space-xs;
+  right: $theme-space-xs;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 300ms ease;
@@ -35,20 +35,20 @@
   right: 0;
   top: 0;
   width: 100%;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 }
 
 .#{$prefix}-form-control-select-menu {
-  background: $materialize-color-white;
-  box-shadow: $materialize-shadow-md;
+  background: map-get($theme-colors, 'white');
+  box-shadow: $theme-shadow-md;
   cursor: pointer;
   display: none;
   left: 0;
-  padding: $materialize-space-xs 0;
+  padding: $theme-space-xs 0;
   position: absolute;
   top: 100%;
   width: 100%;
-  z-index: $materialize-zindex-level-2;
+  z-index: $theme-zindex-2;
 }
 
 #{$prefix}-select.ng-touched.ng-dirty.ng-invalid {

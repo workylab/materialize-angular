@@ -79,7 +79,7 @@
   transform: translate(-50%, -50%);
   transition: $materialize-checkbox-indicator-ripple-transition;
   width: $materialize-checkbox-indicator-ripple-size;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 
   .ripple {
     background: $materialize-checkbox-ripple-background;
@@ -122,20 +122,20 @@
 
 #{$prefix}-checkbox.ng-touched.ng-dirty.ng-invalid {
   .#{$prefix}-checkbox-indicator {
-    border-color: $materialize-color-red;
+    border-color: map-get($theme-colors, 'danger');
   }
 
   .#{$prefix}-checkbox.focused .#{$prefix}-checkbox-indicator-ripple {
-    background: rgba($materialize-color-red, 0.05);
+    background: rgba(map-get($theme-colors, 'danger'), 0.05);
   }
 
   @media (hover: hover) {
     .#{$prefix}-checkbox-indicator:hover .#{$prefix}-checkbox-indicator-ripple {
-      background: rgba($materialize-color-red, 0.1);
+      background: rgba(map-get($theme-colors, 'danger'), 0.1);
     }
   }
 
   .ripple {
-    background: rgba($materialize-color-red, 0.3);
+    background: rgba(map-get($theme-colors, 'danger'), 0.3);
   }
 }

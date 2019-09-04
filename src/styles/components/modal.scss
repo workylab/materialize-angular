@@ -10,7 +10,7 @@
   z-index: -1;
 
   &.active {
-    z-index: $materialize-zindex-level-4;
+    z-index: $theme-zindex-3;
 
     .#{$prefix}-modal-backdrop {
       opacity: 1;
@@ -36,7 +36,7 @@
   transition-property: $materialize-modal-backdrop-transition-property;
   transition-timing-function: $materialize-modal-backdrop-transition-function;
   width: 100%;
-  z-index: $materialize-zindex-level-0;
+  z-index: 0;
 }
 
 .#{$prefix}-modal-content {
@@ -53,7 +53,7 @@
   transition-duration: inherit;
   transition-property: opacity, transform;
   transition-timing-function: $materialize-modal-content-transition-function;
-  z-index: $materialize-zindex-level-1;
+  z-index: $theme-zindex-1;
 }
 
 .#{$prefix}-modal-icon-close {
