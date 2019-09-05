@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://materialize-angular.workylab.com/">
-    <img src="https://workylab.com/img/logos/materialize-logo.png" width="150">
+    <img src="https://res.cloudinary.com/workylab/image/upload/v1567652656/materialize-angular_logo.png" width="150">
   </a>
 </p>
 
