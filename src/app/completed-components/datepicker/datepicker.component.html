@@ -1,5 +1,5 @@
-<div class="date-picker" [class.full-size]="fullSize">
-  <div #backdrop *ngIf="isOpen" class="date-picker-backdrop"></div>
+<div [ngClass]="[prefix + '-datepicker', className]" [class.full-size]="fullSize">
+  <div #backdrop *ngIf="isOpen" [ngClass]="prefix + '-datepicker-backdrop'"></div>
 
   <materialize-input
     [disabled]="disabled"
@@ -12,10 +12,18 @@
     (onChange)="onInputChange($event)"
     (onFocus)="onInputFocus()"
   >
-    <materialize-button materializeSuffix [disabled]="disabled" (onClick)="open()">
-      <materialize-icon className="calendar-button">calendar_today</materialize-icon>
+    <materialize-button (onClick)="open()"
+      materializeSuffix
+      [className]="prefix + '-datepicker-button'"
+      [disabled]="disabled"
+    >
+      <materialize-icon [className]="prefix + '-datepicker-button'">calendar_today</materialize-icon>
     </materialize-button>
   </materialize-input>
 
-  <materialize-calendar *ngIf="isOpen" (onSelectDay)="onSelectDay($event)" [date]="date"></materialize-calendar>
+  <materialize-calendar *ngIf="isOpen"
+    [className]="prefix + '-datepicker-calendar'"
+    [date]="date"
+    (onSelectDay)="onSelectDay($event)">
+  </materialize-calendar>
 </div>

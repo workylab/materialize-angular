@@ -50,6 +50,8 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() required: boolean = DatePickerComponent.defaultProps.required;
   @Input() value: string = DatePickerComponent.defaultProps.value;
 
+  public prefix = config.components.prefix;
+
   public date: Date;
   public isOpen: boolean;
 
