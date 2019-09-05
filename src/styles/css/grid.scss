@@ -20,16 +20,14 @@
 }
 
 [class^='#{$materialize-prefix}-col-'] {
-  padding: $materialize-grid-gap-size;
+  padding: $materialize-grid-gap-size 0;
 }
 
 @mixin generate-container-rules($materialize-breakpoints) {
   @each $key, $value in $materialize-breakpoints {
-    @media (min-width: map-get($value,
-    'breakpoint')) {
+    @media (min-width: map-get($value, 'breakpoint')) {
       .#{$materialize-prefix}-container {
-        max-width: map-get($value,
-        'container-width');
+        max-width: map-get($value, 'container-width');
       }
     }
   }
@@ -38,17 +36,14 @@
 @mixin generate-hidden-classes($materialize-media-queries) {
   @each $key, $value in $materialize-media-queries {
     @if map-get($value, 'max') {
-      @media (min-width: map-get($value,
-      'min')) and (max-width: map-get($value,
-      'max')) {
+      @media (min-width: map-get($value, 'min')) and (max-width: map-get($value, 'max')) {
         .#{$materialize-prefix}-hidden-#{$key} {
           display: none;
         }
       }
     }
     @else {
-      @media (min-width: map-get($value,
-      'min')) {
+      @media (min-width: map-get($value, 'min')) {
         .#{$materialize-prefix}-hidden-#{$key} {
           display: none;
         }
@@ -65,8 +60,7 @@
   }
 
   @each $key, $value in $materialize-breakpoints {
-    @media (min-width: map-get($value,
-    'breakpoint')) {
+    @media (min-width: map-get($value, 'breakpoint')) {
       @for $i from 1 through $columns {
         .#{$materialize-prefix}-col-#{$key}-#{$i} {
           grid-column: span $i;
