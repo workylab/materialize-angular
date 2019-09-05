@@ -1,4 +1,4 @@
-import { DayLabels } from '../components/calendar/calendar.model';
+import { DayLabels } from '../completed-components/calendar/calendar.model';
 
 export const days: DayLabels = {
   friday: {

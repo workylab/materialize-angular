@@ -9,10 +9,12 @@ import { MaterializeButtonModule } from './completed-components/button/button.mo
 import {
   MaterializeButtonToggleGroupModule
 } from './completed-components/button-toggle-group/button-toggle-group.module';
+import { MaterializeCalendarModule } from './completed-components/calendar/calendar.module';
 import { MaterializeCardModule } from './completed-components/card/card.module';
 import { MaterializeCheckboxModule } from './completed-components/checkbox/checkbox.module';
 import { MaterializeCollapsibleModule } from './completed-components/collapsible/collapsible.module';
 import { MaterializeCommonModule } from './completed-components/common/common.module';
+import { MaterializeDatePickerModule } from './completed-components/datepicker/datepicker.module';
 import { MaterializeDrawerModule } from './completed-components/drawer/drawer.module';
 import { MaterializeFormMessageModule } from './completed-components/form-message/form-message.module';
 import { MaterializeGlossaryModule } from './completed-components/glossary/glossary.module';
@@ -45,10 +47,12 @@ import { NgModule } from '@angular/core';
     MaterializeAccordionModule,
     MaterializeButtonModule,
     MaterializeButtonToggleGroupModule,
+    MaterializeCalendarModule,
     MaterializeCardModule,
     MaterializeCheckboxModule,
     MaterializeCommonModule,
     MaterializeCollapsibleModule,
+    MaterializeDatePickerModule,
     MaterializeFormMessageModule,
     MaterializeGlossaryModule,
     MaterializeIconModule,

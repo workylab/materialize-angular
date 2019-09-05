@@ -3,7 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
 import { DateModel } from '../calendar/calendar.model';
 import { DatePickerModel } from './datepicker.model';
-import { INPUT_TYPE } from '../../completed-components/input/input.model';
+import { INPUT_TYPE } from '../input/input.model';
 
 @Component({
   providers: [{
@@ -49,6 +49,8 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() placeholder: string = DatePickerComponent.defaultProps.placeholder;
   @Input() required: boolean = DatePickerComponent.defaultProps.required;
   @Input() value: string = DatePickerComponent.defaultProps.value;
+
+  public prefix = config.components.prefix;
 
   public date: Date;
   public isOpen: boolean;

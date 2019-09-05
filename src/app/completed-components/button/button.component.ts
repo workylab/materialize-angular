@@ -42,10 +42,8 @@ export class ButtonComponent implements ButtonModel {
 
   onClick() {
     if (!this.disabled) {
-      setTimeout(() => {
-        this.isFocused = false;
-        this.onClickEmitter.emit();
-      }, this.rippleDuration);
+      this.isFocused = false;
+      this.onClickEmitter.emit();
     }
   }
 
