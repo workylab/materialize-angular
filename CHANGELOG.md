@@ -1,5 +1,19 @@
 # Change Log
 
+## [v0.5.3](https://github.com/workylab/materialize-angular/tree/v0.5.3) (2019-09-05)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.2...v0.5.3)
+
+**Implemented enhancements:**
+
+- Change logo url to CDN [\#136](https://github.com/workylab/materialize-angular/pull/136) ([igayoso](https://github.com/igayoso))
+- Add merge back when npm publish [\#135](https://github.com/workylab/materialize-angular/pull/135) ([igayoso](https://github.com/igayoso))
+- Feature/datepicker [\#134](https://github.com/workylab/materialize-angular/pull/134) ([alexzoul](https://github.com/alexzoul))
+
+**Fixed bugs:**
+
+- Hotfix/grid padding [\#131](https://github.com/workylab/materialize-angular/pull/131) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.5.2](https://github.com/workylab/materialize-angular/tree/v0.5.2) (2019-09-04)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.1...v0.5.2)
