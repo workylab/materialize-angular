@@ -2,7 +2,6 @@ import { CalendarModel, DateLabel, DateModel, DayLabels, MonthLabels, MonthModel
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { config } from '../../config';
 import { days } from '../../fixtures/calendar-week-days';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { months } from '../../fixtures/calendar-months';
 
 @Component({
@@ -23,6 +22,8 @@ export class CalendarComponent implements OnInit {
   @Input() className: string = CalendarComponent.defaultProps.className;
   @Input() date: Date = CalendarComponent.defaultProps.date;
   @Input() displayOtherMonthDays: boolean = CalendarComponent.defaultProps.displayOtherMonthDays;
+
+  public prefix = config.components.prefix;
 
   public dayLabels: Array<DateLabel>;
   public monthLabels: Array<DateLabel>;
@@ -235,7 +236,7 @@ export class CalendarComponent implements OnInit {
 
   scrollToActiveYear() {
     const { nativeElement } = this.yearsContainerRef;
-    const activeYear: HTMLElement = nativeElement.querySelector('.current');
+    const activeYear: HTMLElement = nativeElement.querySelector('.selected');
 
     if (activeYear) {
       const top = this.getScrollCenter(nativeElement, activeYear);
