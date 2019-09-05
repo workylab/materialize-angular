@@ -74296,7 +74296,7 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["Version"]('7.2.15'
 /*!***********************************************************************!*\
   !*** ./node_modules/materialize-angular/fesm5/materialize-angular.js ***!
   \***********************************************************************/
-/*! exports provided: MaterializeAccordionModule, MaterializeButtonModule, MaterializeButtonToggleGroupModule, MaterializeCardModule, MaterializeCheckboxModule, MaterializeCollapsibleModule, MaterializeCommonModule, MaterializeDrawerModule, MaterializeFormMessageModule, MaterializeGlossaryModule, MaterializeHTMLVisualizerModule, MaterializeIconModule, MaterializeInputModule, MaterializeLabelModule, MaterializeModalModule, MaterializeNavbarModule, MaterializeRadioGroupModule, MaterializeScrollSpyModule, MaterializeSelectModule, MaterializeSliderModule, MaterializeStepperModule, MaterializeSwitchModule, MaterializeTabGroupModule, MaterializeTextAreaModule, ɵa, ɵb, ɵba, ɵbb, ɵbc, ɵbd, ɵbe, ɵbf, ɵbg, ɵbh, ɵbi, ɵbj, ɵbk, ɵbl, ɵbm, ɵbn, ɵbo, ɵbp, ɵc, ɵd, ɵe, ɵf, ɵg, ɵh, ɵi, ɵj, ɵk, ɵl, ɵm, ɵn, ɵo, ɵp, ɵq, ɵr, ɵs, ɵt, ɵu, ɵv, ɵw, ɵx, ɵy, ɵz */
+/*! exports provided: MaterializeAccordionModule, MaterializeButtonModule, MaterializeButtonToggleGroupModule, MaterializeCalendarModule, MaterializeCardModule, MaterializeCheckboxModule, MaterializeCollapsibleModule, MaterializeCommonModule, MaterializeDatePickerModule, MaterializeDrawerModule, MaterializeFormMessageModule, MaterializeGlossaryModule, MaterializeHTMLVisualizerModule, MaterializeIconModule, MaterializeInputModule, MaterializeLabelModule, MaterializeModalModule, MaterializeNavbarModule, MaterializeRadioGroupModule, MaterializeScrollSpyModule, MaterializeSelectModule, MaterializeSliderModule, MaterializeStepperModule, MaterializeSwitchModule, MaterializeTabGroupModule, MaterializeTextAreaModule, ɵa, ɵb, ɵba, ɵbb, ɵbc, ɵbd, ɵbe, ɵbf, ɵbg, ɵbh, ɵbi, ɵbj, ɵbk, ɵbl, ɵbm, ɵbn, ɵbo, ɵbp, ɵbq, ɵbr, ɵc, ɵd, ɵe, ɵf, ɵg, ɵh, ɵi, ɵj, ɵk, ɵl, ɵm, ɵn, ɵo, ɵp, ɵq, ɵr, ɵs, ɵt, ɵu, ɵv, ɵw, ɵx, ɵy, ɵz */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74304,10 +74304,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeAccordionModule", function() { return MaterializeAccordionModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeButtonModule", function() { return MaterializeButtonModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeButtonToggleGroupModule", function() { return MaterializeButtonToggleGroupModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeCalendarModule", function() { return MaterializeCalendarModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeCardModule", function() { return MaterializeCardModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeCheckboxModule", function() { return MaterializeCheckboxModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeCollapsibleModule", function() { return MaterializeCollapsibleModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeCommonModule", function() { return MaterializeCommonModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeDatePickerModule", function() { return MaterializeDatePickerModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeDrawerModule", function() { return MaterializeDrawerModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeFormMessageModule", function() { return MaterializeFormMessageModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeGlossaryModule", function() { return MaterializeGlossaryModule; });
@@ -74327,22 +74329,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeTextAreaModule", function() { return MaterializeTextAreaModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return AccordionComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵba", function() { return NavbarComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbb", function() { return RadioComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbc", function() { return RadioGroupComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbd", function() { return SelectComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbe", function() { return SelectOptionComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbf", function() { return SliderComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbg", function() { return SliderOptionComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbh", function() { return SliderIndicatorComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbi", function() { return StepComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbj", function() { return StepIndicatorComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbk", function() { return StepLabelComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbl", function() { return StepperComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbm", function() { return SwitchComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbn", function() { return TabComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbo", function() { return TabGroupComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbp", function() { return TextAreaComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵba", function() { return LabelComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbb", function() { return ModalComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbc", function() { return NavbarComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbd", function() { return RadioComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbe", function() { return RadioGroupComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbf", function() { return SelectComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbg", function() { return SelectOptionComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbh", function() { return SliderComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbi", function() { return SliderOptionComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbj", function() { return SliderIndicatorComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbk", function() { return StepComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbl", function() { return StepIndicatorComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbm", function() { return StepLabelComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbn", function() { return StepperComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbo", function() { return SwitchComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbp", function() { return TabComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbq", function() { return TabGroupComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbr", function() { return TextAreaComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return CollapsibleComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return CollapsibleContentComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵe", function() { return CollapsibleTitleComponent; });
@@ -74353,20 +74357,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵj", function() { return ButtonComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵk", function() { return ButtonToggleComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵl", function() { return ButtonToggleGroupComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵm", function() { return CardComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵn", function() { return CheckboxComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵo", function() { return DrawerComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵp", function() { return DrawerContainerComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵq", function() { return DrawerContentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵm", function() { return CalendarComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵn", function() { return CardComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵo", function() { return CheckboxComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵp", function() { return DatePickerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵq", function() { return InputComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return FormMessageComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵs", function() { return GlossaryComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵt", function() { return GlossaryItemComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵu", function() { return ScrollSpyComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵv", function() { return ScrollSpyItemComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return HTMLVisualizerComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵx", function() { return InputComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵy", function() { return LabelComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵz", function() { return ModalComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵs", function() { return DrawerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵt", function() { return DrawerContainerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵu", function() { return DrawerContentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵv", function() { return GlossaryComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return GlossaryItemComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵx", function() { return ScrollSpyComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵy", function() { return ScrollSpyItemComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵz", function() { return HTMLVisualizerComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
@@ -75092,15 +75096,9 @@ var ButtonComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        var _this = this;
         if (!this.disabled) {
-            setTimeout((/**
-             * @return {?}
-             */
-            function () {
-                _this.isFocused = false;
-                _this.onClickEmitter.emit();
-            }), this.rippleDuration);
+            this.isFocused = false;
+            this.onClickEmitter.emit();
         }
     };
     /**
@@ -75478,6 +75476,523 @@ var MaterializeButtonToggleGroupModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/** @type {?} */
+var days = {
+    friday: {
+        name: 'Friday',
+        shortName: 'Fri',
+        shortestName: 'Fr'
+    },
+    monday: {
+        name: 'Monday',
+        shortName: 'Mon',
+        shortestName: 'Mo'
+    },
+    saturday: {
+        name: 'Saturday',
+        shortName: 'Sat',
+        shortestName: 'Sa'
+    },
+    sunday: {
+        name: 'Sunday',
+        shortName: 'Sun',
+        shortestName: 'Su'
+    },
+    thursday: {
+        name: 'Thursday',
+        shortName: 'Thu',
+        shortestName: 'Th'
+    },
+    tuesday: {
+        name: 'Tuesday',
+        shortName: 'Tue',
+        shortestName: 'Tu'
+    },
+    wednesday: {
+        name: 'Wednesday',
+        shortName: 'Wed',
+        shortestName: 'We'
+    }
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @type {?} */
+var months = {
+    april: {
+        name: 'April',
+        shortName: 'Apr',
+        shortestName: 'Ap'
+    },
+    august: {
+        name: 'August',
+        shortName: 'Aug',
+        shortestName: 'Au'
+    },
+    december: {
+        name: 'December',
+        shortName: 'Dec',
+        shortestName: 'De'
+    },
+    february: {
+        name: 'February',
+        shortName: 'Feb',
+        shortestName: 'Fe'
+    },
+    january: {
+        name: 'January',
+        shortName: 'Jan',
+        shortestName: 'Ja'
+    },
+    july: {
+        name: 'July',
+        shortName: 'Jul',
+        shortestName: 'Ju'
+    },
+    june: {
+        name: 'June',
+        shortName: 'Jun',
+        shortestName: 'Ju'
+    },
+    march: {
+        name: 'March',
+        shortName: 'Mar',
+        shortestName: 'Ma'
+    },
+    may: {
+        name: 'May',
+        shortName: 'May',
+        shortestName: 'Ma'
+    },
+    november: {
+        name: 'November',
+        shortName: 'Nov',
+        shortestName: 'No'
+    },
+    october: {
+        name: 'October',
+        shortName: 'Oct',
+        shortestName: 'Oc'
+    },
+    september: {
+        name: 'September',
+        shortName: 'Sep',
+        shortestName: 'Se'
+    }
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var CalendarComponent = /** @class */ (function () {
+    function CalendarComponent() {
+        this.className = CalendarComponent.defaultProps.className;
+        this.date = CalendarComponent.defaultProps.date;
+        this.displayOtherMonthDays = CalendarComponent.defaultProps.displayOtherMonthDays;
+        this.prefix = config.components.prefix;
+        this.selectYearAnimationDuration = 150;
+        this.scrollToActiveYear = this.scrollToActiveYear.bind(this);
+        this.onSelectDayEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.dayLabels = this.getDayLabels(days);
+        this.monthLabels = this.getMonthLabels(months);
+        this.selectedDate = this.createDateModel(this.date, false, true);
+    }
+    /**
+     * @return {?}
+     */
+    CalendarComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var month = this.date.getMonth();
+        /** @type {?} */
+        var year = this.date.getFullYear();
+        this.weeks = this.fillWeeks(month, year);
+        this.years = this.fillYears(year);
+    };
+    /**
+     * @param {?} dayLabels
+     * @return {?}
+     */
+    CalendarComponent.prototype.getDayLabels = /**
+     * @param {?} dayLabels
+     * @return {?}
+     */
+    function (dayLabels) {
+        return [
+            dayLabels.sunday,
+            dayLabels.monday,
+            dayLabels.tuesday,
+            dayLabels.wednesday,
+            dayLabels.thursday,
+            dayLabels.friday,
+            dayLabels.saturday
+        ];
+    };
+    /**
+     * @param {?} monthLabels
+     * @return {?}
+     */
+    CalendarComponent.prototype.getMonthLabels = /**
+     * @param {?} monthLabels
+     * @return {?}
+     */
+    function (monthLabels) {
+        return [
+            monthLabels.january,
+            monthLabels.february,
+            monthLabels.march,
+            monthLabels.april,
+            monthLabels.may,
+            monthLabels.june,
+            monthLabels.july,
+            monthLabels.august,
+            monthLabels.september,
+            monthLabels.october,
+            monthLabels.november,
+            monthLabels.december
+        ];
+    };
+    /**
+     * @param {?} date
+     * @param {?} isOutOfMonth
+     * @param {?} isToday
+     * @return {?}
+     */
+    CalendarComponent.prototype.createDateModel = /**
+     * @param {?} date
+     * @param {?} isOutOfMonth
+     * @param {?} isToday
+     * @return {?}
+     */
+    function (date, isOutOfMonth, isToday) {
+        /** @type {?} */
+        var weekDay = date.getDay();
+        /** @type {?} */
+        var month = date.getMonth();
+        /** @type {?} */
+        var dateModel = {
+            ISODate: this.generateISODate(date),
+            date: date,
+            dayLabel: this.dayLabels[weekDay],
+            isOutOfMonth: isOutOfMonth,
+            isToday: isToday,
+            monthLabel: this.monthLabels[month]
+        };
+        return dateModel;
+    };
+    /**
+     * @param {?} day
+     * @param {?} month
+     * @param {?} year
+     * @return {?}
+     */
+    CalendarComponent.prototype.createDateObject = /**
+     * @param {?} day
+     * @param {?} month
+     * @param {?} year
+     * @return {?}
+     */
+    function (day, month, year) {
+        /** @type {?} */
+        var date = new Date();
+        date.setDate(day);
+        date.setMonth(month);
+        date.setFullYear(year);
+        return date;
+    };
+    /**
+     * @param {?} currentYear
+     * @return {?}
+     */
+    CalendarComponent.prototype.fillYears = /**
+     * @param {?} currentYear
+     * @return {?}
+     */
+    function (currentYear) {
+        /** @type {?} */
+        var firstYear = currentYear - 100;
+        /** @type {?} */
+        var lastYear = currentYear + 100;
+        /** @type {?} */
+        var years = [];
+        for (var i = firstYear; i <= lastYear; i++) {
+            years.push(i);
+        }
+        return years;
+    };
+    /**
+     * @param {?} month
+     * @param {?} year
+     * @return {?}
+     */
+    CalendarComponent.prototype.fillWeeks = /**
+     * @param {?} month
+     * @param {?} year
+     * @return {?}
+     */
+    function (month, year) {
+        this.selectedMonth = {
+            label: this.monthLabels[month],
+            number: month,
+            year: year
+        };
+        /** @type {?} */
+        var finalMonthDay = this.createDateObject(0, month, year);
+        /** @type {?} */
+        var weeks = [];
+        /** @type {?} */
+        var initMonthDate = new Date(year, month, 1);
+        /** @type {?} */
+        var day = 0 - initMonthDate.getDay();
+        /** @type {?} */
+        var daysInWeek = [];
+        while (initMonthDate.getDay() !== 0 || finalMonthDay >= initMonthDate) {
+            ++day;
+            initMonthDate = new Date(year, month, day);
+            daysInWeek.push(this.createDayDate(initMonthDate, day, finalMonthDay));
+            if (daysInWeek.length === 7) {
+                weeks.push(daysInWeek);
+                daysInWeek = [];
+            }
+        }
+        return weeks;
+    };
+    /**
+     * @param {?} date
+     * @param {?} dayNumber
+     * @param {?} finalMonthDay
+     * @return {?}
+     */
+    CalendarComponent.prototype.createDayDate = /**
+     * @param {?} date
+     * @param {?} dayNumber
+     * @param {?} finalMonthDay
+     * @return {?}
+     */
+    function (date, dayNumber, finalMonthDay) {
+        /** @type {?} */
+        var ISODate = this.generateISODate(date);
+        /** @type {?} */
+        var ISOCurrentDate = this.generateISODate(new Date());
+        /** @type {?} */
+        var isOutOfMonth = (dayNumber <= 0 || date > finalMonthDay);
+        /** @type {?} */
+        var isToday = (ISODate === ISOCurrentDate);
+        return this.createDateModel(date, isOutOfMonth, isToday);
+    };
+    /**
+     * @return {?}
+     */
+    CalendarComponent.prototype.showPrevMonth = /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var month = this.selectedMonth.number;
+        /** @type {?} */
+        var year = this.selectedMonth.year;
+        /** @type {?} */
+        var prevMonth = month >= 1
+            ? month - 1
+            : 11;
+        /** @type {?} */
+        var prevYear = month < 1
+            ? year - 1
+            : year;
+        this.weeks = this.fillWeeks(prevMonth, prevYear);
+    };
+    /**
+     * @return {?}
+     */
+    CalendarComponent.prototype.showNextMonth = /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var month = this.selectedMonth.number;
+        /** @type {?} */
+        var year = this.selectedMonth.year;
+        /** @type {?} */
+        var nextMonth = month < 11
+            ? month + 1
+            : 0;
+        /** @type {?} */
+        var nextYear = month >= 11
+            ? year + 1
+            : year;
+        this.weeks = this.fillWeeks(nextMonth, nextYear);
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    CalendarComponent.prototype.generateISODate = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        /** @type {?} */
+        var day = date.getDate();
+        /** @type {?} */
+        var month = date.getMonth() + 1;
+        /** @type {?} */
+        var year = date.getFullYear();
+        /** @type {?} */
+        var dayString = day > 9
+            ? day
+            : "0" + day;
+        /** @type {?} */
+        var monthString = month > 9
+            ? month
+            : "0" + month;
+        return year + "-" + monthString + "-" + dayString;
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    CalendarComponent.prototype.onSelectDay = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        if (date.isOutOfMonth) {
+            return;
+        }
+        this.selectedDate = date;
+        this.onSelectDayEmitter.emit(this.selectedDate);
+    };
+    /**
+     * @param {?} year
+     * @return {?}
+     */
+    CalendarComponent.prototype.onSelectYear = /**
+     * @param {?} year
+     * @return {?}
+     */
+    function (year) {
+        var _this = this;
+        setTimeout((/**
+         * @return {?}
+         */
+        function () {
+            /** @type {?} */
+            var day = _this.selectedDate.date.getDate();
+            /** @type {?} */
+            var month = _this.selectedDate.date.getMonth();
+            _this.date = _this.createDateObject(day, month, year);
+            _this.showYears = false;
+            _this.selectedDate = _this.createDateModel(_this.date, false, true);
+            _this.weeks = _this.fillWeeks(month, year);
+        }), this.selectYearAnimationDuration);
+    };
+    /**
+     * @return {?}
+     */
+    CalendarComponent.prototype.displayYears = /**
+     * @return {?}
+     */
+    function () {
+        this.showYears = true;
+        setTimeout(this.scrollToActiveYear, 0);
+    };
+    /**
+     * @return {?}
+     */
+    CalendarComponent.prototype.scrollToActiveYear = /**
+     * @return {?}
+     */
+    function () {
+        var nativeElement = this.yearsContainerRef.nativeElement;
+        /** @type {?} */
+        var activeYear = nativeElement.querySelector('.selected');
+        if (activeYear) {
+            /** @type {?} */
+            var top_1 = this.getScrollCenter(nativeElement, activeYear);
+            nativeElement.scrollTop = top_1;
+        }
+    };
+    /**
+     * @param {?} container
+     * @param {?} internalElement
+     * @return {?}
+     */
+    CalendarComponent.prototype.getScrollCenter = /**
+     * @param {?} container
+     * @param {?} internalElement
+     * @return {?}
+     */
+    function (container, internalElement) {
+        /** @type {?} */
+        var yearTop = internalElement.offsetTop;
+        /** @type {?} */
+        var yearMiddleHeight = internalElement.offsetHeight / 2;
+        /** @type {?} */
+        var containerTop = container.offsetTop;
+        /** @type {?} */
+        var containerMiddleHeight = container.offsetHeight / 2;
+        /** @type {?} */
+        var elementRelativeTop = (yearTop - containerTop) - (containerMiddleHeight - yearMiddleHeight);
+        if (elementRelativeTop < 0) {
+            return 0;
+        }
+        return elementRelativeTop;
+    };
+    CalendarComponent.defaultProps = {
+        className: '',
+        date: new Date(),
+        displayOtherMonthDays: true
+    };
+    CalendarComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    selector: config.components.prefix + "-calendar }",
+                    template: "<div [ngClass]=\"[prefix + '-calendar', className]\">\n  <div [ngClass]=\"prefix + '-calendar-header'\">\n    <div [ngClass]=\"prefix + '-calendar-year'\">\n      <materialize-button (onClick)=\"displayYears()\">{{ selectedMonth.year }}</materialize-button>\n    </div>\n    <div [ngClass]=\"prefix + '-calendar-date'\">\n      <materialize-button (onClick)=\"showYears = false\">\n        {{ selectedDate.dayLabel.shortName }}, {{ selectedDate.monthLabel.shortName }} {{ selectedDate.date.getDate() }}\n      </materialize-button>\n    </div>\n  </div>\n\n  <div [ngClass]=\"prefix + '-calendar-body'\">\n    <ng-container *ngIf=\"!showYears\">\n      <div [ngClass]=\"prefix + '-calendar-controls'\">\n        <div [ngClass]=\"prefix + '-calendar-control'\" materializeRipple (click)=\"showPrevMonth()\">\n          <materialize-icon>chevron_left</materialize-icon>\n        </div>\n        <div [ngClass]=\"prefix + '-calendar-month'\">\n          {{ selectedMonth.label.shortName }} {{ selectedMonth.year }}\n        </div>\n        <div [ngClass]=\"prefix + '-calendar-control'\" materializeRipple (click)=\"showNextMonth()\">\n          <materialize-icon>chevron_right</materialize-icon>\n        </div>\n      </div>\n      \n      <table [ngClass]=\"prefix + '-calendar-table'\">\n        <thead>\n          <tr>\n            <td [ngClass]=\"prefix + '-calendar-day-name'\" *ngFor=\"let day of dayLabels\">{{ day.shortestName }}</td>\n          </tr>\n        </thead>\n        <tbody>\n          <tr *ngFor=\"let week of weeks\">\n            <td *ngFor=\"let day of week\">\n              <div [ngClass]=\"prefix + '-calendar-day'\"\n                (click)=\"onSelectDay(day)\"\n                *ngIf=\"!day.isOutOfMonth || displayOtherMonthDays\"\n  \n                [class.current]=\"day.isToday\"\n                [class.selected]=\"selectedDate.ISODate === day.ISODate\"\n                [class.disabled]=\"day.isOutOfMonth\"\n  \n                materializeRipple\n                [rippleDuration]=\"800\"\n              >\n                {{ day.date.getDate() }}\n              </div>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </ng-container>\n    \n    <div [ngClass]=\"prefix + '-calendar-years'\"  #yearsContainer>\n      <ng-container *ngIf=\"showYears\">\n        <div [ngClass]=\"prefix + '-calendar-year-option'\"\n          *ngFor=\"let year of years\"\n\n          (click)=\"onSelectYear(year)\"\n          [class.selected]=\"year === selectedMonth.year\"\n\n          materializeRipple\n          [rippleDuration]=\"selectYearAnimationDuration\"\n        >\n          {{ year }}\n        </div>\n      </ng-container>\n    </div>\n  </div>\n</div>\n"
+                }] }
+    ];
+    /** @nocollapse */
+    CalendarComponent.ctorParameters = function () { return []; };
+    CalendarComponent.propDecorators = {
+        yearsContainerRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['yearsContainer', { static: false },] }],
+        onSelectDayEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onSelectDay',] }],
+        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        date: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        displayOtherMonthDays: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
+    };
+    return CalendarComponent;
+}());
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var MaterializeCalendarModule = /** @class */ (function () {
+    function MaterializeCalendarModule() {
+    }
+    MaterializeCalendarModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    declarations: [CalendarComponent],
+                    exports: [CalendarComponent],
+                    imports: [
+                        _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                        MaterializeButtonModule,
+                        MaterializeCommonModule,
+                        MaterializeIconModule
+                    ]
+                },] }
+    ];
+    return MaterializeCalendarModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var CardComponent = /** @class */ (function () {
     function CardComponent() {
         this.className = CardComponent.defaultProps.className;
@@ -75689,6 +76204,573 @@ var MaterializeCheckboxModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function InputModel() { }
+if (false) {}
+/** @enum {string} */
+var INPUT_TYPE = {
+    PASSWORD: 'password',
+    TEXT: 'text',
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var DatePickerComponent = /** @class */ (function () {
+    function DatePickerComponent() {
+        this.className = DatePickerComponent.defaultProps.className;
+        this.disabled = DatePickerComponent.defaultProps.disabled;
+        this.floatLabel = DatePickerComponent.defaultProps.floatLabel;
+        this.format = DatePickerComponent.defaultProps.format;
+        this.fullSize = DatePickerComponent.defaultProps.fullSize;
+        this.id = DatePickerComponent.defaultProps.id;
+        this.name = DatePickerComponent.defaultProps.name;
+        this.placeholder = DatePickerComponent.defaultProps.placeholder;
+        this.required = DatePickerComponent.defaultProps.required;
+        this.value = DatePickerComponent.defaultProps.value;
+        this.prefix = config.components.prefix;
+        this.isOpen = false;
+        this.close = this.close.bind(this);
+    }
+    /**
+     * @return {?}
+     */
+    DatePickerComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        this.date = this.buildDate(this.value);
+    };
+    /**
+     * @param {?} selectedDate
+     * @return {?}
+     */
+    DatePickerComponent.prototype.onSelectDay = /**
+     * @param {?} selectedDate
+     * @return {?}
+     */
+    function (selectedDate) {
+        this.isOpen = false;
+        this.date = selectedDate.date;
+        this.value = this.formatDate(selectedDate.date);
+        this.onChange(this.value);
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    DatePickerComponent.prototype.formatDate = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        /** @type {?} */
+        var day = date.getDate();
+        /** @type {?} */
+        var month = date.getMonth() + 1;
+        /** @type {?} */
+        var dayString = day < 10
+            ? "0" + day
+            : day.toString();
+        /** @type {?} */
+        var monthString = month < 10
+            ? "0" + month
+            : month.toString();
+        /** @type {?} */
+        var yearString = date.getFullYear().toString();
+        /** @type {?} */
+        var formatedDate = this.format
+            .replace('dd', dayString)
+            .replace('mm', monthString)
+            .replace('yyyy', yearString);
+        return formatedDate;
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    DatePickerComponent.prototype.buildDate = /**
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) {
+        /** @type {?} */
+        var dayStartPosition = this.format.indexOf(DatePickerComponent.DAY_KEY);
+        /** @type {?} */
+        var monthStartPosition = this.format.indexOf(DatePickerComponent.MONTH_KEY);
+        /** @type {?} */
+        var yearStartPosition = this.format.indexOf(DatePickerComponent.YEAR_KEY);
+        if (dayStartPosition >= 0 && monthStartPosition >= 0 && yearStartPosition >= 0) {
+            /** @type {?} */
+            var dayEndPosition = dayStartPosition + DatePickerComponent.DAY_KEY.length;
+            /** @type {?} */
+            var monthEndPosition = monthStartPosition + DatePickerComponent.MONTH_KEY.length;
+            /** @type {?} */
+            var yearEndPosition = yearStartPosition + DatePickerComponent.YEAR_KEY.length;
+            /** @type {?} */
+            var dayString = value.substring(dayStartPosition, dayEndPosition);
+            /** @type {?} */
+            var monthString = value.substring(monthStartPosition, monthEndPosition);
+            /** @type {?} */
+            var yearString = value.substring(yearStartPosition, yearEndPosition);
+            if (dayString && monthString && yearString) {
+                /** @type {?} */
+                var day = Number(dayString);
+                /** @type {?} */
+                var month = Number(monthString) - 1;
+                /** @type {?} */
+                var year = Number(yearString);
+                return new Date(year, month, day);
+            }
+        }
+        return new Date();
+    };
+    /**
+     * @return {?}
+     */
+    DatePickerComponent.prototype.open = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this.isOpen = true;
+        setTimeout((/**
+         * @return {?}
+         */
+        function () {
+            _this.backdropRef.nativeElement.addEventListener('click', _this.close);
+        }), 0);
+    };
+    /**
+     * @return {?}
+     */
+    DatePickerComponent.prototype.close = /**
+     * @return {?}
+     */
+    function () {
+        this.isOpen = false;
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    DatePickerComponent.prototype.onInputChange = /**
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) {
+        this.onChange(value);
+        this.date = this.buildDate(value);
+    };
+    /**
+     * @return {?}
+     */
+    DatePickerComponent.prototype.onInputFocus = /**
+     * @return {?}
+     */
+    function () {
+        this.onTouched();
+    };
+    /**
+     * @param {?} isDisabled
+     * @return {?}
+     */
+    DatePickerComponent.prototype.setDisabledState = /**
+     * @param {?} isDisabled
+     * @return {?}
+     */
+    function (isDisabled) {
+        this.disabled = isDisabled;
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    DatePickerComponent.prototype.writeValue = /**
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) {
+        this.value = value;
+        this.date = this.buildDate(this.value);
+    };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    DatePickerComponent.prototype.registerOnChange = /**
+     * @param {?} fn
+     * @return {?}
+     */
+    function (fn) {
+        this.onChange = fn;
+    };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    DatePickerComponent.prototype.registerOnTouched = /**
+     * @param {?} fn
+     * @return {?}
+     */
+    function (fn) {
+        this.onTouched = fn;
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    DatePickerComponent.prototype.onChange = /**
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) { };
+    /**
+     * @return {?}
+     */
+    DatePickerComponent.prototype.onTouched = /**
+     * @return {?}
+     */
+    function () { };
+    DatePickerComponent.DAY_KEY = 'dd';
+    DatePickerComponent.MONTH_KEY = 'mm';
+    DatePickerComponent.YEAR_KEY = 'yyyy';
+    DatePickerComponent.defaultProps = {
+        autocomplete: 'none',
+        className: '',
+        date: new Date(),
+        disabled: false,
+        floatLabel: '',
+        format: 'dd-mm-yyyy',
+        fullSize: false,
+        hasCounter: false,
+        id: null,
+        maxLength: 500,
+        name: '',
+        placeholder: '',
+        required: false,
+        type: INPUT_TYPE.TEXT,
+        value: ''
+    };
+    DatePickerComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    providers: [{
+                            multi: true,
+                            provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NG_VALUE_ACCESSOR"],
+                            useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])((/**
+                             * @return {?}
+                             */
+                            function () { return DatePickerComponent; }))
+                        }],
+                    selector: config.components.prefix + "-datepicker }",
+                    template: "<div [ngClass]=\"[prefix + '-datepicker', className]\" [class.full-size]=\"fullSize\">\n  <div #backdrop *ngIf=\"isOpen\" [ngClass]=\"prefix + '-datepicker-backdrop'\"></div>\n\n  <materialize-input\n    [disabled]=\"disabled\"\n    [floatLabel]=\"floatLabel\"\n    [id]=\"id\"\n    [placeholder]=\"placeholder\"\n    [required]=\"required\"\n    [value]=\"value\"\n\n    (onChange)=\"onInputChange($event)\"\n    (onFocus)=\"onInputFocus()\"\n  >\n    <materialize-button (onClick)=\"open()\"\n      materializeSuffix\n      [className]=\"prefix + '-datepicker-button'\"\n      [disabled]=\"disabled\"\n    >\n      <materialize-icon [className]=\"prefix + '-datepicker-button'\">calendar_today</materialize-icon>\n    </materialize-button>\n  </materialize-input>\n\n  <materialize-calendar *ngIf=\"isOpen\"\n    [className]=\"prefix + '-datepicker-calendar'\"\n    [date]=\"date\"\n    (onSelectDay)=\"onSelectDay($event)\">\n  </materialize-calendar>\n</div>\n"
+                }] }
+    ];
+    /** @nocollapse */
+    DatePickerComponent.ctorParameters = function () { return []; };
+    DatePickerComponent.propDecorators = {
+        backdropRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['backdrop', { static: false },] }],
+        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        floatLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        format: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        fullSize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        required: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
+    };
+    return DatePickerComponent;
+}());
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var InputComponent = /** @class */ (function () {
+    function InputComponent() {
+        this.autocomplete = InputComponent.defaultProps.autocomplete;
+        this.className = InputComponent.defaultProps.className;
+        this.disabled = InputComponent.defaultProps.disabled;
+        this.floatLabel = InputComponent.defaultProps.floatLabel;
+        this.hasCounter = InputComponent.defaultProps.hasCounter;
+        this.id = InputComponent.defaultProps.id;
+        this.maxLength = InputComponent.defaultProps.maxLength;
+        this.name = InputComponent.defaultProps.name;
+        this.placeholder = InputComponent.defaultProps.placeholder;
+        this.required = InputComponent.defaultProps.required;
+        this.type = InputComponent.defaultProps.type;
+        this.value = InputComponent.defaultProps.value;
+        this.prefix = config.components.prefix;
+        this.isFocused = false;
+        this.onBlurEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onChangeEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onFocusEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    /**
+     * @return {?}
+     */
+    InputComponent.prototype.onBlur = /**
+     * @return {?}
+     */
+    function () {
+        this.onBlurEmitter.emit();
+        this.isFocused = false;
+    };
+    /**
+     * @return {?}
+     */
+    InputComponent.prototype.onFocus = /**
+     * @return {?}
+     */
+    function () {
+        if (!this.disabled) {
+            this.isFocused = true;
+            this.onFocusEmitter.emit();
+            this.onTouched();
+        }
+    };
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    InputComponent.prototype.onChange = /**
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        var value = event.target.value;
+        this.value = value;
+        this.onChangeEmitter.emit(this.value);
+        this.onInputChange(value);
+    };
+    /**
+     * @param {?} isDisabled
+     * @return {?}
+     */
+    InputComponent.prototype.setDisabledState = /**
+     * @param {?} isDisabled
+     * @return {?}
+     */
+    function (isDisabled) {
+        this.disabled = isDisabled;
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    InputComponent.prototype.writeValue = /**
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) {
+        this.value = value;
+    };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    InputComponent.prototype.registerOnChange = /**
+     * @param {?} fn
+     * @return {?}
+     */
+    function (fn) {
+        this.onInputChange = fn;
+    };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    InputComponent.prototype.registerOnTouched = /**
+     * @param {?} fn
+     * @return {?}
+     */
+    function (fn) {
+        this.onTouched = fn;
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    InputComponent.prototype.onInputChange = /**
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) { };
+    /**
+     * @return {?}
+     */
+    InputComponent.prototype.onTouched = /**
+     * @return {?}
+     */
+    function () { };
+    InputComponent.defaultProps = {
+        autocomplete: 'none',
+        className: '',
+        disabled: false,
+        floatLabel: '',
+        hasCounter: false,
+        id: null,
+        maxLength: 500,
+        name: '',
+        placeholder: '',
+        required: false,
+        type: INPUT_TYPE.TEXT,
+        value: ''
+    };
+    InputComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    providers: [{
+                            multi: true,
+                            provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NG_VALUE_ACCESSOR"],
+                            useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])((/**
+                             * @return {?}
+                             */
+                            function () { return InputComponent; }))
+                        }],
+                    selector: config.components.prefix + "-input }",
+                    template: "<div\n  [ngClass]=\"[prefix + '-form-control-container', className]\"\n  [class.float-label]=\"floatLabel\"\n  [class.active]=\"value || placeholder\"\n  [class.focused]=\"isFocused\"\n  [class.disabled]=\"disabled\"\n>\n  <div [ngClass]=\"prefix + '-form-control-prefix'\">\n    <ng-content select=\"[materializePrefix]\"></ng-content>\n  </div>\n\n  <div [ngClass]=\"prefix + '-form-control-wrapper'\">\n    <div [ngClass]=\"prefix + '-form-control-label'\">{{ floatLabel }}</div>\n\n    <input (input)=\"onChange($event)\" (blur)=\"onBlur()\" (focus)=\"onFocus()\"\n      [ngClass]=\"prefix + '-form-control'\"\n      [autocomplete]=\"autocomplete\"\n      [disabled]=\"disabled\"\n      [attr.id]=\"id\"\n      [maxLength]=\"maxLength\"\n      [name]=\"name\"\n      [placeholder]=\"placeholder\"\n      [required]=\"required\"\n      [type]=\"type\"\n      [value]=\"value\"\n    />\n  </div>\n\n  <div [ngClass]=\"prefix + '-form-control-suffix'\">\n    <ng-content select=\"[materializeSuffix]\"></ng-content>\n  </div>\n</div>\n\n<materialize-form-message type=\"info\" *ngIf=\"hasCounter\">{{ value.length }} / {{ maxLength }}</materialize-form-message>\n"
+                }] }
+    ];
+    /** @nocollapse */
+    InputComponent.ctorParameters = function () { return []; };
+    InputComponent.propDecorators = {
+        onFocusEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onFocus',] }],
+        onChangeEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onChange',] }],
+        onBlurEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onBlur',] }],
+        autocomplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        floatLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        hasCounter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        maxLength: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        required: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
+    };
+    return InputComponent;
+}());
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function FormMessageModel() { }
+if (false) {}
+/** @enum {string} */
+var FORM_MESSAGE_TYPES = {
+    ERROR: 'error',
+    INFO: 'info',
+    SUCCESS: 'success',
+    WARNING: 'warning',
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var FormMessageComponent = /** @class */ (function () {
+    function FormMessageComponent() {
+        this.className = FormMessageComponent.defaultProps.className;
+        this.type = FormMessageComponent.defaultProps.type;
+        this.prefix = config.components.prefix;
+    }
+    FormMessageComponent.defaultProps = {
+        className: '',
+        type: FORM_MESSAGE_TYPES.INFO
+    };
+    FormMessageComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    selector: config.components.prefix + "-form-message }",
+                    template: "<div [ngClass]=\"[prefix + '-form-message', className, type]\">\n  <ng-content></ng-content>\n</div>\n"
+                }] }
+    ];
+    FormMessageComponent.propDecorators = {
+        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['className',] }],
+        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['type',] }]
+    };
+    return FormMessageComponent;
+}());
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var MaterializeFormMessageModule = /** @class */ (function () {
+    function MaterializeFormMessageModule() {
+    }
+    MaterializeFormMessageModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    declarations: [FormMessageComponent],
+                    exports: [FormMessageComponent],
+                    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]
+                },] }
+    ];
+    return MaterializeFormMessageModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var MaterializeInputModule = /** @class */ (function () {
+    function MaterializeInputModule() {
+    }
+    MaterializeInputModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    declarations: [InputComponent],
+                    exports: [InputComponent],
+                    imports: [
+                        _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                        MaterializeCommonModule,
+                        MaterializeIconModule,
+                        MaterializeFormMessageModule
+                    ]
+                },] }
+    ];
+    return MaterializeInputModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var MaterializeDatePickerModule = /** @class */ (function () {
+    function MaterializeDatePickerModule() {
+    }
+    MaterializeDatePickerModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    declarations: [DatePickerComponent],
+                    exports: [DatePickerComponent],
+                    imports: [
+                        _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                        MaterializeButtonModule,
+                        MaterializeCalendarModule,
+                        MaterializeIconModule,
+                        MaterializeInputModule
+                    ]
+                },] }
+    ];
+    return MaterializeDatePickerModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var DrawerModel = /** @class */ (function () {
     function DrawerModel() {
     }
@@ -75887,68 +76969,6 @@ var MaterializeDrawerModule = /** @class */ (function () {
                 },] }
     ];
     return MaterializeDrawerModule;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * @record
- */
-function FormMessageModel() { }
-if (false) {}
-/** @enum {string} */
-var FORM_MESSAGE_TYPES = {
-    ERROR: 'error',
-    INFO: 'info',
-    SUCCESS: 'success',
-    WARNING: 'warning',
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var FormMessageComponent = /** @class */ (function () {
-    function FormMessageComponent() {
-        this.className = FormMessageComponent.defaultProps.className;
-        this.type = FormMessageComponent.defaultProps.type;
-        this.prefix = config.components.prefix;
-    }
-    FormMessageComponent.defaultProps = {
-        className: '',
-        type: FORM_MESSAGE_TYPES.INFO
-    };
-    FormMessageComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                    selector: config.components.prefix + "-form-message }",
-                    template: "<div [ngClass]=\"[prefix + '-form-message', className, type]\">\n  <ng-content></ng-content>\n</div>\n"
-                }] }
-    ];
-    FormMessageComponent.propDecorators = {
-        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['className',] }],
-        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['type',] }]
-    };
-    return FormMessageComponent;
-}());
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var MaterializeFormMessageModule = /** @class */ (function () {
-    function MaterializeFormMessageModule() {
-    }
-    MaterializeFormMessageModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
-                    declarations: [FormMessageComponent],
-                    exports: [FormMessageComponent],
-                    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]
-                },] }
-    ];
-    return MaterializeFormMessageModule;
 }());
 
 /**
@@ -76649,215 +77669,6 @@ var MaterializeHTMLVisualizerModule = /** @class */ (function () {
                 },] }
     ];
     return MaterializeHTMLVisualizerModule;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * @record
- */
-function InputModel() { }
-if (false) {}
-/** @enum {string} */
-var INPUT_TYPE = {
-    PASSWORD: 'password',
-    TEXT: 'text',
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var InputComponent = /** @class */ (function () {
-    function InputComponent() {
-        this.autocomplete = InputComponent.defaultProps.autocomplete;
-        this.className = InputComponent.defaultProps.className;
-        this.disabled = InputComponent.defaultProps.disabled;
-        this.floatLabel = InputComponent.defaultProps.floatLabel;
-        this.hasCounter = InputComponent.defaultProps.hasCounter;
-        this.id = InputComponent.defaultProps.id;
-        this.maxLength = InputComponent.defaultProps.maxLength;
-        this.name = InputComponent.defaultProps.name;
-        this.placeholder = InputComponent.defaultProps.placeholder;
-        this.required = InputComponent.defaultProps.required;
-        this.type = InputComponent.defaultProps.type;
-        this.value = InputComponent.defaultProps.value;
-        this.prefix = config.components.prefix;
-        this.isFocused = false;
-        this.onBlurEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.onChangeEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.onFocusEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    /**
-     * @return {?}
-     */
-    InputComponent.prototype.onBlur = /**
-     * @return {?}
-     */
-    function () {
-        this.onBlurEmitter.emit();
-        this.isFocused = false;
-    };
-    /**
-     * @return {?}
-     */
-    InputComponent.prototype.onFocus = /**
-     * @return {?}
-     */
-    function () {
-        if (!this.disabled) {
-            this.isFocused = true;
-            this.onFocusEmitter.emit();
-            this.onTouched();
-        }
-    };
-    /**
-     * @param {?} event
-     * @return {?}
-     */
-    InputComponent.prototype.onChange = /**
-     * @param {?} event
-     * @return {?}
-     */
-    function (event) {
-        var value = event.target.value;
-        this.value = value;
-        this.onChangeEmitter.emit(this.value);
-        this.onInputChange(value);
-    };
-    /**
-     * @param {?} isDisabled
-     * @return {?}
-     */
-    InputComponent.prototype.setDisabledState = /**
-     * @param {?} isDisabled
-     * @return {?}
-     */
-    function (isDisabled) {
-        this.disabled = isDisabled;
-    };
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    InputComponent.prototype.writeValue = /**
-     * @param {?} value
-     * @return {?}
-     */
-    function (value) {
-        this.value = value;
-    };
-    /**
-     * @param {?} fn
-     * @return {?}
-     */
-    InputComponent.prototype.registerOnChange = /**
-     * @param {?} fn
-     * @return {?}
-     */
-    function (fn) {
-        this.onInputChange = fn;
-    };
-    /**
-     * @param {?} fn
-     * @return {?}
-     */
-    InputComponent.prototype.registerOnTouched = /**
-     * @param {?} fn
-     * @return {?}
-     */
-    function (fn) {
-        this.onTouched = fn;
-    };
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    InputComponent.prototype.onInputChange = /**
-     * @param {?} value
-     * @return {?}
-     */
-    function (value) { };
-    /**
-     * @return {?}
-     */
-    InputComponent.prototype.onTouched = /**
-     * @return {?}
-     */
-    function () { };
-    InputComponent.defaultProps = {
-        autocomplete: 'none',
-        className: '',
-        disabled: false,
-        floatLabel: '',
-        hasCounter: false,
-        id: null,
-        maxLength: 500,
-        name: '',
-        placeholder: '',
-        required: false,
-        type: INPUT_TYPE.TEXT,
-        value: ''
-    };
-    InputComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                    providers: [{
-                            multi: true,
-                            provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NG_VALUE_ACCESSOR"],
-                            useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])((/**
-                             * @return {?}
-                             */
-                            function () { return InputComponent; }))
-                        }],
-                    selector: config.components.prefix + "-input }",
-                    template: "<div\n  [ngClass]=\"[prefix + '-form-control-container', className]\"\n  [class.float-label]=\"floatLabel\"\n  [class.active]=\"value || placeholder\"\n  [class.focused]=\"isFocused\"\n  [class.disabled]=\"disabled\"\n>\n  <div [ngClass]=\"prefix + '-form-control-prefix'\">\n    <ng-content select=\"[materializePrefix]\"></ng-content>\n  </div>\n\n  <div [ngClass]=\"prefix + '-form-control-wrapper'\">\n    <div [ngClass]=\"prefix + '-form-control-label'\">{{ floatLabel }}</div>\n\n    <input (input)=\"onChange($event)\" (blur)=\"onBlur()\" (focus)=\"onFocus()\"\n      [ngClass]=\"prefix + '-form-control'\"\n      [autocomplete]=\"autocomplete\"\n      [disabled]=\"disabled\"\n      [attr.id]=\"id\"\n      [maxLength]=\"maxLength\"\n      [name]=\"name\"\n      [placeholder]=\"placeholder\"\n      [required]=\"required\"\n      [type]=\"type\"\n      [value]=\"value\"\n    />\n  </div>\n\n  <div [ngClass]=\"prefix + '-form-control-suffix'\">\n    <ng-content select=\"[materializeSuffix]\"></ng-content>\n  </div>\n</div>\n\n<materialize-form-message type=\"info\" *ngIf=\"hasCounter\">{{ value.length }} / {{ maxLength }}</materialize-form-message>\n"
-                }] }
-    ];
-    /** @nocollapse */
-    InputComponent.ctorParameters = function () { return []; };
-    InputComponent.propDecorators = {
-        onFocusEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onFocus',] }],
-        onChangeEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onChange',] }],
-        onBlurEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onBlur',] }],
-        autocomplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        floatLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        hasCounter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        maxLength: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        required: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-    };
-    return InputComponent;
-}());
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var MaterializeInputModule = /** @class */ (function () {
-    function MaterializeInputModule() {
-    }
-    MaterializeInputModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
-                    declarations: [InputComponent],
-                    exports: [InputComponent],
-                    imports: [
-                        _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                        MaterializeCommonModule,
-                        MaterializeIconModule,
-                        MaterializeFormMessageModule
-                    ]
-                },] }
-    ];
-    return MaterializeInputModule;
 }());
 
 /**
