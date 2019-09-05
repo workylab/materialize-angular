@@ -1,4 +1,5 @@
 export interface CalendarModel {
+  className: string;
   date: Date;
   displayOtherMonthDays: boolean;
 }

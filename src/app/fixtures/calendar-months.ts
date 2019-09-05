@@ -1,4 +1,4 @@
-import { MonthLabels } from '../components/calendar/calendar.model';
+import { MonthLabels } from '../completed-components/calendar/calendar.model';
 
 export const months: MonthLabels = {
   april: {

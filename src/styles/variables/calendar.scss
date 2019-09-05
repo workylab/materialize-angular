@@ -1,0 +1,95 @@
+$materialize-calendar-background: $theme-color-white !default;
+$materialize-calendar-border-radius: $theme-radius-sm !default;
+$materialize-calendar-box-shadow: $theme-shadow-md !default;
+$materialize-calendar-margin: 0 auto !default;
+$materialize-calendar-outline: none !default;
+$materialize-calendar-overflow: hidden !default;
+$materialize-calendar-width: 300px !default;
+
+$materialize-calendar-header-background: $theme-color-primary !default;
+$materialize-calendar-header-color: $theme-color-white !default;
+$materialize-calendar-header-font-family: $theme-font-family-primary !default;
+$materialize-calendar-header-margin: 0 !default;
+$materialize-calendar-header-padding: $theme-space-sm !default;
+
+$materialize-calendar-year-box-shadow: unset !default;
+$materialize-calendar-year-font-size: $theme-font-size-md !default;
+$materialize-calendar-year-margin: 0 !default;
+$materialize-calendar-year-padding: $theme-space-xs $theme-space-lg !default;
+$materialize-calendar-year-text-transform: unset !default;
+
+$materialize-calendar-date-box-shadow: unset !default;
+$materialize-calendar-date-font-size: $theme-font-size-xl !default;
+$materialize-calendar-date-margin: 0 !default;
+$materialize-calendar-date-padding: $theme-space-xs $theme-space-lg !default;
+$materialize-calendar-date-text-transform: unset !default;
+
+$materialize-calendar-body-height: 330px !default;
+$materialize-calendar-body-margin: 0 !default;
+$materialize-calendar-body-padding: $theme-space-sm $theme-space-xs !default;
+
+$materialize-calendar-controls-margin: 0 0 $theme-space-xs 0 !default;
+$materialize-calendar-controls-padding: 0 !default;
+
+$materialize-calendar-month-font-family: $theme-font-family-primary !default;
+$materialize-calendar-month-font-weight: $theme-font-weight-regular !default;
+$materialize-calendar-month-font-size: $theme-font-size-md !default;
+$materialize-calendar-month-text-align: center !default;
+
+$materialize-calendar-control-background: $theme-color-white !default;
+$materialize-calendar-control-border-radius: $theme-radius-full !default;
+$materialize-calendar-control-box-shadow: unset !default;
+$materialize-calendar-control-color: $theme-color-black !default;
+$materialize-calendar-control-font-size: 20px !default;
+$materialize-calendar-control-size: 30px !default;
+$materialize-calendar-control-transition:
+  $theme-property-background $theme-timer-md $theme-transition-function-ease !default;
+
+$materialize-calendar-control-ripple-background: rgba($theme-color-black, 0.05) !default;
+$materialize-calendar-control-hover-background: rgba($theme-color-black, 0.1) !default;
+
+$materialize-calendar-day-name-color: $materialize-color-gray !default;
+$materialize-calendar-day-name-font-family: $theme-font-family-primary !default;
+$materialize-calendar-day-name-font-size: $theme-font-size-xs !default;
+$materialize-calendar-day-name-font-weight: $theme-font-weight-light !default;
+$materialize-calendar-day-name-padding: $theme-space-xxxs $theme-space-xxxs $theme-space-sm !default;
+$materialize-calendar-day-name-text-align: center !default;
+
+$materialize-calendar-day-border-radius: $theme-radius-full !default;
+$materialize-calendar-day-border: $theme-border-sm solid transparent !default;
+$materialize-calendar-day-color: $theme-color-black !default;
+$materialize-calendar-day-cursor: pointer !default;
+$materialize-calendar-day-font-family: $theme-font-family-primary !default;
+$materialize-calendar-day-font-size: $theme-font-size-sm !default;
+$materialize-calendar-day-margin: 2px !default;
+$materialize-calendar-day-size: 36px !default;
+$materialize-calendar-day-transition:
+  $theme-property-background $theme-timer-md $theme-transition-function-ease !default;
+
+$materialize-calendar-day-ripple: rgba(lighten($theme-color-primary, 50%), 0.3) !default;
+
+$materialize-calendar-day-hover-background: $materialize-color-gray-light !default;
+
+$materialize-calendar-day-current-background: transparent !default;
+$materialize-calendar-day-current-border-color: $materialize-color-gray !default;
+$materialize-calendar-day-current-color: $theme-color-black !default;
+
+$materialize-calendar-day-selected-background: $theme-color-primary !default;
+$materialize-calendar-day-selected-border-color: transparent !default;
+$materialize-calendar-day-selected-color: $theme-color-white !default;
+
+$materialize-calendar-day-disabled-background: $materialize-color-gray-light !default;
+$materialize-calendar-day-disabled-border-color: transparent !default;
+$materialize-calendar-day-disabled-color: $materialize-color-gray-dark !default;
+
+$materialize-calendar-year-option-cursor: pointer !default;
+$materialize-calendar-year-option-font-family: $theme-font-family-primary !default;
+$materialize-calendar-year-option-font-size: $theme-font-size-md !default;
+$materialize-calendar-year-option-font-weight: $theme-font-weight-regular !default;
+$materialize-calendar-year-option-margin: $theme-space-xxxs 0 !default;
+$materialize-calendar-year-option-padding: $theme-space-sm !default;
+$materialize-calendar-year-option-text-align: center !default;
+
+$materialize-calendar-year-option-selected-color: $theme-color-primary !default;
+$materialize-calendar-year-option-selected-font-size: $theme-font-size-xl !default;
+$materialize-calendar-year-option-selected-font-weight: $theme-font-weight-medium !default;

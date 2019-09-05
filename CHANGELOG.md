@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.5.2](https://github.com/workylab/materialize-angular/tree/v0.5.2) (2019-09-04)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.1...v0.5.2)
+
+**Merged pull requests:**
+
+- Refactored theme variable names. [\#132](https://github.com/workylab/materialize-angular/pull/132) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.5.1](https://github.com/workylab/materialize-angular/tree/v0.5.1) (2019-09-01)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.0...v0.5.1)

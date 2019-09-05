@@ -1,0 +1,21 @@
+
+$materialize-datepicker-backdrop-zindex: $theme-zindex-1 !default;
+
+$materialize-datepicker-button-background: transparent !default;
+$materialize-datepicker-button-border-radius: $theme-radius-full !default;
+$materialize-datepicker-box-shadow: unset !default;
+$materialize-datepicker-button-color: map-get($theme-colors, 'black') !default;
+$materialize-datepicker-button-size: 32px !default;
+
+$materialize-datepicker-button-focused-background: darken($materialize-color-gray-light, 5%) !default;
+$materialize-datepicker-button-hover-background: darken($materialize-color-gray-light, 10%) !default;
+$materialize-datepicker-button-disabled-background: $materialize-color-gray-light !default;
+
+$materialize-datepicker-button-ripple: rgba(map-get($theme-colors, 'black'), 0.1) !default;
+
+$materialize-datepicker-calendar-bottom: 100% !default;
+$materialize-datepicker-calendar-margin: 0 0 $theme-space-xs 0 !default;
+$materialize-datepicker-calendar-right: $theme-space-xs !default;
+$materialize-datepicker-calendar-zindex: $theme-zindex-2 !default;
+
+$materialize-datepicker-full-backdrop-background: rgba(map-get($theme-colors, 'black'), 0.4) !default;

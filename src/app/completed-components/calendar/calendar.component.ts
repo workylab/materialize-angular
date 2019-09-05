@@ -2,30 +2,30 @@ import { CalendarModel, DateLabel, DateModel, DayLabels, MonthLabels, MonthModel
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { config } from '../../config';
 import { days } from '../../fixtures/calendar-week-days';
-import { getBooleanValue } from '../../utils/get-boolean-value.util';
 import { months } from '../../fixtures/calendar-months';
 
 @Component({
   selector: `${ config.components.prefix }-calendar }`,
-  styleUrls: ['./calendar.component.scss'],
   templateUrl: './calendar.component.html'
 })
 export class CalendarComponent implements OnInit {
   static readonly defaultProps: CalendarModel = {
+    className: '',
     date: new Date(),
     displayOtherMonthDays: true
   };
 
-  @ViewChild('yearsContainer', {static: false}) yearsContainerRef: ElementRef;
+  @ViewChild('yearsContainer', { static: false }) yearsContainerRef: ElementRef;
 
   @Output('onSelectDay') onSelectDayEmitter: EventEmitter<DateModel>;
 
-  @Input('date') dateInput: Date;
-  @Input('displayOtherMonthDays') displayOtherMonthDaysInput: boolean;
+  @Input() className: string = CalendarComponent.defaultProps.className;
+  @Input() date: Date = CalendarComponent.defaultProps.date;
+  @Input() displayOtherMonthDays: boolean = CalendarComponent.defaultProps.displayOtherMonthDays;
 
-  public date: Date;
+  public prefix = config.components.prefix;
+
   public dayLabels: Array<DateLabel>;
-  public displayOtherMonthDays: boolean;
   public monthLabels: Array<DateLabel>;
   public selectedDate: DateModel;
   public selectedMonth: MonthModel;
@@ -33,19 +33,24 @@ export class CalendarComponent implements OnInit {
   public weeks: Array<Array<DateModel>>;
   public years: Array<number>;
 
-  public selectYearAnimationDuration = 200;
+  public selectYearAnimationDuration = 150;
 
   constructor() {
     this.scrollToActiveYear = this.scrollToActiveYear.bind(this);
 
-    this.onSelectDayEmitter = new EventEmitter();
+    this.onSelectDayEmitter = new EventEmitter<DateModel>();
 
     this.dayLabels = this.getDayLabels(days);
     this.monthLabels = this.getMonthLabels(months);
+    this.selectedDate = this.createDateModel(this.date, false, true);
   }
 
   ngOnInit() {
-    this.initValues();
+    const month = this.date.getMonth();
+    const year = this.date.getFullYear();
+
+    this.weeks = this.fillWeeks(month, year);
+    this.years = this.fillYears(year);
   }
 
   getDayLabels(dayLabels: DayLabels): Array<DateLabel> {
@@ -75,20 +80,6 @@ export class CalendarComponent implements OnInit {
       monthLabels.november,
       monthLabels.december
     ];
-  }
-
-  initValues() {
-    const { defaultProps } = CalendarComponent;
-
-    this.date = this.dateInput || defaultProps.date;
-    this.displayOtherMonthDays = getBooleanValue(this.displayOtherMonthDaysInput, defaultProps.displayOtherMonthDays);
-    this.selectedDate = this.createDateModel(this.date, false, true);
-
-    const month = this.date.getMonth();
-    const year = this.date.getFullYear();
-
-    this.weeks = this.fillWeeks(month, year);
-    this.years = this.fillYears(year);
   }
 
   createDateModel(date: Date, isOutOfMonth: boolean, isToday: boolean): DateModel {
@@ -245,7 +236,7 @@ export class CalendarComponent implements OnInit {
 
   scrollToActiveYear() {
     const { nativeElement } = this.yearsContainerRef;
-    const activeYear: HTMLElement = nativeElement.querySelector('.current');
+    const activeYear: HTMLElement = nativeElement.querySelector('.selected');
 
     if (activeYear) {
       const top = this.getScrollCenter(nativeElement, activeYear);
