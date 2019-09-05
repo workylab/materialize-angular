@@ -59,3 +59,10 @@ git tag -d $TAG
 git push origin :refs/tags/$TAG
 git tag $TAG
 git push origin master $TAG
+
+# Merge back
+echo "Merge backing from master to dev..."
+git checkout dev
+git pull origin dev
+git rebase master
+git push origin dev
