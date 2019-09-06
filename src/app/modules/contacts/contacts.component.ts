@@ -12,8 +12,8 @@ export class ContactsComponent {
       amount: new FormControl({ disabled: false, value: null }, Validators.required),
       dateOfBirth: new FormControl({
         disabled: false,
-        value: '25/12/1992'
-      }, Validators.pattern('^[0-9]{2}/[0-9]{2}/[0-9]{4}$')),
+        value: new Date()
+      }),
       favorite: new FormControl({ disabled: false, value: 'b' }, Validators.required),
       hasLocation: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
       hasPhones: new FormControl({ disabled: false, value: {
