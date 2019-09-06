@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.5.4](https://github.com/workylab/materialize-angular/tree/v0.5.4) (2019-09-06)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.3...v0.5.4)
+
+**Implemented enhancements:**
+
+- New release [\#140](https://github.com/workylab/materialize-angular/pull/140) ([alexzoul](https://github.com/alexzoul))
+- Improved/date picker [\#139](https://github.com/workylab/materialize-angular/pull/139) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.5.3](https://github.com/workylab/materialize-angular/tree/v0.5.3) (2019-09-05)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.2...v0.5.3)
