@@ -24,6 +24,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     className: '',
     date: new Date(),
     disabled: false,
+    displayOtherMonthDays: true,
     floatLabel: '',
     format: 'dd-mm-yyyy',
     fullSize: false,
@@ -41,6 +42,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 
   @Input() className: string = DatePickerComponent.defaultProps.className;
   @Input() disabled: boolean = DatePickerComponent.defaultProps.disabled;
+  @Input() displayOtherMonthDays: boolean = DatePickerComponent.defaultProps.displayOtherMonthDays;
   @Input() floatLabel: string = DatePickerComponent.defaultProps.floatLabel;
   @Input() format: string = DatePickerComponent.defaultProps.format;
   @Input() fullSize: boolean = DatePickerComponent.defaultProps.fullSize;
@@ -48,7 +50,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() name: string = DatePickerComponent.defaultProps.name;
   @Input() placeholder: string = DatePickerComponent.defaultProps.placeholder;
   @Input() required: boolean = DatePickerComponent.defaultProps.required;
-  @Input() value: string = DatePickerComponent.defaultProps.value;
+  @Input() inputValue: string = DatePickerComponent.defaultProps.value;
 
   public prefix = config.components.prefix;
 
@@ -62,18 +64,18 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   }
 
   ngOnInit() {
-    this.date = this.buildDate(this.value);
+    // this.date = this.buildDate(this.inputValue);
   }
 
   onSelectDay(selectedDate: DateModel) {
     this.isOpen = false;
     this.date = selectedDate.date;
-    this.value = this.formatDate(selectedDate.date);
+    this.inputValue = this.formatDate(selectedDate.date);
 
-    this.onChange(this.value);
+    this.onChange(selectedDate.date);
   }
 
-  formatDate(date: Date) {
+  formatDate(date: Date): string {
     const day = date.getDate();
     const month = date.getMonth() + 1;
 
@@ -134,9 +136,9 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   }
 
   onInputChange(value: string) {
-    this.onChange(value);
-
     this.date = this.buildDate(value);
+
+    this.onChange(this.date);
   }
 
   onInputFocus() {
@@ -147,13 +149,13 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     this.disabled = isDisabled;
   }
 
-  writeValue(value: string): void {
-    this.value = value;
+  writeValue(value: Date): void {
+    this.date = value;
 
-    this.date = this.buildDate(this.value);
+    this.inputValue = this.formatDate(value);
   }
 
-  registerOnChange(fn: (value: string) => void): void {
+  registerOnChange(fn: (value: Date) => void): void {
     this.onChange = fn;
   }
 
@@ -161,7 +163,8 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     this.onTouched = fn;
   }
 
-  onChange(value: string): void {}
+  onChange(value: Date): void {
+  }
 
   onTouched(): void {}
 }
