@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.5.5](https://github.com/workylab/materialize-angular/tree/v0.5.5) (2019-09-06)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.4...v0.5.5)
+
+**Implemented enhancements:**
+
+- Feature/styling/calendar button [\#141](https://github.com/workylab/materialize-angular/pull/141) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.5.4](https://github.com/workylab/materialize-angular/tree/v0.5.4) (2019-09-06)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.3...v0.5.4)
