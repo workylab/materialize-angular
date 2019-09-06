@@ -1,5 +1,5 @@
 import { CalendarModel, DateLabel, DateModel, DayLabels, MonthLabels, MonthModel } from './calendar.model';
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { config } from '../../config';
 import { days } from '../../fixtures/calendar-week-days';
 import { months } from '../../fixtures/calendar-months';
@@ -8,7 +8,7 @@ import { months } from '../../fixtures/calendar-months';
   selector: `${ config.components.prefix }-calendar }`,
   templateUrl: './calendar.component.html'
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements OnInit, OnChanges {
   static readonly defaultProps: CalendarModel = {
     className: '',
     date: new Date(),
@@ -42,15 +42,25 @@ export class CalendarComponent implements OnInit {
 
     this.dayLabels = this.getDayLabels(days);
     this.monthLabels = this.getMonthLabels(months);
-    this.selectedDate = this.createDateModel(this.date, false, true);
   }
 
   ngOnInit() {
+    this.init();
+  }
+
+  ngOnChanges() {
+    this.init();
+  }
+
+  init() {
+    const isToday = this.isTodayDate(this.date);
     const month = this.date.getMonth();
     const year = this.date.getFullYear();
 
     this.weeks = this.fillWeeks(month, year);
     this.years = this.fillYears(year);
+
+    this.selectedDate = this.createDateModel(this.date, false, isToday);
   }
 
   getDayLabels(dayLabels: DayLabels): Array<DateLabel> {
@@ -150,12 +160,17 @@ export class CalendarComponent implements OnInit {
     return weeks;
   }
 
-  createDayDate(date: Date, dayNumber: number, finalMonthDay: Date): DateModel {
-    const ISODate = this.generateISODate(date);
+  isTodayDate(date: Date) {
     const ISOCurrentDate = this.generateISODate(new Date());
-
-    const isOutOfMonth = (dayNumber <= 0 || date > finalMonthDay);
+    const ISODate = this.generateISODate(date);
     const isToday = (ISODate === ISOCurrentDate);
+
+    return isToday;
+  }
+
+  createDayDate(date: Date, dayNumber: number, finalMonthDay: Date): DateModel {
+    const isToday = this.isTodayDate(date);
+    const isOutOfMonth = (dayNumber <= 0 || date > finalMonthDay);
 
     return this.createDateModel(date, isOutOfMonth, isToday);
   }
