@@ -12,12 +12,14 @@ $materialize-calendar-header-font-family: $theme-font-family-primary !default;
 $materialize-calendar-header-margin: 0 !default;
 $materialize-calendar-header-padding: $theme-space-sm !default;
 
+$materialize-calendar-year-background: transparent !default;
 $materialize-calendar-year-box-shadow: unset !default;
 $materialize-calendar-year-font-size: $theme-font-size-md !default;
-$materialize-calendar-year-margin: 0 !default;
+$materialize-calendar-year-margin: 0 0 $theme-space-xxxs 0 !default;
 $materialize-calendar-year-padding: $theme-space-xs $theme-space-lg !default;
 $materialize-calendar-year-text-transform: unset !default;
 
+$materialize-calendar-date-background: transparent !default;
 $materialize-calendar-date-box-shadow: unset !default;
 $materialize-calendar-date-font-size: $theme-font-size-xl !default;
 $materialize-calendar-date-margin: 0 !default;

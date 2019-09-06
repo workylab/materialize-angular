@@ -16,6 +16,7 @@
 }
 
 .#{$materialize-prefix}-calendar-year .#{$materialize-prefix}-button {
+  background: $materialize-calendar-year-background;
   box-shadow: $materialize-calendar-year-box-shadow;
   font-size: $materialize-calendar-year-font-size;
   margin: $materialize-calendar-year-margin;
@@ -24,6 +25,7 @@
 }
 
 .#{$materialize-prefix}-calendar-date .#{$materialize-prefix}-button {
+  background: $materialize-calendar-date-background;
   box-shadow: $materialize-calendar-date-box-shadow;
   font-size: $materialize-calendar-date-font-size;
   margin: $materialize-calendar-date-margin;
