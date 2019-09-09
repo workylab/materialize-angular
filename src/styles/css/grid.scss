@@ -20,7 +20,7 @@
 }
 
 [class^='#{$materialize-prefix}-col-'] {
-  padding: $materialize-grid-gap-size 0;
+  padding: 0 $materialize-grid-gap-size;
 }
 
 @mixin generate-container-rules($materialize-breakpoints) {
