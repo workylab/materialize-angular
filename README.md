@@ -106,6 +106,8 @@ export class MyDemoComponent {}
 
 ## Documentation
 
+Documentation is available on the [Materialize Angular](https://materialize-angular-guide.workylab.now.sh/home) docs site.
+
 ## Available features
 
 | Components       | Docs         |
