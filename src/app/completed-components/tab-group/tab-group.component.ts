@@ -3,7 +3,9 @@ import {
   Component,
   ContentChildren,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   QueryList,
   Renderer2,
   ViewChild
@@ -31,6 +33,8 @@ export class TabGroupComponent implements AfterContentInit {
   @ViewChild('indicator', { static: true }) indicatorRef: ElementRef;
   @ViewChild('header', { static: true }) headerRef: ElementRef;
 
+  @Output('onSelectTab') onTabSelectEmitter: EventEmitter<number>;
+
   @Input() className: string = TabGroupComponent.defaultProps.className;
   @Input() selectedIndex: number = TabGroupComponent.defaultProps.selectedIndex;
   @Input() transitionDuration: number = TabGroupComponent.defaultProps.transitionDuration;
@@ -39,6 +43,7 @@ export class TabGroupComponent implements AfterContentInit {
   public supportedEvents: SupportedEventsModel;
 
   constructor(private router: Router, private renderer: Renderer2) {
+    this.onTabSelectEmitter = new EventEmitter<number>();
     this.supportedEvents = supportedEvents();
 
     this.update = this.update.bind(this);
@@ -60,6 +65,8 @@ export class TabGroupComponent implements AfterContentInit {
 
     if (!selectedTab.disabled) {
       this.selectedIndex = index;
+
+      this.onTabSelectEmitter.emit(index);
       this.moveIndicator(this.selectedIndex, true);
 
       if (selectedTab.link) {
