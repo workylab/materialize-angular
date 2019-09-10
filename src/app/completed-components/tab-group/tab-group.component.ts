@@ -3,7 +3,9 @@ import {
   Component,
   ContentChildren,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   QueryList,
   Renderer2,
   ViewChild
@@ -35,6 +37,8 @@ export class TabGroupComponent implements AfterContentInit {
   @Input() selectedIndex: number = TabGroupComponent.defaultProps.selectedIndex;
   @Input() transitionDuration: number = TabGroupComponent.defaultProps.transitionDuration;
 
+  @Output() OnTabSelected: EventEmitter<number> = new EventEmitter<number>();
+
   public prefix = config.components.prefix;
   public supportedEvents: SupportedEventsModel;
 
@@ -61,6 +65,7 @@ export class TabGroupComponent implements AfterContentInit {
     if (!selectedTab.disabled) {
       this.selectedIndex = index;
       this.moveIndicator(this.selectedIndex, true);
+      this.OnTabSelected.next(index);
 
       if (selectedTab.link) {
         setTimeout(() => {
