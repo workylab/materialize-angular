@@ -117,8 +117,12 @@ Documentation is available on the [Materialize Angular](https://materialize-angu
 | Button           | [Docs][3]    |
 | Calendar         | [Docs][4]    |
 | Dropdown         | [Docs][5]    |
+| Glossary         | [Docs][31]   |
+| HTML Visualizer  | [Docs][32]   |
 | List             | [Docs][6]    |
+| List Item        | [Docs][33]   |
 | Modal            | [Docs][7]    |
+| Scroll Spy       | [Docs][34]   |
 | Table            | [Docs][8]    |
 | Tooltip          | [Docs][9]    |
 
@@ -132,6 +136,7 @@ Documentation is available on the [Materialize Angular](https://materialize-angu
 | Form Suffix      | [Docs][29]   |
 | Input            | [Docs][14]   |
 | Label            | [Docs][15]   |
+| Message          | [Docs][15]   |
 | Radio            | [Docs][16]   |
 | Select           | [Docs][17]   |
 | Slider           | [Docs][18]   |
@@ -179,7 +184,12 @@ Documentation is available on the [Materialize Angular](https://materialize-angu
  [26]: https://materialize-angular-guide.workylab.now.sh/layout/navbar
  [27]: https://materialize-angular-guide.workylab.now.sh/layout/tab
  [28]: https://materialize-angular-guide.workylab.now.sh/forms/form-prefix
- [29]: https://materialize-angular-guide.workylab.now.sh/forms/form-suffix 
+ [29]: https://materialize-angular-guide.workylab.now.sh/forms/form-suffix
+ [30]: https://materialize-angular-guide.workylab.now.sh/forms/message
+ [31]: https://materialize-angular-guide.workylab.now.sh/components/glossary
+ [32]: https://materialize-angular-guide.workylab.now.sh/components/html-visualizer
+ [33]: https://materialize-angular-guide.workylab.now.sh/components/list-item
+ [34]: https://materialize-angular-guide.workylab.now.sh/components/scroll-spy
  
  ## Supported Browsers
 
