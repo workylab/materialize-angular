@@ -9,7 +9,9 @@
 <p align="center">
   Materialize Angular, easiest way to create awesome websites.
   <br>
-  <a href="http://materialize-angular.workylab.com/"><strong>-- Check our site --</strong></a>
+  <a href="https://materialize-angular.workylab.com/"><strong>-- Check our site --</strong></a>
+  <br>
+  <a href="https://workylab.github.io/materialize-angular"><strong>-- Check our Github pages site --</strong></a>
   <br>
   <br>
   <a href="https://circleci.com/gh/workylab/materialize-angular">
@@ -106,7 +108,7 @@ export class MyDemoComponent {}
 
 ## Documentation
 
-Documentation is available on the [Materialize Angular](https://materialize-angular-guide.workylab.now.sh/home) docs site.
+Documentation is available on the [Materialize Angular](https://materialize-angular.workylab.com/) docs site. Also, if you can't access to our domain, you can access using our [Github pages](https://workylab.github.io/materialize-angular)
 
 ## Available features
 
