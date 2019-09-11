@@ -83,35 +83,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_collapsible_collapsible_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/collapsible/collapsible.component */ "./src/app/components/collapsible/collapsible.component.ts");
 /* harmony import */ var _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./layout/drawer/drawer.component */ "./src/app/layout/drawer/drawer.component.ts");
 /* harmony import */ var _components_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/dropdown/dropdown.component */ "./src/app/components/dropdown/dropdown.component.ts");
-/* harmony import */ var _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./css/icon/icon.component */ "./src/app/css/icon/icon.component.ts");
-/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
-/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
-/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
-/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
-/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./css/ripple/ripple.component */ "./src/app/css/ripple/ripple.component.ts");
-/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
-/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
-/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
-/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
-/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
-/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
-/* harmony import */ var _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tooltip/tooltip.component */ "./src/app/components/tooltip/tooltip.component.ts");
-/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
-/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
-/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
-/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
-/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
-/* harmony import */ var _css_card_card_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./css/card/card.component */ "./src/app/css/card/card.component.ts");
-/* harmony import */ var _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./css/divider/divider.component */ "./src/app/css/divider/divider.component.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
-/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
+/* harmony import */ var _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./forms/form-prefix/form-prefix.component */ "./src/app/forms/form-prefix/form-prefix.component.ts");
+/* harmony import */ var _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./forms/form-suffix/form-suffix.component */ "./src/app/forms/form-suffix/form-suffix.component.ts");
+/* harmony import */ var _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/glossary/glossary.component */ "./src/app/components/glossary/glossary.component.ts");
+/* harmony import */ var _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/html-visualizer/html-visualizer.component */ "./src/app/components/html-visualizer/html-visualizer.component.ts");
+/* harmony import */ var _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./css/icon/icon.component */ "./src/app/css/icon/icon.component.ts");
+/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
+/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
+/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
+/* harmony import */ var _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/list-item/list-item.component */ "./src/app/components/list-item/list-item.component.ts");
+/* harmony import */ var _forms_message_message_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/message/message.component */ "./src/app/forms/message/message.component.ts");
+/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
+/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./css/ripple/ripple.component */ "./src/app/css/ripple/ripple.component.ts");
+/* harmony import */ var _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/scroll-spy/scroll-spy.component */ "./src/app/components/scroll-spy/scroll-spy.component.ts");
+/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
+/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
+/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
+/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
+/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
+/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
+/* harmony import */ var _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/tooltip/tooltip.component */ "./src/app/components/tooltip/tooltip.component.ts");
+/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
+/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
+/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
+/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
+/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
+/* harmony import */ var _css_card_card_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./css/card/card.component */ "./src/app/css/card/card.component.ts");
+/* harmony import */ var _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./css/divider/divider.component */ "./src/app/css/divider/divider.component.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
+/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
+/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
+
+
+
+
+
+
+
 
 
 
@@ -159,23 +173,23 @@ var appRoutes = [
     },
     {
         path: 'home',
-        component: _home_home_component__WEBPACK_IMPORTED_MODULE_31__["HomePageComponent"]
+        component: _home_home_component__WEBPACK_IMPORTED_MODULE_38__["HomePageComponent"]
     },
     {
         path: 'guide',
-        component: _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_38__["BaseLayoutComponent"],
+        component: _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_45__["BaseLayoutComponent"],
         children: [
             {
                 path: 'about',
-                component: _about_about_component__WEBPACK_IMPORTED_MODULE_36__["AboutPageComponent"]
+                component: _about_about_component__WEBPACK_IMPORTED_MODULE_43__["AboutPageComponent"]
             },
             {
                 path: 'get-started',
-                component: _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_37__["GettingStartedPageComponent"]
+                component: _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_44__["GettingStartedPageComponent"]
             },
             {
                 path: 'components',
-                component: _components_components_component__WEBPACK_IMPORTED_MODULE_27__["ComponentsPageComponent"],
+                component: _components_components_component__WEBPACK_IMPORTED_MODULE_34__["ComponentsPageComponent"],
                 children: [
                     {
                         component: _components_accordion_accordion_component__WEBPACK_IMPORTED_MODULE_1__["AccordionPageComponent"],
@@ -198,26 +212,42 @@ var appRoutes = [
                         path: 'dropdown'
                     },
                     {
-                        component: _components_list_list_component__WEBPACK_IMPORTED_MODULE_13__["ListPageComponent"],
+                        component: _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_12__["GlossaryPageComponent"],
+                        path: 'glossary'
+                    },
+                    {
+                        component: _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_13__["HTMLVisualizerPageComponent"],
+                        path: 'html-visualizer'
+                    },
+                    {
+                        component: _components_list_list_component__WEBPACK_IMPORTED_MODULE_17__["ListPageComponent"],
                         path: 'list'
                     },
                     {
-                        component: _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_14__["ModalPageComponent"],
+                        component: _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_18__["ListItemPageComponent"],
+                        path: 'list-item'
+                    },
+                    {
+                        component: _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_20__["ModalPageComponent"],
                         path: 'modal'
                     },
                     {
-                        component: _components_table_table_component__WEBPACK_IMPORTED_MODULE_24__["TablePageComponent"],
+                        component: _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_26__["ScrollSpyPageComponent"],
+                        path: 'scroll-spy'
+                    },
+                    {
+                        component: _components_table_table_component__WEBPACK_IMPORTED_MODULE_31__["TablePageComponent"],
                         path: 'table'
                     },
                     {
-                        component: _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_26__["TooltipPageComponent"],
+                        component: _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_33__["TooltipPageComponent"],
                         path: 'tooltip'
                     }
                 ]
             },
             {
                 path: 'forms',
-                component: _forms_forms_component__WEBPACK_IMPORTED_MODULE_28__["FormsPageComponent"],
+                component: _forms_forms_component__WEBPACK_IMPORTED_MODULE_35__["FormsPageComponent"],
                 children: [
                     {
                         component: _forms_button_toggle_button_toggle_component__WEBPACK_IMPORTED_MODULE_3__["ButtonTogglePageComponent"],
@@ -232,82 +262,94 @@ var appRoutes = [
                         path: 'checkbox'
                     },
                     {
-                        component: _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_33__["DatePickerPageComponent"],
+                        component: _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_40__["DatePickerPageComponent"],
                         path: 'date-picker'
                     },
                     {
-                        component: _forms_input_input_component__WEBPACK_IMPORTED_MODULE_11__["InputPageComponent"],
+                        component: _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_10__["FormPrefixPageComponent"],
+                        path: 'form-prefix'
+                    },
+                    {
+                        component: _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_11__["FormSuffixPageComponent"],
+                        path: 'form-suffix'
+                    },
+                    {
+                        component: _forms_input_input_component__WEBPACK_IMPORTED_MODULE_15__["InputPageComponent"],
                         path: 'input'
                     },
                     {
-                        component: _forms_label_label_component__WEBPACK_IMPORTED_MODULE_12__["LabelPageComponent"],
+                        component: _forms_label_label_component__WEBPACK_IMPORTED_MODULE_16__["LabelPageComponent"],
                         path: 'label'
                     },
                     {
-                        component: _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_17__["RadioPageComponent"],
+                        component: _forms_message_message_component__WEBPACK_IMPORTED_MODULE_19__["MessagePageComponent"],
+                        path: 'message'
+                    },
+                    {
+                        component: _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_23__["RadioPageComponent"],
                         path: 'radio'
                     },
                     {
-                        component: _forms_select_select_component__WEBPACK_IMPORTED_MODULE_20__["SelectPageComponent"],
+                        component: _forms_select_select_component__WEBPACK_IMPORTED_MODULE_27__["SelectPageComponent"],
                         path: 'select'
                     },
                     {
-                        component: _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__["SliderPageComponent"],
+                        component: _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_28__["SliderPageComponent"],
                         path: 'slider'
                     },
                     {
-                        component: _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_22__["SwitchPageComponent"],
+                        component: _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_29__["SwitchPageComponent"],
                         path: 'switch'
                     },
                     {
-                        component: _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_25__["TextAreaPageComponent"],
+                        component: _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_32__["TextAreaPageComponent"],
                         path: 'textarea'
                     }
                 ]
             },
             {
                 path: 'layout',
-                component: _layout_layout_component__WEBPACK_IMPORTED_MODULE_29__["LayoutPageComponent"],
+                component: _layout_layout_component__WEBPACK_IMPORTED_MODULE_36__["LayoutPageComponent"],
                 children: [
                     {
                         component: _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_8__["DrawerPageComponent"],
                         path: 'drawer'
                     },
                     {
-                        component: _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarPageComponent"],
+                        component: _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_21__["NavbarPageComponent"],
                         path: 'navbar'
                     },
                     {
-                        component: _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_23__["TabPageComponent"],
+                        component: _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_30__["TabPageComponent"],
                         path: 'tab'
                     }
                 ]
             },
             {
                 path: 'css',
-                component: _css_css_component__WEBPACK_IMPORTED_MODULE_30__["CSSPageComponent"],
+                component: _css_css_component__WEBPACK_IMPORTED_MODULE_37__["CSSPageComponent"],
                 children: [
                     {
-                        component: _css_card_card_component__WEBPACK_IMPORTED_MODULE_34__["CardPageComponent"],
+                        component: _css_card_card_component__WEBPACK_IMPORTED_MODULE_41__["CardPageComponent"],
                         path: 'card'
                     },
                     {
-                        component: _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_35__["DividerPageComponent"],
+                        component: _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_42__["DividerPageComponent"],
                         path: 'divider'
                     },
                     {
-                        component: _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_10__["IconPageComponent"],
+                        component: _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_14__["IconPageComponent"],
                         path: 'icon'
                     },
                     {
-                        component: _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_19__["RipplePageComponent"],
+                        component: _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_25__["RipplePageComponent"],
                         path: 'ripple'
                     }
                 ]
             },
             {
                 path: 'theme',
-                component: _themes_theme_component__WEBPACK_IMPORTED_MODULE_32__["ThemePageComponent"]
+                component: _themes_theme_component__WEBPACK_IMPORTED_MODULE_39__["ThemePageComponent"]
             }
         ]
     }
@@ -316,10 +358,10 @@ var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_16__["NgModule"])({
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_18__["RouterModule"]],
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_22__["NgModule"])({
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"]],
             imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_18__["RouterModule"].forRoot(appRoutes)
+                _angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"].forRoot(appRoutes)
             ]
         })
     ], AppRoutingModule);
@@ -406,36 +448,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_collapsible_collapsible_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/collapsible/collapsible.component */ "./src/app/components/collapsible/collapsible.component.ts");
 /* harmony import */ var _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./layout/drawer/drawer.component */ "./src/app/layout/drawer/drawer.component.ts");
 /* harmony import */ var _components_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/dropdown/dropdown.component */ "./src/app/components/dropdown/dropdown.component.ts");
-/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
-/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
-/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
-/* harmony import */ var _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./css/icon/icon.component */ "./src/app/css/icon/icon.component.ts");
-/* harmony import */ var materialize_angular__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! materialize-angular */ "./node_modules/materialize-angular/fesm5/materialize-angular.js");
-/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
-/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
-/* harmony import */ var _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./css/ripple/ripple.component */ "./src/app/css/ripple/ripple.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
-/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
-/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
-/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
-/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
-/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
-/* harmony import */ var _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/tooltip/tooltip.component */ "./src/app/components/tooltip/tooltip.component.ts");
-/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
-/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
-/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
-/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
-/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
-/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
-/* harmony import */ var _css_card_card_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./css/card/card.component */ "./src/app/css/card/card.component.ts");
-/* harmony import */ var _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./css/divider/divider.component */ "./src/app/css/divider/divider.component.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
+/* harmony import */ var _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/form-prefix/form-prefix.component */ "./src/app/forms/form-prefix/form-prefix.component.ts");
+/* harmony import */ var _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./forms/form-suffix/form-suffix.component */ "./src/app/forms/form-suffix/form-suffix.component.ts");
+/* harmony import */ var _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/glossary/glossary.component */ "./src/app/components/glossary/glossary.component.ts");
+/* harmony import */ var _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/html-visualizer/html-visualizer.component */ "./src/app/components/html-visualizer/html-visualizer.component.ts");
+/* harmony import */ var _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./css/icon/icon.component */ "./src/app/css/icon/icon.component.ts");
+/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
+/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
+/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
+/* harmony import */ var _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/list-item/list-item.component */ "./src/app/components/list-item/list-item.component.ts");
+/* harmony import */ var _forms_message_message_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./forms/message/message.component */ "./src/app/forms/message/message.component.ts");
+/* harmony import */ var materialize_angular__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! materialize-angular */ "./node_modules/materialize-angular/fesm5/materialize-angular.js");
+/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
+/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
+/* harmony import */ var _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./css/ripple/ripple.component */ "./src/app/css/ripple/ripple.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/scroll-spy/scroll-spy.component */ "./src/app/components/scroll-spy/scroll-spy.component.ts");
+/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
+/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
+/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
+/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
+/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
+/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
+/* harmony import */ var _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/tooltip/tooltip.component */ "./src/app/components/tooltip/tooltip.component.ts");
+/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
+/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
+/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
+/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
+/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
+/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
+/* harmony import */ var _css_card_card_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./css/card/card.component */ "./src/app/css/card/card.component.ts");
+/* harmony import */ var _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./css/divider/divider.component */ "./src/app/css/divider/divider.component.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
+/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
+
+
+
+
+
+
+
 
 
 
@@ -483,75 +539,83 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_20__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_26__["NgModule"])({
             declarations: [
-                _about_about_component__WEBPACK_IMPORTED_MODULE_41__["AboutPageComponent"],
+                _about_about_component__WEBPACK_IMPORTED_MODULE_48__["AboutPageComponent"],
                 _components_accordion_accordion_component__WEBPACK_IMPORTED_MODULE_1__["AccordionPageComponent"],
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
-                _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_31__["BaseLayoutComponent"],
+                _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_38__["BaseLayoutComponent"],
                 _components_button_button_component__WEBPACK_IMPORTED_MODULE_5__["ButtonPageComponent"],
                 _forms_button_toggle_button_toggle_component__WEBPACK_IMPORTED_MODULE_6__["ButtonTogglePageComponent"],
                 _components_calendar_calendar_component__WEBPACK_IMPORTED_MODULE_7__["CalendarPageComponent"],
-                _css_card_card_component__WEBPACK_IMPORTED_MODULE_39__["CardPageComponent"],
+                _css_card_card_component__WEBPACK_IMPORTED_MODULE_46__["CardPageComponent"],
                 _forms_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_8__["CheckboxPageComponent"],
                 _forms_checkbox_list_checkbox_list_component__WEBPACK_IMPORTED_MODULE_9__["CheckboxListPageComponent"],
                 _components_collapsible_collapsible_component__WEBPACK_IMPORTED_MODULE_10__["CollapsiblePageComponent"],
-                _components_components_component__WEBPACK_IMPORTED_MODULE_32__["ComponentsPageComponent"],
-                _css_css_component__WEBPACK_IMPORTED_MODULE_33__["CSSPageComponent"],
-                _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_38__["DatePickerPageComponent"],
-                _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_40__["DividerPageComponent"],
+                _components_components_component__WEBPACK_IMPORTED_MODULE_39__["ComponentsPageComponent"],
+                _css_css_component__WEBPACK_IMPORTED_MODULE_40__["CSSPageComponent"],
+                _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_45__["DatePickerPageComponent"],
+                _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_47__["DividerPageComponent"],
                 _components_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_12__["DropdownPageComponent"],
                 _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_11__["DrawerPageComponent"],
-                _forms_forms_component__WEBPACK_IMPORTED_MODULE_34__["FormsPageComponent"],
-                _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_42__["GettingStartedPageComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_35__["HomePageComponent"],
-                _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_16__["IconPageComponent"],
-                _forms_input_input_component__WEBPACK_IMPORTED_MODULE_13__["InputPageComponent"],
-                _forms_label_label_component__WEBPACK_IMPORTED_MODULE_14__["LabelPageComponent"],
-                _layout_layout_component__WEBPACK_IMPORTED_MODULE_36__["LayoutPageComponent"],
-                _components_list_list_component__WEBPACK_IMPORTED_MODULE_15__["ListPageComponent"],
-                _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_18__["ModalPageComponent"],
-                _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_19__["NavbarPageComponent"],
-                _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_21__["RadioPageComponent"],
-                _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_22__["RipplePageComponent"],
-                _forms_select_select_component__WEBPACK_IMPORTED_MODULE_24__["SelectPageComponent"],
-                _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_25__["SliderPageComponent"],
-                _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_26__["SwitchPageComponent"],
-                _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_27__["TabPageComponent"],
-                _components_table_table_component__WEBPACK_IMPORTED_MODULE_28__["TablePageComponent"],
-                _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_29__["TextAreaPageComponent"],
-                _themes_theme_component__WEBPACK_IMPORTED_MODULE_37__["ThemePageComponent"],
-                _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_30__["TooltipPageComponent"]
+                _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_13__["FormPrefixPageComponent"],
+                _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_14__["FormSuffixPageComponent"],
+                _forms_forms_component__WEBPACK_IMPORTED_MODULE_41__["FormsPageComponent"],
+                _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_49__["GettingStartedPageComponent"],
+                _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_15__["GlossaryPageComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_42__["HomePageComponent"],
+                _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_16__["HTMLVisualizerPageComponent"],
+                _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_17__["IconPageComponent"],
+                _forms_input_input_component__WEBPACK_IMPORTED_MODULE_18__["InputPageComponent"],
+                _forms_label_label_component__WEBPACK_IMPORTED_MODULE_19__["LabelPageComponent"],
+                _forms_message_message_component__WEBPACK_IMPORTED_MODULE_22__["MessagePageComponent"],
+                _layout_layout_component__WEBPACK_IMPORTED_MODULE_43__["LayoutPageComponent"],
+                _components_list_list_component__WEBPACK_IMPORTED_MODULE_20__["ListPageComponent"],
+                _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_21__["ListItemPageComponent"],
+                _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_24__["ModalPageComponent"],
+                _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_25__["NavbarPageComponent"],
+                _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_27__["RadioPageComponent"],
+                _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_28__["RipplePageComponent"],
+                _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_30__["ScrollSpyPageComponent"],
+                _forms_select_select_component__WEBPACK_IMPORTED_MODULE_31__["SelectPageComponent"],
+                _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_32__["SliderPageComponent"],
+                _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_33__["SwitchPageComponent"],
+                _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_34__["TabPageComponent"],
+                _components_table_table_component__WEBPACK_IMPORTED_MODULE_35__["TablePageComponent"],
+                _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_36__["TextAreaPageComponent"],
+                _themes_theme_component__WEBPACK_IMPORTED_MODULE_44__["ThemePageComponent"],
+                _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_37__["TooltipPageComponent"]
             ],
             exports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"]
+                _angular_router__WEBPACK_IMPORTED_MODULE_29__["RouterModule"]
             ],
             imports: [
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeAccordionModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeButtonModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeButtonToggleGroupModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeCardModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeCheckboxModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeCollapsibleModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeCommonModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeDrawerModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeGlossaryModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeHTMLVisualizerModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeIconModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeInputModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeLabelModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeModalModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeNavbarModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeRadioGroupModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeScrollSpyModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeSelectModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeTabGroupModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeTextAreaModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeSliderModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_17__["MaterializeSwitchModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"]
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeAccordionModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeButtonModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeButtonToggleGroupModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCardModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCheckboxModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCollapsibleModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCommonModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeDrawerModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeGlossaryModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeHTMLVisualizerModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeIconModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeInputModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeLabelModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeFormMessageModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeModalModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeNavbarModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeRadioGroupModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeScrollSpyModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeSelectModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeTabGroupModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeTextAreaModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeSliderModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeSwitchModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_29__["RouterModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
@@ -615,19 +679,28 @@ var BaseLayoutComponent = /** @class */ (function () {
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.button,
                         link: '/button'
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.glossary,
+                        link: '/glossary'
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.htmlVisualizer,
+                        link: '/html-visualizer'
                         // }, {
                         //   text: translations.drawer.components.children.calendar,
                         //   link: '/calendar'
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.collapsible,
                         link: '/collapsible'
-                    }, {
+                        // }, {
                         //   text: translations.drawer.components.children.dropdown,
                         //   link: '/dropdown'
-                        // }, {
-                        //   text: translations.drawer.components.children.list,
-                        //   link: '/list'
-                        // }, {
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.list,
+                        link: '/list'
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.listItem,
+                        link: '/list-item'
+                    }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.modal,
                         link: '/modal'
                         // }, {
@@ -636,6 +709,9 @@ var BaseLayoutComponent = /** @class */ (function () {
                         // }, {
                         //   text: translations.drawer.components.children.tooltip,
                         //   link: '/tooltip'
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.scrollSpy,
+                        link: '/scroll-spy'
                     }]
             }, {
                 text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.title,
@@ -653,11 +729,20 @@ var BaseLayoutComponent = /** @class */ (function () {
                         //   text: translations.drawer.forms.children.datePicker,
                         //   link: '/date-picker'
                     }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.formPrefix,
+                        link: '/form-prefix'
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.formSuffix,
+                        link: '/form-suffix'
+                    }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.input,
                         link: '/input'
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.label,
                         link: '/label'
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.message,
+                        link: '/message'
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.radio,
                         link: '/radio'
@@ -964,6 +1049,126 @@ var DropdownPageComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/glossary/glossary.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/components/glossary/glossary.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>GLOSSARY</h1>\n  \n      <p>\n        The <b>materialize-accordion</b> component is useful for reducing vertical space with\n        large amounts of information. The default functionality of the component is to only\n        display one expansion-panel body at a time.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeAccordionModule</span> in your module.\n        </p>\n        <p class=\"text-indent margin-bottom-sm\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion</span> tag in your template.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion-collapsible</span> tag into your <span class=\"text-accent secondary\">materialize-accordion</span>\n          to control all the collapsibles.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-accordion>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title A</materialize-collapsible-title>\n                <materialize-collapsible-content>Content A</materialize-collapsible-content>\n              </materialize-collapsible>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title B</materialize-collapsible-title>\n                <materialize-collapsible-content>Content B</materialize-collapsible-content>\n              </materialize-collapsible>\n            </materialize-accordion>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-accordion>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title A</materialize-collapsible-title>\n              <materialize-collapsible-content>Content A</materialize-collapsible-content>\n            </materialize-collapsible>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title B</materialize-collapsible-title>\n              <materialize-collapsible-content>Content B</materialize-collapsible-content>\n            </materialize-collapsible>\n          </materialize-accordion>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      \n      <div class=\"card\">\n        <h3>Accordion like stepper</h3>\n        <materialize-accordion #accordionExample>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 1</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 2</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 3</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n        </materialize-accordion>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Accordion</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/glossary/glossary.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/glossary/glossary.component.ts ***!
+  \***********************************************************/
+/*! exports provided: GlossaryPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlossaryPageComponent", function() { return GlossaryPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var GlossaryPageComponent = /** @class */ (function () {
+    function GlossaryPageComponent() {
+    }
+    GlossaryPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./glossary.component.html */ "./src/app/components/glossary/glossary.component.html")
+        })
+    ], GlossaryPageComponent);
+    return GlossaryPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/html-visualizer/html-visualizer.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/html-visualizer/html-visualizer.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>HTML VISUALIZER</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">List</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/html-visualizer/html-visualizer.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/html-visualizer/html-visualizer.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: HTMLVisualizerPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HTMLVisualizerPageComponent", function() { return HTMLVisualizerPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var HTMLVisualizerPageComponent = /** @class */ (function () {
+    function HTMLVisualizerPageComponent() {
+    }
+    HTMLVisualizerPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./html-visualizer.component.html */ "./src/app/components/html-visualizer/html-visualizer.component.html")
+        })
+    ], HTMLVisualizerPageComponent);
+    return HTMLVisualizerPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/list-item/list-item.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/list-item/list-item.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>LIST ITEM</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">List</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/list-item/list-item.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/list-item/list-item.component.ts ***!
+  \*************************************************************/
+/*! exports provided: ListItemPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListItemPageComponent", function() { return ListItemPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ListItemPageComponent = /** @class */ (function () {
+    function ListItemPageComponent() {
+    }
+    ListItemPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./list-item.component.html */ "./src/app/components/list-item/list-item.component.html")
+        })
+    ], ListItemPageComponent);
+    return ListItemPageComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/list/list.component.html":
 /*!*****************************************************!*\
   !*** ./src/app/components/list/list.component.html ***!
@@ -1038,6 +1243,46 @@ var ModalPageComponent = /** @class */ (function () {
         })
     ], ModalPageComponent);
     return ModalPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/scroll-spy/scroll-spy.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/scroll-spy/scroll-spy.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>SCROLL SPY</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">List</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/scroll-spy/scroll-spy.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/scroll-spy/scroll-spy.component.ts ***!
+  \***************************************************************/
+/*! exports provided: ScrollSpyPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollSpyPageComponent", function() { return ScrollSpyPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ScrollSpyPageComponent = /** @class */ (function () {
+    function ScrollSpyPageComponent() {
+    }
+    ScrollSpyPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./scroll-spy.component.html */ "./src/app/components/scroll-spy/scroll-spy.component.html")
+        })
+    ], ScrollSpyPageComponent);
+    return ScrollSpyPageComponent;
 }());
 
 
@@ -1484,6 +1729,86 @@ var DatePickerPageComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/forms/form-prefix/form-prefix.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/forms/form-prefix/form-prefix.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>FORM PREFIX</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/forms/form-prefix/form-prefix.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/forms/form-prefix/form-prefix.component.ts ***!
+  \************************************************************/
+/*! exports provided: FormPrefixPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormPrefixPageComponent", function() { return FormPrefixPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FormPrefixPageComponent = /** @class */ (function () {
+    function FormPrefixPageComponent() {
+    }
+    FormPrefixPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./form-prefix.component.html */ "./src/app/forms/form-prefix/form-prefix.component.html")
+        })
+    ], FormPrefixPageComponent);
+    return FormPrefixPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/form-suffix/form-suffix.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/forms/form-suffix/form-suffix.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>FORM SUFFIX</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/forms/form-suffix/form-suffix.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/forms/form-suffix/form-suffix.component.ts ***!
+  \************************************************************/
+/*! exports provided: FormSuffixPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormSuffixPageComponent", function() { return FormSuffixPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FormSuffixPageComponent = /** @class */ (function () {
+    function FormSuffixPageComponent() {
+    }
+    FormSuffixPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./form-suffix.component.html */ "./src/app/forms/form-suffix/form-suffix.component.html")
+        })
+    ], FormSuffixPageComponent);
+    return FormSuffixPageComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/forms/forms.component.html":
 /*!********************************************!*\
   !*** ./src/app/forms/forms.component.html ***!
@@ -1636,6 +1961,46 @@ var LabelPageComponent = /** @class */ (function () {
         })
     ], LabelPageComponent);
     return LabelPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/message/message.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/forms/message/message.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>MESSAGE</h1>\n  \n      <p>\n        The <b>materialize-label</b> component is to label inside the site.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeLabelModule</span> in your module.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-label</span> tag in your template.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-label>This is a form label</materialize-label>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-label>This is a form label</materialize-label>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      \n      <div class=\"card\">\n        <h3>Simple label</h3>\n        <materialize-label>Label</materialize-label>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Label</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/forms/message/message.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/forms/message/message.component.ts ***!
+  \****************************************************/
+/*! exports provided: MessagePageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessagePageComponent", function() { return MessagePageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var MessagePageComponent = /** @class */ (function () {
+    function MessagePageComponent() {
+    }
+    MessagePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./message.component.html */ "./src/app/forms/message/message.component.html")
+        })
+    ], MessagePageComponent);
+    return MessagePageComponent;
 }());
 
 
@@ -2200,8 +2565,12 @@ var translations = {
                 button: 'Button',
                 calendar: 'Calendar',
                 dropdown: 'Dropdown',
+                glossary: 'Glossary',
+                htmlVisualizer: 'HTML Visualizer',
                 list: 'List',
+                listItem: 'List Item',
                 modal: 'Modal',
+                scrollSpy: 'Scroll Spy',
                 table: 'Table',
                 tooltip: 'Tooltip'
             }
@@ -2213,8 +2582,11 @@ var translations = {
                 checkbox: 'Checkbox',
                 checkboxList: 'Checkbox List',
                 datePicker: 'Date Picker',
+                formPrefix: 'Form Prefix',
+                formSuffix: 'Form Suffix',
                 input: 'Input',
                 label: 'Label',
+                message: 'Message',
                 radio: 'Radio',
                 select: 'Select',
                 slider: 'Slider',
