@@ -128,6 +128,8 @@ Documentation is available on the [Materialize Angular](https://materialize-angu
 | Checkbox         | [Docs][11]   |
 | Checkbox List    | [Docs][12]   |
 | Date Picker      | [Docs][13]   |
+| Form Prefix      | [Docs][28]   |
+| Form Suffix      | [Docs][29]   |
 | Input            | [Docs][14]   |
 | Label            | [Docs][15]   |
 | Radio            | [Docs][16]   |
@@ -176,6 +178,8 @@ Documentation is available on the [Materialize Angular](https://materialize-angu
  [25]: https://materialize-angular-guide.workylab.now.sh/layout/drawer
  [26]: https://materialize-angular-guide.workylab.now.sh/layout/navbar
  [27]: https://materialize-angular-guide.workylab.now.sh/layout/tab
+ [28]: https://materialize-angular-guide.workylab.now.sh/forms/form-prefix
+ [29]: https://materialize-angular-guide.workylab.now.sh/forms/form-suffix 
  
  ## Supported Browsers
 
