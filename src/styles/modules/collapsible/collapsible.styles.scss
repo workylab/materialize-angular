@@ -1,0 +1,72 @@
+.#{$materialize-prefix}-collapsible {
+  background: $materialize-collapsible-background;
+  border: $materialize-collapsible-border;
+  box-shadow: $materialize-collapsible-box-shadow;
+  margin: $materialize-collapsible-margin;
+  padding: $materialize-collapsible-padding;
+
+  &.open .#{$materialize-prefix}-collapsible-title-icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &:hover:not(.disabled) .#{$materialize-prefix}-collapsible-title {
+    @media (hover: hover) {
+      background: $materialize-collapsible-title-hover-background;
+    }
+  }
+
+  &.disabled .#{$materialize-prefix}-collapsible-title {
+    cursor: not-allowed;
+
+    .#{$materialize-prefix}-collapsible-title-icon {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.#{$materialize-prefix}-collapsible-content-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: $materialize-collapsible-content-transition;
+}
+
+.#{$materialize-prefix}-collapsible-content {
+  background: $materialize-collapsible-content-background;
+  color: $materialize-collapsible-content-color;
+  font-family: $materialize-collapsible-content-font-family;
+  font-size: $materialize-collapsible-content-font-size;
+  font-weight: $materialize-collapsible-content-font-weight;
+  margin: $materialize-collapsible-content-margin;
+  overflow: visible;
+  position: relative;
+
+  &:not(:empty) {
+    padding: $materialize-collapsible-title-padding;
+  }
+}
+
+.#{$materialize-prefix}-collapsible-title {
+  background: $materialize-collapsible-title-background;
+  color: $materialize-collapsible-title-color;
+  cursor: $materialize-collapsible-title-cursor;
+  font-family: $materialize-collapsible-title-font-family;
+  font-size: $materialize-collapsible-title-font-size;
+  font-weight: $materialize-collapsible-title-font-weight;
+  margin: $materialize-collapsible-title-margin;
+  padding: $materialize-collapsible-title-padding;
+  position: relative;
+
+  .ripple {
+    background: $materialize-collapsible-title-ripple-background;
+  }
+}
+
+.#{$materialize-prefix}-collapsible-title-icon {
+  color: $materialize-collapsible-title-icon-color;
+  font-size: $materialize-collapsible-title-icon-size;
+  position: absolute;
+  right: $materialize-collapsible-title-icon-right;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: $materialize-collapsible-title-icon-transition;
+}

@@ -1,0 +1,18 @@
+.#{$materialize-prefix}-card {
+  background: $materialize-card-background;
+  border-radius: $materialize-card-border-radius;
+  box-shadow: $materialize-card-box-shadow;
+  color: $materialize-card-color;
+  cursor: $materialize-card-cursor;
+  font-family: $materialize-card-font-family;
+  font-size: $materialize-card-font-size;
+  font-weight: $materialize-card-font-weight;
+  margin: $materialize-card-margin;
+  padding: $materialize-card-padding;
+  -webkit-tap-highlight-color: $materialize-card-tap-highlight-color;
+  transition: $materialize-card-transition;
+
+  &:hover {
+    box-shadow: $materialize-card-hover-box-shadow;
+  }
+}

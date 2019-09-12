@@ -1,0 +1,48 @@
+$materialize-form-message-font-family: $theme-font-family-primary !default;
+$materialize-form-message-font-size: $theme-font-size-md !default;
+$materialize-form-message-font-weight: $theme-font-weight-regular !default;
+$materialize-form-message-letter-spacing: 0 !default;
+$materialize-form-message-line-height: 100% !default;
+$materialize-form-message-margin: 0 !default;
+$materialize-form-message-padding: $theme-space-sm !default;
+$materialize-form-message-text-align: left !default;
+
+$materialize-form-message-info-color: $materialize-color-gray-darkest !default;
+$materialize-form-message-info-font-family: $materialize-form-message-font-family !default;
+$materialize-form-message-info-font-size: $materialize-form-message-font-size !default;
+$materialize-form-message-info-font-weight: $materialize-form-message-font-weight !default;
+$materialize-form-message-info-letter-spacing: $materialize-form-message-letter-spacing !default;
+$materialize-form-message-info-line-height: $materialize-form-message-line-height !default;
+$materialize-form-message-info-margin: $materialize-form-message-margin !default;
+$materialize-form-message-info-padding: $materialize-form-message-padding !default;
+$materialize-form-message-info-text-align: $materialize-form-message-text-align !default;
+
+$materialize-form-message-error-color: map-get($theme-colors, 'danger') !default;
+$materialize-form-message-error-font-family: $materialize-form-message-font-family !default;
+$materialize-form-message-error-font-size: $materialize-form-message-font-size !default;
+$materialize-form-message-error-font-weight: $materialize-form-message-font-weight !default;
+$materialize-form-message-error-letter-spacing: $materialize-form-message-letter-spacing !default;
+$materialize-form-message-error-line-height: $materialize-form-message-line-height !default;
+$materialize-form-message-error-margin: $materialize-form-message-margin !default;
+$materialize-form-message-error-padding: $materialize-form-message-padding !default;
+$materialize-form-message-error-text-align: $materialize-form-message-text-align !default;
+
+$materialize-form-message-success-color: map-get($theme-colors, 'info') !default;
+$materialize-form-message-success-font-family: $materialize-form-message-font-family !default;
+$materialize-form-message-success-font-size: $materialize-form-message-font-size !default;
+$materialize-form-message-success-font-weight: $materialize-form-message-font-weight !default;
+$materialize-form-message-success-letter-spacing: $materialize-form-message-letter-spacing !default;
+$materialize-form-message-success-line-height: $materialize-form-message-line-height !default;
+$materialize-form-message-success-margin: $materialize-form-message-margin !default;
+$materialize-form-message-success-padding: $materialize-form-message-padding !default;
+$materialize-form-message-success-text-align: $materialize-form-message-text-align !default;
+
+$materialize-form-message-warning-color: map-get($theme-colors, 'warning') !default;
+$materialize-form-message-warning-font-family: $materialize-form-message-font-family !default;
+$materialize-form-message-warning-font-size: $materialize-form-message-font-size !default;
+$materialize-form-message-warning-font-weight: $materialize-form-message-font-weight !default;
+$materialize-form-message-warning-letter-spacing: $materialize-form-message-letter-spacing !default;
+$materialize-form-message-warning-line-height: $materialize-form-message-line-height !default;
+$materialize-form-message-warning-margin: $materialize-form-message-margin !default;
+$materialize-form-message-warning-padding: $materialize-form-message-padding !default;
+$materialize-form-message-warning-text-align: $materialize-form-message-text-align !default;

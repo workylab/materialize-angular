@@ -1,0 +1,71 @@
+.#{$materialize-prefix}-modal {
+  align-items: $materialize-modal-align-items;
+  display: flex;
+  height: 100%;
+  justify-content: $materialize-modal-justify-content;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  &.active {
+    z-index: $theme-zindex-3;
+
+    .#{$materialize-prefix}-modal-backdrop {
+      opacity: 1;
+    }
+
+    .#{$materialize-prefix}-modal-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.#{$materialize-prefix}-modal-backdrop {
+  background: $materialize-modal-backdrop-background;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition-duration: inherit;
+  transition-property: $materialize-modal-backdrop-transition-property;
+  transition-timing-function: $materialize-modal-backdrop-transition-function;
+  width: 100%;
+  z-index: 0;
+}
+
+.#{$materialize-prefix}-modal-content {
+  background: $materialize-modal-content-background;
+  border-radius: $materialize-modal-content-border-radius;
+  box-shadow: $materialize-modal-content-box-shadow;
+  max-height: $materialize-modal-content-max-height;
+  max-width: $materialize-modal-content-max-width;
+  opacity: 0;
+  overflow-y: auto;
+  padding: $materialize-modal-content-padding;
+  position: relative;
+  transform: $materialize-modal-content-transform;
+  transition-duration: inherit;
+  transition-property: opacity, transform;
+  transition-timing-function: $materialize-modal-content-transition-function;
+  z-index: $theme-zindex-1;
+}
+
+.#{$materialize-prefix}-modal-icon-close {
+  align-items: center;
+  color: $materialize-modal-icon-close-color;
+  cursor: pointer;
+  display: flex;
+  font-size: $materialize-modal-icon-close-size * 2;
+  height: $materialize-modal-icon-close-size;
+  justify-content: center;
+  position: absolute;
+  right: $materialize-modal-icon-close-right;
+  top: $materialize-modal-icon-close-top;
+  width: $materialize-modal-icon-close-size;
+}

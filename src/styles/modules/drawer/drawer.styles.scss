@@ -1,0 +1,95 @@
+.#{$materialize-prefix}-drawer {
+  overflow: hidden;
+  position: relative;
+
+  &.left {
+    .#{$materialize-prefix}-drawer-content {
+      left: 0;
+    }
+
+    &.static .#{$materialize-prefix}-drawer-container {
+      margin-left: $materialize-drawer-content-width;
+    }
+
+    &.push .#{$materialize-prefix}-drawer-content,
+    &.over .#{$materialize-prefix}-drawer-content {
+      transform: translateX(-100%);
+    }
+
+    &.open.push .#{$materialize-prefix}-drawer-container {
+      margin-left: $materialize-drawer-content-width;
+    }
+  }
+
+  &.right {
+    .#{$materialize-prefix}-drawer-content {
+      right: 0;
+    }
+
+    &.static .#{$materialize-prefix}-drawer-container {
+      margin-right: $materialize-drawer-content-width;
+    }
+
+    &.push .#{$materialize-prefix}-drawer-content,
+    &.over .#{$materialize-prefix}-drawer-content {
+      transform: translateX(100%);
+    }
+
+    &.open.push .#{$materialize-prefix}-drawer-container {
+      margin-right: $materialize-drawer-content-width;
+    }
+  }
+
+  &.static .#{$materialize-prefix}-drawer-content {
+    position: fixed;
+  }
+
+  &.push .#{$materialize-prefix}-drawer-container {
+    transition-duration: inherit;
+    transition-property: margin;
+    transition-timing-function: $materialize-drawer-content-transition-function;
+  }
+
+  &.push .#{$materialize-prefix}-drawer-content,
+  &.over .#{$materialize-prefix}-drawer-content {
+    transition-duration: inherit;
+    transition-property: transform;
+    transition-timing-function: $materialize-drawer-content-transition-function;
+  }
+
+  &.open {
+    &.backdrop .#{$materialize-prefix}-drawer-backdrop {
+      opacity: 1;
+    }
+
+    &.over .#{$materialize-prefix}-drawer-content,
+    &.push .#{$materialize-prefix}-drawer-content {
+      transform: translateX(0);
+    }
+  }
+}
+
+.#{$materialize-prefix}-drawer-backdrop {
+  background: $materialize-drawer-backdrop-background;
+  bottom: 0;
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition-duration: inherit;
+  transition-property: $materialize-drawer-backdrop-transition-property;
+  transition-timing-function: $materialize-drawer-backdrop-transition-function;
+  width: 100%;
+  z-index: $materialize-drawer-backdrop-z-index;
+}
+
+.#{$materialize-prefix}-drawer-content {
+  background: $materialize-drawer-content-background;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: $materialize-drawer-content-width;
+  z-index: $materialize-drawer-content-z-index;
+}

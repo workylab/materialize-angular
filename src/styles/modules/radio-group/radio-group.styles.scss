@@ -1,0 +1,21 @@
+#{$materialize-prefix}-radio-group.ng-touched.ng-dirty.ng-invalid .#{$materialize-prefix}-radio {
+  .#{$materialize-prefix}-radio-indicator {
+    border-color: map-get($theme-colors, 'danger');
+  }
+
+  &.focused .#{$materialize-prefix}-radio-indicator-ripple {
+    background: rgba(map-get($theme-colors, 'danger'), 0.1);
+  }
+
+  .ripple {
+    background: rgba(map-get($theme-colors, 'danger'), 0.3);
+  }
+
+  &:not(.disabled) {
+    @media (hover: hover) {
+      .#{$materialize-prefix}-radio-indicator:hover .#{$materialize-prefix}-radio-indicator-ripple {
+        background: rgba(map-get($theme-colors, 'danger'), 0.2);
+      }
+    }
+  }
+}

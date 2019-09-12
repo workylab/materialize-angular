@@ -1,0 +1,16 @@
+.#{$materialize-prefix}-select-option {
+  color: $materialize-select-option-color;
+  font-family: $materialize-select-option-font-family;
+  font-size: $materialize-select-option-font-size;
+  font-weight: $materialize-select-option-font-weight;
+  outline: $materialize-select-option-outline;
+  padding: $materialize-select-option-padding;
+
+  &:hover {
+    background: $materialize-select-option-active-background;
+  }
+
+  &.active {
+    background: $materialize-select-option-hover-background;
+  }
+}

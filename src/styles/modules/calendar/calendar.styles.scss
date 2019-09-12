@@ -1,0 +1,164 @@
+.#{$materialize-prefix}-calendar {
+  background: $materialize-calendar-background;
+  border-radius: $materialize-calendar-border-radius;
+  box-shadow: $materialize-calendar-box-shadow;
+  margin: $materialize-calendar-margin;
+  outline: $materialize-calendar-outline;
+  overflow: $materialize-calendar-overflow;
+  width: $materialize-calendar-width;
+}
+
+.#{$materialize-prefix}-calendar-header {
+  background: $materialize-calendar-header-background;
+  color: $materialize-calendar-header-color;
+  font-family: $materialize-calendar-header-font-family;
+  padding: $materialize-calendar-header-padding;
+}
+
+.#{$materialize-prefix}-calendar-year .#{$materialize-prefix}-button {
+  background: $materialize-calendar-year-background;
+  box-shadow: $materialize-calendar-year-box-shadow;
+  font-size: $materialize-calendar-year-font-size;
+  margin: $materialize-calendar-year-margin;
+  padding: $materialize-calendar-year-padding;
+  text-transform: $materialize-calendar-year-text-transform;
+}
+
+.#{$materialize-prefix}-calendar-date .#{$materialize-prefix}-button {
+  background: $materialize-calendar-date-background;
+  box-shadow: $materialize-calendar-date-box-shadow;
+  font-size: $materialize-calendar-date-font-size;
+  margin: $materialize-calendar-date-margin;
+  padding: $materialize-calendar-date-padding;
+  text-transform: $materialize-calendar-date-text-transform;
+}
+
+.#{$materialize-prefix}-calendar-body {
+  height: $materialize-calendar-body-height;
+  padding: $materialize-calendar-body-padding;
+}
+
+.#{$materialize-prefix}-calendar-controls {
+  align-items: center;
+  display: flex;
+  margin: $materialize-calendar-controls-margin;
+  padding: $materialize-calendar-controls-padding;
+}
+
+.#{$materialize-prefix}-calendar-month {
+  flex-grow: 1;
+  font-family: $materialize-calendar-month-font-family;
+  font-size: $materialize-calendar-month-font-size;
+  font-weight: $materialize-calendar-month-font-weight;
+  text-align: $materialize-calendar-month-text-align;
+}
+
+.#{$materialize-prefix}-calendar-control {
+  align-items: center;
+  background: $materialize-calendar-control-background;
+  border-radius: $materialize-calendar-control-border-radius;
+  box-shadow: $materialize-calendar-control-box-shadow;
+  display: flex;
+  height: $materialize-calendar-control-size;
+  justify-content: center;
+  transition: $materialize-calendar-control-transition;
+  width: $materialize-calendar-control-size;
+
+  &:hover {
+    background: $materialize-calendar-control-hover-background;
+  }
+
+  .ripple {
+    background: $materialize-calendar-control-ripple-background;
+  }
+
+  .#{$materialize-prefix}-icon {
+    color: $materialize-calendar-control-color;
+    display: flex;
+    font-size: $materialize-calendar-control-font-size;
+  }
+}
+
+.#{$materialize-prefix}-calendar-table {
+  width: 100%;
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+.#{$materialize-prefix}-calendar-day-name {
+  color: $materialize-calendar-day-name-color;
+  font-family: $materialize-calendar-day-name-font-family;
+  font-size: $materialize-calendar-day-name-font-size;
+  font-weight: $materialize-calendar-day-name-font-weight;
+  padding: $materialize-calendar-day-name-padding;
+  text-align: $materialize-calendar-day-name-text-align;
+}
+
+.#{$materialize-prefix}-calendar-day {
+  align-items: center;
+  border: $materialize-calendar-day-border;
+  border-radius: $materialize-calendar-day-border-radius;
+  color: $materialize-calendar-day-color;
+  cursor: $materialize-calendar-day-cursor;
+  display: flex;
+  font-family: $materialize-calendar-day-font-family;
+  font-size: $materialize-calendar-day-font-size;
+  font-weight: $theme-font-weight-regular;
+  height: $materialize-calendar-day-size;
+  justify-content: center;
+  margin: $materialize-calendar-day-margin;
+  transition: $materialize-calendar-day-transition;
+  width: $materialize-calendar-day-size;
+
+  &:hover {
+    background: $materialize-calendar-day-hover-background;
+  }
+
+  .ripple {
+    background: $materialize-calendar-day-ripple;
+  }
+
+  &.current {
+    background: $materialize-calendar-day-current-background;
+    border-color: $materialize-calendar-day-current-border-color;
+    color: $materialize-calendar-day-current-color;
+  }
+
+  &.selected {
+    background: $materialize-calendar-day-selected-background;
+    border-color: $materialize-calendar-day-selected-border-color;
+    color: $materialize-calendar-day-selected-color;
+  }
+
+  &.disabled {
+    background: $materialize-calendar-day-disabled-background;
+    border-color: $materialize-calendar-day-disabled-border-color;
+    color: $materialize-calendar-day-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+.#{$materialize-prefix}-calendar-years {
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.#{$materialize-prefix}-calendar-year-option {
+  cursor: $materialize-calendar-year-option-cursor;
+  font-family: $materialize-calendar-year-option-font-family;
+  font-size: $materialize-calendar-year-option-font-size;
+  font-weight: $materialize-calendar-year-option-font-weight;
+  margin: $materialize-calendar-year-option-margin;
+  padding: $materialize-calendar-year-option-padding;
+  text-align: $materialize-calendar-year-option-text-align;
+  width: 100%;
+
+  &.selected {
+    color: $materialize-calendar-year-option-selected-color;
+    font-size: $materialize-calendar-year-option-selected-font-size;
+    font-weight: $materialize-calendar-year-option-selected-font-weight;
+  }
+}

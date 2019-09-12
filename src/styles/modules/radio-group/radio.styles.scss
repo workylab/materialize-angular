@@ -1,0 +1,111 @@
+.#{$materialize-prefix}-radio {
+  align-items: center;
+  cursor: $materialize-radio-cursor;
+  display: flex;
+  flex-direction: row;
+  outline: $materialize-radio-outline;
+  padding: $materialize-radio-padding;
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  &:not(.disabled) {
+    @media (hover: hover) {
+      .#{$materialize-prefix}-radio-indicator:hover .#{$materialize-prefix}-radio-indicator-ripple {
+        background: rgba($materialize-radio-indicator-disabled-color, 0.2);
+      }
+
+      &.active .#{$materialize-prefix}-radio-indicator:hover .#{$materialize-prefix}-radio-indicator-ripple {
+        background: rgba($materialize-radio-indicator-ripple-background, 0.2);
+      }
+    }
+  }
+
+  &.focused:not(.disabled) {
+    .#{$materialize-prefix}-radio-indicator-ripple {
+      background: rgba($materialize-radio-indicator-ripple-background, 0.1);
+    }
+
+    &.active .#{$materialize-prefix}-radio-indicator-ripple {
+      background: rgba($materialize-radio-indicator-ripple-background, 0.1);
+    }
+  }
+
+  &.active:not(.disabled) {
+    .ripple {
+      background: rgba($materialize-radio-indicator-ripple-background, 0.3);
+    }
+
+    .#{$materialize-prefix}-radio-indicator {
+      border-color: $materialize-radio-indicator-active-border-color;
+
+      &::before {
+        height: $materialize-radio-indicator-active-size;
+        width: $materialize-radio-indicator-active-size;
+      }
+    }
+  }
+
+  &.disabled .#{$materialize-prefix}-radio-indicator {
+    border-color: $materialize-radio-indicator-disabled-color;
+    cursor: not-allowed;
+
+    &::before {
+      background: $materialize-radio-indicator-disabled-color;
+    }
+  }
+}
+
+.#{$materialize-prefix}-radio-label {
+  color: $materialize-radio-label-color;
+  flex: 1;
+  font-family: $materialize-radio-label-font-family;
+  font-size: $materialize-radio-label-font-size;
+  font-weight: $materialize-radio-label-font-weight;
+  padding: $materialize-radio-label-padding;
+  text-align: $materialize-radio-label-text-align;
+}
+
+.#{$materialize-prefix}-radio-indicator {
+  border: $materialize-radio-indicator-border;
+  border-radius: $materialize-radio-indicator-border-radius;
+  display: $materialize-radio-indicator-display;
+  height: $materialize-radio-indicator-size;
+  margin: $materialize-radio-indicator-margin;
+  outline: $materialize-radio-indicator-outline;
+  position: $materialize-radio-indicator-position;
+  -webkit-tap-highlight-color: $materialize-radio-indicator-tap-highlight-color;
+  width: $materialize-radio-indicator-size;
+
+  &::before {
+    background: $materialize-radio-indicator-active-background;
+    border-radius: $materialize-radio-indicator-border-radius;
+    content: '';
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 250ms;
+    transition-property: height, width;
+    transition-timing-function: ease;
+    width: 0;
+  }
+}
+
+.#{$materialize-prefix}-radio-indicator-ripple {
+  border-radius: $materialize-radio-indicator-border-radius;
+  height: $materialize-radio-indicator-ripple-size;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: $materialize-radio-indicator-ripple-transition;
+  width: $materialize-radio-indicator-ripple-size;
+  z-index: $theme-zindex-1;
+
+  .ripple {
+    background: rgba($materialize-radio-indicator-ripple-background, 0.3);
+  }
+}

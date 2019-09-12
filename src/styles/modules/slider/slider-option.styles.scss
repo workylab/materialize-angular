@@ -1,0 +1,20 @@
+.#{$materialize-prefix}-slider-option-container {
+  color: $materialize-slider-option-color;
+  font-family: $materialize-slider-option-font-family;
+  font-size: $materialize-slider-option-font-size;
+  font-weight: $materialize-slider-option-font-weight;
+  height: $materialize-slider-option-height;
+  left: $materialize-slider-option-left;
+  position: $materialize-slider-option-position;
+  text-align: $materialize-slider-option-text-align;
+  text-transform: $materialize-slider-option-text-transform;
+  top: $materialize-slider-option-top;
+  transform: $materialize-slider-option-transform;
+  transition: $materialize-slider-option-transition;
+  width: $materialize-slider-option-width;
+
+  &.active {
+    font-size: $materialize-slider-option-active-font-size;
+    font-weight: $materialize-slider-option-active-font-weight;
+  }
+}

@@ -1,0 +1,56 @@
+.#{$materialize-prefix}-form-control-select-container {
+  cursor: pointer;
+  outline: none;
+  position: relative;
+
+  .#{$materialize-prefix}-form-control-container.disabled .#{$materialize-prefix}-form-control-select-icon {
+    color: $materialize-color-gray;
+    cursor: not-allowed;
+  }
+
+  &.open .#{$materialize-prefix}-form-control-select-icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &.open .#{$materialize-prefix}-form-control-select-menu {
+    display: block;
+  }
+}
+
+.#{$materialize-prefix}-form-control-select-icon {
+  color: $materialize-color-gray-dark;
+  position: absolute;
+  right: $theme-space-xs;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 300ms ease;
+}
+
+.#{$materialize-prefix}-form-control-select-backdrop {
+  background: transparent;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: $theme-zindex-1;
+}
+
+.#{$materialize-prefix}-form-control-select-menu {
+  background: map-get($theme-colors, 'white');
+  box-shadow: $theme-shadow-md;
+  cursor: pointer;
+  display: none;
+  left: 0;
+  padding: $theme-space-xs 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: $theme-zindex-2;
+}
+
+#{$materialize-prefix}-select.ng-touched.ng-dirty.ng-invalid {
+  @extend %form-control-error;
+}

@@ -1,0 +1,58 @@
+.#{$materialize-prefix}-tab-group {
+  align-items: $materialize-tab-group-align-items;
+  border-color: $materialize-tab-group-border-color;
+  border-style: $materialize-tab-group-border-style;
+  border-width: $materialize-tab-group-border-width;
+  display: flex;
+  flex-direction: row;
+  justify-content: $materialize-tab-group-justify-content;
+  list-style: none;
+  margin: $materialize-tab-group-margin;
+  padding: $materialize-tab-group-padding;
+  position: relative;
+}
+
+.#{$materialize-prefix}-tab-group-item {
+  border-radius: $materialize-tab-group-item-border-radius;
+  color: $materialize-tab-group-item-color;
+  cursor: $materialize-tab-group-item-cursor;
+  font-family: $materialize-tab-group-item-font-family;
+  font-size: $materialize-tab-group-item-font-size;
+  font-weight: $materialize-tab-group-item-font-weight;
+  letter-spacing: $materialize-tab-group-item-letter-spacing;
+  line-height: $materialize-tab-group-item-line-height;
+  padding: $materialize-tab-group-item-padding;
+  text-align: $materialize-tab-group-item-text-align;
+  transition: $materialize-tab-group-item-transition;
+
+  &:hover:not(.disabled) {
+    background: $materialize-tab-group-hover-item-background;
+  }
+
+  &.active {
+    color: $materialize-tab-group-active-item-color;
+    font-weight: $materialize-tab-group-active-item-font-weight;
+  }
+
+  &.disabled {
+    color: $materialize-tab-group-disabled-item-color;
+    cursor: not-allowed;
+  }
+}
+
+.#{$materialize-prefix}-tab-group-indicator-container {
+  bottom: $materialize-tab-group-indicator-container-bottom;
+  left: 0;
+  position: absolute;
+  transition-timing-function: $materialize-tab-group-indicator-container-transition-function;
+}
+
+.#{$materialize-prefix}-tab-group-indicator {
+  background: $materialize-tab-group-indicator-background;
+  border-radius: $materialize-tab-group-indicator-border-radius;
+  height: $materialize-tab-group-indicator-height;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: $materialize-tab-group-indicator-width;
+}

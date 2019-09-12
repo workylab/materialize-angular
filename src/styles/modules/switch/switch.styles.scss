@@ -1,0 +1,140 @@
+.#{$materialize-prefix}-switch {
+  align-items: center;
+  cursor: $materialize-switch-cursor;
+  display: flex;
+  flex-direction: row;
+  outline: $materialize-switch-outline;
+  padding: $materialize-switch-padding;
+  -webkit-tap-highlight-color: $materialize-switch-tap-highlight-color;
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  &.active .#{$materialize-prefix}-switch-indicator {
+    left: $materialize-switch-active-indicator-left;
+  }
+
+  &:not(.disabled) {
+    @media (hover: hover) {
+      .#{$materialize-prefix}-switch-indicator:hover .#{$materialize-prefix}-switch-indicator-ripple {
+        background: $materialize-switch-indicator-ripple-hover-inactive-background;
+      }
+
+      &.active .#{$materialize-prefix}-switch-indicator:hover .#{$materialize-prefix}-switch-indicator-ripple {
+        background: $materialize-switch-indicator-ripple-hover-active-background;
+      }
+    }
+  }
+
+  &.focused:not(.disabled) {
+    &.active .#{$materialize-prefix}-switch-indicator-ripple {
+      background: $materialize-switch-indicator-ripple-focused-active-background;
+    }
+
+    .#{$materialize-prefix}-switch-indicator-ripple {
+      background: $materialize-switch-indicator-ripple-focused-inactive-background;
+    }
+  }
+
+  &.active:not(.disabled) {
+    .#{$materialize-prefix}-switch-indicator-track {
+      background: $materialize-switch-indicator-track-active-background;
+    }
+
+    .#{$materialize-prefix}-switch-indicator {
+      background: $materialize-switch-indicator-active-background;
+    }
+
+    .ripple {
+      background: $materialize-switch-ripple-active-background;
+    }
+  }
+
+  &.disabled {
+    .#{$materialize-prefix}-switch-indicator-track {
+      background: $materialize-switch-indicator-track-disabled-background;
+    }
+
+    .#{$materialize-prefix}-switch-indicator {
+      background: $materialize-switch-indicator-disabled-background;
+      cursor: not-allowed;
+    }
+
+    &.active .#{$materialize-prefix}-switch-indicator-track {
+      background: $materialize-switch-indicator-track-disabled-background;
+    }
+  }
+}
+
+.#{$materialize-prefix}-switch-label {
+  color: $materialize-switch-label-color;
+  flex: 1;
+  font-family: $materialize-switch-label-font-family;
+  font-size: $materialize-switch-label-font-size;
+  font-weight: $materialize-switch-label-font-weight;
+  padding: $materialize-switch-label-padding;
+  text-align: $materialize-switch-label-text-align;
+}
+
+.#{$materialize-prefix}-switch-indicator-track {
+  background: $materialize-switch-indicator-track-background;
+  border-radius: $materialize-switch-indicator-track-height / 2;
+  height: $materialize-switch-indicator-track-height;
+  margin: $materialize-switch-indicator-track-margin;
+  position: relative;
+  width: $materialize-switch-indicator-track-width;
+}
+
+.#{$materialize-prefix}-switch-indicator {
+  background: $materialize-switch-indicator-background;
+  border-radius: $materialize-switch-indicator-border-radius;
+  box-shadow: $materialize-switch-indicator-box-shadow;
+  height: $materialize-switch-indicator-size;
+  left: $materialize-switch-indicator-left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: $materialize-switch-indicator-transition;
+  width: $materialize-switch-indicator-size;
+}
+
+.#{$materialize-prefix}-switch-indicator-ripple {
+  border-radius: $materialize-switch-indicator-border-radius;
+  height: $materialize-switch-indicator-ripple-size;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: $materialize-switch-indicator-ripple-transition;
+  width: $materialize-switch-indicator-ripple-size;
+  z-index: $theme-zindex-1;
+
+  .ripple {
+    background: $materialize-switch-ripple-background;
+  }
+}
+
+#{$materialize-prefix}-switch.ng-touched.ng-dirty.ng-invalid {
+  .#{$materialize-prefix}-switch-indicator-track {
+    background: lighten(map-get($theme-colors, 'danger'), 40%);
+  }
+
+  .#{$materialize-prefix}-switch-indicator {
+    background: map-get($theme-colors, 'danger');
+  }
+
+  .#{$materialize-prefix}-switch.focused .#{$materialize-prefix}-switch-indicator-ripple {
+    background: rgba(map-get($theme-colors, 'danger'), 0.05);
+  }
+
+  @media (hover: hover) {
+    &:hover .#{$materialize-prefix}-switch-indicator-ripple {
+      background: rgba(map-get($theme-colors, 'danger'), 0.1);
+    }
+  }
+
+  .ripple {
+    background: rgba(map-get($theme-colors, 'danger'), 0.3);
+  }
+}

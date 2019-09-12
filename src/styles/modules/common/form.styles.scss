@@ -1,0 +1,159 @@
+.#{$materialize-prefix}-form-control-container {
+  background: $materialize-form-control-container-background;
+  border-color: $materialize-form-control-container-border-color;
+  border-radius: $materialize-form-control-container-border-radius;
+  border-style: $materialize-form-control-container-border-style;
+  border-width: $materialize-form-control-container-border-width;
+  display: flex;
+  flex-direction: row;
+  margin: $materialize-form-control-container-margin;
+  outline: $materialize-form-control-container-outiline;
+  position: relative;
+
+  &::after {
+    background: $materialize-form-control-container-line-color;
+    bottom: $materialize-form-control-container-line-bottom;
+    content: '';
+    height: $materialize-form-control-container-line-height;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: $materialize-form-control-container-line-transition;
+    width: $materialize-form-control-container-line-width;
+    z-index: $materialize-form-control-container-line-z-index;
+  }
+
+  &.float-label .#{$materialize-prefix}-form-control {
+    padding-top: $materialize-form-control-with-label-padding-top;
+  }
+
+  &.active .#{$materialize-prefix}-form-control-label,
+  &.focused .#{$materialize-prefix}-form-control-label {
+    font-size: $materialize-form-control-active-label-font-size;
+    line-height: $materialize-form-control-active-label-font-size;
+    top: $materialize-form-control-active-label-top;
+    transform: unset;
+  }
+
+  &.focused {
+    &::after {
+      width: $materialize-form-control-focused-container-line-width;
+    }
+
+    .#{$materialize-prefix}-form-control-label {
+      color: $materialize-form-control-focused-label-color;
+    }
+  }
+
+  &.disabled {
+    background: $materialize-form-control-disabled-container-backgorund;
+    border-color: $materialize-form-control-disabled-container-border-color;
+
+    .#{$materialize-prefix}-form-control,
+    .#{$materialize-prefix}-form-control-label {
+      cursor: not-allowed;
+    }
+
+    .#{$materialize-prefix}-form-control {
+      color: $materialize-form-control-disabled-color;
+    }
+
+    .#{$materialize-prefix}-form-control-label {
+      color: $materialize-form-control-disabled-label-color;
+    }
+  }
+}
+
+.#{$materialize-prefix}-form-control-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.#{$materialize-prefix}-form-control {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  caret-color: $materialize-form-control-caret-color;
+  color: $materialize-form-control-color;
+  font-family: $materialize-form-control-font-family;
+  font-size: $materialize-form-control-font-size;
+  font-weight: $materialize-form-control-font-weight;
+  height: 100%;
+  letter-spacing: $materialize-form-control-letter-spacing;
+  line-height: $materialize-form-control-line-height;
+  max-width: 100%;
+  outline: none;
+  padding: $materialize-form-control-padding;
+  resize: vertical;
+  white-space: nowrap;
+  width: 100%;
+
+  &::placeholder {
+    color: $materialize-form-control-placeholder-color;
+    font-weight: $materialize-form-control-placeholder-font-weight;
+  }
+}
+
+.#{$materialize-prefix}-form-control-label {
+  background: $materialize-form-control-label-background;
+  border-radius: $materialize-form-control-container-border-radius;
+  color: $materialize-form-control-label-color;
+  cursor: text;
+  font-family: $materialize-form-control-label-font-family;
+  font-size: $materialize-form-control-label-font-size;
+  font-weight: $materialize-form-control-label-font-weight;
+  left: 0;
+  letter-spacing: $materialize-form-control-label-letter-spacing;
+  line-height: $materialize-form-control-label-font-size;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition-duration: $materialize-form-control-label-transition-duration;
+  transition-property: $materialize-form-control-label-transition-property;
+  transition-timing-function: $materialize-form-control-label-transition-function;
+  width: 100%;
+
+  &:not(:empty) {
+    padding: $materialize-form-control-label-padding;
+  }
+}
+
+.#{$materialize-prefix}-form-control-prefix,
+.#{$materialize-prefix}-form-control-suffix {
+  align-items: center;
+  color: $materialize-form-control-color;
+  display: flex;
+  font-family: $materialize-form-control-font-family;
+  font-size: $materialize-form-control-font-size;
+  font-weight: $materialize-form-control-font-weight;
+  letter-spacing: $materialize-form-control-letter-spacing;
+  line-height: $materialize-form-control-line-height;
+  white-space: nowrap;
+}
+
+.#{$materialize-prefix}-form-control-prefix:not(:empty) {
+  padding-left: $theme-space-sm;
+}
+
+.#{$materialize-prefix}-form-control-suffix:not(:empty) {
+  padding-right: $theme-space-sm;
+}
+
+%form-control-error {
+  .#{$materialize-prefix}-form-control-container::after {
+    background: map-get($theme-colors, 'danger');
+    width: 100%;
+  }
+
+  .#{$materialize-prefix}-form-control-label {
+    color: map-get($theme-colors, 'danger');
+  }
+
+  .#{$materialize-prefix}-form-control {
+    caret-color: map-get($theme-colors, 'danger');
+  }
+}

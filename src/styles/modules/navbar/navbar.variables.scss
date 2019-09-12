@@ -1,0 +1,9 @@
+$materialize-navbar-background: map-get($theme-colors, 'primary') !default;
+$materialize-navbar-color: map-get($theme-colors, 'white') !default;
+$materialize-navbar-box-shadow: $theme-shadow-sm !default;
+$materialize-navbar-font-family: $theme-font-family-primary !default;
+$materialize-navbar-font-size: $theme-font-size-lg !default;
+$materialize-navbar-font-weight: $theme-font-weight-regular !default;
+$materialize-navbar-height: 72px !default;
+$materialize-navbar-margin: 0 0 $theme-space-sm !default;
+$materialize-navbar-padding: 0 $theme-space-xs !default;

@@ -1,0 +1,37 @@
+.#{$materialize-prefix}-glossary-item {
+  color: $materialize-glossary-item-color;
+  cursor: $materialize-glossary-item-cursor;
+  font-family: $materialize-glossary-font-family;
+  font-size: $materialize-glossary-font-size;
+  font-weight: $materialize-glossary-font-weight;
+  padding: $materialize-glossary-item-padding;
+  position: relative;
+
+  &::before {
+    content: '';
+    height: $materialize-glossary-item-line-height;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $materialize-glossary-item-line-width;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $materialize-glossary-item-hover-color;
+
+      &::before {
+        background: $materialize-glossary-item-hover-line-background;
+      }
+    }
+  }
+
+  &.active {
+    color: $materialize-glossary-item-active-color;
+
+    &::before {
+      background: $materialize-glossary-item-active-line-background;
+    }
+  }
+}

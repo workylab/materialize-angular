@@ -1,0 +1,9 @@
+$materialize-drawer-content-background: map-get($theme-colors, 'white') !default;
+$materialize-drawer-content-width: 280px !default;
+$materialize-drawer-content-z-index: $theme-zindex-2 !default;
+$materialize-drawer-content-transition-function: $theme-transition-function-in !default;
+
+$materialize-drawer-backdrop-background: rgba(0, 0, 0, 0.5) !default;
+$materialize-drawer-backdrop-transition-function: $theme-transition-function-out !default;
+$materialize-drawer-backdrop-transition-property: $theme-property-opacity !default;
+$materialize-drawer-backdrop-z-index: $theme-zindex-1 !default;
