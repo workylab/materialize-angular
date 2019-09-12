@@ -5,7 +5,9 @@
   border-width: $materialize-button-toggle-group-border-width;
   display: flex;
   flex-direction: row;
+  margin: $materialize-button-toggle-group-margin;
   overflow: hidden;
+  padding: $materialize-button-toggle-group-padding;
   width: $materialize-button-toggle-group-width;
 
   #{$materialize-prefix}-button-toggle {
