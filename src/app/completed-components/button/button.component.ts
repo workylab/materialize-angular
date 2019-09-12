@@ -1,4 +1,4 @@
-import { BUTTON_LEVEL, BUTTON_TYPE, ButtonModel } from './button.model';
+import { BUTTON_LEVELS, BUTTON_TYPES, ButtonModel } from './button.model';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { config } from '../../config';
 
@@ -10,16 +10,16 @@ export class ButtonComponent implements ButtonModel {
   static readonly defaultProps: ButtonModel = {
     className: '',
     disabled: false,
-    level: BUTTON_LEVEL.ACCENT,
+    level: BUTTON_LEVELS.ACCENT,
     rippleDuration: 250,
-    type: BUTTON_TYPE.BUTTON
+    type: BUTTON_TYPES.BUTTON
   };
 
   @Input() className: string = ButtonComponent.defaultProps.className;
   @Input() disabled: boolean = ButtonComponent.defaultProps.disabled;
-  @Input() level: BUTTON_LEVEL = ButtonComponent.defaultProps.level;
+  @Input() level: BUTTON_LEVELS = ButtonComponent.defaultProps.level;
   @Input() rippleDuration: number = ButtonComponent.defaultProps.rippleDuration;
-  @Input() type: BUTTON_TYPE = ButtonComponent.defaultProps.type;
+  @Input() type: BUTTON_TYPES = ButtonComponent.defaultProps.type;
 
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
   @Output('onClick') onClickEmitter: EventEmitter<void>;
