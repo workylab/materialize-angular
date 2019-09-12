@@ -5,26 +5,26 @@
   font-family: $theme-font-family-icon;
   outline: $materialize-icon-outline;
   text-transform: $materialize-icon-text-transform;
-}
 
-.#{$materialize-prefix}-icon-xl {
-  font-size: $theme-icon-xl;
-}
+  &.xs {
+    font-size: $theme-icon-xs;
+  }
 
-.#{$materialize-prefix}-icon-lg {
-  font-size: $theme-icon-lg;
-}
+  &.sm {
+    font-size: $theme-icon-sm;
+  }
 
-.#{$materialize-prefix}-icon-md {
-  font-size: $theme-icon-md;
-}
+  &.md {
+    font-size: $theme-icon-md;
+  }
 
-.#{$materialize-prefix}-icon-sm {
-  font-size: $theme-icon-sm;
-}
+  &.lg {
+    font-size: $theme-icon-lg;
+  }
 
-.#{$materialize-prefix}-icon-xs {
-  font-size: $theme-icon-xs;
+  &.xl {
+    font-size: $theme-icon-xl;
+  }
 }
 
 @font-face {
