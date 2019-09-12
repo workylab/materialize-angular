@@ -1,3 +1,24 @@
+@import '../theme/main';
+
+$materialize-spacer: 16px;
+
+$materialize-spacer-values: (
+  none: $materialize-spacer * 0,
+  xs: $materialize-spacer * 1,
+  sm: $materialize-spacer * 1.25,
+  md: $materialize-spacer * 1.5,
+  lg: $materialize-spacer * 1.75,
+  xl: $materialize-spacer * 2
+);
+
+$materialize-spacer-orientations: (
+  l: left,
+  r: right,
+  t: top,
+  b: bottom
+);
+$materialize-spacer-types: ('m', 'p');
+
 @mixin generate-classes() {
   @each $type in $materialize-spacer-types {
     @each $orientation-abb, $orientation-val in $materialize-spacer-orientations {

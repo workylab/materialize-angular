@@ -1,3 +1,32 @@
+@import '../theme/main';
+
+$materialize-spinner-animation: spinner 0.75s linear infinite !default;
+$materialize-spinner-border-size: 4px !default;
+$materialize-spinner-color: map-get($theme-colors, 'primary') !default;
+$materialize-spinner-size: 32px !default;
+
+$materialize-loader-animation: grow 0.75s linear infinite !default;
+$materialize-loader-color: map-get($theme-colors, 'primary') !default;
+$materialize-loader-size: 32px !default;
+
+$materialize-spinner-primary-border-color: map-get($theme-colors, 'primary') !default;
+$materialize-spinner-secondary-border-color: map-get($theme-colors, 'secondary') !default;
+$materialize-spinner-success-border-color: map-get($theme-colors, 'success') !default;
+$materialize-spinner-danger-border-color: map-get($theme-colors, 'danger') !default;
+$materialize-spinner-warning-border-color: map-get($theme-colors, 'warning') !default;
+$materialize-spinner-info-border-color: map-get($theme-colors, 'info') !default;
+$materialize-spinner-light-border-color: map-get($theme-colors, 'white') !default;
+$materialize-spinner-dark-border-color: map-get($theme-colors, 'black') !default;
+
+$materialize-loader-primary-color: map-get($theme-colors, 'primary') !default;
+$materialize-loader-secondary-color: map-get($theme-colors, 'secondary') !default;
+$materialize-loader-success-color: map-get($theme-colors, 'success') !default;
+$materialize-loader-danger-color: map-get($theme-colors, 'danger') !default;
+$materialize-loader-warning-color: map-get($theme-colors, 'warning') !default;
+$materialize-loader-info-color: map-get($theme-colors, 'info') !default;
+$materialize-loader-light-color: map-get($theme-colors, 'white') !default;
+$materialize-loader-dark-color: map-get($theme-colors, 'black') !default;
+
 .spinner {
   animation: $materialize-spinner-animation;
   border: $materialize-spinner-border-size solid currentColor;

@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BUTTON_LEVEL } from './button.model';
+import { BUTTON_LEVELS } from './button.model';
 import { ButtonComponent } from './button.component';
 import { config } from 'src/app/config';
 import { MaterializeCommonModule } from '../common/common.module';
@@ -61,7 +61,7 @@ describe('ButtonComponent', () => {
   it('should has the correct level', () => {
     const compile = fixture.debugElement.nativeElement;
     const button = compile.firstChild;
-    const newLevel: BUTTON_LEVEL = BUTTON_LEVEL.OUTLINE;
+    const newLevel: BUTTON_LEVELS = BUTTON_LEVELS.OUTLINE;
 
     expect(button.className).not.toContain(newLevel);
 

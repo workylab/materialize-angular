@@ -1,8 +1,9 @@
-$materialize-button-toggle-group-margin: 0 !default;
 $materialize-button-toggle-group-border-color: map-get($theme-colors, 'primary') !default;
 $materialize-button-toggle-group-border-radius: $theme-radius-sm !default;
 $materialize-button-toggle-group-border-style: solid !default;
 $materialize-button-toggle-group-border-width: $theme-border-sm !default;
+$materialize-button-toggle-group-margin: 0 !default;
+$materialize-button-toggle-group-padding: 0 !default;
 $materialize-button-toggle-group-width: max-content !default;
 
 $materialize-button-toggle-group-disabled-border-color: $materialize-color-gray !default;

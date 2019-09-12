@@ -1,9 +1,9 @@
 export interface FormMessageModel {
   className: string;
-  type: FORM_MESSAGE_TYPES;
+  level: FORM_MESSAGE_LEVELS;
 }
 
-export enum FORM_MESSAGE_TYPES {
+export enum FORM_MESSAGE_LEVELS {
   ERROR = 'error',
   INFO = 'info',
   SUCCESS = 'success',

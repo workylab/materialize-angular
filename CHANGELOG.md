@@ -1,5 +1,22 @@
 # Change Log
 
+## [v0.5.6](https://github.com/workylab/materialize-angular/tree/v0.5.6) (2019-09-10)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.5...v0.5.6)
+
+**Implemented enhancements:**
+
+- Hotfix/tab events [\#146](https://github.com/workylab/materialize-angular/pull/146) ([alexzoul](https://github.com/alexzoul))
+
+**Fixed bugs:**
+
+- Fix bug in build package script [\#145](https://github.com/workylab/materialize-angular/pull/145) ([LeandroGuillen](https://github.com/LeandroGuillen))
+- Fixed padding grid. [\#143](https://github.com/workylab/materialize-angular/pull/143) ([alexzoul](https://github.com/alexzoul))
+
+**Merged pull requests:**
+
+- Added OnTabSelected event to tabs [\#144](https://github.com/workylab/materialize-angular/pull/144) ([LeandroGuillen](https://github.com/LeandroGuillen))
+
 ## [v0.5.5](https://github.com/workylab/materialize-angular/tree/v0.5.5) (2019-09-06)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.4...v0.5.5)
