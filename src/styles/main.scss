@@ -9,6 +9,21 @@ $materialize-prefix: 'materialize' !default;
 @import './css/typography';
 @import './css/grid';
 @import './css/spacing';
+@import './css/table';
+
+@import './components/button';
+@import './components/button-toggle';
+@import './components/button-toggle-group';
+@import './components/calendar';
+@import './components/card';
+@import './components/checkbox';
+@import './components/collapsible';
+@import './components/date-picker';
+@import './components/drawer';
+@import './components/fonts';
+@import './components/form';
+@import './components/form-message';
+@import './components/glossary-item';
 @import './components/html-visualizer';
 @import './components/ripple';
 

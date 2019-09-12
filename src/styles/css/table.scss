@@ -1,0 +1,56 @@
+.#{$materialize-prefix}-table {
+  border: 1px solid #111111;
+  width: 100%;
+}
+
+.#{$materialize-prefix}-tr {
+  &:nth-child(even) {
+    background-color: #EEEEEE;
+  }
+
+  &:nth-child(odd) {
+    background-color: #FFFFFF;
+  }
+
+  &:not(:last-child) {
+    border-bottom: #111111 solid thin;
+  }
+}
+
+.#{$materialize-prefix}-tr,
+.#{$materialize-prefix}-thead {
+  display: grid;
+
+  @media (min-width: map-get(map-get($materialize-media-breakpoints, 'md'), 'min')) {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    .#{$materialize-prefix}-td:not(:last-child) {
+      border-right: #111111 solid thin;
+    }
+  }
+}
+
+.#{$materialize-prefix}-thead {
+  @media (min-width: map-get(map-get($materialize-media-breakpoints, 'md'), 'min')) {
+    border-bottom: #111111 solid thin;
+  }
+}
+
+.#{$materialize-prefix}-td,
+.#{$materialize-prefix}-th {
+  padding: 4px 8px;
+}
+
+.#{$materialize-prefix}-th {
+  background-color: #CCCCCC;
+  display: none;
+  font-weight: 600;
+
+  &:not(:last-child) {
+    border-right: #111111 solid thin;
+  }
+
+  @media (min-width: map-get(map-get($materialize-media-breakpoints, 'md'), 'min')) {
+    display: block;
+  }
+}
