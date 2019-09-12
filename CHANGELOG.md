@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.6.0](https://github.com/workylab/materialize-angular/tree/v0.6.0) (2019-09-12)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.6...v0.6.0)
+
+**Implemented enhancements:**
+
+- Feature/sass modules [\#151](https://github.com/workylab/materialize-angular/pull/151) ([alexzoul](https://github.com/alexzoul))
+- Feature/icon sizes [\#150](https://github.com/workylab/materialize-angular/pull/150) ([alexzoul](https://github.com/alexzoul))
+- Improve/exports [\#149](https://github.com/workylab/materialize-angular/pull/149) ([alexzoul](https://github.com/alexzoul))
+- Add workylab and Github pages websites [\#148](https://github.com/workylab/materialize-angular/pull/148) ([igayoso](https://github.com/igayoso))
+
 ## [v0.5.6](https://github.com/workylab/materialize-angular/tree/v0.5.6) (2019-09-10)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.5...v0.5.6)
