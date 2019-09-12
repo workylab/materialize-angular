@@ -142,3 +142,18 @@
 .#{$materialize-prefix}-form-control-suffix:not(:empty) {
   padding-right: $theme-space-sm;
 }
+
+%form-control-error {
+  .#{$materialize-prefix}-form-control-container::after {
+    background: map-get($theme-colors, 'danger');
+    width: 100%;
+  }
+
+  .#{$materialize-prefix}-form-control-label {
+    color: map-get($theme-colors, 'danger');
+  }
+
+  .#{$materialize-prefix}-form-control {
+    caret-color: map-get($theme-colors, 'danger');
+  }
+}
