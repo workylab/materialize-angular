@@ -76,6 +76,10 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   }
 
   formatDate(date: Date): string {
+    if (!(date instanceof Date)) {
+      return '';
+    }
+
     const day = date.getDate();
     const month = date.getMonth() + 1;
 
