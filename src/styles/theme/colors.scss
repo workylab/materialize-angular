@@ -11,6 +11,10 @@ $theme-color-warning: #FFC107 !default;
 $theme-color-info: #17A2B8 !default;
 $theme-color-black: #000000 !default;
 $theme-color-white: #FFFFFF !default;
+$theme-color-gray-80: #CCCCCC !default;
+$theme-color-gray-60: #999999 !default;
+$theme-color-gray-40: #666666 !default;
+$theme-color-gray-20: #333333 !default;
 
 $theme-colors: (
   'primary': $theme-color-primary,
@@ -20,30 +24,9 @@ $theme-colors: (
   'warning': $theme-color-warning,
   'info': $theme-color-info,
   'black': $theme-color-black,
-  'white': $theme-color-white
-);
-
-@function generate_color_pallete($materialize-color, $materialize-prefix-variable) {
-  $i: 10;
-  $limit: 90;
-  $pallete: ();
-
-  @while $i <= $limit {
-    $pallete: map-merge(
-      $pallete, (
-        '#{$materialize-prefix-variable}-#{$i}': darken(
-          $materialize-color, percentage($i / 100)
-        )
-      )
-    );
-    $i: $i + 10;
-  }
-
-  @return $pallete;
-}
-
-$theme-colors: map-merge(
-  $theme-colors, generate_color_pallete(
-    map-get($theme-colors, 'white'), 'gray'
-  )
+  'white': $theme-color-white,
+  'gray-80': $theme-color-gray-80,
+  'gray-60': $theme-color-gray-60,
+  'gray-40': $theme-color-gray-40,
+  'gray-20': $theme-color-gray-20
 );
