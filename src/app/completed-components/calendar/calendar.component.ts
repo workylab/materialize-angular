@@ -53,14 +53,16 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   init() {
-    const isToday = this.isTodayDate(this.date);
-    const month = this.date.getMonth();
-    const year = this.date.getFullYear();
+    const dateExists = (typeof this.date !== 'undefined' && this.date !== null);
+    const openDate = dateExists ? this.date : new Date();
+    const isToday = this.isTodayDate(openDate);
+    const month = openDate.getMonth();
+    const year = openDate.getFullYear();
 
     this.weeks = this.fillWeeks(month, year);
     this.years = this.fillYears(year);
 
-    this.selectedDate = this.createDateModel(this.date, false, isToday);
+    this.selectedDate = this.createDateModel(openDate, false, isToday, dateExists);
   }
 
   getDayLabels(dayLabels: DayLabels): Array<DateLabel> {
@@ -92,7 +94,7 @@ export class CalendarComponent implements OnInit, OnChanges {
     ];
   }
 
-  createDateModel(date: Date, isOutOfMonth: boolean, isToday: boolean): DateModel {
+  createDateModel(date: Date, isOutOfMonth: boolean, isToday: boolean, showSelected: boolean): DateModel {
     const weekDay = date.getDay();
     const month = date.getMonth();
 
@@ -102,7 +104,8 @@ export class CalendarComponent implements OnInit, OnChanges {
       dayLabel: this.dayLabels[weekDay],
       isOutOfMonth: isOutOfMonth,
       isToday: isToday,
-      monthLabel: this.monthLabels[month]
+      monthLabel: this.monthLabels[month],
+      showSelected: showSelected
     };
 
     return dateModel;
@@ -172,7 +175,7 @@ export class CalendarComponent implements OnInit, OnChanges {
     const isToday = this.isTodayDate(date);
     const isOutOfMonth = (dayNumber <= 0 || date > finalMonthDay);
 
-    return this.createDateModel(date, isOutOfMonth, isToday);
+    return this.createDateModel(date, isOutOfMonth, isToday, true);
   }
 
   showPrevMonth() {
@@ -237,7 +240,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 
       this.date = this.createDateObject(day, month, year);
       this.showYears = false;
-      this.selectedDate = this.createDateModel(this.date, false, true);
+      this.selectedDate = this.createDateModel(this.date, false, true, true);
 
       this.weeks = this.fillWeeks(month, year);
     }, this.selectYearAnimationDuration);

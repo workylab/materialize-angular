@@ -213,6 +213,8 @@ Calendar that displays other month days
 <materialize-calendar></materialize-calendar>
 Calendar with value
 <materialize-calendar [date]="date"></materialize-calendar>
+Calendar without a selected value
+<materialize-calendar [date]="null"></materialize-calendar>
 
 <br />
 <br />
@@ -228,8 +230,10 @@ Datepicker disabled
 <materialize-datepicker [disabled]="true"></materialize-datepicker>
 Datepicker disabled with FloatLabel
 <materialize-datepicker [disabled]="true" floatLabel="Float Label"></materialize-datepicker>
-Datepicker disabled with FloatLabel and value
-<materialize-datepicker [disabled]="true" floatLabel="Float Label" value="10-01-2019"></materialize-datepicker>
+Datepicker with FloatLabel and null value
+<materialize-datepicker floatLabel="Float Label" [inputValue]="null"></materialize-datepicker>
+Datepicker with FloatLabel and value
+<materialize-datepicker floatLabel="Float Label" [inputValue]="date"></materialize-datepicker>
 Datepicker Full size
 <materialize-datepicker [fullSize]="true"></materialize-datepicker>
 Datepicker Custom Format
