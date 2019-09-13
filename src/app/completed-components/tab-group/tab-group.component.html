@@ -5,7 +5,7 @@
       *ngFor="let tab of tabs; let i = index"
 
       [ngClass]="prefix + '-tab-group-item'"
-      [class.active]="i === selectedIndex"
+      [class.active]="i === selectedIndexInner"
       [class.disabled]="tab.disabled"
       [isRippleActive]="!tab.disabled"
 
@@ -18,7 +18,7 @@
       <div [ngClass]="prefix + '-tab-group-indicator'"></div>
     </div>
   </ul>
-  
+
   <div>
     <ng-content select="materialize-tab"></ng-content>
   </div>

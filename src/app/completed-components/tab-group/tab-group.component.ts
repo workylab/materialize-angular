@@ -1,27 +1,31 @@
 import {
   AfterContentInit,
+  ChangeDetectionStrategy,
   Component,
   ContentChildren,
   ElementRef,
   EventEmitter,
   Input,
+  OnChanges,
   Output,
   QueryList,
   Renderer2,
+  SimpleChanges,
   ViewChild
 } from '@angular/core';
-import { config } from '../../config';
-import { Router } from '@angular/router';
-import { supportedEvents } from '../../utils/get-supported-events.util';
-import { SupportedEventsModel } from '../../components/common/models/supported-events.model';
-import { TabComponent } from './tab/tab.component';
-import { TabGroupModel } from './tab-group.model';
+import {config} from '../../config';
+import {Router} from '@angular/router';
+import {supportedEvents} from '../../utils/get-supported-events.util';
+import {SupportedEventsModel} from '../../components/common/models/supported-events.model';
+import {TabComponent} from './tab/tab.component';
+import {TabGroupModel} from './tab-group.model';
 
 @Component({
   selector: `${ config.components.prefix }-tab-group }`,
-  templateUrl: './tab-group.component.html'
+  templateUrl: './tab-group.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabGroupComponent implements AfterContentInit {
+export class TabGroupComponent implements AfterContentInit, OnChanges {
   static readonly defaultProps: TabGroupModel = {
     className: '',
     selectedIndex: 0,
@@ -39,6 +43,7 @@ export class TabGroupComponent implements AfterContentInit {
   @Input() selectedIndex: number = TabGroupComponent.defaultProps.selectedIndex;
   @Input() transitionDuration: number = TabGroupComponent.defaultProps.transitionDuration;
 
+  public selectedIndexInner: number;
   public prefix = config.components.prefix;
   public supportedEvents: SupportedEventsModel;
 
@@ -51,12 +56,23 @@ export class TabGroupComponent implements AfterContentInit {
     window.addEventListener(this.supportedEvents.resize, this.update);
   }
 
-  ngAfterContentInit() {
-    setTimeout(this.update, 0);
+  ngAfterContentInit(): void {
+    this.update();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.selectedIndex) {
+      this.selectedIndexInner = changes.selectedIndex.currentValue;
+      if (!changes.selectedIndex.isFirstChange()) {
+        this.moveIndicator(this.selectedIndexInner, true);
+      }
+    }
   }
 
   update() {
-    this.moveIndicator(this.selectedIndex, false);
+    setTimeout(() => {
+      this.moveIndicator(this.selectedIndexInner, false);
+    }, 150);
   }
 
   selectTab(index: number) {
@@ -64,10 +80,10 @@ export class TabGroupComponent implements AfterContentInit {
     const selectedTab = tabs[index];
 
     if (!selectedTab.disabled) {
-      this.selectedIndex = index;
+      this.selectedIndexInner = index;
 
       this.onTabSelectEmitter.emit(index);
-      this.moveIndicator(this.selectedIndex, true);
+      this.moveIndicator(this.selectedIndexInner, true);
 
       if (selectedTab.link) {
         setTimeout(() => {
@@ -86,13 +102,16 @@ export class TabGroupComponent implements AfterContentInit {
   moveIndicator(index: number, hasAnimation: boolean) {
     this.activateIndex(index);
 
-    const child = this.headerRef.nativeElement.children[index];
-    const transitionDuration = hasAnimation
-      ? `${ this.transitionDuration }ms`
-      : null;
+    // After index activation, the tabs sizes could change
+    setTimeout(() => {
+      const child = this.headerRef.nativeElement.children[index];
+      const transitionDuration = hasAnimation
+        ? `${this.transitionDuration}ms`
+        : null;
 
-    this.renderer.setStyle(this.indicatorRef.nativeElement, 'transitionDuration', transitionDuration);
-    this.renderer.setStyle(this.indicatorRef.nativeElement, 'width', `${ child.offsetWidth }px`);
-    this.renderer.setStyle(this.indicatorRef.nativeElement, 'transform', `translateX(${ child.offsetLeft }px)`);
+      this.renderer.setStyle(this.indicatorRef.nativeElement, 'transitionDuration', transitionDuration);
+      this.renderer.setStyle(this.indicatorRef.nativeElement, 'width', `${child.offsetWidth}px`);
+      this.renderer.setStyle(this.indicatorRef.nativeElement, 'transform', `translateX(${child.offsetLeft}px)`);
+    }, 0);
   }
 }
