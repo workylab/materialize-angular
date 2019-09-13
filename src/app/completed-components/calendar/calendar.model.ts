@@ -11,6 +11,7 @@ export interface DateModel {
   isToday: boolean;
   isOutOfMonth: boolean;
   monthLabel: DateLabel;
+  showSelected: boolean;
 }
 
 export interface MonthModel {
