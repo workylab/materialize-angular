@@ -1,56 +1,45 @@
 .#{$materialize-prefix}-table {
-  border: 1px solid #111111;
-  width: 100%;
+  border-collapse: collapse;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(min-content, auto));
+  min-width: 100%;
+}
+
+.#{$materialize-prefix}-thead,
+.#{$materialize-prefix}-tbody,
+.#{$materialize-prefix}-tr {
+  display: contents;
+}
+
+.#{$materialize-prefix}-th,
+.#{$materialize-prefix}-td {
+  font-family: $materialize-table-font-family;
+  overflow: hidden;
+  padding: map-get($materialize-spacer-values, 'xs')/2 map-get($materialize-spacer-values, 'xs');
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.#{$materialize-prefix}-th {
+  background: $materialize-table-header-background;
+  color: $materialize-table-header-color;
+  font-size: $materialize-table-font-size;
+  font-weight: $materialize-table-header-font-weight;
+  position: sticky;
+  text-align: left;
+  top: 0;
+
+  &:last-child {
+    border: 0;
+  }
+}
+
+.#{$materialize-prefix}-td {
+  color: #808080;
 }
 
 .#{$materialize-prefix}-tr {
-  &:nth-child(even) {
-    background-color: #EEEEEE;
-  }
-
-  &:nth-child(odd) {
-    background-color: #FFFFFF;
-  }
-
-  &:not(:last-child) {
-    border-bottom: #111111 solid thin;
-  }
-}
-
-.#{$materialize-prefix}-tr,
-.#{$materialize-prefix}-thead {
-  display: grid;
-
-  @media (min-width: map-get(map-get($materialize-media-breakpoints, 'md'), 'min')) {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-
-    .#{$materialize-prefix}-td:not(:last-child) {
-      border-right: #111111 solid thin;
-    }
-  }
-}
-
-.#{$materialize-prefix}-thead {
-  @media (min-width: map-get(map-get($materialize-media-breakpoints, 'md'), 'min')) {
-    border-bottom: #111111 solid thin;
-  }
-}
-
-.#{$materialize-prefix}-td,
-.#{$materialize-prefix}-th {
-  padding: 4px 8px;
-}
-
-.#{$materialize-prefix}-th {
-  background-color: #CCCCCC;
-  display: none;
-  font-weight: 600;
-
-  &:not(:last-child) {
-    border-right: #111111 solid thin;
-  }
-
-  @media (min-width: map-get(map-get($materialize-media-breakpoints, 'md'), 'min')) {
-    display: block;
+  &:nth-child(even) .#{$materialize-prefix}-td {
+    background: $materialize-table-row-background;
   }
 }

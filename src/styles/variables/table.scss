@@ -1,1 +1,6 @@
-$table: 0;
+$materialize-table-header-background: map-get($theme-colors, 'primary') !default;
+$materialize-table-header-color: map-get($theme-colors, 'white') !default;
+$materialize-table-header-font-weight: $theme-font-weight-bold !default;
+$materialize-table-row-background: lighten(map-get($theme-colors, 'primary'), 50%) !default;
+$materialize-table-font-size: 100% !default;
+$materialize-table-font-family: $theme-font-family-primary !default;
