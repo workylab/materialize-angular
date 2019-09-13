@@ -12,7 +12,7 @@ export class ContactsComponent {
       amount: new FormControl({ disabled: false, value: null }, Validators.required),
       dateOfBirth: new FormControl({
         disabled: false,
-        value: new Date()
+        value: null
       }),
       favorite: new FormControl({ disabled: false, value: 'b' }, Validators.required),
       hasLocation: new FormControl({ disabled: false, value: true }, Validators.requiredTrue),
