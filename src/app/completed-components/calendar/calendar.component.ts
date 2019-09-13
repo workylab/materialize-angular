@@ -53,14 +53,14 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   init() {
-    const isToday = this.isTodayDate(this.date);
-    const month = this.date.getMonth();
-    const year = this.date.getFullYear();
+    const date = this.date instanceof Date
+      ? this.date
+      : new Date();
+    const isToday = this.isTodayDate(date);
 
-    this.weeks = this.fillWeeks(month, year);
-    this.years = this.fillYears(year);
-
-    this.selectedDate = this.createDateModel(this.date, false, isToday);
+    this.weeks = this.fillWeeks(date);
+    this.years = this.fillYears(date);
+    this.selectedDate = this.createDateModel(date, false, isToday);
   }
 
   getDayLabels(dayLabels: DayLabels): Array<DateLabel> {
@@ -118,9 +118,10 @@ export class CalendarComponent implements OnInit, OnChanges {
     return date;
   }
 
-  fillYears(currentYear: number): Array<number> {
-    const firstYear = currentYear - 100;
-    const lastYear = currentYear + 100;
+  fillYears(date: Date): Array<number> {
+    const year = date.getFullYear();
+    const firstYear = year - 100;
+    const lastYear = year + 100;
     const years = [];
 
     for (let i = firstYear; i <= lastYear; i++) {
@@ -130,7 +131,10 @@ export class CalendarComponent implements OnInit, OnChanges {
     return years;
   }
 
-  fillWeeks(month: number, year: number) {
+  fillWeeks(date: Date) {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
     this.selectedMonth = {
       label: this.monthLabels[month],
       number: month,
@@ -187,7 +191,9 @@ export class CalendarComponent implements OnInit, OnChanges {
       ? year - 1
       : year;
 
-    this.weeks = this.fillWeeks(prevMonth, prevYear);
+    const date = this.createDateObject(1, prevMonth, prevYear);
+
+    this.weeks = this.fillWeeks(date);
   }
 
   showNextMonth() {
@@ -202,7 +208,9 @@ export class CalendarComponent implements OnInit, OnChanges {
       ? year + 1
       : year;
 
-    this.weeks = this.fillWeeks(nextMonth, nextYear);
+    const date = this.createDateObject(1, nextMonth, nextYear);
+
+    this.weeks = this.fillWeeks(date);
   }
 
   generateISODate(date: Date) {
@@ -239,7 +247,7 @@ export class CalendarComponent implements OnInit, OnChanges {
       this.showYears = false;
       this.selectedDate = this.createDateModel(this.date, false, true);
 
-      this.weeks = this.fillWeeks(month, year);
+      this.weeks = this.fillWeeks(this.date);
     }, this.selectYearAnimationDuration);
   }
 
