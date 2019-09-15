@@ -15,7 +15,7 @@ $materialize-modal-backdrop-background: rgba(map-get($theme-colors, 'black'), 0.
 $materialize-modal-backdrop-transition-property: opacity !default;
 $materialize-modal-backdrop-transition-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
 
-$materialize-modal-icon-close-color: $materialize-color-gray-darkest !default;
+$materialize-modal-icon-close-color: map-get($theme-colors, 'gray-20') !default;
 $materialize-modal-icon-close-size: 12px !default;
 $materialize-modal-icon-close-right: $theme-space-xs !default;
 $materialize-modal-icon-close-top: $theme-space-xs !default;

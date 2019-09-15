@@ -1,7 +1,7 @@
 $materialize-stepper-margin: 0 !default;
 $materialize-stepper-padding: $theme-space-md $theme-space-lg !default;
 
-$materialize-stepper-divider-background: $materialize-color-gray-light !default;
+$materialize-stepper-divider-background: map-get($theme-colors, 'gray-80') !default;
 $materialize-stepper-divider-height: $theme-border-md !default;
 $materialize-stepper-divider-margin: $theme-space-md 0 0 !default;
 $materialize-stepper-divider-width: 100% !default;
@@ -10,9 +10,9 @@ $materialize-stepper-divider-completed-background: map-get($theme-colors, 'prima
 
 $materialize-step-padding: 0 $theme-space-md !default;
 
-$materialize-step-indicator-background: $materialize-color-gray-light !default;
+$materialize-step-indicator-background: map-get($theme-colors, 'gray-80') !default;
 $materialize-step-indicator-border-radius: $theme-radius-full !default;
-$materialize-step-indicator-color: $materialize-color-gray !default;
+$materialize-step-indicator-color: map-get($theme-colors, 'gray-60') !default;
 $materialize-step-indicator-font-family: $theme-font-family-primary !default;
 $materialize-step-indicator-font-size: $theme-font-size-xl !default;
 $materialize-step-indicator-font-weight: $theme-font-weight-regular !default;
@@ -22,7 +22,7 @@ $materialize-step-indicator-size: 33px !default;
 $materialize-step-indicator-icon-color: map-get($theme-colors, 'white') !default;
 $materialize-step-indicator-icon-size: 24px !default;
 
-$materialize-step-label-color: $materialize-color-gray-darkest !default;
+$materialize-step-label-color: map-get($theme-colors, 'gray-20') !default;
 $materialize-step-label-font-family: $theme-font-family-primary !default;
 $materialize-step-label-font-size: $theme-font-size-md !default;
 $materialize-step-label-font-weight: $theme-font-weight-regular !default;

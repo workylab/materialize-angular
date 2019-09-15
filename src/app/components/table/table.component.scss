@@ -23,9 +23,9 @@
 }
 
 .table-cell {
-  border-bottom: $theme-border-sm solid $materialize-color-gray;
-  border-right: $theme-border-sm solid $materialize-color-gray;
-  color: $materialize-color-gray-dark;
+  border-bottom: $theme-border-sm solid map-get($theme-colors, 'gray-60');
+  border-right: $theme-border-sm solid map-get($theme-colors, 'gray-60');
+  color: map-get($theme-colors, 'gray-40');
   cursor: pointer;
   display: table-cell;
   font-size: 13px;
@@ -51,11 +51,11 @@
   display: table-row-group;
 
   .table-row:hover {
-    background: $materialize-color-gray-light;
+    background: map-get($theme-colors, 'gray-80');
   }
 
   .table-row:first-child .table-cell {
-    border-top: $theme-border-sm solid $materialize-color-gray;
+    border-top: $theme-border-sm solid map-get($theme-colors, 'gray-60');
   }
 }
 
@@ -65,7 +65,7 @@
 
 .table-sort-container {
   align-content: center;
-  color: $materialize-color-gray-dark;
+  color: map-get($theme-colors, 'gray-40');
   display: flex;
   flex-direction: row;
 
@@ -75,7 +75,7 @@
 }
 
 .table-sort-icon {
-  color: $materialize-color-gray;
+  color: map-get($theme-colors, 'gray-60');
   margin-right: $materialize-space-xs;
 }
 

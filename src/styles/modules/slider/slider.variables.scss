@@ -37,5 +37,5 @@ $materialize-slider-labels-container-width: $theme-space-full !default;
 $materialize-slider-invalid-track-background: map-get($theme-colors, 'danger') !default;
 $materialize-slider-invalid-step-background: map-get($theme-colors, 'danger') !default;
 
-$materialize-slider-disabled-track-background: $materialize-color-gray !default;
-$materialize-slider-disabled-step-background: $materialize-color-gray !default;
+$materialize-slider-disabled-track-background: map-get($theme-colors, 'gray-60') !default;
+$materialize-slider-disabled-step-background: map-get($theme-colors, 'gray-60') !default;
