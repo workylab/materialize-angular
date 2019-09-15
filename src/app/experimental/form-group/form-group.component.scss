@@ -14,7 +14,7 @@
 }
 
 .form-group-icon {
-  color: $materialize-color-gray-dark;
+  color: map-get($theme-colors, 'gray-40');
 }
 
 .form-group-field-container {

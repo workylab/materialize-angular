@@ -23,14 +23,14 @@ $materialize-button-accent-width: auto !default;
 $materialize-button-accent-hover-background: lighten(map-get($theme-colors, 'primary'), 5%) !default;
 $materialize-button-accent-focused-background: lighten(map-get($theme-colors, 'primary'), 10%) !default;
 
-$materialize-button-accent-disabled-background: $materialize-color-gray !default;
+$materialize-button-accent-disabled-background: map-get($theme-colors, 'gray-60') !default;
 $materialize-button-accent-disabled-box-shadow: none !default;
-$materialize-button-accent-disabled-color: $materialize-color-gray-dark !default;
+$materialize-button-accent-disabled-color: map-get($theme-colors, 'gray-40') !default;
 
 $materialize-button-accent-ripple-background: rgba(lighten(map-get($theme-colors, 'primary'), 50%), 0.2) !default;
 
 $materialize-button-outline-background: transparent !default;
-$materialize-button-outline-border: $theme-border-sm solid $materialize-color-gray !default;
+$materialize-button-outline-border: $theme-border-sm solid map-get($theme-colors, 'gray-60') !default;
 $materialize-button-outline-border-radius: $theme-radius-sm !default;
 $materialize-button-outline-color: map-get($theme-colors, 'primary') !default;
 $materialize-button-outline-cursor: pointer !default;
@@ -54,8 +54,8 @@ $materialize-button-outline-hover-background: rgba(map-get($theme-colors, 'prima
 $materialize-button-outline-focused-background: rgba(map-get($theme-colors, 'primary'), 0.1) !default;
 
 $materialize-button-outline-disabled-background: transparent !default;
-$materialize-button-outline-disabled-border: $theme-border-sm solid $materialize-color-gray !default;
-$materialize-button-outline-disabled-color: $materialize-color-gray !default;
+$materialize-button-outline-disabled-border: $theme-border-sm solid map-get($theme-colors, 'gray-60') !default;
+$materialize-button-outline-disabled-color: map-get($theme-colors, 'gray-60') !default;
 
 $materialize-button-outline-ripple-background: rgba(map-get($theme-colors, 'primary'), 0.2) !default;
 
@@ -84,6 +84,6 @@ $materialize-button-text-hover-background: rgba(map-get($theme-colors, 'primary'
 $materialize-button-text-focused-background: rgba(map-get($theme-colors, 'primary'), 0.1) !default;
 
 $materialize-button-text-disabled-background: transparent !default;
-$materialize-button-text-disabled-color: $materialize-color-gray !default;
+$materialize-button-text-disabled-color: map-get($theme-colors, 'gray-60') !default;
 
 $materialize-button-text-ripple-background: rgba(map-get($theme-colors, 'primary'), 0.2) !default;

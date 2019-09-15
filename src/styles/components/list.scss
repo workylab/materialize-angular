@@ -1,7 +1,7 @@
 .list-item {
   align-items: center;
   border-radius: $theme-radius-md;
-  color: $materialize-color-gray-dark;
+  color: map-get($theme-colors, 'gray-40');
   cursor: pointer;
   display: flex;
   font-family: $theme-font-family-primary;

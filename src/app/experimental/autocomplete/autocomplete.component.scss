@@ -23,14 +23,14 @@
 
 .autocomplete-option {
   box-sizing: border-box;
-  color: $materialize-color-gray-dark;
+  color: map-get($theme-colors, 'gray-40');
   font-size: $materialize-font-size-xs;
   font-weight: $materialize-font-weight-light;
   outline: none;
   padding: $materialize-space-md $materialize-space-sm;
 
   &:hover {
-    background-color: $materialize-color-gray-light;
+    background-color: map-get($theme-colors, 'gray-80');
   }
 
   &.active {

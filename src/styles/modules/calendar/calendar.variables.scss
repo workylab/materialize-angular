@@ -50,7 +50,7 @@ $materialize-calendar-control-transition:
 $materialize-calendar-control-ripple-background: rgba($theme-color-black, 0.05) !default;
 $materialize-calendar-control-hover-background: rgba($theme-color-black, 0.1) !default;
 
-$materialize-calendar-day-name-color: $materialize-color-gray !default;
+$materialize-calendar-day-name-color: map-get($theme-colors, 'gray-60') !default;
 $materialize-calendar-day-name-font-family: $theme-font-family-primary !default;
 $materialize-calendar-day-name-font-size: $theme-font-size-xs !default;
 $materialize-calendar-day-name-font-weight: $theme-font-weight-light !default;
@@ -70,19 +70,19 @@ $materialize-calendar-day-transition:
 
 $materialize-calendar-day-ripple: rgba(lighten($theme-color-primary, 50%), 0.3) !default;
 
-$materialize-calendar-day-hover-background: $materialize-color-gray-light !default;
+$materialize-calendar-day-hover-background: map-get($theme-colors, 'gray-80') !default;
 
 $materialize-calendar-day-current-background: transparent !default;
-$materialize-calendar-day-current-border-color: $materialize-color-gray !default;
+$materialize-calendar-day-current-border-color: map-get($theme-colors, 'gray-60') !default;
 $materialize-calendar-day-current-color: $theme-color-black !default;
 
 $materialize-calendar-day-selected-background: $theme-color-primary !default;
 $materialize-calendar-day-selected-border-color: transparent !default;
 $materialize-calendar-day-selected-color: $theme-color-white !default;
 
-$materialize-calendar-day-disabled-background: $materialize-color-gray-light !default;
+$materialize-calendar-day-disabled-background: map-get($theme-colors, 'gray-80') !default;
 $materialize-calendar-day-disabled-border-color: transparent !default;
-$materialize-calendar-day-disabled-color: $materialize-color-gray-dark !default;
+$materialize-calendar-day-disabled-color: map-get($theme-colors, 'gray-40') !default;
 
 $materialize-calendar-year-option-cursor: pointer !default;
 $materialize-calendar-year-option-font-family: $theme-font-family-primary !default;

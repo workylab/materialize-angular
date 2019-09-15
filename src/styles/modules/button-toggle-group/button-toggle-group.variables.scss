@@ -6,4 +6,4 @@ $materialize-button-toggle-group-margin: 0 !default;
 $materialize-button-toggle-group-padding: 0 !default;
 $materialize-button-toggle-group-width: max-content !default;
 
-$materialize-button-toggle-group-disabled-border-color: $materialize-color-gray !default;
+$materialize-button-toggle-group-disabled-border-color: map-get($theme-colors, 'gray-60') !default;

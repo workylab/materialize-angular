@@ -4,7 +4,7 @@
   position: relative;
 
   .#{$materialize-prefix}-form-control-container.disabled .#{$materialize-prefix}-form-control-select-icon {
-    color: $materialize-color-gray;
+    color: map-get($theme-colors, 'gray-60');
     cursor: not-allowed;
   }
 
@@ -18,7 +18,7 @@
 }
 
 .#{$materialize-prefix}-form-control-select-icon {
-  color: $materialize-color-gray-dark;
+  color: map-get($theme-colors, 'gray-40');
   position: absolute;
   right: $theme-space-xs;
   top: 50%;
