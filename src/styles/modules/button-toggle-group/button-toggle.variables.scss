@@ -9,7 +9,7 @@ $materialize-button-toggle-padding: $theme-space-sm $theme-space-md !default;
 $materialize-button-toggle-tap-highlight-color: transparent !default;
 $materialize-button-toggle-text-align: center !default;
 $materialize-button-toggle-transition:
-$theme-property-background $theme-timer-md $theme-transition-function-ease;
+$theme-property-background $theme-timer-md $theme-transition-function-ease !default;
 $materialize-button-toggle-width: auto !default;
 
 $materialize-button-toggle-hover-background: rgba(map-get($theme-colors, 'primary'), 0.1) !default;
@@ -21,4 +21,4 @@ $materialize-button-toggle-active-color: map-get($theme-colors, 'white') !defaul
 $materialize-button-toggle-disabled-background: map-get($theme-colors, 'gray-80') !default;
 $materialize-button-toggle-disabled-color: map-get($theme-colors, 'gray-60') !default;
 
-$materialize-button-toggle-ripple-background: rgba(lighten(map-get($theme-colors, 'primary'), 50%), 0.2);
+$materialize-button-toggle-ripple-background: rgba(lighten(map-get($theme-colors, 'primary'), 50%), 0.2) !default;
