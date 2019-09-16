@@ -38,7 +38,7 @@
                 *ngIf="!day.isOutOfMonth || displayOtherMonthDays"
   
                 [class.current]="day.isToday"
-                [class.selected]="selectedDate.ISODate === day.ISODate"
+                [class.selected]="selectedDate.showSelected && selectedDate.ISODate === day.ISODate"
                 [class.disabled]="day.isOutOfMonth"
   
                 materializeRipple
