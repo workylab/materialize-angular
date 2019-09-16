@@ -74296,11 +74296,40 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["Version"]('7.2.15'
 /*!***********************************************************************!*\
   !*** ./node_modules/materialize-angular/fesm5/materialize-angular.js ***!
   \***********************************************************************/
-/*! exports provided: MaterializeAccordionModule, MaterializeButtonModule, MaterializeButtonToggleGroupModule, MaterializeCalendarModule, MaterializeCardModule, MaterializeCheckboxModule, MaterializeCollapsibleModule, MaterializeCommonModule, MaterializeDatePickerModule, MaterializeDrawerModule, MaterializeFormMessageModule, MaterializeGlossaryModule, MaterializeHTMLVisualizerModule, MaterializeIconModule, MaterializeInputModule, MaterializeLabelModule, MaterializeModalModule, MaterializeNavbarModule, MaterializeRadioGroupModule, MaterializeScrollSpyModule, MaterializeSelectModule, MaterializeSliderModule, MaterializeStepperModule, MaterializeSwitchModule, MaterializeTabGroupModule, MaterializeTextAreaModule, ɵa, ɵb, ɵba, ɵbb, ɵbc, ɵbd, ɵbe, ɵbf, ɵbg, ɵbh, ɵbi, ɵbj, ɵbk, ɵbl, ɵbm, ɵbn, ɵbo, ɵbp, ɵbq, ɵbr, ɵc, ɵd, ɵe, ɵf, ɵg, ɵh, ɵi, ɵj, ɵk, ɵl, ɵm, ɵn, ɵo, ɵp, ɵq, ɵr, ɵs, ɵt, ɵu, ɵv, ɵw, ɵx, ɵy, ɵz */
+/*! exports provided: AccordionComponent, BUTTON_LEVELS, BUTTON_TYPES, ButtonComponent, ButtonToggleComponent, ButtonToggleGroupComponent, CalendarComponent, CardComponent, CheckboxComponent, CollapsibleComponent, CollapsibleContentComponent, CollapsibleTitleComponent, DRAWER_POSITIONS, DRAWER_TYPES, DatePickerComponent, DrawerComponent, DrawerContainerComponent, DrawerContentComponent, DrawerModel, FORM_MESSAGE_LEVELS, FormMessageComponent, GlossaryComponent, GlossaryItemComponent, HTMLVisualizerComponent, ICON_SIZES, INPUT_TYPE, IconComponent, InputComponent, LabelComponent, MaterializeAccordionModule, MaterializeButtonModule, MaterializeButtonToggleGroupModule, MaterializeCalendarModule, MaterializeCardModule, MaterializeCheckboxModule, MaterializeCollapsibleModule, MaterializeCommonModule, MaterializeDatePickerModule, MaterializeDrawerModule, MaterializeFormMessageModule, MaterializeGlossaryModule, MaterializeHTMLVisualizerModule, MaterializeIconModule, MaterializeInputModule, MaterializeLabelModule, MaterializeModalModule, MaterializeNavbarModule, MaterializeRadioGroupModule, MaterializeScrollSpyModule, MaterializeSelectModule, MaterializeSliderModule, MaterializeStepperModule, MaterializeSwitchModule, MaterializeTabGroupModule, MaterializeTextAreaModule, ModalComponent, NavbarComponent, PrefixDirective, RadioComponent, RadioGroupComponent, RippleDirective, ScrollSpyComponent, ScrollSpyItemComponent, SelectComponent, SelectOptionComponent, SliderComponent, SliderIndicatorComponent, SliderOptionComponent, StepComponent, StepIndicatorComponent, StepLabelComponent, StepperComponent, SuffixDirective, SwitchComponent, TabComponent, TabGroupComponent, TextAreaComponent, ɵa */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionComponent", function() { return AccordionComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_LEVELS", function() { return BUTTON_LEVELS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_TYPES", function() { return BUTTON_TYPES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonComponent", function() { return ButtonComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonToggleComponent", function() { return ButtonToggleComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonToggleGroupComponent", function() { return ButtonToggleGroupComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarComponent", function() { return CalendarComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardComponent", function() { return CardComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckboxComponent", function() { return CheckboxComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollapsibleComponent", function() { return CollapsibleComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollapsibleContentComponent", function() { return CollapsibleContentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollapsibleTitleComponent", function() { return CollapsibleTitleComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DRAWER_POSITIONS", function() { return DRAWER_POSITIONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DRAWER_TYPES", function() { return DRAWER_TYPES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DatePickerComponent", function() { return DatePickerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return DrawerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerContainerComponent", function() { return DrawerContainerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerContentComponent", function() { return DrawerContentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerModel", function() { return DrawerModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FORM_MESSAGE_LEVELS", function() { return FORM_MESSAGE_LEVELS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormMessageComponent", function() { return FormMessageComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlossaryComponent", function() { return GlossaryComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlossaryItemComponent", function() { return GlossaryItemComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HTMLVisualizerComponent", function() { return HTMLVisualizerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ICON_SIZES", function() { return ICON_SIZES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INPUT_TYPE", function() { return INPUT_TYPE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconComponent", function() { return IconComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputComponent", function() { return InputComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LabelComponent", function() { return LabelComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeAccordionModule", function() { return MaterializeAccordionModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeButtonModule", function() { return MaterializeButtonModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeButtonToggleGroupModule", function() { return MaterializeButtonToggleGroupModule; });
@@ -74327,50 +74356,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeSwitchModule", function() { return MaterializeSwitchModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeTabGroupModule", function() { return MaterializeTabGroupModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterializeTextAreaModule", function() { return MaterializeTextAreaModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return AccordionComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵba", function() { return LabelComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbb", function() { return ModalComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbc", function() { return NavbarComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbd", function() { return RadioComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbe", function() { return RadioGroupComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbf", function() { return SelectComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbg", function() { return SelectOptionComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbh", function() { return SliderComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbi", function() { return SliderOptionComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbj", function() { return SliderIndicatorComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbk", function() { return StepComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbl", function() { return StepIndicatorComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbm", function() { return StepLabelComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbn", function() { return StepperComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbo", function() { return SwitchComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbp", function() { return TabComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbq", function() { return TabGroupComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵbr", function() { return TextAreaComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return CollapsibleComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return CollapsibleContentComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵe", function() { return CollapsibleTitleComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵf", function() { return IconComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵg", function() { return PrefixDirective; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵh", function() { return RippleDirective; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵi", function() { return SuffixDirective; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵj", function() { return ButtonComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵk", function() { return ButtonToggleComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵl", function() { return ButtonToggleGroupComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵm", function() { return CalendarComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵn", function() { return CardComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵo", function() { return CheckboxComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵp", function() { return DatePickerComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵq", function() { return InputComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return FormMessageComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵs", function() { return DrawerComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵt", function() { return DrawerContainerComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵu", function() { return DrawerContentComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵv", function() { return GlossaryComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return GlossaryItemComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵx", function() { return ScrollSpyComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵy", function() { return ScrollSpyItemComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵz", function() { return HTMLVisualizerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalComponent", function() { return ModalComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrefixDirective", function() { return PrefixDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadioComponent", function() { return RadioComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadioGroupComponent", function() { return RadioGroupComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RippleDirective", function() { return RippleDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollSpyComponent", function() { return ScrollSpyComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollSpyItemComponent", function() { return ScrollSpyItemComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectComponent", function() { return SelectComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectOptionComponent", function() { return SelectOptionComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SliderComponent", function() { return SliderComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SliderIndicatorComponent", function() { return SliderIndicatorComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SliderOptionComponent", function() { return SliderOptionComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepComponent", function() { return StepComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepIndicatorComponent", function() { return StepIndicatorComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepLabelComponent", function() { return StepLabelComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepperComponent", function() { return StepperComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuffixDirective", function() { return SuffixDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwitchComponent", function() { return SwitchComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabComponent", function() { return TabComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabGroupComponent", function() { return TabGroupComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextAreaComponent", function() { return TextAreaComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return config; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
@@ -74931,9 +74939,28 @@ var MaterializeCommonModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function IconModel() { }
+if (false) {}
+/** @enum {string} */
+var ICON_SIZES = {
+    XS: 'xs',
+    SM: 'sm',
+    MD: 'md',
+    LG: 'lg',
+    XL: 'xl',
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var IconComponent = /** @class */ (function () {
     function IconComponent() {
         this.className = IconComponent.defaultProps.className;
+        this.size = IconComponent.defaultProps.size;
         this.prefix = config.components.prefix;
         this.onClickEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.onBlurEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
@@ -74956,11 +74983,14 @@ var IconComponent = /** @class */ (function () {
     function () {
         this.onBlurEmitter.emit();
     };
-    IconComponent.defaultProps = { className: '' };
+    IconComponent.defaultProps = {
+        className: '',
+        size: ICON_SIZES.SM
+    };
     IconComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: config.components.prefix + "-icon }",
-                    template: "<span class=\"icon\" [ngClass]=\"[prefix + '-icon', className]\" (click)=\"onClick()\" (blur)=\"onBlur()\">\n  <ng-content></ng-content>\n</span>\n"
+                    template: "<span class=\"icon\" [ngClass]=\"[prefix + '-icon', size, className]\" (click)=\"onClick()\" (blur)=\"onBlur()\">\n  <ng-content></ng-content>\n</span>\n"
                 }] }
     ];
     /** @nocollapse */
@@ -74968,7 +74998,8 @@ var IconComponent = /** @class */ (function () {
     IconComponent.propDecorators = {
         onClickEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onClick',] }],
         onBlurEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onBlur',] }],
-        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
+        className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        size: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
     };
     return IconComponent;
 }());
@@ -75048,16 +75079,26 @@ var MaterializeAccordionModule = /** @class */ (function () {
 /**
  * @record
  */
+function AccordionModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
 function ButtonModel() { }
 if (false) {}
 /** @enum {string} */
-var BUTTON_LEVEL = {
+var BUTTON_LEVELS = {
     TEXT: 'text',
     ACCENT: 'accent',
     OUTLINE: 'outline',
 };
 /** @enum {string} */
-var BUTTON_TYPE = {
+var BUTTON_TYPES = {
     BUTTON: 'button',
     SUBMIT: 'submit',
 };
@@ -75114,9 +75155,9 @@ var ButtonComponent = /** @class */ (function () {
     ButtonComponent.defaultProps = {
         className: '',
         disabled: false,
-        level: BUTTON_LEVEL.ACCENT,
+        level: BUTTON_LEVELS.ACCENT,
         rippleDuration: 250,
-        type: BUTTON_TYPE.BUTTON
+        type: BUTTON_TYPES.BUTTON
     };
     ButtonComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
@@ -75476,6 +75517,26 @@ var MaterializeButtonToggleGroupModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ButtonToggleGroupModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ButtonToggleModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 /** @type {?} */
 var days = {
     friday: {
@@ -75598,7 +75659,6 @@ var CalendarComponent = /** @class */ (function () {
         this.onSelectDayEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.dayLabels = this.getDayLabels(days);
         this.monthLabels = this.getMonthLabels(months);
-        this.selectedDate = this.createDateModel(this.date, false, true);
     }
     /**
      * @return {?}
@@ -75607,12 +75667,37 @@ var CalendarComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        this.init();
+    };
+    /**
+     * @return {?}
+     */
+    CalendarComponent.prototype.ngOnChanges = /**
+     * @return {?}
+     */
+    function () {
+        this.init();
+    };
+    /**
+     * @return {?}
+     */
+    CalendarComponent.prototype.init = /**
+     * @return {?}
+     */
+    function () {
         /** @type {?} */
-        var month = this.date.getMonth();
+        var dateExists = (typeof this.date !== 'undefined' && this.date !== null);
         /** @type {?} */
-        var year = this.date.getFullYear();
+        var openDate = dateExists ? this.date : new Date();
+        /** @type {?} */
+        var isToday = this.isTodayDate(openDate);
+        /** @type {?} */
+        var month = openDate.getMonth();
+        /** @type {?} */
+        var year = openDate.getFullYear();
         this.weeks = this.fillWeeks(month, year);
         this.years = this.fillYears(year);
+        this.selectedDate = this.createDateModel(openDate, false, isToday, dateExists);
     };
     /**
      * @param {?} dayLabels
@@ -75661,15 +75746,17 @@ var CalendarComponent = /** @class */ (function () {
      * @param {?} date
      * @param {?} isOutOfMonth
      * @param {?} isToday
+     * @param {?} showSelected
      * @return {?}
      */
     CalendarComponent.prototype.createDateModel = /**
      * @param {?} date
      * @param {?} isOutOfMonth
      * @param {?} isToday
+     * @param {?} showSelected
      * @return {?}
      */
-    function (date, isOutOfMonth, isToday) {
+    function (date, isOutOfMonth, isToday, showSelected) {
         /** @type {?} */
         var weekDay = date.getDay();
         /** @type {?} */
@@ -75681,7 +75768,8 @@ var CalendarComponent = /** @class */ (function () {
             dayLabel: this.dayLabels[weekDay],
             isOutOfMonth: isOutOfMonth,
             isToday: isToday,
-            monthLabel: this.monthLabels[month]
+            monthLabel: this.monthLabels[month],
+            showSelected: showSelected
         };
         return dateModel;
     };
@@ -75764,6 +75852,23 @@ var CalendarComponent = /** @class */ (function () {
     };
     /**
      * @param {?} date
+     * @return {?}
+     */
+    CalendarComponent.prototype.isTodayDate = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        /** @type {?} */
+        var ISOCurrentDate = this.generateISODate(new Date());
+        /** @type {?} */
+        var ISODate = this.generateISODate(date);
+        /** @type {?} */
+        var isToday = (ISODate === ISOCurrentDate);
+        return isToday;
+    };
+    /**
+     * @param {?} date
      * @param {?} dayNumber
      * @param {?} finalMonthDay
      * @return {?}
@@ -75776,14 +75881,10 @@ var CalendarComponent = /** @class */ (function () {
      */
     function (date, dayNumber, finalMonthDay) {
         /** @type {?} */
-        var ISODate = this.generateISODate(date);
-        /** @type {?} */
-        var ISOCurrentDate = this.generateISODate(new Date());
+        var isToday = this.isTodayDate(date);
         /** @type {?} */
         var isOutOfMonth = (dayNumber <= 0 || date > finalMonthDay);
-        /** @type {?} */
-        var isToday = (ISODate === ISOCurrentDate);
-        return this.createDateModel(date, isOutOfMonth, isToday);
+        return this.createDateModel(date, isOutOfMonth, isToday, true);
     };
     /**
      * @return {?}
@@ -75887,7 +75988,7 @@ var CalendarComponent = /** @class */ (function () {
             var month = _this.selectedDate.date.getMonth();
             _this.date = _this.createDateObject(day, month, year);
             _this.showYears = false;
-            _this.selectedDate = _this.createDateModel(_this.date, false, true);
+            _this.selectedDate = _this.createDateModel(_this.date, false, true, true);
             _this.weeks = _this.fillWeeks(month, year);
         }), this.selectYearAnimationDuration);
     };
@@ -75951,7 +76052,7 @@ var CalendarComponent = /** @class */ (function () {
     CalendarComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: config.components.prefix + "-calendar }",
-                    template: "<div [ngClass]=\"[prefix + '-calendar', className]\">\n  <div [ngClass]=\"prefix + '-calendar-header'\">\n    <div [ngClass]=\"prefix + '-calendar-year'\">\n      <materialize-button (onClick)=\"displayYears()\">{{ selectedMonth.year }}</materialize-button>\n    </div>\n    <div [ngClass]=\"prefix + '-calendar-date'\">\n      <materialize-button (onClick)=\"showYears = false\">\n        {{ selectedDate.dayLabel.shortName }}, {{ selectedDate.monthLabel.shortName }} {{ selectedDate.date.getDate() }}\n      </materialize-button>\n    </div>\n  </div>\n\n  <div [ngClass]=\"prefix + '-calendar-body'\">\n    <ng-container *ngIf=\"!showYears\">\n      <div [ngClass]=\"prefix + '-calendar-controls'\">\n        <div [ngClass]=\"prefix + '-calendar-control'\" materializeRipple (click)=\"showPrevMonth()\">\n          <materialize-icon>chevron_left</materialize-icon>\n        </div>\n        <div [ngClass]=\"prefix + '-calendar-month'\">\n          {{ selectedMonth.label.shortName }} {{ selectedMonth.year }}\n        </div>\n        <div [ngClass]=\"prefix + '-calendar-control'\" materializeRipple (click)=\"showNextMonth()\">\n          <materialize-icon>chevron_right</materialize-icon>\n        </div>\n      </div>\n      \n      <table [ngClass]=\"prefix + '-calendar-table'\">\n        <thead>\n          <tr>\n            <td [ngClass]=\"prefix + '-calendar-day-name'\" *ngFor=\"let day of dayLabels\">{{ day.shortestName }}</td>\n          </tr>\n        </thead>\n        <tbody>\n          <tr *ngFor=\"let week of weeks\">\n            <td *ngFor=\"let day of week\">\n              <div [ngClass]=\"prefix + '-calendar-day'\"\n                (click)=\"onSelectDay(day)\"\n                *ngIf=\"!day.isOutOfMonth || displayOtherMonthDays\"\n  \n                [class.current]=\"day.isToday\"\n                [class.selected]=\"selectedDate.ISODate === day.ISODate\"\n                [class.disabled]=\"day.isOutOfMonth\"\n  \n                materializeRipple\n                [rippleDuration]=\"800\"\n              >\n                {{ day.date.getDate() }}\n              </div>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </ng-container>\n    \n    <div [ngClass]=\"prefix + '-calendar-years'\"  #yearsContainer>\n      <ng-container *ngIf=\"showYears\">\n        <div [ngClass]=\"prefix + '-calendar-year-option'\"\n          *ngFor=\"let year of years\"\n\n          (click)=\"onSelectYear(year)\"\n          [class.selected]=\"year === selectedMonth.year\"\n\n          materializeRipple\n          [rippleDuration]=\"selectYearAnimationDuration\"\n        >\n          {{ year }}\n        </div>\n      </ng-container>\n    </div>\n  </div>\n</div>\n"
+                    template: "<div [ngClass]=\"[prefix + '-calendar', className]\">\n  <div [ngClass]=\"prefix + '-calendar-header'\">\n    <div [ngClass]=\"prefix + '-calendar-year'\">\n      <materialize-button (onClick)=\"displayYears()\">{{ selectedMonth.year }}</materialize-button>\n    </div>\n    <div [ngClass]=\"prefix + '-calendar-date'\">\n      <materialize-button (onClick)=\"showYears = false\">\n        {{ selectedDate.dayLabel.shortName }}, {{ selectedDate.monthLabel.shortName }} {{ selectedDate.date.getDate() }}\n      </materialize-button>\n    </div>\n  </div>\n\n  <div [ngClass]=\"prefix + '-calendar-body'\">\n    <ng-container *ngIf=\"!showYears\">\n      <div [ngClass]=\"prefix + '-calendar-controls'\">\n        <div [ngClass]=\"prefix + '-calendar-control'\" materializeRipple (click)=\"showPrevMonth()\">\n          <materialize-icon>chevron_left</materialize-icon>\n        </div>\n        <div [ngClass]=\"prefix + '-calendar-month'\">\n          {{ selectedMonth.label.shortName }} {{ selectedMonth.year }}\n        </div>\n        <div [ngClass]=\"prefix + '-calendar-control'\" materializeRipple (click)=\"showNextMonth()\">\n          <materialize-icon>chevron_right</materialize-icon>\n        </div>\n      </div>\n      \n      <table [ngClass]=\"prefix + '-calendar-table'\">\n        <thead>\n          <tr>\n            <td [ngClass]=\"prefix + '-calendar-day-name'\" *ngFor=\"let day of dayLabels\">{{ day.shortestName }}</td>\n          </tr>\n        </thead>\n        <tbody>\n          <tr *ngFor=\"let week of weeks\">\n            <td *ngFor=\"let day of week\">\n              <div [ngClass]=\"prefix + '-calendar-day'\"\n                (click)=\"onSelectDay(day)\"\n                *ngIf=\"!day.isOutOfMonth || displayOtherMonthDays\"\n  \n                [class.current]=\"day.isToday\"\n                [class.selected]=\"selectedDate.showSelected && selectedDate.ISODate === day.ISODate\"\n                [class.disabled]=\"day.isOutOfMonth\"\n  \n                materializeRipple\n                [rippleDuration]=\"800\"\n              >\n                {{ day.date.getDate() }}\n              </div>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </ng-container>\n    \n    <div [ngClass]=\"prefix + '-calendar-years'\"  #yearsContainer>\n      <ng-container *ngIf=\"showYears\">\n        <div [ngClass]=\"prefix + '-calendar-year-option'\"\n          *ngFor=\"let year of years\"\n\n          (click)=\"onSelectYear(year)\"\n          [class.selected]=\"year === selectedMonth.year\"\n\n          materializeRipple\n          [rippleDuration]=\"selectYearAnimationDuration\"\n        >\n          {{ year }}\n        </div>\n      </ng-container>\n    </div>\n  </div>\n</div>\n"
                 }] }
     ];
     /** @nocollapse */
@@ -75993,6 +76094,41 @@ var MaterializeCalendarModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function CalendarModel() { }
+if (false) {}
+/**
+ * @record
+ */
+function DateModel() { }
+if (false) {}
+/**
+ * @record
+ */
+function MonthModel() { }
+if (false) {}
+/**
+ * @record
+ */
+function DateLabel() { }
+if (false) {}
+/**
+ * @record
+ */
+function DayLabels() { }
+if (false) {}
+/**
+ * @record
+ */
+function MonthLabels() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var CardComponent = /** @class */ (function () {
     function CardComponent() {
         this.className = CardComponent.defaultProps.className;
@@ -76028,6 +76164,16 @@ var MaterializeCardModule = /** @class */ (function () {
     ];
     return MaterializeCardModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function CardModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -76207,6 +76353,26 @@ var MaterializeCheckboxModule = /** @class */ (function () {
 /**
  * @record
  */
+function CheckboxModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function CollapsibleModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
 function InputModel() { }
 if (false) {}
 /** @enum {string} */
@@ -76223,6 +76389,7 @@ var DatePickerComponent = /** @class */ (function () {
     function DatePickerComponent() {
         this.className = DatePickerComponent.defaultProps.className;
         this.disabled = DatePickerComponent.defaultProps.disabled;
+        this.displayOtherMonthDays = DatePickerComponent.defaultProps.displayOtherMonthDays;
         this.floatLabel = DatePickerComponent.defaultProps.floatLabel;
         this.format = DatePickerComponent.defaultProps.format;
         this.fullSize = DatePickerComponent.defaultProps.fullSize;
@@ -76230,7 +76397,7 @@ var DatePickerComponent = /** @class */ (function () {
         this.name = DatePickerComponent.defaultProps.name;
         this.placeholder = DatePickerComponent.defaultProps.placeholder;
         this.required = DatePickerComponent.defaultProps.required;
-        this.value = DatePickerComponent.defaultProps.value;
+        this.inputValue = DatePickerComponent.defaultProps.value;
         this.prefix = config.components.prefix;
         this.isOpen = false;
         this.close = this.close.bind(this);
@@ -76242,7 +76409,7 @@ var DatePickerComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.date = this.buildDate(this.value);
+        // this.date = this.buildDate(this.inputValue);
     };
     /**
      * @param {?} selectedDate
@@ -76255,8 +76422,8 @@ var DatePickerComponent = /** @class */ (function () {
     function (selectedDate) {
         this.isOpen = false;
         this.date = selectedDate.date;
-        this.value = this.formatDate(selectedDate.date);
-        this.onChange(this.value);
+        this.inputValue = this.formatDate(selectedDate.date);
+        this.onChange(selectedDate.date);
     };
     /**
      * @param {?} date
@@ -76362,8 +76529,8 @@ var DatePickerComponent = /** @class */ (function () {
      * @return {?}
      */
     function (value) {
-        this.onChange(value);
         this.date = this.buildDate(value);
+        this.onChange(this.date);
     };
     /**
      * @return {?}
@@ -76394,8 +76561,8 @@ var DatePickerComponent = /** @class */ (function () {
      * @return {?}
      */
     function (value) {
-        this.value = value;
-        this.date = this.buildDate(this.value);
+        this.date = value;
+        this.inputValue = this.formatDate(value);
     };
     /**
      * @param {?} fn
@@ -76427,7 +76594,8 @@ var DatePickerComponent = /** @class */ (function () {
      * @param {?} value
      * @return {?}
      */
-    function (value) { };
+    function (value) {
+    };
     /**
      * @return {?}
      */
@@ -76443,6 +76611,7 @@ var DatePickerComponent = /** @class */ (function () {
         className: '',
         date: new Date(),
         disabled: false,
+        displayOtherMonthDays: true,
         floatLabel: '',
         format: 'dd-mm-yyyy',
         fullSize: false,
@@ -76466,7 +76635,7 @@ var DatePickerComponent = /** @class */ (function () {
                             function () { return DatePickerComponent; }))
                         }],
                     selector: config.components.prefix + "-datepicker }",
-                    template: "<div [ngClass]=\"[prefix + '-datepicker', className]\" [class.full-size]=\"fullSize\">\n  <div #backdrop *ngIf=\"isOpen\" [ngClass]=\"prefix + '-datepicker-backdrop'\"></div>\n\n  <materialize-input\n    [disabled]=\"disabled\"\n    [floatLabel]=\"floatLabel\"\n    [id]=\"id\"\n    [placeholder]=\"placeholder\"\n    [required]=\"required\"\n    [value]=\"value\"\n\n    (onChange)=\"onInputChange($event)\"\n    (onFocus)=\"onInputFocus()\"\n  >\n    <materialize-button (onClick)=\"open()\"\n      materializeSuffix\n      [className]=\"prefix + '-datepicker-button'\"\n      [disabled]=\"disabled\"\n    >\n      <materialize-icon [className]=\"prefix + '-datepicker-button'\">calendar_today</materialize-icon>\n    </materialize-button>\n  </materialize-input>\n\n  <materialize-calendar *ngIf=\"isOpen\"\n    [className]=\"prefix + '-datepicker-calendar'\"\n    [date]=\"date\"\n    (onSelectDay)=\"onSelectDay($event)\">\n  </materialize-calendar>\n</div>\n"
+                    template: "<div [ngClass]=\"[prefix + '-datepicker', className]\" [class.full-size]=\"fullSize\">\n  <div #backdrop *ngIf=\"isOpen\" [ngClass]=\"prefix + '-datepicker-backdrop'\"></div>\n\n  <materialize-input\n    [disabled]=\"disabled\"\n    [floatLabel]=\"floatLabel\"\n    [id]=\"id\"\n    [placeholder]=\"placeholder\"\n    [required]=\"required\"\n    [value]=\"inputValue\"\n\n    (onChange)=\"onInputChange($event)\"\n    (onFocus)=\"onInputFocus()\"\n  >\n    <materialize-button (onClick)=\"open()\"\n      materializeSuffix\n      [className]=\"prefix + '-datepicker-button'\"\n      [disabled]=\"disabled\"\n    >\n      <materialize-icon [className]=\"prefix + '-datepicker-button'\">calendar_today</materialize-icon>\n    </materialize-button>\n  </materialize-input>\n\n  <materialize-calendar *ngIf=\"isOpen\"\n    [className]=\"prefix + '-datepicker-calendar'\"\n    [date]=\"date\"\n    (onSelectDay)=\"onSelectDay($event)\">\n  </materialize-calendar>\n</div>\n"
                 }] }
     ];
     /** @nocollapse */
@@ -76475,6 +76644,7 @@ var DatePickerComponent = /** @class */ (function () {
         backdropRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['backdrop', { static: false },] }],
         className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        displayOtherMonthDays: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         floatLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         format: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         fullSize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
@@ -76482,7 +76652,7 @@ var DatePickerComponent = /** @class */ (function () {
         name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         required: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
+        inputValue: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
     };
     return DatePickerComponent;
 }());
@@ -76670,7 +76840,7 @@ if (false) {}
 function FormMessageModel() { }
 if (false) {}
 /** @enum {string} */
-var FORM_MESSAGE_TYPES = {
+var FORM_MESSAGE_LEVELS = {
     ERROR: 'error',
     INFO: 'info',
     SUCCESS: 'success',
@@ -76684,22 +76854,22 @@ var FORM_MESSAGE_TYPES = {
 var FormMessageComponent = /** @class */ (function () {
     function FormMessageComponent() {
         this.className = FormMessageComponent.defaultProps.className;
-        this.type = FormMessageComponent.defaultProps.type;
+        this.level = FormMessageComponent.defaultProps.level;
         this.prefix = config.components.prefix;
     }
     FormMessageComponent.defaultProps = {
         className: '',
-        type: FORM_MESSAGE_TYPES.INFO
+        level: FORM_MESSAGE_LEVELS.INFO
     };
     FormMessageComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: config.components.prefix + "-form-message }",
-                    template: "<div [ngClass]=\"[prefix + '-form-message', className, type]\">\n  <ng-content></ng-content>\n</div>\n"
+                    template: "<div [ngClass]=\"[prefix + '-form-message', className, level]\">\n  <ng-content></ng-content>\n</div>\n"
                 }] }
     ];
     FormMessageComponent.propDecorators = {
         className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['className',] }],
-        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['type',] }]
+        level: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['type',] }]
     };
     return FormMessageComponent;
 }());
@@ -76766,6 +76936,16 @@ var MaterializeDatePickerModule = /** @class */ (function () {
     ];
     return MaterializeDatePickerModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function DatePickerModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -76975,6 +77155,29 @@ var MaterializeDrawerModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/** @type {?} */
+var getOffseTop = (/**
+ * @param {?} element
+ * @return {?}
+ */
+function (element) {
+    /** @type {?} */
+    var offsetTop = 0;
+    /** @type {?} */
+    var nextElement = element;
+    while (nextElement.offsetParent) {
+        if (!isNaN(nextElement.offsetTop)) {
+            offsetTop += nextElement.offsetTop;
+        }
+        nextElement = (/** @type {?} */ (nextElement.offsetParent));
+    }
+    return offsetTop;
+});
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var GlossaryItemComponent = /** @class */ (function () {
     function GlossaryItemComponent() {
         this.className = GlossaryItemComponent.defaultProps.className;
@@ -77025,6 +77228,7 @@ var GlossaryComponent = /** @class */ (function () {
         this.router = router;
         this.className = GlossaryComponent.defaultProps.className;
         this.scrollSpy = GlossaryComponent.defaultProps.scrollSpy;
+        this.topSpace = GlossaryComponent.defaultProps.topSpace;
         this.prefix = config.components.prefix;
         this.activeReferenceId = '';
         this.onClickItem = this.onClickItem.bind(this);
@@ -77034,7 +77238,7 @@ var GlossaryComponent = /** @class */ (function () {
     /**
      * @return {?}
      */
-    GlossaryComponent.prototype.ngAfterContentInit = /**
+    GlossaryComponent.prototype.ngAfterViewInit = /**
      * @return {?}
      */
     function () {
@@ -77075,7 +77279,14 @@ var GlossaryComponent = /** @class */ (function () {
         /** @type {?} */
         var element = document.getElementById(referenceId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            /** @type {?} */
+            var elementOffsetTop = getOffseTop(element);
+            /** @type {?} */
+            var scrollTop_1 = elementOffsetTop - this.topSpace;
+            setTimeout((/**
+             * @return {?}
+             */
+            function () { return window.scrollTo(0, scrollTop_1); }), 150);
         }
     };
     /**
@@ -77122,13 +77333,19 @@ var GlossaryComponent = /** @class */ (function () {
         this.scrollTo(referenceId);
         /** @type {?} */
         var routerTree = this.router.parseUrl(this.router.url);
-        var segments = routerTree.root.children.primary.segments;
+        var primary = routerTree.root.children.primary;
         /** @type {?} */
-        var urlWithoutParams = segments.map((/**
-         * @param {?} segment
-         * @return {?}
-         */
-        function (segment) { return segment.path; }));
+        var urlWithoutParams = primary
+            ? primary.segments.map((/**
+             * @param {?} segment
+             * @return {?}
+             */
+            function (segment) { return segment.path; }))
+            : routerTree.root.segments.map((/**
+             * @param {?} segment
+             * @return {?}
+             */
+            function (segment) { return segment.path; }));
         this.router.navigate(urlWithoutParams, { fragment: referenceId });
     };
     /**
@@ -77150,7 +77367,8 @@ var GlossaryComponent = /** @class */ (function () {
     };
     GlossaryComponent.defaultProps = {
         className: '',
-        scrollSpy: null
+        scrollSpy: null,
+        topSpace: 0
     };
     GlossaryComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
@@ -77165,7 +77383,8 @@ var GlossaryComponent = /** @class */ (function () {
     GlossaryComponent.propDecorators = {
         items: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ContentChildren"], args: [GlossaryItemComponent,] }],
         className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        scrollSpy: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
+        scrollSpy: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        topSpace: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
     };
     return GlossaryComponent;
 }());
@@ -77181,25 +77400,6 @@ var ScrollSpyItemComponent = /** @class */ (function () {
         this.className = ScrollSpyItemComponent.defaultProps.className;
         this.id = ScrollSpyItemComponent.defaultProps.id;
     }
-    /**
-     * @return {?}
-     */
-    ScrollSpyItemComponent.prototype.getElementOffseTop = /**
-     * @return {?}
-     */
-    function () {
-        /** @type {?} */
-        var offsetTop = 0;
-        /** @type {?} */
-        var nextElement = this.element.nativeElement;
-        while (nextElement.offsetParent) {
-            if (!isNaN(nextElement.offsetTop)) {
-                offsetTop += nextElement.offsetTop;
-            }
-            nextElement = nextElement.offsetParent;
-        }
-        return offsetTop;
-    };
     ScrollSpyItemComponent.defaultProps = {
         className: '',
         id: ''
@@ -77293,7 +77493,7 @@ var ScrollSpyComponent = /** @class */ (function () {
         var items = this.items.toArray();
         for (var i = 0; i < items.length; i++) {
             /** @type {?} */
-            var elementOffsetTop = items[i].getElementOffseTop();
+            var elementOffsetTop = getOffseTop(items[i].element.nativeElement);
             if (elementOffsetTop > windowScrollPosition()) {
                 /** @type {?} */
                 var prevItem = items[i - 1]
@@ -77377,6 +77577,26 @@ var MaterializeGlossaryModule = /** @class */ (function () {
     ];
     return MaterializeGlossaryModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function GlossaryItemModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function GlossaryModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -77675,6 +77895,16 @@ var MaterializeHTMLVisualizerModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function HTMLVisualizerModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var LabelComponent = /** @class */ (function () {
     function LabelComponent() {
         this.className = LabelComponent.defaultProps.className;
@@ -77712,6 +77942,16 @@ var MaterializeLabelModule = /** @class */ (function () {
     ];
     return MaterializeLabelModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function LabelModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -77836,6 +78076,16 @@ var MaterializeModalModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ModalModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var NavbarComponent = /** @class */ (function () {
     function NavbarComponent() {
         this.className = NavbarComponent.defaultProps.className;
@@ -77873,6 +78123,16 @@ var MaterializeNavbarModule = /** @class */ (function () {
     ];
     return MaterializeNavbarModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function NavbarModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -78213,6 +78473,46 @@ var MaterializeRadioGroupModule = /** @class */ (function () {
     ];
     return MaterializeRadioGroupModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function RadioGroupModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function RadioModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ScrollSpyModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ScrollSpyItemModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -78622,6 +78922,26 @@ var MaterializeSelectModule = /** @class */ (function () {
     ];
     return MaterializeSelectModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function SelectModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function SelectOptionModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -79182,6 +79502,26 @@ var MaterializeSliderModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function SliderModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function SliderOptionModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var StepComponent = /** @class */ (function () {
     function StepComponent() {
         this.prefix = config.components.prefix;
@@ -79352,6 +79692,16 @@ var MaterializeStepperModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function StepperModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var SwitchComponent = /** @class */ (function () {
     function SwitchComponent() {
         this.className = SwitchComponent.defaultProps.className;
@@ -79517,6 +79867,16 @@ var MaterializeSwitchModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function SwitchModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var TabComponent = /** @class */ (function () {
     function TabComponent() {
         this.className = TabComponent.defaultProps.className;
@@ -79561,6 +79921,7 @@ var TabGroupComponent = /** @class */ (function () {
         this.selectedIndex = TabGroupComponent.defaultProps.selectedIndex;
         this.transitionDuration = TabGroupComponent.defaultProps.transitionDuration;
         this.prefix = config.components.prefix;
+        this.onTabSelectEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.supportedEvents = supportedEvents();
         this.update = this.update.bind(this);
         window.addEventListener(this.supportedEvents.resize, this.update);
@@ -79568,11 +79929,24 @@ var TabGroupComponent = /** @class */ (function () {
     /**
      * @return {?}
      */
-    TabGroupComponent.prototype.ngAfterContentInit = /**
+    TabGroupComponent.prototype.ngAfterViewInit = /**
      * @return {?}
      */
     function () {
-        setTimeout(this.update, 0);
+        setTimeout(this.update, 250);
+    };
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    TabGroupComponent.prototype.ngOnChanges = /**
+     * @param {?} changes
+     * @return {?}
+     */
+    function (changes) {
+        if (changes.selectedIndex && !changes.selectedIndex.isFirstChange()) {
+            this.moveIndicator(changes.selectedIndex.currentValue, true);
+        }
     };
     /**
      * @return {?}
@@ -79599,6 +79973,7 @@ var TabGroupComponent = /** @class */ (function () {
         var selectedTab = tabs[index];
         if (!selectedTab.disabled) {
             this.selectedIndex = index;
+            this.onTabSelectEmitter.emit(index);
             this.moveIndicator(this.selectedIndex, true);
             if (selectedTab.link) {
                 setTimeout((/**
@@ -79670,6 +80045,7 @@ var TabGroupComponent = /** @class */ (function () {
         tabs: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ContentChildren"], args: [TabComponent,] }],
         indicatorRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['indicator', { static: true },] }],
         headerRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['header', { static: true },] }],
+        onTabSelectEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onSelectTab',] }],
         className: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         selectedIndex: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         transitionDuration: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
@@ -79703,6 +80079,26 @@ var MaterializeTabGroupModule = /** @class */ (function () {
     ];
     return MaterializeTabGroupModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function TabGroupModel() { }
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function TabModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
@@ -79896,6 +80292,16 @@ var MaterializeTextAreaModule = /** @class */ (function () {
     ];
     return MaterializeTextAreaModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function TextAreaModel() { }
+if (false) {}
 
 /**
  * @fileoverview added by tsickle
