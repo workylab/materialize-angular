@@ -59,7 +59,7 @@ export class GlossaryComponent implements AfterViewInit, GlossaryModel {
 
     if (element) {
       const elementOffsetTop = getOffseTop(element);
-      const scrollTop = elementOffsetTop + this.topSpace;
+      const scrollTop = elementOffsetTop - this.topSpace;
 
       setTimeout(() => window.scrollTo(0, scrollTop), 150);
     }
