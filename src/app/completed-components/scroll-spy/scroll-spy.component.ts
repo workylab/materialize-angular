@@ -1,5 +1,6 @@
 import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
 import { config } from '../../config';
+import { getOffseTop } from '../../utils/get-offset-top.util';
 import { ScrollSpyItemComponent } from './scroll-spy-item/scroll-spy-item.component';
 import { ScrollSpyModel } from './scroll-spy.model';
 import { windowScrollPosition } from '../../utils/window-scroll-position.util';
@@ -51,7 +52,7 @@ export class ScrollSpyComponent implements ScrollSpyModel, AfterContentInit {
     const items = this.items.toArray();
 
     for (let i = 0; i < items.length; i++) {
-      const elementOffsetTop = items[i].getElementOffseTop();
+      const elementOffsetTop = getOffseTop(items[i].element.nativeElement);
 
       if (elementOffsetTop > windowScrollPosition()) {
         const prevItem = items[i - 1]

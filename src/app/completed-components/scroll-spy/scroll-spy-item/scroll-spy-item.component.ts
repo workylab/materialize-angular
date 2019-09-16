@@ -17,19 +17,4 @@ export class ScrollSpyItemComponent implements ScrollSpyItemModel {
 
   constructor(public element: ElementRef) {
   }
-
-  getElementOffseTop() {
-    let offsetTop = 0;
-    let nextElement = this.element.nativeElement;
-
-    while (nextElement.offsetParent) {
-      if (!isNaN(nextElement.offsetTop)) {
-        offsetTop += nextElement.offsetTop;
-      }
-
-      nextElement = nextElement.offsetParent;
-    }
-
-    return offsetTop;
-  }
 }
