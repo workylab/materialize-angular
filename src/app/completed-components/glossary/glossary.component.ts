@@ -1,5 +1,6 @@
-import { AfterContentInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { config } from '../../config';
+import { getOffseTop } from '../../utils/get-offset-top.util';
 import { GlossaryItemComponent } from './glossary-item/glossary-item.component';
 import { GlossaryModel } from './glossary.model';
 import { Router } from '@angular/router';
@@ -8,16 +9,18 @@ import { Router } from '@angular/router';
   selector: `${ config.components.prefix }-glossary`,
   templateUrl: './glossary.component.html'
 })
-export class GlossaryComponent implements AfterContentInit, GlossaryModel {
+export class GlossaryComponent implements AfterViewInit, GlossaryModel {
   static readonly defaultProps: GlossaryModel = {
     className: '',
-    scrollSpy: null
+    scrollSpy: null,
+    topSpace: 0
   };
 
   @ContentChildren(GlossaryItemComponent) items: QueryList<GlossaryItemComponent>;
 
   @Input() className = GlossaryComponent.defaultProps.className;
   @Input() scrollSpy = GlossaryComponent.defaultProps.scrollSpy;
+  @Input() topSpace = GlossaryComponent.defaultProps.topSpace;
 
   public prefix = config.components.prefix;
 
@@ -29,7 +32,7 @@ export class GlossaryComponent implements AfterContentInit, GlossaryModel {
     this.update = this.update.bind(this);
   }
 
-  ngAfterContentInit() {
+  ngAfterViewInit() {
     this.registerOptions();
 
     setTimeout(this.update, 30);
@@ -55,7 +58,10 @@ export class GlossaryComponent implements AfterContentInit, GlossaryModel {
     const element = document.getElementById(referenceId);
 
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+      const elementOffsetTop = getOffseTop(element);
+      const scrollTop = elementOffsetTop + this.topSpace;
+
+      setTimeout(() => window.scrollTo(0, scrollTop), 150);
     }
   }
 
@@ -82,8 +88,11 @@ export class GlossaryComponent implements AfterContentInit, GlossaryModel {
     this.scrollTo(referenceId);
 
     const routerTree = this.router.parseUrl(this.router.url);
-    const { segments } = routerTree.root.children.primary;
-    const urlWithoutParams = segments.map(segment => segment.path);
+    const { primary } = routerTree.root.children;
+
+    const urlWithoutParams = primary
+      ? primary.segments.map(segment => segment.path)
+      : routerTree.root.segments.map(segment => segment.path);
 
     this.router.navigate(urlWithoutParams, { fragment: referenceId });
   }
