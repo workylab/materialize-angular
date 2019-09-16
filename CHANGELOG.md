@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.7.2](https://github.com/workylab/materialize-angular/tree/v0.7.2) (2019-09-16)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.1...v0.7.2)
+
+**Fixed bugs:**
+
+- Fixed calc to validate scroll top. [\#164](https://github.com/workylab/materialize-angular/pull/164) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.7.1](https://github.com/workylab/materialize-angular/tree/v0.7.1) (2019-09-16)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.0...v0.7.1)
