@@ -1,7 +1,6 @@
-$materialize-fonts-path: './../fonts' !default;
-$materialize-prefix: 'materialize' !default;
-
 @import './reset';
+
+@import './config';
 
 @import './css/badges';
 @import './css/helpers';
