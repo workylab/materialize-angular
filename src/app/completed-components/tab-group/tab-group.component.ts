@@ -1,13 +1,15 @@
 import {
-  AfterContentInit,
+  AfterViewInit,
   Component,
   ContentChildren,
   ElementRef,
   EventEmitter,
   Input,
+  OnChanges,
   Output,
   QueryList,
   Renderer2,
+  SimpleChanges,
   ViewChild
 } from '@angular/core';
 import { config } from '../../config';
@@ -21,7 +23,7 @@ import { TabGroupModel } from './tab-group.model';
   selector: `${ config.components.prefix }-tab-group }`,
   templateUrl: './tab-group.component.html'
 })
-export class TabGroupComponent implements AfterContentInit {
+export class TabGroupComponent implements AfterViewInit, OnChanges {
   static readonly defaultProps: TabGroupModel = {
     className: '',
     selectedIndex: 0,
@@ -51,8 +53,14 @@ export class TabGroupComponent implements AfterContentInit {
     window.addEventListener(this.supportedEvents.resize, this.update);
   }
 
-  ngAfterContentInit() {
-    setTimeout(this.update, 0);
+  ngAfterViewInit() {
+    setTimeout(this.update, 250);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.selectedIndex && !changes.selectedIndex.isFirstChange()) {
+      this.moveIndicator(changes.selectedIndex.currentValue, true);
+    }
   }
 
   update() {

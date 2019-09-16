@@ -7,14 +7,14 @@
 
 .dropdown-button-icon {
   background-color: $materialize-color-white;
-  color: $materialize-color-gray-dark;
+  color: map-get($theme-colors, 'gray-40');
   cursor: pointer;
   display: inline-block;
   outline: none;
 
   &:hover,
   &:focus {
-    background-color: $materialize-color-gray-light;
+    background-color: map-get($theme-colors, 'gray-80');
   }
 }
 
@@ -44,7 +44,7 @@
   padding: $materialize-space-md $materialize-space-lg;
 
   &:hover {
-    background-color: $materialize-color-gray-light;
+    background-color: map-get($theme-colors, 'gray-80');
   }
 }
 

@@ -7,7 +7,7 @@ $materialize-form-message-margin: 0 !default;
 $materialize-form-message-padding: $theme-space-sm !default;
 $materialize-form-message-text-align: left !default;
 
-$materialize-form-message-info-color: $materialize-color-gray-darkest !default;
+$materialize-form-message-info-color: map-get($theme-colors, 'gray-20') !default;
 $materialize-form-message-info-font-family: $materialize-form-message-font-family !default;
 $materialize-form-message-info-font-size: $materialize-form-message-font-size !default;
 $materialize-form-message-info-font-weight: $materialize-form-message-font-weight !default;

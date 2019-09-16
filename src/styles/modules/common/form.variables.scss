@@ -1,5 +1,5 @@
-$materialize-form-control-container-background: $materialize-color-gray-light !default;
-$materialize-form-control-container-border-color: $materialize-color-gray-dark !default;
+$materialize-form-control-container-background: map-get($theme-colors, 'gray-80') !default;
+$materialize-form-control-container-border-color: map-get($theme-colors, 'gray-40') !default;
 $materialize-form-control-container-border-radius:
 $theme-radius-sm $theme-radius-sm 0 0 !default;
 $materialize-form-control-container-border-style: solid !default;
@@ -16,7 +16,7 @@ $materialize-form-control-container-line-width: 0 !default;
 $materialize-form-control-container-line-z-index:  $theme-zindex-1 !default;
 
 $materialize-form-control-caret-color: map-get($theme-colors, 'primary') !default;
-$materialize-form-control-color: $materialize-color-gray-darkest !default;
+$materialize-form-control-color: map-get($theme-colors, 'gray-20') !default;
 $materialize-form-control-font-family: $theme-font-family-primary !default;
 $materialize-form-control-font-size: $theme-font-size-md !default;
 $materialize-form-control-font-weight: $theme-font-weight-regular !default;
@@ -24,13 +24,13 @@ $materialize-form-control-line-height: 100% !default;
 $materialize-form-control-letter-spacing: 0 !default;
 $materialize-form-control-padding: $theme-space-sm !default;
 
-$materialize-form-control-placeholder-color: $materialize-color-gray !default;
+$materialize-form-control-placeholder-color: map-get($theme-colors, 'gray-60') !default;
 $materialize-form-control-placeholder-font-weight: $theme-font-weight-regular !default;
 
 $materialize-form-control-with-label-padding-top: $theme-space-xl !default;
 
-$materialize-form-control-label-background: $materialize-color-gray-light !default;
-$materialize-form-control-label-color: $materialize-color-gray-dark !default;
+$materialize-form-control-label-background: map-get($theme-colors, 'gray-80') !default;
+$materialize-form-control-label-color: map-get($theme-colors, 'gray-40') !default;
 $materialize-form-control-label-font-family: $theme-font-family-primary !default;
 $materialize-form-control-label-font-size: $theme-font-size-md !default;
 $materialize-form-control-label-font-weight: $theme-font-weight-regular !default;
@@ -46,7 +46,7 @@ $materialize-form-control-active-label-top: 0 !default;
 $materialize-form-control-focused-container-line-width: 100% !default;
 $materialize-form-control-focused-label-color: map-get($theme-colors, 'primary') !default;
 
-$materialize-form-control-disabled-container-border-color: $materialize-color-gray !default;
-$materialize-form-control-disabled-container-background: $materialize-color-gray-light !default;
-$materialize-form-control-disabled-label-color: $materialize-color-gray !default;
-$materialize-form-control-disabled-color: $materialize-color-gray !default;
+$materialize-form-control-disabled-container-border-color: map-get($theme-colors, 'gray-60') !default;
+$materialize-form-control-disabled-container-background: map-get($theme-colors, 'gray-80') !default;
+$materialize-form-control-disabled-label-color: map-get($theme-colors, 'gray-60') !default;
+$materialize-form-control-disabled-color: map-get($theme-colors, 'gray-60') !default;

@@ -1,7 +1,7 @@
 $materialize-card-background: map-get($theme-colors, 'white') !default;
 $materialize-card-border-radius: $theme-radius-sm !default;
 $materialize-card-box-shadow: $theme-shadow-sm !default;
-$materialize-card-color: $materialize-color-gray-darkest !default;
+$materialize-card-color: map-get($theme-colors, 'gray-20') !default;
 $materialize-card-cursor: pointer !default;
 $materialize-card-font-family: $theme-font-family-primary !default;
 $materialize-card-font-size: $theme-font-size-md !default;

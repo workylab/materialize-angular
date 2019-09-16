@@ -7,9 +7,9 @@ $materialize-datepicker-box-shadow: unset !default;
 $materialize-datepicker-button-color: map-get($theme-colors, 'black') !default;
 $materialize-datepicker-button-size: 32px !default;
 
-$materialize-datepicker-button-focused-background: darken($materialize-color-gray-light, 5%) !default;
-$materialize-datepicker-button-hover-background: darken($materialize-color-gray-light, 10%) !default;
-$materialize-datepicker-button-disabled-background: $materialize-color-gray-light !default;
+$materialize-datepicker-button-focused-background: darken(map-get($theme-colors, 'gray-80'), 5%) !default;
+$materialize-datepicker-button-hover-background: darken(map-get($theme-colors, 'gray-80'), 10%) !default;
+$materialize-datepicker-button-disabled-background: map-get($theme-colors, 'gray-80') !default;
 
 $materialize-datepicker-button-ripple: rgba(map-get($theme-colors, 'black'), 0.1) !default;
 
