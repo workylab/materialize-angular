@@ -1,5 +1,20 @@
 # Change Log
 
+## [v0.7.0](https://github.com/workylab/materialize-angular/tree/v0.7.0) (2019-09-16)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.6.0...v0.7.0)
+
+**Implemented enhancements:**
+
+- Added gray scale values. [\#154](https://github.com/workylab/materialize-angular/pull/154) ([rodwyn](https://github.com/rodwyn))
+
+**Fixed bugs:**
+
+- Fixed tab header animation when component is loaded. [\#161](https://github.com/workylab/materialize-angular/pull/161) ([alexzoul](https://github.com/alexzoul))
+- Hotfix/css modules [\#159](https://github.com/workylab/materialize-angular/pull/159) ([alexzoul](https://github.com/alexzoul))
+- Fix calendar break on null value [\#157](https://github.com/workylab/materialize-angular/pull/157) ([FedeBossman](https://github.com/FedeBossman))
+- Fix typo in styles [\#155](https://github.com/workylab/materialize-angular/pull/155) ([FedeBossman](https://github.com/FedeBossman))
+
 ## [v0.6.0](https://github.com/workylab/materialize-angular/tree/v0.6.0) (2019-09-12)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.5.6...v0.6.0)
