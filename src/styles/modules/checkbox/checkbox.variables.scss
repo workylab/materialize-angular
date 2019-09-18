@@ -25,7 +25,7 @@ $materialize-checkbox-indicator-arrow-width: $theme-border-md !default;
 $materialize-checkbox-indicator-active-background: map-get($theme-colors, 'primary') !default;
 $materialize-checkbox-indicator-active-border:
 $theme-border-md solid map-get($theme-colors, 'primary') !default;
-$materialize-checkbox-indicator-disabled-active-background: lighten(map-get($theme-colors, 'gray-40'), 30%) !default;;
+$materialize-checkbox-indicator-disabled-active-background: lighten(map-get($theme-colors, 'gray-40'), 30%) !default;
 $materialize-checkbox-indicator-disabled-background: map-get($theme-colors, 'white') !default;
 $materialize-checkbox-indicator-disabled-border:
 $theme-border-md solid lighten(map-get($theme-colors, 'gray-40'), 30%) !default;
