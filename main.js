@@ -82,52 +82,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_checkbox_list_checkbox_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./forms/checkbox-list/checkbox-list.component */ "./src/app/forms/checkbox-list/checkbox-list.component.ts");
 /* harmony import */ var _components_collapsible_collapsible_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/collapsible/collapsible.component */ "./src/app/components/collapsible/collapsible.component.ts");
 /* harmony import */ var _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./layout/drawer/drawer.component */ "./src/app/layout/drawer/drawer.component.ts");
-/* harmony import */ var _components_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/dropdown/dropdown.component */ "./src/app/components/dropdown/dropdown.component.ts");
-/* harmony import */ var _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./forms/form-prefix/form-prefix.component */ "./src/app/forms/form-prefix/form-prefix.component.ts");
-/* harmony import */ var _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./forms/form-suffix/form-suffix.component */ "./src/app/forms/form-suffix/form-suffix.component.ts");
-/* harmony import */ var _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/glossary/glossary.component */ "./src/app/components/glossary/glossary.component.ts");
-/* harmony import */ var _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/html-visualizer/html-visualizer.component */ "./src/app/components/html-visualizer/html-visualizer.component.ts");
-/* harmony import */ var _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./css/icon/icon.component */ "./src/app/css/icon/icon.component.ts");
-/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
-/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
-/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
-/* harmony import */ var _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/list-item/list-item.component */ "./src/app/components/list-item/list-item.component.ts");
-/* harmony import */ var _forms_message_message_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/message/message.component */ "./src/app/forms/message/message.component.ts");
-/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
-/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./css/ripple/ripple.component */ "./src/app/css/ripple/ripple.component.ts");
-/* harmony import */ var _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/scroll-spy/scroll-spy.component */ "./src/app/components/scroll-spy/scroll-spy.component.ts");
-/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
-/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
-/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
-/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
-/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
-/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
-/* harmony import */ var _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/tooltip/tooltip.component */ "./src/app/components/tooltip/tooltip.component.ts");
-/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
-/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
-/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
-/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
-/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
-/* harmony import */ var _css_card_card_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./css/card/card.component */ "./src/app/css/card/card.component.ts");
-/* harmony import */ var _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./css/divider/divider.component */ "./src/app/css/divider/divider.component.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
-/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
-
-
-
-
-
-
-
-
-
+/* harmony import */ var _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-prefix/form-prefix.component */ "./src/app/forms/form-prefix/form-prefix.component.ts");
+/* harmony import */ var _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./forms/form-suffix/form-suffix.component */ "./src/app/forms/form-suffix/form-suffix.component.ts");
+/* harmony import */ var _components_icon_icon_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/icon/icon.component */ "./src/app/components/icon/icon.component.ts");
+/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
+/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
+/* harmony import */ var _forms_message_message_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./forms/message/message.component */ "./src/app/forms/message/message.component.ts");
+/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
+/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/ripple/ripple.component */ "./src/app/components/ripple/ripple.component.ts");
+/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
+/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
+/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
+/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
+/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
+/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
+/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
+/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
+/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
+/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
+/* harmony import */ var _components_card_card_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/card/card.component */ "./src/app/components/card/card.component.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
+/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
+/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
 
 
 
@@ -173,23 +155,23 @@ var appRoutes = [
     },
     {
         path: 'home',
-        component: _home_home_component__WEBPACK_IMPORTED_MODULE_38__["HomePageComponent"]
+        component: _home_home_component__WEBPACK_IMPORTED_MODULE_30__["HomePageComponent"]
     },
     {
         path: 'guide',
-        component: _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_45__["BaseLayoutComponent"],
+        component: _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_36__["BaseLayoutComponent"],
         children: [
             {
                 path: 'about',
-                component: _about_about_component__WEBPACK_IMPORTED_MODULE_43__["AboutPageComponent"]
+                component: _about_about_component__WEBPACK_IMPORTED_MODULE_34__["AboutPageComponent"]
             },
             {
                 path: 'get-started',
-                component: _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_44__["GettingStartedPageComponent"]
+                component: _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_35__["GettingStartedPageComponent"]
             },
             {
                 path: 'components',
-                component: _components_components_component__WEBPACK_IMPORTED_MODULE_34__["ComponentsPageComponent"],
+                component: _components_components_component__WEBPACK_IMPORTED_MODULE_27__["ComponentsPageComponent"],
                 children: [
                     {
                         component: _components_accordion_accordion_component__WEBPACK_IMPORTED_MODULE_1__["AccordionPageComponent"],
@@ -204,50 +186,34 @@ var appRoutes = [
                         path: 'calendar'
                     },
                     {
+                        component: _components_card_card_component__WEBPACK_IMPORTED_MODULE_33__["CardPageComponent"],
+                        path: 'card'
+                    },
+                    {
                         component: _components_collapsible_collapsible_component__WEBPACK_IMPORTED_MODULE_7__["CollapsiblePageComponent"],
                         path: 'collapsible'
                     },
                     {
-                        component: _components_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_9__["DropdownPageComponent"],
-                        path: 'dropdown'
+                        component: _components_icon_icon_component__WEBPACK_IMPORTED_MODULE_11__["IconPageComponent"],
+                        path: 'icon'
                     },
                     {
-                        component: _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_12__["GlossaryPageComponent"],
-                        path: 'glossary'
-                    },
-                    {
-                        component: _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_13__["HTMLVisualizerPageComponent"],
-                        path: 'html-visualizer'
-                    },
-                    {
-                        component: _components_list_list_component__WEBPACK_IMPORTED_MODULE_17__["ListPageComponent"],
-                        path: 'list'
-                    },
-                    {
-                        component: _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_18__["ListItemPageComponent"],
-                        path: 'list-item'
-                    },
-                    {
-                        component: _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_20__["ModalPageComponent"],
+                        component: _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_15__["ModalPageComponent"],
                         path: 'modal'
                     },
                     {
-                        component: _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_26__["ScrollSpyPageComponent"],
-                        path: 'scroll-spy'
+                        component: _components_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_20__["RipplePageComponent"],
+                        path: 'ripple'
                     },
                     {
-                        component: _components_table_table_component__WEBPACK_IMPORTED_MODULE_31__["TablePageComponent"],
+                        component: _components_table_table_component__WEBPACK_IMPORTED_MODULE_25__["TablePageComponent"],
                         path: 'table'
-                    },
-                    {
-                        component: _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_33__["TooltipPageComponent"],
-                        path: 'tooltip'
                     }
                 ]
             },
             {
                 path: 'forms',
-                component: _forms_forms_component__WEBPACK_IMPORTED_MODULE_35__["FormsPageComponent"],
+                component: _forms_forms_component__WEBPACK_IMPORTED_MODULE_28__["FormsPageComponent"],
                 children: [
                     {
                         component: _forms_button_toggle_button_toggle_component__WEBPACK_IMPORTED_MODULE_3__["ButtonTogglePageComponent"],
@@ -262,94 +228,72 @@ var appRoutes = [
                         path: 'checkbox'
                     },
                     {
-                        component: _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_40__["DatePickerPageComponent"],
+                        component: _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_32__["DatePickerPageComponent"],
                         path: 'date-picker'
                     },
                     {
-                        component: _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_10__["FormPrefixPageComponent"],
+                        component: _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_9__["FormPrefixPageComponent"],
                         path: 'form-prefix'
                     },
                     {
-                        component: _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_11__["FormSuffixPageComponent"],
+                        component: _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_10__["FormSuffixPageComponent"],
                         path: 'form-suffix'
                     },
                     {
-                        component: _forms_input_input_component__WEBPACK_IMPORTED_MODULE_15__["InputPageComponent"],
+                        component: _forms_input_input_component__WEBPACK_IMPORTED_MODULE_12__["InputPageComponent"],
                         path: 'input'
                     },
                     {
-                        component: _forms_label_label_component__WEBPACK_IMPORTED_MODULE_16__["LabelPageComponent"],
+                        component: _forms_label_label_component__WEBPACK_IMPORTED_MODULE_13__["LabelPageComponent"],
                         path: 'label'
                     },
                     {
-                        component: _forms_message_message_component__WEBPACK_IMPORTED_MODULE_19__["MessagePageComponent"],
+                        component: _forms_message_message_component__WEBPACK_IMPORTED_MODULE_14__["MessagePageComponent"],
                         path: 'message'
                     },
                     {
-                        component: _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_23__["RadioPageComponent"],
+                        component: _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_18__["RadioPageComponent"],
                         path: 'radio'
                     },
                     {
-                        component: _forms_select_select_component__WEBPACK_IMPORTED_MODULE_27__["SelectPageComponent"],
+                        component: _forms_select_select_component__WEBPACK_IMPORTED_MODULE_21__["SelectPageComponent"],
                         path: 'select'
                     },
                     {
-                        component: _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_28__["SliderPageComponent"],
+                        component: _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_22__["SliderPageComponent"],
                         path: 'slider'
                     },
                     {
-                        component: _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_29__["SwitchPageComponent"],
+                        component: _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_23__["SwitchPageComponent"],
                         path: 'switch'
                     },
                     {
-                        component: _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_32__["TextAreaPageComponent"],
+                        component: _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_26__["TextAreaPageComponent"],
                         path: 'textarea'
                     }
                 ]
             },
             {
                 path: 'layout',
-                component: _layout_layout_component__WEBPACK_IMPORTED_MODULE_36__["LayoutPageComponent"],
+                component: _layout_layout_component__WEBPACK_IMPORTED_MODULE_29__["LayoutPageComponent"],
                 children: [
                     {
                         component: _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_8__["DrawerPageComponent"],
                         path: 'drawer'
                     },
                     {
-                        component: _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_21__["NavbarPageComponent"],
+                        component: _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarPageComponent"],
                         path: 'navbar'
                     },
                     {
-                        component: _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_30__["TabPageComponent"],
+                        component: _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_24__["TabPageComponent"],
                         path: 'tab'
                     }
                 ]
             },
             {
-                path: 'css',
-                component: _css_css_component__WEBPACK_IMPORTED_MODULE_37__["CSSPageComponent"],
-                children: [
-                    {
-                        component: _css_card_card_component__WEBPACK_IMPORTED_MODULE_41__["CardPageComponent"],
-                        path: 'card'
-                    },
-                    {
-                        component: _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_42__["DividerPageComponent"],
-                        path: 'divider'
-                    },
-                    {
-                        component: _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_14__["IconPageComponent"],
-                        path: 'icon'
-                    },
-                    {
-                        component: _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_25__["RipplePageComponent"],
-                        path: 'ripple'
-                    }
-                ]
-            },
-            {
                 path: 'theme',
-                component: _themes_theme_component__WEBPACK_IMPORTED_MODULE_39__["ThemePageComponent"]
+                component: _themes_theme_component__WEBPACK_IMPORTED_MODULE_31__["ThemePageComponent"]
             }
         ]
     }
@@ -358,10 +302,10 @@ var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_22__["NgModule"])({
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"]],
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_17__["NgModule"])({
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_19__["RouterModule"]],
             imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"].forRoot(appRoutes)
+                _angular_router__WEBPACK_IMPORTED_MODULE_19__["RouterModule"].forRoot(appRoutes)
             ]
         })
     ], AppRoutingModule);
@@ -447,53 +391,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_checkbox_list_checkbox_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/checkbox-list/checkbox-list.component */ "./src/app/forms/checkbox-list/checkbox-list.component.ts");
 /* harmony import */ var _components_collapsible_collapsible_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/collapsible/collapsible.component */ "./src/app/components/collapsible/collapsible.component.ts");
 /* harmony import */ var _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./layout/drawer/drawer.component */ "./src/app/layout/drawer/drawer.component.ts");
-/* harmony import */ var _components_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/dropdown/dropdown.component */ "./src/app/components/dropdown/dropdown.component.ts");
-/* harmony import */ var _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/form-prefix/form-prefix.component */ "./src/app/forms/form-prefix/form-prefix.component.ts");
-/* harmony import */ var _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./forms/form-suffix/form-suffix.component */ "./src/app/forms/form-suffix/form-suffix.component.ts");
-/* harmony import */ var _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/glossary/glossary.component */ "./src/app/components/glossary/glossary.component.ts");
-/* harmony import */ var _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/html-visualizer/html-visualizer.component */ "./src/app/components/html-visualizer/html-visualizer.component.ts");
-/* harmony import */ var _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./css/icon/icon.component */ "./src/app/css/icon/icon.component.ts");
-/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
-/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
-/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
-/* harmony import */ var _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/list-item/list-item.component */ "./src/app/components/list-item/list-item.component.ts");
-/* harmony import */ var _forms_message_message_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./forms/message/message.component */ "./src/app/forms/message/message.component.ts");
-/* harmony import */ var materialize_angular__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! materialize-angular */ "./node_modules/materialize-angular/fesm5/materialize-angular.js");
-/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
-/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
-/* harmony import */ var _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./css/ripple/ripple.component */ "./src/app/css/ripple/ripple.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/scroll-spy/scroll-spy.component */ "./src/app/components/scroll-spy/scroll-spy.component.ts");
-/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
-/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
-/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
-/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
-/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
-/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
-/* harmony import */ var _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/tooltip/tooltip.component */ "./src/app/components/tooltip/tooltip.component.ts");
-/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
-/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
-/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
-/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
-/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
-/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
-/* harmony import */ var _css_card_card_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./css/card/card.component */ "./src/app/css/card/card.component.ts");
-/* harmony import */ var _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./css/divider/divider.component */ "./src/app/css/divider/divider.component.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
-
-
-
-
-
-
-
-
-
+/* harmony import */ var _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/form-prefix/form-prefix.component */ "./src/app/forms/form-prefix/form-prefix.component.ts");
+/* harmony import */ var _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/form-suffix/form-suffix.component */ "./src/app/forms/form-suffix/form-suffix.component.ts");
+/* harmony import */ var _components_icon_icon_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/icon/icon.component */ "./src/app/components/icon/icon.component.ts");
+/* harmony import */ var _forms_input_input_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./forms/input/input.component */ "./src/app/forms/input/input.component.ts");
+/* harmony import */ var _forms_label_label_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/label/label.component */ "./src/app/forms/label/label.component.ts");
+/* harmony import */ var _forms_message_message_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./forms/message/message.component */ "./src/app/forms/message/message.component.ts");
+/* harmony import */ var materialize_angular__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! materialize-angular */ "./node_modules/materialize-angular/fesm5/materialize-angular.js");
+/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/components/modal/modal.component.ts");
+/* harmony import */ var _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./layout/navbar/navbar.component */ "./src/app/layout/navbar/navbar.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./forms/radio/radio.component */ "./src/app/forms/radio/radio.component.ts");
+/* harmony import */ var _components_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/ripple/ripple.component */ "./src/app/components/ripple/ripple.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _forms_select_select_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./forms/select/select.component */ "./src/app/forms/select/select.component.ts");
+/* harmony import */ var _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./forms/slider/slider.component */ "./src/app/forms/slider/slider.component.ts");
+/* harmony import */ var _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./forms/switch/switch.component */ "./src/app/forms/switch/switch.component.ts");
+/* harmony import */ var _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./layout/tab/tab.component */ "./src/app/layout/tab/tab.component.ts");
+/* harmony import */ var _components_table_table_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/table/table.component */ "./src/app/components/table/table.component.ts");
+/* harmony import */ var _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./forms/textarea/textarea.component */ "./src/app/forms/textarea/textarea.component.ts");
+/* harmony import */ var _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./base-layout/base-layout.component */ "./src/app/base-layout/base-layout.component.ts");
+/* harmony import */ var _components_components_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/components.component */ "./src/app/components/components.component.ts");
+/* harmony import */ var _forms_forms_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./forms/forms.component */ "./src/app/forms/forms.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout.component.ts");
+/* harmony import */ var _themes_theme_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./themes/theme.component */ "./src/app/themes/theme.component.ts");
+/* harmony import */ var _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./forms/date-picker/date-picker.component */ "./src/app/forms/date-picker/date-picker.component.ts");
+/* harmony import */ var _components_card_card_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/card/card.component */ "./src/app/components/card/card.component.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
+/* harmony import */ var _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./getting-started/getting-started.component */ "./src/app/getting-started/getting-started.component.ts");
 
 
 
@@ -539,83 +465,74 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_26__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_21__["NgModule"])({
             declarations: [
-                _about_about_component__WEBPACK_IMPORTED_MODULE_48__["AboutPageComponent"],
+                _about_about_component__WEBPACK_IMPORTED_MODULE_39__["AboutPageComponent"],
                 _components_accordion_accordion_component__WEBPACK_IMPORTED_MODULE_1__["AccordionPageComponent"],
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
-                _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_38__["BaseLayoutComponent"],
+                _base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_31__["BaseLayoutComponent"],
                 _components_button_button_component__WEBPACK_IMPORTED_MODULE_5__["ButtonPageComponent"],
                 _forms_button_toggle_button_toggle_component__WEBPACK_IMPORTED_MODULE_6__["ButtonTogglePageComponent"],
                 _components_calendar_calendar_component__WEBPACK_IMPORTED_MODULE_7__["CalendarPageComponent"],
-                _css_card_card_component__WEBPACK_IMPORTED_MODULE_46__["CardPageComponent"],
+                _components_card_card_component__WEBPACK_IMPORTED_MODULE_38__["CardPageComponent"],
                 _forms_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_8__["CheckboxPageComponent"],
                 _forms_checkbox_list_checkbox_list_component__WEBPACK_IMPORTED_MODULE_9__["CheckboxListPageComponent"],
                 _components_collapsible_collapsible_component__WEBPACK_IMPORTED_MODULE_10__["CollapsiblePageComponent"],
-                _components_components_component__WEBPACK_IMPORTED_MODULE_39__["ComponentsPageComponent"],
-                _css_css_component__WEBPACK_IMPORTED_MODULE_40__["CSSPageComponent"],
-                _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_45__["DatePickerPageComponent"],
-                _css_divider_divider_component__WEBPACK_IMPORTED_MODULE_47__["DividerPageComponent"],
-                _components_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_12__["DropdownPageComponent"],
+                _components_components_component__WEBPACK_IMPORTED_MODULE_32__["ComponentsPageComponent"],
+                _forms_date_picker_date_picker_component__WEBPACK_IMPORTED_MODULE_37__["DatePickerPageComponent"],
                 _layout_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_11__["DrawerPageComponent"],
-                _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_13__["FormPrefixPageComponent"],
-                _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_14__["FormSuffixPageComponent"],
-                _forms_forms_component__WEBPACK_IMPORTED_MODULE_41__["FormsPageComponent"],
-                _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_49__["GettingStartedPageComponent"],
-                _components_glossary_glossary_component__WEBPACK_IMPORTED_MODULE_15__["GlossaryPageComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_42__["HomePageComponent"],
-                _components_html_visualizer_html_visualizer_component__WEBPACK_IMPORTED_MODULE_16__["HTMLVisualizerPageComponent"],
-                _css_icon_icon_component__WEBPACK_IMPORTED_MODULE_17__["IconPageComponent"],
-                _forms_input_input_component__WEBPACK_IMPORTED_MODULE_18__["InputPageComponent"],
-                _forms_label_label_component__WEBPACK_IMPORTED_MODULE_19__["LabelPageComponent"],
-                _forms_message_message_component__WEBPACK_IMPORTED_MODULE_22__["MessagePageComponent"],
-                _layout_layout_component__WEBPACK_IMPORTED_MODULE_43__["LayoutPageComponent"],
-                _components_list_list_component__WEBPACK_IMPORTED_MODULE_20__["ListPageComponent"],
-                _components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_21__["ListItemPageComponent"],
-                _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_24__["ModalPageComponent"],
-                _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_25__["NavbarPageComponent"],
-                _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_27__["RadioPageComponent"],
-                _css_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_28__["RipplePageComponent"],
-                _components_scroll_spy_scroll_spy_component__WEBPACK_IMPORTED_MODULE_30__["ScrollSpyPageComponent"],
-                _forms_select_select_component__WEBPACK_IMPORTED_MODULE_31__["SelectPageComponent"],
-                _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_32__["SliderPageComponent"],
-                _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_33__["SwitchPageComponent"],
-                _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_34__["TabPageComponent"],
-                _components_table_table_component__WEBPACK_IMPORTED_MODULE_35__["TablePageComponent"],
-                _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_36__["TextAreaPageComponent"],
-                _themes_theme_component__WEBPACK_IMPORTED_MODULE_44__["ThemePageComponent"],
-                _components_tooltip_tooltip_component__WEBPACK_IMPORTED_MODULE_37__["TooltipPageComponent"]
+                _forms_form_prefix_form_prefix_component__WEBPACK_IMPORTED_MODULE_12__["FormPrefixPageComponent"],
+                _forms_form_suffix_form_suffix_component__WEBPACK_IMPORTED_MODULE_13__["FormSuffixPageComponent"],
+                _forms_forms_component__WEBPACK_IMPORTED_MODULE_33__["FormsPageComponent"],
+                _getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_40__["GettingStartedPageComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_34__["HomePageComponent"],
+                _components_icon_icon_component__WEBPACK_IMPORTED_MODULE_14__["IconPageComponent"],
+                _forms_input_input_component__WEBPACK_IMPORTED_MODULE_15__["InputPageComponent"],
+                _forms_label_label_component__WEBPACK_IMPORTED_MODULE_16__["LabelPageComponent"],
+                _forms_message_message_component__WEBPACK_IMPORTED_MODULE_17__["MessagePageComponent"],
+                _layout_layout_component__WEBPACK_IMPORTED_MODULE_35__["LayoutPageComponent"],
+                _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_19__["ModalPageComponent"],
+                _layout_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_20__["NavbarPageComponent"],
+                _forms_radio_radio_component__WEBPACK_IMPORTED_MODULE_22__["RadioPageComponent"],
+                _components_ripple_ripple_component__WEBPACK_IMPORTED_MODULE_23__["RipplePageComponent"],
+                _forms_select_select_component__WEBPACK_IMPORTED_MODULE_25__["SelectPageComponent"],
+                _forms_slider_slider_component__WEBPACK_IMPORTED_MODULE_26__["SliderPageComponent"],
+                _forms_switch_switch_component__WEBPACK_IMPORTED_MODULE_27__["SwitchPageComponent"],
+                _layout_tab_tab_component__WEBPACK_IMPORTED_MODULE_28__["TabPageComponent"],
+                _components_table_table_component__WEBPACK_IMPORTED_MODULE_29__["TablePageComponent"],
+                _forms_textarea_textarea_component__WEBPACK_IMPORTED_MODULE_30__["TextAreaPageComponent"],
+                _themes_theme_component__WEBPACK_IMPORTED_MODULE_36__["ThemePageComponent"]
             ],
             exports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_29__["RouterModule"]
+                _angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"]
             ],
             imports: [
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeAccordionModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeButtonModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeButtonToggleGroupModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCardModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCheckboxModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCollapsibleModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeCommonModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeDrawerModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeGlossaryModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeHTMLVisualizerModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeIconModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeInputModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeLabelModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeFormMessageModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeModalModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeNavbarModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeRadioGroupModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeScrollSpyModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeSelectModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeTabGroupModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeTextAreaModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeSliderModule"],
-                materialize_angular__WEBPACK_IMPORTED_MODULE_23__["MaterializeSwitchModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_29__["RouterModule"]
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeAccordionModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeButtonModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeButtonToggleGroupModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeCardModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeCheckboxModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeCollapsibleModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeCommonModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeDrawerModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeGlossaryModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeHTMLVisualizerModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeIconModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeInputModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeLabelModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeFormMessageModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeModalModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeNavbarModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeRadioGroupModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeScrollSpyModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeSelectModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeTabGroupModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeTextAreaModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeSliderModule"],
+                materialize_angular__WEBPACK_IMPORTED_MODULE_18__["MaterializeSwitchModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
@@ -680,38 +597,26 @@ var BaseLayoutComponent = /** @class */ (function () {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.button,
                         link: '/button'
                     }, {
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.glossary,
-                        link: '/glossary'
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.card,
+                        link: '/card'
                     }, {
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.htmlVisualizer,
-                        link: '/html-visualizer'
-                        // }, {
-                        //   text: translations.drawer.components.children.calendar,
-                        //   link: '/calendar'
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.calendar,
+                        link: '/calendar'
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.collapsible,
                         link: '/collapsible'
-                        // }, {
-                        //   text: translations.drawer.components.children.dropdown,
-                        //   link: '/dropdown'
                     }, {
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.list,
-                        link: '/list'
-                    }, {
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.listItem,
-                        link: '/list-item'
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.icon,
+                        link: '/icon'
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.modal,
                         link: '/modal'
-                        // }, {
-                        //   text: translations.drawer.components.children.table,
-                        //   link: '/table'
-                        // }, {
-                        //   text: translations.drawer.components.children.tooltip,
-                        //   link: '/tooltip'
                     }, {
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.scrollSpy,
-                        link: '/scroll-spy'
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.ripple,
+                        link: '/ripple'
+                    }, {
+                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.components.children.table,
+                        link: '/table'
                     }]
             }, {
                 text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.title,
@@ -722,12 +627,6 @@ var BaseLayoutComponent = /** @class */ (function () {
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.checkbox,
                         link: '/checkbox'
-                        // }, {
-                        //   text: translations.drawer.forms.children.checkboxList,
-                        //   link: '/checkbox-list'
-                        // }, {
-                        //   text: translations.drawer.forms.children.datePicker,
-                        //   link: '/date-picker'
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.formPrefix,
                         link: '/form-prefix'
@@ -758,22 +657,6 @@ var BaseLayoutComponent = /** @class */ (function () {
                     }, {
                         text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.forms.children.textarea,
                         link: '/textarea'
-                    }]
-            }, {
-                text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.css.title,
-                link: '/guide/css',
-                children: [{
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.css.children.card,
-                        link: '/card'
-                    }, {
-                        //   text: translations.drawer.css.children.divider,
-                        //   link: '/divider'
-                        // }, {
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.css.children.icon,
-                        link: '/icon'
-                    }, {
-                        text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.css.children.ripple,
-                        link: '/ripple'
                     }]
             }, {
                 text: _translations_en__WEBPACK_IMPORTED_MODULE_2__["translations"].drawer.layout.title,
@@ -816,7 +699,7 @@ var BaseLayoutComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>ACCORDION</h1>\n  \n      <p>\n        The <b>materialize-accordion</b> component is useful for reducing vertical space with\n        large amounts of information. The default functionality of the component is to only\n        display one expansion-panel body at a time.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeAccordionModule</span> in your module.\n        </p>\n        <p class=\"text-indent margin-bottom-sm\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion</span> tag in your template.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion-collapsible</span> tag into your <span class=\"text-accent secondary\">materialize-accordion</span>\n          to control all the collapsibles.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-accordion>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title A</materialize-collapsible-title>\n                <materialize-collapsible-content>Content A</materialize-collapsible-content>\n              </materialize-collapsible>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title B</materialize-collapsible-title>\n                <materialize-collapsible-content>Content B</materialize-collapsible-content>\n              </materialize-collapsible>\n            </materialize-accordion>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-accordion>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title A</materialize-collapsible-title>\n              <materialize-collapsible-content>Content A</materialize-collapsible-content>\n            </materialize-collapsible>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title B</materialize-collapsible-title>\n              <materialize-collapsible-content>Content B</materialize-collapsible-content>\n            </materialize-collapsible>\n          </materialize-accordion>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      \n      <div class=\"card\">\n        <h3>Accordion like stepper</h3>\n        <materialize-accordion #accordionExample>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 1</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 2</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 3</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n        </materialize-accordion>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Accordion</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>ACCORDION</h1>\n  \n      <p>\n        The <b>materialize-accordion</b> component is useful for reducing vertical space with\n        large amounts of information. The default functionality of the component is to only\n        display one expansion-panel body at a time.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeAccordionModule</span> in your module.\n        </p>\n        <p class=\"text-indent margin-bottom-sm\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion</span> tag in your template.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion-collapsible</span> tag into your <span class=\"text-accent secondary\">materialize-accordion</span>\n          to control all the collapsibles.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-accordion>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title A</materialize-collapsible-title>\n                <materialize-collapsible-content>Content A</materialize-collapsible-content>\n              </materialize-collapsible>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title B</materialize-collapsible-title>\n                <materialize-collapsible-content>Content B</materialize-collapsible-content>\n              </materialize-collapsible>\n            </materialize-accordion>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-accordion>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title A</materialize-collapsible-title>\n              <materialize-collapsible-content>Content A</materialize-collapsible-content>\n            </materialize-collapsible>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title B</materialize-collapsible-title>\n              <materialize-collapsible-content>Content B</materialize-collapsible-content>\n            </materialize-collapsible>\n          </materialize-accordion>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n      <p>\n        Materialize Angular provides custom functions to add functionallity its components in different ways,\n        the most common is using attributes in the component tag.\n      </p>\n\n      <div class=\"card\">\n        <h4 class=\"primary\">@Input Properties</h4>\n        <table class=\"table-guide\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Type</td>\n              <td>Default</td>\n              <td>Description</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>className</td>\n              <td>string</td>\n              <td>\" \"</td>\n              <td></td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"card\">\n        <h4 class=\"secondary\">@Output Events</h4>\n        <table class=\"table-guide\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Signature</td>\n              <td>Description</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>onToggle</td>\n              <td>onToggleEmitter(): EventEmitter&lt;number | null&gt;</td>\n              <td>\"none\"</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n\n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n     \n      <div class=\"card\">\n        This component doesn't have partcular styles but you can use the collapsible ones.\n        To change collapsible styles, please check the collapsible theming section by clicking\n        <a routerLink=\"/guide/components/collapsible\" fragment=\"theme\">here</a>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      \n      <div class=\"card\">\n        <h3>Accordion like stepper</h3>\n        <materialize-accordion #accordionExample>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 1</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 2</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 3</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n        </materialize-accordion>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Accordion</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -929,6 +812,46 @@ var CalendarPageComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/card/card.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/components/card/card.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>CARD</h1>\n  \n      <p>\n        The <b>materialize-card</b> component can be used for panel and/or static image.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeCardModule</span> in your module.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-card</span> tag in your template.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-card>This is my card</materialize-card>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-card>This is my card</materialize-card>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n      <p>\n        Materialize Angular provides custom functions to add functionallity its components in different ways,\n        the most common is using attributes in the component tag.\n      </p>\n  \n      <div class=\"card\">\n        <h4 class=\"primary\">@Input Properties</h4>\n        <table class=\"table-guide\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Type</td>\n              <td>Default</td>\n              <td>Description</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>className</td>\n              <td>string</td>\n              <td>\" \"</td>\n              <td></td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>\n        Materialize Angular supports a lot of SASS variables to change all the component\n        style so that feel to modify component look and feel by changing the following SASS variables.<br><br>\n\n        The Materialize Angular SASS variable names are created base on the following pattern:<br><br>\n        <span class=\"text-accent terciary\">\"tagClassName\" + (optional \"-\" + \"modifierTagClassName\" ) + \"-\" + \"cssProperty\"</span>        \n      </p>\n\n      <div class=\"card\">\n        <h4 class=\"terciary\">.form-control-container</h4>\n        <table class=\"table-guide table-sass margin-bottom-lg\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Default</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>$materialize-card-background</td>\n              <td>map-get($theme-colors, 'white')</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-border-radius</td>\n              <td>$theme-radius-sm</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-box-shadow</td>\n              <td>$theme-shadow-sm</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-color</td>\n              <td>map-get($theme-colors, 'gray-20')</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-cursor</td>\n              <td>pointer</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-font-family</td>\n              <td>$theme-font-family-primary</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-font-size</td>\n              <td>$theme-font-size-md</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-font-weight</td>\n              <td>$theme-font-weight-regular</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-margin</td>\n              <td>0 $theme-space-md $theme-space-sm</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-padding</td>\n              <td>$theme-space-lg</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-tap-highlight-color</td>\n              <td>transparent</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-transition</td>\n              <td>$theme-property-box-shadow $theme-timer-sm $theme-transition-function-in</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-hover-box-shadow</td>\n              <td>$theme-shadow-md</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n\n      <div class=\"card\">\n        <h3>Simple card</h3>\n        <materialize-card>\n          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae incidunt earum odit quod, dignissimos quidem soluta, porro saepe hic cum deserunt officia? Rerum, facere. Necessitatibus est commodi tempora in esse?\n        </materialize-card>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Card</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/card/card.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/card/card.component.ts ***!
+  \***************************************************/
+/*! exports provided: CardPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardPageComponent", function() { return CardPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CardPageComponent = /** @class */ (function () {
+    function CardPageComponent() {
+    }
+    CardPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./card.component.html */ "./src/app/components/card/card.component.html")
+        })
+    ], CardPageComponent);
+    return CardPageComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/collapsible/collapsible.component.html":
 /*!*******************************************************************!*\
   !*** ./src/app/components/collapsible/collapsible.component.html ***!
@@ -1009,200 +932,40 @@ var ComponentsPageComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/dropdown/dropdown.component.html":
-/*!*************************************************************!*\
-  !*** ./src/app/components/dropdown/dropdown.component.html ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>DROPDOWN</h1>\n  \n      <p>\n        The <b>materialize-dropdown</b> component is a normal select with some additional styling for user interaction.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Dropdowns...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Dropdown</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n      "
-
-/***/ }),
-
-/***/ "./src/app/components/dropdown/dropdown.component.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/components/dropdown/dropdown.component.ts ***!
-  \***********************************************************/
-/*! exports provided: DropdownPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownPageComponent", function() { return DropdownPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var DropdownPageComponent = /** @class */ (function () {
-    function DropdownPageComponent() {
-    }
-    DropdownPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./dropdown.component.html */ "./src/app/components/dropdown/dropdown.component.html")
-        })
-    ], DropdownPageComponent);
-    return DropdownPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/glossary/glossary.component.html":
-/*!*************************************************************!*\
-  !*** ./src/app/components/glossary/glossary.component.html ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>GLOSSARY</h1>\n  \n      <p>\n        The <b>materialize-accordion</b> component is useful for reducing vertical space with\n        large amounts of information. The default functionality of the component is to only\n        display one expansion-panel body at a time.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeAccordionModule</span> in your module.\n        </p>\n        <p class=\"text-indent margin-bottom-sm\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion</span> tag in your template.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-accordion-collapsible</span> tag into your <span class=\"text-accent secondary\">materialize-accordion</span>\n          to control all the collapsibles.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-accordion>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title A</materialize-collapsible-title>\n                <materialize-collapsible-content>Content A</materialize-collapsible-content>\n              </materialize-collapsible>\n              <materialize-collapsible>\n                <materialize-collapsible-title>Title B</materialize-collapsible-title>\n                <materialize-collapsible-content>Content B</materialize-collapsible-content>\n              </materialize-collapsible>\n            </materialize-accordion>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-accordion>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title A</materialize-collapsible-title>\n              <materialize-collapsible-content>Content A</materialize-collapsible-content>\n            </materialize-collapsible>\n            <materialize-collapsible>\n              <materialize-collapsible-title>Title B</materialize-collapsible-title>\n              <materialize-collapsible-content>Content B</materialize-collapsible-content>\n            </materialize-collapsible>\n          </materialize-accordion>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      \n      <div class=\"card\">\n        <h3>Accordion like stepper</h3>\n        <materialize-accordion #accordionExample>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 1</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 2</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n          <materialize-collapsible>\n            <materialize-collapsible-title>Title 3</materialize-collapsible-title>\n            <materialize-collapsible-content>\n              Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n              Aliquam minima soluta enim porro atque placeat quis commodi\n              deserunt veniam libero molestiae doloremque eveniet incidunt,\n              odit expedita cupiditate est tenetur reprehenderit.\n        \n              <materialize-button (onClick)=\"accordionExample.showPrev()\">Show Prev</materialize-button>\n              <materialize-button (onClick)=\"accordionExample.showNext()\">Show Next</materialize-button>\n            </materialize-collapsible-content>\n          </materialize-collapsible>\n        </materialize-accordion>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Accordion</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/glossary/glossary.component.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/components/glossary/glossary.component.ts ***!
-  \***********************************************************/
-/*! exports provided: GlossaryPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlossaryPageComponent", function() { return GlossaryPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var GlossaryPageComponent = /** @class */ (function () {
-    function GlossaryPageComponent() {
-    }
-    GlossaryPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./glossary.component.html */ "./src/app/components/glossary/glossary.component.html")
-        })
-    ], GlossaryPageComponent);
-    return GlossaryPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/html-visualizer/html-visualizer.component.html":
-/*!***************************************************************************!*\
-  !*** ./src/app/components/html-visualizer/html-visualizer.component.html ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>HTML VISUALIZER</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">List</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/html-visualizer/html-visualizer.component.ts":
-/*!*************************************************************************!*\
-  !*** ./src/app/components/html-visualizer/html-visualizer.component.ts ***!
-  \*************************************************************************/
-/*! exports provided: HTMLVisualizerPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HTMLVisualizerPageComponent", function() { return HTMLVisualizerPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var HTMLVisualizerPageComponent = /** @class */ (function () {
-    function HTMLVisualizerPageComponent() {
-    }
-    HTMLVisualizerPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./html-visualizer.component.html */ "./src/app/components/html-visualizer/html-visualizer.component.html")
-        })
-    ], HTMLVisualizerPageComponent);
-    return HTMLVisualizerPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/list-item/list-item.component.html":
-/*!***************************************************************!*\
-  !*** ./src/app/components/list-item/list-item.component.html ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>LIST ITEM</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">List</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/list-item/list-item.component.ts":
-/*!*************************************************************!*\
-  !*** ./src/app/components/list-item/list-item.component.ts ***!
-  \*************************************************************/
-/*! exports provided: ListItemPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListItemPageComponent", function() { return ListItemPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var ListItemPageComponent = /** @class */ (function () {
-    function ListItemPageComponent() {
-    }
-    ListItemPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./list-item.component.html */ "./src/app/components/list-item/list-item.component.html")
-        })
-    ], ListItemPageComponent);
-    return ListItemPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/list/list.component.html":
+/***/ "./src/app/components/icon/icon.component.html":
 /*!*****************************************************!*\
-  !*** ./src/app/components/list/list.component.html ***!
+  !*** ./src/app/components/icon/icon.component.html ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>LIST</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">List</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n      "
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>ICON</h1>\n  \n      <p>\n        The <b>materialize-icon</b> component provides context to your application with the different <i>images</i> that you can use. Here is the official <a href=\"https://materialdesignicons.com/\">Material Design Icons site</a>.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeIconModule</span> in your module.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-icon</span> tag in your template.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-icon>favorite</materialize-icon>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-icon>favorite</materialize-icon>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n\n      <p>\n        Materialize Angular provides custom functions to add functionallity its components in different ways,\n        the most common is using attributes in the component tag.\n      </p>\n  \n      <div class=\"card\">\n          <h4 class=\"primary\">@Input Properties</h4>\n          <table class=\"table-guide\">\n            <thead>\n              <tr>\n                <td>Name</td>\n                <td>Type</td>\n                <td>Default</td>\n                <td>Description</td>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>className</td>\n                <td>string</td>\n                <td>\" \"</td>\n                <td></td>\n              </tr>\n              <tr>\n                <td>size</td>\n                <td>object</td>\n                <td>ICON_SIZES.SM</td>\n                <td></td>\n              </tr>\n            </tbody>\n          </table>\n      </div>\n\n      <div class=\"card\">\n        <h4 class=\"secondary\">@Output Events</h4>\n        <table class=\"table-guide\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Signature</td>\n              <td>Description</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>onClick</td>\n              <td>onClickEmitter(): EventEmitter&lt;void&gt;</td>\n              <td>\"none\"</td>\n            </tr>\n            <tr>\n              <td>onBlur</td>\n              <td>onBlurEmitter(): EventEmitter&lt;void&gt;</td>\n              <td>\"none\"</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>\n        Materialize Angular supports a lot of SASS variables to change all the component\n        style so that feel to modify component look and feel by changing the following SASS variables.<br><br>\n\n        The Materialize Angular SASS variable names are created base on the following pattern:<br><br>\n        <span class=\"text-accent terciary\">\"tagClassName\" + (optional \"-\" + \"modifierTagClassName\" ) + \"-\" + \"cssProperty\"</span>        \n      </p>\n  \n      <div class=\"card\">\n        <table class=\"table-guide table-sass margin-bottom-lg\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Default</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>$materialize-icon-color</td>\n              <td>$materialize-color-gray-light</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-cursor</td>\n              <td>pointer</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-display</td>\n              <td>inline-block</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-outline</td>\n              <td>none</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-text-transform</td>\n              <td>lowercase</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n\n      <div class=\"card\">\n        <h3>Icon Done</h3>\n        <materialize-icon>done</materialize-icon>\n\n        <h3>Icon Accessibility</h3>\n        <materialize-icon>accessibility</materialize-icon>\n\n        <h3>Icon Chat</h3>\n        <materialize-icon>chat</materialize-icon>\n\n        <h3>Icon Laptop Mac</h3>\n        <materialize-icon>laptop_mac</materialize-icon>\n\n        <h3>Icon Phone Android</h3>\n        <materialize-icon>phone_android</materialize-icon>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Card</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n  "
 
 /***/ }),
 
-/***/ "./src/app/components/list/list.component.ts":
+/***/ "./src/app/components/icon/icon.component.ts":
 /*!***************************************************!*\
-  !*** ./src/app/components/list/list.component.ts ***!
+  !*** ./src/app/components/icon/icon.component.ts ***!
   \***************************************************/
-/*! exports provided: ListPageComponent */
+/*! exports provided: IconPageComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListPageComponent", function() { return ListPageComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconPageComponent", function() { return IconPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-var ListPageComponent = /** @class */ (function () {
-    function ListPageComponent() {
+var IconPageComponent = /** @class */ (function () {
+    function IconPageComponent() {
     }
-    ListPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    IconPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./list.component.html */ "./src/app/components/list/list.component.html")
+            template: __webpack_require__(/*! ./icon.component.html */ "./src/app/components/icon/icon.component.html")
         })
-    ], ListPageComponent);
-    return ListPageComponent;
+    ], IconPageComponent);
+    return IconPageComponent;
 }());
 
 
@@ -1249,40 +1012,40 @@ var ModalPageComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/scroll-spy/scroll-spy.component.html":
-/*!*****************************************************************!*\
-  !*** ./src/app/components/scroll-spy/scroll-spy.component.html ***!
-  \*****************************************************************/
+/***/ "./src/app/components/ripple/ripple.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/ripple/ripple.component.html ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>SCROLL SPY</h1>\n  \n      <p>\n        The <b>materialize-list</b> component is used to display information in list mode. You can present different kind of data in a collection like actions, subheaders, avatars... \n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Lists...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">List</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
+module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>RIPPLE</h1>\n  \n      <p>\n        The <b>materialize-ripple</b> directive show how a user interact with the site. Can be applied to different components.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeCommonModule</span> in your module.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materializeRipple</span> directive in your html tag.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\"></div>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <div class=\"text-indent\">\n          <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\"></div>\n        </div>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n\n      <div class=\"card\">\n        <h3>Simple ripple</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\"></div>\n        \n        <h3>Ripple center</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\" [isRippleCenter]=\"true\"></div>\n\n        <h3>Ripple with 2 seconds</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\" [rippleDuration]=\"2000\"></div>\n        \n        <h3>Ripple disabled</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\" [isRippleActive]=\"false\"></div>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Card</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n  "
 
 /***/ }),
 
-/***/ "./src/app/components/scroll-spy/scroll-spy.component.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/components/scroll-spy/scroll-spy.component.ts ***!
-  \***************************************************************/
-/*! exports provided: ScrollSpyPageComponent */
+/***/ "./src/app/components/ripple/ripple.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/ripple/ripple.component.ts ***!
+  \*******************************************************/
+/*! exports provided: RipplePageComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollSpyPageComponent", function() { return ScrollSpyPageComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RipplePageComponent", function() { return RipplePageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-var ScrollSpyPageComponent = /** @class */ (function () {
-    function ScrollSpyPageComponent() {
+var RipplePageComponent = /** @class */ (function () {
+    function RipplePageComponent() {
     }
-    ScrollSpyPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    RipplePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./scroll-spy.component.html */ "./src/app/components/scroll-spy/scroll-spy.component.html")
+            template: __webpack_require__(/*! ./ripple.component.html */ "./src/app/components/ripple/ripple.component.html")
         })
-    ], ScrollSpyPageComponent);
-    return ScrollSpyPageComponent;
+    ], RipplePageComponent);
+    return RipplePageComponent;
 }());
 
 
@@ -1323,246 +1086,6 @@ var TablePageComponent = /** @class */ (function () {
         })
     ], TablePageComponent);
     return TablePageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/tooltip/tooltip.component.html":
-/*!***********************************************************!*\
-  !*** ./src/app/components/tooltip/tooltip.component.html ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>TOOLTIP</h1>\n  \n      <p>\n        The <b>materialize-tooltip</b> component is for show information to the user when hover over an element. Tooltip will display a text label to identify an element.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n      <p>Tooltip...</p>\n  \n      <p>Example</p>\n      <p>Visualizer</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n      <p>Many examples of them with title</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Tooltip</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n        "
-
-/***/ }),
-
-/***/ "./src/app/components/tooltip/tooltip.component.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/components/tooltip/tooltip.component.ts ***!
-  \*********************************************************/
-/*! exports provided: TooltipPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TooltipPageComponent", function() { return TooltipPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var TooltipPageComponent = /** @class */ (function () {
-    function TooltipPageComponent() {
-    }
-    TooltipPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./tooltip.component.html */ "./src/app/components/tooltip/tooltip.component.html")
-        })
-    ], TooltipPageComponent);
-    return TooltipPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/css/card/card.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/css/card/card.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>CARD</h1>\n  \n      <p>\n        The <b>materialize-card</b> component can be used for panel and/or static image.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeCardModule</span> in your module.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-card</span> tag in your template.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-card>This is my card</materialize-card>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-card>This is my card</materialize-card>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n      <p>\n        Materialize Angular provides custom functions to add functionallity its components in different ways,\n        the most common is using attributes in the component tag.\n      </p>\n  \n      <div class=\"card\">\n        <h4 class=\"primary\">@Input Properties</h4>\n        <table class=\"table-guide\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Type</td>\n              <td>Default</td>\n              <td>Description</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>className</td>\n              <td>string</td>\n              <td>\" \"</td>\n              <td></td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>\n        Materialize Angular supports a lot of SASS variables to change all the component\n        style so that feel to modify component look and feel by changing the following SASS variables.<br><br>\n\n        The Materialize Angular SASS variable names are created base on the following pattern:<br><br>\n        <span class=\"text-accent terciary\">\"tagClassName\" + (optional \"-\" + \"modifierTagClassName\" ) + \"-\" + \"cssProperty\"</span>        \n      </p>\n\n      <div class=\"card\">\n        <h4 class=\"terciary\">.form-control-container</h4>\n        <table class=\"table-guide table-sass margin-bottom-lg\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Default</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>$materialize-card-background</td>\n              <td>map-get($theme-colors, 'white')</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-border-radius</td>\n              <td>$theme-radius-sm</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-box-shadow</td>\n              <td>$theme-shadow-sm</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-color</td>\n              <td>map-get($theme-colors, 'gray-20')</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-cursor</td>\n              <td>pointer</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-font-family</td>\n              <td>$theme-font-family-primary</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-font-size</td>\n              <td>$theme-font-size-md</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-font-weight</td>\n              <td>$theme-font-weight-regular</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-margin</td>\n              <td>0 $theme-space-md $theme-space-sm</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-padding</td>\n              <td>$theme-space-lg</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-tap-highlight-color</td>\n              <td>transparent</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-transition</td>\n              <td>$theme-property-box-shadow $theme-timer-sm $theme-transition-function-in</td>\n            </tr>\n            <tr>\n              <td>$materialize-card-hover-box-shadow</td>\n              <td>$theme-shadow-md</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n\n      <div class=\"card\">\n        <h3>Simple card</h3>\n        <materialize-card>\n          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae incidunt earum odit quod, dignissimos quidem soluta, porro saepe hic cum deserunt officia? Rerum, facere. Necessitatibus est commodi tempora in esse?\n        </materialize-card>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Card</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/css/card/card.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/css/card/card.component.ts ***!
-  \********************************************/
-/*! exports provided: CardPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardPageComponent", function() { return CardPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var CardPageComponent = /** @class */ (function () {
-    function CardPageComponent() {
-    }
-    CardPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./card.component.html */ "./src/app/css/card/card.component.html")
-        })
-    ], CardPageComponent);
-    return CardPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/css/css.component.html":
-/*!****************************************!*\
-  !*** ./src/app/css/css.component.html ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<router-outlet></router-outlet>\n"
-
-/***/ }),
-
-/***/ "./src/app/css/css.component.ts":
-/*!**************************************!*\
-  !*** ./src/app/css/css.component.ts ***!
-  \**************************************/
-/*! exports provided: CSSPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CSSPageComponent", function() { return CSSPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var CSSPageComponent = /** @class */ (function () {
-    function CSSPageComponent() {
-    }
-    CSSPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./css.component.html */ "./src/app/css/css.component.html")
-        })
-    ], CSSPageComponent);
-    return CSSPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/css/divider/divider.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/css/divider/divider.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>DIVIDER</h1>\n  \n<p>\n  The <b>materialize-divider</b> component is used to separate sections in lists or layouts.\n</p>"
-
-/***/ }),
-
-/***/ "./src/app/css/divider/divider.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/css/divider/divider.component.ts ***!
-  \**************************************************/
-/*! exports provided: DividerPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DividerPageComponent", function() { return DividerPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var DividerPageComponent = /** @class */ (function () {
-    function DividerPageComponent() {
-    }
-    DividerPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./divider.component.html */ "./src/app/css/divider/divider.component.html")
-        })
-    ], DividerPageComponent);
-    return DividerPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/css/icon/icon.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/css/icon/icon.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>ICON</h1>\n  \n      <p>\n        The <b>materialize-icon</b> component provides context to your application with the different <i>images</i> that you can use. Here is the official <a href=\"https://materialdesignicons.com/\">Material Design Icons site</a>.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeIconModule</span> in your module.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materialize-icon</span> tag in your template.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <materialize-icon>favorite</materialize-icon>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <p class=\"text-indent no-margin\">\n          <materialize-icon>favorite</materialize-icon>\n        </p>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n\n      <p>\n        Materialize Angular provides custom functions to add functionallity its components in different ways,\n        the most common is using attributes in the component tag.\n      </p>\n  \n      <div class=\"card\">\n          <h4 class=\"primary\">@Input Properties</h4>\n          <table class=\"table-guide\">\n            <thead>\n              <tr>\n                <td>Name</td>\n                <td>Type</td>\n                <td>Default</td>\n                <td>Description</td>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>className</td>\n                <td>string</td>\n                <td>\" \"</td>\n                <td></td>\n              </tr>\n              <tr>\n                <td>size</td>\n                <td>object</td>\n                <td>ICON_SIZES.SM</td>\n                <td></td>\n              </tr>\n            </tbody>\n          </table>\n      </div>\n\n      <div class=\"card\">\n        <h4 class=\"secondary\">@Output Events</h4>\n        <table class=\"table-guide\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Signature</td>\n              <td>Description</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>onClick</td>\n              <td>onClickEmitter(): EventEmitter&lt;void&gt;</td>\n              <td>\"none\"</td>\n            </tr>\n            <tr>\n              <td>onBlur</td>\n              <td>onBlurEmitter(): EventEmitter&lt;void&gt;</td>\n              <td>\"none\"</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>\n        Materialize Angular supports a lot of SASS variables to change all the component\n        style so that feel to modify component look and feel by changing the following SASS variables.<br><br>\n\n        The Materialize Angular SASS variable names are created base on the following pattern:<br><br>\n        <span class=\"text-accent terciary\">\"tagClassName\" + (optional \"-\" + \"modifierTagClassName\" ) + \"-\" + \"cssProperty\"</span>        \n      </p>\n  \n      <div class=\"card\">\n        <table class=\"table-guide table-sass margin-bottom-lg\">\n          <thead>\n            <tr>\n              <td>Name</td>\n              <td>Default</td>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>$materialize-icon-color</td>\n              <td>$materialize-color-gray-light</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-cursor</td>\n              <td>pointer</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-display</td>\n              <td>inline-block</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-outline</td>\n              <td>none</td>\n            </tr>\n            <tr>\n              <td>$materialize-icon-text-transform</td>\n              <td>lowercase</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n\n      <div class=\"card\">\n        <h3>Icon Done</h3>\n        <materialize-icon>done</materialize-icon>\n\n        <h3>Icon Accessibility</h3>\n        <materialize-icon>accessibility</materialize-icon>\n\n        <h3>Icon Chat</h3>\n        <materialize-icon>chat</materialize-icon>\n\n        <h3>Icon Laptop Mac</h3>\n        <materialize-icon>laptop_mac</materialize-icon>\n\n        <h3>Icon Phone Android</h3>\n        <materialize-icon>phone_android</materialize-icon>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Card</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n  "
-
-/***/ }),
-
-/***/ "./src/app/css/icon/icon.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/css/icon/icon.component.ts ***!
-  \********************************************/
-/*! exports provided: IconPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconPageComponent", function() { return IconPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var IconPageComponent = /** @class */ (function () {
-    function IconPageComponent() {
-    }
-    IconPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./icon.component.html */ "./src/app/css/icon/icon.component.html")
-        })
-    ], IconPageComponent);
-    return IconPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/css/ripple/ripple.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/css/ripple/ripple.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"\">\n  <materialize-scroll-spy class=\"main-container\" #scrollSpy>\n    <materialize-scroll-spy-item id=\"title\">\n      <h1>RIPPLE</h1>\n  \n      <p>\n        The <b>materialize-ripple</b> directive show how a user interact with the site. Can be applied to different components.\n      </p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"usage\">\n      <h2>USAGE</h2>\n\n      <div class=\"card\">  \n        <h3>How to use</h3>\n\n        <p class=\"text-indent margin-bottom-sm\">\n          - Import the <span class=\"text-accent\">MaterializeCommonModule</span> in your module.\n        </p>\n        <p class=\"text-indent\">\n          - Use the <span class=\"text-accent secondary\">materializeRipple</span> directive in your html tag.\n        </p>\n\n        <h3>Code</h3>\n        <p class=\"text-indent\">\n          <materialize-html-visualizer html='\n            <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\"></div>\n          '></materialize-html-visualizer>        \n        </p>\n\n        <h3>Result</h3>\n        <div class=\"text-indent\">\n          <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\"></div>\n        </div>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"api\">    \n      <h2>API</h2>\n  \n      <table>\n        <tr>\n          <td>Prop</td>\n          <td>Type</td>\n          <td>Default</td>\n        </tr>\n        <tr>\n          <td>className</td>\n          <td>string</td>\n          <td>''</td>\n        </tr>\n      </table>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"theming\">\n      <h2>THEMING</h2>\n      <p>CSS variables here...</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"playground\">\n      <h2>PLAYGROUND</h2>\n      <p>One example with all variants as checkbox or switch controls</p>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"examples\">\n      <h2>EXAMPLES</h2>\n\n      <div class=\"card\">\n        <h3>Simple ripple</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\"></div>\n        \n        <h3>Ripple center</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\" [isRippleCenter]=\"true\"></div>\n\n        <h3>Ripple with 2 seconds</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\" [rippleDuration]=\"2000\"></div>\n        \n        <h3>Ripple disabled</h3>\n        <div materializeRipple style=\"width: 300px; height: 300px; border: 1px solid #CCC;\" [isRippleActive]=\"false\"></div>\n      </div>\n    </materialize-scroll-spy-item>\n  \n    <materialize-scroll-spy-item id=\"up_next\">\n      <h2>NEXT</h2>\n      <p>More components here...</p>\n    </materialize-scroll-spy-item>\n  </materialize-scroll-spy>\n  \n  <div class=\"glossary-container\">\n    <h2>Contents</h2>\n    <materialize-glossary [scrollSpy]=\"scrollSpy\" [topSpace]=\"90\" className=\"glossary-guide\">\n      <materialize-glossary-item referenceId=\"title\">Card</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"usage\">Usage</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"api\">API</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"theming\">Theming</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"playground\">Playground</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"examples\">Examples</materialize-glossary-item>\n      <materialize-glossary-item referenceId=\"up_next\">Up Next</materialize-glossary-item>\n    </materialize-glossary>      \n  </div>\n</div>\n  "
-
-/***/ }),
-
-/***/ "./src/app/css/ripple/ripple.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/css/ripple/ripple.component.ts ***!
-  \************************************************/
-/*! exports provided: RipplePageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RipplePageComponent", function() { return RipplePageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var RipplePageComponent = /** @class */ (function () {
-    function RipplePageComponent() {
-    }
-    RipplePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./ripple.component.html */ "./src/app/css/ripple/ripple.component.html")
-        })
-    ], RipplePageComponent);
-    return RipplePageComponent;
 }());
 
 
@@ -2561,18 +2084,15 @@ var translations = {
             title: 'Components',
             children: {
                 accordion: 'Accordion',
-                collapsible: 'Collapsible',
                 button: 'Button',
                 calendar: 'Calendar',
-                dropdown: 'Dropdown',
-                glossary: 'Glossary',
-                htmlVisualizer: 'HTML Visualizer',
-                list: 'List',
-                listItem: 'List Item',
+                card: 'Card',
+                collapsible: 'Collapsible',
+                divider: 'Divider',
+                icon: 'Icon',
                 modal: 'Modal',
-                scrollSpy: 'Scroll Spy',
-                table: 'Table',
-                tooltip: 'Tooltip'
+                ripple: 'Ripple',
+                table: 'Table'
             }
         },
         forms: {
@@ -2592,15 +2112,6 @@ var translations = {
                 slider: 'Slider',
                 switch: 'Switch',
                 textarea: 'Textarea'
-            }
-        },
-        css: {
-            title: 'CSS',
-            children: {
-                card: 'Card',
-                divider: 'Divider',
-                icon: 'Icon',
-                ripple: 'Ripple'
             }
         },
         layout: {
