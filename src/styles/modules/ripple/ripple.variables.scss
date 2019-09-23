@@ -1,0 +1,4 @@
+$materialize-ripple-backgorund: rgba(map-get($theme-colors, 'black'), 0.1) !default;
+$materialize-ripple-border-radius: $theme-radius-full !default;
+$materialize-ripple-transition-property: $theme-property-opacity !default;
+$materialize-ripple-transition-function: $theme-transition-function-in-out !default;

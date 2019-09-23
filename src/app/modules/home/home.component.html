@@ -1,3 +1,17 @@
+<div class="card">
+  <h3>Simple ripple</h3>
+  <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
+  
+  <h3>Ripple center</h3>
+  <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleCenter]="true"></div>
+
+  <h3>Ripple with 2 seconds</h3>
+  <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [rippleDuration]="2000"></div>
+  
+  <h3>Ripple disabled</h3>
+  <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleActive]="false"></div>
+</div>
+
 <materialize-glossary [scrollSpy]="scrollSpyExample" [topSpace]="80">
   <materialize-glossary-item referenceId="section_1">One!!</materialize-glossary-item>
   <materialize-glossary-item referenceId="section_2">Two!!</materialize-glossary-item>
@@ -206,15 +220,6 @@ Radio Group with Indicator at the End
   <materialize-radio value="b">Value B</materialize-radio>
 </materialize-radio-group> -->
 
-
-Calendar
-<materialize-calendar [displayOtherMonthDays]="false"></materialize-calendar>
-Calendar that displays other month days
-<materialize-calendar></materialize-calendar>
-Calendar with value
-<materialize-calendar [date]="date"></materialize-calendar>
-Calendar without a selected value
-<materialize-calendar [date]="null"></materialize-calendar>
 
 <br />
 <br />
