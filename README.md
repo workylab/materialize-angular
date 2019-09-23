@@ -14,6 +14,7 @@
   <a href="https://workylab.github.io/materialize-angular"><strong>-- Check our Github pages site --</strong></a>
   <br>
   <br>
+  <a href="https://www.patreon.com/materialize_angular"> <img src="https://img.shields.io/endpoint.svg?url=https://shieldsio-patreon.herokuapp.com/materialize_angular" />
   <a href="https://circleci.com/gh/workylab/materialize-angular">
     <img src="https://circleci.com/gh/workylab/materialize-angular/tree/master.svg?style=svg" alt="Circle CI badge" />
   </a>
@@ -39,6 +40,10 @@
     <img src="https://img.shields.io/npm/dm/materialize-angular.svg" alt="Monthly npm downloads" />
   </a>
 </p>
+
+## Raising funds
+
+`materialize-angular` is not backed by a company (yet :D), so the future of this project depends on you. Become a [Patreon](https://www.patreon.com/materialize_angular), check Github Sponsor or [contact us](https://workylab.com/) directly.
 
 ## Table of contents
 

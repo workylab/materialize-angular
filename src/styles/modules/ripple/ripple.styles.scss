@@ -1,0 +1,19 @@
+.#{$materialize-prefix}-ripple-element {
+  -webkit-mask-image: -webkit-radial-gradient(map-get($theme-colors, 'black'), map-get($theme-colors, 'white'));
+  overflow: hidden;
+  position: relative;
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+.ripple {
+  background: $materialize-ripple-backgorund;
+  border-radius: $materialize-ripple-border-radius;
+  position: absolute;
+  transform: scale(0);
+  transition-duration: 0ms;
+  transition-property: transform, $materialize-ripple-transition-property;
+  transition-timing-function: $materialize-ripple-transition-function;
+}

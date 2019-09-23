@@ -1,4 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
+import { config } from '../../config';
 
 interface Coordinate {
   x: number;
@@ -6,7 +7,7 @@ interface Coordinate {
 }
 
 @Directive({
-  selector: '[materializeRipple]'
+  selector: `[${ config.components.prefix }Ripple]`
 })
 export class RippleDirective implements OnInit {
   @Input() rippleDuration = 500;
@@ -14,17 +15,18 @@ export class RippleDirective implements OnInit {
   @Input() isRippleCenter = false;
 
   private element: HTMLElement;
+  private prefix = config.components.prefix;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
     this.createRipple = this.createRipple.bind(this);
 
     this.element = this.elementRef.nativeElement;
-    this.renderer.addClass(this.element, 'ripple-element');
+    this.renderer.addClass(this.element, `${ this.prefix }-ripple-element`);
   }
 
   ngOnInit() {
     if (!this.isRippleActive) {
-      this.renderer.addClass(this.element, 'ripple-disabled');
+      this.renderer.addClass(this.element, 'disabled');
     }
   }
 
