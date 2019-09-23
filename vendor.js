@@ -74690,9 +74690,10 @@ var RippleDirective = /** @class */ (function () {
         this.rippleDuration = 500;
         this.isRippleActive = true;
         this.isRippleCenter = false;
+        this.prefix = config.components.prefix;
         this.createRipple = this.createRipple.bind(this);
         this.element = this.elementRef.nativeElement;
-        this.renderer.addClass(this.element, 'ripple-element');
+        this.renderer.addClass(this.element, this.prefix + "-ripple-element");
     }
     /**
      * @return {?}
@@ -74702,7 +74703,7 @@ var RippleDirective = /** @class */ (function () {
      */
     function () {
         if (!this.isRippleActive) {
-            this.renderer.addClass(this.element, 'ripple-disabled');
+            this.renderer.addClass(this.element, 'disabled');
         }
     };
     /**
@@ -74877,7 +74878,7 @@ var RippleDirective = /** @class */ (function () {
     };
     RippleDirective.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
-                    selector: '[materializeRipple]'
+                    selector: "[" + config.components.prefix + "Ripple]"
                 },] }
     ];
     /** @nocollapse */
