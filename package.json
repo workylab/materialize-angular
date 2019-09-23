@@ -30,7 +30,7 @@
     "test:unit:coverage": "ng test --code-coverage --watch=false",
     "test": "npm run test:unit:coverage",
     "lint:scss": "stylelint './src/**/*.s?(a|c)ss'",
-    "lint:ts": "eslint './src/app/**/*.ts'",
+    "lint:ts": "eslint './src/app/**/*.ts' --max-warnings=0",
     "lint:ng": "ng lint",
     "lint": "npm run lint:scss && npm run lint:ng && npm run lint:ts",
     "build:scss": "cpx './src/styles/**/*' './dist/materialize-angular/styles' && scss-bundle",
