@@ -1,5 +1,20 @@
 # Change Log
 
+## [v0.7.3](https://github.com/workylab/materialize-angular/tree/v0.7.3) (2019-09-23)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.2...v0.7.3)
+
+**Implemented enhancements:**
+
+- Added ripple styles. [\#170](https://github.com/workylab/materialize-angular/pull/170) ([alexzoul](https://github.com/alexzoul))
+- Add patreon badge and raising funds documentation [\#168](https://github.com/workylab/materialize-angular/pull/168) ([igayoso](https://github.com/igayoso))
+- Add \(change\) nochangelog label to release [\#167](https://github.com/workylab/materialize-angular/pull/167) ([igayoso](https://github.com/igayoso))
+
+**Fixed bugs:**
+
+- Removed duplicated variable and added default property. [\#169](https://github.com/workylab/materialize-angular/pull/169) ([alexzoul](https://github.com/alexzoul))
+- Added default parameter to button toggle variables. [\#166](https://github.com/workylab/materialize-angular/pull/166) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.7.2](https://github.com/workylab/materialize-angular/tree/v0.7.2) (2019-09-16)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.1...v0.7.2)
