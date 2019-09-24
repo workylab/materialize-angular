@@ -1,5 +1,5 @@
 import { BUTTON_LEVELS, BUTTON_TYPES, ButtonModel } from './button.model';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { config } from '../../config';
 
 @Component({
@@ -23,6 +23,8 @@ export class ButtonComponent implements ButtonModel {
 
   @Output('onBlur') onBlurEmitter: EventEmitter<void>;
   @Output('onClick') onClickEmitter: EventEmitter<void>;
+
+  @ViewChild('element', { static: true }) element: ElementRef;
 
   public prefix = config.components.prefix;
   public isFocused: boolean;
