@@ -10,7 +10,7 @@ export class RadioComponent implements RadioModel {
   static readonly defaultProps: RadioModel = {
     className: '',
     disabled: false,
-    id: '',
+    id: null,
     name: '',
     required: false,
     value: ''
@@ -20,7 +20,7 @@ export class RadioComponent implements RadioModel {
 
   @Input() className: string = RadioComponent.defaultProps.className;
   @Input() disabled: boolean = RadioComponent.defaultProps.disabled;
-  @Input() id: string = RadioComponent.defaultProps.id;
+  @Input() id: string | null = RadioComponent.defaultProps.id;
   @Input() name: string = RadioComponent.defaultProps.name;
   @Input() required: boolean = RadioComponent.defaultProps.required;
   @Input() value: string = RadioComponent.defaultProps.value;
