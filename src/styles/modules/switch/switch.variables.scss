@@ -10,12 +10,13 @@ $materialize-switch-label-font-weight: $theme-font-weight-regular !default;
 $materialize-switch-label-padding: 0 !default;
 $materialize-switch-label-text-align: left !default;
 
-$materialize-switch-indicator-track-background: lighten(map-get($theme-colors, 'gray-40'), 30%) !default;
-$materialize-switch-indicator-track-height: 14px !default;
-$materialize-switch-indicator-track-margin: 0 $theme-space-sm !default;
-$materialize-switch-indicator-track-width: 36px !default;
-$materialize-switch-indicator-track-active-background: lighten(map-get($theme-colors, 'primary'), 30%) !default;
-$materialize-switch-indicator-track-disabled-background: map-get($theme-colors, 'gray-60') !default;
+$materialize-switch-track-background: lighten(map-get($theme-colors, 'gray-40'), 30%) !default;
+$materialize-switch-track-height: 14px !default;
+$materialize-switch-track-margin: 0 $theme-space-sm !default;
+$materialize-switch-track-width: 36px !default;
+
+$materialize-switch-track-active-background: lighten(map-get($theme-colors, 'primary'), 30%) !default;
+$materialize-switch-track-disabled-background: map-get($theme-colors, 'gray-60') !default;
 
 $materialize-switch-indicator-background: map-get($theme-colors, 'white') !default;
 $materialize-switch-indicator-border-radius: $theme-radius-full !default;
@@ -24,6 +25,7 @@ $materialize-switch-indicator-left: 0 !default;
 $materialize-switch-indicator-transition:
 $theme-property-left $theme-timer-sm $theme-transition-function-ease !default;
 $materialize-switch-indicator-size: 20px !default;
+
 $materialize-switch-indicator-active-background: map-get($theme-colors, 'primary') !default;
 $materialize-switch-indicator-disabled-background: lighten(map-get($theme-colors, 'gray-60'), 10%) !default;
 
@@ -38,7 +40,7 @@ $materialize-switch-indicator-ripple-transition:
 $theme-property-background $theme-timer-sm $theme-transition-function-ease !default;
 
 $materialize-switch-active-indicator-left:
-$materialize-switch-indicator-track-width - $materialize-switch-indicator-size !default;
+$materialize-switch-track-width - $materialize-switch-indicator-size !default;
 
 $materialize-switch-ripple-active-background: rgba(map-get($theme-colors, 'primary'), 0.2) !default;
 $materialize-switch-ripple-background: rgba(map-get($theme-colors, 'gray-20'), 0.2) !default;
