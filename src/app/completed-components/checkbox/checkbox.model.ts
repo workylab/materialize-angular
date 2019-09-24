@@ -1,7 +1,7 @@
 export interface CheckboxModel {
   className: string;
   disabled: boolean;
-  id: string;
+  id: string | null;
   indeterminate: boolean;
   name: string;
   required: boolean;

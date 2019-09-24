@@ -16,7 +16,7 @@ export class CheckboxComponent implements ControlValueAccessor, CheckboxModel {
   static readonly defaultProps: CheckboxModel = {
     className: '',
     disabled: false,
-    id: '',
+    id: null,
     indeterminate: false,
     name: '',
     required: false,
@@ -25,7 +25,7 @@ export class CheckboxComponent implements ControlValueAccessor, CheckboxModel {
 
   @Input() className: string = CheckboxComponent.defaultProps.className;
   @Input() disabled: boolean = CheckboxComponent.defaultProps.disabled;
-  @Input() id: string = CheckboxComponent.defaultProps.id;
+  @Input() id: string | null = CheckboxComponent.defaultProps.id;
   @Input() indeterminate: boolean = CheckboxComponent.defaultProps.indeterminate;
   @Input() name: string = CheckboxComponent.defaultProps.name;
   @Input() required: boolean = CheckboxComponent.defaultProps.required;
