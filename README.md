@@ -120,84 +120,55 @@ Documentation is available on the [Materialize Angular](https://materialize-angu
 | Components       | Docs         |
 | ---------------- | ------------ |
 | Accordion        | [Docs][1]    |
-| Collapsible      | [Docs][2]    |
-| Button           | [Docs][3]    |
+| Button           | [Docs][2]    |
+| Card             | [Docs][3]    |
 | Calendar         | [Docs][4]    |
-| Dropdown         | [Docs][5]    |
-| Glossary         | [Docs][31]   |
-| HTML Visualizer  | [Docs][32]   |
-| List             | [Docs][6]    |
-| List Item        | [Docs][33]   |
+| Collapsible      | [Docs][5]    |
+| Icon             | [Docs][6]    |
 | Modal            | [Docs][7]    |
-| Scroll Spy       | [Docs][34]   |
-| Table            | [Docs][8]    |
-| Tooltip          | [Docs][9]    |
+| Ripple           | [Docs][8]    |
 
 | Forms            | Docs         |
 | ---------------- | ------------ |
-| Button Toggle    | [Docs][10]   |
-| Checkbox         | [Docs][11]   |
-| Checkbox List    | [Docs][12]   |
-| Date Picker      | [Docs][13]   |
-| Form Prefix      | [Docs][28]   |
-| Form Suffix      | [Docs][29]   |
-| Input            | [Docs][14]   |
-| Label            | [Docs][15]   |
-| Message          | [Docs][15]   |
-| Radio            | [Docs][16]   |
-| Select           | [Docs][17]   |
-| Slider           | [Docs][18]   |
-| Switch           | [Docs][19]   |
-| Textarea         | [Docs][20]   |
-
-| CSS              | Docs         |
-| ---------------- | ------------ |
-| Card             | [Docs][21]   |
-| Divider          | [Docs][22]   |
-| Icon             | [Docs][23]   |
-| Ripple           | [Docs][24]   |
+| Button Toggle    | [Docs][9]    |
+| Checkbox         | [Docs][10]   |
+| Input            | [Docs][11]   |
+| Label            | [Docs][12]   |
+| Message          | [Docs][13]   |
+| Radio            | [Docs][14]   |
+| Select           | [Docs][15]   |
+| Slider           | [Docs][16]   |
+| Switch           | [Docs][17]   |
+| Textarea         | [Docs][18]   |
 
 | Layout           | Docs         |
 | ---------------- | ------------ |
-| Drawer           | [Docs][25]   |
-| Navbar           | [Docs][26]   |
-| Tab              | [Docs][27]   |
+| Drawer           | [Docs][19]   |
+| Navbar           | [Docs][20]   |
+| Tab              | [Docs][21]   |
 
- [1]: https://materialize-angular-guide.workylab.now.sh/components/accordion
- [2]: https://materialize-angular-guide.workylab.now.sh/components/collapsible
- [3]: https://materialize-angular-guide.workylab.now.sh/components/button
- [4]: https://materialize-angular-guide.workylab.now.sh/components/calendar
- [5]: https://materialize-angular-guide.workylab.now.sh/components/dropdown
- [6]: https://materialize-angular-guide.workylab.now.sh/components/list
- [7]: https://materialize-angular-guide.workylab.now.sh/components/modal
- [8]: https://materialize-angular-guide.workylab.now.sh/components/table
- [9]: https://materialize-angular-guide.workylab.now.sh/components/tooltip
- [10]: https://materialize-angular-guide.workylab.now.sh/forms/button-toggle
- [11]: https://materialize-angular-guide.workylab.now.sh/forms/checkbox
- [12]: https://materialize-angular-guide.workylab.now.sh/forms/checkbox-list
- [13]: https://materialize-angular-guide.workylab.now.sh/forms/date-picker
- [14]: https://materialize-angular-guide.workylab.now.sh/forms/input
- [15]: https://materialize-angular-guide.workylab.now.sh/forms/label
- [16]: https://materialize-angular-guide.workylab.now.sh/forms/radio
- [17]: https://materialize-angular-guide.workylab.now.sh/forms/select
- [18]: https://materialize-angular-guide.workylab.now.sh/forms/slider
- [19]: https://materialize-angular-guide.workylab.now.sh/forms/switch
- [20]: https://materialize-angular-guide.workylab.now.sh/forms/textarea
- [21]: https://materialize-angular-guide.workylab.now.sh/css/card
- [22]: https://materialize-angular-guide.workylab.now.sh/css/divider
- [23]: https://materialize-angular-guide.workylab.now.sh/css/icon
- [24]: https://materialize-angular-guide.workylab.now.sh/css/ripple
- [25]: https://materialize-angular-guide.workylab.now.sh/layout/drawer
- [26]: https://materialize-angular-guide.workylab.now.sh/layout/navbar
- [27]: https://materialize-angular-guide.workylab.now.sh/layout/tab
- [28]: https://materialize-angular-guide.workylab.now.sh/forms/form-prefix
- [29]: https://materialize-angular-guide.workylab.now.sh/forms/form-suffix
- [30]: https://materialize-angular-guide.workylab.now.sh/forms/message
- [31]: https://materialize-angular-guide.workylab.now.sh/components/glossary
- [32]: https://materialize-angular-guide.workylab.now.sh/components/html-visualizer
- [33]: https://materialize-angular-guide.workylab.now.sh/components/list-item
- [34]: https://materialize-angular-guide.workylab.now.sh/components/scroll-spy
- 
+ [1]: https://materialize-angular.workylab.com/guide/components/accordion
+ [2]: https://materialize-angular.workylab.com/guide/components/button
+ [3]: https://materialize-angular.workylab.com/guide/components/card
+ [4]: https://materialize-angular.workylab.com/guide/components/calendar
+ [5]: https://materialize-angular.workylab.com/guide/components/collapsible
+ [6]: https://materialize-angular.workylab.com/guide/components/icon
+ [7]: https://materialize-angular.workylab.com/guide/components/modal
+ [8]: https://materialize-angular.workylab.com/guide/components/ripple
+ [9]: https://materialize-angular.workylab.com/guide/forms/button-toggle
+ [10]: https://materialize-angular.workylab.com/guide/forms/checkbox
+ [11]: https://materialize-angular.workylab.com/guide/forms/input
+ [12]: https://materialize-angular.workylab.com/guide/forms/label
+ [13]: https://materialize-angular.workylab.com/guide/forms/message
+ [14]: https://materialize-angular.workylab.com/guide/forms/radio
+ [15]: https://materialize-angular.workylab.com/guide/forms/select
+ [16]: https://materialize-angular.workylab.com/guide/forms/slider
+ [17]: https://materialize-angular.workylab.com/guide/forms/switch
+ [18]: https://materialize-angular.workylab.com/guide/forms/textarea
+ [19]: https://materialize-angular.workylab.com/guide/layout/drawer
+ [20]: https://materialize-angular.workylab.com/guide/layout/navbar
+ [21]: https://materialize-angular.workylab.com/guide/layout/tab
+
  ## Supported Browsers
 
 | Browser           | Supported versions |
