@@ -1,5 +1,15 @@
 # Change Log
 
+## [v0.7.5](https://github.com/workylab/materialize-angular/tree/v0.7.5) (2019-09-25)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.4...v0.7.5)
+
+**Merged pull requests:**
+
+- Fixed styles and selectors. [\#178](https://github.com/workylab/materialize-angular/pull/178) ([alexzoul](https://github.com/alexzoul))
+- Add labels description [\#177](https://github.com/workylab/materialize-angular/pull/177) ([igayoso](https://github.com/igayoso))
+- Add license header [\#176](https://github.com/workylab/materialize-angular/pull/176) ([igayoso](https://github.com/igayoso))
+
 ## [v0.7.4](https://github.com/workylab/materialize-angular/tree/v0.7.4) (2019-09-24)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.3...v0.7.4)
