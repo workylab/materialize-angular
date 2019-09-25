@@ -55,13 +55,34 @@ The [issue tracker](https://github.com/workylab/materialize-angular/issues) is t
 
 Our bug tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
-- `bug` - Something isn't working
-- `duplicate` - This issue or pull request already exists
-- `enhancement` - New feature or request
-- `feature` - New feature or request
-- `invalid` - This doesn't seem right
-- `question` - Further information  is requested
-- `wontfix` - This will not be worked on
+- `breaking` - the issue breaks the project
+- `good first issues` - very good issue to start contributing
+- `help` - we need help with this issue
+- `priority: critical` - critical priority issue
+- `priority: high` - high priority issue
+- `priority: low` - low priority issue
+- `priority: medium` - medium priority issue
+- `release` - will not show in CHANGELOG file (only for deploy PR)
+- `status: abandoned` - abandoned status
+- `status: accepted` - accepted status
+- `status: available` - available status
+- `status: blocked` - blocked status
+- `status: completed` - completed status
+- `status: in progress` - in progress status
+- `status: on hold` - on hold status
+- `status: pending` - pending status
+- `status: review needed` - to review status
+- `type: bug` - something is not working
+- `type: duplicate` - already exists
+- `type: enhancement` - new feature or request
+- `type: invalid` - this does not seem right
+- `type: maintenance` - used for maintenance
+- `type: question` - further information is requested
+- `type: wontfix` - this will not be worked on
+- `work: chaotic` - chaotic work to make it possible
+- `work: complex` - complex work to make it possible
+- `work: complicated` - complicated work to make it possible
+- `work: obvious` - obvious work to make it possible
 
 For a complete look at our labels, see the [project labels page](https://github.com/workylab/materialize-angular/labels).
 
@@ -75,7 +96,7 @@ Good bug reports are extremely helpful! Unclear issues with little explanations 
 
 1. **Use the GitHub issue search** - check if the issue has already been reported.
 
-2. **Check if the issue has been fixed** - try to reproduce it using the latest `master` or development branch in the repository.
+2. **Check if the issue has been fixed** - try to reproduce it using the latest `master` or `dev` branch in the repository.
 
 3. **Isolate the problem** &mdash; create a [reduced test case](https://css-tricks.com/reduced-test-cases/) using [Codepen](http://codepen.io/pen).
 
@@ -121,8 +142,8 @@ Adhering to the following process is the best way to get your work included in t
 2. If you cloned a while ago, get the latest changes from upstream:
 
    ```bash
-   git checkout master
-   git pull upstream master
+   git checkout dev
+   git pull upstream dev
    ```
 
 3. Create a new topic branch (off the main project development branch) to contain your feature, change, or fix:
@@ -136,7 +157,7 @@ Adhering to the following process is the best way to get your work included in t
 5. Locally merge (or rebase) the upstream development branch into your topic branch:
 
    ```bash
-   git pull [--rebase] upstream master
+   git pull [--rebase] upstream dev
    ```
 
 6. Push your topic branch up to your fork:
@@ -145,7 +166,7 @@ Adhering to the following process is the best way to get your work included in t
    git push origin <topic-branch-name>
    ```
 
-7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Reference any open issue in the description so it is automatically linked. Try and keep your commit history clean and concise. Once you submit your pull request, [CircleCI](https://circleci.com/gh/workylab/materialize-angular) will automatically run your tests and will show a checkmark to show that all the tests have passed. Once this is done, we’ll review your tests and code and make comments if there are issues or things we think could be improved. Then once everything looks good we’ll merge the code in!
+7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `dev` branch. Reference any open issue in the description so it is automatically linked. Try and keep your commit history clean and concise. Once you submit your pull request, [CircleCI](https://circleci.com/gh/workylab/materialize-angular) will automatically run your tests and will show a checkmark to show that all the tests have passed. Once this is done, we’ll review your tests and code and make comments if there are issues or things we think could be improved. Then once everything looks good we’ll merge the code in!
 
 ## Translations
 
