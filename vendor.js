@@ -74394,6 +74394,13 @@ __webpack_require__.r(__webpack_exports__);
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
 /** @type {?} */
 var config = {
     components: {
@@ -74941,6 +74948,13 @@ var MaterializeCommonModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function IconModel() { }
@@ -75078,6 +75092,13 @@ var MaterializeAccordionModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function AccordionModel() { }
@@ -75086,6 +75107,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -75163,7 +75191,7 @@ var ButtonComponent = /** @class */ (function () {
     ButtonComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: config.components.prefix + "-button }",
-                    template: "<button [ngClass]=\"[prefix + '-button', level, className]\"\n  (blur)=\"onBlur()\"\n  (click)=\"onClick()\"\n  (focus)=\"onFocus()\"\n\n  materializeRipple\n  [isRippleActive]=\"!disabled\"\n  [rippleDuration]=\"rippleDuration\"\n  \n  [class.focused]=\"isFocused\"\n  [disabled]=\"disabled\"\n  [type]=\"type\">\n  <ng-content></ng-content>\n</button>\n"
+                    template: "<button [ngClass]=\"[prefix + '-button', level, className]\"\n  (blur)=\"onBlur()\"\n  (click)=\"onClick()\"\n  (focus)=\"onFocus()\"\n\n  materializeRipple\n  [isRippleActive]=\"!disabled\"\n  [rippleDuration]=\"rippleDuration\"\n  \n  [class.focused]=\"isFocused\"\n  [disabled]=\"disabled\"\n  [type]=\"type\"\n  \n  #element>\n  <ng-content></ng-content>\n</button>\n"
                 }] }
     ];
     /** @nocollapse */
@@ -75175,7 +75203,8 @@ var ButtonComponent = /** @class */ (function () {
         rippleDuration: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
         onBlurEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onBlur',] }],
-        onClickEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onClick',] }]
+        onClickEmitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['onClick',] }],
+        element: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['element', { static: true },] }]
     };
     return ButtonComponent;
 }());
@@ -75519,6 +75548,13 @@ var MaterializeButtonToggleGroupModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function ButtonToggleGroupModel() { }
@@ -75529,6 +75565,13 @@ if (false) {}
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function ButtonToggleModel() { }
@@ -75537,6 +75580,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /** @type {?} */
 var days = {
@@ -75580,6 +75630,13 @@ var days = {
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /** @type {?} */
 var months = {
@@ -76096,6 +76153,13 @@ var MaterializeCalendarModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function CalendarModel() { }
@@ -76169,6 +76233,13 @@ var MaterializeCardModule = /** @class */ (function () {
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -76352,6 +76423,13 @@ var MaterializeCheckboxModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function CheckboxModel() { }
@@ -76362,6 +76440,13 @@ if (false) {}
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function CollapsibleModel() { }
@@ -76370,6 +76455,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -76836,6 +76928,13 @@ if (false) {}
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function FormMessageModel() { }
@@ -76943,6 +77042,13 @@ var MaterializeDatePickerModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function DatePickerModel() { }
@@ -76951,6 +77057,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 var DrawerModel = /** @class */ (function () {
     function DrawerModel() {
@@ -77155,6 +77268,13 @@ var MaterializeDrawerModule = /** @class */ (function () {
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /** @type {?} */
 var getOffseTop = (/**
@@ -77427,6 +77547,13 @@ if (false) {}
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
 /** @type {?} */
 var windowScrollPosition = (/**
  * @return {?}
@@ -77584,6 +77711,13 @@ var MaterializeGlossaryModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function GlossaryItemModel() { }
@@ -77592,6 +77726,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -77897,6 +78038,13 @@ var MaterializeHTMLVisualizerModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function HTMLVisualizerModel() { }
@@ -77947,6 +78095,13 @@ var MaterializeLabelModule = /** @class */ (function () {
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -78078,6 +78233,13 @@ var MaterializeModalModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function ModalModel() { }
@@ -78128,6 +78290,13 @@ var MaterializeNavbarModule = /** @class */ (function () {
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -78480,6 +78649,13 @@ var MaterializeRadioGroupModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function RadioGroupModel() { }
@@ -78488,6 +78664,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -78500,6 +78683,13 @@ if (false) {}
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function ScrollSpyModel() { }
@@ -78508,6 +78698,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -78929,6 +79126,13 @@ var MaterializeSelectModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function SelectModel() { }
@@ -78939,6 +79143,13 @@ if (false) {}
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function SelectOptionModel() { }
@@ -78947,6 +79158,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /** @type {?} */
 var MOUSE_EVENTS = {
@@ -79504,6 +79722,13 @@ var MaterializeSliderModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function SliderModel() { }
@@ -79512,6 +79737,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -79694,6 +79926,13 @@ var MaterializeStepperModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function StepperModel() { }
@@ -79867,6 +80106,13 @@ var MaterializeSwitchModule = /** @class */ (function () {
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -80086,6 +80332,13 @@ var MaterializeTabGroupModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+/**
  * @record
  */
 function TabGroupModel() { }
@@ -80094,6 +80347,13 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
@@ -80297,6 +80557,13 @@ var MaterializeTextAreaModule = /** @class */ (function () {
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 /**
  * @record
