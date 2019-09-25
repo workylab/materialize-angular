@@ -6,6 +6,3 @@
  * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 
-$theme-border-sm: 1px;
-$theme-border-md: 2px;
-$theme-border-lg: 3px;
