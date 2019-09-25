@@ -7,6 +7,15 @@ do
   echo $file
   if ! grep -q Copyright $file
   then
-    cat license-header $file >$file.new && mv $file.new $file
+    cat scripts/license-header $file >$file.new && mv $file.new $file
+  fi
+done
+
+for file in `find . -not -path "./node_modules/*" -not -path "./dist/*" -name '*.scss'`
+do
+  echo $file
+  if ! grep -q Copyright $file
+  then
+    cat scripts/license-header $file >$file.new && mv $file.new $file
   fi
 done

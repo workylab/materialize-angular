@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+
 $materialize-ripple-backgorund: rgba(map-get($theme-colors, 'black'), 0.1) !default;
 $materialize-ripple-border-radius: $theme-radius-full !default;
 $materialize-ripple-transition-property: $theme-property-opacity !default;
