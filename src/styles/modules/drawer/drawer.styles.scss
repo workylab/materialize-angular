@@ -3,67 +3,67 @@
   position: relative;
 
   &.left {
-    .#{$materialize-prefix}-drawer-content {
+    >.#{$materialize-prefix}-drawer-content {
       left: 0;
     }
 
-    &.static .#{$materialize-prefix}-drawer-container {
+    &.static >.#{$materialize-prefix}-drawer-container {
       margin-left: $materialize-drawer-content-width;
     }
 
-    &.push .#{$materialize-prefix}-drawer-content,
-    &.over .#{$materialize-prefix}-drawer-content {
+    &.push >.#{$materialize-prefix}-drawer-content,
+    &.over >.#{$materialize-prefix}-drawer-content {
       transform: translateX(-100%);
     }
 
-    &.open.push .#{$materialize-prefix}-drawer-container {
+    &.open.push >.#{$materialize-prefix}-drawer-container {
       margin-left: $materialize-drawer-content-width;
     }
   }
 
   &.right {
-    .#{$materialize-prefix}-drawer-content {
+    >.#{$materialize-prefix}-drawer-content {
       right: 0;
     }
 
-    &.static .#{$materialize-prefix}-drawer-container {
+    &.static >.#{$materialize-prefix}-drawer-container {
       margin-right: $materialize-drawer-content-width;
     }
 
-    &.push .#{$materialize-prefix}-drawer-content,
-    &.over .#{$materialize-prefix}-drawer-content {
+    &.push >.#{$materialize-prefix}-drawer-content,
+    &.over >.#{$materialize-prefix}-drawer-content {
       transform: translateX(100%);
     }
 
-    &.open.push .#{$materialize-prefix}-drawer-container {
+    &.open.push >.#{$materialize-prefix}-drawer-container {
       margin-right: $materialize-drawer-content-width;
     }
   }
 
-  &.static .#{$materialize-prefix}-drawer-content {
+  &.static >.#{$materialize-prefix}-drawer-content {
     position: fixed;
   }
 
-  &.push .#{$materialize-prefix}-drawer-container {
+  &.push >.#{$materialize-prefix}-drawer-container {
     transition-duration: inherit;
     transition-property: margin;
     transition-timing-function: $materialize-drawer-content-transition-function;
   }
 
-  &.push .#{$materialize-prefix}-drawer-content,
-  &.over .#{$materialize-prefix}-drawer-content {
+  &.push >.#{$materialize-prefix}-drawer-content,
+  &.over >.#{$materialize-prefix}-drawer-content {
     transition-duration: inherit;
     transition-property: transform;
     transition-timing-function: $materialize-drawer-content-transition-function;
   }
 
   &.open {
-    &.backdrop .#{$materialize-prefix}-drawer-backdrop {
+    &.backdrop >.#{$materialize-prefix}-drawer-backdrop {
       opacity: 1;
     }
 
-    &.over .#{$materialize-prefix}-drawer-content,
-    &.push .#{$materialize-prefix}-drawer-content {
+    &.over >.#{$materialize-prefix}-drawer-content,
+    &.push >.#{$materialize-prefix}-drawer-content {
       transform: translateX(0);
     }
   }
