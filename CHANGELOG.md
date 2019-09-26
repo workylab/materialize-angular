@@ -1,5 +1,15 @@
 # Change Log
 
+## [v0.7.6](https://github.com/workylab/materialize-angular/tree/v0.7.6) (2019-09-26)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.5...v0.7.6)
+
+**Merged pull requests:**
+
+- Fix slider class names [\#181](https://github.com/workylab/materialize-angular/pull/181) ([alexzoul](https://github.com/alexzoul))
+- Check features and fix urls [\#180](https://github.com/workylab/materialize-angular/pull/180) ([igayoso](https://github.com/igayoso))
+- Added null default value in id attributes [\#175](https://github.com/workylab/materialize-angular/pull/175) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.7.5](https://github.com/workylab/materialize-angular/tree/v0.7.5) (2019-09-25)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.4...v0.7.5)
