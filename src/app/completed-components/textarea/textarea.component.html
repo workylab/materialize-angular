@@ -11,7 +11,7 @@
     <textarea (input)="onChange($event)" (blur)="onBlur()" (focus)="onFocus()"
       [ngClass]="prefix + '-form-control'"
       [disabled]="disabled"
-      [id]="id"
+      [attr.id]="id"
       [maxLength]="maxLength"
       [minLength]="minLength"
       [name]="name"
