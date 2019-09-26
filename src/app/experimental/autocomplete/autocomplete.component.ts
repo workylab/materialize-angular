@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AutocompleteModel } from './autocomplete.model';
 import { getBooleanValue } from '../../utils/get-boolean-value.util';
