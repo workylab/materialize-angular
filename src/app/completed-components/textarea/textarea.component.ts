@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+
 import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
@@ -18,7 +26,7 @@ export class TextAreaComponent implements ControlValueAccessor, TextAreaModel {
     disabled: false,
     floatLabel: '',
     hasCounter: false,
-    id: '',
+    id: null,
     maxLength: 500,
     minLength: 0,
     name: '',
@@ -36,7 +44,7 @@ export class TextAreaComponent implements ControlValueAccessor, TextAreaModel {
   @Input() disabled: boolean = TextAreaComponent.defaultProps.disabled;
   @Input() floatLabel: string = TextAreaComponent.defaultProps.floatLabel;
   @Input() hasCounter: boolean = TextAreaComponent.defaultProps.hasCounter;
-  @Input() id: string = TextAreaComponent.defaultProps.id;
+  @Input() id: string | null = TextAreaComponent.defaultProps.id;
   @Input() maxLength: number = TextAreaComponent.defaultProps.maxLength;
   @Input() minLength: number = TextAreaComponent.defaultProps.minLength;
   @Input() name: string = TextAreaComponent.defaultProps.name;

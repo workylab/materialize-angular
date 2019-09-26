@@ -1,4 +1,12 @@
-import { Component, forwardRef, Input } from '@angular/core';
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+
+import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
 import { SwitchModel } from './switch.model';
@@ -16,7 +24,7 @@ export class SwitchComponent implements ControlValueAccessor, SwitchModel {
   static readonly defaultProps: SwitchModel = {
     className: '',
     disabled: false,
-    id: '',
+    id: null,
     name: '',
     required: false,
     value: false
@@ -24,10 +32,12 @@ export class SwitchComponent implements ControlValueAccessor, SwitchModel {
 
   @Input() className: string = SwitchComponent.defaultProps.className;
   @Input() disabled: boolean = SwitchComponent.defaultProps.disabled;
-  @Input() id: string = SwitchComponent.defaultProps.id;
+  @Input() id: string | null = SwitchComponent.defaultProps.id;
   @Input() name: string = SwitchComponent.defaultProps.name;
   @Input() required: boolean = SwitchComponent.defaultProps.required;
   @Input() value: boolean = SwitchComponent.defaultProps.value;
+
+  @Output('onChange') onChangeEmitter: EventEmitter<boolean>;
 
   public prefix = config.components.prefix;
 
@@ -35,6 +45,8 @@ export class SwitchComponent implements ControlValueAccessor, SwitchModel {
 
   constructor() {
     this.isFocused = false;
+
+    this.onChangeEmitter = new EventEmitter();
   }
 
   toggleValue(): void {
@@ -43,6 +55,7 @@ export class SwitchComponent implements ControlValueAccessor, SwitchModel {
       this.value = !this.value;
 
       this.onChange(this.value);
+      this.onChangeEmitter.emit(this.value);
     }
   }
 

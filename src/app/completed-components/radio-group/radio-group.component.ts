@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+
 import {
   AfterContentInit,
   Component,
@@ -27,7 +35,6 @@ export class RadioGroupComponent implements AfterContentInit, ControlValueAccess
     canUncheck: false,
     className: '',
     disabled: false,
-    id: '',
     name: '',
     required: false,
     value: ''
@@ -40,7 +47,6 @@ export class RadioGroupComponent implements AfterContentInit, ControlValueAccess
   @Input() canUncheck: boolean = RadioGroupComponent.defaultProps.canUncheck;
   @Input() className: string = RadioGroupComponent.defaultProps.className;
   @Input() disabled: boolean = RadioGroupComponent.defaultProps.disabled;
-  @Input() id: string = RadioGroupComponent.defaultProps.id;
   @Input() name: string = RadioGroupComponent.defaultProps.name;
   @Input() required: boolean = RadioGroupComponent.defaultProps.required;
   @Input() value: string = RadioGroupComponent.defaultProps.value;

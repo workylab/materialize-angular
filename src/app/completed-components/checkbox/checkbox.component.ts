@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright Workylab. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
+ */
+
 import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CheckboxModel } from './checkbox.model';
@@ -16,7 +24,7 @@ export class CheckboxComponent implements ControlValueAccessor, CheckboxModel {
   static readonly defaultProps: CheckboxModel = {
     className: '',
     disabled: false,
-    id: '',
+    id: null,
     indeterminate: false,
     name: '',
     required: false,
@@ -25,7 +33,7 @@ export class CheckboxComponent implements ControlValueAccessor, CheckboxModel {
 
   @Input() className: string = CheckboxComponent.defaultProps.className;
   @Input() disabled: boolean = CheckboxComponent.defaultProps.disabled;
-  @Input() id: string = CheckboxComponent.defaultProps.id;
+  @Input() id: string | null = CheckboxComponent.defaultProps.id;
   @Input() indeterminate: boolean = CheckboxComponent.defaultProps.indeterminate;
   @Input() name: string = CheckboxComponent.defaultProps.name;
   @Input() required: boolean = CheckboxComponent.defaultProps.required;
