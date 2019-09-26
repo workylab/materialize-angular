@@ -44,7 +44,7 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
     disabled: false,
     required: false,
     showLabels: true,
-    showTicks: true,
+    showTicks: false,
     value: null
   };
 

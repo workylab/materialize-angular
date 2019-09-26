@@ -22,7 +22,7 @@ $materialize-slider-step-height: $theme-space-sm !default;
 $materialize-slider-step-position: absolute !default;
 $materialize-slider-step-top: 50% !default;
 $materialize-slider-step-width: $theme-border-md !default;
-$materialize-slider-step-transform: translate(-50%, -50%);
+$materialize-slider-step-transform: translate(-50%, -50%) !default;
 
 $materialize-slider-track-background: map-get($theme-colors, 'primary') !default;
 $materialize-slider-track-border-radius: $theme-radius-sm !default;
