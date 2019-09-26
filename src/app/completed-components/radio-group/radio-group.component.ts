@@ -35,7 +35,6 @@ export class RadioGroupComponent implements AfterContentInit, ControlValueAccess
     canUncheck: false,
     className: '',
     disabled: false,
-    id: '',
     name: '',
     required: false,
     value: ''
@@ -48,7 +47,6 @@ export class RadioGroupComponent implements AfterContentInit, ControlValueAccess
   @Input() canUncheck: boolean = RadioGroupComponent.defaultProps.canUncheck;
   @Input() className: string = RadioGroupComponent.defaultProps.className;
   @Input() disabled: boolean = RadioGroupComponent.defaultProps.disabled;
-  @Input() id: string = RadioGroupComponent.defaultProps.id;
   @Input() name: string = RadioGroupComponent.defaultProps.name;
   @Input() required: boolean = RadioGroupComponent.defaultProps.required;
   @Input() value: string = RadioGroupComponent.defaultProps.value;

@@ -11,7 +11,7 @@ export interface TextAreaModel {
   disabled: boolean;
   floatLabel: string;
   hasCounter: boolean;
-  id: string;
+  id: string | null;
   maxLength: number;
   minLength: number;
   name: string;

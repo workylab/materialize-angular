@@ -13,11 +13,11 @@
     <ng-content></ng-content>
   </div>
 
-  <div [ngClass]="prefix + '-switch-indicator-track'">
+  <div [ngClass]="prefix + '-switch-track'">
     <div [ngClass]="prefix + '-switch-indicator'">
       <div [ngClass]="prefix + '-switch-indicator-ripple'" materializeRipple [isRippleActive]="!disabled" [rippleDuration]="200"></div>
     </div>
   </div>
 
-  <input type="checkbox" [disabled]="disabled" [id]="id" [name]="name" [required]="required" [value]="value" />
+  <input type="checkbox" [disabled]="disabled" [attr.id]="id" [name]="name" [required]="required" [value]="value" />
 </div>
