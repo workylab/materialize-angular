@@ -1807,7 +1807,7 @@ var TabPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "<div class=\"materialize-container\">\n  <div class=\"materialize-row materialize-row-gap\">\n    <div class=\"materialize-col-12\">\n      <h1>Themes</h1>\n      <h2>Easier Imposible</h2>\n      <p>\n          Giving your personal touch to your project has never been so easy.\n          Materialize Angular supports a lot of SASS variables to change all the component style.\n      </p>\n      <p>\n          Soon we will put at your disposal several themes.\n      </p>\n    </div>\n  </div>\n</div>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
