@@ -23,6 +23,10 @@
   &.open .#{$materialize-prefix}-form-control-select-menu {
     display: block;
   }
+
+  .option-disabled {
+    color: $materialize-form-control-placeholder-color;
+  }
 }
 
 .#{$materialize-prefix}-form-control-select-icon {

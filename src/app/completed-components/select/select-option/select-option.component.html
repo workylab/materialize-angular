@@ -1,8 +1,8 @@
-<div [ngClass]="[prefix + '-select-option', className]" materializeRipple (click)="onClick()" [class.active]="isActive" [rippleDuration]="transitionDuration">
+<div [ngClass]="[prefix + '-select-option', className]" materializeRipple (click)="onClick()" [class.active]="isActive"  [class.disabled]="disabled" [rippleDuration]="transitionDuration">
   <div #optionTemplate>
     <span>
       <ng-content></ng-content>
     </span>
   </div>
 </div>
- 
+
