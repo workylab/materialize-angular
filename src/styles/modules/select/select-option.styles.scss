@@ -21,4 +21,8 @@
   &.active {
     background: $materialize-select-option-hover-background;
   }
+
+  &.disabled {
+    color: $materialize-form-control-placeholder-color;
+  }
 }
