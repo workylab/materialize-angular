@@ -1,13 +1,13 @@
 <div class="card">
   <h3>Simple ripple</h3>
   <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;"></div>
-  
+
   <h3>Ripple center</h3>
   <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleCenter]="true"></div>
 
   <h3>Ripple with 2 seconds</h3>
   <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [rippleDuration]="2000"></div>
-  
+
   <h3>Ripple disabled</h3>
   <div materializeRipple style="width: 300px; height: 300px; border: 1px solid #CCC;" [isRippleActive]="false"></div>
 </div>
@@ -248,6 +248,27 @@ Datepicker Custom Format
 <materialize-form-message type="error">Error Message</materialize-form-message>
 <materialize-form-message type="warning">Warning Message</materialize-form-message>
 <materialize-form-message type="success">Success Message</materialize-form-message>
+
+<h3>Select</h3>
+<materialize-select>
+    <materialize-select-option value="A">Option A</materialize-select-option>
+    <materialize-select-option value="B">Option B</materialize-select-option>
+</materialize-select>
+With float label
+<materialize-select floatLabel="This is my select field">
+    <materialize-select-option value="A">Option A</materialize-select-option>
+    <materialize-select-option value="B">Option B</materialize-select-option>
+</materialize-select>
+Disabled placeholder
+<materialize-select [value]="'A'">
+    <materialize-select-option value="A" [disabled]="true">Option A</materialize-select-option>
+    <materialize-select-option value="B">Option B</materialize-select-option>
+</materialize-select>
+With native controls
+<materialize-select [value]="'C'" [isNativeControl]="true" >
+    <materialize-select-option value="C" [disabled]="true">Option C</materialize-select-option>
+    <materialize-select-option value="D">Option D</materialize-select-option>
+</materialize-select>
 
 <!-- <h3>Dropdown</h3>
 <materialize-dropdown [items]="dropDownItems"></materialize-dropdown> -->

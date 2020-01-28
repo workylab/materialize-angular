@@ -23,6 +23,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { config } from '../../config';
 import { SelectModel } from './select.model';
 import { SelectOptionComponent } from './select-option/select-option.component';
+import { SelectOptionModel } from './select-option/select-option.model';
 
 @Component({
   providers: [{
@@ -47,6 +48,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit, 
 
   @ViewChild('backdrop', { static: false }) backdropRef: ElementRef;
   @ViewChild('labelContainer', { static: false }) labelContainerRef: ElementRef;
+  @ViewChild('selectElement', { static: false }) selectElementRef: ElementRef;
 
   @ContentChildren(SelectOptionComponent) options: QueryList<SelectOptionComponent>;
 
@@ -114,6 +116,8 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit, 
       if (option.value === value) {
         option.isActive = true;
 
+        this.activeSelectClass(option);
+
         this.cloneOption(option);
       } else {
         option.isActive = false;
@@ -127,7 +131,7 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit, 
     }
 
     const { nativeElement: labelContainer } = this.labelContainerRef;
-    const { optionTemplateRef } = selectedOption;
+    const { optionTemplateRef, disabled } = selectedOption;
 
     if (labelContainer.firstChild) {
       this.renderer.removeChild(labelContainer, labelContainer.firstChild);
@@ -137,6 +141,9 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit, 
       const { firstChild } = optionTemplateRef.nativeElement;
       const cloned = firstChild.cloneNode(true);
 
+      if (disabled) {
+        this.renderer.addClass(cloned, 'option-disabled');
+      }
       this.renderer.appendChild(labelContainer, cloned);
     }
   }
@@ -146,6 +153,8 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit, 
     const { value } = selectedOptions[0];
 
     this.value = value;
+
+    this.activeSelectClass(selectedOptions[0]);
 
     this.onChangeEmitter.emit(this.value);
     this.onChange(this.value);
@@ -203,4 +212,12 @@ export class SelectComponent implements ControlValueAccessor, AfterContentInit, 
   onChange(value: string | number | boolean | null): void {}
 
   onTouched(): void {}
+
+  activeSelectClass(selectedOption: SelectOptionModel) {
+    if (this.selectElementRef && selectedOption.disabled) {
+      this.renderer.addClass(this.selectElementRef.nativeElement, 'option-disabled');
+    } else if (this.selectElementRef && !selectedOption.disabled) {
+      this.renderer.removeClass(this.selectElementRef.nativeElement, 'option-disabled');
+    }
+  }
 }

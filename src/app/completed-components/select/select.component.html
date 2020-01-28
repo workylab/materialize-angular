@@ -8,7 +8,7 @@
     <div [ngClass]="prefix + '-form-control-wrapper'">
       <div [ngClass]="prefix + '-form-control-label'">{{ floatLabel }}</div>
 
-      <select (blur)="onBlur()" (click)="onClick()" (focus)="onFocus()" (input)="onChangeNativeOption($event)"
+      <select #selectElement (blur)="onBlur()" (click)="onClick()" (focus)="onFocus()" (input)="onChangeNativeOption($event)"
         [ngClass]="prefix + '-form-control'"
         [attr.id]="id"
         [disabled]="disabled"
@@ -19,6 +19,7 @@
         <option
           [selected]="option.value === value"
           [value]="option.value"
+          [disabled]="option.disabled"
           *ngFor="let option of options">
           {{ option.content }}
         </option>
