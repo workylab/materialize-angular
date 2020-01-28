@@ -7,6 +7,6 @@
  */
 
 export interface AccordionModel {
-  activeIndex: number;
+  activeIndex: number | null;
   className: string;
 }

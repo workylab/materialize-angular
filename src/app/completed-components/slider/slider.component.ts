@@ -50,7 +50,6 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
 
   @ContentChildren(SliderOptionComponent) options: QueryList<SliderOptionComponent>;
 
-  @ViewChild('Slider', { static: true }) Slider: ElementRef;
   @ViewChild('sliderIndicatorContainer', { static: true }) sliderIndicatorContainer: ElementRef;
   @ViewChild('sliderTrack', { static: true }) sliderTrack: ElementRef;
   @ViewChild('sliderTrackBackground', { static: true }) sliderTrackBackground: ElementRef;
