@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.7.8](https://github.com/workylab/materialize-angular/tree/v0.7.8) (2020-01-29)
+
+[Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.7...v0.7.8)
+
+**Merged pull requests:**
+
+- Improve/accordion [\#186](https://github.com/workylab/materialize-angular/pull/186) ([alexzoul](https://github.com/alexzoul))
+
 ## [v0.7.7](https://github.com/workylab/materialize-angular/tree/v0.7.7) (2020-01-28)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.7.6...v0.7.7)
@@ -27,7 +35,6 @@
 
 - Fixed styles and selectors. [\#178](https://github.com/workylab/materialize-angular/pull/178) ([alexzoul](https://github.com/alexzoul))
 - Add labels description [\#177](https://github.com/workylab/materialize-angular/pull/177) ([igayoso](https://github.com/igayoso))
-- Add license header [\#176](https://github.com/workylab/materialize-angular/pull/176) ([igayoso](https://github.com/igayoso))
 
 ## [v0.7.4](https://github.com/workylab/materialize-angular/tree/v0.7.4) (2019-09-24)
 
@@ -35,6 +42,7 @@
 
 **Merged pull requests:**
 
+- Add license header [\#176](https://github.com/workylab/materialize-angular/pull/176) ([igayoso](https://github.com/igayoso))
 - Feature/button native element [\#173](https://github.com/workylab/materialize-angular/pull/173) ([alexzoul](https://github.com/alexzoul))
 - Add stop on warning during linting [\#172](https://github.com/workylab/materialize-angular/pull/172) ([igayoso](https://github.com/igayoso))
 
@@ -112,6 +120,7 @@
 **Merged pull requests:**
 
 - New release [\#140](https://github.com/workylab/materialize-angular/pull/140) ([alexzoul](https://github.com/alexzoul))
+- Improved/date picker [\#139](https://github.com/workylab/materialize-angular/pull/139) ([alexzoul](https://github.com/alexzoul))
 
 ## [v0.5.3](https://github.com/workylab/materialize-angular/tree/v0.5.3) (2019-09-05)
 
@@ -131,6 +140,7 @@
 **Merged pull requests:**
 
 - Refactored theme variable names. [\#132](https://github.com/workylab/materialize-angular/pull/132) ([alexzoul](https://github.com/alexzoul))
+- Feature/space helpers [\#130](https://github.com/workylab/materialize-angular/pull/130) ([rodwyn](https://github.com/rodwyn))
 
 ## [v0.5.1](https://github.com/workylab/materialize-angular/tree/v0.5.1) (2019-09-01)
 
@@ -138,12 +148,9 @@
 
 **Merged pull requests:**
 
-- Improved/date picker [\#139](https://github.com/workylab/materialize-angular/pull/139) ([alexzoul](https://github.com/alexzoul))
-- Feature/space helpers [\#130](https://github.com/workylab/materialize-angular/pull/130) ([rodwyn](https://github.com/rodwyn))
 - New release [\#129](https://github.com/workylab/materialize-angular/pull/129) ([alexzoul](https://github.com/alexzoul))
 - Removed background-color properties [\#128](https://github.com/workylab/materialize-angular/pull/128) ([alexzoul](https://github.com/alexzoul))
 - Removed space-none unnecessary variable. [\#127](https://github.com/workylab/materialize-angular/pull/127) ([alexzoul](https://github.com/alexzoul))
-- Fixed border radius on float label. [\#126](https://github.com/workylab/materialize-angular/pull/126) ([alexzoul](https://github.com/alexzoul))
 
 ## [v0.5.0](https://github.com/workylab/materialize-angular/tree/v0.5.0) (2019-08-30)
 
@@ -160,6 +167,7 @@
 
 **Merged pull requests:**
 
+- Fixed border radius on float label. [\#126](https://github.com/workylab/materialize-angular/pull/126) ([alexzoul](https://github.com/alexzoul))
 - New release [\#122](https://github.com/workylab/materialize-angular/pull/122) ([alexzoul](https://github.com/alexzoul))
 - Fix/event names [\#121](https://github.com/workylab/materialize-angular/pull/121) ([alexzoul](https://github.com/alexzoul))
 - Feature/grid css [\#120](https://github.com/workylab/materialize-angular/pull/120) ([rodwyn](https://github.com/rodwyn))
@@ -256,7 +264,6 @@
 - Upgrade from master before dev as default branch [\#89](https://github.com/workylab/materialize-angular/pull/89) ([igayoso](https://github.com/igayoso))
 - Fix codeclimate badge link [\#88](https://github.com/workylab/materialize-angular/pull/88) ([igayoso](https://github.com/igayoso))
 - Add new Pull Request template [\#87](https://github.com/workylab/materialize-angular/pull/87) ([igayoso](https://github.com/igayoso))
-- Feature/drawer [\#85](https://github.com/workylab/materialize-angular/pull/85) ([alexzoul](https://github.com/alexzoul))
 
 ## [v0.3.9](https://github.com/workylab/materialize-angular/tree/v0.3.9) (2019-08-06)
 
@@ -269,6 +276,10 @@
 ## [v0.3.8](https://github.com/workylab/materialize-angular/tree/v0.3.8) (2019-08-06)
 
 [Full Changelog](https://github.com/workylab/materialize-angular/compare/v0.3.7...v0.3.8)
+
+**Merged pull requests:**
+
+- Feature/drawer [\#85](https://github.com/workylab/materialize-angular/pull/85) ([alexzoul](https://github.com/alexzoul))
 
 ## [v0.3.7](https://github.com/workylab/materialize-angular/tree/v0.3.7) (2019-08-05)
 
@@ -306,7 +317,6 @@
 **Merged pull requests:**
 
 - Added change label when slider indicator is moving. [\#76](https://github.com/workylab/materialize-angular/pull/76) ([alexzoul](https://github.com/alexzoul))
-- Fix/spam message [\#68](https://github.com/workylab/materialize-angular/pull/68) ([igayoso](https://github.com/igayoso))
 
 ## [v0.3.3](https://github.com/workylab/materialize-angular/tree/v0.3.3) (2019-08-01)
 
@@ -328,9 +338,11 @@
 - Fixed tab styling. [\#71](https://github.com/workylab/materialize-angular/pull/71) ([alexzoul](https://github.com/alexzoul))
 - Fix/npm publish [\#70](https://github.com/workylab/materialize-angular/pull/70) ([igayoso](https://github.com/igayoso))
 - Add monthly downloads badge [\#69](https://github.com/workylab/materialize-angular/pull/69) ([igayoso](https://github.com/igayoso))
+- Fix/spam message [\#68](https://github.com/workylab/materialize-angular/pull/68) ([igayoso](https://github.com/igayoso))
 - Fix/update dependencies [\#67](https://github.com/workylab/materialize-angular/pull/67) ([igayoso](https://github.com/igayoso))
 - Add new publish script and remove master filter branch [\#66](https://github.com/workylab/materialize-angular/pull/66) ([igayoso](https://github.com/igayoso))
 - Feature/button toggle styles [\#65](https://github.com/workylab/materialize-angular/pull/65) ([alexzoul](https://github.com/alexzoul))
+- Added helps styles. [\#62](https://github.com/workylab/materialize-angular/pull/62) ([rodwyn](https://github.com/rodwyn))
 
 ## [v0.2.5](https://github.com/workylab/materialize-angular/tree/v0.2.5) (2019-07-30)
 
@@ -348,7 +360,6 @@
 
 **Merged pull requests:**
 
-- Added helps styles. [\#62](https://github.com/workylab/materialize-angular/pull/62) ([rodwyn](https://github.com/rodwyn))
 - Only publish on master [\#61](https://github.com/workylab/materialize-angular/pull/61) ([igayoso](https://github.com/igayoso))
 - Typo with link [\#60](https://github.com/workylab/materialize-angular/pull/60) ([igayoso](https://github.com/igayoso))
 
