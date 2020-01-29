@@ -38,8 +38,8 @@ describe('AccordionComponent', () => {
     expect(component.className).toEqual(className);
   });
 
-  it('should showNext call toggleCollapsibles with next index', () => {
-    const nextIndex = component.activeIndex + 1;
+  it('should showNext call toggleCollapsibles with null when there are not more collapsibles to show', () => {
+    component.activeIndex = 0;
 
     spyOn(component, 'toggleCollapsibles');
 
@@ -47,11 +47,11 @@ describe('AccordionComponent', () => {
 
     component.showNext();
 
-    expect(component.toggleCollapsibles).toHaveBeenCalledWith(nextIndex);
+    expect(component.toggleCollapsibles).toHaveBeenCalledWith(null);
   });
 
-  it('should showPrev call toggleCollapsibles with previous index', () => {
-    const prevIndex = component.activeIndex - 1;
+  it('should showPrev call toggleCollapsibles with null when there are not more collapsibles to show', () => {
+    component.activeIndex = 0,
 
     spyOn(component, 'toggleCollapsibles');
 
@@ -59,6 +59,6 @@ describe('AccordionComponent', () => {
 
     component.showPrev();
 
-    expect(component.toggleCollapsibles).toHaveBeenCalledWith(prevIndex);
+    expect(component.toggleCollapsibles).toHaveBeenCalledWith(null);
   });
 });
