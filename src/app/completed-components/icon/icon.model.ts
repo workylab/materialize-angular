@@ -12,6 +12,7 @@ export interface IconModel {
 }
 
 export enum ICON_SIZES {
+  NONE = '',
   XS = 'xs',
   SM = 'sm',
   MD = 'md',

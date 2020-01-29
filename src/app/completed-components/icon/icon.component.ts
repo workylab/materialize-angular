@@ -17,7 +17,7 @@ import { config } from '../../config';
 export class IconComponent implements IconModel {
   static readonly defaultProps: IconModel = {
     className: '',
-    size: ICON_SIZES.SM
+    size: ICON_SIZES.NONE
   };
 
   @Output('onClick') onClickEmitter: EventEmitter<void>;
