@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://raw.githubusercontent.com/workylab/materialize-angular/master/LICENSE
  */
 
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { config } from '../../../config';
 import { SliderOptionModel } from './slider-option.model';
 
@@ -25,10 +25,17 @@ export class SliderOptionComponent implements SliderOptionModel {
   @Input() className: string = SliderOptionComponent.defaultProps.className;
   @Input() value: number | string | boolean | null = SliderOptionComponent.defaultProps.value;
 
+  @Output('onClick') onClickEmitter: EventEmitter<number | string | boolean | null>;
+
   public prefix = config.components.prefix;
   public isActive: boolean;
 
   constructor() {
     this.isActive = false;
+    this.onClickEmitter = new EventEmitter();
+  }
+
+  onClick() {
+    this.onClickEmitter.emit(this.value);
   }
 }
