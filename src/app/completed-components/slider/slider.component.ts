@@ -77,6 +77,7 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
     this.actionDown = this.actionDown.bind(this);
     this.actionMove = this.actionMove.bind(this);
     this.actionUp = this.actionUp.bind(this);
+    this.onOptionClick = this.onOptionClick.bind(this);
     this.update = this.update.bind(this);
 
     window.addEventListener(this.supportedEvents.resize, this.update);
@@ -94,9 +95,23 @@ export class SliderComponent implements AfterContentInit, AfterViewInit, Control
 
   update() {
     setTimeout(() => {
+      this.registerEventOptions();
       this.renderPositions();
       this.moveToValue(this.value, false);
     }, 0);
+  }
+
+  registerEventOptions() {
+    this.options.forEach(option => {
+      option.onClickEmitter.subscribe(this.onOptionClick);
+    });
+  }
+
+  onOptionClick(value: number | string | boolean | null) {
+    this.value = value;
+    this.onChangeEmitter.emit(this.value);
+    this.onChange(this.value);
+    this.moveToValue(this.value, true);
   }
 
   renderPositions() {

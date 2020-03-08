@@ -1,6 +1,7 @@
 <div [ngClass]="[prefix + '-slider-option-container', className]"
   [class.active]="isActive"
 
+  (click)="onClick()"
   #template>
   <ng-content></ng-content>
 </div>

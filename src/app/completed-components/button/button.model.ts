@@ -22,5 +22,6 @@ export enum BUTTON_LEVELS {
 
 export enum BUTTON_TYPES {
   BUTTON = 'button',
-  SUBMIT = 'submit'
+  SUBMIT = 'submit',
+  RESET = 'reset'
 }
